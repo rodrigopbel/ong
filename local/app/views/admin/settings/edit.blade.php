@@ -130,21 +130,9 @@
                                             <label class="control-label col-md-2">Currency</label>
                                             <div class="col-md-6">
                                                 <select class="bs-select form-control" data-show-subtext="true" name="currency">
-                                                    <option data-icon="fa-inr" value="fa-inr:INR" @if($setting->currency=='INR') selected @endif>INR</option>
                                                     <option data-icon="fa-usd"  value="fa-usd:USD" @if($setting->currency=='USD') selected @endif>USD</option>
                                                     <option data-icon="fa-euro" value="fa-euro:EURO" @if($setting->currency=='EURO') selected @endif >EURO</option>
-                                                    <option data-icon="fa-gbp"  value="fa-gbp:GBP" @if($setting->currency=='GBP') selected @endif>GBP</option>
-                                                    <option data-icon="fa-jpy"  value="fa-jpy:JPY" @if($setting->currency=='JPY') selected @endif >JPY</option>
-                                                    <option data-icon="fa-yen" value="fa-yen:YEN" @if($setting->currency=='YEN') selected @endif>YEN</option>
-                                                    <option data-icon="fa-won" value="fa-won:WON" @if($setting->currency=='WON') selected @endif>WON</option>
-                                                    <option data-icon="fa-try" value="fa-try:TRY" @if($setting->currency=='TRY') selected @endif>TRY</option>
-                                                    <option data-icon="fa-rub" value="fa-yen:YEN" @if($setting->currency=='RUB') selected @endif>RUB</option>
-                                                    <option data-icon="fa-rmb" value="fa-rmb:RMB" @if($setting->currency=='RMB') selected @endif>RMB</option>
-                                                    <option data-icon="fa-krw" value="fa-krw:KRW" @if($setting->currency=='KRW') selected @endif>KRW</option>
-                                                    <option data-icon="fa-btc" value="fa-btc:BTC" @if($setting->currency=='BTC') selected @endif>BTC</option>
-                                                    <option data-icon="fa-xof" value="fa-xof:XOF" @if($setting->currency=='XOF') selected @endif>XOF</option>
-                                                    <option data-icon="fa-myr" value="fa-myr:MYR" @if($setting->currency=='MYR') selected @endif>MYR</option>
-                                                    <option data-icon="fa-pkr" value="fa-pkr:PKR" @if($setting->currency=='PKR') selected @endif>PKR</option>
+                                                    <option data-icon="fa-bs"  value="fa-BS:BS" @if($setting->currency=='BS') selected @endif>BS</option>
 
                                                 </select>
                                             </div>
