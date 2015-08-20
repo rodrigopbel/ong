@@ -55,9 +55,9 @@ return array(
 			'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'hrm1',
-			'username'  => 'root',
-			'password'  => '',
+			'database'  => 'ong',
+			'username'  => 'forge',
+			'password'  => 'LJVIjdxbfQLLopPNzP8n',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
