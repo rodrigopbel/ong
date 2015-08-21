@@ -63,7 +63,7 @@
 
                 <li class="dropdown dropdown-user">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                    {{HTML::image("assets/admin/layout/img/avatar3_small.jpg",'small image',array('class'=>'img-circle'))}}
+                    {{HTML::image("assets/admin/layout/img/avatar.jpg",'small image',array('class'=>'img-circle'))}}
 
                     <span class="username username-hide-on-mobile">
                   {{ $loggedAdmin->name }}</span>
@@ -72,18 +72,18 @@
                     <ul class="dropdown-menu dropdown-menu-default">
                         <li>
                             <a href="{{route('admin.profile_settings.edit',Auth::admin()->get()->id)}}">
-                            <i class="icon-user"></i> My Profile </a>
+                            <i class="icon-user"></i> Mi Perfil </a>
                         </li>
 
                         <li class="divider">
                         </li>
                         <li>
                             <a href="{{ URL::to('screenlock') }} ">
-                            <i class="icon-lock"></i> Lock Screen </a>
+                            <i class="icon-lock"></i> Bloquear </a>
                         </li>
                         <li>
                             <a href="{{ URL::route('admin.logout') }} ">
-                             <i class="icon-logout"></i> Log Out </a>
+                             <i class="icon-logout"></i> Salir </a>
                         </li>
                     </ul>
                 </li>
@@ -106,7 +106,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-						<span class="caption-subject font-red-sunglo bold uppercase">Leave Application</span>
+						<span class="caption-subject font-red-sunglo bold uppercase">Salir de la Application</span>
 					</div>
 					<div class="modal-body" id="modal-data-leave">
 						{{--Ajax data call for form--}}
