@@ -14,7 +14,7 @@
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			{{$pageTitle}} <small>Lista de Beneficiarios</small>
+			<small>Lista de Beneficiarios</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
