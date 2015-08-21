@@ -287,7 +287,7 @@
                         <div class="modal-header">
                             <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                              <h4  class="modal-title">
-                                 Change Password
+                                 Cambiar Contraseña
                                  </h4>
                         </div>
                         <div class="modal-body" id="change_password_modal_body">
