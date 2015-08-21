@@ -217,7 +217,7 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Monto Requerido</label>
         										<div class="col-md-9">
-        											<input type="text" class="form-control" name="currentSalary" placeholder="Monto Requerido" value="{{ Input::old('currentSalary') }}">
+        											<input type="text" class="form-control" name="currentSalary" placeholder="Monto requerido" value="{{ Input::old('currentSalary') }}">
         										</div>
         									</div>
         								</div>
@@ -265,6 +265,12 @@
                                                     <input type="text" class="form-control" name="pan" placeholder="Zona" value="{{Input::old('pan')}}">
                                                 </div>
                                             </div>
+											<div class="form-group">
+												<label class="col-md-3 control-label">Canton</label>
+												<div class="col-md-9">
+													<input type="text" class="form-control" name="branch" placeholder="Canton" value="{{Input::old('branch')}}">
+												</div>
+											</div>
         								</div>
 
         						</div>
