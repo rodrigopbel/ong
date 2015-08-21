@@ -16,13 +16,13 @@
             
             <!-- BEGIN PAGE HEADER-->
             <h3 class="page-title">
-            Dashboard <small>reports & statistics</small>
+            Dashboard <small>erportes & estadisticas</small>
             </h3>
             <div class="page-bar">
                 <ul class="page-breadcrumb">
                     <li>
                         <i class="fa fa-home"></i>
-                        <a href="{{route('admin.dashboard.index')}}">Home</a>
+                        <a href="{{route('admin.dashboard.index')}}">Inicio</a>
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li>
@@ -73,7 +73,7 @@
                 <div class="portlet box blue">
                     <div class="portlet-title">
                         <div class="caption">
-							Expense Report
+							Reporte de Ayudas y/o Pagos
                         </div>
                     </div>
                     <div class="portlet-body">

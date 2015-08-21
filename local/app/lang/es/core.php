@@ -14,8 +14,8 @@ return [
 	*/
 
 
-	'absent'           =>  'Absent',
-	'present'          =>  'Present',
+	'absent'           =>  'Antiguos',
+	'present'          =>  'Actuales',
 	'attendance'       =>  'Attendance',
 
 	/*
