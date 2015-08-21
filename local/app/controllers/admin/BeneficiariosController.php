@@ -16,7 +16,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 	public function index()
 	{
-		$this->data['beneficiarios']       =    Employee::all();
+		$this->data['beneficiarios']       =    Beneficiario::all();
 		$this->data['beneficiariosActive'] =   'active';
 
 		return View::make('admin.employees.index', $this->data);
