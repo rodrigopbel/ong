@@ -164,7 +164,7 @@ class EmployeesController extends \AdminBaseController {
 		}
 
 		DB::commit();
-		return Redirect::route('admin.employees.index')->with('success',"<strong>{$input['fullName']}</strong> successfully added to the Database");
+		return Redirect::route('admin.employees.index')->with('success',"<strong>{$input['fullName']}</strong> Beneficiario guardado en la Base de Datos");
 	}
 
 
