@@ -16,7 +16,7 @@ return [
 
 	'absent'           =>  'Antiguos',
 	'present'          =>  'Actuales',
-	'attendance'       =>  'Attendance',
+	'attendance'       =>  'Asistencia',
 
 	/*
      * Button text
