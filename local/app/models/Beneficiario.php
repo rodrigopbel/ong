@@ -115,9 +115,9 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 
 		$diff = date_diff(date_create($employee->joiningDate),date_create($lastDate));
 
-		$difference = ($diff->y==0)?null:$diff->y.' año ';
-		$difference .= ($diff->m==0)?null:$diff->m.' mes(es) ';
-		$difference .= ($diff->d==0)?null:$diff->d.' dia(s) ';
+		$difference = ($diff->y==0)?null:$diff->y.' year ';
+		$difference .= ($diff->m==0)?null:$diff->m.' month ';
+		$difference .= ($diff->d==0)?null:$diff->d.' day ';
 
 		return $difference;
 

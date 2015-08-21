@@ -131,12 +131,13 @@
             						<!-- STAT -->
             							<div class="row profile-stat">
             								<div class="col-md-4 col-sm-4 col-xs-6" data-toggle="tooltip" data-placement="bottom" >
-            									<div class="uppercase profile-stat-title">
-            										 {{$attendance_count}}
-            									</div>
-            									<div class="uppercase profile-stat-text">
-            										 Solicitudes
-            									</div>
+                                                <div class="uppercase profile-stat-title">
+                                                    {{$leaveLeft}}
+                                                </div>
+                                                <div class="uppercase profile-stat-text">
+                                                    Solicitudes
+                                                </div>
+
             								</div>
             								<div class="col-md-4 col-sm-4 col-xs-6" data-toggle="tooltip" data-placement="bottom" >
                                                 <div class="uppercase profile-stat-title">
@@ -148,10 +149,10 @@
                                             </div>
             								<div class="col-md-4 col-sm-4 col-xs-6" data-toggle="tooltip" data-placement="bottom" >
                                                 {{--<div class="uppercase profile-stat-title">--}}
-                                                {{--{{$leaveLeft}}--}}
+                                                    {{--{{$attendance_count}}--}}
                                                 {{--</div>--}}
                                                 {{--<div class="uppercase profile-stat-text">--}}
-                                                {{--Leave--}}
+                                                    {{--Solicitudes--}}
                                                 {{--</div>--}}
             								</div>
             							</div>
