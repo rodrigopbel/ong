@@ -16,7 +16,7 @@
             
             <!-- BEGIN PAGE HEADER-->
             <h3 class="page-title">
-            Dashboard <small>erportes & estadisticas</small>
+            Dashboard <small>Reportes & Estadisticas</small>
             </h3>
             <div class="page-bar">
                 <ul class="page-breadcrumb">
@@ -38,50 +38,50 @@
 
 
 {{--calender--}}
-			<div class="row">
-        				<div class="col-md-12">
-        					<div class="portlet box blue calendar">
-        						<div class="portlet-title">
-        							<div class="caption">
-        								<i class="fa fa-gift"></i>{{Lang::get('core.attendance')}}
-        							</div>
-        						</div>
-        						<div class="portlet-body">
-        							<div class="row">
+			{{--<div class="row">--}}
+        				{{--<div class="col-md-12">--}}
+        					{{--<div class="portlet box blue calendar">--}}
+        						{{--<div class="portlet-title">--}}
+        							{{--<div class="caption">--}}
+        								{{--<i class="fa fa-gift"></i>{{Lang::get('core.attendance')}}--}}
+        							{{--</div>--}}
+        						{{--</div>--}}
+        						{{--<div class="portlet-body">--}}
+        							{{--<div class="row">--}}
 
-        								<div class="col-md-9 col-sm-12">
-        									<div id="calendar" class="has-toolbar">
-        									</div>
-        								</div>
-        								<div class="col-md-3 col-sm-3">
-											<p><h3><a href="#" class="btn btn-sm red"></a> {{Lang::get('core.absent')}}</h3></p>
-											<p><h3><a href="#" class="btn btn-sm blue"></a> {{Lang::get('core.present')}}</h3></p>
+        								{{--<div class="col-md-9 col-sm-12">--}}
+        									{{--<div id="calendar" class="has-toolbar">--}}
+        									{{--</div>--}}
+        								{{--</div>--}}
+        								{{--<div class="col-md-3 col-sm-3">--}}
+											{{--<p><h3><a href="#" class="btn btn-sm red"></a> {{Lang::get('core.absent')}}</h3></p>--}}
+											{{--<p><h3><a href="#" class="btn btn-sm blue"></a> {{Lang::get('core.present')}}</h3></p>--}}
 
-										</div>
-        							</div>
-        							<!-- END CALENDAR PORTLET-->
-        						</div>
-        					</div>
-        				</div>
+										{{--</div>--}}
+        							{{--</div>--}}
+        							{{--<!-- END CALENDAR PORTLET-->--}}
+        						{{--</div>--}}
+        					{{--</div>--}}
+        				{{--</div>--}}
 
-</div>
+{{--</div>--}}
 
 
-            <!-- BEGIN DASHBOARD STATS -->
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="portlet box blue">
-                    <div class="portlet-title">
-                        <div class="caption">
-							Reporte de Ayudas y/o Pagos
-                        </div>
-                    </div>
-                    <div class="portlet-body">
-					  <div id="expenseChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-                    </div>
-                </div>
+            {{--<!-- BEGIN DASHBOARD STATS -->--}}
+            {{--<div class="row">--}}
+                {{--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">--}}
+                {{--<div class="portlet box blue">--}}
+                    {{--<div class="portlet-title">--}}
+                        {{--<div class="caption">--}}
+							{{--Reporte de Ayudas y/o Pagos--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="portlet-body">--}}
+					  {{--<div id="expenseChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
-                </div>
+                {{--</div>--}}
 
 
             <!-- END DASHBOARD STATS -->
