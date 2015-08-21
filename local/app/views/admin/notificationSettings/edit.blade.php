@@ -22,12 +22,12 @@
 				<ul class="page-breadcrumb">
 					<li>
 						<i class="fa fa-home"></i>
-						<a href="{{route('admin.dashboard.index')}}">Home</a>
+						<a href="{{route('admin.dashboard.index')}}">Inicio</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 
 					<li>
-						<a href=""> Email Setting</a>
+						<a href=""> Configuraciones de Email</a>
 					</li>
 				</ul>
 			
@@ -49,7 +49,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-cog"></i>Email Notifications
+								<i class="fa fa-cog"></i>Notificationes
 							</div>
 							<div class="tools">
 							</div>
@@ -61,42 +61,42 @@
 						{{ Form::model($setting, ['method' => 'PATCH','files' => true, 'route' => ['admin.notificationSettings.update', $setting->id],'class'=>'form-horizontal form-bordered']) }}
                                     <div class="form-body">
                                         <div class="form-group">
-                                        <label class="col-md-2 control-label">Award : </label>
+                                        <label class="col-md-2 control-label">Ayuda : </label>
                                             <div class="col-md-6">
-                                            	 <input  type="checkbox" value="1"   class="make-switch" name="award_notification" @if($setting->award_notification==1)checked	@endif data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">
+                                            	 <input  type="checkbox" value="1"   class="make-switch" name="award_notification" @if($setting->award_notification==1)checked	@endif data-on-color="success" data-on-text="Si" data-off-text="No" data-off-color="danger">
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                        <label class="col-md-2 control-label">Attendance Marked:</label>
-                                            <div class="col-md-6">
-                                             <input  type="checkbox" value="1"   class="make-switch" name="attendance_notification" @if($setting->attendance_notification==1)checked	@endif data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">
-                                            </div>
-                                        </div>
-                   				 <div class="form-group">
-                                        <label class="col-md-2 control-label">Notice Board:</label>
-                                            <div class="col-md-6">
-                                            <input  type="checkbox" value="1"   class="make-switch" name="notice_notification" @if($setting->notice_notification==1)checked	@endif data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">
-                                            </div>
-                                        </div>
+                                        {{--<div class="form-group">--}}
+                                        {{--<label class="col-md-2 control-label">Attendance Marked:</label>--}}
+                                            {{--<div class="col-md-6">--}}
+                                             {{--<input  type="checkbox" value="1"   class="make-switch" name="attendance_notification" @if($setting->attendance_notification==1)checked	@endif data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                   				 {{--<div class="form-group">--}}
+                                        {{--<label class="col-md-2 control-label">Notice Board:</label>--}}
+                                            {{--<div class="col-md-6">--}}
+                                            {{--<input  type="checkbox" value="1"   class="make-switch" name="notice_notification" @if($setting->notice_notification==1)checked	@endif data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
 
 
-                                     <div class="form-group">
-                                        <label class="col-md-2 control-label">Leave Application:</label>
-                                            <div class="col-md-6">
-                                            <input  type="checkbox" value="1"   class="make-switch" name="leave_notification" @if($setting->leave_notification==1)checked	@endif data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">
-                                            </div>
-                                        </div>
+                                     {{--<div class="form-group">--}}
+                                        {{--<label class="col-md-2 control-label">Leave Application:</label>--}}
+                                            {{--<div class="col-md-6">--}}
+                                            {{--<input  type="checkbox" value="1"   class="make-switch" name="leave_notification" @if($setting->leave_notification==1)checked	@endif data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
 							 <div class="form-group">
-							  <label class="col-md-2 control-label">Employee Add:</label>
+							  <label class="col-md-2 control-label">Beneficiario:</label>
 								  <div class="col-md-6">
-								  <input  type="checkbox" value="1"   class="make-switch" name="employee_add" @if($setting->employee_add==1)checked	@endif data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">
+								  <input  type="checkbox" value="1"   class="make-switch" name="employee_add" @if($setting->employee_add==1)checked	@endif data-on-color="success" data-on-text="Si" data-off-text="No" data-off-color="danger">
 								  </div>
 							  </div>
                                             <div class="form-actions">
                                                 <div class="row">
                                                     <div class="col-md-offset-3 col-md-9">
-                                                        <button type="submit" data-loading-text="Updating..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Submit</button>
+                                                        <button type="submit" data-loading-text="Updating..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Guardar</button>
 
                                                     </div>
                                                 </div>
