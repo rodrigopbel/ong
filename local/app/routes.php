@@ -48,9 +48,9 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::resource('dashboard', 'AdminDashboardController',['as' => 'admin']);
 
     //    Employees Routing
-	Route::get('employees/export',['as'=>'admin.employees.export','uses'=>'EmployeesController@export']);
-    Route::get('employees/employeeLogin/{id}',['as'=>'admin.employees.employeeLogin','uses'=>'EmployeesController@employeesLogin']);
-    Route::resource('beneficiarios', 'EmployeesController',['except' => ['show'],'as' => 'admin']);
+	Route::get('employees/export',['as'=>'admin.employees.export','uses'=>'BeneficiariosController@export']);
+    Route::get('employees/employeeLogin/{id}',['as'=>'admin.employees.employeeLogin','uses'=>'BeneficiariosController@employeesLogin']);
+    Route::resource('beneficiarios', 'BeneficiariosController',['except' => ['show'],'as' => 'admin']);
 
 
     //  Awards Routing
