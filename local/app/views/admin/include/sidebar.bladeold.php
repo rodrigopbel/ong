@@ -68,6 +68,92 @@
                     </li>
               {{----------------------------------------------------------------------}}
 
+              {{---------------------------------------Awards-------------------------------}}
+                    <li class="{{ $awardsOpen or ''}}">
+                                <a href="javascript:;">
+                                <i class="fa fa-trophy"></i>
+                                <span class="title">{{Lang::get('menu.award')}}</span>
+                                <span class="arrow "></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="{{ $awardsActive or ''}}">
+                                        <a href="{{route('admin.awards.index')}}">
+                                        <i class="fa  fa-gift"></i>
+                                        {{Lang::get('menu.awardList')}}</a>
+                                    </li>
+                                </ul>
+                            </li>
+            {{---------------------------------------/Awards-------------------------------}}
+
+
+
+              {{---------------------------------------Expense-------------------------------}}
+                    <li class="{{ $expensesOpen or ''}}">
+                                <a href="javascript:;">
+                                <i class="fa fa-money"></i>
+                                <span class="title">{{Lang::get('menu.expense')}}</span>
+                                <span class="arrow "></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="{{ $inventoryActive or ''}}">
+                                        <a href="{{route('admin.expenses.index')}}">
+                                        <i class="fa  fa-money"></i>
+                                        {{Lang::get('menu.expenseList')}}</a>
+                                    </li>
+
+
+                                </ul>
+                     </li>
+              {{---------------------------------------/Expense-------------------------------}}
+
+
+             {{---------------------------------------Holidays-------------------------------}}
+                    <li class="{{ $holidayOpen or ''}}">
+                                <a href="javascript:;">
+                                <i class="fa fa-send"></i>
+                                <span class="title">{{Lang::get('menu.holiday')}}</span>
+                                <span class="arrow "></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="{{ $holidayActive or ''}}">
+                                        <a href="{{route('admin.holidays.index')}}">
+                                        <i class="fa  fa-calendar"></i>
+                                        {{Lang::get('menu.holidayList')}}</a>
+                                    </li>
+
+
+                                </ul>
+                    </li>
+              {{---------------------------------------/Holiday-------------------------------}}
+
+
+                  {{---------------------------------------Attendance-------------------------------}}
+                  <li class="{{ $attendanceOpen or ''}}">
+                           <a href="javascript:;">
+                           <i class="fa fa-user"></i>
+                           <span class="title">{{Lang::get('menu.attendance')}}</span>
+                           <span class="arrow "></span>
+                           </a>
+                           <ul class="sub-menu">
+                               <li class="{{ $markAttendanceActive or ''}}">
+                                   <a href="{{route('admin.attendances.create')}}">
+                                   <i class="fa  fa-check"></i>
+                                   Mark Attendance</a>
+                               </li>
+                                <li class="{{ $viewAttendanceActive or ''}}">
+                                       <a href="{{route('admin.attendances.index')}}">
+                                       <i class="fa  fa-eye"></i>
+                                       {{Lang::get('menu.viewAttendance')}}</a>
+                                   </li>
+                               <li class="{{ $leaveTypeActive or ''}}">
+                                      <a href="{{route('admin.leavetypes.index')}}">
+                                      <i class="fa fa-sitemap"></i>
+                                      {{Lang::get('menu.leaveTypes')}}</a>
+                                  </li>
+                           </ul>
+                     </li>
+
+                  {{---------------------------------------/Attendance-------------------------------}}
 
                   {{---------------------------------------Leave Applications-------------------------------}}
                   <li class="{{ $leaveApplicationOpen or ''}}">
@@ -89,6 +175,25 @@
                   {{---------------------------------------/Attendance-------------------------------}}
 
 
+                  {{---------------------------------------Notice Board-------------------------------}}
+                      <li class="{{ $noticeBoardOpen or ''}}">
+                                 <a href="javascript:;">
+                                 <i class="fa fa-clipboard"></i>
+                                 <span class="title">{{Lang::get('menu.noticeBoard')}}</span>
+                                 <span class="arrow "></span>
+                                 </a>
+                                 <ul class="sub-menu">
+                                     <li class="{{ $noticeBoardActive or ''}}">
+                                         <a href="{{route('admin.noticeboards.index')}}">
+                                         <i class="fa fa-clipboard"></i>
+                                         {{Lang::get('menu.noticeBoard')}}</a>
+                                     </li>
+
+
+                                 </ul>
+                    </li>
+
+                {{---------------------------------------/Notice Board-------------------------------}}
 
 
                   {{---------------------------------------Settings-------------------------------}}

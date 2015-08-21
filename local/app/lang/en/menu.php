@@ -14,10 +14,10 @@ return [
 	*/
 
 	'dashboard'             =>  'Dashboard',
-	'employees'             =>  'Employees',
-	'employeeList'          =>  'Employees List',
-	'department'            =>  'Department',
-	'departmentList'        =>  'Department List',
+	'employees'             =>  'Beneficiarios',
+	'employeeList'          =>  '-->Lista',
+	'department'            =>  'Destinos',
+	'departmentList'        =>  '-->Lista',
 	'award'                 =>  'Award',
 	'awardList'             =>  'Award List',
 	'expense'               =>  'Expense',

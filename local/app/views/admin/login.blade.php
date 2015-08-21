@@ -43,7 +43,7 @@
 	<!-- BEGIN LOGIN FORM -->
 	{{ Form::open(array('url' => '','class' =>'login-form')) }}
 	
-		<h3 class="form-title">Login to your account</h3>
+		<h3 class="form-title">Login</h3>
 		<div id="alert">
 			
 		</div>
