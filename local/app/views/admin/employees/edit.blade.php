@@ -159,7 +159,7 @@
         											<textarea name="permanentAddress" class="form-control" rows="3">{{$employee->permanentAddress}}</textarea>
         										</div>
         									</div>
-        									<h4><strong>Account Login</strong></h4>
+        									<h4><strong>Cuenta de Beneficiario</strong></h4>
         									<div class="form-group">
                                                     <label class="col-md-3 control-label">Email<span class="required">* </span></label>
                                                     <div class="col-md-9">
