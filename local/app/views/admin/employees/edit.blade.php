@@ -96,7 +96,7 @@
         													<input type="file" name="profileImage">
         													</span>
         													<a href="#" class="btn red fileinput-exists" data-dismiss="fileinput">
-        													Eliminar a>
+        													Eliminar </a>
         												</div>
         											</div>
 
