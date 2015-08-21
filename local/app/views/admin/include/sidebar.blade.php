@@ -69,28 +69,6 @@
               {{----------------------------------------------------------------------}}
 
 
-                  {{---------------------------------------Leave Applications-------------------------------}}
-                  <li class="{{ $leaveApplicationOpen or ''}}">
-                           <a href="javascript:;">
-                           <i class="fa fa-rocket"></i>
-                           <span class="title">{{Lang::get('menu.leaveApplication')}}</span>
-                           <span class="arrow "></span>
-                           </a>
-                           <ul class="sub-menu">
-                               <li class="{{ $leaveApplicationActive or ''}}">
-                                   <a href="{{route('admin.leave_applications.index')}}">
-                                   <i class="fa fa-rocket"></i>
-                                   {{Lang::get('menu.leaveApplicationList')}}</a>
-                               </li>
-
-                           </ul>
-                     </li>
-
-                  {{---------------------------------------/Attendance-------------------------------}}
-
-
-
-
                   {{---------------------------------------Settings-------------------------------}}
                       <li class="{{ $settingOpen or ''}}">
                                  <a href="javascript:;">
