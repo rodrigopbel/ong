@@ -130,7 +130,7 @@
             				<div class="service-block-v3 service-block-u">
             						<!-- STAT -->
             							<div class="row profile-stat">
-            								<div class="col-md-4 col-sm-4 col-xs-6" data-toggle="tooltip" data-placement="bottom" >
+            								<div class="col-md-6 col-sm-6 col-xs-6" data-toggle="tooltip" data-placement="bottom" >
                                                 <div class="uppercase profile-stat-title">
                                                     {{count($employee->getAwards)}}
                                                 </div>
@@ -139,7 +139,7 @@
                                                 </div>
 
             								</div>
-            								<div class="col-md-4 col-sm-4 col-xs-6" data-toggle="tooltip" data-placement="bottom" >
+            								<div class="col-md-6 col-sm-6 col-xs-6" data-toggle="tooltip" data-placement="bottom" >
                                                 <div class="uppercase profile-stat-title">
                                                     {{count($employee->getAwards)}}
                                                 </div>
@@ -147,14 +147,14 @@
                                                     Donaciones
                                                 </div>
                                             </div>
-            								<div class="col-md-4 col-sm-4 col-xs-6" data-toggle="tooltip" data-placement="bottom" >
+            								{{--<div class="col-md-4 col-sm-4 col-xs-6" data-toggle="tooltip" data-placement="bottom" >--}}
                                                 {{--<div class="uppercase profile-stat-title">--}}
                                                     {{--{{$attendance_count}}--}}
                                                 {{--</div>--}}
                                                 {{--<div class="uppercase profile-stat-text">--}}
                                                     {{--Solicitudes--}}
                                                 {{--</div>--}}
-            								</div>
+            								{{--</div>--}}
             							</div>
             							<!-- END STAT -->
                             </div>

@@ -26,7 +26,7 @@
                 											</tr>
                 											<tr>
                 												<td>
-                													<span class="primary-link">Apellido</span>
+                													<span class="primary-link">Apellidos</span>
                 												</td>
                 												<td>
                 													{{$employee->fatherName}}
@@ -225,6 +225,7 @@
 
                                                 </div>
                                             </div>
+                                            <hr>
 
                                             <div class="panel panel-profile no-bg">
                                                 <div class="panel-heading overflow-h">
