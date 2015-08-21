@@ -5,7 +5,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                            <h4 class="modal-title">Confirmation</h4>
+                            <h4 class="modal-title">Confirmacion</h4>
                         </div>
                         <div class="modal-body" id="info">
                             <p>
@@ -13,8 +13,8 @@
                             </p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" data-dismiss="modal" class="btn default">Cancel</button>
-                            <button type="button" data-dismiss="modal" class="btn red" id="delete"><i class="fa fa-trash"></i> Delete</button>
+                            <button type="button" data-dismiss="modal" class="btn default">Cancelar</button>
+                            <button type="button" data-dismiss="modal" class="btn red" id="delete"><i class="fa fa-trash"></i> Eliminar</button>
                         </div>
                     </div>
                </div>
