@@ -1,5 +1,6 @@
 <?php
 
+
 return [
 	/*
 	|--------------------------------------------------------------------------
@@ -17,9 +18,9 @@ return [
 	'present'          =>  'Present',
 	'attendance'       =>  'Attendance',
 
-   /*
-    * Button text
-    */
+	/*
+     * Button text
+     */
 	'btnAddEmployee'    => 'Add New Employee',
 	'btnAddDepartment'  => 'Add New Department',
 	'btnAddAward'       => 'Add New Award',
@@ -28,13 +29,13 @@ return [
 	'btnAddLeaveType'   => 'Add New LeaveType',
 	'btnAddNotice'      => 'Add New Notice',
 
-	'btnViewEdit'       => 'View/Edit',
-	'btnDelete'         => 'Delete',
-	'btnSubmit'         => 'Submit',
-	'btnSave'           => 'Save',
-	'btnUpdate'         => 'Update',
-	'btnUpdating'       => 'Updating',
+	'btnViewEdit'       => 'Ver/Editar',
+	'btnDelete'         => 'Eliminar',
+	'btnSubmit'         => 'Aceptar',
+	'btnSave'           => 'Guardar',
+	'btnUpdate'         => 'Actualizar',
+	'btnUpdating'       => 'Actualizando',
 
-	'btnYes'           =>  'Yes',
+	'btnYes'           =>  'Si',
 	'btnNo'            =>  'No'
 ];
