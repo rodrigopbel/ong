@@ -279,13 +279,13 @@
                                     <!--Profile Blog-->
                                     <div class="panel panel-profile">
                                         <div class="panel-heading overflow-h">
-                                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-tasks"></i>Attendance</h2>
+                                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-tasks"></i>Calendario</h2>
                                         </div>
                                         <div class="panel-body panelHolder">
 
 												 <div class="alert-blocks alert-blocks-info">
 													   <div class="overflow-h">
-														   <strong class="color-dark">Last absent <small class="pull-right"><em>{{$employee->lastAbsent($employee->employeeID,'date')}}</em></small></strong>
+														   <strong class="color-dark">ULtima entrada <small class="pull-right"><em>{{$employee->lastAbsent($employee->employeeID,'date')}}</em></small></strong>
 															<small class="award-name">{{$employee->lastAbsent($employee->employeeID)}}</small>
 													   </div>
 												   </div>
