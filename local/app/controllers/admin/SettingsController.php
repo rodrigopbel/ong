@@ -8,7 +8,7 @@ class SettingsController extends \AdminBaseController {
     {
         parent::__construct();
         $this->data['settingOpen']  =   'active open';
-        $this->data['pageTitle']    =    'Configuraciones';
+        $this->data['pageTitle']    =    'General';
     }
 
 	public function edit()

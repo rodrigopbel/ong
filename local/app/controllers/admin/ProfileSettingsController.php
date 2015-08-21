@@ -7,7 +7,7 @@ class ProfileSettingsController extends \AdminBaseController {
     {
         parent::__construct();
         $this->data['settingOpen']  =   'active open';
-        $this->data['pageTitle']    =    'Settings';
+        $this->data['pageTitle']    =    'Perfil';
     }
 
 

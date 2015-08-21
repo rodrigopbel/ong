@@ -20,17 +20,20 @@
 			    {{$pageTitle}}
 			</h3>
 			<div class="page-bar">
-				<ul class="page-breadcrumb">
-					<li>
-						<i class="fa fa-home"></i>
-						<a href="{{route('admin.dashboard.index')}}">Inicio</a>
-						<i class="fa fa-angle-right"></i>
-					</li>
-					<li>
-						<a href="{{ route('admin.notificationSettings.edit',$admin->id) }}">Configuraciones</a>
+                <ul class="page-breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="{{route('admin.dashboard.index')}}">Inicio</a>
+                        <i class="fa fa-angle-right"></i>
                     </li>
-					
-				</ul>
+                    <li>
+                        <a href="{{ route('admin.settings.edit','setting') }}">Configuraciones</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href=""> Perfil</a>
+                    </li>
+                </ul>
 			
 			</div>
 			<!-- END PAGE HEADER-->

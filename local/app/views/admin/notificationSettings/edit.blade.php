@@ -19,16 +19,20 @@
 			    {{$pageTitle}}
 			</h3>
 			<div class="page-bar">
-				<ul class="page-breadcrumb">
-					<li>
-						<i class="fa fa-home"></i>
-						<a href="{{route('admin.dashboard.index')}}">Inicio</a>
-						<i class="fa fa-angle-right"></i>
-					</li>
-
-					<li>
-						<a href=""> Configuraciones de Email</a>
-					</li>
+                <ul class="page-breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="{{route('admin.dashboard.index')}}">Inicio</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.settings.edit','setting') }}">Configuraciones</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href=""> Notificaciones</a>
+                    </li>
+                </ul></li>
 				</ul>
 			
 			</div>

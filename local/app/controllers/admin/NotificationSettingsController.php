@@ -6,7 +6,7 @@ class NotificationSettingsController extends \AdminBaseController {
     {
         parent::__construct();
         $this->data['settingOpen']  =   'active open';
-        $this->data['pageTitle']    =   'Configuracion de Notificaciones';
+        $this->data['pageTitle']    =   'Notificaciones';
     }
 
 
