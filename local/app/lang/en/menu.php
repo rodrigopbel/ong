@@ -15,9 +15,9 @@ return [
 
 	'dashboard'             =>  'Dashboard',
 	'employees'             =>  'Beneficiarios',
-	'employeeList'          =>  '-->Lista',
+	'employeeList'          =>  'Lista',
 	'department'            =>  'Destinos',
-	'departmentList'        =>  '-->Lista',
+	'departmentList'        =>  'Lista',
 	'award'                 =>  'Award',
 	'awardList'             =>  'Award List',
 	'expense'               =>  'Expense',
@@ -31,13 +31,13 @@ return [
 	'leaveApplication'      =>  'Leave Applications',
 	'leaveApplicationList'  =>  'Application List',
 	'noticeBoard'           =>  'Notice Board',
-	'settings'              =>  'Settings',
-	'generalSetting'        =>  'General Setting',
-	'profileSetting'        =>  'Profile Setting',
-	'notificationSetting'   =>  'Notification Setting',
-	'myProfile'             =>  'My Profile',
-	'lockScreen'            =>  'Lock Screen',
-	'Logout'                =>  'Logout'
+	'settings'              =>  'Configuraciones',
+	'generalSetting'        =>  'General',
+	'profileSetting'        =>  'Perfil',
+	'notificationSetting'   =>  'Notificaciones',
+	'myProfile'             =>  'Administrador',
+	'lockScreen'            =>  'Bloquear',
+	'Logout'                =>  'Salir'
 
 
 ];
