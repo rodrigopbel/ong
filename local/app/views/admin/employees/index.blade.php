@@ -84,7 +84,7 @@
                                 	 Objetivo
                                 </th>
 								<th class="text-center">
-                                	 Antiguuedad
+                                	 Antiguedad
                                 </th>
 								<th class="text-center">
 									 Telefono
