@@ -122,7 +122,7 @@
                           {{HTML::image("/profileImages/{$employee->profileImage}",'ProfileImage',['class'=>"img-responsive profile-img margin-bottom-20",'style'=>'border:1px solid #ddd;margin:0 auto'])}}
                             {{--<img class="img-responsive profile-img margin-bottom-20" src="front_assets/img/team/5.jpg" alt="">--}}
             				<p>
-            				<h3 style="text-align: center">{{$employee->fullName}}</h3>
+            				<h3 style="text-align: center">{{ $employee->fullName . " ". $employee->fatherName }}</h3>
             				<h6 style="text-align: center">{{$employee->getDesignation->designation}}</h6>
             				<h6 style="text-align: center;background: rgb(235, 235, 235);padding: 10px;"><strong>En Solicitud hace : </strong>{{$employee->workDuration($employee->employeeID)}}</h6>
             				</p>
@@ -132,7 +132,7 @@
             							<div class="row profile-stat">
             								<div class="col-md-4 col-sm-4 col-xs-6" data-toggle="tooltip" data-placement="bottom" >
                                                 <div class="uppercase profile-stat-title">
-                                                    {{$leaveLeft}}
+                                                    {{count($employee->getAwards)}}
                                                 </div>
                                                 <div class="uppercase profile-stat-text">
                                                     Solicitudes
