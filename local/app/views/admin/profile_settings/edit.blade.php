@@ -53,7 +53,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-cog"></i>Login {{$pageTitle}}
+								<i class="fa fa-cog"></i>Cuenta de {{$pageTitle}}
 							</div>
 							<div class="tools">
 							</div>

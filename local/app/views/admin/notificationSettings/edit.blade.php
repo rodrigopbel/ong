@@ -53,7 +53,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-cog"></i>Notificationes
+								<i class="fa fa-cog"></i>Notificaciones
 							</div>
 							<div class="tools">
 							</div>
