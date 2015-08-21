@@ -31,7 +31,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href=""> Setting</a>
+						<a href=""> General</a>
 					</li>
 				</ul>
 			
