@@ -12,14 +12,14 @@ return [
 	|
 	*/
 
-	'submitting'       =>  'Submitting',
-	'loginSuccess'     =>  'Logged in successfully.Redirecting..',
-	'loginBlocked'     =>  '<strong>Access Denied !</strong> Your account is blocked',
-	'loginInvalid'     =>  'Wrong login details',
+	'submitting'       =>  'Enviando',
+	'loginSuccess'     =>  'Ingreso correcto. Redireccionando..',
+	'loginBlocked'     =>  '<strong>Acceso denegado !</strong> Tu cuenta esta bloqueada',
+	'loginInvalid'     =>  'Detalles de Login',
 
 	'noteLeaveTypes'   => 'Number of leaves of <strong>Half day</strong> are not added to total leaves',
 	'deleteNoteDepartment'   => '<strong>Note:</strong> This will delete all the employees associated with it',
-	'deleteNoteDesignation'   => '<strong>Note:</strong> Deleting/Empting a designation will delete all the employees associated with it'
+	'deleteNoteDesignation'   => '<strong>Nota:</strong> Borrado/Limpio un destino esta enlazado con el objetivo'
 
 
 ];

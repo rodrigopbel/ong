@@ -223,7 +223,7 @@
 
                                              <div id="insertBefore_edit"></div>
                                             <button type="button" id="plus_edit_Button" class="btn btn-sm green form-control-inline">
-                                                            More Designations <i class="fa fa-plus"></i>
+                                                            Agregar destinos<i class="fa fa-plus"></i>
                                             </button>
 
                                      </div>
@@ -235,7 +235,7 @@
                                     <div class="form-actions">
                                         <div class="row">
                                             <div class="col-md-offset-3 col-md-9">
-                                                <button type="submit" data-loading-text="Updating..." class="demo-loading-btn btn green"><i class="fa fa-edit"></i> Update</button>
+                                                <button type="submit" data-loading-text="Updating..." class="demo-loading-btn btn green"><i class="fa fa-edit"></i> Actualizar</button>
 
                                             </div>
                                         </div>
