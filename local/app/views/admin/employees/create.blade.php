@@ -238,31 +238,31 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Departamento</label>
         										<div class="col-md-9">
-        											<input type="text" class="form-control" name="accountName" placeholder="Account Holder Name" value="{{Input::old('accountName')}}">
+        											<input type="text" class="form-control" name="accountName" placeholder="Departamento" value="{{Input::old('accountName')}}">
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Provincia</label>
         										<div class="col-md-9">
-        											<input type="text" class="form-control" name="accountNumber" placeholder="Account Number" value="{{Input::old('accountNumber')}}">
+        											<input type="text" class="form-control" name="accountNumber" placeholder="Provincia" value="{{Input::old('accountNumber')}}">
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Localidad</label>
         										<div class="col-md-9">
-        											<input type="text" class="form-control" name="bank" placeholder="BANK Name" value="{{Input::old('bank')}}">
+        											<input type="text" class="form-control" name="bank" placeholder="Localidad" value="{{Input::old('bank')}}">
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Seccion</label>
         										<div class="col-md-9">
-        											<input type="text" class="form-control" name="ifsc" placeholder="IFSC Code" value="{{Input::old('ifsc')}}">
+        											<input type="text" class="form-control" name="ifsc" placeholder="Seccion" value="{{Input::old('ifsc')}}">
         										</div>
         									</div>
         									<div class="form-group">
                                                 <label class="col-md-3 control-label">Zona</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" class="form-control" name="pan" placeholder="PAN Number" value="{{Input::old('pan')}}">
+                                                    <input type="text" class="form-control" name="pan" placeholder="Zona" value="{{Input::old('pan')}}">
                                                 </div>
                                             </div>
         								</div>
