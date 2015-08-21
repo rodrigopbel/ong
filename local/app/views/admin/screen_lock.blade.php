@@ -8,7 +8,7 @@
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>Screen Lock</title>
+<title>Administrador Bloqueado</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -46,7 +46,7 @@
 			<span class="email">
 			{{ $loggedAdmin->email}} </span>
 			<span class="locked">
-			Locked </span>
+			Bloqueado </span>
 			<div id='alert'></div>
 			{{ Form::open(array('url' => '','class' =>'form-inline')) }}
 
@@ -61,7 +61,7 @@
 				<!-- /input-group -->
 				<div class="relogin">
 					<a href="{{ URL::to('admin/logout')}}">
-					Not {{ $loggedAdmin->name}} ? </a>
+					No eres {{ $loggedAdmin->name}} ? </a>
 				</div>
 				
 			{{ Form::close()}}
@@ -121,7 +121,7 @@ jQuery(document).ready(function() {
 <script>
 function login(){    
 
-    $('#alert').html('<div class="alert alert-info">Submitting..</div>'); 
+    $('#alert').html('<div class="alert alert-info">Enviando..</div>');
     $("#submitbutton").prop('disabled', true);
  
        $.ajax({
