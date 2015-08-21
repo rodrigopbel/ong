@@ -47,8 +47,8 @@
 							<div class="col-md-6 form-group text-right">
 
 							<span id="load_notification"></span>
-								 <input  type="checkbox"  onchange="ToggleEmailNotification('employee_add');return false;" class="make-switch" name="employee_add" @if($setting->employee_add==1)checked	@endif data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">
-								<strong>Noticaciones de Email</strong><br>
+								 <input  type="checkbox"  onchange="ToggleEmailNotification('employee_add');return false;" class="make-switch" name="employee_add" @if($setting->employee_add==1)checked	@endif data-on-color="success" data-on-text="Si" data-off-text="No" data-off-color="danger">
+								<strong>Notificaciones de Email</strong><br>
 
 
 							</div>
