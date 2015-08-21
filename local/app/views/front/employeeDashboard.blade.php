@@ -86,7 +86,7 @@
 
                                             <div class="panel panel-profile no-bg margin-top-20">
                                                 <div class="panel-heading overflow-h">
-                                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i>Destino de Ayuda</h2>
+                                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i>Destino de la Ayuda</h2>
                                                 </div>
                                                 <div class="panel-body panelHolder">
                                                     <table class="table table-light margin-bottom-0">
@@ -253,7 +253,7 @@
 
                                             <div class="panel panel-profile margin-top-20">
                                                 <div class="panel-heading overflow-h">
-                                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Donaciones</h2>
+                                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Donaciones Recibidas</h2>
                                                 </div>
                                                 <div id="scrollbar3" class="panel-body contentHolder">
 
@@ -277,24 +277,24 @@
                                     <hr>
 
                                     <!--Profile Blog-->
-                                    <div class="panel panel-profile">
-                                        <div class="panel-heading overflow-h">
-                                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-tasks"></i>Calendario</h2>
-                                        </div>
-                                        <div class="panel-body panelHolder">
+                                    {{--<div class="panel panel-profile">--}}
+                                        {{--<div class="panel-heading overflow-h">--}}
+                                            {{--<h2 class="panel-title heading-sm pull-left"><i class="fa fa-tasks"></i>Calendario</h2>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="panel-body panelHolder">--}}
 
-												 <div class="alert-blocks alert-blocks-info">
-													   <div class="overflow-h">
-														   <strong class="color-dark">ULtima entrada <small class="pull-right"><em>{{$employee->lastAbsent($employee->employeeID,'date')}}</em></small></strong>
-															<small class="award-name">{{$employee->lastAbsent($employee->employeeID)}}</small>
-													   </div>
-												   </div>
+												 {{--<div class="alert-blocks alert-blocks-info">--}}
+													   {{--<div class="overflow-h">--}}
+														   {{--<strong class="color-dark">ULtima entrada <small class="pull-right"><em>{{$employee->lastAbsent($employee->employeeID,'date')}}</em></small></strong>--}}
+															{{--<small class="award-name">{{$employee->lastAbsent($employee->employeeID)}}</small>--}}
+													   {{--</div>--}}
+												   {{--</div>--}}
 
 
-                                            <div id='calendar'></div>
+                                            {{--<div id='calendar'></div>--}}
 
-                                        </div>
-                                    </div><!--/end row-->
+                                        {{--</div>--}}
+                                    {{--</div><!--/end row-->--}}
                                     <!--End Profile Blog-->
 
                                 </div>

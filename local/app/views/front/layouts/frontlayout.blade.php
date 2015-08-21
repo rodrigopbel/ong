@@ -139,20 +139,20 @@
             									{{--</div>--}}
             								</div>
             								<div class="col-md-4 col-sm-4 col-xs-6" data-toggle="tooltip" data-placement="bottom" title="Leaves">
-            									{{--<div class="uppercase profile-stat-title">--}}
-            										{{--{{$leaveLeft}}--}}
-            									{{--</div>--}}
-            									{{--<div class="uppercase profile-stat-text">--}}
-            										 {{--Leave--}}
-            									{{--</div>--}}
-            								</div>
+                                                <div class="uppercase profile-stat-title">
+                                                    {{count($employee->getAwards)}}
+                                                </div>
+                                                <div class="uppercase profile-stat-text">
+                                                    Donaciones
+                                                </div>
+                                            </div>
             								<div class="col-md-4 col-sm-4 col-xs-6" data-toggle="tooltip" data-placement="bottom" title="Total Award Won">
-            									<div class="uppercase profile-stat-title">
-            										{{count($employee->getAwards)}}
-            									</div>
-            									<div class="uppercase profile-stat-text">
-            										 Donaciones
-            									</div>
+                                                {{--<div class="uppercase profile-stat-title">--}}
+                                                {{--{{$leaveLeft}}--}}
+                                                {{--</div>--}}
+                                                {{--<div class="uppercase profile-stat-text">--}}
+                                                {{--Leave--}}
+                                                {{--</div>--}}
             								</div>
             							</div>
             							<!-- END STAT -->
