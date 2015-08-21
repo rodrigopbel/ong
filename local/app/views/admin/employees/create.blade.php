@@ -228,7 +228,7 @@
         					<div class="portlet box red-sunglo">
         						<div class="portlet-title">
         							<div class="caption">
-        								<i class="fa fa-calendar"></i>Bank Account Details
+        								<i class="fa fa-calendar"></i>Zonificacion
         							</div>
 
         						</div>
@@ -236,41 +236,35 @@
 
         								<div class="form-body">
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Account Holder Name</label>
+        										<label class="col-md-3 control-label">Departamento</label>
         										<div class="col-md-9">
         											<input type="text" class="form-control" name="accountName" placeholder="Account Holder Name" value="{{Input::old('accountName')}}">
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Account Number</label>
+        										<label class="col-md-3 control-label">Provincia</label>
         										<div class="col-md-9">
         											<input type="text" class="form-control" name="accountNumber" placeholder="Account Number" value="{{Input::old('accountNumber')}}">
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Bank Name</label>
+        										<label class="col-md-3 control-label">Localidad</label>
         										<div class="col-md-9">
         											<input type="text" class="form-control" name="bank" placeholder="BANK Name" value="{{Input::old('bank')}}">
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">IFSC Code</label>
+        										<label class="col-md-3 control-label">Seccion</label>
         										<div class="col-md-9">
         											<input type="text" class="form-control" name="ifsc" placeholder="IFSC Code" value="{{Input::old('ifsc')}}">
         										</div>
         									</div>
         									<div class="form-group">
-                                                <label class="col-md-3 control-label">PAN Number </label>
+                                                <label class="col-md-3 control-label">Zona</label>
                                                 <div class="col-md-9">
                                                     <input type="text" class="form-control" name="pan" placeholder="PAN Number" value="{{Input::old('pan')}}">
                                                 </div>
                                             </div>
-        									<div class="form-group">
-        										<label class="col-md-3 control-label">Branch</label>
-        										<div class="col-md-9">
-        											 <input type="text" class="form-control" name="branch" placeholder="BRANCH" value="{{Input::old('branch')}}">
-        										</div>
-        									</div>
         								</div>
 
         						</div>
