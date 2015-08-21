@@ -124,9 +124,9 @@
                                     </td>
                                     <td>
                                     @if($employee->status=='active')
-                                        <span class="label label-sm label-success"> {{ $employee->status }} </span>
+                                        <span class="label label-sm label-success"> Activo </span>
                                     @else
-                                        <span class="label label-sm label-danger"> {{ $employee->status }} </span>
+                                        <span class="label label-sm label-danger"> Inactivo </span>
                                      @endif
                                     </td>
                                     <td class="">
