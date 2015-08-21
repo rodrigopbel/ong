@@ -14,21 +14,21 @@
 
         			<!-- BEGIN PAGE HEADER-->
         			<h3 class="page-title">
-        			<span class="fa fa-plus"></span>    New Employee
+        			<span class="fa fa-plus"></span>    Nuevo Beneficiario
         			</h3>
         			<div class="page-bar">
         				<ul class="page-breadcrumb">
         					<li>
         						<i class="fa fa-home"></i>
-        						<a href="index.html">Home</a>
+        						<a href="index.html">Inicio</a>
         						<i class="fa fa-angle-right"></i>
         					</li>
         					<li>
-        						<a href="{{route('admin.employees.index')}}">Employees</a>
+        						<a href="{{route('admin.employees.index')}}">Beneficiarios</a>
         						<i class="fa fa-angle-right"></i>
         					</li>
         					<li>
-                                <a href="#">New Employee</a>
+                                <a href="#">Nuevo</a>
                             </li>
         				</ul>
         			</div>
@@ -48,7 +48,7 @@
 
 							<span id="load_notification"></span>
 								 <input  type="checkbox"  onchange="ToggleEmailNotification('employee_add');return false;" class="make-switch" name="employee_add" @if($setting->employee_add==1)checked	@endif data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">
-								<strong>Email Notification</strong><br>
+								<strong>Noticaciones de Email</strong><br>
 
 
 							</div>
@@ -66,7 +66,7 @@
         					<div class="portlet box purple-wisteria">
         						<div class="portlet-title">
         							<div class="caption">
-        								<i class="fa fa-calendar"></i>Personal Details
+        								<i class="fa fa-calendar"></i>Datos Generales
         							</div>
 
         						</div>
@@ -74,7 +74,7 @@
 
         								<div class="form-body">
                         <div class="form-group ">
-        										<label class="control-label col-md-3">Photo</label>
+        										<label class="control-label col-md-3">Foto</label>
         										<div class="col-md-9">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
@@ -86,36 +86,36 @@
         												<div>
         													<span class="btn default btn-file">
         													<span class="fileinput-new">
-        													Select image </span>
+        													Seleccionar Imagen </span>
         													<span class="fileinput-exists">
-        													Change </span>
+        													Cambiar </span>
         													 <input type="file" name="profileImage">
         													</span>
         													<a href="#" class="btn red fileinput-exists" data-dismiss="fileinput">
-        													Remove </a>
+        													Eliminar </a>
         												</div>
         											</div>
         											<div class="clearfix margin-top-10">
                                                         <span class="label label-danger">
-                                                        NOTE! </span> Image Size must be (872px by 724px)
+                                                        NOTA! </span> Tamano de Imagen (872px x 724px)
 
                                                     </div>
         											</div>
         										</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Name <span class="required">* </span></label>
+        										<label class="col-md-3 control-label">Nombres <span class="required">* </span></label>
         										<div class="col-md-9">
-        											<input type="text" class="form-control" name="fullName" placeholder="Employee Name" value="{{ Input::old('fullName') }}">
+        											<input type="text" class="form-control" name="fullName" placeholder="Nombres del Beneficiario" value="{{ Input::old('fullName') }}">
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Father's Name</label>
+        										<label class="col-md-3 control-label">Apellidos</label>
         										<div class="col-md-9">
-        											 <input type="text" class="form-control" name="fatherName" placeholder="Father Name">
+        											 <input type="text" class="form-control" name="fatherName" placeholder="Apellidos del Beneficiario">
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="control-label col-md-3">Date of Birth</label>
+        										<label class="control-label col-md-3">Fecha de Nacimiento</label>
         										<div class="col-md-3">
         											<div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
         												<input type="text" class="form-control" name="date_of_birth" readonly value="{{ Input::old('date_of_birth') }}">
@@ -126,32 +126,32 @@
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Gender</label>
+        										<label class="col-md-3 control-label">Genero</label>
         										<div class="col-md-9">
-        											 {{ Form::select('gender', array('male' => 'Male', 'female' => 'Female'), Input::old('gender'),array('class'=>'form-control')) }}
+        											 {{ Form::select('gender', array('male' => 'Hombre', 'female' => 'Mujer'), Input::old('gender'),array('class'=>'form-control')) }}
         										</div>
         									</div>
 
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Phone</label>
+        										<label class="col-md-3 control-label">Telefono</label>
         										<div class="col-md-9">
-        											 <input type="text" class="form-control" name="mobileNumber" placeholder="Contact Number" value="{{Input::old('mobileNumber')}}">
+        											 <input type="text" class="form-control" name="mobileNumber" placeholder="Telefono" value="{{Input::old('mobileNumber')}}">
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Local Address</label>
+        										<label class="col-md-3 control-label">Direccion Actual</label>
         										<div class="col-md-9">
         											<textarea class="form-control" name="localAddress" rows="3">{{Input::old('localAddress')}}</textarea>
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Permanent Address</label>
+        										<label class="col-md-3 control-label">Direccion Permanente</label>
         										<div class="col-md-9">
         											<textarea class="form-control" name="permanentAddress" rows="3">{{Input::old('permanentAddress')}}</textarea>
         										</div>
         									</div>
 
-								<h4><strong>Account Login</strong></h4>
+								<h4><strong>Cuenta de Beneficiario</strong></h4>
         									<div class="form-group">
                                                     <label class="col-md-3 control-label">Email<span class="required">* </span></label>
                                                     <div class="col-md-9">
@@ -159,7 +159,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-md-3 control-label">Password<span class="required">* </span></label>
+                                                    <label class="col-md-3 control-label">Contrasena<span class="required">* </span></label>
                                                     <div class="col-md-9">
                                                         <input type="hidden" name="oldpassword">
                                                         <input type="text" name="password" class="form-control" value="{{ Input::old('password') }}">
@@ -175,7 +175,7 @@
         					<div class="portlet box red-sunglo">
         						<div class="portlet-title">
         							<div class="caption">
-        								<i class="fa fa-calendar"></i>Company Details
+        								<i class="fa fa-calendar"></i> Objetivo de la Ayuda
         							</div>
 
         						</div>
@@ -183,19 +183,19 @@
 
         								<div class="form-body">
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Employee ID<span class="required">* </span></label>
+        										<label class="col-md-3 control-label">Caso #<span class="required">* </span></label>
         										<div class="col-md-9">
-        											<input type="text" class="form-control" name="employeeID" placeholder="Employee ID" value="{{Input::old('employeeID')}}">
+        											<input type="text" class="form-control" name="employeeID" placeholder="Caso #" value="{{Input::old('employeeID')}}">
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Department</label>
+        										<label class="col-md-3 control-label">Destino</label>
         										<div class="col-md-9">
         											  {{ Form::select('department', $department,null,['class' => 'form-control select2me','id'=>'department','onchange'=>'dept();return false;']) }}
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Designation</label>
+        										<label class="col-md-3 control-label">Objetivo</label>
         										<div class="col-md-9">
 
         											 <select  class="select2me form-control" name="designation" id="designation" >
@@ -204,7 +204,7 @@
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="control-label col-md-3">Date of Joining</label>
+        										<label class="control-label col-md-3">Fecha de Solicitud</label>
         										<div class="col-md-3">
         											<div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
         												<input type="text" class="form-control" name="joiningDate" readonly value="{{Input::old('joiningDate')}}">
@@ -215,7 +215,7 @@
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Joining Salary</label>
+        										<label class="col-md-3 control-label">Monto Requerido</label>
         										<div class="col-md-9">
         											<input type="text" class="form-control" name="currentSalary" placeholder="Current Salary" value="{{ Input::old('currentSalary') }}">
         										</div>
@@ -284,7 +284,7 @@
         					<div class="portlet box purple-wisteria">
         						<div class="portlet-title">
         							<div class="caption">
-        								<i class="fa fa-calendar"></i>Documents
+        								<i class="fa fa-calendar"></i>Documentos
         							</div>
 
         						</div>
@@ -292,7 +292,7 @@
 
         								<div class="form-body">
         									<div class="form-group">
-        										<label class="control-label col-md-2">Resume</label>
+        										<label class="control-label col-md-2">Perfil</label>
         										<div class="col-md-5">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="input-group input-large">
@@ -315,7 +315,7 @@
 
         									</div>
         									<div class="form-group">
-        										<label class="control-label col-md-2">Offer Letter</label>
+        										<label class="control-label col-md-2">Carta de Solicitud</label>
         										<div class="col-md-5">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="input-group input-large">
@@ -338,7 +338,7 @@
 
         									</div>
         									<div class="form-group">
-        										<label class="control-label col-md-2">Joining Letter</label>
+        										<label class="control-label col-md-2">Certificado de Nacimiento</label>
         										<div class="col-md-5">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="input-group input-large">
@@ -361,7 +361,7 @@
 
         									</div>
         									<div class="form-group">
-        										<label class="control-label col-md-2">Contract and Agreement</label>
+        										<label class="control-label col-md-2">Otros</label>
         										<div class="col-md-5">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="input-group input-large">
@@ -384,7 +384,7 @@
 
         									</div>
         									<div class="form-group">
-        										<label class="control-label col-md-2">ID Proof</label>
+        										<label class="control-label col-md-2">Carnet de Identidad</label>
         										<div class="col-md-5">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="input-group input-large">
@@ -420,7 +420,7 @@
                                 <div class="row">
                                     <div class="col-md-offset-3 col-md-9">
                                       <button type="submit" data-loading-text="Submitting..." class="demo-loading-btn btn green">
-														<i class="fa fa-plus"></i>	Submit </button>
+														<i class="fa fa-plus"></i>	Guardar </button>
 
                                     </div>
                                 </div>
