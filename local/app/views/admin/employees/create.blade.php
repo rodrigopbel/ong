@@ -100,8 +100,8 @@
                                                         NOTA! </span> Tamano de Imagen (872px x 724px)
 
                                                     </div>
-        											</div>
         										</div>
+                                            </div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Nombres <span class="required">* </span></label>
         										<div class="col-md-9">

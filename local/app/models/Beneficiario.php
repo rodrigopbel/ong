@@ -18,20 +18,20 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 
 		$rules = [
 		'create' => [
-			'employeeID'    =>  'required|unique:employees,employeeID|alpha_dash',
-			'fullName'      =>  $fullNameValidation,
-			'email'         =>  'required|email|unique:employees',
-			'password'      =>  'required',
-			'profileImage'  =>  $ProfileImageValidation,
-			'resume'        =>  'max:1000',
-			'offerLetter'   =>  'max:1000',
-			'joiningLetter' =>  'max:1000',
-			'contract'      =>  'max:1000',
-			'IDProof'       =>  'max:1000',
+			'beneficiarioID'         =>  'required|unique:beneficiario,beneficiarioID|alpha_dash',
+			'nombres'                =>  $fullNameValidation,
+			'apellidos'              =>  $fullNameValidation,
+			'email'                  =>  'required|email|unique:beneficiario',
+			'password'               =>  'required',
+            'genero'                 => 'genero',
+            'telefono'               => 'telefono',
+            'direccion'        => 'direccion',
+            'direccionperm'        => 'direccionperm',
+			'foto'  =>  $ProfileImageValidation
 		],
 
 		'update'=>[
-			'employeeID'   =>   "required|unique:employees,employeeID,:id"
+			'beneficiarioID'   =>   "required|unique:beneficiario,beneficiarioID,:id"
 		],
 
 		'password' =>  [
@@ -45,7 +45,7 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 		],
 
 		'personalInfo'=>[
-			'fullName'      =>   $fullNameValidation,
+			'nombres'      =>   $fullNameValidation,
 			'email'         =>   "required|email|unique:employees,email,:id",
 			'profileImage'  =>   $ProfileImageValidation,
 		],
