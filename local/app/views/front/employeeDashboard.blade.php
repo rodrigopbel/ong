@@ -11,14 +11,14 @@
                                         <div class="col-sm-6">
                                             <div class="panel panel-profile no-bg">
                                                 <div class="panel-heading overflow-h">
-                                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Personal Details</h2>
+                                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Beneficiario</h2>
                                                 </div>
                                                 <div class="panel-body panelHolder">
                                                     <table class="table table-light margin-bottom-0">
                 											<tbody>
                 											<tr>
                 												<td>
-                													<span class="primary-link">Name</span>
+                													<span class="primary-link">Nombre</span>
                 												</td>
                 												<td>
                 													 {{$employee->fullName}}
@@ -26,7 +26,7 @@
                 											</tr>
                 											<tr>
                 												<td>
-                													<span class="primary-link">Father's Name</span>
+                													<span class="primary-link">Apellido</span>
                 												</td>
                 												<td>
                 													{{$employee->fatherName}}
@@ -34,7 +34,7 @@
                 											</tr>
                 											<tr>
                 												<td>
-                													<span class="primary-link">DOB</span>
+                													<span class="primary-link">Fecha de Nacimiento</span>
                 												</td>
                 												<td>
                 													 {{ date('d-M-Y',strtotime($employee->date_of_birth))}}
@@ -42,7 +42,7 @@
                 											</tr>
                 											<tr>
                 												<td>
-                													<span class="primary-link">Gender</span>
+                													<span class="primary-link">Genero</span>
                 												</td>
                 												<td>
                 													{{ucfirst($employee->gender)}}
@@ -58,7 +58,7 @@
                 											</tr>
                 											<tr>
                 												<td>
-                													<span class="primary-link">Phone</span>
+                													<span class="primary-link">Telefono</span>
                 												</td>
                 												<td>
                 													 {{$employee->mobileNumber}}
@@ -66,14 +66,14 @@
                 											</tr>
                 											<tr>
                 												<td>
-                													<span class="primary-link">Local Address</span>
+                													<span class="primary-link">Direccion</span>
                 												</td>
                 												<td>
                 													{{$employee->localAddress}}
                 												</td>
                 											</tr>																															<tr>
                 												<td>
-                													<span class="primary-link">Permanent Address</span>
+                													<span class="primary-link">Direccion Permanente</span>
                 												</td>
                 												<td>
                 													{{$employee->permanentAddress}}
@@ -86,14 +86,14 @@
 
                                             <div class="panel panel-profile no-bg margin-top-20">
                                                 <div class="panel-heading overflow-h">
-                                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i>Company Details</h2>
+                                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i>Destino de Ayuda</h2>
                                                 </div>
                                                 <div class="panel-body panelHolder">
                                                     <table class="table table-light margin-bottom-0">
                 											<tbody>
                 											<tr>
                 												<td>
-                													<span class="primary-link">Employee ID</span>
+                													<span class="primary-link">Caso #</span>
                 												</td>
                 												<td>
                 													{{$employee->employeeID}}
@@ -101,7 +101,7 @@
                 											</tr>
                 											<tr>
                 												<td>
-                													<span class="primary-link">Department</span>
+                													<span class="primary-link">Destino</span>
                 												</td>
                 												<td>
                 													{{$employee->getDesignation->department->deptName}}
@@ -109,7 +109,7 @@
                 											</tr>
                 											<tr>
                 												<td>
-                													<span class="primary-link">Designation</span>
+                													<span class="primary-link">Objetivo</span>
                 												</td>
                 												<td>
                 													{{$employee->getDesignation->designation}}
@@ -117,7 +117,7 @@
                 											</tr>
                 											<tr>
                 												<td>
-                													<span class="primary-link">Date of Joining</span>
+                													<span class="primary-link">Fecha de Solicitud</span>
                 												</td>
                 												<td>
                 													 {{date('d-M-Y',strtotime($employee->joiningDate))}}
@@ -125,7 +125,7 @@
                 											</tr>
                 											<tr>
                 												<td>
-                													<span class="primary-link">Salary ( <i class="fa {{$setting->currency_icon}}"></i> )</span>
+                													<span class="primary-link">Monto Requerido ( <i class="fa {{$setting->currency_icon}}"></i> )</span>
                 												</td>
                 												<td>
 
@@ -143,14 +143,14 @@
 
                                             <div class="panel panel-profile no-bg margin-top-20">
                                                 <div class="panel-heading overflow-h">
-                                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Bank Details</h2>
+                                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Zonificacion</h2>
                                                 </div>
                                                 <div class="panel-body panelHolder">
                                                     <table class="table table-light margin-bottom-0">
                 											<tbody>
                 											<tr>
                 												<td>
-                													<span class="primary-link">Account Holder Name</span>
+                													<span class="primary-link">Departamento</span>
                 												</td>
                 												<td>
                 													 {{$employee->getBankDetail->accountName or ''}}
@@ -158,7 +158,7 @@
                 											</tr>
                 											<tr>
                 												<td>
-                													<span class="primary-link">Account Number</span>
+                													<span class="primary-link">Provincia</span>
                 												</td>
                 												<td>
                 													 {{$employee->getBankDetail->accountNumber or ''}}
@@ -166,7 +166,7 @@
                 											</tr>
                 											<tr>
                 												<td>
-                													<span class="primary-link">Bank Name</span>
+                													<span class="primary-link">Localidad</span>
                 												</td>
                 												<td>
                 													 {{$employee->getBankDetail->bank or ''}}
@@ -174,7 +174,7 @@
                 											</tr>
                 											<tr>
                                                                 <td>
-                                                                    <span class="primary-link">PAN Number</span>
+                                                                    <span class="primary-link">Seccion</span>
                                                                 </td>
                                                                 <td>
                                                                      {{$employee->getBankDetail->pan or ''}}
@@ -182,7 +182,7 @@
                                                             </tr>
                 											<tr>
                 												<td>
-                													<span class="primary-link">IFSC Code</span>
+                													<span class="primary-link">Zona</span>
                 												</td>
                 												<td>
                 													 {{$employee->getBankDetail->ifsc or ''}}
@@ -190,7 +190,7 @@
                 											</tr>
                 											<tr>
                 												<td>
-                													<span class="primary-link">Branch</span>
+                													<span class="primary-link">Canton</span>
                 												</td>
                 												<td>
                 													  {{$employee->getBankDetail->branch or ''}}
