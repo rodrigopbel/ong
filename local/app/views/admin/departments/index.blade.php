@@ -101,9 +101,9 @@
                                     </ol>
 								</td>
 								<td class=" ">
-                                	<a class="btn purple"  data-toggle="modal" href="#edit_static" onclick="showEdit('{{$department->id}},{{ $department->deptName }}')"><i class="fa fa-edit"></i> View/Edit</a>
+                                	<a class="btn purple"  data-toggle="modal" href="#edit_static" onclick="showEdit('{{$department->id}},{{ $department->deptName }}')"><i class="fa fa-edit"></i> Ver/Editar</a>
 
-              						<a class="btn red" href="javascript:" onclick="del('{{$department->id}},{{ $department->deptName }}')"><i class="fa fa-trash"></i> Delete</a>
+              						<a class="btn red" href="javascript:" onclick="del('{{$department->id}},{{ $department->deptName }}')"><i class="fa fa-trash"></i> Eliminar</a>
                                 </td>
 							</tr>
 				@endforeach
