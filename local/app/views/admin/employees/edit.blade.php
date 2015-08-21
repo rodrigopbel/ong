@@ -537,7 +537,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                <h4 class="modal-title"><strong>New Salary</strong></h4>
+                                <h4 class="modal-title"><strong>Nuevo Monto Requerido</strong></h4>
                             </div>
                             <div class="modal-body">
                                 <div class="portlet-body form">
@@ -550,12 +550,12 @@
 
                                         <div class="form-group">
                                              <div class="col-md-6">
-                                                <input class="form-control form-control-inline" name="type" type="text" value="" placeholder="Type"/>
+                                                <input class="form-control form-control-inline" name="type" type="text" value="" placeholder="Tipo"/>
                                              </div>
 										 </div>
 										 <div class="form-group">
                                             <div class="col-md-6">
-                                                <input class="form-control form-control-inline"  type="text" name="salary" placeholder="Salary"/>
+                                                <input class="form-control form-control-inline"  type="text" name="salary" placeholder="Monto"/>
                                             </div>
                                         </div>
                                     </div>
@@ -563,7 +563,7 @@
                                     <div class="form-actions">
                                         <div class="row">
                                             <div class="col-md-offset-3 col-md-9">
-                                                <button type="submit" data-loading-text="Updating..."  class="demo-loading-btn btn green"><i class="fa fa-check"></i> Submit</button>
+                                                <button type="submit" data-loading-text="Updating..."  class="demo-loading-btn btn green"><i class="fa fa-check"></i> Enviar</button>
 
                                             </div>
                                         </div>
