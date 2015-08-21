@@ -23,11 +23,11 @@
         						<i class="fa fa-angle-right"></i>
         					</li>
         					<li>
-        						<a href="{{route('admin.employees.index')}}">Employees</a>
+        						<a href="{{route('admin.employees.index')}}">Beneficiarios</a>
         						<i class="fa fa-angle-right"></i>
         					</li>
         					<li>
-                                <a href="">Edit Employee </a>
+                                <a href="">Editar </a>
 
                             </li>
         				</ul>
