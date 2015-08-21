@@ -207,7 +207,7 @@
                                         <div class="col-sm-6 md-margin-bottom-20">
                                             <div class="panel panel-profile no-bg">
                                                 <div class="panel-heading overflow-h">
-                                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-bullhorn"></i>Notice Board</h2>
+                                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-bullhorn"></i>Notificaiones</h2>
                                                 </div>
                                                 <div id="scrollbar2" class="panel-body contentHolder">
                                                 @if(count($noticeboards))
@@ -253,7 +253,7 @@
 
                                             <div class="panel panel-profile margin-top-20">
                                                 <div class="panel-heading overflow-h">
-                                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Awards</h2>
+                                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Donaciones</h2>
                                                 </div>
                                                 <div id="scrollbar3" class="panel-body contentHolder">
 
