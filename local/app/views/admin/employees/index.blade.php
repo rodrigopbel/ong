@@ -174,7 +174,7 @@
 	function del(id,name)
     		{
     			$('#deleteModal').appendTo("body").modal('show');
-    			$('#info').html('Are you sure ! You want to delete <strong>'+name+'</strong> ??');
+    			$('#info').html('Esta seguro de querer eliminar al Beneficiario : <strong>'+name+'</strong> ??');
     			$("#delete").click(function()
     			{
     					var url = "{{ route('admin.employees.destroy',':id') }}";
@@ -194,7 +194,7 @@
     		                 	 		$("html, body").animate({ scrollTop: 0 }, "slow");
     		                  	   		$('#deleteModal').modal('hide');
     		                 	  		$('#row'+id).closest('tr').remove();
-    		                 	  		$('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Successfully Deleted</p>");
+    		                 	  		$('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Eliminado correctamente</p>");
     		                  	 }
     		           		 });
     				})
