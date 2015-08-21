@@ -14,21 +14,21 @@
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			{{$pageTitle}} <small>Employee List</small>
+			{{$pageTitle}} <small>Lista de Beneficiarios</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
 					<li>
 						<i class="fa fa-home"></i>
-						<a href="{{route('admin.dashboard.index')}}">Home</a>
+						<a href="{{route('admin.dashboard.index')}}">Inicio</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="{{route('admin.employees.index')}}">Employees</a>
+						<a href="{{route('admin.employees.index')}}">Beneficiarios</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Employee List</a>
+						<a href="#">Lista</a>
 					</li>
 				</ul>
 
@@ -47,7 +47,7 @@
 
                     </div>
                    <a href="{{route('admin.employees.create')}}" class="btn green">
-                    Add New Employee <i class="fa fa-plus"></i>
+                    Nuevo <i class="fa fa-plus"></i>
                     </a>
 
                          <hr>
@@ -55,12 +55,12 @@
 
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-users"></i>Employees List
+								<i class="fa fa-users"></i>Beneficiarios
 							</div>
 							<div class="tools" style="  padding: 5px;">
 								<div class="btn-group pull-right">
                         						 <a  href="{{route('admin.employees.export') }}" class="btn yellow">
-											     <i class="fa fa-file-excel-o"></i>    Export
+											     <i class="fa fa-file-excel-o"></i>    Exportar
 												</a>
 								</div>
 							</div>
@@ -72,28 +72,28 @@
 							<thead>
 							<tr>
 								<th class="text-center">
-									 EmployeeID
+									 Nro Caso
 								</th>
 								<th class="text-center">
-                                     Image
+                                     Foto
                                 </th>
 								<th style="text-align: center">
-									 Name
+									 Beneficiario
 								</th>
 								<th class="text-center">
-                                	 Dept/Designation
+                                	 Objetivo
                                 </th>
 								<th class="text-center">
-                                	 At Work
+                                	 Antiguuedad
                                 </th>
 								<th class="text-center">
-									 Phone
+									 Telefono
 								</th>
 								<th class="text-center">
-									 Status
+									 Estado
 								</th>
 								<th class="text-center">
-									 Action
+									 Accion
 								</th>
 							</tr>
 							</thead>
@@ -110,11 +110,11 @@
 
                                     </td>
                                     <td>
-                                          {{ $employee->fullName }}
+                                          {{ $employee->fullName . " ". $employee->fatherName }}
                                     </td>
                                     <td>
-                                          <p>Department: <strong>{{ $employee->getDesignation->department->deptName or ''}}</strong></p>
-                                          <p>Designation: <strong>{{ $employee->getDesignation->designation or ''}}</strong></p>
+                                          <p>Objetivo: <strong>{{ $employee->getDesignation->department->deptName or ''}}</strong></p>
+                                          <p>Destino: <strong>{{ $employee->getDesignation->designation or ''}}</strong></p>
                                     </td>
                                      <td class="text-center">
                                           {{ $employee->workDuration($employee->employeeID) }}
@@ -130,8 +130,8 @@
                                      @endif
                                     </td>
                                     <td class="">
-                                    <p> <a class="btn purple" href="{{ route('admin.employees.edit',$employee->employeeID)  }}"><i class="fa fa-edit"></i> View/Edit</a></p>
-                                    <p>    <a class="btn red" style="width: 105px;" href="javascript:;" onclick="del('{{$employee->employeeID}}','{{ $employee->fullName }}')"><i class="fa fa-trash"></i> Delete</a></p>
+                                    <p> <a class="btn purple" href="{{ route('admin.employees.edit',$employee->employeeID)  }}"><i class="fa fa-edit"></i> Editar</a></p>
+                                    <p>    <a class="btn red" style="width: 105px;" href="javascript:;" onclick="del('{{$employee->employeeID}}','{{ $employee->fullName }}')"><i class="fa fa-trash"></i> Eliminar</a></p>
                                     </td>
                                 </tr>
 							@endforeach
