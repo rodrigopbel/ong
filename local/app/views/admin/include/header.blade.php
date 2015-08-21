@@ -63,7 +63,7 @@
 
                 <li class="dropdown dropdown-user">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                    {{HTML::image("assets/admin/layout/img/avatar.jpg",'small image',array('class'=>'img-circle'))}}
+                    {{HTML::image("assets/admin/layout/img/avatar.png",'small image',array('class'=>'img-circle'))}}
 
                     <span class="username username-hide-on-mobile">
                   {{ $loggedAdmin->name }}</span>
