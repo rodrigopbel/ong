@@ -12,7 +12,6 @@ class Employee extends Eloquent implements UserInterface, RemindableInterface {
 	// Validation Rules
 	public static function rules($action,$id=false, $merge=[])
 	{
-
 		$fullNameValidation     = 'required';
 		$ProfileImageValidation = 'image|mimes:jpeg,jpg,png,bmp,gif,svg|max:4000';
 

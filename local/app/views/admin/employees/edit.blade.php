@@ -13,13 +13,13 @@
 
         			<!-- BEGIN PAGE HEADER-->
 <h3 class="page-title" xmlns="http://www.w3.org/1999/html">
-        			Employee Details
+        			Detalles del Beneficiario
         			</h3>
         			<div class="page-bar">
         				<ul class="page-breadcrumb">
         					<li>
         						<i class="fa fa-home"></i>
-        						<a href="index.html">Home</a>
+        						<a href="index.html">Dashboard</a>
         						<i class="fa fa-angle-right"></i>
         					</li>
         					<li>
@@ -40,12 +40,12 @@
         					<div class="portlet box purple-wisteria">
         						<div class="portlet-title">
         							<div class="caption">
-        								<i class="fa fa-calendar"></i>Personal Details
+        								<i class="fa fa-calendar"></i>Detalles de Persona
         							</div>
         							<div class="actions">
 
-        								<a href="javascript:;"  onclick="$('#personal_details_form').submit();" data-loading-text="Updating..."  class="demo-loading-btn btn btn-sm btn-default ">
-        								<i class="fa fa-save" ></i> Save </a>
+        								<a href="javascript:;"  onclick="$('#personal_details_form').submit();" data-loading-text="Guardando..."  class="demo-loading-btn btn btn-sm btn-default ">
+        								<i class="fa fa-save" ></i> Guardar </a>
         							</div>
         						</div>
 
@@ -78,7 +78,7 @@
 
         								<div class="form-body">
                             <div class="form-group ">
-        										<label class="control-label col-md-3">Photo</label>
+        										<label class="control-label col-md-3">Foto</label>
         										<div class="col-md-9">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
@@ -90,37 +90,37 @@
         												<div>
         													<span class="btn default btn-file">
         													<span class="fileinput-new">
-        													Select image </span>
+        													Sellecionar imagen </span>
         													<span class="fileinput-exists">
-        													Change </span>
+        													Cambiar </span>
         													<input type="file" name="profileImage">
         													</span>
         													<a href="#" class="btn red fileinput-exists" data-dismiss="fileinput">
-        													Remove </a>
+        													Eliminar a>
         												</div>
         											</div>
 
         											<div class="clearfix margin-top-10">
                                                             <span class="label label-danger">
-                                                            NOTE! </span> Image Size must be (872px by 724px)
+                                                            NOTA! </span> Tamano de imagen (872px x 724px)
 
                                                         </div>
         											</div>
         										</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Name<span class="required">* </span></label>
+        										<label class="col-md-3 control-label">Nombres<span class="required">* </span></label>
         										<div class="col-md-9">
         											<input type="text" name="fullName" class="form-control" value="{{$employee->fullName}}">
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Father's Name</label>
+        										<label class="col-md-3 control-label">Apellidos</label>
         										<div class="col-md-9">
         											<input type="text" name="fatherName" class="form-control" value="{{$employee->fatherName}}">
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="control-label col-md-3">Date of Birth</label>
+        										<label class="control-label col-md-3">Fecha de Nacimiento</label>
         										<div class="col-md-3">
         											<div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
         												<input type="text" class="form-control" name="date_of_birth" readonly value="@if(empty($employee->date_of_birth))@else{{date('d-m-Y',strtotime($employee->date_of_birth))}}@endif" >
@@ -131,30 +131,30 @@
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Gender</label>
+        										<label class="col-md-3 control-label">Genero</label>
         										<div class="col-md-9">
         											<select class="form-control" name="gender">
 
-        												<option value="male" @if($employee->gender=='male') selected @endif>Male</option>
-        												<option value="female"  @if($employee->gender=='female') selected @endif>Female</option>
+        												<option value="male" @if($employee->gender=='male') selected @endif>Varon</option>
+        												<option value="female"  @if($employee->gender=='female') selected @endif>Mujer</option>
         											</select>
         										</div>
         									</div>
 
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Phone</label>
+        										<label class="col-md-3 control-label">Telefono</label>
         										<div class="col-md-9">
         											<input type="text" name="mobileNumber" class="form-control" value="{{$employee->mobileNumber}}">
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Address</label>
+        										<label class="col-md-3 control-label">Direccion Actual</label>
         										<div class="col-md-9">
         											<textarea name="localAddress" class="form-control" rows="3">{{$employee->localAddress}}</textarea>
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Permanent Address</label>
+        										<label class="col-md-3 control-label">Direccion Permanente</label>
         										<div class="col-md-9">
         											<textarea name="permanentAddress" class="form-control" rows="3">{{$employee->permanentAddress}}</textarea>
         										</div>
@@ -182,11 +182,11 @@
         					<div class="portlet box red-sunglo">
         						<div class="portlet-title">
         							<div class="caption">
-        								<i class="fa fa-calendar"></i>Company Details
+        								<i class="fa fa-calendar"></i>Objetivo de la Ayuda
         							</div>
         							<div class="actions">
         								<a href="javascript:;" onclick="UpdateDetails('{{$employee->employeeID}}','company');return false" data-loading-text="Updating..." class="demo-loading-btn-ajax btn btn-sm btn-default ">
-        								<i class="fa fa-save"></i> Save </a>
+        								<i class="fa fa-save"></i> Guardar </a>
         							</div>
         						</div>
         						<div class="portlet-body">
@@ -202,19 +202,19 @@
 
         								<div class="form-body">
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Employee ID<span class="required">* </span></label>
+        										<label class="col-md-3 control-label">Caso #<span class="required">* </span></label>
         										<div class="col-md-9">
         											<input type="text" name="employeeID" class="form-control" readonly value="{{$employee->employeeID}}">
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Department<span class="required">* </span></label>
+        										<label class="col-md-3 control-label">Destino<span class="required">* </span></label>
         										<div class="col-md-9">
         											 {{ Form::select('department', $department,$designation->deptID,['class' => 'form-control select2me','id'=>'department','onchange'=>'dept();return false;']) }}
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Designation<span class="required">* </span></label>
+        										<label class="col-md-3 control-label">Objetivo<span class="required">* </span></label>
         										<div class="col-md-9">
 
         											 <select  class="select2me form-control" name="designation" id="designation" >
@@ -223,7 +223,7 @@
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="control-label col-md-3">Date of Joining</label>
+        										<label class="control-label col-md-3">Fecha de Solicitud</label>
         										<div class="col-md-3">
         											<div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
         												<input type="text" class="form-control" name="joiningDate" readonly value="@if(empty($employee->joiningDate))00-00-0000 @else {{date('d-m-Y',strtotime($employee->joiningDate))}} @endif">
@@ -234,7 +234,7 @@
         										</div>
         									</div>
         									<div class="form-group">
-                                                    <label class="control-label col-md-3">Exit Date</label>
+                                                    <label class="control-label col-md-3">Fecha de Salida</label>
                                                     <div class="col-md-3">
                                                         <div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
                                                             <input type="text" class="form-control" name="exit_date" readonly value="@if(empty($employee->exit_date)) @else {{date('d-m-Y',strtotime($employee->exit_date))}} @endif">
@@ -245,17 +245,17 @@
                                                     </div>
                                                 </div>
                                                 	<div class="form-group">
-														<label class="control-label col-md-3">Status</label>
+														<label class="control-label col-md-3">Estado</label>
 														<div class="col-md-3">
 															   <input  type="checkbox" value="active" onchange="remove_exit();" class="make-switch" name="status" @if($employee->status=='active')checked	@endif data-on-color="success" data-on-text="Active" data-off-text="Inactive" data-off-color="danger">
 														</div>
 														<div class="col-md-6">
-														  (<strong>Note:</strong>Status active will remove the exit date)
+														  (<strong>Nota:</strong>Estado activo cuando)
 														</div>
 													</div>
 
         									<hr>
-        									<h4><strong>Salary  ( <i class="fa {{$setting->currency_icon}}"></i> )</strong></h4>
+        									<h4><strong>monto Requerido  ( <i class="fa {{$setting->currency_icon}}"></i> )</strong></h4>
 
                                          @foreach($employee->getSalary as $salary)
                                          <div id="salary{{$salary->id}}">
@@ -276,7 +276,7 @@
                                                 </div>
                                          @endforeach
                                  <a class="" data-toggle="modal" href="#static">
-                                         Add Salary
+                                         Agregar Otro Monto Requerido
                                                 <i class="fa fa-plus"></i> </a>
         								</div>
         							{{Form::close()}}
@@ -290,11 +290,11 @@
         					<div class="portlet box red-sunglo">
         						<div class="portlet-title">
         							<div class="caption">
-        								<i class="fa fa-calendar"></i>Bank Account Details
+        								<i class="fa fa-calendar"></i>Zonificacion de Beneficiario
         							</div>
         							<div class="actions">
         								<a href="javascript:;" onclick="UpdateDetails('{{$employee->employeeID}}','bank');return false" data-loading-text="Updating..."  class="demo-loading-btn-ajax btn btn-sm btn-default ">
-        								<i class="fa fa-save"></i> Save </a>
+        								<i class="fa fa-save"></i> Guardar </a>
         							</div>
         						</div>
         						<div class="portlet-body">
@@ -306,39 +306,39 @@
         							<div id="alert_bank"></div>
         								<div class="form-body">
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Account Holder Name</label>
+        										<label class="col-md-3 control-label">Departamento</label>
         										<div class="col-md-9">
         											<input type="text" name="accountName" class="form-control" value="{{$bank_details->accountName or ''}}">
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Account Number</label>
+        										<label class="col-md-3 control-label">Provincia</label>
         										<div class="col-md-9">
         											<input type="text" name="accountNumber" class="form-control" value="{{$bank_details->accountNumber or ''}}">
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Bank Name</label>
+        										<label class="col-md-3 control-label">Localidad</label>
         										<div class="col-md-9">
         											<input type="text" name="bank" class="form-control" value="{{$bank_details->bank or ''}}">
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">IFSC Code</label>
+        										<label class="col-md-3 control-label">Seccion</label>
         										<div class="col-md-9">
         											<input type="text" name="ifsc" class="form-control" value="{{$bank_details->ifsc or ''}}">
         										</div>
         									</div>
 
        									    <div class="form-group">
-        										<label class="col-md-3 control-label">PAN Number</label>
+        										<label class="col-md-3 control-label">Zona</label>
         										<div class="col-md-9">
         											<input type="text" name="pan" class="form-control" value="{{$bank_details->pan or ''}}">
         										</div>
         									</div>
 
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Branch</label>
+        										<label class="col-md-3 control-label">Canton</label>
         										<div class="col-md-9">
         											<input type="text" name="branch" class="form-control" value="{{$bank_details->branch or '' }}">
         										</div>
@@ -358,11 +358,11 @@
         					<div class="portlet box purple-wisteria">
         						<div class="portlet-title">
         							<div class="caption">
-        								<i class="fa fa-calendar"></i>Documents
+        								<i class="fa fa-calendar"></i>Documentos
         							</div>
         							<div class="actions">
         								<button onclick="$('#documents_details_form').submit();"  data-loading-text="Updating..."  class="demo-loading-btn btn btn-sm btn-default ">
-        								<i class="fa fa-save" ></i> Save </button>
+        								<i class="fa fa-save" ></i> Guardar </button>
         							</div>
         						</div>
         						<div class="portlet-body">
@@ -382,7 +382,7 @@
 
         								<div class="form-body">
         									<div class="form-group">
-        										<label class="control-label col-md-2">Resume</label>
+        										<label class="control-label col-md-2">Perfil</label>
         										<div class="col-md-5">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="input-group input-large">
@@ -392,13 +392,13 @@
         													</div>
         													<span class="input-group-addon btn default btn-file">
         													<span class="fileinput-new">
-        													Select file </span>
+        													Seleccionar archivo</span>
         													<span class="fileinput-exists">
-        													Change </span>
+        													Cambiar </span>
         													<input type="file" name="resume">
         													</span>
         													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Remove </a>
+        													Eliminar </a>
         												</div>
         											</div>
         										</div>
@@ -409,7 +409,7 @@
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="control-label col-md-2">Offer Letter</label>
+        										<label class="control-label col-md-2">Carta de Solicitud</label>
         										<div class="col-md-5">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="input-group input-large">
@@ -419,13 +419,13 @@
         													</div>
         													<span class="input-group-addon btn default btn-file">
         													<span class="fileinput-new">
-        													Select file </span>
+        													Seleccionar archivo </span>
         													<span class="fileinput-exists">
-        													Change </span>
+        													Cambiar </span>
         													<input type="file" name="offerLetter">
         													</span>
         													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Remove </a>
+                                                                Eliminar </a>
         												</div>
         											</div>
         										</div>
@@ -436,7 +436,7 @@
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="control-label col-md-2">Joining Letter</label>
+        										<label class="control-label col-md-2">Certificado de Nacimiento</label>
         										<div class="col-md-5">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="input-group input-large">
@@ -446,13 +446,12 @@
         													</div>
         													<span class="input-group-addon btn default btn-file">
         													<span class="fileinput-new">
-        													Select file </span>
+        													Seleccionar archivo </span>
         													<span class="fileinput-exists">
-        													Change </span>
+        													Cambiar </span>
         													<input type="file" name="joiningLetter">
         													</span>
-        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Remove </a>
+        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Eliminar </a>
         												</div>
         											</div>
         										</div>
@@ -463,7 +462,7 @@
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="control-label col-md-2">Contract and Agreement</label>
+        										<label class="control-label col-md-2">Croquis</label>
         										<div class="col-md-5">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="input-group input-large">
@@ -473,13 +472,13 @@
         													</div>
         													<span class="input-group-addon btn default btn-file">
         													<span class="fileinput-new">
-        													Select file </span>
+        													Seleccionar archivo </span>
         													<span class="fileinput-exists">
-        													Change </span>
+        													Cambiar </span>
         													<input type="file" name="contract">
         													</span>
         													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Remove </a>
+                                                            Eliminar </a>
         												</div>
         											</div>
         										</div>
@@ -490,7 +489,7 @@
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="control-label col-md-2">ID Proof</label>
+        										<label class="control-label col-md-2">Carnet de Identidad</label>
         										<div class="col-md-5">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="input-group input-large">
@@ -500,13 +499,13 @@
         													</div>
         													<span class="input-group-addon btn default btn-file">
         													<span class="fileinput-new">
-        													Select file </span>
+        													Seleccionar archivo </span>
         													<span class="fileinput-exists">
-        													Change </span>
+        													Cambiar </span>
         													<input type="file" name="IDProof">
         													</span>
         													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Remove </a>
+        													Eliminar </a>
         												</div>
         											</div>
         										</div>

@@ -33,7 +33,6 @@ Route::group(array('prefix' => 'admin'), function()
 
 	Route::get('/',['as'=>'admin.getlogin','uses'=>'AdminLoginController@index']);
 	Route::get('logout',['as'=>'admin.logout','uses'=> 'AdminLoginController@logout']);
-
     Route::post('login',['as'=>'admin.login','uses'=> 'AdminLoginController@ajaxAdminLogin']);
 
 });
