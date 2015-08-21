@@ -153,7 +153,7 @@
                                                 </p>
                                                 <div class="form-group">
                                                      <div class="col-md-6">
-                                                        <input class="form-control form-control-inline input-medium " name="designation[0]" type="text" value="" placeholder="Destino #1"/>
+                                                        <input class="form-control form-control-inline input-medium " name="destino[0]" type="text" value="" placeholder="Destino #1"/>
                                                      </div>
                                                     <div class="col-md-6">
 
@@ -269,7 +269,7 @@
                     var $i = 0;
                     $('#plusButton').click(function(){
                          $i = $i+1;
-                        $(' <div class="form-group"> <div class="col-md-12"><input class="form-control form-control-inline input-medium"  name="designation['+$i+']" type="text"  placeholder="Designation #'+($i+1)+'"/></div></div>').insertBefore($insertBefore);
+                        $(' <div class="form-group"> <div class="col-md-12"><input class="form-control form-control-inline input-medium"  name="designation['+$i+']" type="text"  placeholder="Destino #'+($i+1)+'"/></div></div>').insertBefore($insertBefore);
 
                     });
 //-----EDIT Modal
@@ -278,7 +278,7 @@
              var $j = 0;
             $('#plus_edit_Button').click(function(){
               $j = $j+1;
-              $(' <div class="form-group" id="edit_field"> <div class="col-md-12"><input class="form-control form-control-inline input-medium"  name="designation['+$j+']" type="text"  placeholder="Designation #'+($j+1)+'"/></div></div>').insertBefore($insertBefore_edit);
+              $(' <div class="form-group" id="edit_field"> <div class="col-md-12"><input class="form-control form-control-inline input-medium"  name="designation['+$j+']" type="text"  placeholder="Destino #'+($j+1)+'"/></div></div>').insertBefore($insertBefore_edit);
 
 
             });
