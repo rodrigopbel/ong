@@ -28,8 +28,7 @@
 					</li>
 					<li>
 						<a href="{{ route('admin.notificationSettings.edit',$admin->id) }}">Configuraciones</a>
-						<i class="fa fa-angle-right"></i>
-					</li>
+                    </li>
 					
 				</ul>
 			
