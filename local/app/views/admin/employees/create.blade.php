@@ -217,7 +217,7 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Monto Requerido</label>
         										<div class="col-md-9">
-        											<input type="text" class="form-control" name="currentSalary" placeholder="Current Salary" value="{{ Input::old('currentSalary') }}">
+        											<input type="text" class="form-control" name="currentSalary" placeholder="Monto Requerido" value="{{ Input::old('currentSalary') }}">
         										</div>
         									</div>
         								</div>
