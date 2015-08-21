@@ -58,7 +58,7 @@ class DepartmentsController extends \AdminBaseController {
 
         }
 
-		return Redirect::route('admin.departments.index')->with('success',"<strong>{$input['deptName']}</strong> successfully added to the Database");
+		return Redirect::route('admin.departments.index')->with('success',"<strong>{$input['deptName']}</strong> Agregado correctamente....");
 	}
 
 
@@ -120,7 +120,7 @@ class DepartmentsController extends \AdminBaseController {
 
         }
 
-		return Redirect::route('admin.departments.index')->with('success',"<strong>{$input['deptName']}</strong> updated successfully");;
+		return Redirect::route('admin.departments.index')->with('success',"<strong>{$input['deptName']}</strong>  Actualizado correctamente");;
 	}
 
 	/**
