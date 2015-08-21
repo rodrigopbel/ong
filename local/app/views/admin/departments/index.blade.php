@@ -287,7 +287,7 @@
 		{
 
 			$('#deleteModal').appendTo("body").modal('show');
-			$('#info').html('Are you sure ! You want to delete <strong>'+dept+'</strong> department?<br>' +
+			$('#info').html('Esta muy seguro de querer eliminar <strong>'+dept+'</strong> este objetivo?<br>' +
 			 '<br><div class="note note-warning">' +
 			  '{{Lang::get('messages.deleteNoteDepartment')}}'+
               '</div>');
@@ -309,7 +309,7 @@
                                 $("html, body").animate({ scrollTop: 0 }, "slow");
                                 $('#deleteModal').modal('hide');
                                 $('#row'+id).fadeOut(500);
-                                $('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Successfully Deleted</p>");
+                                $('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Eliminado Correctamente</p>");
                          }
                      });
 				})

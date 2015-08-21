@@ -18,7 +18,7 @@ return [
 	'loginInvalid'     =>  'Detalles de Login',
 
 	'noteLeaveTypes'   => 'Number of leaves of <strong>Half day</strong> are not added to total leaves',
-	'deleteNoteDepartment'   => '<strong>Note:</strong> This will delete all the employees associated with it',
+	'deleteNoteDepartment'   => '<strong>Nota:</strong> Esto eliminara todos los objetivos relacionados con ella',
 	'deleteNoteDesignation'   => '<strong>Nota:</strong> Borrado/Limpio un destino esta enlazado con el objetivo'
 
 
