@@ -53,7 +53,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-cog"></i>Detalle de Login {{$pageTitle}}
+								<i class="fa fa-cog"></i>Login {{$pageTitle}}
 							</div>
 							<div class="tools">
 							</div>
@@ -75,7 +75,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                        <label class="col-md-2 control-label">Login Email: <span class="required">
+                                        <label class="col-md-2 control-label"> Email: <span class="required">
                                             * </span>
                                             </label>
                                             <div class="col-md-6">
