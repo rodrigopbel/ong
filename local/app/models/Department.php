@@ -10,7 +10,7 @@ class Department extends \Eloquent {
 
 
 
-    protected $table="department";
+    protected $table="Objetivo";
 
 	// Don't forget to fill this array
 	protected $fillable = [];

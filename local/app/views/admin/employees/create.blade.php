@@ -302,13 +302,13 @@
         													</div>
         													<span class="input-group-addon btn default btn-file">
         													<span class="fileinput-new">
-        													Select file </span>
+        													Seleccionar Archivo </span>
         													<span class="fileinput-exists">
-        													Change </span>
+        													Cambiar </span>
         													<input type="file" name="resume">
         													</span>
         													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Remove </a>
+        													Eliminar </a>
         												</div>
         											</div>
         										</div>
@@ -325,13 +325,13 @@
         													</div>
         													<span class="input-group-addon btn default btn-file">
         													<span class="fileinput-new">
-        													Select file </span>
+        													Seleccionar Archivo </span>
         													<span class="fileinput-exists">
-        													Change </span>
+        													Cambiar </span>
         													<input type="file" name="offerLetter">
         													</span>
         													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Remove </a>
+        													Eliminar </a>
         												</div>
         											</div>
         										</div>
@@ -348,13 +348,13 @@
         													</div>
         													<span class="input-group-addon btn default btn-file">
         													<span class="fileinput-new">
-        													Select file </span>
+        													Seleccionar Archivo </span>
         													<span class="fileinput-exists">
-        													Change </span>
+        													Cambiar </span>
         													<input type="file" name="joiningLetter">
         													</span>
         													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Remove </a>
+        													Eliminar </a>
         												</div>
         											</div>
         										</div>
@@ -371,13 +371,13 @@
         													</div>
         													<span class="input-group-addon btn default btn-file">
         													<span class="fileinput-new">
-        													Select file </span>
+        													Seleccionar Archivo </span>
         													<span class="fileinput-exists">
-        													Change </span>
+        													Cambiar </span>
         													<input type="file" name="contract">
         													</span>
         													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Remove </a>
+        													Eliminar </a>
         												</div>
         											</div>
         										</div>
@@ -394,13 +394,13 @@
         													</div>
         													<span class="input-group-addon btn default btn-file">
         													<span class="fileinput-new">
-        													Select file </span>
+        													Seleccionar Archivo</span>
         													<span class="fileinput-exists">
-        													Change </span>
+        													Cambiar </span>
         													<input type="file" name="IDProof">
         													</span>
         													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Remove </a>
+        													Eliminar </a>
         												</div>
         											</div>
         										</div>

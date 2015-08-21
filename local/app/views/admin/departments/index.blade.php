@@ -20,12 +20,12 @@
 				<ul class="page-breadcrumb">
 					<li>
 						<i class="fa fa-home"></i>
-						<a href="{{route('admin.dashboard.index')}}">Home</a>
+						<a href="{{route('admin.dashboard.index')}}">Inicio</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 
 					<li>
-                        <a href="#">Departments and Designations</a>
+                        <a href="#">Objetivos y Destinos</a>
                         <i class="fa"></i>
                     </li>
 
@@ -47,14 +47,14 @@
 
 
 				<a class="btn green" data-toggle="modal" href="#static">
-                                        Add New Department
+                                        Agregar nuevo Objetivo
                          <i class="fa fa-plus"></i> </a>
 
                      <hr>
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-briefcase"></i>Department List
+								<i class="fa fa-briefcase"></i> Lista
 							</div>
 							<div class="tools">
 							</div>
@@ -69,14 +69,14 @@
 									 ID
 								</th>
 								<th>
-									 Department Name
+									 Nombre de Objetivo
 								</th>
 								<th>
-									 Designations
+									 Destinos
 								</th>
 
 								<th>
-									 Action
+									 Accion
 								</th>
 							</tr>
 							</thead>
@@ -126,7 +126,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                                <h4 class="modal-title"><strong><i class="fa fa-plus"></i> New Department</strong></h4>
+                                                <h4 class="modal-title"><strong><i class="fa fa-plus"></i> Nuevo  Objetivo</strong></h4>
                                             </div>
                                             <div class="modal-body">
                                                 <div class="portlet-body form">
@@ -138,22 +138,22 @@
                                             <div class="form-body">
 
                                                     <p class="text-success">
-                                                             Department
+                                                             Objetivo
                                                            </p>
                                                   <div class="form-group">
                                                       <div class="col-md-12">
-                                                         <input class="form-control form-control-inline " name="deptName" type="text" value="" placeholder="Department"/>
+                                                         <input class="form-control form-control-inline " name="deptName" type="text" value="" placeholder="Objetivo"/>
 
                                                       </div>
 
                                                  </div>
                                                 <hr>
                                                  <p class="text-success">
-                                                          Designations
+                                                          Destino
                                                 </p>
                                                 <div class="form-group">
                                                      <div class="col-md-6">
-                                                        <input class="form-control form-control-inline input-medium " name="designation[0]" type="text" value="" placeholder="Designation #1"/>
+                                                        <input class="form-control form-control-inline input-medium " name="designation[0]" type="text" value="" placeholder="Destino #1"/>
                                                      </div>
                                                     <div class="col-md-6">
 
@@ -161,7 +161,7 @@
                                                 </div>
                                                  <div id="insertBefore"></div>
                                                 <button type="button" id="plusButton" class="btn btn-sm green form-control-inline">
-                                                                More Designations <i class="fa fa-plus"></i>
+                                                                Agregar otro destino<i class="fa fa-plus"></i>
                                                 </button>
 
                                          </div>
@@ -169,7 +169,7 @@
                                         <div class="form-actions">
                                             <div class="row">
                                                 <div class="col-md-offset-3 col-md-9">
-                                                    <button type="submit" data-loading-text="Submitting..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Submit</button>
+                                                    <button type="submit" data-loading-text="Submitting..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Enviar</button>
 
                                                 </div>
                                             </div>

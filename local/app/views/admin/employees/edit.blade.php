@@ -234,7 +234,7 @@
         										</div>
         									</div>
         									<div class="form-group">
-                                                    <label class="control-label col-md-3">Fecha de Salida</label>
+                                                    <label class="control-label col-md-3">Fecha de Devinculacion</label>
                                                     <div class="col-md-3">
                                                         <div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
                                                             <input type="text" class="form-control" name="exit_date" readonly value="@if(empty($employee->exit_date)) @else {{date('d-m-Y',strtotime($employee->exit_date))}} @endif">
@@ -247,7 +247,7 @@
                                                 	<div class="form-group">
 														<label class="control-label col-md-3">Estado</label>
 														<div class="col-md-3">
-															   <input  type="checkbox" value="active" onchange="remove_exit();" class="make-switch" name="status" @if($employee->status=='active')checked	@endif data-on-color="success" data-on-text="Active" data-off-text="Inactive" data-off-color="danger">
+															   <input  type="checkbox" value="active" onchange="remove_exit();" class="make-switch" name="status" @if($employee->status=='active')checked	@endif data-on-color="success" data-on-text="Activado" data-off-text="Desactivado" data-off-color="danger">
 														</div>
 														<div class="col-md-6">
 														  (<strong>Nota:</strong>Estado activo cuando)
