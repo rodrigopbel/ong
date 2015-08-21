@@ -7,7 +7,7 @@
 												</section>
 												   <section>
 													   <div class="row field">
-														   <label class="label col col-4">New Password</label>
+														   <label class="label col col-4">Nueva Contraseña</label>
 														   <div class="col col-8">
 															   <label class="input">
 																   <i class="icon-append fa fa-lock"></i>
@@ -19,7 +19,7 @@
 
 												   <section>
 													   <div class="row field">
-														   <label class="label col col-4">Confirm Password</label>
+														   <label class="label col col-4">Confirmar Contraseña</label>
 														   <div class="col col-8">
 															   <label class="input">
 																   <i class="icon-append fa fa-lock"></i>
@@ -33,7 +33,7 @@
 
 											   </fieldset>
 											   <footer>
-												   <button type="submit" class="btn-u field" id="submitbutton" onclick="change_password();return false;">Change Password</button>
+												   <button type="submit" class="btn-u field" id="submitbutton" onclick="change_password();return false;">CAmbiar Contraseña</button>
 
 											   </footer>
 

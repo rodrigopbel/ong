@@ -67,35 +67,35 @@
                         <!-- Home -->
                         <li class="{{$homeActive or ''}}">
                             <a href="{{ URL::to('dashboard')}}">
-                                Home
+                                Inicio
                             </a>
                         </li>
                         <!-- End Home -->
 						
 						<!-- Leave -->
-                        <li class="dropdown {{$leaveActive or ''}}">
-                            <a href="" href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"  >
-                                Leave
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="" data-toggle="modal" data-target=".apply_modal">Apply Leave</a></li>
-                                <li><a href="{{route('front.leave')}}">My Leave</a></li>
-                              
-                            </ul>
-                        </li>
+                        {{--<li class="dropdown {{$leaveActive or ''}}">--}}
+                            {{--<a href="" href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"  >--}}
+                                {{--Leave--}}
+                            {{--</a>--}}
+                            {{--<ul class="dropdown-menu">--}}
+                                {{--<li><a href="" data-toggle="modal" data-target=".apply_modal">Apply Leave</a></li>--}}
+                                {{--<li><a href="{{route('front.leave')}}">My Leave</a></li>--}}
+                              {{----}}
+                            {{--</ul>--}}
+                        {{--</li>--}}
                         <!-- End Leave -->
 						<!-- My Account -->
                         <li class="dropdown">
                             <a href="" href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                My Account
+                               Mi Cuenta
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="" data-toggle="modal" data-target=".change_password_modal" id="change_password_link">Change Password</a></li>
+                                <li><a href="" data-toggle="modal" data-target=".change_password_modal" id="change_password_link">Cambiar Contraseña</a></li>
                                 <!-- Logout -->
                                 @if(Auth::employees()->check())
                                 <li>
                                     <a href="{{route('front.logout')}}">
-                                        Logout
+                                        Salir
                                     </a>
 
                                 </li>
@@ -124,35 +124,35 @@
             				<p>
             				<h3 style="text-align: center">{{$employee->fullName}}</h3>
             				<h6 style="text-align: center">{{$employee->getDesignation->designation}}</h6>
-            				<h6 style="text-align: center;background: rgb(235, 235, 235);padding: 10px;"><strong>At work for : </strong>{{$employee->workDuration($employee->employeeID)}}</h6>
+            				<h6 style="text-align: center;background: rgb(235, 235, 235);padding: 10px;"><strong>En Solicitud hace : </strong>{{$employee->workDuration($employee->employeeID)}}</h6>
             				</p>
                             <hr>
             				<div class="service-block-v3 service-block-u">
             						<!-- STAT -->
             							<div class="row profile-stat">
             								<div class="col-md-4 col-sm-4 col-xs-6" data-toggle="tooltip" data-placement="bottom" title="{{date('F')}}">
-            									<div class="uppercase profile-stat-title">
-            										 {{$attendance_count}}
-            									</div>
-            									<div class="uppercase profile-stat-text">
-            										 Attendance
-            									</div>
+            									{{--<div class="uppercase profile-stat-title">--}}
+            										 {{--{{$attendance_count}}--}}
+            									{{--</div>--}}
+            									{{--<div class="uppercase profile-stat-text">--}}
+            										 {{--Attendance--}}
+            									{{--</div>--}}
             								</div>
             								<div class="col-md-4 col-sm-4 col-xs-6" data-toggle="tooltip" data-placement="bottom" title="Leaves">
-            									<div class="uppercase profile-stat-title">
-            										{{$leaveLeft}}
-            									</div>
-            									<div class="uppercase profile-stat-text">
-            										 Leave
-            									</div>
-            								</div>
+                                                <div class="uppercase profile-stat-title">
+                                                    {{count($employee->getAwards)}}
+                                                </div>
+                                                <div class="uppercase profile-stat-text">
+                                                    Donaciones
+                                                </div>
+                                            </div>
             								<div class="col-md-4 col-sm-4 col-xs-6" data-toggle="tooltip" data-placement="bottom" title="Total Award Won">
-            									<div class="uppercase profile-stat-title">
-            										{{count($employee->getAwards)}}
-            									</div>
-            									<div class="uppercase profile-stat-text">
-            										 Awards
-            									</div>
+                                                {{--<div class="uppercase profile-stat-title">--}}
+                                                {{--{{$leaveLeft}}--}}
+                                                {{--</div>--}}
+                                                {{--<div class="uppercase profile-stat-text">--}}
+                                                {{--Leave--}}
+                                                {{--</div>--}}
             								</div>
             							</div>
             							<!-- END STAT -->
@@ -287,7 +287,7 @@
                         <div class="modal-header">
                             <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                              <h4  class="modal-title">
-                                 Change Password
+                                 Cambiar Contraseña
                                  </h4>
                         </div>
                         <div class="modal-body" id="change_password_modal_body">
