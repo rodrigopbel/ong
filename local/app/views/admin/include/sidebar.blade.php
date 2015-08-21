@@ -38,7 +38,7 @@
 					</a>
 					<ul class="sub-menu">
 						<li class="{{ $employeesActive or ''}}">
-							<a href="{{route('admin.beneficiarios.index')}}">
+							<a href="{{route('admin.employees.index')}}">
 							<i class="fa fa-users"></i>
 							{{Lang::get('menu.employeeList')}}</a>
 						</li>
