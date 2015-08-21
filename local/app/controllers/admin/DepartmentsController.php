@@ -8,7 +8,7 @@ class DepartmentsController extends \AdminBaseController {
     {
         parent::__construct();
         $this->data['departmentOpen'] ='active open';
-        $this->data['pageTitle'] ='Department';
+        $this->data['pageTitle'] ='Objetivos';
     }
 
     /**

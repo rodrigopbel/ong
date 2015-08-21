@@ -101,9 +101,9 @@
                                     </ol>
 								</td>
 								<td class=" ">
-                                	<a class="btn purple"  data-toggle="modal" href="#edit_static" onclick="showEdit({{$department->id}},'{{ $department->deptName }}')"><i class="fa fa-edit"></i> View/Edit</a>
+                                	<a class="btn purple"  data-toggle="modal" href="#edit_static" onclick="showEdit('{{$department->id}},{{ $department->deptName }}')"><i class="fa fa-edit"></i> View/Edit</a>
 
-              						<a class="btn red" href="javascript:;" onclick="del({{$department->id}},'{{ $department->deptName }}')"><i class="fa fa-trash"></i> Delete</a>
+              						<a class="btn red" href="javascript:" onclick="del('{{$department->id}},{{ $department->deptName }}')"><i class="fa fa-trash"></i> Delete</a>
                                 </td>
 							</tr>
 				@endforeach
@@ -195,7 +195,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                                <h4 class="modal-title"><strong><i class="fa fa-edit"></i> Edit Department</strong></h4>
+                                                <h4 class="modal-title"><strong><i class="fa fa-edit"></i> Editar Objetivo</strong></h4>
                                             </div>
                                             <div class="modal-body">
                                                 <div class="portlet-body form">
@@ -208,11 +208,11 @@
                                         <div class="form-body">
 
                                                 <p class="text-success">
-                                              Department
+                                              Objetivo
                                             </p>
                                               <div class="form-group">
                                                   <div class="col-md-12">
-                                                     <input class="form-control form-control-inline " name="deptName" id="edit_deptName" type="text" value="" placeholder="Department" />
+                                                     <input class="form-control form-control-inline " name="deptName" id="edit_deptName" type="text" value="" placeholder="Objetivo" />
 
                                                   </div>
 
