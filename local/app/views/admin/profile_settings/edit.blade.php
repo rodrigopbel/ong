@@ -23,11 +23,11 @@
 				<ul class="page-breadcrumb">
 					<li>
 						<i class="fa fa-home"></i>
-						<a href="{{route('admin.dashboard.index')}}">Home</a>
+						<a href="{{route('admin.dashboard.index')}}">Inicio</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="{{ route('admin.notificationSettings.edit',$admin->id) }}">Settings</a>
+						<a href="{{ route('admin.notificationSettings.edit',$admin->id) }}">Configuraciones</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
@@ -53,7 +53,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-cog"></i>Login Details {{$pageTitle}}
+								<i class="fa fa-cog"></i>Login {{$pageTitle}}
 							</div>
 							<div class="tools">
 							</div>
@@ -66,16 +66,16 @@
 
                                     <div class="form-body">
                                         <div class="form-group">
-                                        <label class="col-md-2 control-label">Name: <span class="required">
+                                        <label class="col-md-2 control-label">Nombre: <span class="required">
                                         * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="name" placeholder="Administrator Name" value="{{ $admin->name }}">
+                                                <input type="text" class="form-control" name="name" placeholder="Nombre" value="{{ $admin->name }}">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                        <label class="col-md-2 control-label">Login Email: <span class="required">
+                                        <label class="col-md-2 control-label"> Email: <span class="required">
                                             * </span>
                                             </label>
                                             <div class="col-md-6">
@@ -85,7 +85,7 @@
                                             <div class="form-actions">
                                                 <div class="row">
                                                     <div class="col-md-offset-3 col-md-9">
-                                                        <button type="submit" data-loading-text="Updating..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Submit</button>
+                                                        <button type="submit" data-loading-text="Updating..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Guardar</button>
 
                                                     </div>
                                                 </div>
@@ -101,7 +101,7 @@
 				                <div class="portlet box blue">
                 						<div class="portlet-title">
                 							<div class="caption">
-                								<i class="fa fa-key"></i>Change Password
+                								<i class="fa fa-key"></i>Cambiar Contraseña
                 							</div>
                 							<div class="tools">
                 							</div>
@@ -115,26 +115,26 @@
                                                     <div class="form-body">
 
                                                         <div class="form-group">
-                                                        <label class="col-md-2 control-label">Password: <span class="required">
+                                                        <label class="col-md-2 control-label">Contraseña: <span class="required">
                                                         * </span>
                                                             </label>
                                                             <div class="col-md-6">
-                                                                <input type="password" class="form-control" name="password" placeholder="Password" >
+                                                                <input type="password" class="form-control" name="password" placeholder="Contraseña" >
                                                             </div>
                                                         </div>
 
                                                         <div class="form-group">
-                                                        <label class="col-md-2 control-label">Confirm password: <span class="required">
+                                                        <label class="col-md-2 control-label">Confirmar Contraseña: <span class="required">
                                                             * </span>
                                                             </label>
                                                             <div class="col-md-6">
-                                                                <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" >
+                                                                <input type="password" class="form-control" name="password_confirmation" placeholder="Confirmar Contraseña" >
                                                             </div>
                                                         </div>
                                                             <div class="form-actions">
                                                                 <div class="row">
                                                                     <div class="col-md-offset-3 col-md-9">
-                                                                        <button type="submit" data-loading-text="Updating..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Submit</button>
+                                                                        <button type="submit" data-loading-text="Updating..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Guardar</button>
 
                                                                     </div>
                                                                 </div>
