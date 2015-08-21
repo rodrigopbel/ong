@@ -23,15 +23,15 @@
 				<ul class="page-breadcrumb">
 					<li>
 						<i class="fa fa-home"></i>
-						<a href="{{route('admin.dashboard.index')}}">Home</a>
+						<a href="{{route('admin.dashboard.index')}}">Inicio</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="{{ route('admin.settings.edit','setting') }}">Settings</a>
+						<a href="{{ route('admin.settings.edit','setting') }}">Configuraciones</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href=""> Setting</a>
+						<a href=""> General</a>
 					</li>
 				</ul>
 			
@@ -53,7 +53,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-cogs"></i>Edit {{$pageTitle}}
+								<i class="fa fa-cogs"></i>Editar {{$pageTitle}}
 							</div>
 							<div class="tools">
 							</div>
@@ -67,7 +67,7 @@
                                     <div class="form-body">
 
                                           <div class="form-group">
-                                           <label class="control-label col-md-2">Website Logo</label>
+                                           <label class="control-label col-md-2">Logo</label>
                                            <div class="col-md-6">
                                              <div class="fileinput fileinput-new" data-provides="fileinput">
                                                    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
@@ -80,18 +80,18 @@
                                                    <div>
                                                        <span class="btn default btn-file">
                                                        <span class="fileinput-new">
-                                                       Change image </span>
+                                                       Cambiar Imagen </span>
                                                        <span class="fileinput-exists">
-                                                       Change </span>
+                                                       Cambiar </span>
                                                        <input type="file" name="logo">
                                                        </span>
                                                        <a href="#" class="btn red fileinput-exists" data-dismiss="fileinput">
-                                                       Remove </a>
+                                                       Eliminar </a>
                                                    </div>
                                                </div>
                                                <div class="clearfix margin-top-10">
                                                         <span class="label label-danger">
-                                                        NOTE! </span> Image Size must be 117px x 30px
+                                                        NOTA! </span> Tamano Maximo 117px x 30px
 
                                                     </div>
 
@@ -99,11 +99,11 @@
                                        </div>
 
                                         <div class="form-group">
-                                        <label class="col-md-2 control-label">Website: <span class="required">
+                                        <label class="col-md-2 control-label">Organizacion : <span class="required">
                                         * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="website" placeholder="Website Title" value="{{ $setting->website }}">
+                                                <input type="text" class="form-control" name="website" placeholder="Nombre de la Organizacion" value="{{ $setting->website }}">
                                             </div>
                                         </div>
 
@@ -117,7 +117,7 @@
                                         </div>
 
                                      <div class="form-group">
-                                        <label class="col-md-2 control-label">Name: <span class="required">  * </span></label>
+                                        <label class="col-md-2 control-label">Nombre del Usuario: <span class="required">  * </span></label>
 
                                         <div class="col-md-6">
                                             <input type="text" class="form-control" name="name" placeholder="Name" value="{{ $setting->name}}">
@@ -127,7 +127,7 @@
 
 
                                     <div class="form-group">
-                                            <label class="control-label col-md-2">Currency</label>
+                                            <label class="control-label col-md-2">Moneda</label>
                                             <div class="col-md-6">
                                                 <select class="bs-select form-control" data-show-subtext="true" name="currency">
                                                     <option data-icon="fa-usd"  value="fa-usd:USD" @if($setting->currency=='USD') selected @endif>USD</option>
@@ -141,7 +141,7 @@
                         								<div class="form-actions">
                         									<div class="row">
                         										<div class="col-md-offset-3 col-md-9">
-                        											<button type="submit" data-loading-text="Updating..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Submit</button>
+                        											<button type="submit" data-loading-text="Actualizando..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Guardar</button>
 
                         										</div>
                         									</div>
