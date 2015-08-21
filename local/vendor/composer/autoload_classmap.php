@@ -78,7 +78,7 @@ return array(
     'Designation' => $baseDir . '/app/models/Designation.php',
     'Employee' => $baseDir . '/app/models/Employee.php',
     'Employee_document' => $baseDir . '/app/models/Employee_document.php',
-    'EmployeesController' => $baseDir . '/app/controllers/admin/BeneficiariosController.php',
+    'EmployeesController' => $baseDir . '/app/controllers/admin/EmployeesController.php',
     'EmployeesTableSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
     'Expense' => $baseDir . '/app/models/Expense.php',
     'ExpensesController' => $baseDir . '/app/controllers/admin/ExpensesController.php',

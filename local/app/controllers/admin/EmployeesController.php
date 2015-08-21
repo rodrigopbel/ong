@@ -5,7 +5,7 @@
  * This Controller is for the all the related function applied on employees
  */
 
-class BeneficiariosController extends \AdminBaseController {
+class EmployeesController extends \AdminBaseController {
 
 	/**
 	 * Constructor for the Employees
