@@ -36,7 +36,7 @@
 
                 					<ul class="dropdown-menu">
                 						<li class="external">
-                							<h3><span class="bold">{{count($pending_applications)}} pending</span> notifications</h3>
+                							<h3><span class="bold">{{count($pending_applications)}} notificaciones</span> pendientes</h3>
 
                 						</li>
                 						@if(count($pending_applications)>0)
@@ -50,7 +50,7 @@
                 									<span class="label label-sm label-icon label-success">
                 									<i class="fa fa-bell-o"></i>
                 									</span>
-                									 <strong>{{$pending->employeeDetails->fullName}} </strong> has applied for leave on {{date('d-M-Y',strtotime($pending->date))}}</span>
+                									 <strong>{{$pending->employeeDetails->fullName}} </strong> ha solicitado una ayuda {{date('d-M-Y',strtotime($pending->date))}}</span>
                 									</a>
                 								</li>
                 								@endforeach
