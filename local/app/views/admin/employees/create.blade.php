@@ -20,7 +20,7 @@
         				<ul class="page-breadcrumb">
         					<li>
         						<i class="fa fa-home"></i>
-        						<a href="index.html">Inicio</a>
+        						<a href="{{route('admin')}}">Inicio</a>
         						<i class="fa fa-angle-right"></i>
         					</li>
         					<li>
