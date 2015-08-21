@@ -13,7 +13,7 @@ return [
 	|
 	*/
 
-	'dashboard'             =>  'Salpicadero',
+	'dashboard'             =>  'DashBoard',
 	'employees'             =>  'Empleados',
 	'employeeList'          =>  'Lista empleado',
 	'department'            =>  'Departamento',
@@ -31,10 +31,10 @@ return [
 	'leaveApplication'      =>  'Deja Aplicaciones',
 	'leaveApplicationList'  =>  'Lista de aplicaciones',
 	'noticeBoard'           =>  'Tablón de anuncios',
-	'settings'              =>  'Ajustes',
-	'generalSetting'        =>  'Ajustes Generales',
-	'profileSetting'        =>  'Perfil Marco',
-	'notificationSetting'   =>  'Configuración de la notificación',
+	'settings'              =>  'Configuraciones',
+	'generalSetting'        =>  'General',
+	'profileSetting'        =>  'Perfil',
+	'notificationSetting'   =>  'Notificaciónes',
 
 
 ];
