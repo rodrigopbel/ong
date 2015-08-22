@@ -2,14 +2,13 @@
 /*
  * Redefined Ind.
  */
-
 # Beneficiario  Login
     Route::get('/',['as'=>'login','uses'=>'LoginController@index']);
     Route::post('/login',['as'=>'login','uses'=>'LoginController@ajaxLogin']);
     Route::get('logout', ['as'=>'front.logout','uses'=>'LoginController@logout']);
 
 # Beneficiario Panel
-Route::group(array('before' => 'auth.ben'), function()
+Route::group(array('before' => 'auth.beneficiarios'), function()
 {
     Route::post('/change_password_modal',['as'=>'front.change_password_modal','uses'=>'DashboardController@changePasswordModal']);
     Route::post('/change_password',['as'=>'front.change_password','uses'=>'DashboardController@change_password']);
@@ -27,7 +26,6 @@ Route::group(array('before' => 'auth.ben'), function()
 # Admin Login
 Route::group(array('prefix' => 'admin'), function()
 {
-
 	Route::get('/',['as'=>'admin.getlogin','uses'=>'AdminLoginController@index']);
 	Route::get('logout',['as'=>'admin.logout','uses'=> 'AdminLoginController@logout']);
     Route::post('login',['as'=>'admin.login','uses'=> 'AdminLoginController@ajaxAdminLogin']);

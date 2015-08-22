@@ -37,17 +37,9 @@ App::after(function($request, $response)
 
 
 
-Route::filter('auth.employees', function()
+Route::filter('auth.beneficiarios', function()
 {
     if (!Auth::employees()->check()) {
-        return Redirect::to("/");
-    }
-});
-
-
-Route::filter('auth.ben', function()
-{
-    if (!Auth::beneficiarios()->check()) {
         return Redirect::to("/");
     }
 });
