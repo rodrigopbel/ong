@@ -17,6 +17,9 @@ class BeneficiariosController extends \AdminBaseController {
 	public function index()
 	{
 		$this->data['beneficiarios']       =   Beneficiario::all();
+
+
+		Debugbar::info($this->data['beneficiarios'] );
 		$this->data['beneficiariosActive'] =   'active';
 
 
