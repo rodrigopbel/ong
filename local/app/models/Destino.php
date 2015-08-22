@@ -3,7 +3,7 @@
 class Destino extends \Eloquent {
 
     public static $rules = [
-        'destino' => 'required|unique:department,deptName,:id',
+        'destino' => 'required|unique:destino,destino,:id',
         "objetivo.0"=>'required',
     ];
 
