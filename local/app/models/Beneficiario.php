@@ -8,7 +8,6 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 
     use UserTrait, RemindableTrait;
 
-
 	// Validation Rules
 	public static function rules($action,$id=false, $merge=[])
 	{

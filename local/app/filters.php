@@ -44,6 +44,14 @@ Route::filter('auth.employees', function()
     }
 });
 
+
+Route::filter('auth.ben', function()
+{
+    if (!Auth::beneficiarios()->check()) {
+        return Redirect::to("/");
+    }
+});
+
 Route::filter('auth.admin', function()
 {
     if (!Auth::admin()->check()){

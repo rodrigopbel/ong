@@ -6,7 +6,7 @@ class LoginController extends \BaseController {
     public function __construct()
     {
         parent::__construct();
-        $this->data['pageTitle']    =   'Login Page';
+        $this->data['pageTitle']    =   'Pagina de Ingreso';
     }
 
 	public function index()
