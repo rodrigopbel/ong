@@ -187,7 +187,7 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Destino</label>
         										<div class="col-md-9">
-        											  {{ Form::select('destino', $destinos,null,['class' => 'form-control select2me','id'=>'destino','onchange'=>'destino();return false;']) }}
+        											  {{ Form::select('destino', $destinos,null,['class' => 'form-control select2me','id'=>'destino','onchange'=>'objetivos();return false;']) }}
         										</div>
         									</div>
         									<div class="form-group">
@@ -469,7 +469,7 @@
 
 
         });
-        function destino(){
+        function objetivos(){
 
                               $.getJSON("{{ URL::to('admin/destinos/ajax_objetivos/')}}",
                               { destID: $('#destino').val() },
