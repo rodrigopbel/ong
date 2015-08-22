@@ -217,22 +217,22 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: 'Monthly Expense Report '+new Date().getFullYear()
+            text: 'Informe de gastos mensuales '+new Date().getFullYear()
         },
         xAxis: {
             categories: [
-                'Jan',
+                'Ene',
                 'Feb',
                 'Mar',
-                'Apr',
+                'Abr',
                 'May',
                 'Jun',
                 'Jul',
-                'Aug',
+                'Ago',
                 'Sep',
                 'Oct',
                 'Nov',
-                'Dec'
+                'Dic'
             ],
             crosshair: true
         },
@@ -240,7 +240,7 @@ $(function () {
             min: 0,
             title: {
             useHTML: true,
-                text: 'Expense in ( <span class="fa {{$setting->currency_icon}}"></span> )'
+                text: 'Expensado en  ( <span class="fa {{$setting->currency_icon}}"></span> )'
             }
         },
         tooltip: {
@@ -258,7 +258,7 @@ $(function () {
             }
         },
         series: [  {
-            name: 'Expense',
+            name: 'Gastos',
 //            data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8,'']
 //            data: ['','',100]
             data: [{{$expense}}]

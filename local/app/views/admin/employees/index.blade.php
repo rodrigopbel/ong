@@ -131,7 +131,7 @@
                                     </td>
                                     <td class="">
                                     <p> <a class="btn purple" href="{{ route('admin.employees.edit',$employee->employeeID)  }}"><i class="fa fa-edit"></i> Editar</a></p>
-                                    <p>    <a class="btn red" style="width: 105px;" href="javascript:;" onclick="del('{{$employee->employeeID}}','{{ $employee->fullName }}')"><i class="fa fa-trash"></i> Eliminar</a></p>
+                                    <p>    <a class="btn red" style="width: 50px;" href="javascript:;" onclick="del('{{$employee->employeeID}}','{{ $employee->fullName }}')"><i class="fa fa-trash"></i> Eliminar</a></p>
                                     </td>
                                 </tr>
 							@endforeach

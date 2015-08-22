@@ -14,10 +14,13 @@ class LoginController extends \BaseController {
 
         if(Auth::beneficiarios()->check())
         {
+
+
             return Redirect::route('dashboard.index');
         }else
         {
             return View::make('front.login',$this->data);
+
         }
 
 	}
@@ -48,38 +51,40 @@ class LoginController extends \BaseController {
             if($validator->fails())
             {
                 $output['status'] = 'error';
-                $output['msg']    =  $validator->getMessageBag()->toArray();
+//                $output['msg']    =  $validator->getMessageBag()->toArray();
+                $output['msg']    =  'ERROR EN LA VALIDACION';
 
             }
-
             // Check if employee exists in database with the credentials of not
-            if (Auth::beneficiarios()->attempt($data))
+//            if (Auth::beneficiarios()->attempt($data))
+//            {
+//		            Event::fire('auth.login', Auth::beneficiarios()->get());
+//		            $output['status'] = 'success';
+//		            $output['msg']    = Lang::get('messages.loginSuccess');
+//	                return Response::json($output, 200);
+//            }
+            if (Auth::attempt($data))
             {
-		            Event::fire('auth.login', Auth::beneficiarios()->get());
-		            $output['status'] = 'success';
-		            $output['msg']    = Lang::get('messages.loginSuccess');
-
-	                return Response::json($output, 200);
+                Event::fire('auth.login', Auth::beneficiarios()->get());
+                $output['status'] = 'success';
+                $output['msg']    = Lang::get('messages.loginSuccess');
+                return Response::json($output, 200);
             }
-
 	        // For Blocked Users
 	        $data['status']         =   'inactive';
+
             if(Auth::beneficiarios()->validate($data))
             {
 	            $output['status']	=	'error';
 	            $output['msg']		=	['error'=>Lang::get('messages.loginBlocked')];
-
             }
             //Show error Message if Employee with posted data does not exists
             else
 	        {
 		        $output['status']	=	'error';
 		        $output['msg']		=	['error'=>Lang::get('messages.loginInvalid')];
-
 	        }
-
             return Response::json($output, 200);
-
         }
     }
 

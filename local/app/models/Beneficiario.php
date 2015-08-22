@@ -74,7 +74,7 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 
 	protected $hidden  = ['password'];
 
-	//Nuevos
+    //Nuevos
 
 	public function getObjetivo()
 	{

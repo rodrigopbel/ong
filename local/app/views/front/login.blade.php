@@ -54,7 +54,7 @@
 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <button type="submit" class="btn-u btn-block input-group" id="submitbutton" onclick="login();return false;">Log In</button>
+                <button type="submit" class="btn-u btn-block input-group" id="submitbutton" onclick="login();return false;">Ingresar </button>
             </div>
         </div>
     </div>
