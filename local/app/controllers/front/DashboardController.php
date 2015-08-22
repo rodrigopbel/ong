@@ -8,18 +8,18 @@ class DashboardController extends \BaseController {
         parent::__construct();
         $this->data['pageTitle']   =   'Dashboard';
 
-        $this->data['employeeID']  =   Auth::employees()->get()->employeeID;
+        $this->data['beneficiarioID']  =   Auth::beneficiario()->get()->beneficiarioID;
 
 	    $this->data['leaveTypes']  =    Attendance::leaveTypesEmployees();
 	    $this->data['leaveTypeWithoutHalfDay']   =   Attendance::leaveTypesEmployees('halfday');
 //        Total leaves except
 	    $total_leave    =   Leavetype::where('leaveType','<>','half day')->sum('num_of_leave');
 
-        $this->data['leaveLeft']   =    array_sum(Attendance::absentEmployee($this->data['employeeID'])).'/'.$total_leave;
-        $this->data['employee']    =    Employee::find(Auth::employees()->get()->id);
-        $this->data['holidays']    =    Holiday::orderBy('date','ASC')->remember(10,'holiday_cache')->get();
-        $this->data['awards']      =    Award::select('*')->orderBy('created_at','desc')->get();
-        $this->data['attendance']  =    Attendance::where('employeeID', '=',$this->data['employeeID'])
+        $this->data['leaveLeft']       =    array_sum(Attendance::absentEmployee($this->data['beneficiarioID'])).'/'.$total_leave;
+        $this->data['beneficiario']    =    Beneficiario::find(Auth::beneficiario()->get()->id);
+        $this->data['holidays']        =    Holiday::orderBy('date','ASC')->remember(10,'holiday_cache')->get();
+        $this->data['ayudas']          =    Ayuda::select('*')->orderBy('created_at','desc')->get();
+        $this->data['attendance']      =    Attendance::where('beneficiarioID', '=',$this->data['beneficiarioID'])
                                                         ->where(function($query)
                                                         {
                                                             $query->where('application_status','=','approved')
@@ -27,7 +27,7 @@ class DashboardController extends \BaseController {
                                                                   ->orWhere('status','=','present');
                                                         })
                                                     ->get();
-        $this->data['attendance_count']   = Attendance::attendanceCount($this->data['employeeID']);
+        $this->data['attendance_count']   = Attendance::attendanceCount($this->data['beneficiarioID']);
 
         $this->data['current_month_birthdays']   = Employee::currentMonthBirthday();
 
@@ -47,7 +47,7 @@ class DashboardController extends \BaseController {
         $this->data['holiday_font_color'] = ['blue','red','green','yellow','dark'];
 
 
-        return View::make('front.employeeDashboard',$this->data);
+        return View::make('front.beneficiarioDashboard',$this->data);
 	}
 
 //	show leave Page
