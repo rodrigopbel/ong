@@ -47,7 +47,7 @@ class DestinosController extends \AdminBaseController {
 
         foreach ($input['objetivo'] as $index => $value) {
             if($value=='')continue;
-            Designation::firstOrCreate([
+            Objetivo::firstOrCreate([
                 'destID' => $dest->id,
                 'objetivo' => $value
             ]);
