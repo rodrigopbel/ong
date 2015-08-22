@@ -10,8 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
-
     <!-- CSS Global Compulsory -->
     {{HTML::style('front_assets/plugins/bootstrap/css/bootstrap.min.css')}}
     {{HTML::style('front_assets/css/style.css')}}
