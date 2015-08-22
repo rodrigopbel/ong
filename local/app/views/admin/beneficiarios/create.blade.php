@@ -211,9 +211,9 @@
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Monto Requerido</label>
+        										<label class="col-md-3 control-label">Monto Solicitado</label>
         										<div class="col-md-9">
-        											<input type="text" class="form-control" name="monto" placeholder="Monto requerido" value="{{ Input::old('monto') }}">
+        											<input type="text" class="form-control" name="monto" placeholder="Monto Solicitado" value="{{ Input::old('monto') }}">
         										</div>
         									</div>
         								</div>
@@ -265,7 +265,8 @@
 											<div class="form-group">
 												<label class="col-md-3 control-label">Nota</label>
 												<div class="col-md-9">
-													<input type="text" class="form-control" name="otros" placeholder="Nota" value="{{Input::old('otros')}}">
+													<textarea class="form-control" name="otros" rows="3">{{Input::old('otros')}}</textarea>
+
 												</div>
 											</div>
         								</div>
