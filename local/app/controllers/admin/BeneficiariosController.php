@@ -210,10 +210,10 @@ class BeneficiariosController extends \AdminBaseController {
 
 				$details->departamento   = Input::get('departamento');
 				$details->provincia = Input::get('provincia');
-				$details->otros          = Input::get('nota');
+				$details->otros          = Input::get('otros');
 				$details->localidad           = Input::get('localidad');
 				$details->canton          = Input::get('canton');
-				$details->zona        = Input::get('otros');
+				$details->zona        = Input::get('zona');
 				$details->save();
 
 				$output['status'] = 'success';
