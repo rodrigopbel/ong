@@ -92,7 +92,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="" data-toggle="modal" data-target=".change_password_modal" id="change_password_link">Cambiar Contraseña</a></li>
                                 <!-- Logout -->
-                                @if(Auth::employees()->check())
+                                @if(Auth::beneficiarios()->check())
                                 <li>
                                     <a href="{{route('front.logout')}}">
                                         Salir

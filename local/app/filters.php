@@ -39,7 +39,7 @@ App::after(function($request, $response)
 
 Route::filter('auth.beneficiarios', function()
 {
-    if (!Auth::employees()->check()) {
+    if (!Auth::beneficiarios()->check()) {
         return Redirect::to("/");
     }
 });
@@ -72,7 +72,7 @@ Route::filter('auth.basic', function()
 
 Route::filter('guest.employees', function()
 {
-	if (Auth::employees()->check()) return Redirect::to('/');
+	if (Auth::beneficiarios()->check()) return Redirect::to('/');
 });
 
 Route::filter('guest.admin', function()

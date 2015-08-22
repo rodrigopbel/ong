@@ -7,7 +7,7 @@
 	    <tr>
 	    	<td style="padding:10px;">Hi
 
-	    	<b>{{Str::words(Auth::employees()->get()->fullName,1,'')}} !</b><br /><br/>
+	    	<b>{{Str::words(Auth::beneficiarios()->get()->fullName,1,'')}} !</b><br /><br/>
 			  Your password has successfully been reset.
 			  <br /><br />
 

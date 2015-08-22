@@ -14,7 +14,7 @@
 	    	</td>
 	    </tr>
 	    <tr>
-	    	<td style="padding:10px;"><strong>{{Auth::employees()->get()->fullName}}</strong> Applied for Leave
+	    	<td style="padding:10px;"><strong>{{Auth::beneficiarios()->get()->fullName}}</strong> Applied for Leave
 
 	    	<br /><br/>
 
