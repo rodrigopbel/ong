@@ -131,7 +131,7 @@
                                     </td>
                                     <td class="">
                                     <p> <a class="btn purple" href="{{ route('admin.beneficiarios.edit',$ben->beneficiarioID)  }}"><i class="fa fa-edit"></i></a></p>
-                                    <p>    <a class="btn red" style="width: 105px;" href="javascript:;" onclick="del('{{$ben->beneficiarioID}}','{{ $ben->nombres ." ".$ben->apellidos }}')"><i class="fa fa-trash"></i></a></p>
+                                    <p>    <a class="btn red" style="width: 40px;" href="javascript:;" onclick="del('{{$ben->beneficiarioID}}','{{ $ben->nombres ." ".$ben->apellidos }}')"><i class="fa fa-trash"></i></a></p>
                                     </td>
                                 </tr>
 							@endforeach
