@@ -70,7 +70,6 @@ jQuery(document).ready(function() {
 
      }
 
-}
 </script>
 
 @yield('footerjs')
