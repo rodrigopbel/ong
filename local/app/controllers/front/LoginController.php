@@ -46,7 +46,7 @@ class LoginController extends \BaseController {
                 $output['msg']    =  $validator->getMessageBag()->toArray();
             }
             // Check if employee exists in database with the credentials of not
-            if (Auth::beneficiarios()->attempt($data,true))
+            if (Auth::beneficiarios()->attempt($data))
             {
 		            $event =  Event::fire('auth.login', Auth::beneficiarios()->get());
 		            $output['status'] = 'success';
