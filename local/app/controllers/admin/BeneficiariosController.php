@@ -329,6 +329,8 @@ class BeneficiariosController extends \AdminBaseController {
 				if (Input::hasFile($document)) {
 
 					$path = public_path()."/beneficiarios_documents/{$document}/";
+
+					dd($path);
 					File::makeDirectory($path, $mode = 0777, true, true);
 
 					$file 	= Input::file($document);
