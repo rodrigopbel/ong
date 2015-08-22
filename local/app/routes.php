@@ -8,7 +8,7 @@
     Route::post('/login',['as'=>'login','uses'=>'LoginController@ajaxLogin']);
     Route::get('logout', ['as'=>'front.logout','uses'=>'LoginController@logout']);
 
-# Employee Panel After Login
+# Beneficiario Panel
 Route::group(array('before' => 'auth.ben'), function()
 {
     Route::post('/change_password_modal',['as'=>'front.change_password_modal','uses'=>'DashboardController@changePasswordModal']);
