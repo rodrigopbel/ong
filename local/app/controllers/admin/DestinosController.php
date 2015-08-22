@@ -12,11 +12,6 @@ class DestinosController extends \AdminBaseController {
     }
 
 
-
-
-    /**
-     * Display a listing of departments
-     */
 	public function index() {
 		$this->data['destinos'] = Destino::all();
 		$this->data['destinosActive'] = 'active';
@@ -31,10 +26,8 @@ class DestinosController extends \AdminBaseController {
 		$this->data['beneficiarioCount']    =   $benCount;
 
 
-		//return View::make('admin.destinos.index', $this->data);
+		return View::make('admin.destinos.index', $this->data);
 	}
-
-
 	/**
 	 * Store a newly created department in storage.
 	 */
