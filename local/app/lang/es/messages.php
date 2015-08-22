@@ -15,7 +15,7 @@ return [
 	'submitting'       =>  'Enviando',
 	'loginSuccess'     =>  'Ingreso correcto. Redireccionando..',
 	'loginBlocked'     =>  '<strong>Acceso denegado !</strong> Tu cuenta esta bloqueada',
-	'loginInvalid'     =>  'Detalles de Login',
+	'loginInvalid'     =>  'Credenciales Invalidas',
 
 	'noteLeaveTypes'   => 'Number of leaves of <strong>Half day</strong> are not added to total leaves',
 	'deleteNoteDepartment'   => '<strong>Nota:</strong> Esto eliminara todos los objetivos relacionados con ella',
