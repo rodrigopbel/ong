@@ -42,9 +42,9 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 			'password_confirmation' =>  'required|min:5'
 		],
 
-		'bank' => [
-			'accountName'   =>   'required',
-			'accountNumber' =>   'required'
+		'zonificacion' => [
+			'departamento'   =>   'required',
+			'zona' 			=>   'required'
 		],
 
 		'personalInfo'=>[

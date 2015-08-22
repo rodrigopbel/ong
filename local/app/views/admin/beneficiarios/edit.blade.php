@@ -194,7 +194,7 @@
 
         						{{--------------------Company Form--------------------------------------------}}
         							{{Form::open(['class'   =>  'form-horizontal','id'  =>  'company_details_form'])}}
-        							<input type="hidden" name="updateType" class="form-control" value="company">
+        							<input type="hidden" name="updateType" class="form-control" value="donacion">
                                     <div id="alert_company">
                                                 {{--INLCUDE ERROR MESSAGE BOX--}}
                                                    @include('admin.common.error')
@@ -259,11 +259,11 @@
                                          <div id="salary{{$solicitud->id}}">
                                               <div class="form-group" >
                                                     <div class="col-md-5">
-                                                        <input type="text" class="form-control" name="type[{{$solicitud->id}}]" value="{{$solicitud->tipo}}">
+                                                        <input type="text" class="form-control" name="tipo[{{$solicitud->id}}]" value="{{$solicitud->tipo}}">
                                                      </div>
 
                                                     <div class="col-md-5">
-                                                        <input type="text" class="form-control" name="salary[{{$solicitud->id}}]" value="{{$solicitud->monto}}">
+                                                        <input type="text" class="form-control" name="monto[{{$solicitud->id}}]" value="{{$solicitud->monto}}">
                                                     </div>
 
                                                     <div class="col-md-2">
@@ -291,7 +291,7 @@
         								<i class="fa fa-calendar"></i>Zonificacion
         							</div>
         							<div class="actions">
-        								<a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->beneficiarioID}}','bank');return false" data-loading-text="Actualizando..."  class="demo-loading-btn-ajax btn btn-sm btn-default ">
+        								<a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->beneficiarioID}}','zonificacion');return false" data-loading-text="Actualizando..."  class="demo-loading-btn-ajax btn btn-sm btn-default ">
         								<i class="fa fa-save"></i> Guardar </a>
         							</div>
         						</div>
@@ -299,7 +299,7 @@
 
         						{{--------------------Bank Account Form--------------------------------------------}}
         							{{Form::open(['class'   =>  'form-horizontal','id'  =>  'bank_details_form'])}}
-        							<input type="hidden" name="updateType" class="form-control" value="bank">
+        							<input type="hidden" name="updateType" class="form-control" value="zonificacion">
 
         							<div id="alert_bank"></div>
         								<div class="form-body">
@@ -338,7 +338,7 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Nota</label>
         										<div class="col-md-9">
-													<textarea class="form-control" name="branch" rows="3">{{$zonificacion->nota or '' }}</textarea>
+													<textarea class="form-control" name="nota" rows="3">{{$zonificacion->nota or '' }}</textarea>
         										</div>
         									</div>
         								</div>

@@ -194,10 +194,10 @@ class BeneficiariosController extends \AdminBaseController {
 	public function update($id)
 	{
 		//----Bank Details Update-------
-		if(Input::get('updateType')=='bank')
+		if(Input::get('updateType')=='zonificacion')
 		{
 
-			$validator = Validator::make($input = Input::all(), Employee::rules('bank'));
+			$validator = Validator::make($input = Input::all(), Beneficiario::rules('zonificacion'));
 
 			if ($validator->fails())
 			{
@@ -206,15 +206,15 @@ class BeneficiariosController extends \AdminBaseController {
 
 			}else{
 
-				$bank_details = Bank_detail::firstOrNew(['employeeID' => $id]);
+				$details = Zonificacion::firstOrNew(['beneficiarioID' => $id]);
 
-				$bank_details->accountName   = Input::get('accountName');
-				$bank_details->accountNumber = Input::get('accountNumber');
-				$bank_details->bank          = Input::get('bank');
-				$bank_details->pan           = Input::get('pan');
-				$bank_details->ifsc          = Input::get('ifsc');
-				$bank_details->branch        = Input::get('branch');
-				$bank_details->save();
+				$details->departamento   = Input::get('departamento');
+				$details->provincia = Input::get('provincia');
+				$details->nota          = Input::get('nota');
+				$details->localidad           = Input::get('localidad');
+				$details->canton          = Input::get('canton');
+				$details->zona        = Input::get('zona');
+				$details->save();
 
 				$output['status'] = 'success';
 				$output['msg'] = 'Bank details updated successfully';
@@ -224,12 +224,12 @@ class BeneficiariosController extends \AdminBaseController {
 		//-------Bank Details Update End--------
 		//-------Company Details Update Start--------
 
-		else if(Input::get('updateType')=='company')
+		else if(Input::get('updateType')=='donacion')
 		{
-			$company_details = Employee::where('employeeID','=', $id)->first();
+			$ddetails = Beneficiario::where('beneficiarioID','=', $id)->first();
 
 
-			$validator = Validator::make($input = Input::all(), Employee::rules('update',$company_details->id));
+			$validator = Validator::make($input = Input::all(), Beneficiario::rules('update',$ddetails->id));
 
 			if ($validator->fails())
 			{
@@ -238,20 +238,20 @@ class BeneficiariosController extends \AdminBaseController {
 
 			}else{
 
-				$company_details->employeeID  = $id;
-				$company_details->designation = Input::get('designation');
-				$company_details->joiningDate = date('Y-m-d',strtotime(Input::get('joiningDate')));
-				$company_details->exit_date   = (trim(Input::get('exit_date'))!='')?date('Y-m-d',strtotime(Input::get('exit_date'))):null;
+				$ddetails->beneficiarioID  = $id;
+				$ddetails->objetivo = Input::get('objetivo');
+				$ddetails->fechaing = date('Y-m-d',strtotime(Input::get('fechaing')));
+				$ddetails->fecha_desvinculacion   = (trim(Input::get('fecha_desvinculacion'))!='')?date('Y-m-d',strtotime(Input::get('fecha_desvinculacion'))):null;
 
-				$company_details->status      = (Input::get('status')!='active')?'inactive':'active';
-				$company_details->save();
-				if(isset($input['salary']))
+				$ddetails->status      = (Input::get('status')!='activo')?'inactivo':'activo';
+				$ddetails->save();
+				if(isset($input['monto']))
 				{
-					foreach ($input['salary'] as $index => $value)
+					foreach ($input['monto'] as $index => $value)
 					{
-						$salary_details = Salary::find($index);
-						$salary_details->type = $input['type'][$index];
-						$salary_details->salary = $value;
+						$salary_details = Soldonacion::find($index);
+						$salary_details->tipo = $input['tipo'][$index];
+						$salary_details->monto = $value;
 						$salary_details->save();
 					}
 				}
@@ -268,10 +268,10 @@ class BeneficiariosController extends \AdminBaseController {
 		else if(Input::get('updateType')=='personalInfo')
 		{
 
-			$employee   =   Employee::where('employeeID','=',$id)->get()->first();
+			$ben   =   Beneficiario::where('beneficiarioID','=',$id)->get()->first();
 
 
-			$validator = Validator::make($data = Input::all(),Employee::rules('personalInfo',$employee->id));
+			$validator = Validator::make($data = Input::all(),Employee::rules('personalInfo',$ben->id));
 
 			if ($validator->fails())
 			{
@@ -280,15 +280,12 @@ class BeneficiariosController extends \AdminBaseController {
 
 
 			$input  =   Input::all();
-
-			$name   = explode(' ', $input['fullName']);
-			$firstName = ucfirst($name[0]);
-
+			$fullname = $input['nombres']." ".$input['apellidos'];
 
 			$password = ($data['password']!='')?Hash::make(Input::get('password')):$data['oldpassword'];
 
 			// Profile Image Upload
-			if (Input::hasFile('profileImage'))
+			if (Input::hasFile('foto'))
 			{
 				$path       = public_path()."/profileImages/";
 				File::makeDirectory($path, $mode = 0777, true, true);
@@ -297,7 +294,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 
 				$extension  = $image->getClientOriginalExtension();
-				$filename	= "{$firstName}_{$id}.".strtolower($extension);
+				$filename	= "{$fullname}_{$id}.".strtolower($extension);
 
 				//Image::make($image->getRealPath())->resize(872,724)->save("$path$filename");
 
@@ -314,21 +311,25 @@ class BeneficiariosController extends \AdminBaseController {
 
 
 
-			$employee->update(
+			$ben->update(
 				[
-					'fullName'      => ucwords(strtolower($input['fullName'])),
-					'fatherName'    => ucwords(strtolower($input['fatherName'])),
-					'gender'        => $input['gender'],
+					'nombres'      => ucwords(strtolower($input['nombres'])),
+					'apellidos'    => ucwords(strtolower($input['apellidos'])),
+					'genero'        => $input['genero'],
 					'email'         => $input['email'],
-					'password'      => $password,
-					'date_of_birth' => (trim(Input::get('date_of_birth'))!='')?date('Y-m-d',strtotime(Input::get('date_of_birth'))):null,
-					'mobileNumber'  => $input['mobileNumber'],
-					'localAddress'  => $input['localAddress'],
-					'permanentAddress' => $input['permanentAddress'],
-					'profileImage'     => $filename,
+					'password'      => Hash::make($input['password']),
+					'fechanac' => (trim(Input::get('fechanac'))!='')?date('Y-m-d',strtotime(Input::get('fechanac'))):null,
+					'telefono'  => $input['telefono'],
+					'direccion'  => $input['direccion'],
+					'foto'  =>  isset($filename)?$filename:'default.jpg',
+					'direccionperm' => $input['direccionperm']
 				]);
 
-			return Redirect::route('admin.employees.edit',$id)->with('successPersonal',"<strong>Success</strong> Updated Successfully");
+
+
+
+
+			return Redirect::route('admin.beneficiarios.edit',$id)->with('successPersonal',"<strong>Actualizacion</strong> Existosa");
 
 		}
 		//-------Personal Details Update End-------------
@@ -336,10 +337,9 @@ class BeneficiariosController extends \AdminBaseController {
 		//-------Documents info Details Update Start--------
 		else if(Input::get('updateType')=='documents')
 		{
-
 			// -------------- UPLOAD THE DOCUMENTS  -----------------
-			$documents  =   ['resume','offerLetter','joiningLetter','contract','IDProof'];
-
+			$documents  =   ['certnac','CIprueba','solicitud','croquis','perfil'];
+			$fullname = $input['nombres']." ".$input['apellidos'];
 			foreach ($documents as $document) {
 				if (Input::hasFile($document)) {
 
@@ -349,51 +349,46 @@ class BeneficiariosController extends \AdminBaseController {
 					$file 	= Input::file($document);
 					$extension  = $file->getClientOriginalExtension();
 
-					$employee   =   Employee::where('employeeID','=',$id)->get()->first();
-					$nameArray  =   explode(' ',$employee->fullName);
-					$firstName  =   $nameArray[0];
-					$filename	= "{$document}_{$id}_{$firstName}.$extension";
+//					$ben   =   Employee::where('employeeID','=',$id)->get()->first();
+					$filename	= "{$document}_{$id}_{$fullname}.$extension";
 
 					Input::file($document)->move($path, $filename);
-					$employee_document  =   Employee_document::firstOrNew(['employeeID'=>$id,'type'=>$document]);
-					$employee_document->fileName  =   $filename;
-					$employee_document->type      =   $document;
-					$employee_document->save();
+					$edoc  =   Bendocumentos::firstOrNew(['beneficiarioID'=>$id,'type'=>$document]);
+					$edoc->fileName  =   $filename;
+					$edoc->type      =   $document;
+					$edoc->save();
 
 				}
 			}
 
-			return Redirect::route('admin.employees.edit',$id)->with('successDocuments',"<strong>Success</strong> Updated Successfully");
+			return Redirect::route('admin.beneficiarios.edit',$id)->with('successDocuments',"<strong>Actualizacion</strong> Existosa");
 			//  ********** END UPLOAD THE DOCUMENTS**********
 
 		}
 		//-------Documents info Details Update END--------
-
-
 		return Response::json($output, 200);
 	}
 
 
 
 	public function export(){
-		$employee   =   Employee::join('designation', 'employees.designation', '=', 'designation.id')
-		                        ->join('department', 'department.id', '=', 'designation.deptID')
-		                        ->leftJoin('bank_details', 'bank_details.employeeID', '=', 'employees.employeeID')
-		                        ->select('employees.id','employees.employeeID',
-			                        'employees.fullName','department.deptName as Department',
-			                        'designation.designation as Designation','employees.fatherName','employees.mobileNumber','employees.date_of_birth',
-			                        'employees.joiningDate','employees.localAddress','employees.permanentAddress','employees.status',
-			                        'employees.exit_date','employees.permanentAddress',
-			                        'bank_details.accountName','bank_details.accountNumber','bank_details.bank','bank_details.pan','bank_details.branch',
-			                        'bank_details.ifsc'
+		$ben   =   Beneficiario::join('objetivo', 'beneficiarios.objetivo', '=', 'objetivo.id')
+		                        ->join('destino', 'destino.id', '=', 'objetivo.destID')
+		                        ->leftJoin('zonificacion_beneficiario', 'zonificacion_beneficiario.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
+		                        ->select('beneficiarios.beneficiarioID',
+			                        'beneficiarios.nombres','beneficiarios.apellidos', 'destino.destino as Destino', 'objetivo.objetivo as Objetivo',
+			                        'designation.designation as Designation','beneficiarios.telefono','beneficiarios.fechanac',
+			                        'beneficiarios.fechaing','beneficiarios.direccion','beneficiarios.direccionperm','beneficiarios.status',
+			                        'beneficiarios.fecha_desvinculacion',
+			                        'zonificacion_beneficiario.departamento','zonificacion_beneficiario.zona','zonificacion_beneficiario.otros'
 		                        )->orderBy('id','asc')
 		                        ->get()->toArray();
 
-		$data = $employee;
+		$data = $ben;
 
-		Excel::create('employees'.time(), function($excel) use($data) {
+		Excel::create('ong'.time(), function($excel) use($data) {
 
-			$excel->sheet('Employees', function($sheet) use($data) {
+			$excel->sheet('Beneficiarios', function($sheet) use($data) {
 
 				$sheet->fromArray($data);
 
