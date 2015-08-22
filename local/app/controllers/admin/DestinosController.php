@@ -21,7 +21,6 @@ class DestinosController extends \AdminBaseController {
 			                                    ->join('destino', 'objetivo.destID', '=', 'destino.id')
 			                                    ->where('destino.id', '=', $des->id )
 			                                    ->count();
-			dd(DB::getQueryLog());
 		}
 
 		$this->data['beneficiarioCount']    =   $benCount;
