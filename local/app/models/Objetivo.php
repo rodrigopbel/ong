@@ -3,35 +3,13 @@
 class Objetivo extends \Eloquent {
 
     // Add your validation rules here
-    public static $rules = [
-        'objetivo' => 'required|unique:objetivo,objname,:id',
-        "destino.0"=>'required',
-    ];
 
+protected $fillable = [];
+protected $table    =   'objetivo';
+protected $guarded  = ['id'];
 
-
-    protected $table="objetivo";
-
-    // Don't forget to fill this array
-    protected $fillable = [];
-
-    protected $guarded  =   ['id'];
-
-    public static function rules($id=false,$merge=[])
-    {
-        $rules = self::$rules;
-        if ($id) {
-            foreach ($rules as &$rule) {
-                $rule = str_replace(':id', $id, $rule);
-            }
-        }
-        return array_merge( $rules, $merge );
-    }
-
-
-    protected  function Destinos(){
-        return $this->hasMany('destino','destID','id');
-    }
-
-
+protected function destinos()
+{
+    return $this->belongsTo('Destino','destID','id');
+}
 }

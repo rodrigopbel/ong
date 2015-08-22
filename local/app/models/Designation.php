@@ -2,7 +2,7 @@
 
 class Designation extends \Eloquent {
 
-	protected $fillable = [];
+    protected $fillable = [];
     protected $table    =   'designation';
     protected $guarded  = ['id'];
 
