@@ -14,7 +14,7 @@
 
  <div class="col-md-6">
     <input class="form-control form-control-inline input-medium" name="objetivo[{{$i}}]" id="objetivo" type="text" value="{{$objetivo['objetivo']}}" placeholder="Objetivo #1"/>
-    <input type="hidden" name="objID[{{$i}}]" id="" type="text" value="{{$objetivo['id']}}" placeholder="Objetivo #1"/>
+    <input type="hidden" name="objID[{{$i}}]" id="objetivo" type="text" value="{{$objetivo['id']}}" placeholder="Objetivo #1"/>
  </div>
 {{'';$i++;}}
 </div>
