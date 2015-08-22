@@ -7,14 +7,11 @@ class DashboardController extends \BaseController {
 
         parent::__construct();
         $this->data['pageTitle']   =   'Dashboard';
-
         $this->data['beneficiarioID']  =   Auth::beneficiarios()->get()->beneficiarioID;
-
 	    $this->data['leaveTypes']  =    Attendance::leaveTypesEmployees();
 	    $this->data['leaveTypeWithoutHalfDay']   =   Attendance::leaveTypesEmployees('halfday');
 //        Total leaves except
 	    $total_leave    =   Leavetype::where('leaveType','<>','half day')->sum('num_of_leave');
-
         $this->data['leaveLeft']       =    array_sum(Attendance::absentEmployee($this->data['beneficiarioID'])).'/'.$total_leave;
         $this->data['beneficiario']    =    Beneficiario::find(Auth::beneficiarios()->get()->id);
         $this->data['holidays']        =    Holiday::orderBy('date','ASC')->remember(10,'holiday_cache')->get();
@@ -30,13 +27,7 @@ class DashboardController extends \BaseController {
         $this->data['attendance_count']   = Attendance::attendanceCount($this->data['beneficiarioID']);
 
         $this->data['current_month_birthdays']   = Employee::currentMonthBirthday();
-
-
-
     }
-
-
-
 	public function index()
 	{
         $this->data['homeActive']         =    'active';
