@@ -235,7 +235,7 @@
                                     <div class="form-actions">
                                         <div class="row">
                                             <div class="col-md-offset-3 col-md-9">
-                                                <button type="submit" data-loading-text="Actualizando..." class="demo-loading-btn btn green"><i class="fa fa-edit"></i> Actualizar</button>
+                                                <button type="submit" data-loading-text=" Actualizando..." class="demo-loading-btn btn green"><i class="fa fa-edit"></i> Actualizar</button>
 
                                             </div>
                                         </div>
