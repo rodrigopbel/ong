@@ -113,8 +113,8 @@
                                           {{ $ben->nombres . " ". $ben->apellidos }}
                                     </td>
                                     <td>
-                                          <p>Destino: <strong>{{ $ben->getDestino->destino->destino or ''}}</strong></p>
-                                          <p>Objetivo: <strong>{{ $ben->getDestino->destino->objetivos->objetivo or ''}}</strong></p>
+                                          <p>Destino: <strong>{{ $ben->getObjetivo->destinos->destino or ''}}</strong></p>
+                                          <p>Objetivo: <strong>{{ $ben->getObjetivo->objetivo or ''}}</strong></p>
                                     </td>
                                      <td class="text-center">
                                           {{ $ben->duracionVinculacion($ben->beneficiarioID) }}
