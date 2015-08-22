@@ -82,7 +82,7 @@
         										<div class="col-md-9">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-        												 {{HTML::image("/profileImages/{$beneficiario->foto}",'ProfileImage')}}
+        												 {{HTML::image("/profileImages/{$beneficiario->foto}",'foto')}}
                                                          <input type="hidden" name="hiddenImage" value="{{$beneficiario->foto}}">
         												</div>
         												<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
@@ -93,7 +93,7 @@
         													Sellecionar imagen </span>
         													<span class="fileinput-exists">
         													Cambiar </span>
-        													<input type="file" name="profileImage">
+        													<input type="file" name="foto">
         													</span>
         													<a href="#" class="btn red fileinput-exists" data-dismiss="fileinput">
         													Eliminar </a>
@@ -110,13 +110,13 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Nombres<span class="required">* </span></label>
         										<div class="col-md-9">
-        											<input type="text" name="fullName" class="form-control" value="{{$beneficiario->nombres}}">
+        											<input type="text" name="nombres" class="form-control" value="{{$beneficiario->nombres}}">
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Apellidos</label>
         										<div class="col-md-9">
-        											<input type="text" name="fatherName" class="form-control" value="{{$beneficiario->apellidos}}">
+        											<input type="text" name="apellidos" class="form-control" value="{{$beneficiario->apellidos}}">
         										</div>
         									</div>
         									<div class="form-group">
@@ -133,11 +133,11 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Genero</label>
         										<div class="col-md-9">
-        											<select class="form-control" name="gender">
+        											<select class="form-control" name="genero">
 
-        												<option value="male" @if($beneficiario->genero=='hombre') selected @endif>Varon</option>
-        												<option value="female"  @if($beneficiario->genero=='mujer') selected @endif>Mujer</option>
-														<option value="female"  @if($beneficiario->genero=='otros') selected @endif>Otros</option>
+        												<option value="hombre" @if($beneficiario->genero=='hombre') selected @endif>Varon</option>
+        												<option value="mujer"  @if($beneficiario->genero=='mujer') selected @endif>Mujer</option>
+														<option value="otros"  @if($beneficiario->genero=='otros') selected @endif>Otros</option>
         											</select>
         										</div>
         									</div>
@@ -145,19 +145,19 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Telefono</label>
         										<div class="col-md-9">
-        											<input type="text" name="mobileNumber" class="form-control" value="{{$beneficiario->telefono}}">
+        											<input type="text" name="telefono" class="form-control" value="{{$beneficiario->telefono}}">
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Direccion Actual</label>
         										<div class="col-md-9">
-        											<textarea name="localAddress" class="form-control" rows="3">{{$beneficiario->direccion}}</textarea>
+        											<textarea name="direccion" class="form-control" rows="3">{{$beneficiario->direccion}}</textarea>
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Direccion Permanente</label>
         										<div class="col-md-9">
-        											<textarea name="permanentAddress" class="form-control" rows="3">{{$beneficiario->direccionperm}}</textarea>
+        											<textarea name="direccionperm" class="form-control" rows="3">{{$beneficiario->direccionperm}}</textarea>
         										</div>
         									</div>
         									<h4><strong>Cuenta de Beneficiario</strong></h4>

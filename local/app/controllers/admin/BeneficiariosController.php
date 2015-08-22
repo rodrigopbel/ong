@@ -27,7 +27,7 @@ class BeneficiariosController extends \AdminBaseController {
 	}
 
 	/**
-	 * Show the form for creating a new employee
+	 * Show the form for creating a new
 	 */
 	public function create()
 	{
@@ -38,7 +38,7 @@ class BeneficiariosController extends \AdminBaseController {
 	}
 
 	/**
-	 * Store a newly created employee in storage
+	 * Store a newly created in storage
 	 */
 	public function store()
 	{
@@ -164,7 +164,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 
 	/**
-	 * Show the form for editing the specified employee
+	 * Show the form for editing the specified
 	 */
 	public function edit($id)
 	{
@@ -189,7 +189,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 
 	/**
-	 * Update the specified employee in storage.
+	 * Update the specified in storage.
 	 */
 	public function update($id)
 	{
@@ -337,19 +337,18 @@ class BeneficiariosController extends \AdminBaseController {
 		//-------Documents info Details Update Start--------
 		else if(Input::get('updateType')=='documents')
 		{
+			$input  =   Input::all();
 			// -------------- UPLOAD THE DOCUMENTS  -----------------
 			$documents  =   ['certnac','CIprueba','solicitud','croquis','perfil'];
 			$fullname = $input['nombres']." ".$input['apellidos'];
 			foreach ($documents as $document) {
 				if (Input::hasFile($document)) {
 
-					$path = public_path()."/employee_documents/{$document}/";
+					$path = public_path()."/beneficiarios_documents/{$document}/";
 					File::makeDirectory($path, $mode = 0777, true, true);
 
 					$file 	= Input::file($document);
 					$extension  = $file->getClientOriginalExtension();
-
-//					$ben   =   Employee::where('employeeID','=',$id)->get()->first();
 					$filename	= "{$document}_{$id}_{$fullname}.$extension";
 
 					Input::file($document)->move($path, $filename);
@@ -399,12 +398,12 @@ class BeneficiariosController extends \AdminBaseController {
 
 	}
 	/**
-	 * Remove the specified employee from storage.
+	 * Remove the specified  from storage.
 	 */
 
 	public function destroy($id)
 	{
-		Employee::where('employeeID', '=', $id)->delete();
+		Beneficiario::where('beneficiarioID', '=', $id)->delete();
 		$output['success']  =   'deleted';
 		return Response::json($output, 200);
 	}
