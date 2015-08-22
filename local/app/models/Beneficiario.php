@@ -74,6 +74,14 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 
 	protected $hidden  = ['password'];
 
+	//Nuevos
+
+	public function getDestino()
+	{
+		// belongs('OtherClass','thisclasskey','otherclasskey')
+		return $this->belongsTo('Destino','destino','id');
+	}
+
     public function getDesignation()
     {
        // belongs('OtherClass','thisclasskey','otherclasskey')
@@ -127,6 +135,21 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 
 	}
 
+	//Function to calculate number of days of work
+	public function duracionVinculacion($benID)
+	{
+		$ben = Beneficiario::select('fechaing','fecha_desvinculacion')->where('beneficiarioID','=',$benID)->first();
+		$lastDate   =   ($ben->fecha_desvinculacion==NULL)?date('Y-m-d'):$ben->fecha_desvinculacion;
+
+		$diff = date_diff(date_create($ben->fechaing),date_create($lastDate));
+
+		$difference = ($diff->y==0)?null:$diff->y.' A&Ntildeo(s) ';
+		$difference .= ($diff->m==0)?null:$diff->m.' mes(es) ';
+		$difference .= ($diff->d==0)?null:$diff->d.' dia(s) ';
+
+		return $difference;
+
+	}
 
 	/**
 	 * Get the last absent days

@@ -24,7 +24,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="{{route('admin.employees.index')}}">Beneficiarios</a>
+						<a href="{{route('admin.beneficiarios.index')}}">Beneficiarios</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
@@ -99,39 +99,39 @@
 							</thead>
 							<tbody>
 					
-							@foreach ($employees as $employee)
-                                <tr id="row{{ $employee->employeeID }}">
+							@foreach ($beneficiarios as $ben)
+                                <tr id="row{{ $ben->beneficiarioID }}">
                                     <td>
-                                            {{ $employee->employeeID }}
+                                            {{ $ben->beneficiarioID }}
 
                                     </td>
                                     <td class="text-center">
-                                        {{HTML::image("/profileImages/{$employee->profileImage}",'ProfileImage',['height'=>'80px'])}}
+                                        {{HTML::image("/profileImages/{$ben->foto}",'ProfileImage',['height'=>'80px'])}}
 
                                     </td>
                                     <td>
-                                          {{ $employee->fullName . " ". $employee->fatherName }}
+                                          {{ $ben->nombres . " ". $ben->apellidos }}
                                     </td>
                                     <td>
-                                          <p>Objetivo: <strong>{{ $employee->getDesignation->department->deptName or ''}}</strong></p>
-                                          <p>Destino: <strong>{{ $employee->getDesignation->designation or ''}}</strong></p>
+                                          <p>Destino: <strong>{{ $ben->getDestino->destino->destino or ''}}</strong></p>
+                                          <p>Objetivo: <strong>{{ $ben->getDestino->destino->objetivos->objetivo or ''}}</strong></p>
                                     </td>
                                      <td class="text-center">
-                                          {{ $employee->workDuration($employee->employeeID) }}
+                                          {{ $ben->duracionVinculacion($ben->beneficiarioID) }}
                                     </td>
                                      <td>
-                                          {{ $employee->mobileNumber }}
+                                          {{ $ben->telefono }}
                                     </td>
                                     <td>
-                                    @if($employee->status=='active')
+                                    @if($ben->status=='activo')
                                         <span class="label label-sm label-success"> Activo </span>
                                     @else
                                         <span class="label label-sm label-danger"> Inactivo </span>
                                      @endif
                                     </td>
                                     <td class="">
-                                    <p> <a class="btn purple" href="{{ route('admin.employees.edit',$employee->employeeID)  }}"><i class="fa fa-edit"></i> Editar</a></p>
-                                    <p>    <a class="btn red" style="width: 105px;" href="javascript:;" onclick="del('{{$employee->employeeID}}','{{ $employee->fullName }}')"><i class="fa fa-trash"></i> Eliminar</a></p>
+                                    <p> <a class="btn purple" href="{{ route('admin.employees.edit',$ben->beneficiarioID)  }}"><i class="fa fa-edit"></i></a></p>
+                                    <p>    <a class="btn red" style="width: 105px;" href="javascript:;" onclick="del('{{$ben->beneficiarioID}}','{{ $ben->nombres ." ".$ben->apellidos }}')"><i class="fa fa-trash"></i></a></p>
                                     </td>
                                 </tr>
 							@endforeach
@@ -174,10 +174,10 @@
 	function del(id,name)
     		{
     			$('#deleteModal').appendTo("body").modal('show');
-    			$('#info').html('Esta seguro de querer eliminar al Beneficiario : <strong>'+name+'</strong> ??');
+    			$('#info').html('Eliminar al Beneficiario : <strong>'+name+'</strong> ??');
     			$("#delete").click(function()
     			{
-    					var url = "{{ route('admin.employees.destroy',':id') }}";
+    					var url = "{{ route('admin.beneficiarios.destroy',':id') }}";
 						url = url.replace(':id',id);
 
     					 $.ajax({

@@ -30,14 +30,14 @@
 
 
 		      {{---------------------------------------Beneficiarios-------------------------------}}
-				<li class="{{ $employeesOpen or ''}}">
+				<li class="{{ $beneficiariosOpen or ''}}">
 					<a href="javascript:;">
 					<i class="fa fa-users"></i>
 					<span class="title">{{Lang::get('menu.employees')}}</span>
 					<span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
-						<li class="{{ $employeesActive or ''}}">
+						<li class="{{ $beneficiariosActive or ''}}">
 							<a href="{{route('admin.employees.index')}}">
 							<i class="fa fa-users"></i>
 							{{Lang::get('menu.employeeList')}}</a>

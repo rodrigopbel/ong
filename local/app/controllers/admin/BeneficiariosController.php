@@ -10,7 +10,7 @@ class BeneficiariosController extends \AdminBaseController {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->data['employeesOpen'] =   'active open';
+		$this->data['beneficiariosOpen'] =   'active open';
 		$this->data['pageTitle']     =   'Beneficiarios';
 	}
 
@@ -19,7 +19,7 @@ class BeneficiariosController extends \AdminBaseController {
 		$this->data['beneficiarios']       =    Beneficiario::all();
 		$this->data['beneficiariosActive'] =   'active';
 
-		return View::make('admin.employees.index', $this->data);
+		return View::make('admin.beneficiarios.index', $this->data);
 	}
 
 	/**
@@ -30,7 +30,7 @@ class BeneficiariosController extends \AdminBaseController {
 		$this->data['employeesActive'] =   'activo';
 		$this->data['destino']      =     Destino::lists('destino','id');
 
-		return View::make('admin.employees.create',$this->data);
+		return View::make('admin.beneficiarios.create',$this->data);
 	}
 
 	/**
