@@ -38,7 +38,7 @@ class BeneficiariosController extends \AdminBaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($input = Input::all(), Employee::rules('create'));
+		$validator = Validator::make($input = Input::all(), Beneficiario::rules('create'));
 
 		if ($validator->fails())
 		{
@@ -71,66 +71,62 @@ class BeneficiariosController extends \AdminBaseController {
 
 			}
 
-			Employee::create([
-				'employeeID'    => $input['employeeID'],
-				'designation'   => $input['designation'],
-				'fullName'      => ucwords(strtolower($input['fullName'])),
-				'fatherName'    => ucwords(strtolower($input['fatherName'])),
-				'gender'        => $input['gender'],
+			Beneficiario::create([
+				'beneficiarioID'    => $input['employeeID'],
+				'objetivo'   => $input['objetivo'],
+				'nombres'      => ucwords(strtolower($input['nombres'])),
+				'apellidos'    => ucwords(strtolower($input['apellidos'])),
+				'genero'        => $input['genero'],
 				'email'         => $input['email'],
 				'password'      => Hash::make($input['password']),
-				'date_of_birth' => date('Y-m-d',strtotime($input['date_of_birth'])),
-				'mobileNumber'  => $input['mobileNumber'],
-				'joiningDate'   => $input['joiningDate'],
-				'localAddress'  => $input['localAddress'],
-				'profileImage'  =>  isset($filename)?$filename:'default.jpg',
-				'joiningDate'   =>  date('Y-m-d',strtotime($input['joiningDate'])),
-				'permanentAddress' => $input['permanentAddress']
+				'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
+				'telefono'  => $input['telefono'],
+				'fechaing'   => $input['fechaing'],
+				'direccion'  => $input['direccion'],
+				'foto'  =>  isset($filename)?$filename:'default.jpg',
+				'fechaing'   =>  date('Y-m-d',strtotime($input['fechaing'])),
+				'direccionperm' => $input['direccionperm']
 			]);
 
 			//  Insert into salary table
-			if ($input['currentSalary'] != '')
+			if ($input['montosolicitado'] != '')
 			{
-				Salary::create([
-					'employeeID' => $input['employeeID'],
-					'type'       => 'current',
-					'remarks'    => 'Joining Salary Of Employee',
-					'salary'     => $input['currentSalary']
+				Soldonacion::create([
+					'beneficiarioID' => $input['beneficiarioID'],
+					'tipo'       => 'current',
+					'nota'    => 'Primera Solicitud',
+					'monto'     => $input['montosolicitado']
 
 				]);
 			}
 			// Insert Into Bank Details
-			if ($input['accountName'] != '' && $input['accountNumber']!='')
-			{
-				Bank_detail::create([
-					'employeeID'    =>  $input['employeeID'],
-					'accountName'   =>  $input['accountName'],
-					'accountNumber' =>  $input['accountNumber'],
-					'bank'          =>  $input['bank'],
-					'pan'           =>  $input['pan'],
-					'ifsc'          =>  $input['ifsc'],
-					'branch'        =>  $input['branch']
+			Zonificacion::create([
+				'beneficiarioID'    =>  $input['beneficiarioID'],
+				'departamento'   =>  $input['departamento'],
+				'provincia' =>  $input['provincia'],
+				'localidad'          =>  $input['localidad'],
+				'zona'           =>  $input['zona'],
+				'canton'          =>  $input['canton'],
+				'otros'        =>  $input['otros']
 
-				]);
-
-			}
+			]);
 
 			// -------------- UPLOAD THE DOCUMENTS  -----------------
-			$documents  =   ['resume','offerLetter','joiningLetter','contract','IDProof'];
+			$documents  =   ['certnac','CIprueba','solicitud','croquis','perfil'];
 
 			foreach ($documents as $document) {
 				if (Input::hasFile($document)) {
 
-					$path = public_path()."/employee_documents/{$document}/";
+					$path = public_path()."/beneficiarios_documents/{$document}/";
 					File::makeDirectory($path, $mode = 0777, true, true);
 
 					$file 	    = Input::file($document);
 					$extension  = $file->getClientOriginalExtension();
-					$filename	= "{$document}_{$input['employeeID']}_{$firstName}.$extension";
+					$filename	= "{$document}_{$input['beneficiarioID']}_{$firstName}.$extension";
 
 					Input::file($document)->move($path, $filename);
 					Employee_document::create([
-						'employeeID'=>  $input['employeeID'],
+						'beneficiarioID'=>  $input['beneficiarioID'],
 						'fileName'  =>   $filename,
 						'type'      =>  $document
 					]);
@@ -138,17 +134,17 @@ class BeneficiariosController extends \AdminBaseController {
 				}
 			}
 
-
-			if($this->data['setting']->employee_add==1)
+			$fullname = $input['nombres']." ".$input['apellidos'];
+			if($this->data['setting']->ben_add==1)
 			{
-				$this->data['employee_name'] = $input['fullName'];
-				$this->data['employee_email'] = $input['email'];
-				$this->data['employee_password'] = $input['password'];
+				$this->data['ben_name'] = $fullname;
+				$this->data['ben_email'] = $input['email'];
+				$this->data['ben_password'] = $input['password'];
 				//        Send Employee Add Mail
-				Mail::send('emails.admin.employee_add', $this->data, function ($message) use ($input) {
+				Mail::send('emails.admin.beneficiarios_add', $this->data, function ($message) use ($input) {
 					$message->from($this->data['setting']->email, $this->data['setting']->name);
-					$message->to($input['email'], $input['fullName'])
-					        ->subject('Account Created - ' . $this->data['setting']->website);
+					$message->to($input['email'], $input['nombres']." ".$input['apellidos'])
+					        ->subject('Cuenta Creada - ' . $this->data['setting']->website);
 				});
 			}
 			//  ********** END UPLOAD THE DOCUMENTS**********
@@ -160,7 +156,7 @@ class BeneficiariosController extends \AdminBaseController {
 		}
 
 		DB::commit();
-		return Redirect::route('admin.employees.index')->with('success',"<strong>{$input['fullName']}</strong> successfully added to the Database");
+		return Redirect::route('admin.beneficiarios.index')->with('success',"<strong>{$fullname}</strong> exitosamente adicionado en le base de datos");
 	}
 
 

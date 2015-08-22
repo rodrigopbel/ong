@@ -213,7 +213,7 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Monto Solicitado</label>
         										<div class="col-md-9">
-        											<input type="text" class="form-control" name="monto" placeholder="Monto Solicitado" value="{{ Input::old('monto') }}">
+        											<input type="text" class="form-control" name="montosolicitado" placeholder="Monto Solicitado" value="{{ Input::old('montosolicitado') }}">
         										</div>
         									</div>
         								</div>
@@ -276,6 +276,7 @@
         				</div>
         			</div>
         			<div class="clearfix">
+					</div>
         			{{---------------Documents------------------}}
         			<div class="row ">
         				<div class="col-md-6 col-sm-6">

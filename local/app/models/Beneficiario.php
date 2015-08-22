@@ -50,8 +50,9 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 
 		'personalInfo'=>[
 			'nombres'      =>   $fullNameValidation,
+			'apellidos'      =>   $fullNameValidation,
 			'email'         =>   "required|email|unique:employees,email,:id",
-			'profileImage'  =>   $ProfileImageValidation,
+			'foto'  =>   $ProfileImageValidation,
 		],
 
 	];
