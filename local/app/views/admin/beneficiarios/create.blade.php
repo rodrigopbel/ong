@@ -45,10 +45,8 @@
 							<div class="col-md-6 form-group text-right">
 
 							<span id="load_notification"></span>
+								 <strong>Notificaciones</strong><br>
 								 <input  type="checkbox"  onchange="ToggleEmailNotification('ben_add');return false;" class="make-switch" name="ben_add" @if($setting->ben_add==1)checked	@endif data-on-color="success" data-on-text="Si"data-off-text="No" data-off-color="danger">
-								<strong>Notificaciones</strong><br>
-
-
 							</div>
 						 </div>
 
@@ -71,7 +69,7 @@
         						<div class="portlet-body">
 
         								<div class="form-body">
-                        <div class="form-group ">
+											<div class="form-group ">
         										<label class="control-label col-md-3">Foto</label>
         										<div class="col-md-9">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
@@ -126,7 +124,7 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Genero</label>
         										<div class="col-md-9">
-        											 {{ Form::select('genero', array('male' => 'Hombre', 'female' => 'Mujer'), Input::old('genero'),array('class'=>'form-control')) }}
+        											 {{ Form::select('genero', array('hombre' => 'Hombre', 'mujer' => 'Mujer', 'otros' => 'Otros'), Input::old('genero'),array('class'=>'form-control')) }}
         										</div>
         									</div>
 
@@ -173,7 +171,7 @@
         					<div class="portlet box red-sunglo">
         						<div class="portlet-title">
         							<div class="caption">
-        								<i class="fa fa-calendar"></i> Objetivo de la Ayuda
+        								<i class="fa fa-calendar"></i> Detalles de la Donacion
         							</div>
 
         						</div>
@@ -205,7 +203,7 @@
         										<label class="control-label col-md-3">Fecha de Solicitud</label>
         										<div class="col-md-3">
         											<div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-        												<input type="text" class="form-control" name="joiningDate" readonly value="{{Input::old('joiningDate')}}">
+        												<input type="text" class="form-control" name="fechaing" readonly value="{{Input::old('fechaing')}}">
         												<span class="input-group-btn">
         												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
         												</span>
@@ -215,7 +213,7 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Monto Requerido</label>
         										<div class="col-md-9">
-        											<input type="text" class="form-control" name="currentSalary" placeholder="Monto requerido" value="{{ Input::old('currentSalary') }}">
+        											<input type="text" class="form-control" name="monto" placeholder="Monto requerido" value="{{ Input::old('monto') }}">
         										</div>
         									</div>
         								</div>
@@ -236,37 +234,38 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Departamento</label>
         										<div class="col-md-9">
-        											<input type="text" class="form-control" name="accountName" placeholder="Departamento" value="{{Input::old('accountName')}}">
+        											<input type="text" class="form-control" name="departamento" placeholder="Departamento" value="{{Input::old('departamento')}}">
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Provincia</label>
         										<div class="col-md-9">
-        											<input type="text" class="form-control" name="accountNumber" placeholder="Provincia" value="{{Input::old('accountNumber')}}">
+        											<input type="text" class="form-control" name="provincia" placeholder="Provincia" value="{{Input::old('provincia')}}">
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Localidad</label>
         										<div class="col-md-9">
-        											<input type="text" class="form-control" name="bank" placeholder="Localidad" value="{{Input::old('bank')}}">
+        											<input type="text" class="form-control" name="localidad" placeholder="Localidad" value="{{Input::old('localidad')}}">
         										</div>
         									</div>
-        									<div class="form-group">
-        										<label class="col-md-3 control-label">Seccion</label>
-        										<div class="col-md-9">
-        											<input type="text" class="form-control" name="ifsc" placeholder="Seccion" value="{{Input::old('ifsc')}}">
-        										</div>
-        									</div>
-        									<div class="form-group">
-                                                <label class="col-md-3 control-label">Zona</label>
-                                                <div class="col-md-9">
-                                                    <input type="text" class="form-control" name="pan" placeholder="Zona" value="{{Input::old('pan')}}">
-                                                </div>
-                                            </div>
 											<div class="form-group">
 												<label class="col-md-3 control-label">Canton</label>
 												<div class="col-md-9">
-													<input type="text" class="form-control" name="branch" placeholder="Canton" value="{{Input::old('branch')}}">
+													<input type="text" class="form-control" name="canton" placeholder="Canton" value="{{Input::old('canton')}}">
+												</div>
+											</div>
+        									<div class="form-group">
+                                                <label class="col-md-3 control-label">Zona</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="zona" placeholder="Zona" value="{{Input::old('zona')}}">
+                                                </div>
+                                            </div>
+
+											<div class="form-group">
+												<label class="col-md-3 control-label">Nota</label>
+												<div class="col-md-9">
+													<input type="text" class="form-control" name="otros" placeholder="Nota" value="{{Input::old('otros')}}">
 												</div>
 											</div>
         								</div>
@@ -278,137 +277,147 @@
         			<div class="clearfix">
         			{{---------------Documents------------------}}
         			<div class="row ">
-        				<div class="col-md-12 col-sm-12">
+        				<div class="col-md-6 col-sm-6">
         					<div class="portlet box purple-wisteria">
         						<div class="portlet-title">
         							<div class="caption">
-        								<i class="fa fa-calendar"></i>Documentos
+        								<i class="fa fa-calendar"></i>Documentos Personales
         							</div>
 
         						</div>
         						<div class="portlet-body">
+									<div class="form-body">
+										<div class="form-group">
+											<label class="control-label col-md-2">Certificado de Nacimiento</label>
+											<div class="col-md-5">
+												<div class="fileinput fileinput-new" data-provides="fileinput">
+													<div class="input-group input-large">
+														<div class="form-control uneditable-input" data-trigger="fileinput">
+															<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
+															</span>
+														</div>
+														<span class="input-group-addon btn default btn-file">
+														<span class="fileinput-new">
+														Seleccionar Archivo </span>
+														<span class="fileinput-exists">
+														Cambiar </span>
+														<input type="file" name="certnac">
+														</span>
+														<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
+														Eliminar </a>
+													</div>
+												</div>
+											</div>
 
-        								<div class="form-body">
-        									<div class="form-group">
-        										<label class="control-label col-md-2">Perfil</label>
-        										<div class="col-md-5">
-        											<div class="fileinput fileinput-new" data-provides="fileinput">
-        												<div class="input-group input-large">
-        													<div class="form-control uneditable-input" data-trigger="fileinput">
-        														<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
-        														</span>
-        													</div>
-        													<span class="input-group-addon btn default btn-file">
-        													<span class="fileinput-new">
-        													Seleccionar Archivo </span>
-        													<span class="fileinput-exists">
-        													Cambiar </span>
-        													<input type="file" name="perfil">
-        													</span>
-        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Eliminar </a>
-        												</div>
-        											</div>
-        										</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-2">Croquis</label>
+											<div class="col-md-5">
+												<div class="fileinput fileinput-new" data-provides="fileinput">
+													<div class="input-group input-large">
+														<div class="form-control uneditable-input" data-trigger="fileinput">
+															<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
+															</span>
+														</div>
+														<span class="input-group-addon btn default btn-file">
+														<span class="fileinput-new">
+														Seleccionar Archivo </span>
+														<span class="fileinput-exists">
+														Cambiar </span>
+														<input type="file" name="croquis">
+														</span>
+														<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
+														Eliminar </a>
+													</div>
+												</div>
+											</div>
 
-        									</div>
-        									<div class="form-group">
-        										<label class="control-label col-md-2">Carta de Solicitud</label>
-        										<div class="col-md-5">
-        											<div class="fileinput fileinput-new" data-provides="fileinput">
-        												<div class="input-group input-large">
-        													<div class="form-control uneditable-input" data-trigger="fileinput">
-        														<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
-        														</span>
-        													</div>
-        													<span class="input-group-addon btn default btn-file">
-        													<span class="fileinput-new">
-        													Seleccionar Archivo </span>
-        													<span class="fileinput-exists">
-        													Cambiar </span>
-        													<input type="file" name="solicitud">
-        													</span>
-        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Eliminar </a>
-        												</div>
-        											</div>
-        										</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-2">Carnet de Identidad</label>
+											<div class="col-md-5">
+												<div class="fileinput fileinput-new" data-provides="fileinput">
+													<div class="input-group input-large">
+														<div class="form-control uneditable-input" data-trigger="fileinput">
+															<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
+															</span>
+														</div>
+														<span class="input-group-addon btn default btn-file">
+														<span class="fileinput-new">
+														Seleccionar Archivo</span>
+														<span class="fileinput-exists">
+														Cambiar </span>
+														<input type="file" name="CIprueba">
+														</span>
+														<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
+														Eliminar </a>
+													</div>
+												</div>
+											</div>
 
-        									</div>
-        									<div class="form-group">
-        										<label class="control-label col-md-2">Certificado de Nacimiento</label>
-        										<div class="col-md-5">
-        											<div class="fileinput fileinput-new" data-provides="fileinput">
-        												<div class="input-group input-large">
-        													<div class="form-control uneditable-input" data-trigger="fileinput">
-        														<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
-        														</span>
-        													</div>
-        													<span class="input-group-addon btn default btn-file">
-        													<span class="fileinput-new">
-        													Seleccionar Archivo </span>
-        													<span class="fileinput-exists">
-        													Cambiar </span>
-        													<input type="file" name="certnac">
-        													</span>
-        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Eliminar </a>
-        												</div>
-        											</div>
-        										</div>
-
-        									</div>
-        									<div class="form-group">
-        										<label class="control-label col-md-2">Croquis</label>
-        										<div class="col-md-5">
-        											<div class="fileinput fileinput-new" data-provides="fileinput">
-        												<div class="input-group input-large">
-        													<div class="form-control uneditable-input" data-trigger="fileinput">
-        														<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
-        														</span>
-        													</div>
-        													<span class="input-group-addon btn default btn-file">
-        													<span class="fileinput-new">
-        													Seleccionar Archivo </span>
-        													<span class="fileinput-exists">
-        													Cambiar </span>
-        													<input type="file" name="croquis">
-        													</span>
-        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Eliminar </a>
-        												</div>
-        											</div>
-        										</div>
-
-        									</div>
-        									<div class="form-group">
-        										<label class="control-label col-md-2">Carnet de Identidad</label>
-        										<div class="col-md-5">
-        											<div class="fileinput fileinput-new" data-provides="fileinput">
-        												<div class="input-group input-large">
-        													<div class="form-control uneditable-input" data-trigger="fileinput">
-        														<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
-        														</span>
-        													</div>
-        													<span class="input-group-addon btn default btn-file">
-        													<span class="fileinput-new">
-        													Seleccionar Archivo</span>
-        													<span class="fileinput-exists">
-        													Cambiar </span>
-        													<input type="file" name="CIprueba">
-        													</span>
-        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Eliminar </a>
-        												</div>
-        											</div>
-        										</div>
-
-        									</div>
-        								</div>
-
+										</div>
+									</div>
         						</div>
         					</div>
         				</div>
+						<div class="col-md-6 col-sm-6">
+							<div class="portlet box purple-wisteria">
+								<div class="portlet-title">
+									<div class="caption">
+										<i class="fa fa-calendar"></i>Otros Documentos
+									</div>
+								</div>
+								<div class="portlet-body">
+									<div class="form-body">
+										<div class="form-group">
+											<label class="control-label col-md-2">Perfil</label>
+											<div class="col-md-5">
+												<div class="fileinput fileinput-new" data-provides="fileinput">
+													<div class="input-group input-large">
+														<div class="form-control uneditable-input" data-trigger="fileinput">
+															<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
+															</span>
+														</div>
+														<span class="input-group-addon btn default btn-file">
+														<span class="fileinput-new">
+														Seleccionar Archivo </span>
+														<span class="fileinput-exists">
+														Cambiar </span>
+														<input type="file" name="perfil">
+														</span>
+														<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
+															Eliminar </a>
+													</div>
+												</div>
+											</div>
+
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-2">Carta de Solicitud</label>
+											<div class="col-md-5">
+												<div class="fileinput fileinput-new" data-provides="fileinput">
+													<div class="input-group input-large">
+														<div class="form-control uneditable-input" data-trigger="fileinput">
+															<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
+															</span>
+														</div>
+														<span class="input-group-addon btn default btn-file">
+														<span class="fileinput-new">
+														Seleccionar Archivo </span>
+														<span class="fileinput-exists">
+														Cambiar </span>
+														<input type="file" name="solicitud">
+														</span>
+														<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
+															Eliminar </a>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+						</div>
         			</div>
         			<div class="clearfix">
         			</div>
