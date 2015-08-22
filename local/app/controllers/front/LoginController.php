@@ -28,6 +28,7 @@ class LoginController extends \BaseController {
     {
         if (Request::ajax())
         {
+
             $output =   [];
             $input  = Input::all();
             $data	=	[

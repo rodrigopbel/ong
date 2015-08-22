@@ -321,13 +321,15 @@ class BeneficiariosController extends \AdminBaseController {
 		}
 		else if(Input::get('updateType')=='documents')
 		{
+
 			$input  =   Input::all();
+			$ben   =   Beneficiario::where('beneficiarioID','=',$id)->get()->first();
+
 			// -------------- UPLOAD THE DOCUMENTS  -----------------
 			$documents  =   ['certnac','CIprueba','solicitud','croquis','perfil'];
-			$fullname = $input['nombres']." ".$input['apellidos'];
+			$fullname = $ben->nombres." ".$ben->apellidos;
 			foreach ($documents as $document) {
 
-				die(Input::hasFile($document));
 				if (Input::hasFile($document)) {
 
 					$path = public_path()."/beneficiarios_documents/{$document}/";
