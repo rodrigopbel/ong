@@ -275,7 +275,7 @@
 //-----EDIT Modal
 
         var $insertBefore_edit = $('#insertBefore_edit');
-             var countIds = $('#countobjs').val();
+             var countIds = parseInt($('#countobjs').val());
              var $j = 0;
              if (countIds>0) {
                  var $j= countIds;
@@ -283,7 +283,7 @@
 
             $('#plus_edit_Button').click(function(){
               $j = $j+1;
-              $(' <div class="form-group" id="edit_field"> <div class="col-md-12"><input class="form-control form-control-inline input-medium"  name="objetivo['+$j+']" type="text"  placeholder="Objetivo3 #'+($j+1)+'"/></div></div>').insertBefore($insertBefore_edit);
+              $(' <div class="form-group" id="edit_field"> <div class="col-md-12"><input class="form-control form-control-inline input-medium"  name="objetivo['+$j+']" type="text"  placeholder="Objetivo #'+($j+1)+'"/></div></div>').insertBefore($insertBefore_edit);
 
 
             });
