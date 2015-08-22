@@ -210,14 +210,14 @@ class BeneficiariosController extends \AdminBaseController {
 
 				$details->departamento   = Input::get('departamento');
 				$details->provincia = Input::get('provincia');
-				$details->nota          = Input::get('nota');
+				$details->otros          = Input::get('nota');
 				$details->localidad           = Input::get('localidad');
 				$details->canton          = Input::get('canton');
-				$details->zona        = Input::get('zona');
+				$details->zona        = Input::get('otros');
 				$details->save();
 
 				$output['status'] = 'success';
-				$output['msg'] = 'Bank details updated successfully';
+				$output['msg'] = 'Zonificacion actualizado exitosamente';
 			}
 		}
 
@@ -256,7 +256,7 @@ class BeneficiariosController extends \AdminBaseController {
 					}
 				}
 				$output['status'] = 'success';
-				$output['msg']    = 'Company Details updated successfully';
+				$output['msg']    = 'Donacion Actualizado Existosamente';
 			}
 		}
 

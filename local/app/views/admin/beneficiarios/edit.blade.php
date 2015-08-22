@@ -338,7 +338,7 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Nota</label>
         										<div class="col-md-9">
-													<textarea class="form-control" name="nota" rows="3">{{$zonificacion->nota or '' }}</textarea>
+													<textarea class="form-control" name="otros" rows="3">{{$zonificacion->otros or '' }}</textarea>
         										</div>
         									</div>
         								</div>
