@@ -27,7 +27,7 @@ class BeneficiariosController extends \AdminBaseController {
 	 */
 	public function create()
 	{
-		$this->data['employeesActive'] =   'activo';
+		$this->data['beneficiariosActive'] =   'active';
 		$this->data['destino']      =     Destino::lists('destino','id');
 
 		return View::make('admin.beneficiarios.create',$this->data);
