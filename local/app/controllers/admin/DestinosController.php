@@ -140,7 +140,7 @@ class DestinosController extends \AdminBaseController {
     public function ajax_destino()
     {
 	    if (Request::ajax()) {
-		    $input = Input::get('id');
+		    $input = Input::get('destID');
 		    $objetivo = Destino::where('destID', '=', $input)
 		                              ->get();
 
