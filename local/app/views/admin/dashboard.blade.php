@@ -217,7 +217,7 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: 'Monthly Expense Report '+new Date().getFullYear()
+            text: 'Informe de gastos mensuales '+new Date().getFullYear()
         },
         xAxis: {
             categories: [
@@ -240,7 +240,7 @@ $(function () {
             min: 0,
             title: {
             useHTML: true,
-                text: 'Expense in ( <span class="fa {{$setting->currency_icon}}"></span> )'
+                text: 'Expensado en ( <span class="fa {{$setting->currency_icon}}"></span> )'
             }
         },
         tooltip: {
