@@ -3,12 +3,12 @@
 
 <hr>
 <p class="text-success">
-<strong>Destinos</strong> (vacio para eliminar objetivo )
+<strong>Objetivos</strong> (vacio para eliminar objetivo )
 
 </p>
 
 {{'';$i=0}}
-@foreach($objetivos->objetivo as $objetivo)
+@foreach($destinos->objetivos as $objetivo)
 
 <div class="form-group">
 
