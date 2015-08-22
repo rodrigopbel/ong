@@ -161,7 +161,7 @@
                                                 </div>
                                                  <div id="insertBefore"></div>
                                                 <button type="button" id="plusButton" class="btn btn-sm green form-control-inline">
-                                                                Agregar otro destino<i class="fa fa-plus"></i>
+                                                                Nuevo Objetivo<i class="fa fa-plus"></i>
                                                 </button>
 
                                          </div>
@@ -223,7 +223,7 @@
 
                                              <div id="insertBefore_edit"></div>
                                             <button type="button" id="plus_edit_Button" class="btn btn-sm green form-control-inline">
-                                                            Agregar Objetivos<i class="fa fa-plus"></i>
+                                                            Nuevo Objetivo<i class="fa fa-plus"></i>
                                             </button>
 
                                      </div>
