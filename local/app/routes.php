@@ -11,9 +11,9 @@
 //    Route::get('logout', ['as'=>'front.logout','uses'=>'LoginController@logout']);
 
 # Beneficiario Login
-    Route::get('/',['as'=>'login','uses'=>'LoginBeneficiarioController@index']);
-    Route::post('/login',['as'=>'login','uses'=>'LoginBeneficiarioController@ajaxLogin']);
-    Route::get('logout', ['as'=>'front.logout','uses'=>'LoginBeneficiarioController@logout']);
+    Route::get('/',['as'=>'login','uses'=>'LoginBenController@index']);
+    Route::post('/login',['as'=>'login','uses'=>'LoginBenController@ajaxLogin']);
+    Route::get('logout', ['as'=>'front.logout','uses'=>'LoginBenController@logout']);
 
 # Employee Panel After Login
 Route::group(array('before' => 'auth.employees'), function()

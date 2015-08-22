@@ -1,6 +1,6 @@
 <?php
 
-class LoginBeneficiarioController  extends \BaseController {
+class LoginBenController  extends \BaseController {
 
 
     public function __construct()
