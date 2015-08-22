@@ -288,7 +288,7 @@
         						<div class="portlet-body">
 									<div class="form-body">
 										<div class="form-group">
-											<label class="control-label col-md-2">Certificado de Nacimiento</label>
+											<label class="control-label col-md-2">CN</label>
 											<div class="col-md-5">
 												<div class="fileinput fileinput-new" data-provides="fileinput">
 													<div class="input-group input-large">
@@ -334,7 +334,7 @@
 
 										</div>
 										<div class="form-group">
-											<label class="control-label col-md-2">Carnet de Identidad</label>
+											<label class="control-label col-md-2">CI</label>
 											<div class="col-md-5">
 												<div class="fileinput fileinput-new" data-provides="fileinput">
 													<div class="input-group input-large">
@@ -393,7 +393,7 @@
 
 										</div>
 										<div class="form-group">
-											<label class="control-label col-md-2">Carta de Solicitud</label>
+											<label class="control-label col-md-2">Solicitud</label>
 											<div class="col-md-5">
 												<div class="fileinput fileinput-new" data-provides="fileinput">
 													<div class="input-group input-large">
