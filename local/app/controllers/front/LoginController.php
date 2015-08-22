@@ -66,8 +66,7 @@ class LoginController extends \BaseController {
 		        $output['status']	=	'error';
 		        $output['msg']		=	['error'=>Lang::get('messages.loginInvalid')];
 	        }
-//            return Response::json($output, 200);
-            return Response::json(Auth::beneficiarios()->attempt($data));
+            return Response::json($output, 200);
         }
     }
 
