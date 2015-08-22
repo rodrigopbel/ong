@@ -33,7 +33,7 @@
 
 											   </fieldset>
 											   <footer>
-												   <button type="submit" class="btn-u field" id="submitbutton" onclick="change_password();return false;">CAmbiar Contraseña</button>
+												   <button type="submit" class="btn-u field" id="submitbutton" onclick="change_password();return false;">Cambiar Contraseña</button>
 
 											   </footer>
 
