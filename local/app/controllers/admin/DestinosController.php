@@ -115,7 +115,8 @@ class DestinosController extends \AdminBaseController {
             }
 
         }
-
+		dd($input['objetivo']);
+		die();
 		return Redirect::route('admin.destinos.index')->with('success',"<strong>{$input['destino']}</strong>  Actualizado correctamente");;
 	}
 
