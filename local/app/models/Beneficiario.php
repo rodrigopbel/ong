@@ -23,7 +23,7 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 			'email'                  =>  'required|email|unique:beneficiarios',
 			'password'               =>  'required',
             'genero'                 =>  'required|alpha',
-            'telefono'               =>  'required|alpha',
+            'telefono'               =>  'required',
             'direccion'        		 =>  'required|alpha',
 			'foto'  					=>  $ProfileImageValidation,
 			'perfil'        =>  'max:1000',

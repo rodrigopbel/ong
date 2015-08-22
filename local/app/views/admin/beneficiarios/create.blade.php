@@ -107,7 +107,7 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Apellidos</label>
         										<div class="col-md-9">
-        											 <input type="text" class="form-control" name="apellidos" placeholder="Apellidos del Beneficiario">
+        											 <input type="text" class="form-control" name="apellidos" placeholder="Apellidos del Beneficiario" value="{{ Input::old('apellidos') }}>
         										</div>
         									</div>
         									<div class="form-group">
