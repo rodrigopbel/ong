@@ -46,7 +46,7 @@
                                         @endif
 
                     </div>
-                   <a href="{{route('admin.employees.create')}}" class="btn green">
+                   <a href="{{route('admin.beneficiarios.create')}}" class="btn green">
                     Nuevo <i class="fa fa-plus"></i>
                     </a>
 
@@ -59,9 +59,9 @@
 							</div>
 							<div class="tools" style="  padding: 5px;">
 								<div class="btn-group pull-right">
-                        						 <a  href="{{route('admin.employees.export') }}" class="btn yellow">
-											     <i class="fa fa-file-excel-o"></i>    Exportar
-												</a>
+									 <a  href="{{route('admin.beneficiarios.export') }}" class="btn yellow">
+										<i class="fa fa-file-excel-o"></i>    Exportar
+									</a>
 								</div>
 							</div>
 						</div>
