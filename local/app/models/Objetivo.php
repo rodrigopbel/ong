@@ -4,7 +4,7 @@ class Objetivo extends \Eloquent {
 
     // Add your validation rules here
     public static $rules = [
-        'objname' => 'required|unique:objetivo,objname,:id',
+        'objetivo' => 'required|unique:objetivo,objname,:id',
         "destino.0"=>'required',
     ];
 
@@ -29,8 +29,8 @@ class Objetivo extends \Eloquent {
     }
 
 
-    protected  function Designations(){
-        return $this->hasMany('Destino','desID','id');
+    protected  function Destinos(){
+        return $this->hasMany('destino','destID','id');
     }
 
 

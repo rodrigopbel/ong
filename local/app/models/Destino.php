@@ -2,12 +2,35 @@
 
 class Destino extends \Eloquent {
 
-    protected $fillable = [];
-    protected $table    =   'destino';
-    protected $guarded  = ['id'];
+    public static $rules = [
+        'destino' => 'required|unique:department,deptName,:id',
+        "objetivo.0"=>'required',
+    ];
 
-    protected function department()
+
+
+    protected $table="destino";
+
+    // Don't forget to fill this array
+    protected $fillable = [];
+
+    protected $guarded  =   ['id'];
+
+    public static function rules($id=false,$merge=[])
     {
-        return $this->belongsTo('Objetivo','desID','id');
+        $rules = self::$rules;
+        if ($id) {
+            foreach ($rules as &$rule) {
+                $rule = str_replace(':id', $id, $rule);
+            }
+        }
+        return array_merge( $rules, $merge );
     }
+
+
+    protected  function Objetivos(){
+        return $this->hasMany('objetivo','destID','id');
+    }
+
+
 }

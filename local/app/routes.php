@@ -60,6 +60,12 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::get('departments/ajax_designation/',['as'=>'admin.departments.ajax_designation','uses'=> 'DepartmentsController@ajax_designation']);
     Route::resource('departments', 'DepartmentsController',['except' => ['show','create'],'as' => 'admin']);
 
+
+    //  Destinos Routing
+    Route::get('destinos/ajax_destino/',['as'=>'admin.destinos.ajax_destino','uses'=> 'DestinosController@ajax_destino']);
+    Route::resource('destinos', 'DestinosController',['except' => ['show','create'],'as' => 'admin']);
+
+
     //    Expense Routing
     Route::get('ajax_expenses/',['as'=>'admin.ajax_expenses','uses'=> 'ExpensesController@ajax_expenses']);
     Route::resource('expenses', 'ExpensesController',['except' => ['show'],'as' => 'admin']);

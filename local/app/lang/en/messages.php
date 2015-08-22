@@ -12,15 +12,16 @@
 	|
 	*/
 
-	 'submitting'       =>  'Submitting',
-	 'loginSuccess'     =>  'Logged in successfully.Redirecting..',
-	 'loginBlocked'     =>  '<strong>Access Denied !</strong> Your account is blocked',
-	 'loginInvalid'     =>  'Wrong login details',
 
-	 'noteLeaveTypes'   => 'Number of leaves of <strong>Half day</strong> are not added to total leaves on <strong>Employee Dashboard Page</strong>',
-	 'deleteNoteDepartment'   => '<strong>Note:</strong> This will delete all the <strong>Employees</strong> associated with it',
-	 'deleteNoteDesignation'   => '<strong>Note:</strong> Deleting/Empting a designation will delete all the <strong>Employees</strong> associated with it',
-	 'noDept'   => '<strong>Note:</strong> There no <strong>Department</strong> in the database.Please create the Department First'
+	 'submitting'       =>  'Enviando',
+	 'loginSuccess'     =>  'Ingreso correcto. Redireccionando..',
+	 'loginBlocked'     =>  '<strong>Acceso denegado !</strong> Tu cuenta esta bloqueada',
+	 'loginInvalid'     =>  'Detalles de Login',
+
+	 'noteLeaveTypes'   => 'Number of leaves of <strong>Half day</strong> are not added to total leaves',
+	 'deleteNoteDes'   => '<strong>Nota:</strong> Esto eliminara todos los objetivos relacionados con ella',
+	 'deleteNoteDes'   => '<strong>Nota:</strong> Borrado/Limpio un destino esta enlazado con el objetivo',
+	 'noDest'   => '<strong>Nota:</strong> No hay <strong>Destino </strong> registrados.Cree uno Primero!'
 
 
  ];
