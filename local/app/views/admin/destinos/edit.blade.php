@@ -18,6 +18,7 @@
  </div>
 {{'';$i++;}}
 </div>
+<input type="hidden"  id="countobjs" type="text" value="{{$destinos->objetivos->count()}}"/>
 @endforeach
 {{-- This is ajax called inside the index page modal  --}}
 
