@@ -14,6 +14,7 @@ class LoginController extends \BaseController {
 
         if(Auth::beneficiarios()->check())
         {
+            dd(Beneficiario::all());
             return Redirect::route('dashboard.index');
         }else
         {
