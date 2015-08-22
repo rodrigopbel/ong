@@ -221,18 +221,18 @@ $(function () {
         },
         xAxis: {
             categories: [
-                'Jan',
+                'Ene',
                 'Feb',
                 'Mar',
-                'Apr',
+                'Abr',
                 'May',
                 'Jun',
                 'Jul',
-                'Aug',
+                'Ago',
                 'Sep',
                 'Oct',
                 'Nov',
-                'Dec'
+                'Dic'
             ],
             crosshair: true
         },
@@ -258,7 +258,7 @@ $(function () {
             }
         },
         series: [  {
-            name: 'Expense',
+            name: 'Gastos',
 //            data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8,'']
 //            data: ['','',100]
             data: [{{$expense}}]
