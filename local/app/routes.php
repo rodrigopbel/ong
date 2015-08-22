@@ -47,7 +47,7 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::resource('dashboard', 'AdminDashboardController',['as' => 'admin']);
 
     //  Destinos Routing
-    Route::get('destinos/ajax_destino/',['as'=>'admin.destinos.ajax_destino','uses'=> 'DestinosController@ajax_destino']);
+    Route::get('destinos/ajax_objetivos/',['as'=>'admin.destinos.ajax_objetivos','uses'=> 'DestinosController@ajax_objetivos']);
     Route::resource('destinos', 'DestinosController',['except' => ['show','create'],'as' => 'admin']);
 
 
