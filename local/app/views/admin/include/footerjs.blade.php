@@ -19,30 +19,30 @@
 
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
-jQuery(document).ready(function() {
-   Metronic.init(); // init metronic core componets
-   Layout.init(); // init layout
-    $('.demo-loading-btn')
-                       .click(function () {
-                         var btn = $(this)
-                         btn.button('loading')
-                         setTimeout(function () {
-                           btn.button('reset')
-                         }, 8000)
-                     });
-    $('.demo-loading-btn-ajax')
-                           .click(function () {
-                             var btn = $(this)
-                             btn.button('loading')
-                             setTimeout(function () {
-                               btn.button('reset')
-                             }, 500)
-                         });
+	jQuery(document).ready(function() {
+	   Metronic.init(); // init metronic core componets
+	   Layout.init(); // init layout
+		$('.demo-loading-btn')
+						   .click(function () {
+							 var btn = $(this)
+							 btn.button('loading')
+							 setTimeout(function () {
+							   btn.button('reset')
+							 }, 8000)
+						 });
+		$('.demo-loading-btn-ajax')
+							   .click(function () {
+								 var btn = $(this)
+								 btn.button('loading')
+								 setTimeout(function () {
+								   btn.button('reset')
+								 }, 500)
+							 });
 
 
-});
+	});
 
-     function ToggleEmailNotification(type){
+	 function ToggleEmailNotification(type){
 			 if ($('[name='+type+']').is(':checked')){
 			  var value = 1;
 			 }
@@ -68,7 +68,7 @@ jQuery(document).ready(function() {
 				 }
 			 });
 
-     }
+	 }
 
 </script>
 
