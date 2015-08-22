@@ -7,9 +7,9 @@ return array(
             'driver' => 'eloquent',
             'model' => 'Admin'
         ),
-        'employees' => array(
+        'beneficiarios' => array(
             'driver' => 'eloquent',
-            'model'  => 'Employee'
+            'model'  => 'Beneficiario'
         )
     ),
 

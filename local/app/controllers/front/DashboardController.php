@@ -8,7 +8,7 @@ class DashboardController extends \BaseController {
         parent::__construct();
         $this->data['pageTitle']   =   'Dashboard';
 
-        $this->data['beneficiarioID']  =   Auth::beneficiario()->get()->beneficiarioID;
+        $this->data['beneficiarioID']  =   Auth::Beneficiario()->get()->beneficiarioID;
 
 	    $this->data['leaveTypes']  =    Attendance::leaveTypesEmployees();
 	    $this->data['leaveTypeWithoutHalfDay']   =   Attendance::leaveTypesEmployees('halfday');
