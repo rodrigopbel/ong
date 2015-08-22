@@ -34,7 +34,7 @@
         			</div>
         			<!-- END PAGE HEADER-->
 
-					@if(count($destino)==0)
+					@if(count($destinos)==0)
 					 <div class="note note-warning">
 						 {{Lang::get('messages.noDest')}}
 				    </div>
@@ -189,14 +189,14 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Destino</label>
         										<div class="col-md-9">
-        											  {{ Form::select('destino', $department,null,['class' => 'form-control select2me','id'=>'destino','onchange'=>'dept();return false;']) }}
+        											  {{ Form::select('destino', $destinos,null,['class' => 'form-control select2me','id'=>'destino','onchange'=>'destino();return false;']) }}
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Objetivo</label>
         										<div class="col-md-9">
 
-        											 <select  class="select2me form-control" name="designation" id="designation" >
+        											 <select  class="select2me form-control" name="objetivo" id="objetivo" >
 
                                                      </select>
         										</div>
@@ -461,13 +461,13 @@
         });
         function destino(){
 
-                              $.getJSON("{{ URL::to('admin/departments/ajax_designation/')}}",
-                              { deptID: $('#department').val() },
+                              $.getJSON("{{ URL::to('admin/destinos/ajax_objetivos/')}}",
+                              { destID: $('#destino').val() },
                               function(data) {
-                                  var model = $('#designation');
+                                  var model = $('#objetivo');
                                    model.empty();
                                   $.each(data, function(index, element) {
-                                      model.append("<option value='"+element.id+"'>" + element.designation + "</option>");
+                                      model.append("<option value='"+element.id+"'>" + element.objetivo + "</option>");
                                   });
 
                              });
