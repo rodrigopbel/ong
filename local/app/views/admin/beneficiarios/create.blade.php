@@ -464,7 +464,7 @@
         jQuery(document).ready(function() {
 
            ComponentsPickers.init();
-            destino();
+            objetivos();
 
 
 
