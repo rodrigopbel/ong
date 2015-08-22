@@ -106,7 +106,7 @@
 
                                     </td>
                                     <td class="text-center">
-                                        {{HTML::image("/profileImages/{$ben->foto}",'ProfileImage',['height'=>'80px'])}}
+                                        {{HTML::image("/foto/{$ben->foto}",'foto',['height'=>'80px'])}}
 
                                     </td>
                                     <td>
