@@ -30,7 +30,7 @@
     Route::get('/',function(){
         return "hola mundo";
     });
-    Route::post('/login',['as'=>'login','uses'=>'LoginBenController@ajaxLogin']);
+    Route::post('/login',['as'=>'login','uses'=>'LoginController@ajaxLogin']);
     Route::get('logout', ['as'=>'front.logout','uses'=>'LoginBenController@logout']);
 # Beneficiario Pagina despues de Ingresar
 Route::group(array('before' => 'auth.beneficiarios'), function()
