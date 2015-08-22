@@ -19,7 +19,7 @@ class LoginController extends \BaseController {
             return Redirect::route('dashboard.index');
         }else
         {
-            $ben = Beneficiario::all();
+            $ben = Employee::all();
             dd($ben);
             return View::make('front.login',$this->data);
 
