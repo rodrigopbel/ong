@@ -169,7 +169,7 @@
                                         <div class="form-actions">
                                             <div class="row">
                                                 <div class="col-md-offset-3 col-md-9">
-                                                    <button type="submit" data-loading-text="Submitting..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Enviar</button>
+                                                    <button type="submit" data-loading-text="Guardando..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Enviar</button>
 
                                                 </div>
                                             </div>
@@ -235,7 +235,7 @@
                                     <div class="form-actions">
                                         <div class="row">
                                             <div class="col-md-offset-3 col-md-9">
-                                                <button type="submit" data-loading-text="Updating..." class="demo-loading-btn btn green"><i class="fa fa-edit"></i> Actualizar</button>
+                                                <button type="submit" data-loading-text="Actualizando..." class="demo-loading-btn btn green"><i class="fa fa-edit"></i>Actualizar</button>
 
                                             </div>
                                         </div>

@@ -4,7 +4,6 @@ class DashboardController extends \BaseController {
 
 	public function __construct()
     {
-
         parent::__construct();
         $this->data['pageTitle']   =   'Dashboard';
         $this->data['beneficiarioID']  =   Auth::beneficiarios()->get()->beneficiarioID;
@@ -25,19 +24,14 @@ class DashboardController extends \BaseController {
                                                         })
                                                     ->get();
         $this->data['attendance_count']   = Attendance::attendanceCount($this->data['beneficiarioID']);
-
-        $this->data['current_month_birthdays']   = Employee::currentMonthBirthday();
+        $this->data['current_month_birthdays']   = Beneficiario::currentMonthBirthday();
     }
 	public function index()
 	{
         $this->data['homeActive']         =    'active';
-
         $this->data['noticeboards']       =     Noticeboard::where('status','=','active')->orderBy('created_at','DESC')->get();
-
         $this->data['holiday_color']      = ['info','error','success','pending',''];
         $this->data['holiday_font_color'] = ['blue','red','green','yellow','dark'];
-
-
         return View::make('front.beneficiarioDashboard',$this->data);
 	}
 
