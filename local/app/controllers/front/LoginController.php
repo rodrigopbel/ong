@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+
 class LoginController extends \BaseController {
 
 
@@ -60,28 +62,22 @@ class LoginController extends \BaseController {
 		            Event::fire('auth.login', Auth::beneficiarios()->get());
 		            $output['status'] = 'success';
 		            $output['msg']    = Lang::get('messages.loginSuccess');
-
 	                return Response::json($output, 200);
             }
-
 	        // For Blocked Users
 	        $data['status']         =   'inactive';
             if(Auth::beneficiarios()->validate($data))
             {
 	            $output['status']	=	'error';
 	            $output['msg']		=	['error'=>Lang::get('messages.loginBlocked')];
-
             }
             //Show error Message if Employee with posted data does not exists
             else
 	        {
 		        $output['status']	=	'error';
 		        $output['msg']		=	['error'=>Lang::get('messages.loginInvalid')];
-
 	        }
-
             return Response::json($output, 200);
-
         }
     }
 
