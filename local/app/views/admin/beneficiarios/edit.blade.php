@@ -40,7 +40,7 @@
         					<div class="portlet box purple-wisteria">
         						<div class="portlet-title">
         							<div class="caption">
-        								<i class="fa fa-calendar"></i>Detalles de Persona
+        								<i class="fa fa-calendar"></i>Detalles Generales
         							</div>
         							<div class="actions">
 
@@ -183,7 +183,7 @@
         					<div class="portlet box red-sunglo">
         						<div class="portlet-title">
         							<div class="caption">
-        								<i class="fa fa-calendar"></i>Objetivo de la Ayuda
+        								<i class="fa fa-calendar"></i>Detalles de la Donacion
         							</div>
         							<div class="actions">
         								<a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->beneficiarioID}}','company');return false" data-loading-text="Updating..." class="demo-loading-btn-ajax btn btn-sm btn-default ">
@@ -248,10 +248,7 @@
                                                 	<div class="form-group">
 														<label class="control-label col-md-3">Estado</label>
 														<div class="col-md-3">
-															   <input  type="checkbox" value="active" onchange="remove_exit();" class="make-switch" name="status" @if($beneficiario->status=='activo')checked	@endif data-on-color="success" data-on-text="Activado" data-off-text="Desactivado" data-off-color="danger">
-														</div>
-														<div class="col-md-6">
-														  (<strong>Nota:</strong>Estado activo cuando)
+															   <input  type="checkbox" value="active" onchange="remove_exit();" class="make-switch" name="status" @if($beneficiario->status=='activo')checked	@endif data-on-color="success" data-on-text="Activo" data-off-text="Inactivo" data-off-color="danger">
 														</div>
 													</div>
 
