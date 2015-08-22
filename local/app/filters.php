@@ -37,25 +37,25 @@ App::after(function($request, $response)
 
 
 
-Route::filter('auth.beneficiarios', function()
-{
-    if (!Auth::beneficiarios()->check()) {
-        return Redirect::to("/");
-    }
-});
+    Route::filter('auth.beneficiarios', function()
+    {
+        if (!Auth::beneficiarios()->check()) {
+            return Redirect::to("/");
+        }
+    });
 
-Route::filter('auth.admin', function()
-{
-    if (!Auth::admin()->check()){
-        return Redirect::route("admin.getlogin");
-    }
-});
+    Route::filter('auth.admin', function()
+    {
+        if (!Auth::admin()->check()){
+            return Redirect::route("admin.getlogin");
+        }
+    });
 
 
-Route::filter('auth.basic', function()
-{
-	return Auth::basic();
-});
+    Route::filter('auth.basic', function()
+    {
+        return Auth::basic();
+    });
 
 /*
 |--------------------------------------------------------------------------
