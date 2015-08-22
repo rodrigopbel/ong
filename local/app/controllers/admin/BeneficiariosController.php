@@ -50,11 +50,11 @@ class BeneficiariosController extends \AdminBaseController {
 			$nombres = $input['nombres'];
 			$filename   =   null;
 			// Profile Image Upload
-			if (Input::hasFile('profileImage')) {
-				$path       = public_path()."/profileImages/";
+			if (Input::hasFile('foto')) {
+				$path       = public_path()."/foto/";
 				File::makeDirectory($path, $mode = 0777, true, true);
 
-				$image 	    = Input::file('profileImage');
+				$image 	    = Input::file('foto');
 				$extension  = $image->getClientOriginalExtension();
 				$filename	= "{$nombres}_{$input['beneficiarioID']}.".strtolower($extension);
 
