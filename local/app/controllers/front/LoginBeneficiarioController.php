@@ -1,18 +1,18 @@
 <?php
 
-class LoginController extends \BaseController {
+class LoginBeneficiarioController extends \BaseController {
 
 
     public function __construct()
     {
         parent::__construct();
-        $this->data['pageTitle']    =   'Pagina de Ingreso';
+        $this->data['pageTitle']    =   'Beneficiario';
     }
 
 	public function index()
 	{
 
-        if(Auth::employees()->check())
+        if(Auth::beneficiarios()->check())
         {
             return Redirect::route('dashboard.index');
         }else
@@ -53,9 +53,9 @@ class LoginController extends \BaseController {
             }
 
             // Check if employee exists in database with the credentials of not
-            if (Auth::employees()->attempt($data))
+            if (Auth::beneficiarios()->attempt($data))
             {
-		            Event::fire('auth.login', Auth::employees()->get());
+		            Event::fire('auth.login', Auth::beneficiarios()->get());
 		            $output['status'] = 'success';
 		            $output['msg']    = Lang::get('messages.loginSuccess');
 
@@ -64,7 +64,7 @@ class LoginController extends \BaseController {
 
 	        // For Blocked Users
 	        $data['status']         =   'inactive';
-            if(Auth::employees()->validate($data))
+            if(Auth::beneficiarios()->validate($data))
             {
 	            $output['status']	=	'error';
 	            $output['msg']		=	['error'=>Lang::get('messages.loginBlocked')];
@@ -85,7 +85,7 @@ class LoginController extends \BaseController {
 
     public function logout()
     {
-        Auth::employees()->logout();
+        Auth::beneficiarios()->logout();
 
         return Redirect::to('/');
     }
