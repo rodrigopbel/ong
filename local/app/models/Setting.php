@@ -13,6 +13,6 @@ class Setting extends \Eloquent {
 
 	// Don't forget to fill this array
 	protected $fillable =   [];
-    protected $guarded  =   ['id'];
+//    protected $guarded  =   ['id'];
 
 }
