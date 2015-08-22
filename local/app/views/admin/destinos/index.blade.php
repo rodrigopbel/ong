@@ -278,7 +278,7 @@
              var countIds = parseInt($('#countobjs').val());
              var $j = 0;
              if (countIds>0) {
-                 var $j= countIds;
+                 $j= countIds;
              }
              console.log($j);
             $('#plus_edit_Button').click(function(){
