@@ -33,7 +33,7 @@
 				<li class="{{ $beneficiariosOpen or ''}}">
 					<a href="javascript:;">
 					<i class="fa fa-users"></i>
-					<span class="title">{{Lang::get('menu.employees')}}</span>
+					<span class="title">{{Lang::get('menu.beneficiarios')}}</span>
 					<span class="arrow "></span>
 					</a>
 					<ul class="sub-menu">
