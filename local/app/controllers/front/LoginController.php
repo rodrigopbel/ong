@@ -55,15 +55,23 @@ class LoginController extends \BaseController {
 
             }
             // Check if employee exists in database with the credentials of not
-            if (Auth::beneficiarios()->attempt($data))
+//            if (Auth::beneficiarios()->attempt($data))
+//            {
+//		            Event::fire('auth.login', Auth::beneficiarios()->get());
+//		            $output['status'] = 'success';
+//		            $output['msg']    = Lang::get('messages.loginSuccess');
+//	                return Response::json($output, 200);
+//            }
+            if (Auth::attempt($data))
             {
-		            Event::fire('auth.login', Auth::beneficiarios()->get());
-		            $output['status'] = 'success';
-		            $output['msg']    = Lang::get('messages.loginSuccess');
-	                return Response::json($output, 200);
+                Event::fire('auth.login', Auth::beneficiarios()->get());
+                $output['status'] = 'success';
+                $output['msg']    = Lang::get('messages.loginSuccess');
+                return Response::json($output, 200);
             }
 	        // For Blocked Users
 	        $data['status']         =   'inactive';
+
             if(Auth::beneficiarios()->validate($data))
             {
 	            $output['status']	=	'error';
