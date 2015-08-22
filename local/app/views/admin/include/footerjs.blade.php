@@ -56,7 +56,7 @@
 				 type: 'POST',
 				 url: "{{route('admin.ajax_update_notification')}}",
 				 dataType: "JSON",
-				 data: {'value':value,'id':'{{ $settings->id}}','type':type
+				 data: {'value':value,'id':'{{ $setting->id}}','type':type
 				 },
 				 success: function(response) {
 					if(response.success=='success'){
