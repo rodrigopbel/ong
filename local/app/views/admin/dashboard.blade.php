@@ -240,7 +240,7 @@ $(function () {
             min: 0,
             title: {
             useHTML: true,
-                text: 'Expensado en ( <span class="fa {{$setting->currency_icon}}"></span> )'
+                text: 'Expensado en  ( <span class="fa {{$setting->currency_icon}}"></span> )'
             }
         },
         tooltip: {
