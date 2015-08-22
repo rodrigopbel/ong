@@ -381,7 +381,7 @@ class BeneficiariosController extends \AdminBaseController {
 			                        'beneficiarios.fechaing','beneficiarios.direccion','beneficiarios.direccionperm','beneficiarios.status',
 			                        'beneficiarios.fecha_desvinculacion',
 			                        'zonificacion_beneficiario.departamento','zonificacion_beneficiario.zona','zonificacion_beneficiario.otros'
-		                        )->orderBy('id','asc')
+		                        )->orderBy('beneficiarios.id','asc')
 		                        ->get()->toArray();
 
 		$data = $ben;
