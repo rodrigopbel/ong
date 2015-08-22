@@ -21,12 +21,13 @@ class DestinosController extends \AdminBaseController {
 			                                    ->join('destino', 'objetivo.destID', '=', 'destino.id')
 			                                    ->where('destino.id', '=', $des->id )
 			                                    ->count();
+			die($benCount[$des->id]);
 		}
 
 		$this->data['beneficiarioCount']    =   $benCount;
 
 
-die($benCount);
+
 		return View::make('admin.destinos.index', $this->data);
 	}
 	/**
