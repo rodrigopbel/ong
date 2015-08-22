@@ -69,7 +69,6 @@ class LoginController extends \BaseController {
             return Response::json($output, 200);
         }
     }
-
     public function logout()
     {
         Auth::beneficiarios()->logout();
