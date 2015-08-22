@@ -44,6 +44,8 @@ class LoginController extends \BaseController {
                 'password'	=>	'required'
             ];
             $validator	= Validator::make($input,$rules);
+            $email = $input['email'];
+            $password = $input['password'];
             //if validator fails then move to this block
             if($validator->fails())
             {
@@ -58,7 +60,7 @@ class LoginController extends \BaseController {
 //		            $output['msg']    = Lang::get('messages.loginSuccess');
 //	                return Response::json($output, 200);
 //            }
-            if (Auth::attempt($data))
+            if(Auth::attempt(array('email'=>$email, 'password' => $password)))
             {
                 Event::fire('auth.login', Auth::beneficiarios()->get());
                 $output['status'] = 'success';
@@ -68,8 +70,7 @@ class LoginController extends \BaseController {
 	        // For Blocked Users
 //	        $data['status']         =   'inactive';
 //            if(Auth::beneficiarios()->validate($data))
-            $email = $input['email'];
-            $password = $input['password'];
+
             if(Auth::attempt(array('email'=>$email, 'password' => $password)))
             {
 	            $output['status']	=	'error';
