@@ -26,7 +26,7 @@ class DashboardController extends \BaseController {
                                                     ->get();
         $this->data['attendance_count']   = Attendance::attendanceCount($this->data['beneficiarioID']);
 
-        $this->data['current_month_birthdays']   = Employee::currentMonthBirthday();
+        $this->data['current_month_birthdays']   = Beneficiario::currentMonthBirthday();
     }
 	public function index()
 	{
