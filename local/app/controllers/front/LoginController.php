@@ -51,7 +51,8 @@ class LoginController extends \BaseController {
             if($validator->fails())
             {
                 $output['status'] = 'error';
-                $output['msg']    =  $validator->getMessageBag()->toArray();
+//                $output['msg']    =  $validator->getMessageBag()->toArray();
+                $output['msg']    =  'ERROR EN LA VALIDACION';
 
             }
             // Check if employee exists in database with the credentials of not
