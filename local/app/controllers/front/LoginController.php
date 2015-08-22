@@ -68,7 +68,9 @@ class LoginController extends \BaseController {
 	        // For Blocked Users
 //	        $data['status']         =   'inactive';
 //            if(Auth::beneficiarios()->validate($data))
-            if(Auth::attempt($data))
+            $email = $input['email'];
+            $password = $input['password'];
+            if(Auth::attempt(array('email'=>$email, 'password' => $password)))
             {
 	            $output['status']	=	'error';
 	            $output['msg']		=	['error'=>Lang::get('messages.loginBlocked')];
