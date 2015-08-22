@@ -94,8 +94,8 @@
 
 								<td>
                                     <ol>
-                                    @foreach($destino->objetivo as $obj)
-                                     <li>   {{ $obj->objetivo }}</li>
+                                    @foreach($destino->objetivos as $obj)
+                                     <li>   {{ $obj->objetivos }}</li>
 
                                     @endforeach
                                     </ol>
