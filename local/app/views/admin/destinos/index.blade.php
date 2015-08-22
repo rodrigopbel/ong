@@ -280,7 +280,7 @@
              if (countIds>0) {
                  var $j= countIds;
              }
-
+             console.log($j);
             $('#plus_edit_Button').click(function(){
               $j = $j+1;
               $(' <div class="form-group" id="edit_field"> <div class="col-md-12"><input class="form-control form-control-inline input-medium"  name="objetivo['+$j+']" type="text"  placeholder="Objetivo #'+($j+1)+'"/></div></div>').insertBefore($insertBefore_edit);
