@@ -19,6 +19,7 @@ class BeneficiariosController extends \AdminBaseController {
 		$this->data['beneficiarios']       =    Beneficiario::all();
 		$this->data['beneficiariosActive'] =   'active';
 
+		die();
 		return View::make('admin.beneficiarios.index', $this->data);
 	}
 
