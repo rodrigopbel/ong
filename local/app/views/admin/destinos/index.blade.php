@@ -103,7 +103,7 @@
 								<td class=" ">
                                 	<a class="btn purple"  data-toggle="modal" href="#edit_static" onclick="showEdit({{$destino->id}},'{{ $destino->destino }}')"><i class="fa fa-edit"></i></a>
 
-              						<a class="btn red" href="javascript:" onclick="del({{$destino->id}},'{{ $destino->destino }}')"><i class="fa fa-trash"></i></a>
+              						<a class="btn red" style="width: 42px;" href="javascript:" onclick="del({{$destino->id}},'{{ $destino->destino }}')"><i class="fa fa-trash"></i></a>
                                 </td>
 							</tr>
 				@endforeach
