@@ -18,10 +18,10 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 
 		$rules = [
 		'create' => [
-			'beneficiarioID'         =>  'required|unique:beneficiario,beneficiarioID|alpha_dash',
+			'beneficiarioID'         =>  'required|unique:beneficiarios,beneficiarioID|alpha_dash',
 			'nombres'                =>  $fullNameValidation,
 			'apellidos'              =>  $fullNameValidation,
-			'email'                  =>  'required|email|unique:beneficiario',
+			'email'                  =>  'required|email|unique:beneficiarios',
 			'password'               =>  'required',
             'genero'                 =>  'required|alpha',
             'telefono'               =>  'required|alpha',

@@ -107,7 +107,7 @@ class BeneficiariosController extends \AdminBaseController {
 				'otros'        =>  $input['otros']
 
 			]);
-
+			$fullname = $input['nombres']." ".$input['apellidos'];
 			// -------------- UPLOAD THE DOCUMENTS  -----------------
 			$documents  =   ['certnac','CIprueba','solicitud','croquis','perfil'];
 
@@ -119,7 +119,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 					$file 	    = Input::file($document);
 					$extension  = $file->getClientOriginalExtension();
-					$filename	= "{$document}_{$input['beneficiarioID']}_{$firstName}.$extension";
+					$filename	= "{$document}_{$input['beneficiarioID']}_{$fullname}.$extension";
 
 					Input::file($document)->move($path, $filename);
 					Employee_document::create([
@@ -131,7 +131,7 @@ class BeneficiariosController extends \AdminBaseController {
 				}
 			}
 
-			$fullname = $input['nombres']." ".$input['apellidos'];
+
 			if($this->data['setting']->ben_add==1)
 			{
 				$this->data['ben_name'] = $fullname;
