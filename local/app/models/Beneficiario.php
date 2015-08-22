@@ -7,7 +7,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 class Beneficiario extends Eloquent implements UserInterface, RemindableInterface {
 
     use UserTrait, RemindableTrait;
-
+	protected $table="beneficiarios";
 	// Validation Rules
 	public static function rules($action,$id=false, $merge=[])
 	{
@@ -17,10 +17,10 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 
 		$rules = [
 		'create' => [
-			'beneficiarioID'         =>  'required|unique:beneficiario,beneficiarioID|alpha_dash',
+			'beneficiarioID'         =>  'required|unique:beneficiarios,beneficiarioID|alpha_dash',
 			'nombres'                =>  $fullNameValidation,
 			'apellidos'              =>  $fullNameValidation,
-			'email'                  =>  'required|email|unique:beneficiario',
+			'email'                  =>  'required|email|unique:beneficiarios',
 			'password'               =>  'required',
             'genero'                 =>  'required|alpha',
             'telefono'               =>  'required',
@@ -34,7 +34,7 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 		],
 
 		'update'=>[
-			'beneficiarioID'   =>   "required|unique:beneficiario,beneficiarioID,:id"
+			'beneficiarioID'   =>   "required|unique:beneficiarios,beneficiarioID,:id"
 		],
 
 		'password' =>  [
