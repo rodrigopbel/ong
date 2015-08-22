@@ -375,13 +375,13 @@ class BeneficiariosController extends \AdminBaseController {
 		$ben   =   Beneficiario::join('objetivo', 'beneficiarios.objetivo', '=', 'objetivo.id')
 		                        ->join('destino', 'destino.id', '=', 'objetivo.destID')
 		                        ->leftJoin('zonificacion_beneficiario', 'zonificacion_beneficiario.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
-		                        ->select('beneficiarios.beneficiarioID',
+		                        ->select('beneficiarios.id','beneficiarios.beneficiarioID',
 			                        'beneficiarios.nombres','beneficiarios.apellidos', 'destino.destino as Destino', 'objetivo.objetivo as Objetivo',
 			                        'beneficiarios.telefono','beneficiarios.fechanac',
 			                        'beneficiarios.fechaing','beneficiarios.direccion','beneficiarios.direccionperm','beneficiarios.status',
 			                        'beneficiarios.fecha_desvinculacion',
 			                        'zonificacion_beneficiario.departamento','zonificacion_beneficiario.zona','zonificacion_beneficiario.otros'
-		                        )->orderBy('id','asc')
+		                        )->orderBy('beneficiarios.id','asc')
 		                        ->get()->toArray();
 
 		$data = $ben;
