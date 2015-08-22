@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
-
 class LoginController extends \BaseController {
 
 
@@ -13,20 +11,17 @@ class LoginController extends \BaseController {
 
 	public function index()
 	{
-
         if(Auth::beneficiarios()->check())
         {
-
-
             return Redirect::route('dashboard.index');
         }else
         {
             return View::make('front.login',$this->data);
-
         }
-
 	}
-
+    /**
+     * @return mixed
+     */
     public function ajaxLogin()
     {
         if (Request::ajax())
@@ -51,24 +46,16 @@ class LoginController extends \BaseController {
                 $output['msg']    =  $validator->getMessageBag()->toArray();
             }
             // Check if employee exists in database with the credentials of not
-//            if (Auth::beneficiarios()->attempt($data))
-//            {
-//		            Event::fire('auth.login', Auth::beneficiarios()->get());
-//		            $output['status'] = 'success';
-//		            $output['msg']    = Lang::get('messages.loginSuccess');
-//	                return Response::json($output, 200);
-//            }
-            if (Auth::attempt($data))
+            else if (Auth::beneficiarios()->attempt($data,true))
             {
-                Event::fire('auth.login', Auth::beneficiarios()->get());
-                $output['status'] = 'success';
-                $output['msg']    = Lang::get('messages.loginSuccess');
-                return Response::json($output, 200);
+		            $event =  Event::fire('auth.login', Auth::beneficiarios()->get());
+		            $output['status'] = 'success';
+		            $output['msg']    = Lang::get('messages.loginSuccess');
+	                return Response::json($output, 200);
             }
 	        // For Blocked Users
-//	        $data['status']         =   'inactive';
-//            if(Auth::beneficiarios()->validate($data))
-            if(Auth::attempt($data))
+	        $data['status']         =   'inactive';
+          if(Auth::beneficiarios()->validate($data))
             {
 	            $output['status']	=	'error';
 	            $output['msg']		=	['error'=>Lang::get('messages.loginBlocked')];
@@ -78,7 +65,7 @@ class LoginController extends \BaseController {
 	        {
 		        $output['status']	=	'error';
 		        $output['msg']		=	['error'=>Lang::get('messages.loginInvalid')];
-	        }
+        }
             return Response::json($output, 200);
         }
     }
