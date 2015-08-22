@@ -326,11 +326,13 @@ class BeneficiariosController extends \AdminBaseController {
 			$documents  =   ['certnac','CIprueba','solicitud','croquis','perfil'];
 			$fullname = $input['nombres']." ".$input['apellidos'];
 			foreach ($documents as $document) {
+
+				dd(Input::hasFile($document));
 				if (Input::hasFile($document)) {
 
 					$path = public_path()."/beneficiarios_documents/{$document}/";
 
-					dd($path);
+
 					File::makeDirectory($path, $mode = 0777, true, true);
 
 					$file 	= Input::file($document);
