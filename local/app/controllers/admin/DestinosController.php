@@ -66,7 +66,7 @@ class DestinosController extends \AdminBaseController {
 	public function edit($id)
 	{
 
-		$this->data['destino'] = Destino::find($id);
+		$this->data['objetivos'] = Ojetivo::find($id);
 		return View::make('admin.destinos.edit', $this->data);
 	}
 
