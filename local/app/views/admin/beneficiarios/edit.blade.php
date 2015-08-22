@@ -627,7 +627,7 @@
            var  form_id = '';
            var alert_div = '';
 
-            if(type=='bank')
+            if(type=='zonificacion')
             {
                 form_id     = '#bank_details_form';
                 alert_div   =  '#alert_bank'
