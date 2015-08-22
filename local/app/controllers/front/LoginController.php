@@ -11,20 +11,14 @@ class LoginController extends \BaseController {
 
 	public function index()
 	{
-
         if(Auth::beneficiarios()->check())
         {
-
-
             return Redirect::route('dashboard.index');
         }else
         {
             return View::make('front.login',$this->data);
-
         }
-
 	}
-
     /**
      * @return mixed
      */
@@ -45,8 +39,6 @@ class LoginController extends \BaseController {
                 'password'	=>	'required'
             ];
             $validator	= Validator::make($input,$rules);
-            $email = $input['email'];
-            $password = $input['password'];
             //if validator fails then move to this block
             if($validator->fails())
             {
@@ -74,7 +66,8 @@ class LoginController extends \BaseController {
 		        $output['status']	=	'error';
 		        $output['msg']		=	['error'=>Lang::get('messages.loginInvalid')];
 	        }
-            return Response::json($output, 200);
+//            return Response::json($output, 200);
+            return Response::json(Auth::beneficiarios()->attempt($data));
         }
     }
 
