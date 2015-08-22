@@ -291,7 +291,7 @@
         								<i class="fa fa-calendar"></i>Zonificacion
         							</div>
         							<div class="actions">
-        								<a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->beneficiarioID}}','bank');return false" data-loading-text="Updating..."  class="demo-loading-btn-ajax btn btn-sm btn-default ">
+        								<a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->beneficiarioID}}','bank');return false" data-loading-text="Actualizando..."  class="demo-loading-btn-ajax btn btn-sm btn-default ">
         								<i class="fa fa-save"></i> Guardar </a>
         							</div>
         						</div>
@@ -359,7 +359,7 @@
         								<i class="fa fa-calendar"></i>Documentos
         							</div>
         							<div class="actions">
-        								<button onclick="$('#documents_details_form').submit();"  data-loading-text="Updating..."  class="demo-loading-btn btn btn-sm btn-default ">
+        								<button onclick="$('#documents_details_form').submit();"  data-loading-text="Actualizando..."  class="demo-loading-btn btn btn-sm btn-default ">
         								<i class="fa fa-save" ></i> Guardar </button>
         							</div>
         						</div>
@@ -455,7 +455,7 @@
         										</div>
         										<div class="col-md-3">
         										@if(isset($documents['CIprueba']))
-        											<a href="https://docs.google.com/viewer?url={{URL::to('beneficiarios_documents/CIprueba/'.$documents['CIprueba'])}}" target="_blank" class="btn purple">View Joining Letter</a>
+        											<a href="https://docs.google.com/viewer?url={{URL::to('beneficiarios_documents/CIprueba/'.$documents['CIprueba'])}}" target="_blank" class="btn purple">View CI</a>
         										@endif
         										</div>
         									</div>
