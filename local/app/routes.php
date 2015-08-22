@@ -1,8 +1,6 @@
 <?php
 /*
- * Codecanyon
- * Name:Ajay Kumar choudhary
- * Email:ajay@froiden.com
+ * Redefined Ind.
  */
 
 # Employee Login
