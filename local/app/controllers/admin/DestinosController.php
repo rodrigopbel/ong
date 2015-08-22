@@ -17,8 +17,8 @@ class DestinosController extends \AdminBaseController {
 		$this->data['destinosActive'] = 'active';
 		$benCount = array();
 		foreach (Destino::all() as $des) {
-			$benCount[$des->id] = Beneficiario::join('destino', 'beneficiarios.destino', '=', 'destino.id')
-			                                    ->join('objetivo', 'objetivo.destID', '=', 'destino.id')
+			$benCount[$des->id] = Beneficiario::join('objetivo', 'beneficiarios.objetivo', '=', 'objetivo.id')
+			                                    ->join('destino', 'objetivo.destID', '=', 'destino.id')
 			                                    ->where('destino.id', '=', $des->id )
 			                                    ->count();
 		}
