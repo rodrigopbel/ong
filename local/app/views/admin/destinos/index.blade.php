@@ -126,7 +126,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                                <h4 class="modal-title"><strong><i class="fa fa-plus"></i> Nuevo  Objetivo</strong></h4>
+                                                <h4 class="modal-title"><strong><i class="fa fa-plus"></i> Nuevo  Destino</strong></h4>
                                             </div>
                                             <div class="modal-body">
                                                 <div class="portlet-body form">
@@ -138,22 +138,22 @@
                                             <div class="form-body">
 
                                                     <p class="text-success">
-                                                             Objetivo
+                                                            Destino
                                                            </p>
                                                   <div class="form-group">
                                                       <div class="col-md-12">
-                                                         <input class="form-control form-control-inline " name="deptName" type="text" value="" placeholder="Objetivo"/>
+                                                         <input class="form-control form-control-inline " name="destino" type="text" value="" placeholder="Destino"/>
 
                                                       </div>
 
                                                  </div>
                                                 <hr>
                                                  <p class="text-success">
-                                                          Destino
+                                                          Objetivo
                                                 </p>
                                                 <div class="form-group">
                                                      <div class="col-md-6">
-                                                        <input class="form-control form-control-inline input-medium " name="destino[0]" type="text" value="" placeholder="Destino #1"/>
+                                                        <input class="form-control form-control-inline input-medium " name="objetivo[0]" type="text" value="" placeholder="Objetivo #1"/>
                                                      </div>
                                                     <div class="col-md-6">
 
@@ -195,7 +195,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                                <h4 class="modal-title"><strong><i class="fa fa-edit"></i> Editar Objetivo</strong></h4>
+                                                <h4 class="modal-title"><strong><i class="fa fa-edit"></i> Editar Destino</strong></h4>
                                             </div>
                                             <div class="modal-body">
                                                 <div class="portlet-body form">
@@ -212,18 +212,18 @@
                                             </p>
                                               <div class="form-group">
                                                   <div class="col-md-12">
-                                                     <input class="form-control form-control-inline " name="deptName" id="edit_deptName" type="text" value="" placeholder="Objetivo" />
+                                                     <input class="form-control form-control-inline " name="destino" id="edit_destName" type="text" value="" placeholder="Destino" />
 
                                                   </div>
 
                                              </div>
 
-                                            <div id="deptresponse"></div>
+                                            <div id="destresponse"></div>
 
 
                                              <div id="insertBefore_edit"></div>
                                             <button type="button" id="plus_edit_Button" class="btn btn-sm green form-control-inline">
-                                                            Agregar destinos<i class="fa fa-plus"></i>
+                                                            Agregar Objetivos<i class="fa fa-plus"></i>
                                             </button>
 
                                      </div>
@@ -269,7 +269,7 @@
                     var $i = 0;
                     $('#plusButton').click(function(){
                          $i = $i+1;
-                        $(' <div class="form-group"> <div class="col-md-12"><input class="form-control form-control-inline input-medium"  name="designation['+$i+']" type="text"  placeholder="Destino #'+($i+1)+'"/></div></div>').insertBefore($insertBefore);
+                        $(' <div class="form-group"> <div class="col-md-12"><input class="form-control form-control-inline input-medium"  name="objetivo['+$i+']" type="text"  placeholder="Objetivo #'+($i+1)+'"/></div></div>').insertBefore($insertBefore);
 
                     });
 //-----EDIT Modal
@@ -278,7 +278,7 @@
              var $j = 0;
             $('#plus_edit_Button').click(function(){
               $j = $j+1;
-              $(' <div class="form-group" id="edit_field"> <div class="col-md-12"><input class="form-control form-control-inline input-medium"  name="designation['+$j+']" type="text"  placeholder="Destino #'+($j+1)+'"/></div></div>').insertBefore($insertBefore_edit);
+              $(' <div class="form-group" id="edit_field"> <div class="col-md-12"><input class="form-control form-control-inline input-medium"  name="objetivo['+$j+']" type="text"  placeholder="Objetivo #'+($j+1)+'"/></div></div>').insertBefore($insertBefore_edit);
 
 
             });
@@ -293,7 +293,7 @@
               '</div>');
 			$("#delete").click(function()
 			{
-				var url = "{{ route('admin.departments.destroy',':id') }}";
+				var url = "{{ route('admin.destinos.destroy',':id') }}";
 					url = url.replace(':id',id);
                  $.ajax({
 
@@ -320,15 +320,15 @@
 			{
 
                     $('div[id^="edit_field"]').remove();
-                    var url = "{{ route('admin.departments.update',':id') }}";
+                    var url = "{{ route('admin.destinos.update',':id') }}";
                     url = url.replace(':id',id);
                     $('#edit_form').attr('action',url );
 
-					var get_url = "{{ route('admin.departments.edit',':id') }}";
+					var get_url = "{{ route('admin.destinos.edit',':id') }}";
 					get_url = get_url.replace(':id',id);
 
-			        $("#edit_deptName").val(deptName);
-			        $("#deptresponse").html('<div class="text-center">{{HTML::image('assets/admin/layout/img/loading-spinner-blue.gif')}}</div>');
+			        $("#edit_destName").val(deptName);
+			        $("#destresponse").html('<div class="text-center">{{HTML::image('assets/admin/layout/img/loading-spinner-blue.gif')}}</div>');
 
                     $.ajax({
 
@@ -339,8 +339,8 @@
 
                             }).done(function(response)
                               {
-                                        $("#deptresponse").html(response);
-                                        $j = $('input#designation').length-1;
+                                        $("#destresponse").html(response);
+                                        $j = $('input#objetivo').length-1;
                              });
 
 			}
