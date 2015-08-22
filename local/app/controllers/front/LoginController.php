@@ -48,7 +48,7 @@ class LoginController extends \BaseController {
             // Check if employee exists in database with the credentials of not
             else if (Auth::beneficiarios()->attempt($data,true))
             {
-		           $event =  Event::fire('auth.login', Auth::beneficiarios()->get());
+		            $event =  Event::fire('auth.login', Auth::beneficiarios()->get());
 		            $output['status'] = 'success';
 		            $output['msg']    = Lang::get('messages.loginSuccess');
 	                return Response::json($output, 200);
