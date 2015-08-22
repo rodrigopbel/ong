@@ -205,7 +205,7 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Caso #<span class="required">* </span></label>
         										<div class="col-md-9">
-        											<input type="text" name="employeeID" class="form-control" readonly value="{{$beneficiario->beneficiarioID}}">
+        											<input type="text" name="beneficiarioID" class="form-control" readonly value="{{$beneficiario->beneficiarioID}}">
         										</div>
         									</div>
         									<div class="form-group">
@@ -248,7 +248,7 @@
                                                 	<div class="form-group">
 														<label class="control-label col-md-3">Estado</label>
 														<div class="col-md-3">
-															   <input  type="checkbox" value="active" onchange="remove_exit();" class="make-switch" name="status" @if($beneficiario->status=='activo')checked	@endif data-on-color="success" data-on-text="Activo" data-off-text="Inactivo" data-off-color="danger">
+															   <input  type="checkbox" value="activo" onchange="remove_exit();" class="make-switch" name="status" @if($beneficiario->status=='activo')checked	@endif data-on-color="success" data-on-text="Activo" data-off-text="Inactivo" data-off-color="danger">
 														</div>
 													</div>
 
