@@ -377,7 +377,7 @@ class BeneficiariosController extends \AdminBaseController {
 		                        ->leftJoin('zonificacion_beneficiario', 'zonificacion_beneficiario.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
 		                        ->select('beneficiarios.beneficiarioID',
 			                        'beneficiarios.nombres','beneficiarios.apellidos', 'destino.destino as Destino', 'objetivo.objetivo as Objetivo',
-			                        'designation.designation as Designation','beneficiarios.telefono','beneficiarios.fechanac',
+			                        'beneficiarios.telefono','beneficiarios.fechanac',
 			                        'beneficiarios.fechaing','beneficiarios.direccion','beneficiarios.direccionperm','beneficiarios.status',
 			                        'beneficiarios.fecha_desvinculacion',
 			                        'zonificacion_beneficiario.departamento','zonificacion_beneficiario.zona','zonificacion_beneficiario.otros'
