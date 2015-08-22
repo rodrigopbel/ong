@@ -46,6 +46,11 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     //Route::resource('dashboard', 'AdminDashboardController');
     Route::resource('dashboard', 'AdminDashboardController',['as' => 'admin']);
 
+    //  Destinos Routing
+    Route::get('destinos/ajax_destino/',['as'=>'admin.destinos.ajax_destino','uses'=> 'DestinosController@ajax_destino']);
+    Route::resource('destinos', 'DestinosController',['except' => ['show','create'],'as' => 'admin']);
+
+
     //    Employees Routing
 	Route::get('employees/export',['as'=>'admin.employees.export','uses'=>'BeneficiariosController@export']);
     Route::get('employees/employeeLogin/{id}',['as'=>'admin.employees.employeeLogin','uses'=>'BeneficiariosController@employeesLogin']);
@@ -61,9 +66,6 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::resource('departments', 'DepartmentsController',['except' => ['show','create'],'as' => 'admin']);
 
 
-    //  Destinos Routing
-    Route::get('destinos/ajax_destino/',['as'=>'admin.destinos.ajax_destino','uses'=> 'DestinosController@ajax_destino']);
-    Route::resource('destinos', 'DestinosController',['except' => ['show','create'],'as' => 'admin']);
 
 
     //    Expense Routing
