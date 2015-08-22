@@ -33,25 +33,32 @@ class LoginController extends \BaseController {
                 'password'	=>	$input['password'],
 	            'status'    =>  'active'
             ];
-            //Rules to validate the incoming username and password
+            //Reglas de los Campos de Email y Password
             $rules  =[
                 'email'	    => 'required|email',
                 'password'	=>	'required'
             ];
             $validator	= Validator::make($input,$rules);
-            //if validator fails then move to this block
+            //Verificacion previa de los campos, antes de la Autenticacion
             if($validator->fails())
             {
                 $output['status'] = 'error';
                 $output['msg']    =  $validator->getMessageBag()->toArray();
             }
             // Check if employee exists in database with the credentials of not
-            if (Auth::beneficiarios()->attempt($data))
+//            if (Auth::beneficiarios()->attempt($data))
+//            {
+//		            $event =  Event::fire('auth.login', Auth::beneficiarios()->get());
+//		            $output['status'] = 'success';
+//		            $output['msg']    = Lang::get('messages.loginSuccess');
+//	                return Response::json($output, 200);
+//            }
+            if (Auth::attempt($data))
             {
-		            $event =  Event::fire('auth.login', Auth::beneficiarios()->get());
-		            $output['status'] = 'success';
-		            $output['msg']    = Lang::get('messages.loginSuccess');
-	                return Response::json($output, 200);
+                $event =  Event::fire('auth.login', Auth::beneficiarios()->get());
+                $output['status'] = 'success';
+                $output['msg']    = Lang::get('messages.loginSuccess');
+                return Response::json($output, 200);
             }
 	        // For Blocked Users
 	        $data['status']         =   'inactive';
@@ -60,7 +67,7 @@ class LoginController extends \BaseController {
 	            $output['status']	=	'error';
 	            $output['msg']		=	['error'=>Lang::get('messages.loginBlocked')];
             }
-            //Show error Message if Employee with posted data does not exists
+            //Muestra el error existente al Autenticarse
             else
 	        {
 		        $output['status']	=	'error';
