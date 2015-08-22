@@ -110,13 +110,12 @@ class DestinosController extends \AdminBaseController {
             {
                 Objetivo::firstOrCreate([
                     'destID'=> $dest->id,
-                    'objtivo' => $value
+                    'objetivo' => $value
                 ]);
             }
 
         }
-		dd($input['objetivo']);
-		die();
+
 		return Redirect::route('admin.destinos.index')->with('success',"<strong>{$input['destino']}</strong>  Actualizado correctamente");;
 	}
 
