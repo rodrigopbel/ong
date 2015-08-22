@@ -19,7 +19,7 @@ class DestinosController extends \AdminBaseController {
      */
 	public function index() {
 		$this->data['destinos'] = Destino::all();
-		$this->data['destinosActive'] = 'activo';
+		$this->data['destinosActive'] = 'active';
 		$benCount = array();
 		foreach (Destino::all() as $des) {
 			$employeeCount[$des->id] = Beneficiario::join('destino', 'beneficiario.destino', '=', 'destino.id')
