@@ -70,7 +70,7 @@ return array(
 		"array"   => "The :attribute must contain :size items.",
 	),
 	"unique"               => "The :attribute has already been taken.",
-	"url"                  => "El formato de :attribute es invalido.",
+	"url"                  => "El formato de :attribute no es valido.",
 	"timezone"             => "The :attribute must be a valid zone.",
 
 	/*
