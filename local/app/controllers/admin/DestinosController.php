@@ -100,9 +100,9 @@ class DestinosController extends \AdminBaseController {
                     Objetivo::destroy($input['objID'][$index]);
                 }
                 else{
-                    $design = Designation::find($input['objID'][$index]);
-                    $design->designation = $value;
-                    $design->save();
+                    $obj = Objetivo::find($input['objID'][$index]);
+					$obj->objetivo = $value;
+					$obj->save();
                 }
 
 
