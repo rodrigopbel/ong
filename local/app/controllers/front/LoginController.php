@@ -30,8 +30,8 @@ class LoginController extends \BaseController {
             $input  = Input::all();
             $data	=	[
                 'email'	    =>	$input['email'],
-                'password'	=>	$input['password'],
-	            'status'    =>  'active'
+                'password'	=>	$input['password']
+//	            'status'    =>  'active'
             ];
             //Rules to validate the incoming username and password
             $rules  =[
