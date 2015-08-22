@@ -271,7 +271,7 @@ class BeneficiariosController extends \AdminBaseController {
 			$ben   =   Beneficiario::where('beneficiarioID','=',$id)->get()->first();
 
 
-			$validator = Validator::make($data = Input::all(),Employee::rules('personalInfo',$ben->id));
+			$validator = Validator::make($data = Input::all(),Beneficiario::rules('personalInfo',$ben->id));
 
 			if ($validator->fails())
 			{

@@ -675,7 +675,7 @@ function del(id,type)
 
             var alert_div   =   '#alert_company';
 			$('#deleteModal').appendTo("body").modal('show');
-			$('#info').html('Are you sure ! You want to delete <strong>'+type+'</strong> Salary??.');
+			$('#info').html('Eliminar  <strong>'+type+'</strong> Donacion??.');
 			$("#delete").click(function()
 			{
 				var url = "{{ route('admin.salary.destroy',':id') }}";
