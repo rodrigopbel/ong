@@ -47,10 +47,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 		DB::beginTransaction();
 		try {
-
-			$name = explode(' ', $input['fullName']);
-			$firstName = ucfirst($name[0]);
-
+			$nombres = $input['nombres'];
 			$filename   =   null;
 			// Profile Image Upload
 			if (Input::hasFile('profileImage')) {
@@ -59,7 +56,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 				$image 	    = Input::file('profileImage');
 				$extension  = $image->getClientOriginalExtension();
-				$filename	= "{$firstName}_{$input['employeeID']}.".strtolower($extension);
+				$filename	= "{$nombres}_{$input['beneficiarioID']}.".strtolower($extension);
 
 				//                Image::make($image->getRealPath())->resize('872','724')->save($path.$filename);
 				Image::make($image->getRealPath())
@@ -72,7 +69,7 @@ class BeneficiariosController extends \AdminBaseController {
 			}
 
 			Beneficiario::create([
-				'beneficiarioID'    => $input['employeeID'],
+				'beneficiarioID'    => $input['beneficiarioID'],
 				'objetivo'   => $input['objetivo'],
 				'nombres'      => ucwords(strtolower($input['nombres'])),
 				'apellidos'    => ucwords(strtolower($input['apellidos'])),
