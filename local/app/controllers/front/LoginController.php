@@ -68,9 +68,8 @@ class LoginController extends \BaseController {
                 return Response::json($output, 200);
             }
 	        // For Blocked Users
-//	        $data['status']         =   'inactive';
-//            if(Auth::beneficiarios()->validate($data))
-
+	        $data['status']         =   'inactive';
+//          if(Auth::beneficiarios()->validate($data))
             if(Auth::attempt(array('email'=>$email, 'password' => $password)))
             {
 	            $output['status']	=	'error';
