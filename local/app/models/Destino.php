@@ -29,7 +29,7 @@ class Destino extends \Eloquent {
 
 
     protected  function Objetivos(){
-        return $this->hasMany('objetivo','destID','id');
+        return $this->hasMany('Objetivo','destID','id');
     }
 
 
