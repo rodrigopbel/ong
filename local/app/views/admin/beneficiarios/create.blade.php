@@ -395,7 +395,7 @@
 
 										</div>
 										<div class="form-group">
-											<label class="control-label col-md-2">Solicitud</label>
+											<label class="control-label col-md-2">Diagnostico</label>
 											<div class="col-md-5">
 												<div class="fileinput fileinput-new" data-provides="fileinput">
 													<div class="input-group input-large">

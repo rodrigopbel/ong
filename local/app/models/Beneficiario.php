@@ -82,21 +82,26 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 		return $this->belongsTo('Objetivo','objetivo','id');
 	}
 
+
+	public function getDocuments()
+	{
+		return $this->hasMany('Bendocumentos','beneficiarioID','beneficiarioID');
+	}
+
+	public function getSoldonacion()
+	{
+		return $this->hasMany('Soldonacion','beneficiarioID','beneficiarioID');
+	}
+
     public function getDesignation()
     {
        // belongs('OtherClass','thisclasskey','otherclasskey')
        return $this->belongsTo('Designation','designation','id');
     }
 
-    public function getDocuments()
-    {
-        return $this->hasMany('Employee_document','employeeID','employeeID');
-    }
 
-    public function getSalary()
-    {
-        return $this->hasMany('Salary','employeeID','employeeID');
-    }
+
+
 
     public function getAwards()
     {

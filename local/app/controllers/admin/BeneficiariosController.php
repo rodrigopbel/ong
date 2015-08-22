@@ -126,7 +126,7 @@ class BeneficiariosController extends \AdminBaseController {
 					$filename	= "{$document}_{$input['beneficiarioID']}_{$fullname}.$extension";
 
 					Input::file($document)->move($path, $filename);
-					Employee_document::create([
+					Bendocumentos::create([
 						'beneficiarioID'=>  $input['beneficiarioID'],
 						'fileName'  =>   $filename,
 						'type'      =>  $document
@@ -168,22 +168,22 @@ class BeneficiariosController extends \AdminBaseController {
 	 */
 	public function edit($id)
 	{
-		$this->data['employeesActive']  =   'active';
-		$this->data['department']       =   Department::lists('deptName','id');
-		$this->data['employee']         =   Employee::where('employeeID', '=' ,$id)->get()->first();
-		$this->data['designation']      =   Designation::find($this->data['employee']->designation);
+		$this->data['beneficiariosActive']  =   'active';
+		$this->data['destinos']      =     Destino::lists('destino','id');
+		$this->data['beneficiario']  =   Beneficiario::where('', '=' ,$id)->get()->first();
+		$this->data['objetivo']      =   Objetivo::find($this->data['beneficiario']->objetivo);
 
 		$doc = [];
-		foreach($this->data['employee']->getDocuments as $documents)
+		foreach($this->data['beneficiario']->getDocuments as $documents)
 		{
 			$doc[$documents->type] =  $documents->fileName ;
 		}
 		$this->data['documents']  =   $doc;
 
-		$this->data['bank_details']     =   Bank_detail::where('employeeID', '=' ,$id)->get()->first();
+		$this->data['zonificacion']     =   Zonificacion::where('beneficiarioID', '=' ,$id)->get()->first();
 
 
-		return View::make('admin.employees.edit', $this->data);
+		return View::make('admin.beneficiarios.edit', $this->data);
 	}
 
 

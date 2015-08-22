@@ -23,7 +23,7 @@
         						<i class="fa fa-angle-right"></i>
         					</li>
         					<li>
-        						<a href="{{route('admin.employees.index')}}">Beneficiarios</a>
+        						<a href="{{route('admin.beneficiarios.index')}}">Beneficiarios</a>
         						<i class="fa fa-angle-right"></i>
         					</li>
         					<li>
@@ -55,7 +55,7 @@
 
                                 {{--------------------Personal Info Form--------------------------------------------}}
 
-        							{{Form::open(['method' => 'PATCH','route'=> ['admin.employees.update', $employee->employeeID],'class'   =>  'form-horizontal','id'  =>  'personal_details_form','files'=>true])}}
+        							{{Form::open(['method' => 'PATCH','route'=> ['admin.beneficiarios.update', $beneficiario->beneficiarioID],'class'   =>  'form-horizontal','id'  =>  'personal_details_form','files'=>true])}}
         							<input type="hidden" name="updateType" class="form-control" value="personalInfo">
 
                                      @if(Session::get('successPersonal'))
@@ -77,13 +77,13 @@
 
 
         								<div class="form-body">
-                            <div class="form-group ">
+                            				<div class="form-group ">
         										<label class="control-label col-md-3">Foto</label>
         										<div class="col-md-9">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-        												 {{HTML::image("/profileImages/{$employee->profileImage}",'ProfileImage')}}
-                                                         <input type="hidden" name="hiddenImage" value="{{$employee->profileImage}}">
+        												 {{HTML::image("/profileImages/{$beneficiario->foto}",'ProfileImage')}}
+                                                         <input type="hidden" name="hiddenImage" value="{{$beneficiario->foto}}">
         												</div>
         												<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
         												</div>
@@ -110,20 +110,20 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Nombres<span class="required">* </span></label>
         										<div class="col-md-9">
-        											<input type="text" name="fullName" class="form-control" value="{{$employee->fullName}}">
+        											<input type="text" name="fullName" class="form-control" value="{{$beneficiario->nombres}}">
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Apellidos</label>
         										<div class="col-md-9">
-        											<input type="text" name="fatherName" class="form-control" value="{{$employee->fatherName}}">
+        											<input type="text" name="fatherName" class="form-control" value="{{$beneficiario->apellidos}}">
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="control-label col-md-3">Fecha de Nacimiento</label>
         										<div class="col-md-3">
         											<div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-        												<input type="text" class="form-control" name="date_of_birth" readonly value="@if(empty($employee->date_of_birth))@else{{date('d-m-Y',strtotime($employee->date_of_birth))}}@endif" >
+        												<input type="text" class="form-control" name="date_of_birth" readonly value="@if(empty($beneficiario->fechanac))@else{{date('d-m-Y',strtotime($beneficiario->fechanac))}}@endif" >
         												<span class="input-group-btn">
         												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
         												</span>
@@ -135,8 +135,9 @@
         										<div class="col-md-9">
         											<select class="form-control" name="gender">
 
-        												<option value="male" @if($employee->gender=='male') selected @endif>Varon</option>
-        												<option value="female"  @if($employee->gender=='female') selected @endif>Mujer</option>
+        												<option value="male" @if($beneficiario->genero=='hombre') selected @endif>Varon</option>
+        												<option value="female"  @if($beneficiario->genero=='mujer') selected @endif>Mujer</option>
+														<option value="female"  @if($beneficiario->genero=='otros') selected @endif>Otros</option>
         											</select>
         										</div>
         									</div>
@@ -144,32 +145,32 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Telefono</label>
         										<div class="col-md-9">
-        											<input type="text" name="mobileNumber" class="form-control" value="{{$employee->mobileNumber}}">
+        											<input type="text" name="mobileNumber" class="form-control" value="{{$beneficiario->telefono}}">
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Direccion Actual</label>
         										<div class="col-md-9">
-        											<textarea name="localAddress" class="form-control" rows="3">{{$employee->localAddress}}</textarea>
+        											<textarea name="localAddress" class="form-control" rows="3">{{$beneficiario->direccion}}</textarea>
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Direccion Permanente</label>
         										<div class="col-md-9">
-        											<textarea name="permanentAddress" class="form-control" rows="3">{{$employee->permanentAddress}}</textarea>
+        											<textarea name="permanentAddress" class="form-control" rows="3">{{$beneficiario->direccionperm}}</textarea>
         										</div>
         									</div>
         									<h4><strong>Cuenta de Beneficiario</strong></h4>
         									<div class="form-group">
                                                     <label class="col-md-3 control-label">Email<span class="required">* </span></label>
                                                     <div class="col-md-9">
-                                                        <input type="text" name="email" class="form-control" value="{{$employee->email}}">
+                                                        <input type="text" name="email" class="form-control" value="{{$beneficiario->email}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-3 control-label">Password</label>
                                                     <div class="col-md-9">
-                                                        <input type="hidden" name="oldpassword" value="{{$employee->password}}">
+                                                        <input type="hidden" name="oldpassword" value="{{$beneficiario->password}}">
                                                         <input type="text" name="password" class="form-control">
                                                     </div>
                                                 </div>
@@ -185,7 +186,7 @@
         								<i class="fa fa-calendar"></i>Objetivo de la Ayuda
         							</div>
         							<div class="actions">
-        								<a href="javascript:;" onclick="UpdateDetails('{{$employee->employeeID}}','company');return false" data-loading-text="Updating..." class="demo-loading-btn-ajax btn btn-sm btn-default ">
+        								<a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->beneficiarioID}}','company');return false" data-loading-text="Updating..." class="demo-loading-btn-ajax btn btn-sm btn-default ">
         								<i class="fa fa-save"></i> Guardar </a>
         							</div>
         						</div>
@@ -204,20 +205,20 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Caso #<span class="required">* </span></label>
         										<div class="col-md-9">
-        											<input type="text" name="employeeID" class="form-control" readonly value="{{$employee->employeeID}}">
+        											<input type="text" name="employeeID" class="form-control" readonly value="{{$beneficiario->beneficiarioID}}">
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Destino<span class="required">* </span></label>
         										<div class="col-md-9">
-        											 {{ Form::select('department', $department,$designation->deptID,['class' => 'form-control select2me','id'=>'department','onchange'=>'dept();return false;']) }}
+        											{{ Form::select('destino', $destinos,$beneficiario->getObjetivo->destID,['class' => 'form-control select2me','id'=>'destino','onchange'=>'objetivos();return false;']) }}
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Objetivo<span class="required">* </span></label>
         										<div class="col-md-9">
 
-        											 <select  class="select2me form-control" name="designation" id="designation" >
+        											 <select  class="select2me form-control" name="objetivo" id="objetivo" >
 
                                                      </select>
         										</div>
@@ -226,7 +227,7 @@
         										<label class="control-label col-md-3">Fecha de Solicitud</label>
         										<div class="col-md-3">
         											<div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-        												<input type="text" class="form-control" name="joiningDate" readonly value="@if(empty($employee->joiningDate))00-00-0000 @else {{date('d-m-Y',strtotime($employee->joiningDate))}} @endif">
+        												<input type="text" class="form-control" name="fechaing" readonly value="@if(empty($beneficiario->fechaing))00-00-0000 @else {{date('d-m-Y',strtotime($beneficiario->fechaing))}} @endif">
         												<span class="input-group-btn">
         												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
         												</span>
@@ -237,7 +238,7 @@
                                                     <label class="control-label col-md-3">Fecha de Devinculacion</label>
                                                     <div class="col-md-3">
                                                         <div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                                                            <input type="text" class="form-control" name="exit_date" readonly value="@if(empty($employee->exit_date)) @else {{date('d-m-Y',strtotime($employee->exit_date))}} @endif">
+                                                            <input type="text" class="form-control" name="fecha_desvinculacion" readonly value="@if(empty($beneficiario->fecha_desvinculacion)) @else {{date('d-m-Y',strtotime($beneficiario->fecha_desvinculacion))}} @endif">
                                                             <span class="input-group-btn">
                                                             <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
                                                             </span>
@@ -247,7 +248,7 @@
                                                 	<div class="form-group">
 														<label class="control-label col-md-3">Estado</label>
 														<div class="col-md-3">
-															   <input  type="checkbox" value="active" onchange="remove_exit();" class="make-switch" name="status" @if($employee->status=='active')checked	@endif data-on-color="success" data-on-text="Activado" data-off-text="Desactivado" data-off-color="danger">
+															   <input  type="checkbox" value="active" onchange="remove_exit();" class="make-switch" name="status" @if($beneficiario->status=='activo')checked	@endif data-on-color="success" data-on-text="Activado" data-off-text="Desactivado" data-off-color="danger">
 														</div>
 														<div class="col-md-6">
 														  (<strong>Nota:</strong>Estado activo cuando)
@@ -255,28 +256,28 @@
 													</div>
 
         									<hr>
-        									<h4><strong>monto Requerido  ( <i class="fa {{$setting->currency_icon}}"></i> )</strong></h4>
+        									<h4><strong>Monto Requerido  ( <i class="fa {{$setting->currency_icon}}"></i> )</strong></h4>
 
-                                         @foreach($employee->getSalary as $salary)
-                                         <div id="salary{{$salary->id}}">
+                                         @foreach($beneficiario->getSoldonacion as $solicitud)
+                                         <div id="salary{{$solicitud->id}}">
                                               <div class="form-group" >
                                                     <div class="col-md-5">
-                                                        <input type="text" class="form-control" name="type[{{$salary->id}}]" value="{{$salary->type}}">
+                                                        <input type="text" class="form-control" name="type[{{$solicitud->id}}]" value="{{$solicitud->tipo}}">
                                                      </div>
 
                                                     <div class="col-md-5">
-                                                        <input type="text" class="form-control" name="salary[{{$salary->id}}]" value="{{$salary->salary}}">
+                                                        <input type="text" class="form-control" name="salary[{{$solicitud->id}}]" value="{{$solicitud->monto}}">
                                                     </div>
 
                                                     <div class="col-md-2">
-                                                        <a class="btn btn-sm red" onclick="del('{{$salary->id}}','{{$salary->type}}')"><i class="fa fa-trash"></i> </a>
+                                                        <a class="btn btn-sm red" onclick="del('{{$solicitud->id}}','{{$solicitud->tipo}}')"><i class="fa fa-trash"></i> </a>
 
                                                     </div>
                                                 </div>
                                                 </div>
                                          @endforeach
-                                 <a class="" data-toggle="modal" href="#static">
-                                         Agregar Otro Monto Requerido
+                                 		<a class="" data-toggle="modal" href="#static">
+                                         Nuevo
                                                 <i class="fa fa-plus"></i> </a>
         								</div>
         							{{Form::close()}}
@@ -290,10 +291,10 @@
         					<div class="portlet box red-sunglo">
         						<div class="portlet-title">
         							<div class="caption">
-        								<i class="fa fa-calendar"></i>Zonificacion de Beneficiario
+        								<i class="fa fa-calendar"></i>Zonificacion
         							</div>
         							<div class="actions">
-        								<a href="javascript:;" onclick="UpdateDetails('{{$employee->employeeID}}','bank');return false" data-loading-text="Updating..."  class="demo-loading-btn-ajax btn btn-sm btn-default ">
+        								<a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->beneficiarioID}}','bank');return false" data-loading-text="Updating..."  class="demo-loading-btn-ajax btn btn-sm btn-default ">
         								<i class="fa fa-save"></i> Guardar </a>
         							</div>
         						</div>
@@ -308,39 +309,39 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Departamento</label>
         										<div class="col-md-9">
-        											<input type="text" name="accountName" class="form-control" value="{{$bank_details->accountName or ''}}">
+        											<input type="text" name="departamento" class="form-control" value="{{$zonificacion->departamento or ''}}">
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Provincia</label>
         										<div class="col-md-9">
-        											<input type="text" name="accountNumber" class="form-control" value="{{$bank_details->accountNumber or ''}}">
+        											<input type="text" name="provincia" class="form-control" value="{{$zonificacion->provincia or ''}}">
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Localidad</label>
         										<div class="col-md-9">
-        											<input type="text" name="bank" class="form-control" value="{{$bank_details->bank or ''}}">
+        											<input type="text" name="localidad" class="form-control" value="{{$zonificacion->localidad or ''}}">
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Seccion</label>
+        										<label class="col-md-3 control-label">Canton</label>
         										<div class="col-md-9">
-        											<input type="text" name="ifsc" class="form-control" value="{{$bank_details->ifsc or ''}}">
+        											<input type="text" name="canton" class="form-control" value="{{$zonificacion->canton or ''}}">
         										</div>
         									</div>
 
        									    <div class="form-group">
         										<label class="col-md-3 control-label">Zona</label>
         										<div class="col-md-9">
-        											<input type="text" name="pan" class="form-control" value="{{$bank_details->pan or ''}}">
+        											<input type="text" name="zona" class="form-control" value="{{$zonificacion->zona or ''}}">
         										</div>
         									</div>
 
         									<div class="form-group">
-        										<label class="col-md-3 control-label">Canton</label>
+        										<label class="col-md-3 control-label">Nota</label>
         										<div class="col-md-9">
-        											<input type="text" name="branch" class="form-control" value="{{$bank_details->branch or '' }}">
+													<textarea class="form-control" name="branch" rows="3">{{$zonificacion->nota or '' }}</textarea>
         										</div>
         									</div>
         								</div>
@@ -369,7 +370,7 @@
         							<div class="portlet-body">
                                 {{--------------------Documents Info Form--------------------------------------------}}
 
-                                    {{Form::open(['method' => 'PATCH','route'=> ['admin.employees.update', $employee->employeeID],'class'   =>  'form-horizontal','id'  =>  'documents_details_form','files'=>true])}}
+                                    {{Form::open(['method' => 'PATCH','route'=> ['admin.beneficiarios.update', $beneficiario->beneficiarioID],'class'   =>  'form-horizontal','id'  =>  'documents_details_form','files'=>true])}}
                                     <input type="hidden" name="updateType" class="form-control" value="documents">
 
                                      @if(Session::get('successDocuments'))
@@ -382,7 +383,7 @@
 
         								<div class="form-body">
         									<div class="form-group">
-        										<label class="control-label col-md-2">Perfil</label>
+        										<label class="control-label col-md-2">CN</label>
         										<div class="col-md-5">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="input-group input-large">
@@ -395,7 +396,7 @@
         													Seleccionar archivo</span>
         													<span class="fileinput-exists">
         													Cambiar </span>
-        													<input type="file" name="resume">
+        													<input type="file" name="certnac">
         													</span>
         													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
         													Eliminar </a>
@@ -403,61 +404,8 @@
         											</div>
         										</div>
         										<div class="col-md-3">
-        										@if(isset($documents['resume']))
-        											<a href="https://docs.google.com/viewer?url={{URL::to('employee_documents/resume/'.$documents['resume'])}}" target="_blank" class="btn purple">View Resume</a>
-        										@endif
-        										</div>
-        									</div>
-        									<div class="form-group">
-        										<label class="control-label col-md-2">Carta de Solicitud</label>
-        										<div class="col-md-5">
-        											<div class="fileinput fileinput-new" data-provides="fileinput">
-        												<div class="input-group input-large">
-        													<div class="form-control uneditable-input" data-trigger="fileinput">
-        														<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
-        														</span>
-        													</div>
-        													<span class="input-group-addon btn default btn-file">
-        													<span class="fileinput-new">
-        													Seleccionar archivo </span>
-        													<span class="fileinput-exists">
-        													Cambiar </span>
-        													<input type="file" name="offerLetter">
-        													</span>
-        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-                                                                Eliminar </a>
-        												</div>
-        											</div>
-        										</div>
-        										<div class="col-md-3">
-        										     @if(isset($documents['offerLetter']))
-        											    <a href="https://docs.google.com/viewer?url={{URL::to('employee_documents/offerLetter/'.$documents['offerLetter'])}}" target="_blank" class="btn purple">Offer Letter</a>
-        											@endif
-        										</div>
-        									</div>
-        									<div class="form-group">
-        										<label class="control-label col-md-2">Certificado de Nacimiento</label>
-        										<div class="col-md-5">
-        											<div class="fileinput fileinput-new" data-provides="fileinput">
-        												<div class="input-group input-large">
-        													<div class="form-control uneditable-input" data-trigger="fileinput">
-        														<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
-        														</span>
-        													</div>
-        													<span class="input-group-addon btn default btn-file">
-        													<span class="fileinput-new">
-        													Seleccionar archivo </span>
-        													<span class="fileinput-exists">
-        													Cambiar </span>
-        													<input type="file" name="joiningLetter">
-        													</span>
-        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Eliminar </a>
-        												</div>
-        											</div>
-        										</div>
-        										<div class="col-md-3">
-        										@if(isset($documents['joiningLetter']))
-        											<a href="https://docs.google.com/viewer?url={{URL::to('employee_documents/joiningLetter/'.$documents['joiningLetter'])}}" target="_blank" class="btn purple">View Joining Letter</a>
+        										@if(isset($documents['certnac']))
+        											<a href="https://docs.google.com/viewer?url={{URL::to('beneficiarios_documents/certnac/'.$documents['certnac'])}}" target="_blank" class="btn purple">Ver CN</a>
         										@endif
         										</div>
         									</div>
@@ -475,21 +423,21 @@
         													Seleccionar archivo </span>
         													<span class="fileinput-exists">
         													Cambiar </span>
-        													<input type="file" name="contract">
+        													<input type="file" name="croquis">
         													</span>
         													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-                                                            Eliminar </a>
+                                                                Eliminar </a>
         												</div>
         											</div>
         										</div>
         										<div class="col-md-3">
-        										 @if(isset($documents['contract']))
-        											<a href="https://docs.google.com/viewer?url={{URL::to('employee_documents/contract/'.$documents['contract'])}}" target="_blank"  class="btn purple">View Contract</a>
-        										@endif
+        										     @if(isset($documents['croquis']))
+        											    <a href="https://docs.google.com/viewer?url={{URL::to('beneficiarios_documents/croquis/'.$documents['croquis'])}}" target="_blank" class="btn purple">Ver Croquis</a>
+        											@endif
         										</div>
         									</div>
         									<div class="form-group">
-        										<label class="control-label col-md-2">Carnet de Identidad</label>
+        										<label class="control-label col-md-2">CI</label>
         										<div class="col-md-5">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="input-group input-large">
@@ -502,7 +450,60 @@
         													Seleccionar archivo </span>
         													<span class="fileinput-exists">
         													Cambiar </span>
-        													<input type="file" name="IDProof">
+        													<input type="file" name="CIprueba">
+        													</span>
+        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Eliminar </a>
+        												</div>
+        											</div>
+        										</div>
+        										<div class="col-md-3">
+        										@if(isset($documents['CIprueba']))
+        											<a href="https://docs.google.com/viewer?url={{URL::to('beneficiarios_documents/CIprueba/'.$documents['CIprueba'])}}" target="_blank" class="btn purple">View Joining Letter</a>
+        										@endif
+        										</div>
+        									</div>
+        									<div class="form-group">
+        										<label class="control-label col-md-2">Perfil</label>
+        										<div class="col-md-5">
+        											<div class="fileinput fileinput-new" data-provides="fileinput">
+        												<div class="input-group input-large">
+        													<div class="form-control uneditable-input" data-trigger="fileinput">
+        														<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
+        														</span>
+        													</div>
+        													<span class="input-group-addon btn default btn-file">
+        													<span class="fileinput-new">
+        													Seleccionar archivo </span>
+        													<span class="fileinput-exists">
+        													Cambiar </span>
+        													<input type="file" name="perfil">
+        													</span>
+        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
+                                                            Eliminar </a>
+        												</div>
+        											</div>
+        										</div>
+        										<div class="col-md-3">
+        										 @if(isset($documents['perfil']))
+        											<a href="https://docs.google.com/viewer?url={{URL::to('beneficiarios_documents/perfil/'.$documents['perfil'])}}" target="_blank"  class="btn purple">Ver Perfil</a>
+        										@endif
+        										</div>
+        									</div>
+        									<div class="form-group">
+        										<label class="control-label col-md-2">Diagnostico</label>
+        										<div class="col-md-5">
+        											<div class="fileinput fileinput-new" data-provides="fileinput">
+        												<div class="input-group input-large">
+        													<div class="form-control uneditable-input" data-trigger="fileinput">
+        														<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
+        														</span>
+        													</div>
+        													<span class="input-group-addon btn default btn-file">
+        													<span class="fileinput-new">
+        													Seleccionar archivo </span>
+        													<span class="fileinput-exists">
+        													Cambiar </span>
+        													<input type="file" name="solicitud">
         													</span>
         													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
         													Eliminar </a>
@@ -511,7 +512,7 @@
         										</div>
         										<div class="col-md-3">
         										@if(isset($documents['IDProof']))
-        											<a href="https://docs.google.com/viewer?url={{URL::to('employee_documents/IDProof/'.$documents['IDProof'])}}" target="_blank"  class="btn purple">View ID Proof</a>
+        											<a href="https://docs.google.com/viewer?url={{URL::to('beneficiarios_documents/solicitud/'.$documents['solicitud'])}}" target="_blank"  class="btn purple">Ver Diagnostico</a>
         										@endif
         										</div>
         									</div>
@@ -537,14 +538,14 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                <h4 class="modal-title"><strong>Nuevo Monto Requerido</strong></h4>
+                                <h4 class="modal-title"><strong>Nuevo</strong></h4>
                             </div>
                             <div class="modal-body">
                                 <div class="portlet-body form">
 
                             <!-------------- BEGIN FORM------------>
                                 {{Form::open(array('route'=>"admin.salary.store",'class'=>'form-horizontal ','method'=>'POST'))}}
-                                <input   type="hidden" name="employeeID" value="{{$employee->employeeID}}"/>
+                                <input   type="hidden" name="employeeID" value="{{$beneficiario->beneficiarioID}}"/>
 
                                     <div class="form-body">
 
@@ -602,30 +603,26 @@
 <script>
         jQuery(document).ready(function() {
            ComponentsPickers.init();
-            dept();
+			objetivos();
 
         });
 
+		function objetivos(){
 
-      function dept(){
+			$.getJSON("{{ URL::to('admin/destinos/ajax_objetivos/')}}",
+					{ destID: $('#destino').val() },
+					function(data) {
+						var model = $('#objetivo');
+						model.empty();
+						var selected='';
+						var match= {{ $beneficiario->objetivo}}
+						$.each(data, function(index, element) {
+							model.append("<option value='"+element.id+"'>" + element.objetivo + "</option>");
+						});
 
-                  $.getJSON("{{ route('admin.departments.ajax_designation')}}",
-                  { deptID: $('#department').val() },
-                  function(data) {
-                       var model = $('#designation');
-                             model.empty();
-                       var selected='';
-                       var match= {{ $employee->designation}};
-                      $.each(data, function(index, element) {
-                          if(element.id==match)selected='selected';
-                          else selected='';
-                          model.append("<option value='"+element.id+"' "+selected+">" + element.designation + "</option>");
-                      });
+					});
 
-                 });
-
-
-            }
+		}
 
 // Javascript function to update the company info and Bank Info
        function UpdateDetails(id,type){
@@ -643,8 +640,8 @@
                 form_id     = '#company_details_form';
                 alert_div   =   '#alert_company';
             }
-           $(alert_div).html('<div class="alert alert-info"><span class="fa fa-info"></span> Submitting..</div>');
-					var url = "{{ route('admin.employees.update',':id') }}";
+           $(alert_div).html('<div class="alert alert-info"><span class="fa fa-info"></span> Guardando..</div>');
+					var url = "{{ route('admin.beneficiarios.update',':id') }}";
 					url = url.replace(':id',id);
               $.ajax({
                              type: "PATCH",
