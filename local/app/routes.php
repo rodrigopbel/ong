@@ -27,9 +27,9 @@
 
 # Beneficiario Login
 //    Route::get('/',['as'=>'login','uses'=>'LoginBenController@index']);
-    Route::get('/',['as'=>'login',function(){
+    Route::get('/',function(){
         return "hola mundo";
-    }]);
+    });
     Route::post('/login',['as'=>'login','uses'=>'LoginBenController@ajaxLogin']);
     Route::get('logout', ['as'=>'front.logout','uses'=>'LoginBenController@logout']);
 # Beneficiario Pagina despues de Ingresar
