@@ -106,15 +106,15 @@
 
                                     </td>
                                     <td class="text-center">
-                                        {{HTML::image("/foto/{$ben->foto}",'foto',['height'=>'80px'])}}
+                                        {{HTML::image("/profileImages/{$ben->foto}",'foto',['height'=>'80px'])}}
 
                                     </td>
                                     <td>
                                           {{ $ben->nombres . " ". $ben->apellidos }}
                                     </td>
                                     <td>
-                                          <p>Destino: <strong>{{ $ben->getDestino->destino->destino or ''}}</strong></p>
-                                          <p>Objetivo: <strong>{{ $ben->getDestino->destino->objetivos->objetivo or ''}}</strong></p>
+                                          <p>Destino: <strong>{{ $ben->getObjetivo->destinos->destino or ''}}</strong></p>
+                                          <p>Objetivo: <strong>{{ $ben->getObjetivo->objetivo or ''}}</strong></p>
                                     </td>
                                      <td class="text-center">
                                           {{ $ben->duracionVinculacion($ben->beneficiarioID) }}

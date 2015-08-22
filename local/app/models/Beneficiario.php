@@ -76,10 +76,10 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 
 	//Nuevos
 
-	public function getDestino()
+	public function getObjetivo()
 	{
 		// belongs('OtherClass','thisclasskey','otherclasskey')
-		return $this->belongsTo('Destino','destino','id');
+		return $this->belongsTo('Objetivo','objetivo','id');
 	}
 
     public function getDesignation()
