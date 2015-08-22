@@ -23,8 +23,6 @@ class DestinosController extends \AdminBaseController {
 			                                    ->count();
 		}
 
-		dd();
-
 		$this->data['beneficiarioCount']    =   $benCount;
 
 
