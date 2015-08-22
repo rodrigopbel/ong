@@ -3,37 +3,13 @@
  * Redefined Ind.
  */
 
-# Employee Login
-//    Route::get('/',['as'=>'login','uses'=>'LoginController@index']);
-//    Route::post('/login',['as'=>'login','uses'=>'LoginController@ajaxLogin']);
-//    Route::get('logout', ['as'=>'front.logout','uses'=>'LoginController@logout']);
-
-# Employee Panel After Login
-//Route::group(array('before' => 'auth.employees'), function()
-//{
-//    Route::post('/change_password_modal',['as'=>'front.change_password_modal','uses'=>'DashboardController@changePasswordModal']);
-//    Route::post('/change_password',['as'=>'front.change_password','uses'=>'DashboardController@change_password']);
-//    Route::get('ajaxApplications/{$id}',['as'=>'front.leave_applications','uses'=> 'DashboardController@ajaxApplications']);
-//
-//    Route::get('leave',['as'=>'front.leave','uses'=>'DashboardController@leave']);
-//
-//    Route::post('dashboard/notice/{id}',['as'=>'front.notice_ajax','uses'=>'DashboardController@notice_ajax']);
-//
-//    Route::post('leave_store',['as'=>'front.leave_store','uses'=>'DashboardController@leave_store']);
-//
-//    Route::resource('dashboard','DashboardController');
-//});
-
-
-# Beneficiario Login
-//    Route::get('/',['as'=>'login','uses'=>'LoginBenController@index']);
-    Route::get('/',function(){
-        return "hola mundo";
-    });
+# Beneficiario  Login
+    Route::get('/',['as'=>'login','uses'=>'LoginController@index']);
     Route::post('/login',['as'=>'login','uses'=>'LoginController@ajaxLogin']);
     Route::get('logout', ['as'=>'front.logout','uses'=>'LoginController@logout']);
-# Beneficiario Pagina despues de Ingresar
-Route::group(array('before' => 'auth.beneficiarios'), function()
+
+# Employee Panel After Login
+Route::group(array('before' => 'auth.ben'), function()
 {
     Route::post('/change_password_modal',['as'=>'front.change_password_modal','uses'=>'DashboardController@changePasswordModal']);
     Route::post('/change_password',['as'=>'front.change_password','uses'=>'DashboardController@change_password']);

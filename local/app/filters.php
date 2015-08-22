@@ -45,7 +45,7 @@ Route::filter('auth.employees', function()
 });
 
 
-Route::filter('auth.beneficiarios', function()
+Route::filter('auth.ben', function()
 {
     if (!Auth::beneficiarios()->check()) {
         return Redirect::to("/");
