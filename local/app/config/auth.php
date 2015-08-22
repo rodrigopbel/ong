@@ -9,8 +9,7 @@ return array(
         ),
         'beneficiarios' => array(
             'driver' => 'eloquent',
-            'model'  => 'Beneficiario',
-            'table'  => 'beneficiarios'
+            'model'  => 'Beneficiario'
         )
     ),
 
