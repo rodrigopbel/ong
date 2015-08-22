@@ -170,7 +170,7 @@ class BeneficiariosController extends \AdminBaseController {
 	{
 		$this->data['beneficiariosActive']  =   'active';
 		$this->data['destinos']      =     Destino::lists('destino','id');
-		$this->data['beneficiario']  =   Beneficiario::where('', '=' ,$id)->get()->first();
+		$this->data['beneficiario']  =   Beneficiario::where('beneficiarioID', '=' ,$id)->get()->first();
 		$this->data['objetivo']      =   Objetivo::find($this->data['beneficiario']->objetivo);
 
 		$doc = [];
