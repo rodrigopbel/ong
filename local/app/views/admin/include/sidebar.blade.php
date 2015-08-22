@@ -50,17 +50,17 @@
 
 
               {{---------------------------------------Destinos-------------------------------}}
-				    <li class="{{ $departmentOpen or ''}}">
+				    <li class="{{ $destinosOpen or ''}}">
                 					<a href="javascript:;">
                 					<i class="fa fa-briefcase"></i>
-                					<span class="title">{{Lang::get('menu.department')}}</span>
+                					<span class="title">{{Lang::get('menu.destinos')}}</span>
                 					<span class="arrow "></span>
                 					</a>
                 					<ul class="sub-menu">
-                						<li class="{{ $departmentActive or ''}}">
-                							<a href="{{route('admin.departments.index')}}">
+                						<li class="{{ $destinosActive or ''}}">
+                							<a href="{{route('admin.destinos.index')}}">
                 							<i class="fa fa-briefcase"></i>
-                							{{Lang::get('menu.departmentList')}} </a>
+                							{{Lang::get('menu.destinosList')}} </a>
                 						</li>
 
 

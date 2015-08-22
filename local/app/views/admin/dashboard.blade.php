@@ -67,21 +67,21 @@
 {{--</div>--}}
 
 
-            {{--<!-- BEGIN DASHBOARD STATS -->--}}
-            {{--<div class="row">--}}
-                {{--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">--}}
-                {{--<div class="portlet box blue">--}}
-                    {{--<div class="portlet-title">--}}
-                        {{--<div class="caption">--}}
-							{{--Reporte de Ayudas y/o Pagos--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="portlet-body">--}}
-					  {{--<div id="expenseChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
+            <!-- BEGIN DASHBOARD STATS -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="portlet box blue">
+                    <div class="portlet-title">
+                        <div class="caption">
+							Gastos
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+					  <div id="expenseChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                    </div>
+                </div>
 
-                {{--</div>--}}
+                </div>
 
 
             <!-- END DASHBOARD STATS -->

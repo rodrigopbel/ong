@@ -54,7 +54,7 @@ class AdminLoginController extends AdminBaseController {
 		{	
 			$output['status']	=	'error';
 			//Check if login is from lock screen or from login page 
-			$output['msg']		=	(Session::get("lock")!=1)	?	'Both Fields are Required':'Password is required';
+			$output['msg']		=	(Session::get("lock")!=1)	?	'Ambos campos requereidos':'Password Invalido/Requerido';
 			
 		}
 		// Check if admin exists in database with the credentials of not 
@@ -63,14 +63,14 @@ class AdminLoginController extends AdminBaseController {
 			$event = Event::fire('auth.login', Auth::admin()->get());
 			Session::put('lock', '0'); //Reset the lock screen session;
 			$output['status']	=	'success';
-			$output['msg']		=	'Logged in Successfully';
+			$output['msg']		=	'Ingreso Exitoso';
 		}
 		//Show error Message if admin with posted data doesnot exists
 		else
 		{
 			$output['status']	=	'error';
 			//Check if login is from lock screen or from login page
-			$output['msg']		=	(Session::get("lock")!=1)	?	'Wrong Login Details':'Wrong Password';
+			$output['msg']		=	(Session::get("lock")!=1)	?	'Credenciales Erroneas':'Password Invalido';
 			
 		}
 
