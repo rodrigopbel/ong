@@ -335,11 +335,24 @@ class BeneficiariosController extends \AdminBaseController {
 					$extension  = $file->getClientOriginalExtension();
 					$filename	= "{$document}_{$id}_{$fullname}.$extension";
 
+
+
 					Input::file($document)->move($path, $filename);
-					$edoc  =   Bendocumentos::firstOrNew(['beneficiarioID'=>$id,'type'=>$document]);
-					$edoc->fileName  =   $filename;
-					$edoc->type      =   $document;
-					$edoc->save();
+
+					$edoc   =   Bendocumentos::where('beneficiarioID','=',$id)->get()->first();
+					if ($edoc) {
+						$edoc->fileName  =   $filename;
+						$edoc->type      =   $document;
+						$edoc->save();
+					} else {
+						$edoc = new Bendocumentos();
+						$edoc->beneficiarioID = $id;
+						$edoc->fileName  =   $filename;
+						$edoc->type      =   $document;
+						$edoc->save();
+					}
+
+
 
 				}
 			}
