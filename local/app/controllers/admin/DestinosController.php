@@ -26,6 +26,7 @@ class DestinosController extends \AdminBaseController {
 		$this->data['beneficiarioCount']    =   $benCount;
 
 
+die($benCount);
 		return View::make('admin.destinos.index', $this->data);
 	}
 	/**
