@@ -316,7 +316,7 @@
 
 			}
 
-			function showEdit(id,deptName)
+			function showEdit(id,destName)
 			{
 
                     $('div[id^="edit_field"]').remove();
@@ -327,7 +327,7 @@
 					var get_url = "{{ route('admin.destinos.edit',':id') }}";
 					get_url = get_url.replace(':id',id);
 
-			        $("#edit_destName").val(deptName);
+			        $("#edit_destName").val(destName);
 			        $("#destresponse").html('<div class="text-center">{{HTML::image('assets/admin/layout/img/loading-spinner-blue.gif')}}</div>');
 
                     $.ajax({

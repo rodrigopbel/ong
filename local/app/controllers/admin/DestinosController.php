@@ -66,7 +66,7 @@ class DestinosController extends \AdminBaseController {
 	public function edit($id)
 	{
 
-		$this->data['destino'] = Destino::find($id);
+		$this->data['destinos'] = Destino::find($id);
 		return View::make('admin.destinos.edit', $this->data);
 	}
 
@@ -140,7 +140,7 @@ class DestinosController extends \AdminBaseController {
     public function ajax_destino()
     {
 	    if (Request::ajax()) {
-		    $input = Input::get('destID');
+		    $input = Input::get('id');
 		    $objetivo = Destino::where('destID', '=', $input)
 		                              ->get();
 
