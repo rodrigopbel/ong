@@ -220,10 +220,6 @@ class BeneficiariosController extends \AdminBaseController {
 				$output['msg'] = 'Zonificacion actualizado exitosamente';
 			}
 		}
-
-		//-------Bank Details Update End--------
-		//-------Company Details Update Start--------
-
 		else if(Input::get('updateType')=='donacion')
 		{
 			$ddetails = Beneficiario::where('beneficiarioID','=', $id)->first();
@@ -259,11 +255,6 @@ class BeneficiariosController extends \AdminBaseController {
 				$output['msg']    = 'Donacion Actualizado Existosamente';
 			}
 		}
-
-		//-------Company Details Update End--------------
-
-
-		//-------Personal info Details Update Start----------
 
 		else if(Input::get('updateType')=='personalInfo')
 		{
@@ -332,9 +323,6 @@ class BeneficiariosController extends \AdminBaseController {
 			return Redirect::route('admin.beneficiarios.edit',$id)->with('successPersonal',"<strong>Actualizacion</strong> Existosa");
 
 		}
-		//-------Personal Details Update End-------------
-
-		//-------Documents info Details Update Start--------
 		else if(Input::get('updateType')=='documents')
 		{
 			$input  =   Input::all();
