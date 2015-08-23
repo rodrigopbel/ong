@@ -43,7 +43,7 @@ class ProfileSettingsController extends \AdminBaseController {
             {
                 return Redirect::back()->withErrors($validator)->withInput();
             }
-            Session::flash('success','Name and Email updated successfully');
+            Session::flash('success','Nombre y Email Actualizados exitosamente');
         }
         // Password Change
         else
@@ -55,7 +55,7 @@ class ProfileSettingsController extends \AdminBaseController {
                 return Redirect::back()->withErrors($validator)->withInput();
             }
             $data['password']   =   Hash::make(Input::get('password'));
-            Session::flash('success','Password changed successfully');
+            Session::flash('success','Contraseña cambiada con éxito');
 
         }
 
