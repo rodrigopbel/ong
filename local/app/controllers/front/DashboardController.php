@@ -15,7 +15,7 @@ class DashboardController extends \BaseController {
         $this->data['beneficiario']    =    Beneficiario::find(Auth::beneficiarios()->get()->id);
         $this->data['holidays']        =    Holiday::orderBy('date','ASC')->remember(10,'holiday_cache')->get();
         $this->data['ayudas']          =    Ayuda::select('*')->orderBy('created_at','desc')->get();
-        $this->data['attendance']      =    Attendance::where('beneficiarioID', '=',$this->data['beneficiarioID'])
+        $this->data['attendance']      =    Attendance::where('employeeID', '=',$this->data['beneficiarioID'])
                                                         ->where(function($query)
                                                         {
                                                             $query->where('application_status','=','approved')
