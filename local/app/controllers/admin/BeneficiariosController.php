@@ -321,6 +321,7 @@ class BeneficiariosController extends \AdminBaseController {
 		}
 		else if(Input::get('updateType')=='documents')
 		{
+			die("asdasdas");
 			$input  =   Input::all();
 			// -------------- UPLOAD THE DOCUMENTS  -----------------
 			$documents  =   ['certnac','CIprueba','solicitud','croquis','perfil'];
