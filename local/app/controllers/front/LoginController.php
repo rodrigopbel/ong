@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
-
 class LoginController extends \BaseController {
 
 
@@ -36,10 +34,6 @@ class LoginController extends \BaseController {
                 'password'	=>	$input['password'],
 	            'status'    =>  'active'
             ];
-            if (Auth::attempt(array('email' => $input['email'], 'password' => $input['password'])))
-            {
-                return 'hola mundo';
-            }
             //Reglas de los Campos de Email y Password
             $rules  =[
                 'email'	    => 'required|email',
@@ -53,20 +47,14 @@ class LoginController extends \BaseController {
                 $output['msg']    =  $validator->getMessageBag()->toArray();
             }
             // Check if employee exists in database with the credentials of not
-//            if (Auth::beneficiarios()->attempt($data))
-//            {
-//		            $event =  Event::fire('auth.login', Auth::beneficiarios()->get());
-//		            $output['status'] = 'success';
-//		            $output['msg']    = Lang::get('messages.loginSuccess');
-//	                return Response::json($output, 200);
-//            }
-            if (Auth::attempt($data))
+            if (Auth::beneficiarios()->attempt($data))
             {
-                $event =  Event::fire('auth.login', Auth::beneficiarios()->get());
-                $output['status'] = 'success';
-                $output['msg']    = Lang::get('messages.loginSuccess');
-                return Response::json($output, 200);
+		            $event =  Event::fire('auth.login', Auth::beneficiarios()->get());
+		            $output['status'] = 'success';
+		            $output['msg']    = Lang::get('messages.loginSuccess');
+	                return Response::json($output, 200);
             }
+
 	        // For Blocked Users
 	        $data['status']         =   'inactive';
           if(Auth::beneficiarios()->validate($data))
