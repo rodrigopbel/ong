@@ -137,7 +137,6 @@
                                     </table>
                         </div>
                     </div>
-
                     <div class="panel panel-profile no-bg margin-top-20">
                         <div class="panel-heading overflow-h">
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Zonificacion</h2>
