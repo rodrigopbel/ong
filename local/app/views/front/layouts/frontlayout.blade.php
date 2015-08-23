@@ -119,12 +119,12 @@
             	<div class="row">
                         <!--Left Sidebar-->
                         <div class="col-md-3 md-margin-bottom-40">
-                          {{HTML::image("/profileImages/{$employee->profileImage}",'ProfileImage',['class'=>"img-responsive profile-img margin-bottom-20",'style'=>'border:1px solid #ddd;margin:0 auto'])}}
+                          {{HTML::image("/profileImages/{$beneficiario->foto}",'foto',['class'=>"img-responsive profile-img margin-bottom-20",'style'=>'border:1px solid #ddd;margin:0 auto'])}}
                             {{--<img class="img-responsive profile-img margin-bottom-20" src="front_assets/img/team/5.jpg" alt="">--}}
             				<p>
-            				<h3 style="text-align: center">{{ $employee->fullName . " ". $employee->fatherName }}</h3>
-            				<h6 style="text-align: center">{{$employee->getDesignation->designation}}</h6>
-            				<h6 style="text-align: center;background: rgb(235, 235, 235);padding: 10px;"><strong>En Solicitud hace : </strong>{{$employee->workDuration($employee->employeeID)}}</h6>
+            				<h3 style="text-align: center">{{ $beneficiario->nombres . " ". $beneficiario->apellidos }}</h3>
+            				<h6 style="text-align: center">{{$beneficiario->getDestino->destino}}</h6>
+            				<h6 style="text-align: center;background: rgb(235, 235, 235);padding: 10px;"><strong>En Solicitud hace : </strong>{{$beneficiario->duracionVinculacion($beneficiario->beneficiarioID)}}</h6>
             				</p>
                             <hr>
             				<div class="service-block-v3 service-block-u">
@@ -132,7 +132,7 @@
             							<div class="row profile-stat">
             								<div class="col-md-6 col-sm-6 col-xs-6" data-toggle="tooltip" data-placement="bottom" >
                                                 <div class="uppercase profile-stat-title">
-                                                    {{count($employee->getAwards)}}
+                                                    {{--{{count($employee->getAwards)}}--}}
                                                 </div>
                                                 <div class="uppercase profile-stat-text">
                                                     Solicitudes
@@ -141,7 +141,7 @@
             								</div>
             								<div class="col-md-6 col-sm-6 col-xs-6" data-toggle="tooltip" data-placement="bottom" >
                                                 <div class="uppercase profile-stat-title">
-                                                    {{count($employee->getAwards)}}
+                                                    {{--{{count($employee->getAwards)}}--}}
                                                 </div>
                                                 <div class="uppercase profile-stat-text">
                                                     Donaciones
