@@ -32,7 +32,7 @@ class LoginController extends \BaseController {
             $data	=	[
                 'email'	    =>	$input['email'],
                 'password'	=>	$input['password'],
-	            'status'    =>  'active'
+	            'status'    =>  'activo'
             ];
             //Reglas de los Campos de Email y Password
             $rules  =[
