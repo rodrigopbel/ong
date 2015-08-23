@@ -37,7 +37,7 @@ class NotificationSettingsController extends \AdminBaseController {
         $input['employee_add']  = (isset($input['employee_add']))?1:0;
         $setting->update($input);
 
-        Session::flash('success', '<strong>Éxito! </strong>Actualizado con éxito');
+        Session::flash('success', '<strong>Actualizacion  </strong>Existosa');
         return Redirect::route('admin.notificationSettings.edit','setting');
     }
 
