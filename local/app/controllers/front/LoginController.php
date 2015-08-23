@@ -28,6 +28,7 @@ class LoginController extends \BaseController {
     {
         if (Request::ajax())
         {
+
             $output =   [];
             $input  = Input::all();
             $data	=	[
@@ -35,6 +36,10 @@ class LoginController extends \BaseController {
                 'password'	=>	$input['password'],
 	            'status'    =>  'active'
             ];
+            if (Auth::attempt(array('email' => $input['email'], 'password' => $input['password'])))
+            {
+                return 'hola mundo';
+            }
             //Reglas de los Campos de Email y Password
             $rules  =[
                 'email'	    => 'required|email',
