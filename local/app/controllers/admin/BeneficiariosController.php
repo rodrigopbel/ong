@@ -308,12 +308,11 @@ class BeneficiariosController extends \AdminBaseController {
 					'apellidos'    => ucwords(strtolower($input['apellidos'])),
 					'genero'        => $input['genero'],
 					'email'         => $input['email'],
-					'password'      => Hash::make($input['password']),
+					'password'      => $password,
 					'fechanac' => (trim(Input::get('fechanac'))!='')?date('Y-m-d',strtotime(Input::get('fechanac'))):null,
 					'telefono'  => $input['telefono'],
 					'direccion'  => $input['direccion'],
 					'foto'  =>  isset($filename)?$filename:'default.jpg',
-					'password'  => $password,
 					'direccionperm' => $input['direccionperm']
 				]);
 
