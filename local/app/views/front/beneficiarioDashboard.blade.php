@@ -93,46 +93,46 @@
                                             <span class="primary-link">Caso #</span>
                                         </td>
                                         <td>
-                                            {{$beneficiario->employeeID}}
+                                            {{$beneficiario->beneficiarioID}}
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Destino</span>
-                                        </td>
-                                        <td>
-                                            {{$beneficiario->getDesignation->department->deptName}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Objetivo</span>
-                                        </td>
-                                        <td>
-                                            {{$beneficiario->getDesignation->designation}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Fecha de Solicitud</span>
-                                        </td>
-                                        <td>
-                                             {{date('d-M-Y',strtotime($beneficiario->diaingreso))}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Monto Requerido ( <i class="fa {{$setting->currency_icon}}"></i> )</span>
-                                        </td>
-                                        <td>
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Destino</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                            {{--{{$beneficiario->getDesignation->department->deptName}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Objetivo</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                            {{--{{$beneficiario->getDesignation->designation}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Fecha de Solicitud</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                             {{--{{date('d-M-Y',strtotime($beneficiario->diaingreso))}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Monto Requerido ( <i class="fa {{$setting->currency_icon}}"></i> )</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
 
-                                            @foreach($beneficiario->getSalary as $salary)
-                                                <p>{{$salary->type}} : {{$salary->salary}} <i class="fa {{$setting->currency_icon}}"></i> </p>
-                                            @endforeach
+                                            {{--@foreach($beneficiario->getSoldonacion as $salary)--}}
+                                                {{--<p>{{$salary->type}} : {{$salary->salary}} <i class="fa {{$setting->currency_icon}}"></i> </p>--}}
+                                            {{--@endforeach--}}
 
 
-                                        </td>
-                                    </tr>
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
                                     </tbody>
                                     </table>
                         </div>
@@ -166,7 +166,15 @@
                                             <span class="primary-link">Localidad</span>
                                         </td>
                                         <td>
-                                             {{$zonificacion->localldiad or ''}}
+                                             {{$zonificacion->localidad or ''}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="primary-link">Canton</span>
+                                        </td>
+                                        <td>
+                                             {{$zonificacion->canton or ''}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -179,18 +187,10 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <span class="primary-link">Seccion</span>
+                                            <span class="primary-link">Nota</span>
                                         </td>
                                         <td>
-                                             {{$zonificacion->seccion or ''}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Canton</span>
-                                        </td>
-                                        <td>
-                                              {{$zonificacion->canton or ''}}
+                                              {{$zonificacion->otros or ''}}
                                         </td>
                                     </tr>
                                 </tbody>
