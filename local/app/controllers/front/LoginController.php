@@ -30,7 +30,7 @@ class LoginController extends \BaseController {
             $input  = Input::all();
             $data	=	[
                 'email'	    =>	$input['email'],
-                'password'	=>	$input['password'],
+//                'password'	=>	$input['password'],
 	            'status'    =>  'activo'
             ];
             //Reglas de los Campos de Email y Password
