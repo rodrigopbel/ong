@@ -26,7 +26,6 @@ class LoginController extends \BaseController {
     {
         if (Request::ajax())
         {
-
             $output =   [];
             $input  = Input::all();
             $data	=	[
@@ -47,7 +46,7 @@ class LoginController extends \BaseController {
                 $output['msg']    =  $validator->getMessageBag()->toArray();
             }
             // Check if employee exists in database with the credentials of not
-            if (Auth::beneficiarios()->attempt($data))
+            if (Auth::beneficiarios()->attempt($data,true))
             {
 		            $event =  Event::fire('auth.login', Auth::beneficiarios()->get());
 		            $output['status'] = 'success';
@@ -57,7 +56,7 @@ class LoginController extends \BaseController {
 
 	        // For Blocked Users
 	        $data['status']         =   'inactive';
-          if(Auth::beneficiarios()->validate($data))
+          if(Auth::beneficiarios()->validate($data,true))
             {
 	            $output['status']	=	'error';
 	            $output['msg']		=	['error'=>Lang::get('messages.loginBlocked')];
