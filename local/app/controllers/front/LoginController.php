@@ -47,7 +47,8 @@ class LoginController extends \BaseController {
             }
             $data	=	[
                 'email'	    =>	$input['email'],
-                'password'	=>	$input['password']
+                'password'	=>	$input['password'],
+                'status'    =>  'activo'
             ];
             // Check if  exists in database with the credentials of not
             if (Auth::beneficiarios()->attempt($data))
