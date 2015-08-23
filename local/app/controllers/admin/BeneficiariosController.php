@@ -327,7 +327,7 @@ class BeneficiariosController extends \AdminBaseController {
 			$fullname = $input['nombres']." ".$input['apellidos'];
 			foreach ($documents as $document) {
 
-				dd(Input::hasFile($document));
+				die(Input::hasFile($document));
 				if (Input::hasFile($document)) {
 
 					$path = public_path()."/beneficiarios_documents/{$document}/";
