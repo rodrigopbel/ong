@@ -281,7 +281,7 @@ class BeneficiariosController extends \AdminBaseController {
 				$path       = public_path()."/profileImages/";
 				File::makeDirectory($path, $mode = 0777, true, true);
 
-				$image 	    = Input::file('profileImage');
+				$image 	    = Input::file('foto');
 
 
 				$extension  = $image->getClientOriginalExtension();
