@@ -25,15 +25,15 @@ return array(
     |
     */
     'properties' => array(
-        'creator'        => 'Maatwebsite',
-        'lastModifiedBy' => 'Maatwebsite',
-        'title'          => 'Spreadsheet',
-        'description'    => 'Default spreadsheet export',
+        'creator'        => 'ONG',
+        'lastModifiedBy' => 'ONG',
+        'title'          => 'ONG',
+        'description'    => 'ONG - Files',
         'subject'        => 'Spreadsheet export',
-        'keywords'       => 'maatwebsite, excel, export',
+        'keywords'       => 'ong, excel, export',
         'category'       => 'Excel',
-        'manager'        => 'Maatwebsite',
-        'company'        => 'Maatwebsite',
+        'manager'        => 'ONG',
+        'company'        => 'ONG',
     ),
 
     /*
@@ -73,6 +73,6 @@ return array(
     |
     */
 
-    'creator'    => 'Maatwebsite',
+    'creator'    => 'ONG',
 
 );
