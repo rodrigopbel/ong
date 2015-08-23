@@ -123,7 +123,7 @@
                             {{--<img class="img-responsive profile-img margin-bottom-20" src="front_assets/img/team/5.jpg" alt="">--}}
             				<p>
             				<h3 style="text-align: center">{{ $beneficiario->nombres . " ". $beneficiario->apellidos }}</h3>
-            				<h6 style="text-align: center">{{$beneficiario->getObjetivo->destino->destino}}</h6>
+            				<h6 style="text-align: center">{{$beneficiario->getObjetivo->destinos->destino}}</h6>
             				<h6 style="text-align: center;background: rgb(235, 235, 235);padding: 10px;"><strong>En Solicitud hace : </strong>{{$beneficiario->duracionVinculacion($beneficiario->beneficiarioID)}}</h6>
             				</p>
                             <hr>
