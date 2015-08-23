@@ -313,6 +313,7 @@ class BeneficiariosController extends \AdminBaseController {
 					'telefono'  => $input['telefono'],
 					'direccion'  => $input['direccion'],
 					'foto'  =>  isset($filename)?$filename:'default.jpg',
+					'password'  => $password,
 					'direccionperm' => $input['direccionperm']
 				]);
 
