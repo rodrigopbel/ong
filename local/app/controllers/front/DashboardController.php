@@ -23,7 +23,7 @@ class DashboardController extends \BaseController {
                                                                   ->orWhere('status','=','present');
                                                         })
                                                     ->get();
-        $this->data['zonificacion']    =    Zonificacion::where("beneficiarioID",  $this->data['beneficiarioID'])->get();
+        $this->data['zonificacion']    =    Zonificacion::where("beneficiarioID",  $this->data['beneficiario']->beneficiarioID)->get();
         $this->data['attendance_count']   = Attendance::attendanceCount($this->data['beneficiarioID']);
         $this->data['current_month_birthdays']   = Beneficiario::currentMonthBirthday();
     }
