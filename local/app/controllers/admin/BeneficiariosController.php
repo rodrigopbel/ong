@@ -323,9 +323,11 @@ class BeneficiariosController extends \AdminBaseController {
 		{
 
 			$input  =   Input::all();
+			$ben   =   Beneficiario::where('beneficiarioID','=',$id)->get()->first();
+
 			// -------------- UPLOAD THE DOCUMENTS  -----------------
 			$documents  =   ['certnac','CIprueba','solicitud','croquis','perfil'];
-			$fullname = $input['nombres']." ".$input['apellidos'];
+			$fullname = $ben->nombres." ".$ben->apellidos;
 			die($fullname);
 			foreach ($documents as $document) {
 
