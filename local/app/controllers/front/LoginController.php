@@ -30,7 +30,7 @@ class LoginController extends \BaseController {
             $input  = Input::all();
             $data	=	[
                 'email'	    =>	$input['email'],
-//                'password'	=>	$input['password'],
+                'password'	=>	$input['password'],
 	            'status'    =>  'activo'
             ];
             //Reglas de los Campos de Email y Password
@@ -45,6 +45,10 @@ class LoginController extends \BaseController {
                 $output['status'] = 'error';
                 $output['msg']    =  $validator->getMessageBag()->toArray();
             }
+            $data	=	[
+                'email'	    =>	$input['email'],
+                'password'	=>	$input['password']
+            ];
             // Check if  exists in database with the credentials of not
             if (Auth::beneficiarios()->attempt($data))
             {
