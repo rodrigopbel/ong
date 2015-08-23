@@ -208,19 +208,19 @@
                         <div class="panel-heading overflow-h">
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Donaciones Recibidas</h2>
                         </div>
-                        <div id="scrollbar3" class="panel-body contentHolder">
+                        {{--<div id="scrollbar3" class="panel-body contentHolder">--}}
 
-                            @foreach($awards as $award)
-                                <div class="alert-blocks">
-                                    <div class="overflow-h">
-                                        <strong class="color-dark">{{Str::words($award->employeeDetails->fullName,1,'')}} <small class="pull-right"><em>{{ucfirst($award->forMonth)}} {{$award->forYear}}</em></small></strong>
-                                        <small class="award-name">{{$award->awardName}}</small>
-                                    </div>
-                                </div>
-                            @endforeach
+                            {{--@foreach($awards as $award)--}}
+                                {{--<div class="alert-blocks">--}}
+                                    {{--<div class="overflow-h">--}}
+                                        {{--<strong class="color-dark">{{Str::words($award->employeeDetails->fullName,1,'')}} <small class="pull-right"><em>{{ucfirst($award->forMonth)}} {{$award->forYear}}</em></small></strong>--}}
+                                        {{--<small class="award-name">{{$award->awardName}}</small>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--@endforeach--}}
 
 
-                        </div>
+                        {{--</div>--}}
                     </div>
                     <hr>
 
