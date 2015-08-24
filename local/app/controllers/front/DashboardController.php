@@ -33,6 +33,7 @@ class DashboardController extends \BaseController {
         $this->data['noticeboards']       =     Noticeboard::where('status','=','active')->orderBy('created_at','DESC')->get();
         $this->data['holiday_color']      = ['info','error','success','pending',''];
         $this->data['holiday_font_color'] = ['blue','red','green','yellow','dark'];
+        $this->data['zonificacion']       =    Zonificacion::where("beneficiarioID",  $this->data['beneficiario']->beneficiarioID)->get();
         return View::make('front.beneficiarioDashboard',$this->data);
 	}
 
