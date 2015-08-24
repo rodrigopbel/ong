@@ -95,12 +95,6 @@
                                         <td>
                                             {{$beneficiario->beneficiarioID}}
                                         </td>
-                                        <td>
-                                            <span class="primary-link">Destino</span>
-                                        </td>
-                                        <td>
-                                            {{$beneficiario->destino->destino}}
-                                        </td>
                                     </tr>
                                     {{--<tr>--}}
                                         {{--<td>--}}
