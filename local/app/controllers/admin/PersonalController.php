@@ -29,19 +29,16 @@ class EmployeesController extends \AdminBaseController {
 		$this->data['department']      =     Department::lists('deptName','id');
 		return View::make('admin.employees.create',$this->data);
 	}
-
 	/**
 	 * Store a newly created employee in storage
 	 */
 	public function store()
 	{
 		$validator = Validator::make($input = Input::all(), Employee::rules('create'));
-
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-
 		DB::beginTransaction();
 		try {
 
