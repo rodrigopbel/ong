@@ -71,14 +71,14 @@
                 <li class="{{ $destinosOpen or ''}}">
                     <a href="javascript:;">
                         <i class="fa fa-briefcase"></i>
-                        <span class="title">{{Lang::get('menu.holidays')}}</span>
+                        <span class="title">{{Lang::get('menu.actividades')}}</span>
                         <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
                         <li class="{{ $destinosActive or ''}}">
                             <a href="{{route('admin.holidays.index')}}">
                                 <i class="fa fa-briefcase"></i>
-                                {{Lang::get('menu.destinosList')}} </a>
+                                {{Lang::get('menu.activadesList')}} </a>
                         </li>
 
 
