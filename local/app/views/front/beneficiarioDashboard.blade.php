@@ -149,7 +149,7 @@
                                             <span class="primary-link">Departamento</span>
                                         </td>
                                         <td>
-                                             {{$zonificacion->departamento or ''}}
+                                             {{$beneficiario->zonificacion->departamento or ''}}
                                         </td>
                                     </tr>
                                     <tr>
