@@ -28,7 +28,7 @@ class DashboardController extends \BaseController {
         $this->data['attendance_count']   = Attendance::attendanceCount($this->data['beneficiarioID']);
         $this->data['current_month_birthdays']   = Beneficiario ::currentMonthBirthday();
 //        dd($this->data['zonificacion']);
-        dd(Zonificacion);
+
     }
 	public function index()
 	{
@@ -38,7 +38,7 @@ class DashboardController extends \BaseController {
         $this->data['holiday_font_color'] = ['blue','red','green','yellow','dark'];
 
         dd($this->data['zonificacion']);
-//        return View::make('front.beneficiarioDashboard',$this->data);
+        return View::make('front.beneficiarioDashboard',$this->data);
 	}
 
 //	show leave Page
