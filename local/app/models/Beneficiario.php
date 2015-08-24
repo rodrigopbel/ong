@@ -169,4 +169,9 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 			return date_create($old_date)->format('d-M-Y');
 		}
 	}
+
+    public function zonificacion()
+    {
+        return $this->hasOne('Zonificacion');
+    }
 }
