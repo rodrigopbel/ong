@@ -1,6 +1,6 @@
 @extends('front.layouts.frontlayout')
 @section('mainarea')
-    {{dd($zonificacion)}}
+    {{dd($beneficiario)}}
     <div class="col-md-9">
         <!--Profile Body-->
         <div class="profile-body">
