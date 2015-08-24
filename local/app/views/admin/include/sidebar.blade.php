@@ -16,9 +16,7 @@
 					</div>
 					<!-- END SIDEBAR TOGGLER BUTTON -->
 				</li>
-
-
-			  {{---------------------------------------Dashboard-------------------------------}}
+			    {{---------------------------------------Dashboard-------------------------------}}
 				<li class="start {{ $dashboardActive or ''}}">
 					<a href="{{URL::to('admin')}}">
 					<i class="fa fa-home"></i>
@@ -26,10 +24,8 @@
 					<span class="selected"></span>
 					</a>
 				</li>
-			     {{---------------------------------------/Dashboard-------------------------------}}
-
-
-		      {{---------------------------------------Beneficiarios-------------------------------}}
+			    {{---------------------------------------/Dashboard-------------------------------}}
+                {{---------------------------------------Beneficiarios-------------------------------}}
 				<li class="{{ $beneficiariosOpen or ''}}">
 					<a href="javascript:;">
 					<i class="fa fa-users"></i>
@@ -42,31 +38,25 @@
 							<i class="fa fa-users"></i>
 							{{Lang::get('menu.beneficiariosList')}}</a>
 						</li>
-
-						
 					</ul>
 				</li>
-              {{---------------------------------------/-------------------------------}}
-
-
-              {{---------------------------------------Destinos-------------------------------}}
-				    <li class="{{ $destinosOpen or ''}}">
-                					<a href="javascript:;">
-                					<i class="fa fa-briefcase"></i>
-                					<span class="title">{{Lang::get('menu.destinos')}}</span>
-                					<span class="arrow "></span>
-                					</a>
-                					<ul class="sub-menu">
-                						<li class="{{ $destinosActive or ''}}">
-                							<a href="{{route('admin.destinos.index')}}">
-                							<i class="fa fa-briefcase"></i>
-                							{{Lang::get('menu.destinosList')}} </a>
-                						</li>
-
-
-                					</ul>
-                    </li>
-              {{----------------------------------------------------------------------}}
+                {{---------------------------------------/-------------------------------}}
+                {{---------------------------------------Destinos-------------------------------}}
+                <li class="{{ $destinosOpen or ''}}">
+                    <a href="javascript:;">
+                        <i class="fa fa-briefcase"></i>
+                        <span class="title">{{Lang::get('menu.destinos')}}</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="{{ $destinosActive or ''}}">
+                            <a href="{{route('admin.destinos.index')}}">
+                                <i class="fa fa-briefcase"></i>
+                            {{Lang::get('menu.destinosList')}} </a>
+                        </li>
+                    </ul>
+                </li>
+                {{----------------------------------------------------------------------}}
                 {{---------------------------------------Actividades-------------------------------}}
                 <li class="{{ $destinosOpen or ''}}">
                     <a href="javascript:;">
@@ -78,50 +68,39 @@
                         <li class="{{ $destinosActive or ''}}">
                             <a href="{{route('admin.holidays.index')}}">
                                 <i class="fa fa-briefcase"></i>
-                                {{Lang::get('menu.activadesList')}} </a>
+                                {{Lang::get('menu.activadesList')}}
+                            </a>
                         </li>
-
-
                     </ul>
                 </li>
                 {{----------------------------------------------------------------------}}
-
-
-                  {{---------------------------------------Settings-------------------------------}}
-                      <li class="{{ $settingOpen or ''}}">
-                                 <a href="javascript:;">
-                                 <i class="fa fa-cogs"></i>
-                                 <span class="title">{{Lang::get('menu.settings')}}</span>
-                                 <span class="arrow "></span>
-                                 </a>
-                                 <ul class="sub-menu">
-                                     <li class="{{ $settingActive or ''}}">
-                                         <a href="{{route('admin.settings.edit','setting')}}">
-                                         <i class="fa  fa-cog"></i>
-                                        {{Lang::get('menu.generalSetting')}}</a>
-                                     </li>
-
-                                     <li class="{{ $profileSettingActive or ''}}">
-                                            <a href="{{route('admin.profile_settings.edit',Auth::admin()->get()->id)}}">
-                                            <i class="fa fa-user"></i>
-                                            {{Lang::get('menu.profileSetting')}}</a>
-                                      </li>
-                                     <li class="{{ $notificationSettingActive or ''}}">
-                                         <a href="{{route('admin.notificationSettings.edit',Auth::admin()->get()->id)}}">
-                                         <i class="fa fa-bell"></i>
-                                         {{Lang::get('menu.notificationSetting')}}</a>
-                                   </li>
-                                 </ul>
+                {{---------------------------------------Settings-------------------------------}}
+                <li class="{{ $settingOpen or ''}}">
+                     <a href="javascript:;">
+                         <i class="fa fa-cogs"></i>
+                         <span class="title">{{Lang::get('menu.settings')}}</span>
+                         <span class="arrow "></span>
+                     </a>
+                     <ul class="sub-menu">
+                         <li class="{{ $settingActive or ''}}">
+                             <a href="{{route('admin.settings.edit','setting')}}">
+                             <i class="fa  fa-cog"></i>
+                            {{Lang::get('menu.generalSetting')}}</a>
+                         </li>
+                         <li class="{{ $profileSettingActive or ''}}">
+                             <a href="{{route('admin.profile_settings.edit',Auth::admin()->get()->id)}}">
+                             <i class="fa fa-user"></i>
+                             {{Lang::get('menu.profileSetting')}}</a>
+                         </li>
+                             <li class="{{ $notificationSettingActive or ''}}">
+                                 <a href="{{route('admin.notificationSettings.edit',Auth::admin()->get()->id)}}">
+                                 <i class="fa fa-bell"></i>
+                                 {{Lang::get('menu.notificationSetting')}}</a>
+                             </li>
+                         </ul>
                     </li>
-
                 {{---------------------------------------/Settings-------------------------------}}
-
-
 				</li>
-			
-		
-		
-		
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
