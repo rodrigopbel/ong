@@ -51,7 +51,8 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::get('beneficiarios/beneficiariosLogin/{id}',['as'=>'admin.beneficiarios.benLogin','uses'=>'BeneficiariosController@benLogin']);
     Route::resource('beneficiarios', 'BeneficiariosController',['except' => ['show'],'as' => 'admin']);
 
-
+    //    Personal Routing
+    Route::resource('personal', 'PersonalController',['except' => ['show'],'as' => 'admin']);
 
 
     //    Employees Routing

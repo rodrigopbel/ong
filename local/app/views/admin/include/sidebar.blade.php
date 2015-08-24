@@ -83,7 +83,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="{{ $personalActive or ''}}">
-                            <a href="{{route('admin.holidays.index')}}">
+                            <a href="{{route('admin.personal.index')}}">
                                 <i class="fa fa-briefcase"></i>
                                 {{Lang::get('menu.personalList')}}
                             </a>
