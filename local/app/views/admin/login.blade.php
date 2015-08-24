@@ -8,7 +8,7 @@
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title> HRM | Login </title>
+<title> Administrador | Login </title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -43,7 +43,7 @@
 	<!-- BEGIN LOGIN FORM -->
 	{{ Form::open(array('url' => '','class' =>'login-form')) }}
 	
-		<h3 class="form-title">Login</h3>
+		<h3 class="form-title">Ingreso</h3>
 		<div id="alert">
 			
 		</div>
@@ -65,7 +65,7 @@
 		<div class="form-actions">
 
 			<button type="submit" class="btn blue pull-right" id="submitbutton" onclick="login();return false;">
-			Login <i class="m-icon-swapright m-icon-white"></i>
+			Ingresar <i class="m-icon-swapright m-icon-white"></i>
 			</button>
 		</div>
 
@@ -116,7 +116,7 @@ jQuery(document).ready(function() {
 <script>
 function login(){    
 
-    $('#alert').html('<div class="alert alert-info">Submitting..</div>'); 
+    $('#alert').html('<div class="alert alert-info">Verificando..</div>');
     $("#submitbutton").prop('disabled', true);
  
        $.ajax({
