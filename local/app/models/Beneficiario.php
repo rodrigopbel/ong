@@ -172,6 +172,6 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 
     public function zonificacion()
     {
-        return $this->hasOne('Zonificacion');
+        return $this->hasOne('Zonificacion','beneficiarioID','beneficiarioID');
     }
 }

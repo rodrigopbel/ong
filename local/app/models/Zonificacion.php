@@ -8,4 +8,8 @@ class Zonificacion extends \Eloquent {
 
 		return $this->belongsTo('Beneficiario','beneficiarioID','beneficiarioID');
 	}
+    public function beneficiario()
+    {
+        return $this->belongsTo('Beneficiario');
+    }
 }
