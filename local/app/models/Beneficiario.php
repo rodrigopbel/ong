@@ -11,7 +11,6 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 	// Validation Rules
 	public static function rules($action,$id=false, $merge=[])
 	{
-
 		$fullNameValidation     = 'required';
 		$ProfileImageValidation = 'image|mimes:jpeg,jpg,png,bmp,gif,svg|max:4000';
 
@@ -92,27 +91,19 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 	{
 		return $this->hasMany('Soldonacion','beneficiarioID','beneficiarioID');
 	}
-
     public function getDesignation()
     {
        // belongs('OtherClass','thisclasskey','otherclasskey')
        return $this->belongsTo('Designation','designation','id');
     }
-
-
-
-
-
     public function getAwards()
     {
         return $this->hasMany('Award','employeeID','employeeID');
     }
-
     public function getBankDetail()
     {
         return $this->belongsTo('Bank_detail','employeeID','employeeID');
     }
-
     public static function  currentMonthBirthday()
     {
         $birthdays = Employee::select('fullName', 'date_of_birth','profileImage')
@@ -123,7 +114,6 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
                 ->get();
         return $birthdays;
     }
-
 	//Function to calculate number of days of work
 	public function workDuration($employeeID)
 	{
@@ -135,11 +125,8 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 		$difference = ($diff->y==0)?null:$diff->y.' year ';
 		$difference .= ($diff->m==0)?null:$diff->m.' month ';
 		$difference .= ($diff->d==0)?null:$diff->d.' day ';
-
 		return $difference;
-
 	}
-
 	//Function to calculate number of days of work
 	public function duracionVinculacion($benID)
 	{
@@ -181,10 +168,5 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 		}elseif($type   ==  'date'){
 			return date_create($old_date)->format('d-M-Y');
 		}
-
-
-
-
-
 	}
 }

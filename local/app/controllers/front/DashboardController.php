@@ -34,7 +34,8 @@ class DashboardController extends \BaseController {
         $this->data['holiday_color']      = ['info','error','success','pending',''];
         $this->data['holiday_font_color'] = ['blue','red','green','yellow','dark'];
         $this->data['zonificacion']       =    Zonificacion::where("beneficiarioID",  $this->data['beneficiario']->beneficiarioID)->get();
-        return View::make('front.beneficiarioDashboard',$this->data);
+        dd($this->data);
+//        return View::make('front.beneficiarioDashboard',$this->data);
 	}
 
 //	show leave Page
