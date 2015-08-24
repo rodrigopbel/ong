@@ -23,7 +23,7 @@ class DashboardController extends \BaseController {
                                                                   ->orWhere('status','=','present');
                                                         })
                                                     ->get();
-        $this->data['zonificacion']    =    Zonificacion::where("beneficiarioID",  '453')->get();
+        $this->data['zonificacion']    =    Zonificacion::where("beneficiarioID",  Auth::beneficiarios()->get()->id)->get();
 //        $this->data['zonificacion']       =  Beneficiario::find( Auth::beneficiarios()->get()->id);
         $this->data['attendance_count']   = Attendance::attendanceCount($this->data['beneficiarioID']);
         $this->data['current_month_birthdays']   = Beneficiario ::currentMonthBirthday();
@@ -36,8 +36,6 @@ class DashboardController extends \BaseController {
         $this->data['noticeboards']       =     Noticeboard::where('status','=','active')->orderBy('created_at','DESC')->get();
         $this->data['holiday_color']      = ['info','error','success','pending',''];
         $this->data['holiday_font_color'] = ['blue','red','green','yellow','dark'];
-
-        dd($this->data['zonificacion']);
         return View::make('front.beneficiarioDashboard',$this->data);
 	}
 
