@@ -74,6 +74,41 @@
                     </ul>
                 </li>
                 {{----------------------------------------------------------------------}}
+                {{---------------------------------------Personal-------------------------------}}
+                <li class="{{ $personalOpen or ''}}">
+                    <a href="javascript:;">
+                        <i class="fa fa-briefcase"></i>
+                        <span class="title">{{Lang::get('menu.personal')}}</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="{{ $destinosActive or ''}}">
+                            <a href="{{route('admin.holidays.index')}}">
+                                <i class="fa fa-briefcase"></i>
+                                {{Lang::get('menu.personalList')}}
+                            </a>
+                        </li>
+                        <li class="{{ $destinosActive or ''}}">
+                            <a href="{{route('admin.holidays.index')}}">
+                                <i class="fa fa-briefcase"></i>
+                                {{Lang::get('menu.personalAdmi')}}
+                            </a>
+                        </li>
+                        <li class="{{ $destinosActive or ''}}">
+                            <a href="{{route('admin.holidays.index')}}">
+                                <i class="fa fa-briefcase"></i>
+                                {{Lang::get('menu.personalRes')}}
+                            </a>
+                        </li>
+                        <li class="{{ $destinosActive or ''}}">
+                            <a href="{{route('admin.holidays.index')}}">
+                                <i class="fa fa-briefcase"></i>
+                                {{Lang::get('menu.personalVol')}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                {{----------------------------------------------------------------------}}
                 {{---------------------------------------Settings-------------------------------}}
                 <li class="{{ $settingOpen or ''}}">
                      <a href="javascript:;">
