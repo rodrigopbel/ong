@@ -157,7 +157,7 @@
                                             <span class="primary-link">Provincia</span>
                                         </td>
                                         <td>
-                                             {{$zonificacion->provincia or ''}}
+                                             {{$beneficiario->zonificacion->provincia or ''}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -165,7 +165,7 @@
                                             <span class="primary-link">Localidad</span>
                                         </td>
                                         <td>
-                                             {{$zonificacion->localidad or ''}}
+                                             {{$beneficiario->zonificacion->localidad or ''}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -173,7 +173,7 @@
                                             <span class="primary-link">Canton</span>
                                         </td>
                                         <td>
-                                             {{$zonificacion->canton or ''}}
+                                             {{$beneficiario->zonificacion->canton or ''}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -181,7 +181,7 @@
                                             <span class="primary-link">Zona</span>
                                         </td>
                                         <td>
-                                             {{$zonificacion->zona or ''}}
+                                             {{$beneficiario->zonificacion->zona or ''}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -189,7 +189,7 @@
                                             <span class="primary-link">Nota</span>
                                         </td>
                                         <td>
-                                              {{$zonificacion->otros or ''}}
+                                              {{$beneficiario->zonificacion->otros or ''}}
                                         </td>
                                     </tr>
                                 </tbody>
