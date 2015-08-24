@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-//	'debug' => (getenv('debug'))?:false,
-	'debug' => false,
+	'debug' => (getenv('debug'))?:false,
+//	'debug' => false,
 
 );
