@@ -4,28 +4,22 @@
  * Class EmployeesController
  * This Controller is for the all the related function applied on employees
  */
-
 class EmployeesController extends \AdminBaseController {
-
 	/**
 	 * Constructor for the Employees
 	 */
-
 	public function __construct()
 	{
 		parent::__construct();
-		$this->data['personalOpen'] =   'active open';
+		$this->data['personalOpen']  =   'active open';
 		$this->data['pageTitle']     =   'Personal';
 	}
-
 	public function index()
 	{
 		$this->data['employees']       =    Employee::all();
 		$this->data['employeesActive'] =   'active';
-
-		return View::make('admin.employees.index', $this->data);
+		return View::make('admin.personal.index', $this->data);
 	}
-
 	/**
 	 * Show the form for creating a new employee
 	 */
@@ -33,7 +27,6 @@ class EmployeesController extends \AdminBaseController {
 	{
 		$this->data['personalActive']  =   'active';
 		$this->data['department']      =     Department::lists('deptName','id');
-
 		return View::make('admin.employees.create',$this->data);
 	}
 

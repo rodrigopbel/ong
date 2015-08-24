@@ -1,25 +1,19 @@
 <?php
 
 class Attendance extends \Eloquent {
-
 	// Add your validation rules here
 	public static $rules = [
 		// 'title' => 'required'
 	];
-
-
-	// Don't forget to fill this array
+    // Don't forget to fill this array
 	protected $fillable =   [];
-
     protected $table    =   'attendance';
     protected $guarded  =   ['id'];
-
 //    Get employee Details
     public function employeeDetails(){
 
         return $this->belongsTo('Employee','employeeID','employeeID');
     }
-
 //    Total number of Day the employee  present
     public static function countPresentDays($month,$year,$employeeID)
     {
@@ -33,9 +27,6 @@ class Attendance extends \Eloquent {
 			                                    AND employeeID='$employeeID'")));
       return  ($fullday+$halfday/2);
     }
-
-
-
     public static function leaveTypesEmployees($method='all')
     {
 	    $leaveTypes = [];
@@ -53,8 +44,6 @@ class Attendance extends \Eloquent {
 		    return $leaveTypeWithouthalfDay;
 
     }
-
-
 //    Function for counting the current month present
     public static function attendanceCount($employeeID)
     {
