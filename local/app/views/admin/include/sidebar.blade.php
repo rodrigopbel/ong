@@ -82,25 +82,25 @@
                         <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
-                        <li class="{{ $destinosActive or ''}}">
+                        <li class="{{ $personalActive or ''}}">
                             <a href="{{route('admin.holidays.index')}}">
                                 <i class="fa fa-briefcase"></i>
                                 {{Lang::get('menu.personalList')}}
                             </a>
                         </li>
-                        <li class="{{ $destinosActive or ''}}">
+                        <li class="{{ $personalActive or ''}}">
                             <a href="{{route('admin.holidays.index')}}">
                                 <i class="fa fa-briefcase"></i>
                                 {{Lang::get('menu.personalAdmi')}}
                             </a>
                         </li>
-                        <li class="{{ $destinosActive or ''}}">
+                        <li class="{{ $personalActive or ''}}">
                             <a href="{{route('admin.holidays.index')}}">
                                 <i class="fa fa-briefcase"></i>
                                 {{Lang::get('menu.personalRes')}}
                             </a>
                         </li>
-                        <li class="{{ $destinosActive or ''}}">
+                        <li class="{{ $personalActive or ''}}">
                             <a href="{{route('admin.holidays.index')}}">
                                 <i class="fa fa-briefcase"></i>
                                 {{Lang::get('menu.personalVol')}}

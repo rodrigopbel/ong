@@ -31,7 +31,7 @@ class EmployeesController extends \AdminBaseController {
 	 */
 	public function create()
 	{
-		$this->data['employeesActive'] =   'active';
+		$this->data['personalActive']  =   'active';
 		$this->data['department']      =     Department::lists('deptName','id');
 
 		return View::make('admin.employees.create',$this->data);
