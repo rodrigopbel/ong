@@ -45,13 +45,13 @@
 					<div class="caption">
 				    	<i class="fa fa-users"></i>Personal
 					</div>
-					<div class="tools" style="  padding: 5px;">
-                        <div class="btn-group pull-right">
-                        	<a  href="{{route('admin.personal.export') }}" class="btn yellow">
-								 <i class="fa fa-file-excel-o"></i>    Exportar
-                            </a>
-                        </div>
-                    </div>
+					{{--<div class="tools" style="  padding: 5px;">--}}
+                        {{--<div class="btn-group pull-right">--}}
+                        	{{--<a  href="{{route('admin.personal.export') }}" class="btn yellow">--}}
+								 {{--<i class="fa fa-file-excel-o"></i>    Exportar--}}
+                            {{--</a>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
                 <div class="portlet-body">
                     <table class="table table-striped table-bordered table-hover" id="sample_employees">
