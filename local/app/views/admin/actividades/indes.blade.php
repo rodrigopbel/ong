@@ -142,10 +142,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="portlet-body form">
-
                         <!-- BEGIN FORM-->
                         {{Form::open(array('route'=>"admin.actividades.store",'class'=>'form-horizontal ','method'=>'POST'))}}
-
 
                         <div class="form-body">
 

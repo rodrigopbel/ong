@@ -58,17 +58,17 @@
                 </li>
                 {{----------------------------------------------------------------------}}
                 {{---------------------------------------Actividades-------------------------------}}
-                <li class="{{ $destinosOpen or ''}}">
+                <li class="{{ $actividadOpen or ''}}">
                     <a href="javascript:;">
                         <i class="fa fa-briefcase"></i>
                         <span class="title">{{Lang::get('menu.actividades')}}</span>
                         <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
-                        <li class="{{ $destinosActive or ''}}">
-                            <a href="{{route('admin.holidays.index')}}">
+                        <li class="{{ $actividadOpen or ''}}">
+                            <a href="{{route('admin.actividades.index')}}">
                                 <i class="fa fa-briefcase"></i>
-                                {{Lang::get('menu.activadesList')}}
+                                {{Lang::get('menu.actividadesList')}}
                             </a>
                         </li>
                     </ul>

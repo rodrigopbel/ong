@@ -1,7 +1,6 @@
 <?php
 
 class Actividad extends \Eloquent {
-
     // Add your validation rules here
     public static $rules = [
         'date.0' => 'required',
@@ -9,7 +8,6 @@ class Actividad extends \Eloquent {
 
     // Don't forget to fill this array
     protected $fillable = [];
-
     protected $guarded  =   ['id'];
 
 }
