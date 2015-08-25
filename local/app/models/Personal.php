@@ -1,17 +1,12 @@
 <?php
-use Illuminate\Auth\UserTrait;
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\Reminders\RemindableTrait;
-use Illuminate\Auth\Reminders\RemindableInterface;
-
 class Personal extends Eloquent {
 	// Validation Rules
     protected $table="personal";
 	public static function rules($action,$id=false, $merge=[])
 	{
-		$nombresValidation     = 'required';
+		$nombresValidation       = 'required';
 		$apellidosValidation     = 'required';
-		$fotoPersonalValidation = 'image|mimes:jpeg,jpg,png,bmp,gif,svg|max:4000';
+		$fotoPersonalValidation  = 'image|mimes:jpeg,jpg,png,bmp,gif,svg|max:4000';
 
 		$rules = [
 		'create' => [
