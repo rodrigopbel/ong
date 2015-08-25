@@ -30,12 +30,12 @@ class ActividadesController extends \AdminBaseController {
 
         $this->data['actividades_in_db']      =  count($this->data['actividades']);
 
-        foreach($this->data['actividades'] as $holiday)
+        foreach($this->data['actividades'] as $actividad)
         {
-            $hol[date('F', strtotime($holiday->date))]['id'][] = $holiday->id;
-            $hol[date('F', strtotime($holiday->date))]['date'][] = date('d F Y', strtotime($holiday->date));
-            $hol[date('F', strtotime($holiday->date))]['ocassion'][] = $holiday->occassion;
-            $hol[date('F', strtotime($holiday->date))]['day'][] = date('D', strtotime($holiday->date));
+            $hol[date('F', strtotime($actividad->date))]['id'][] = $actividad->id;
+            $hol[date('F', strtotime($actividad->date))]['date'][] = date('d F Y', strtotime($actividad->date));
+            $hol[date('F', strtotime($actividad->date))]['ocassion'][] = $actividad->occassion;
+            $hol[date('F', strtotime($actividad->date))]['day'][] = date('D', strtotime($actividad->date));
         }
         $this->data['actividadArray'] = $hol;
         return View::make('admin.actividades.index', $this->data);
@@ -65,9 +65,9 @@ class ActividadesController extends \AdminBaseController {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        $holiday = array_combine($input['date'], $input['occasion']);
+        $actividad = array_combine($input['date'], $input['occasion']);
 
-        foreach ($holiday as $index => $value){
+        foreach ($actividad as $index => $value){
             if($index =='')continue;
             $add     =  Actividad::firstOrCreate([
                 'date' => date('Y-m-d',strtotime( $index)),
@@ -86,7 +86,7 @@ class ActividadesController extends \AdminBaseController {
      */
     public function show($id)
     {
-        $holiday = Actividad::findOrFail($id);
+        $actividad = Actividad::findOrFail($id);
 
         return View::make('admin.actividades.show', compact('actividad'));
     }
@@ -99,7 +99,7 @@ class ActividadesController extends \AdminBaseController {
      */
     public function edit($id)
     {
-        $holiday = Actividad::find($id);
+        $actividad = Actividad::find($id);
 
         return View::make('admin.actividades.edit', compact('actividad'));
     }
@@ -113,7 +113,7 @@ class ActividadesController extends \AdminBaseController {
     public function update($id)
     {
         Cache::forget('actividad_cache');
-        $holiday = Actividad::findOrFail($id);
+        $actividad = Actividad::findOrFail($id);
 
         $validator = Validator::make($data = Input::all(), Actividad::$rules);
 
@@ -122,7 +122,7 @@ class ActividadesController extends \AdminBaseController {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        $holiday->update($data);
+        $actividad->update($data);
 
         return Redirect::route('admin.actividades.index');
     }

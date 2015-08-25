@@ -54,6 +54,12 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     //    Personal Routing
     Route::resource('personal', 'PersonalController',['except' => ['show', 'create'],'as' => 'admin']);
 
+   
+    //    Actividades Routing
+    Route::get('actividades/mark_sunday', 'ActividadesController@Sunday');
+    Route::resource('actividades', 'ActividadesController',['as' => 'admin']);
+
+
 
     //    Employees Routing
 	Route::get('employees/export',['as'=>'admin.employees.export','uses'=>'BeneficiariosController@export']);
