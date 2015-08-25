@@ -103,7 +103,7 @@
 
                                             @for($i=0;$i<count($actividadesArray[$month]['date']);$i++)
 
-                                                <tr id="row{{ $actividadessArray[$month]['id'][$i] }}">
+                                                <tr id="row{{ $actividadesArray[$month]['id'][$i] }}">
                                                     <td> {{($i+1)}} </td>
                                                     <td> {{ $actividadesArray[$month]['date'][$i] }} </td>
                                                     <td> {{ $actividadesArray[$month]['descripcion'][$i] }} </td>
@@ -153,7 +153,7 @@
 
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="form-control form-control-inline"  type="text" name="descripcin[0]" placeholder="Actividad"/>
+                                    <input class="form-control form-control-inline"  type="text" name="descripcion[0]" placeholder="Actividad"/>
                                 </div>
                             </div>
                             <div id="insertBefore"></div>
