@@ -60,15 +60,15 @@
                 {{---------------------------------------Actividades-------------------------------}}
                 <li class="{{ $actividadOpen or ''}}">
                     <a href="javascript:;">
-                        <i class="fa fa-briefcase"></i>
+                        <i class="fa fa-send"></i>
                         <span class="title">{{Lang::get('menu.actividades')}}</span>
                         <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
-                        <li class="{{ $actividadOpen or ''}}">
+                        <li class="{{ $actividadActive or ''}}">
                             <a href="{{route('admin.actividades.index')}}">
-                                <i class="fa fa-briefcase"></i>
-                                {{Lang::get('menu.actividadesList')}}
+                                <i class="fa fa-calendar"></i>
+                                {{Lang::get('menu.actividadList')}}
                             </a>
                         </li>
                     </ul>

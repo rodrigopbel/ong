@@ -38,7 +38,7 @@ class ActividadesController extends \AdminBaseController {
             $act[date('F', strtotime($actividad->date))]['lugar'][] = $actividad->lugar;
             $act[date('F', strtotime($actividad->date))]['day'][] = date('D', strtotime($actividad->date));
         }
-        $this->data['actividadArray'] = $act;
+        $this->data['actividadesArray'] = $act;
         return View::make('admin.actividades.index', $this->data);
     }
 
@@ -76,7 +76,7 @@ class ActividadesController extends \AdminBaseController {
             ]);
 
             $holi = Actividad::find($add->id);
-            $holi->occassion = $value;
+            $holi->descripcion = $value;
             $holi->save();
         }
         return Redirect::route('admin.actividades.index')->with('success',"<strong>Nueva Actividad</strong> Adicionada Exitosamente!");
@@ -93,7 +93,7 @@ class ActividadesController extends \AdminBaseController {
     }
 
     /**
-     * Show the form for editing the specified holiday.
+     * Show the form for editing the specified actividad.
      *
      * @param  int  $id
      * @return Response
@@ -106,7 +106,7 @@ class ActividadesController extends \AdminBaseController {
     }
 
     /**
-     * Update the specified holiday in storage.
+     * Update the specified actividad in storage.
      *
      * @param  int  $id
      * @return Response
