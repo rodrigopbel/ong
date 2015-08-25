@@ -30,7 +30,7 @@ class Personal extends Eloquent {
 		'personalInfo'=>[
 			'nombres'       =>   $nombresValidation,
 			'apellidos'     =>   $apellidosValidation,
-			'email'         =>   "required|email|unique:employees,email,:id",
+			'email'         =>   "required|email|unique:personale,email,:id",
 			'profileImage'  =>   $fotoPersonalValidation,
 		],
 	];
