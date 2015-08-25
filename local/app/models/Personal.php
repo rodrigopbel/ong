@@ -2,12 +2,14 @@
 class Personal extends Eloquent {
 	// Validation Rules
     protected $table="personal";
-	public static function rules($action,$id=false, $merge=[])
+    // Don't forget to fill this array
+    protected $guarded = ['id'];
+    protected $hidden  = ['password'];
+    public static function rules($action,$id=false, $merge=[])
 	{
 		$nombresValidation       = 'required';
 		$apellidosValidation     = 'required';
 		$fotoPersonalValidation  = 'image|mimes:jpeg,jpg,png,bmp,gif,svg|max:4000';
-
 		$rules = [
 		'create' => [
 			'personalID'    =>  'required|unique:personal,personalID|alpha_dash',
@@ -40,7 +42,5 @@ class Personal extends Eloquent {
 		}
 		return array_merge( $rules, $merge );
 	}
-	// Don't forget to fill this array
-    protected $guarded = ['id'];
-	protected $hidden  = ['password'];
+
 }

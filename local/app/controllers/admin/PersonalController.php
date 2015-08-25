@@ -41,9 +41,8 @@ class PersonalController extends \AdminBaseController {
 		}
 		DB::beginTransaction();
 		try {
-			$name = explode(' ', $input['nombre']);
-			$firstName = ucfirst($name[0]);
-
+			$nombres = explode(' ', $input['nombres']);
+			$apellidos = explode(' ', $input['apellidos']);
 			$filename   =   null;
 			// Profile Image Upload
 			if (Input::hasFile('profileImage')) {
@@ -53,16 +52,12 @@ class PersonalController extends \AdminBaseController {
 				$image 	    = Input::file('profileImage');
 				$extension  = $image->getClientOriginalExtension();
 				$filename	= "{$firstName}_{$input['employeeID']}.".strtolower($extension);
-
 				//                Image::make($image->getRealPath())->resize('872','724')->save($path.$filename);
 				Image::make($image->getRealPath())
 				     ->fit(872, 724, function ($constraint) {
 					     $constraint->upsize();
 				     })->save($path.$filename);
-
-
-
-			}
+            }
 
 			Employee::create([
 				'employeeID'    => $input['employeeID'],
