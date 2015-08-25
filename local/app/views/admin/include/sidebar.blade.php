@@ -89,19 +89,19 @@
                             </a>
                         </li>
                         <li class="{{ $personalActive or ''}}">
-                            <a href="{{route('/')}}">
+                            <a href="{{route('admin.holidays.index')}}">
                                 <i class="fa fa-briefcase"></i>
                                 {{Lang::get('menu.personalAdmi')}}
                             </a>
                         </li>
                         <li class="{{ $personalActive or ''}}">
-                            <a href="{{route('/')}}">
+                            <a href="{{route('admin.holidays.index')}}">
                                 <i class="fa fa-briefcase"></i>
                                 {{Lang::get('menu.personalRes')}}
                             </a>
                         </li>
                         <li class="{{ $personalActive or ''}}">
-                            <a href="{{route('/')}}">
+                            <a href="{{route('admin.holidays.index')}}">
                                 <i class="fa fa-briefcase"></i>
                                 {{Lang::get('menu.personalVol')}}
                             </a>
