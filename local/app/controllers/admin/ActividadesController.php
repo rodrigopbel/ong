@@ -22,7 +22,7 @@ class ActividadesController extends \AdminBaseController {
     {
         $this->data['actividades']         =   Actividad::orderBy('date', 'ASC')->get();;
         $this->data['actividadActive']    =   'active';
-        $hol        = array();
+        $act        = array();
 
         $year       = date("Y");
         $dateArr    = $this->getDateForSpecificDayBetweenDates($year.'-01-01', $year.'-12-31', 0);
@@ -32,12 +32,13 @@ class ActividadesController extends \AdminBaseController {
 
         foreach($this->data['actividades'] as $actividad)
         {
-            $hol[date('F', strtotime($actividad->date))]['id'][] = $actividad->id;
-            $hol[date('F', strtotime($actividad->date))]['date'][] = date('d F Y', strtotime($actividad->date));
-            $hol[date('F', strtotime($actividad->date))]['ocassion'][] = $actividad->occassion;
-            $hol[date('F', strtotime($actividad->date))]['day'][] = date('D', strtotime($actividad->date));
+            $act[date('F', strtotime($actividad->date))]['id'][] = $actividad->id;
+            $act[date('F', strtotime($actividad->date))]['date'][] = date('d F Y', strtotime($actividad->date));
+            $act[date('F', strtotime($actividad->date))]['descripcion'][] = $actividad->descripcion;
+            $act[date('F', strtotime($actividad->date))]['lugar'][] = $actividad->lugar;
+            $act[date('F', strtotime($actividad->date))]['day'][] = date('D', strtotime($actividad->date));
         }
-        $this->data['actividadArray'] = $hol;
+        $this->data['actividadArray'] = $act;
         return View::make('admin.actividades.index', $this->data);
     }
 
@@ -65,7 +66,7 @@ class ActividadesController extends \AdminBaseController {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        $actividad = array_combine($input['date'], $input['occasion']);
+        $actividad = array_combine($input['date'], $input['descripcion']);
 
         foreach ($actividad as $index => $value){
             if($index =='')continue;
@@ -78,7 +79,7 @@ class ActividadesController extends \AdminBaseController {
             $holi->occassion = $value;
             $holi->save();
         }
-        return Redirect::route('admin.actividades.index')->with('success',"<strong>New Holidays</strong> successfully added to the Database");
+        return Redirect::route('admin.actividades.index')->with('success',"<strong>Nueva Actividad</strong> Adicionada Exitosamente!");
     }
 
     /**
@@ -153,7 +154,7 @@ class ActividadesController extends \AdminBaseController {
         {
             Actividad::firstOrCreate([
                 'date'  =>  $date,
-                'occassion' =>'Sunday'
+                'descripcion' =>'Sunday'
             ]);
         }
 
