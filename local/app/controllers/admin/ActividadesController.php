@@ -93,7 +93,7 @@ class ActividadesController extends \AdminBaseController {
     }
 
     /**
-     * Show the form for editing the specified holiday.
+     * Show the form for editing the specified actividad.
      *
      * @param  int  $id
      * @return Response
@@ -106,7 +106,7 @@ class ActividadesController extends \AdminBaseController {
     }
 
     /**
-     * Update the specified holiday in storage.
+     * Update the specified actividad in storage.
      *
      * @param  int  $id
      * @return Response
