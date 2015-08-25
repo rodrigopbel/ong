@@ -4,9 +4,9 @@
  * Class EmployeesController
  * This Controller is for the all the related function applied on employees
  */
-class EmployeesController extends \AdminBaseController {
+class PersonalController extends \AdminBaseController {
 	/**
-	 * Constructor for the Employees
+	 * Constructor de Personal
 	 */
 	public function __construct()
 	{
@@ -26,8 +26,7 @@ class EmployeesController extends \AdminBaseController {
 	public function create()
 	{
 		$this->data['personalActive']  =   'active';
-		$this->data['department']      =     Department::lists('deptName','id');
-		return View::make('admin.employees.create',$this->data);
+		return View::make('admin.personal.create',$this->data);
 	}
 	/**
 	 * Store a newly created employee in storage
