@@ -1,10 +1,10 @@
 <?php
 class Personal extends Eloquent {
-	// Validation Rules
+
     protected $table="personal";
-    // Don't forget to fill this array
     protected $guarded = ['id'];
     protected $hidden  = ['password'];
+    // Validation Rules
     public static function rules($action,$id=false, $merge=[])
 	{
 		$nombresValidation       = 'required';
