@@ -16,8 +16,8 @@ class EmployeesController extends \AdminBaseController {
 	}
 	public function index()
 	{
-		$this->data['employees']       =    Employee::all();
-		$this->data['employeesActive'] =   'active';
+		$this->data['personales']       =    Personal::all();
+		$this->data['personalActive'] =   'active';
 		return View::make('admin.personal.index', $this->data);
 	}
 	/**
