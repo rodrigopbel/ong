@@ -150,11 +150,7 @@ class PersonalController extends \AdminBaseController {
 		DB::commit();
 		return Redirect::route('admin.employees.index')->with('success',"<strong>{$input['fullName']}</strong> Beneficiario guardado en la Base de Datos");
 	}
-
-
-
-
-	/**
+    /**
 	 * Show the form for editing the specified employee
 	 */
 	public function edit($id)

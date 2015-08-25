@@ -1,6 +1,6 @@
 <?php
 class Personal extends Eloquent {
-
+    protected $fillable = [];
     protected $table="personal";
     protected $guarded = ['id'];
     protected $hidden  = ['password'];
@@ -19,7 +19,6 @@ class Personal extends Eloquent {
 			'password'      =>  'required',
 			'fotoPersonal'  =>  $fotoPersonalValidation
 		],
-
 		'update'=>[
 			'personalID'   =>   "required|unique:personal,personalID,:id"
 		],
@@ -42,5 +41,4 @@ class Personal extends Eloquent {
 		}
 		return array_merge( $rules, $merge );
 	}
-
 }
