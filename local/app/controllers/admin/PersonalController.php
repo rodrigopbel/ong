@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Class EmployeesController
- * This Controller is for the all the related function applied on employees
+ * Class PersonalController
+ * This Controller is for the all the related function applied on personal
  */
 class PersonalController extends \AdminBaseController {
 	/**

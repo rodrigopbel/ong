@@ -4,7 +4,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Employee extends Eloquent {
+class Personal extends Eloquent {
 	// Validation Rules
     protected $table="personal";
 	public static function rules($action,$id=false, $merge=[])
