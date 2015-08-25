@@ -8,7 +8,7 @@
 @section('mainarea')
 <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
-    <span class="fa fa-plus"></span>    Nuevo Beneficiario
+    <span class="fa fa-plus"></span>Nuevo Personal
     </h3>
     <div class="page-bar">
         <ul class="page-breadcrumb">
@@ -31,10 +31,10 @@
             <div class="col-md-6">
             </div>
             <div class="col-md-6 form-group text-right">
-            <span id="load_notification"></span>
-                 <input  type="checkbox"  onchange="ToggleEmailNotification('employee_add');return false;" class="make-switch" name="employee_add" @if($setting->employee_add==1)checked	@endif data-on-color="success" data-on-text="Si"data-off-text="No" data-off-color="danger">
-                <strong>Notificaciones de Email</strong><br>
-            </div>
+            {{--<span id="load_notification"></span>--}}
+                 {{--<input  type="checkbox"  onchange="ToggleEmailNotification('employee_add');return false;" class="make-switch" name="employee_add" @if($setting->employee_add==1)checked	@endif data-on-color="success" data-on-text="Si"data-off-text="No" data-off-color="danger">--}}
+                {{--<strong>Notificaciones de Email</strong><br>--}}
+            {{--</div>--}}
          </div>
     {{--INLCUDE ERROR MESSAGE BOX--}}
      @include('admin.common.error')
@@ -42,7 +42,7 @@
     <hr>
     <div class="clearfix">
     </div>
-    {{Form::open(array('route'=>"admin.personales.store",'class'=>'form-horizontal','method'=>'POST','files' => true))}}
+    {{Form::open(array('route'=>"admin.personal.store",'class'=>'form-horizontal','method'=>'POST','files' => true))}}
     <div class="row ">
         <div class="col-md-6 col-sm-6">
             <div class="portlet box purple-wisteria">
@@ -83,7 +83,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Nombres <span class="required">* </span></label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="fullName" placeholder="Nombres del Beneficiario" value="{{ Input::old('fullName') }}">
+                                    <input type="text" class="form-control" name="fullName" placeholder="Nombres del Beneficiario" value="">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -96,7 +96,7 @@
                                 <label class="control-label col-md-3">Fecha de Nacimiento</label>
                                 <div class="col-md-3">
                                     <div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                                        <input type="text" class="form-control" name="date_of_birth" readonly value="{{ Input::old('date_of_birth') }}">
+                                        <input type="text" class="form-control" name="date_of_birth" readonly value="">
                                         <span class="input-group-btn">
                                         <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
                                         </span>
@@ -106,28 +106,28 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Genero</label>
                                 <div class="col-md-9">
-                                     {{ Form::select('genero', array('male' => 'Varon', 'female' => 'Mujer'), Input::old('genero'),array('class'=>'form-control')) }}
+                                     {{ Form::select('genero', array('male' => 'Varon', 'female' => 'Mujer'), array('class'=>'form-control')) }}
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Telefono</label>
                                 <div class="col-md-9">
-                                     <input type="text" class="form-control" name="mobileNumber" placeholder="Telefono" value="{{Input::old('telefono')}}">
+                                     <input type="text" class="form-control" name="mobileNumber" placeholder="Telefono" value="">
                                 </div>
                             </div>
                         <h4><strong>Cuenta de Beneficiario</strong></h4>
                             <div class="form-group">
                                     <label class="col-md-3 control-label">Email<span class="required">* </span></label>
                                     <div class="col-md-9">
-                                        <input type="text" name="email" class="form-control" value="{{ Input::old('email') }}">
+                                        <input type="text" name="email" class="form-control" value="">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Contrasena<span class="required">* </span></label>
                                     <div class="col-md-9">
                                         <input type="hidden" name="oldpassword">
-                                        <input type="text" name="password" class="form-control" value="{{ Input::old('password') }}">
+                                        <input type="text" name="password" class="form-control" value="">
                                     </div>
                                 </div>
 
@@ -150,7 +150,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Caso #<span class="required">* </span></label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="employeeID" placeholder="Caso #" value="{{Input::old('employeeID')}}">
+                                    <input type="text" class="form-control" name="employeeID" placeholder="Caso #" value="">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -172,7 +172,7 @@
                                 <label class="control-label col-md-3">Fecha de Solicitud</label>
                                 <div class="col-md-3">
                                     <div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                                        <input type="text" class="form-control" name="joiningDate" readonly value="{{Input::old('joiningDate')}}">
+                                        <input type="text" class="form-control" name="joiningDate" readonly value="}">
                                         <span class="input-group-btn">
                                         <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
                                         </span>
@@ -182,7 +182,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Monto Requerido</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="currentSalary" placeholder="Monto requerido" value="{{ Input::old('currentSalary') }}">
+                                    <input type="text" class="form-control" name="currentSalary" placeholder="Monto requerido" value="">
                                 </div>
                             </div>
                         </div>
@@ -203,37 +203,37 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Departamento</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="accountName" placeholder="Departamento" value="{{Input::old('accountName')}}">
+                                    <input type="text" class="form-control" name="accountName" placeholder="Departamento" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Provincia</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="accountNumber" placeholder="Provincia" value="{{Input::old('accountNumber')}}">
+                                    <input type="text" class="form-control" name="accountNumber" placeholder="Provincia" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Localidad</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="bank" placeholder="Localidad" value="{{Input::old('bank')}}">
+                                    <input type="text" class="form-control" name="bank" placeholder="Localidad" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Seccion</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="ifsc" placeholder="Seccion" value="{{Input::old('ifsc')}}">
+                                    <input type="text" class="form-control" name="ifsc" placeholder="Seccion" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Zona</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="pan" placeholder="Zona" value="{{Input::old('pan')}}">
+                                    <input type="text" class="form-control" name="pan" placeholder="Zona" value="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Canton</label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="branch" placeholder="Canton" value="{{Input::old('branch')}}">
+                                    <input type="text" class="form-control" name="branch" placeholder="Canton" value="">
                                 </div>
                             </div>
                         </div>
@@ -414,31 +414,4 @@
 <!-- END PAGE LEVEL PLUGINS -->
 
 
-
-
-<script>
-        jQuery(document).ready(function() {
-
-           ComponentsPickers.init();
-            dept();
-
-
-
-        });
-        function dept(){
-
-                              $.getJSON("{{ URL::to('admin/departments/ajax_designation/')}}",
-                              { deptID: $('#department').val() },
-                              function(data) {
-                                  var model = $('#designation');
-                                   model.empty();
-                                  $.each(data, function(index, element) {
-                                      model.append("<option value='"+element.id+"'>" + element.designation + "</option>");
-                                  });
-
-                             });
-
-                        }
-
-    </script>
 @stop
