@@ -41,8 +41,7 @@ class PersonalController extends \AdminBaseController {
 		}
 		DB::beginTransaction();
 		try {
-
-			$name = explode(' ', $input['fullName']);
+			$name = explode(' ', $input['nombre']);
 			$firstName = ucfirst($name[0]);
 
 			$filename   =   null;
