@@ -15,10 +15,10 @@ class Personal extends Eloquent {
 
 		$rules = [
 		'create' => [
-			'personalID'    =>  'required|unique:employees,employeeID|alpha_dash',
+			'personalID'    =>  'required|unique:personal,personalID|alpha_dash',
 			'nombres'       =>  $nombresValidation,
 			'apellidos'     =>  $apellidosValidation,
-			'email'         =>  'required|email|unique:employees',
+			'email'         =>  'required|email|unique:personal',
 			'password'      =>  'required',
 			'fotoPersonal'  =>  $fotoPersonalValidation
 		],
@@ -31,8 +31,8 @@ class Personal extends Eloquent {
 			'password_confirmation' =>  'required|min:5'
 		],
 		'personalInfo'=>[
-			'nombres'      =>   $nombresValidation,
-			'apellidos'      =>   $apellidosValidation,
+			'nombres'       =>   $nombresValidation,
+			'apellidos'     =>   $apellidosValidation,
 			'email'         =>   "required|email|unique:employees,email,:id",
 			'profileImage'  =>   $fotoPersonalValidation,
 		],
