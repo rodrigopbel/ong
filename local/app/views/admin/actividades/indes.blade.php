@@ -99,7 +99,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @if(isset($holidaysArray[$month]))
+                                        @if(isset($actividadesArray[$month]))
 
                                             @for($i=0;$i<count($actividadesArray[$month]['date']);$i++)
 
@@ -153,7 +153,7 @@
 
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="form-control form-control-inline"  type="text" name="occasion[0]" placeholder="Actividad"/>
+                                    <input class="form-control form-control-inline"  type="text" name="descripcin[0]" placeholder="Actividad"/>
                                 </div>
                             </div>
                             <div id="insertBefore"></div>
@@ -208,7 +208,7 @@
             $i = $i+1;
             $(' <div class="form-group"> ' +
             '<div class="col-md-6"><input class="form-control form-control-inline input-medium date-picker'+$i+'" name="date['+$i+']" type="text" value="" placeholder="Fecha"/></div>' +
-            '<div class="col-md-6"><input class="form-control form-control-inline" name="occasion['+$i+']" type="text" value="" placeholder="Descripcion"/></div>' +
+            '<div class="col-md-6"><input class="form-control form-control-inline" name="descripcion['+$i+']" type="text" value="" placeholder="Descripcion"/></div>' +
             '</div>').insertBefore($insertBefore);
             $.fn.datepicker.defaults.format = "dd-mm-yyyy";
             $('.date-picker'+$i).datepicker();
