@@ -9,12 +9,10 @@ class AdminBaseController extends Controller {
     {
 
         $this->data['setting']      = Setting::all()->first();
-
 	    if(!isset($this->data['setting']) && count($this->data['setting'])==0){
 		    die('Database not uploaded.Please Upload the database');
 	    }
 	    if(count($this->data['setting'])){
-
 	    }
 	    $this->data['loggedAdmin']  = Auth::admin()->get();
 	    $this->data['pending_applications']   = Attendance::where('application_status','=','pending')->get();

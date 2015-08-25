@@ -52,7 +52,7 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::resource('beneficiarios', 'BeneficiariosController',['except' => ['show'],'as' => 'admin']);
 
     //    Personal Routing
-    Route::resource('personal', 'PersonalController',['except' => ['show'],'as' => 'admin']);
+    Route::resource('personal', 'PersonalController',['except' => ['show', 'create'],'as' => 'admin']);
 
 
     //    Employees Routing

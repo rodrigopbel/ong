@@ -37,17 +37,17 @@
                     <div class="alert alert-success">{{ Session::get('success') }}</div>
                 @endif
             </div>
-            <a href="{{route('admin.employees.create')}}" class="btn green">
+            <a href="{{route('admin.personal.create')}}" class="btn green">
                 Nuevo <i class="fa fa-plus"></i>
             </a><hr>
 			<div class="portlet box blue">
                 <div class="portlet-title">
 					<div class="caption">
-				    	<i class="fa fa-users"></i>Beneficiarios
+				    	<i class="fa fa-users"></i>Personal
 					</div>
 					<div class="tools" style="  padding: 5px;">
                         <div class="btn-group pull-right">
-                        	<a  href="{{route('admin.employees.export') }}" class="btn yellow">
+                        	<a  href="{{route('admin.personal.export') }}" class="btn yellow">
 								 <i class="fa fa-file-excel-o"></i>    Exportar
                             </a>
                         </div>
@@ -58,22 +58,22 @@
 						<thead>
 							<tr>
 								<th class="text-center">
-									 Nro Caso
+									 PersonalID
 								</th>
 								<th class="text-center">
                                      Foto
                                 </th>
 								<th style="text-align: center">
-									 Beneficiario
+									 Nombres
 								</th>
 								<th class="text-center">
-                                	 Objetivo
+                                	 Apellidos
                                 </th>
 								<th class="text-center">
-                                	 Antiguedad
+                                	 Email
                                 </th>
 								<th class="text-center">
-									 Telefono
+									 Tipo
 								</th>
 								<th class="text-center">
 									 Estado
@@ -84,37 +84,36 @@
 							</tr>
 							</thead>
 							<tbody>
-					        @foreach ($employees as $employee)
-                                <tr id="row{{ $employee->employeeID }}">
+					        @foreach ($personales as $personal)
+                                <tr id="row{{ $personal->personalID }}">
                                     <td>
-                                            {{ $employee->employeeID }}
+                                            {{ $personal->personalID }}
                                     </td>
                                     <td class="text-center">
-                                        {{HTML::image("/profileImages/{$employee->profileImage}",'ProfileImage',['height'=>'80px'])}}
+                                        {{HTML::image("/profileImages/{$personal->foto}",'ProfileImage',['height'=>'80px'])}}
                                     </td>
                                     <td>
-                                          {{ $employee->fullName . " ". $employee->fatherName }}
+                                          {{ $employee->nombres}}
                                     </td>
                                     <td>
-                                          <p>Objetivo: <strong>{{ $employee->getDesignation->department->deptName or ''}}</strong></p>
-                                          <p>Destino: <strong>{{ $employee->getDesignation->designation or ''}}</strong></p>
+                                          {{ $personal->apellidos}}
                                     </td>
-                                     <td class="text-center">
-                                          {{ $employee->workDuration($employee->employeeID) }}
+                                    <td class="text-center">
+                                          {{ $personal->email}}
                                     </td>
                                      <td>
-                                          {{ $employee->mobileNumber }}
+                                          {{ $personal->tipoPersonal }}
                                     </td>
                                     <td>
-                                    @if($employee->status=='active')
+                                    @if($employee->estado=='activo')
                                         <span class="label label-sm label-success"> Activo </span>
                                     @else
                                         <span class="label label-sm label-danger"> Inactivo </span>
                                      @endif
                                     </td>
                                     <td class="">
-                                    <p> <a class="btn purple" href="{{ route('admin.employees.edit',$employee->employeeID)  }}"><i class="fa fa-edit"></i> Editar</a></p>
-                                    <p>    <a class="btn red" style="width: 50px;" href="javascript:;" onclick="del('{{$employee->employeeID}}','{{ $employee->fullName }}')"><i class="fa fa-trash"></i> Eliminar</a></p>
+                                    <p> <a class="btn purple" href="{{ route('admin.personal.edit',$employee->employeeID)  }}"><i class="fa fa-edit"></i> Editar</a></p>
+                                    <p>    <a class="btn red" style="width: 50px;" href="javascript:;" onclick="del('{{$personal->personalID}}','{{ $personal->email }}')"><i class="fa fa-trash"></i> Eliminar</a></p>
                                     </td>
                                 </tr>
 							@endforeach
@@ -142,10 +141,10 @@
 	function del(id,name)
     		{
     			$('#deleteModal').appendTo("body").modal('show');
-    			$('#info').html('Esta seguro de querer eliminar al Beneficiario : <strong>'+name+'</strong> ??');
+    			$('#info').html('Esta seguro de querer eliminar al Personal : <strong>'+name+'</strong> ??');
     			$("#delete").click(function()
     			{
-    					var url = "{{ route('admin.employees.destroy',':id') }}";
+    					var url = "{{ route('admin.personal.destroy',':id') }}";
 						url = url.replace(':id',id);
     					 $.ajax({
     		                type: "DELETE",
@@ -154,7 +153,6 @@
     		                data: {"id":id}
     		            	}).done(function(response)
     		           		  {
-
     		               	 	 if(response.success == "deleted")
     		                 	 {
     		                 	 		$("html, body").animate({ scrollTop: 0 }, "slow");
