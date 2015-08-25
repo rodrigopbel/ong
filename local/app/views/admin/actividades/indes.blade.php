@@ -101,15 +101,15 @@
                                         <tbody>
                                         @if(isset($holidaysArray[$month]))
 
-                                            @for($i=0;$i<count($holidaysArray[$month]['date']);$i++)
+                                            @for($i=0;$i<count($actividadesArray[$month]['date']);$i++)
 
-                                                <tr id="row{{ $holidaysArray[$month]['id'][$i] }}">
+                                                <tr id="row{{ $actividadessArray[$month]['id'][$i] }}">
                                                     <td> {{($i+1)}} </td>
-                                                    <td> {{ $holidaysArray[$month]['date'][$i] }} </td>
-                                                    <td> {{ $holidaysArray[$month]['ocassion'][$i] }} </td>
-                                                    <td> {{ $holidaysArray[$month]['day'][$i] }} </td>
+                                                    <td> {{ $actividadesArray[$month]['date'][$i] }} </td>
+                                                    <td> {{ $actividadesArray[$month]['descripcion'][$i] }} </td>
+                                                    <td> {{ $actividadesArray[$month]['day'][$i] }} </td>
                                                     <td>
-                                                        <button type="button" onclick="del('{{ $holidaysArray[$month]['id'][$i] }}',' {{ $holidaysArray[$month]['date'][$i] }}')" href="#" class="btn btn-xs red">
+                                                        <button type="button" onclick="del('{{ $actividadesArray[$month]['id'][$i] }}',' {{ $actividadesArray[$month]['date'][$i] }}')" href="#" class="btn btn-xs red">
                                                             <i class="fa fa-trash"></i>
                                                         </button>
                                                     </td>
@@ -207,8 +207,8 @@
         $('#plusButton').click(function(){
             $i = $i+1;
             $(' <div class="form-group"> ' +
-            '<div class="col-md-6"><input class="form-control form-control-inline input-medium date-picker'+$i+'" name="date['+$i+']" type="text" value="" placeholder="Date"/></div>' +
-            '<div class="col-md-6"><input class="form-control form-control-inline" name="occasion['+$i+']" type="text" value="" placeholder="Occasion"/></div>' +
+            '<div class="col-md-6"><input class="form-control form-control-inline input-medium date-picker'+$i+'" name="date['+$i+']" type="text" value="" placeholder="Fecha"/></div>' +
+            '<div class="col-md-6"><input class="form-control form-control-inline" name="occasion['+$i+']" type="text" value="" placeholder="Descripcion"/></div>' +
             '</div>').insertBefore($insertBefore);
             $.fn.datepicker.defaults.format = "dd-mm-yyyy";
             $('.date-picker'+$i).datepicker();
