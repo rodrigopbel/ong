@@ -16,10 +16,10 @@ class PersonalController extends \AdminBaseController {
 	}
 	public function index()
 	{
-//		$this->data['personales']       =    Personal::all();
-//		$this->data['personalActive']   =   'active';
-//        , $this->data
-		return View::make('admin.personal.index');
+		$this->data['personales']       =    Personal::all();
+		$this->data['personalActive']   =   'active';
+        Debugbar::info($this->data['personales'] );
+		return View::make('admin.personal.index', $this->data);
 	}
 	/**
 	 * Show the form for creating a new employee
