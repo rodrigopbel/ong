@@ -12,15 +12,12 @@ class Personal extends Eloquent {
 		$fotoPersonalValidation  = 'image|mimes:jpeg,jpg,png,bmp,gif,svg|max:4000';
 		$rules = [
 		'create' => [
-			'personalID'    =>  'required|unique:personal,personalID|alpha_dash',
+			'nitci'         =>  'required|unique:personal,nitic|alpha_dash',
 			'nombres'       =>  $nombresValidation,
 			'apellidos'     =>  $apellidosValidation,
 			'email'         =>  'required|email|unique:personal',
 			'password'      =>  'required',
 			'fotoPersonal'  =>  $fotoPersonalValidation
-		],
-		'update'=>[
-			'personalID'   =>   "required|unique:personal,personalID,:id"
 		],
 		'password' =>  [
 			'password'              =>  'required|confirmed',
