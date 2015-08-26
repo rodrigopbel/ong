@@ -35,9 +35,9 @@
                 <strong>Notificaciones de Email</strong><br>
         </div>
      </div>
-    INLCUDE ERROR MESSAGE BOX
+    {{--INLCUDE ERROR MESSAGE BOX--}}
      @include('admin.common.error')
-     END ERROR MESSAGE BOX
+     {{--END ERROR MESSAGE BOX--}}
     <hr>
     <div class="clearfix">
     </div>
