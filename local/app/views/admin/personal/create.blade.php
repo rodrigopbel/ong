@@ -67,7 +67,7 @@
                                             Seleccionar Imagen </span>
                                             <span class="fileinput-exists">
                                             Cambiar </span>
-                                             <input type="file" name="profileImage">
+                                             <input type="file" name="fotoPersonal">
                                             </span>
                                             <a href="#" class="btn red fileinput-exists" data-dismiss="fileinput">
                                             Eliminar </a>
@@ -86,7 +86,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Apellidos</label>
+                                <label class="col-md-3 control-label">Apellidos<span class="required">* </span></label>
                                 <div class="col-md-9">
                                      <input type="text" class="form-control" name="apellidos" placeholder="Apellidos de la Persona"value="{{ Input::old('apellidos') }}">
                                 </div>
@@ -96,9 +96,9 @@
                             <div class="col-md-3">
                                 <div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
                                     <input type="text" class="form-control" name="fechanac" readonly value="{{ Input::old('fechanac') }}">
-        												<span class="input-group-btn">
-        												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
-        												</span>
+                                        <span class="input-group-btn">
+                                        <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+                                        </span>
                                 </div>
                             </div>
                         </div>

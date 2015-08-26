@@ -48,110 +48,49 @@ class PersonalController extends \AdminBaseController {
 			$apellidos = explode(' ', $input['apellidos']);
 			$filename   =   null;
 			// Profile Image Upload
-			if (Input::hasFile('profileImage')) {
-				$path       = public_path()."/profileImages/";
+			if (Input::hasFile('fotoPersonal')) {
+				$path = public_path()."/profileImages/";
 				File::makeDirectory($path, $mode = 0777, true, true);
-
-				$image 	    = Input::file('profileImage');
+				$image 	    = Input::file('fotoPersonal');
 				$extension  = $image->getClientOriginalExtension();
-//				$filename	= "{$firstName}_{$input['employeeID']}.".strtolower($extension);
-				//                Image::make($image->getRealPath())->resize('872','724')->save($path.$filename);
+				$filename	= "{$nombres}_{$input['nitci']}.".strtolower($extension);
+                Image::make($image->getRealPath())->resize('872','724')->save($path.$filename);
 				Image::make($image->getRealPath())
 				     ->fit(872, 724, function ($constraint) {
 					     $constraint->upsize();
 				     })->save($path.$filename);
             }
-
-			Employee::create([
-				'employeeID'    => $input['employeeID'],
-				'designation'   => $input['designation'],
-				'fullName'      => ucwords(strtolower($input['fullName'])),
-				'fatherName'    => ucwords(strtolower($input['fatherName'])),
-				'gender'        => $input['gender'],
-				'email'         => $input['email'],
-				'password'      => Hash::make($input['password']),
-				'date_of_birth' => date('Y-m-d',strtotime($input['date_of_birth'])),
-				'mobileNumber'  => $input['mobileNumber'],
-				'joiningDate'   => $input['joiningDate'],
-				'localAddress'  => $input['localAddress'],
-				'profileImage'  =>  isset($filename)?$filename:'default.jpg',
-				'joiningDate'   =>  date('Y-m-d',strtotime($input['joiningDate'])),
-				'permanentAddress' => $input['permanentAddress']
+			Persona::create([
+				'personalID'    => $input['nitci'],
+				'nombres'       => $input['nombres'],
+				'apellidos'     => $input['apellidos'],
+                'email'         => $input['email'],
+                'password'      => Hash::make($input['password']),
+				'genero'        => $input['genero'],
+				'fechanac'      => date('Y-m-d',strtotime($input['fechanac'])),
+				'telefono'      => $input['telefono'],
+                'fotoPersonal'  =>  isset($filename)?$filename:'default.jpg'
 			]);
-
-			//  Insert into salary table
-			if ($input['currentSalary'] != '')
-			{
-				Salary::create([
-					'employeeID' => $input['employeeID'],
-					'type'       => 'current',
-					'remarks'    => 'Joining Salary Of Employee',
-					'salary'     => $input['currentSalary']
-
-				]);
-			}
-			// Insert Into Bank Details
-			if ($input['accountName'] != '' && $input['accountNumber']!='')
-			{
-				Bank_detail::create([
-					'employeeID'    =>  $input['employeeID'],
-					'accountName'   =>  $input['accountName'],
-					'accountNumber' =>  $input['accountNumber'],
-					'bank'          =>  $input['bank'],
-					'pan'           =>  $input['pan'],
-					'ifsc'          =>  $input['ifsc'],
-					'branch'        =>  $input['branch']
-
-				]);
-
-			}
-
-			// -------------- UPLOAD THE DOCUMENTS  -----------------
-			$documents  =   ['resume','offerLetter','joiningLetter','contract','IDProof'];
-
-			foreach ($documents as $document) {
-				if (Input::hasFile($document)) {
-
-					$path = public_path()."/employee_documents/{$document}/";
-					File::makeDirectory($path, $mode = 0777, true, true);
-
-					$file 	    = Input::file($document);
-					$extension  = $file->getClientOriginalExtension();
-					$filename	= "{$document}_{$input['employeeID']}_{$firstName}.$extension";
-
-					Input::file($document)->move($path, $filename);
-					Employee_document::create([
-						'employeeID'=>  $input['employeeID'],
-						'fileName'  =>   $filename,
-						'type'      =>  $document
-					]);
-
-				}
-			}
-
-
-			if($this->data['setting']->employee_add==1)
-			{
-				$this->data['employee_name'] = $input['fullName'];
-				$this->data['employee_email'] = $input['email'];
-				$this->data['employee_password'] = $input['password'];
-				//        Send Employee Add Mail
-				Mail::send('emails.admin.employee_add', $this->data, function ($message) use ($input) {
-					$message->from($this->data['setting']->email, $this->data['setting']->name);
-					$message->to($input['email'], $input['fullName'])
-					        ->subject('Account Created - ' . $this->data['setting']->website);
-				});
-			}
+//            if($this->data['setting']->employee_add==1)
+//			{
+//				$this->data['employee_name'] = $input['fullName'];
+//				$this->data['employee_email'] = $input['email'];
+//				$this->data['employee_password'] = $input['password'];
+//				//        Send Employee Add Mail
+//				Mail::send('emails.admin.employee_add', $this->data, function ($message) use ($input) {
+//					$message->from($this->data['setting']->email, $this->data['setting']->name);
+//					$message->to($input['email'], $input['fullName'])
+//					        ->subject('Account Created - ' . $this->data['setting']->website);
+//				});
+//			}
 			//  ********** END UPLOAD THE DOCUMENTS**********
-
 		}catch(\Exception $e)
 		{
 			DB::rollback();
 			throw $e;
 		}
-
 		DB::commit();
-		return Redirect::route('admin.employees.index')->with('success',"<strong>{$input['fullName']}</strong> Beneficiario guardado en la Base de Datos");
+		return Redirect::route('admin.personal.index')->with('success',"<strong>{$input['nombres']} {$input['apellidos']}</strong> Persona guardado en la Base de Datos");
 	}
     /**
 	 * Show the form for editing the specified employee
