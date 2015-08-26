@@ -81,7 +81,7 @@
                                                                 <div class="input-group">
 
                                                                      <select class="form-control input-large select2me monthSelect" id="monthSelect" name="forMonth" onclick="changeMonthYear();return false;">
-                                                                            <option value="01"  @if(strtolower(date('F'))=='january')selected='selected'@endif>January</option>
+                                                                            <option value="01"  @if(strtolower(date('F'))=='january')selected='selected'@endif>Enero</option>
                                                                             <option value="02"  @if(strtolower(date('F'))=='february')selected='selected'@endif>February</option>
                                                                             <option value="03"  @if(strtolower(date('F'))=='march')selected='selected'@endif>March</option>
                                                                             <option value="04"    @if(strtolower(date('F'))=='april')selected='selected'@endif>April</option>
