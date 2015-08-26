@@ -195,7 +195,7 @@
         {
 
             $('#deleteModal').appendTo("body").modal('show');
-            $('#info').html('Are you sure ! You want to delete <strong>'+date+'</strong> ??');
+            $('#info').html('Esta seguro de Eliminar la Actividad! <strong>'+date+'</strong> ??');
             $("#delete").click(function()
             {
                 var url = "{{ route('admin.actividades.destroy',':id') }}";
@@ -216,7 +216,7 @@
                         $('#deleteModal').modal('hide');
 
                         $('#row'+id).fadeOut(500);
-                        $('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Successfully Deleted</p>");
+                        $('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Eliminado Correctamente</p>");
                     }
                 });
             })
