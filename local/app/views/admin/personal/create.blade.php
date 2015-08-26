@@ -1,12 +1,11 @@
-Hola a todos
-{{--@extends('admin.adminlayouts.adminlayout')--}}
-{{--@section('head')--}}
-	{{--<!-- BEGIN PAGE LEVEL STYLES -->--}}
-	{{--{{HTML::style('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css')}}--}}
-	{{--{{HTML::style('assets/global/plugins/bootstrap-datepicker/css/datepicker3.css')}}--}}
-	{{--<!-- END PAGE LEVEL STYLES -->--}}
-{{--@stop--}}
-{{--@section('mainarea')--}}
+@extends('admin.adminlayouts.adminlayout')
+@section('head')
+	<!-- BEGIN PAGE LEVEL STYLES -->
+	{{HTML::style('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css')}}
+	{{HTML::style('assets/global/plugins/bootstrap-datepicker/css/datepicker3.css')}}
+	<!-- END PAGE LEVEL STYLES -->
+@stop
+@section('mainarea')
 {{--<!-- BEGIN PAGE HEADER-->--}}
     {{--<h3 class="page-title">--}}
     {{--<span class="fa fa-plus"></span>Nuevo Personal--}}
@@ -352,22 +351,19 @@ Hola a todos
     {{--</div>--}}
 {{--</div>--}}
 {{--</form--}}
-{{--@endif--}}
-{{--<hr>--}}
-
-{{--@stop--}}
 
 
 
-{{--@section('footerjs')--}}
+
+@section('footerjs')
 
 
-{{--<!-- BEGIN PAGE LEVEL PLUGINS -->--}}
-    {{--{{HTML::script('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js')}}--}}
-    {{--{{HTML::script('assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js')}}--}}
-    {{--{{HTML::script("assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js")}}--}}
-    {{--{{HTML::script('assets/admin/pages/scripts/components-pickers.js')}}--}}
-{{--<!-- END PAGE LEVEL PLUGINS -->--}}
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+    {{HTML::script('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js')}}
+    {{HTML::script('assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js')}}
+    {{HTML::script("assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js")}}
+    {{HTML::script('assets/admin/pages/scripts/components-pickers.js')}}
+<!-- END PAGE LEVEL PLUGINS -->
 
 
-{{--@stop--}}
+@stop
