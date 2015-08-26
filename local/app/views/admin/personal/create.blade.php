@@ -95,7 +95,7 @@
                                 <label class="control-label col-md-3">Fecha de Nacimiento</label>
                                 <div class="col-md-3">
                                     <div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                                        <input type="text" class="form-control" name="fechanac" readonly value="">
+                                        <input type="text" class="form-control" name="fechanac" readonly value="{{ Input::old('fechanac') }}">
                                         <span class="input-group-btn">
                                         <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
                                         </span>
