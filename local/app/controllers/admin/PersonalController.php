@@ -26,7 +26,6 @@ class PersonalController extends \AdminBaseController {
 	 */
 	public function create()
 	{
-
 		$this->data['personalActive']  =   'active';
         return View::make('admin.personal.create',$this->data);
 //        dd("hola a todos");
@@ -36,7 +35,7 @@ class PersonalController extends \AdminBaseController {
 	 */
 	public function store()
 	{
-        dd(Input::all());
+//        dd(Input::all());
 		$validator = Validator::make($input = Input::all(), Personal::rules('create'));
 		if ($validator->fails())
 		{
