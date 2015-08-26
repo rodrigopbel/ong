@@ -47,10 +47,10 @@ class PHPExcel_Shared_Date
 	 * @public
 	 * @var	string[]
 	 */
-	public static $_monthNames = array(	'Jan' => 'January',
-										'Feb' => 'February',
-										'Mar' => 'March',
-										'Apr' => 'April',
+	public static $_monthNames = array(	'Jan' => 'Enero',
+										'Feb' => 'Febrero',
+										'Mar' => 'Marzo',
+										'Apr' => 'Abril',
 										'May' => 'May',
 										'Jun' => 'June',
 										'Jul' => 'July',
