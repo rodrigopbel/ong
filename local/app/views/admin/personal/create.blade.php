@@ -161,10 +161,18 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">Ocupacion</label>
                             <div class="col-md-9">
-                                {{ Form::select('ocupacion', array('ninguno' => 'Ninguno', 'papa' => 'Papa', 'mama' => 'Mama','tio' => 'Tio/a','hermano' => 'Hermano/a','otrofamiliar' =>'Otro Familiar'), Input::old('genero'),array('class'=>'form-control')) }}
+                                {{ Form::select('ocupacion', array('ninguno' => 'Ninguno', 'estudiante' => 'Estudiante', 'uni' => 'Universitario/a','profesional' => 'Profesional'), Input::old('ocupacion'),array('class'=>'form-control')) }}
                             </div>
                         </div>
                     </div>
+                    {{--<div class="form-body">--}}
+                        {{--<div class="form-group">--}}
+                            {{--<label class="col-md-3 control-label">Ocupacion</label>--}}
+                            {{--<div class="col-md-9">--}}
+                                {{--{{ Form::select('ocupacion', array('ninguno' => 'Ninguno', 'papa' => 'Papa', 'mama' => 'Mama','tio' => 'Tio/a','hermano' => 'Hermano/a','otrofamiliar' =>'Otro Familiar'), Input::old('genero'),array('class'=>'form-control')) }}--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
             </div>
 
