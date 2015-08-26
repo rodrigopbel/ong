@@ -68,7 +68,7 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
 
     //  Awards Routing
     Route::get('ajax_awards/',['as'=>'admin.ajax_awards','uses'=> 'AwardsController@ajax_awards']);
-    Route::resource('awards', 'AwardsController',['except'=>['show'],'as' => 'admin']);
+    Route::resource('awards', 'AwardsController',['as' => 'admin']);
 
     //  Department Routing
     Route::get('departments/ajax_designation/',['as'=>'admin.departments.ajax_designation','uses'=> 'DepartmentsController@ajax_designation']);
