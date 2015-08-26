@@ -43,7 +43,7 @@
     </div>
     {{Form::open(array('route'=>"admin.personal.store",'class'=>'form-horizontal','method'=>'POST','files' => true))}}
     <div class="row ">
-        <div class="col-md-6 col-sm-6">
+        <div class="col-md-10 col-sm-10">
             <div class="portlet box purple-wisteria">
                 <div class="portlet-title">
                     <div class="caption">
@@ -102,12 +102,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Genero</label>
-                                <div class="col-md-9">
-                                     {{ Form::select('genero', array('male' => 'Varon', 'female' => 'Mujer'), array('class'=>'form-control')) }}
-                                </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Genero</label>
+                            <div class="col-md-9">
+                                {{ Form::select('genero', array('hombre' => 'Hombre', 'mujer' => 'Mujer', 'otros' => 'Otros'), Input::old('genero'),array('class'=>'form-control')) }}
                             </div>
+                        </div>
 
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Telefono</label>
@@ -135,70 +135,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-sm-6">
-            <div class="portlet box red-sunglo">
-                <div class="portlet-title">
-                    <div class="caption">
-                        <i class="fa fa-calendar"></i> Objetivo de la Ayuda
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="portlet box red-sunglo">
-                <div class="portlet-title">
-                    <div class="caption">
-                        <i class="fa fa-calendar"></i>Zonificacion
-                    </div>
-
-                </div>
-                <div class="portlet-body">
-
-                        <div class="form-body">
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Departamento</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="accountName" placeholder="Departamento" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Provincia</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="accountNumber" placeholder="Provincia" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Localidad</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="bank" placeholder="Localidad" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Seccion</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="ifsc" placeholder="Seccion" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Zona</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="pan" placeholder="Zona" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Canton</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="branch" placeholder="Canton" value="">
-                                </div>
-                            </div>
-                        </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="clearfix">
-
     <div class="clearfix">
     </div>
     <div class="form-actions">
