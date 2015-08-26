@@ -1401,7 +1401,7 @@
 		forceParse: true,
 		format: 'mm/dd/yyyy',
 		keyboardNavigation: true,
-		language: 'en',
+		language: 'es',
 		minViewMode: 0,
 		multidate: false,
 		multidateSeparator: ',',
@@ -1420,7 +1420,7 @@
 	];
 	$.fn.datepicker.Constructor = Datepicker;
 	var dates = $.fn.datepicker.dates = {
-		en: {
+		es: {
 			days: ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"],
 			daysShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"],
 			daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa", "Do"],
