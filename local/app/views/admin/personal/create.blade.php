@@ -143,50 +143,6 @@
                     </div>
 
                 </div>
-                <div class="portlet-body">
-
-                        <div class="form-body">
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Caso #<span class="required">* </span></label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="employeeID" placeholder="Caso #" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Destino</label>
-                                <div class="col-md-9">
-                                      {{--{{ Form::select('department', $department,null,['class' => 'form-control select2me','id'=>'department','onchange'=>'dept();return false;']) }}--}}
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Objetivo</label>
-                                <div class="col-md-9">
-
-                                     <select  class="select2me form-control" name="designation" id="designation" >
-
-                                     </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Fecha de Solicitud</label>
-                                <div class="col-md-3">
-                                    <div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                                        <input type="text" class="form-control" name="joiningDate" readonly value="}">
-                                        <span class="input-group-btn">
-                                        <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Monto Requerido</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="currentSalary" placeholder="Monto requerido" value="">
-                                </div>
-                            </div>
-                        </div>
-
-                </div>
             </div>
 
             <div class="portlet box red-sunglo">
