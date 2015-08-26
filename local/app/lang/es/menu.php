@@ -23,7 +23,7 @@ return [
 	'expense'               =>  'Expense',
 	'expenseList'           =>  'Expense List',
 	'actividades'           =>  'Actividades',
-	'actividadList'         =>  'Lista',
+	'actividadesList'       =>  'Lista',
 	'personal'              =>  'Personal',
 	'personalAdmi'          =>  'Administrador',
 	'personalRes'           =>  'Responsable',

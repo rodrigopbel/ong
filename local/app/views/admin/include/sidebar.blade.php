@@ -68,7 +68,7 @@
                         <li class="{{ $actividadActive or ''}}">
                             <a href="{{route('admin.actividades.index')}}">
                                 <i class="fa fa-calendar"></i>
-                                {{Lang::get('menu.actividadList')}}
+                                {{Lang::get('menu.actividadesList')}}
                             </a>
                         </li>
                     </ul>
