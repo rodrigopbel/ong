@@ -134,7 +134,7 @@
                                     <label class="col-md-3 control-label">Contrasena<span class="required">* </span></label>
                                     <div class="col-md-9">
                                         <input type="hidden" name="oldpassword">
-                                        <input type="text" name="password" class="form-control" value="">
+                                        <input type="password" name="password" class="form-control" value="">
                                     </div>
                                 </div>
                         </div>
