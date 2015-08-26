@@ -611,7 +611,7 @@ var Index = function () {
                         toLabel: 'To',
                         customRangeLabel: 'Custom Range',
                         daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-                        monthNames: ['Enero', 'Febrero', 'Marzo', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
                         firstDay: 1
                     }
                 },
