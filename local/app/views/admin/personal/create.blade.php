@@ -145,7 +145,7 @@
             <div class="portlet box red-sunglo">
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-calendar"></i> Detalles Especiales
+                        <i class="fa fa-calendar"></i> Datos Especiales
                     </div>
 
                 </div>
@@ -153,32 +153,18 @@
 
                     <div class="form-body">
                         <div class="form-group">
-                            <label class="col-md-3 control-label">Tipo de Persona</label>
-                            <div class="col-md-9">
-                                <div class="col-md-9">
-                                    {{ Form::select('tipoPersonal', array('aportantes' => 'Aportantes', 'administrador' => 'Administrador', 'voluntario' => 'Voluntario'), Input::old('tipoPersonal'),array('class'=>'form-control')) }}
-                                </div>
-                            </div>
+                            <label class="col-md-3 control-label">NIT / CI</label>
+                            <input type="text" class="form-control" name="montosolicitado" placeholder="Monto Solicitado" value="{{ Input::old('nitci') }}">
                         </div>
+                    </div>
+                    <div class="form-body">
                         <div class="form-group">
-                            <label class="control-label col-md-3">Fecha de Solicitud</label>
-                            <div class="col-md-3">
-                                <div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                                    <input type="text" class="form-control" name="fechaing" readonly value="{{Input::old('fechaing')}}">
-                                                    <span class="input-group-btn">
-                                                    <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
-                                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Monto Solicitado</label>
+                            <label class="col-md-3 control-label">Ocupacion</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="montosolicitado" placeholder="Monto Solicitado" value="{{ Input::old('montosolicitado') }}">
+                                {{ Form::select('ocupacion', array('ninguno' => 'Ninguno', 'papa' => 'Papa', 'mama' => 'Mama','tio' => 'Tio/a','hermano' => 'Hermano/a','otrofamiliar' =>'Otro Familiar'), Input::old('genero'),array('class'=>'form-control')) }}
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
