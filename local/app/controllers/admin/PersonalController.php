@@ -54,7 +54,7 @@ class PersonalController extends \AdminBaseController {
 
 				$image 	    = Input::file('profileImage');
 				$extension  = $image->getClientOriginalExtension();
-				$filename	= "{$firstName}_{$input['employeeID']}.".strtolower($extension);
+//				$filename	= "{$firstName}_{$input['employeeID']}.".strtolower($extension);
 				//                Image::make($image->getRealPath())->resize('872','724')->save($path.$filename);
 				Image::make($image->getRealPath())
 				     ->fit(872, 724, function ($constraint) {
