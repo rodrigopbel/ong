@@ -21,10 +21,8 @@ class ActividadesController extends \AdminBaseController {
         $act        = array();
         $year       = date("Y");
         $dateArr    = $this->getDateForSpecificDayBetweenDates($year.'-01-01', $year.'-12-31', 0);
-        $this->data['number_of_sundays']  =   count($dateArr);
-
+        $this->data['number_of_sundays']      =   count($dateArr);
         $this->data['actividades_in_db']      =  count($this->data['actividades']);
-
         foreach($this->data['actividades'] as $actividad)
         {
             $act[date('F', strtotime($actividad->date))]['id'][] = $actividad->id;
