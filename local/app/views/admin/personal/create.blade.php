@@ -238,7 +238,7 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-offset-3 col-md-9">
-                      <button type="submit" data-loading-text="Submitting..." class="demo-loading-btn btn green">
+                      <button type="submit" data-loading-text="Guardando..." class="demo-loading-btn btn green">
                             <i class="fa fa-plus"></i>	Guardar
                       </button>
                     </div>
