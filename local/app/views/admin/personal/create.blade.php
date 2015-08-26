@@ -108,21 +108,21 @@
                                 {{ Form::select('genero', array('hombre' => 'Hombre', 'mujer' => 'Mujer', 'otros' => 'Otros'), Input::old('genero'),array('class'=>'form-control')) }}
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Tipo de Persona</label>
+                            <div class="col-md-9">
 
+                                    {{ Form::select('tipoPersonal', array('aportantes' => 'Aportantes', 'administrador' => 'Administrador', 'voluntario' => 'Voluntario'), Input::old('tipoPersonal'),array('class'=>'form-control')) }}
+
+                            </div>
+                        </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Telefono</label>
                                 <div class="col-md-9">
                                      <input type="text" class="form-control" name="mobileNumber" placeholder="Telefono" value="">
                                 </div>
                             </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Tipo de Persona</label>
-                            <div class="col-md-9">
-                                <div class="col-md-9">
-                                    {{ Form::select('tipoPersonal', array('aportantes' => 'Aportantes', 'administrador' => 'Administrador', 'voluntario' => 'Voluntario'), Input::old('tipoPersonal'),array('class'=>'form-control')) }}
-                                </div>
-                            </div>
-                        </div>
+
                         <h4><strong>Cuenta de Beneficiario</strong></h4>
                             <div class="form-group">
                                     <label class="col-md-3 control-label">Email<span class="required">* </span></label>
@@ -137,102 +137,101 @@
                                         <input type="text" name="password" class="form-control" value="">
                                     </div>
                                 </div>
-
                         </div>
-                    <div class="col-md-6 col-sm-6">
-                        <div class="portlet box red-sunglo">
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    <i class="fa fa-calendar"></i> Detalles Especiales
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="portlet box red-sunglo">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-calendar"></i> Detalles Especiales
+                    </div>
+
+                </div>
+                <div class="portlet-body">
+
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Tipo de Persona</label>
+                            <div class="col-md-9">
+                                <div class="col-md-9">
+                                    {{ Form::select('tipoPersonal', array('aportantes' => 'Aportantes', 'administrador' => 'Administrador', 'voluntario' => 'Voluntario'), Input::old('tipoPersonal'),array('class'=>'form-control')) }}
                                 </div>
-
                             </div>
-                            <div class="portlet-body">
-
-                                <div class="form-body">
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Tipo de Persona</label>
-                                        <div class="col-md-9">
-                                            <div class="col-md-9">
-                                                {{ Form::select('tipoPersonal', array('aportantes' => 'Aportantes', 'administrador' => 'Administrador', 'voluntario' => 'Voluntario'), Input::old('tipoPersonal'),array('class'=>'form-control')) }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3">Fecha de Solicitud</label>
-                                        <div class="col-md-3">
-                                            <div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                                                <input type="text" class="form-control" name="fechaing" readonly value="{{Input::old('fechaing')}}">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Fecha de Solicitud</label>
+                            <div class="col-md-3">
+                                <div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
+                                    <input type="text" class="form-control" name="fechaing" readonly value="{{Input::old('fechaing')}}">
                                                     <span class="input-group-btn">
                                                     <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
                                                     </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Monto Solicitado</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="montosolicitado" placeholder="Monto Solicitado" value="{{ Input::old('montosolicitado') }}">
-                                        </div>
-                                    </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Monto Solicitado</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="montosolicitado" placeholder="Monto Solicitado" value="{{ Input::old('montosolicitado') }}">
+                            </div>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+
+            <div class="portlet box red-sunglo">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-calendar"></i>Zonificacion
+                    </div>
+
+                </div>
+                <div class="portlet-body">
+
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Departamento</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="departamento" placeholder="Departamento" value="{{Input::old('departamento')}}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Provincia</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="provincia" placeholder="Provincia" value="{{Input::old('provincia')}}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Localidad</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="localidad" placeholder="Localidad" value="{{Input::old('localidad')}}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Canton</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="canton" placeholder="Canton" value="{{Input::old('canton')}}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Zona</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="zona" placeholder="Zona" value="{{Input::old('zona')}}">
                             </div>
                         </div>
 
-                        <div class="portlet box red-sunglo">
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    <i class="fa fa-calendar"></i>Zonificacion
-                                </div>
-
-                            </div>
-                            <div class="portlet-body">
-
-                                <div class="form-body">
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Departamento</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="departamento" placeholder="Departamento" value="{{Input::old('departamento')}}">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Provincia</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="provincia" placeholder="Provincia" value="{{Input::old('provincia')}}">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Localidad</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="localidad" placeholder="Localidad" value="{{Input::old('localidad')}}">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Canton</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="canton" placeholder="Canton" value="{{Input::old('canton')}}">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Zona</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="zona" placeholder="Zona" value="{{Input::old('zona')}}">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Nota</label>
-                                        <div class="col-md-9">
-                                            <textarea class="form-control" name="otros" rows="3">{{Input::old('otros')}}</textarea>
-
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nota</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" name="otros" rows="3">{{Input::old('otros')}}</textarea>
 
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
