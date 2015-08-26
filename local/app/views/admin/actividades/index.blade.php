@@ -7,7 +7,7 @@
 @section('mainarea')
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
-        {{$pageTitle}} <small>Listas</small>
+        {{$pageTitle}}
     </h3>
     <div class="page-bar">
         <ul class="page-breadcrumb">
