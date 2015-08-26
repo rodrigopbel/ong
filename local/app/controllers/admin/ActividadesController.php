@@ -16,7 +16,7 @@ class ActividadesController extends \AdminBaseController {
 
     public function index()
     {
-        dd( "hola mndo");
+
         $this->data['actividades']         =   Actividad::orderBy('date', 'ASC')->get();;
         $this->data['actividadActive']    =   'active';
         $act        = array();
@@ -33,8 +33,8 @@ class ActividadesController extends \AdminBaseController {
             $act[date('F', strtotime($actividad->date))]['day'][] = date('D', strtotime($actividad->date));
         }
         $this->data['actividadesArray'] = $act;
-        dd( $this->data['actividades']);
-        //        return View::make('admin.actividades.index', $this->data);
+//        dd( $this->data['actividades']);
+                return View::make('admin.actividades.index', $this->data);
     }
 
     /**
