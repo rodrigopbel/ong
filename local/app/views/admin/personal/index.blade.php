@@ -9,7 +9,7 @@
 @section('mainarea')
 	<!-- BEGIN PAGE HEADER-->
 		<h3 class="page-title">
-			<small>Lista de Beneficiarios</small>
+			<small>Lista de Personal</small>
 		</h3>
 		<div class="page-bar">
 			<ul class="page-breadcrumb">
@@ -19,7 +19,7 @@
 					<i class="fa fa-angle-right"></i>
 				</li>
 				<li>
-					<a href="{{route('admin.personal.index')}}">Beneficiarios</a>
+					<a href="{{route('admin.personal.index')}}">Personal</a>
 					<i class="fa fa-angle-right"></i>
 				</li>
 				<li>
