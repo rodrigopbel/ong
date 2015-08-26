@@ -7,8 +7,6 @@
 @stop
 @section('mainarea')
 <!-- BEGIN PAGE HEADER-->
-
-{{dd("maldita sea")}}
     <h3 class="page-title">
     <span class="fa fa-plus"></span>Nuevo Personal
     </h3>

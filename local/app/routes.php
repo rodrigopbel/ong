@@ -56,7 +56,7 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
 
     //    Actividades Routing
     Route::get('actividades/mark_sunday', 'ActividadesController@Sunday');
-    Route::resource('actividades', 'ActividadesController',['as' => 'admin']);
+    Route::resource('actividades', 'ActividadesController',['except' => ['show'],'as' => 'admin']);
 
 
 

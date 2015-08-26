@@ -28,7 +28,7 @@ class PersonalController extends \AdminBaseController {
 	{
 
 		$this->data['personalActive']  =   'active';
-        return View::make('admin.personal.create');
+        return View::make('admin.personal.create',$this->data);
 //        dd("hola a todos");
 	}
 	/**
