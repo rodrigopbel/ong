@@ -1,9 +1,9 @@
 @extends('admin.adminlayouts.adminlayout')
 @section('head')
-	<!-- BEGIN PAGE LEVEL STYLES -->
-	{{HTML::style('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css')}}
-	{{HTML::style('assets/global/plugins/bootstrap-datepicker/css/datepicker3.css')}}
-	<!-- END PAGE LEVEL STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    {{HTML::style('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css')}}
+    {{HTML::style('assets/global/plugins/bootstrap-datepicker/css/datepicker3.css')}}
+    <!-- END PAGE LEVEL STYLES -->
 @stop
 @section('mainarea')
 <!-- BEGIN PAGE HEADER-->
@@ -41,7 +41,7 @@
     <hr>
     <div class="clearfix">
     </div>
-    {{Form::open(array('route'=>"admin.personal.store",'class'=>'form-horizontal','method'=>'POST','files' => true))}}
+{{Form::open(array('route'=>"admin.personal.store",'class'=>'form-horizontal','method'=>'POST','files' => true))}}
     <div class="row ">
         <div class="col-md-6 col-sm-6">
             <div class="portlet box purple-wisteria">
