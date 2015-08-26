@@ -1,19 +1,10 @@
 @extends('admin.adminlayouts.adminlayout')
-
 @section('head')
-
-
     <!-- BEGIN PAGE LEVEL STYLES -->
-
     {{HTML::style("assets/global/plugins/bootstrap-datepicker/css/datepicker3.css")}}
-
     <!-- END PAGE LEVEL STYLES -->
-
 @stop
-
-
 @section('mainarea')
-
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
         {{$pageTitle}} <small>Listas</small>
@@ -37,29 +28,23 @@
     </div>
     <!-- END PAGE HEADER-->
     <!-- BEGIN PAGE CONTENT-->
-
     <div id="load">
         {{--INLCUDE ERROR MESSAGE BOX--}}
         @include('admin.common.error')
         {{--END ERROR MESSAGE BOX--}}
     </div>
-
-
     <div class="row">
         <div class="col-md-3"><a class="btn green" data-toggle="modal" href="#static">
                 Nueva Actividad
                 <i class="fa fa-plus"></i> </a></div>
         <div class="col-md-offset-6 col-md-3 ">
-            @if($number_of_sundays>$actividades_in_db)
+            @if($number_of_sundays > $actividades_in_db)
                 <a class="btn green" href="{{URL::to('admin/actividades/mark_sunday ')}}">
                     Mark All Sunday Holiday
                     <i class="fa fa-check"></i> </a>
             @endif
-
         </div>
-
     </div>
-
     <hr>
     <div class="row">
         <div class="col-md-3">
@@ -67,12 +52,11 @@
                 @foreach($months as $month)
                     <li @if($month == $currentMonth) class="active" @endif >
                         <a data-toggle="tab" href="#{{ $month }}">
-                            <i class="fa fa-calendar"></i> {{ $month }} </a>
-                                    <span class="after">
-                                    </span>
+                            <i class="fa fa-calendar"></i> {{ $month }}
+                        </a>
+                        <span class="after"></span>
                     </li>
                 @endforeach
-
             </ul>
         </div>
         <div class="col-md-9">
