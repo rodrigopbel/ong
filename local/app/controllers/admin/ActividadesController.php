@@ -1,15 +1,11 @@
 <?php
 
 class ActividadesController extends \AdminBaseController {
-
-
-
     public function __construct()
     {
         parent::__construct();
         $this->data['actividadOpen'] ='active open';
         $this->data['pageTitle'] =  'Actividad';
-
         for ($m=1; $m<=12; $m++)
         {
             $month[] = date('F', mktime(0,0,0,$m, 1, date('Y')));
@@ -23,7 +19,6 @@ class ActividadesController extends \AdminBaseController {
         $this->data['actividades']         =   Actividad::orderBy('date', 'ASC')->get();;
         $this->data['actividadActive']    =   'active';
         $act        = array();
-
         $year       = date("Y");
         $dateArr    = $this->getDateForSpecificDayBetweenDates($year.'-01-01', $year.'-12-31', 0);
         $this->data['number_of_sundays']  =   count($dateArr);
