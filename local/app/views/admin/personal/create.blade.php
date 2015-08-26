@@ -155,7 +155,7 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">NIT / CI</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="NIT / CI" placeholder="Monto Solicitado" value="{{ Input::old('nitci') }}">
+                                <input type="text" class="form-control" name="nitci" placeholder="NIT / CI" value="{{ Input::old('nitci') }}">
                             </div>
                         </div>
                     </div>
