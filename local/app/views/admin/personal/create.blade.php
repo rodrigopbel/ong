@@ -82,20 +82,20 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Nombres <span class="required">* </span></label>
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" name="fullName" placeholder="Nombres del Beneficiario" value="">
+                                    <input type="text" class="form-control" name="nombres" placeholder="Nombres de la Persona" value="{{ Input::old('nombres') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Apellidos</label>
                                 <div class="col-md-9">
-                                     <input type="text" class="form-control" name="fatherName" placeholder="Apellidos del Beneficiario">
+                                     <input type="text" class="form-control" name="apellidos" placeholder="Apellidos de la Persona"value="{{ Input::old('apellidos') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3">Fecha de Nacimiento</label>
                                 <div class="col-md-3">
                                     <div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                                        <input type="text" class="form-control" name="date_of_birth" readonly value="">
+                                        <input type="text" class="form-control" name="fechanac" readonly value="">
                                         <span class="input-group-btn">
                                         <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
                                         </span>
