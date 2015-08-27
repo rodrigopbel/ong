@@ -119,7 +119,7 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Telefono</label>
                                 <div class="col-md-9">
-                                     <input type="text" class="form-control" name="mobileNumber" placeholder="Telefono" value="">
+                                     <input type="text" class="form-control" name="mobileNumber" placeholder="Telefono" value="{{Inpur::old('telefono')}}">
                                 </div>
                             </div>
 
