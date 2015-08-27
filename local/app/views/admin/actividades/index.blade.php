@@ -134,6 +134,9 @@
                                 <div class="col-md-6">
                                     <input class="form-control form-control-inline"  type="text" name="descripcion[0]" placeholder="Actividad"/>
                                 </div>
+                                <div class="col-md-6">
+                                    <input class="form-control form-control-inline"  type="text" name="lugar[0]" placeholder="Lugar"/>
+                                </div>
                             </div>
                             <div id="insertBefore"></div>
                             <button type="button" id="plusButton" class="btn btn-sm green form-control-inline">
