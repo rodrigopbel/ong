@@ -42,6 +42,7 @@ class PersonalController extends \AdminBaseController {
         }
         DB::beginTransaction();
         try {
+            dd("hola a todos");
             $nombres   = $input['nombres'];
             $apellidos = $input['apellidos'];
             $filename   =   null;
@@ -49,7 +50,6 @@ class PersonalController extends \AdminBaseController {
             if (Input::hasFile('fotoPersonal')) {
                 $path       = public_path()."/fotoPersonal/";
                 File::makeDirectory($path, $mode = 0777, true, true);
-
                 $image 	    = Input::file('fotoPersonal');
                 $extension  = $image->getClientOriginalExtension();
                 $filename	= "{$nombres}_{$input['nitci']}.".strtolower($extension);
