@@ -129,7 +129,6 @@
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <input class="form-control form-control-inline input-medium date-picker" data-date-format="dd-mm-yyyy" name="date[0]" type="text" value="" placeholder="Fecha"/>
-
                                 </div>
                                 <div class="col-md-6">
                                     <input class="form-control form-control-inline"  type="text" name="descripcion[0]" placeholder="Actividad"/>
