@@ -89,8 +89,7 @@ class PersonalController extends \AdminBaseController {
                         ->subject('Cuenta Creada - ' . $this->data['setting']->website);
                 });
             }
-            //  ********** END UPLOAD THE DOCUMENTS**********
-
+        //  ********** END UPLOAD THE DOCUMENTS**********
         }catch(\Exception $e)
         {
             DB::rollback();
