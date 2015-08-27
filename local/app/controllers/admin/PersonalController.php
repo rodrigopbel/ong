@@ -34,64 +34,72 @@ class PersonalController extends \AdminBaseController {
 	 * Store a newly created employee in storage
 	 */
 	public function store()
-	{
-//        dd(Input::all());
-		$validator = Validator::make($input = Input::all(), Personal::rules('create'));
-		if ($validator->fails())
-		{
-            dd($validator);
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-        dd(Input::all());
-		DB::beginTransaction();
-//        dd("db");
-		try {
-			$nombres = explode(' ', $input['nombres']);
-			$apellidos = explode(' ', $input['apellidos']);
-			$filename   =   null;
-			// Profile Image Upload
-			if (Input::hasFile('fotoPersonal')) {
-				$path = public_path()."/profileImages/";
-				File::makeDirectory($path, $mode = 0777, true, true);
-				$image 	    = Input::file('fotoPersonal');
-				$extension  = $image->getClientOriginalExtension();
-				$filename	= "{$nombres}_{$input['nitci']}.".strtolower($extension);
-                Image::make($image->getRealPath())->resize('872','724')->save($path.$filename);
-				Image::make($image->getRealPath())
-				     ->fit(872, 724, function ($constraint) {
-					     $constraint->upsize();
-				     })->save($path.$filename); } Persona::create([
-				'personalID'    => $input['nitci'],
-				'nombres'       => $input['nombres'],
-				'apellidos'     => $input['apellidos'],
+    {
+        $validator = Validator::make($input = Input::all(), Beneficiario::rules('create'));
+
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
+
+        DB::beginTransaction();
+        try {
+            $nombres   = $input['nombres'];
+            $apellidos = $input['apellidos'];
+            $filename   =   null;
+            // Profile Image Upload
+            if (Input::hasFile('fotoPersonal')) {
+                $path       = public_path()."/fotoPersonal/";
+                File::makeDirectory($path, $mode = 0777, true, true);
+
+                $image 	    = Input::file('fotoPersonal');
+                $extension  = $image->getClientOriginalExtension();
+                $filename	= "{$nombres}_{$input['nitci']}.".strtolower($extension);
+
+                //                Image::make($image->getRealPath())->resize('872','724')->save($path.$filename);
+                Image::make($image->getRealPath())
+                    ->fit(872, 724, function ($constraint) {
+                        $constraint->upsize();
+                    })->save($path.$filename);
+            }
+
+            Personal::create([
+                'personalID'    => $input['nitci'],
+//                'objetivo'   => $input['objetivo'],
+                'nombres'      => ucwords(strtolower($input['nombres'])),
+                'apellidos'    => ucwords(strtolower($input['apellidos'])),
+                'genero'        => $input['genero'],
                 'email'         => $input['email'],
                 'password'      => Hash::make($input['password']),
-				'genero'        => $input['genero'],
-				'fechanac'      => date('Y-m-d',strtotime($input['fechanac'])),
-				'telefono'      => $input['telefono'],
-                'fotoPersonal'  =>  isset($filename)?$filename:'default.jpg'
-			]);
-//            if($this->data['setting']->employee_add==1)
-//			{
-//				$this->data['employee_name'] = $input['fullName'];
-//				$this->data['employee_email'] = $input['email'];
-//				$this->data['employee_password'] = $input['password'];
-//				//        Send Employee Add Mail
-//				Mail::send('emails.admin.employee_add', $this->data, function ($message) use ($input) {
-//					$message->from($this->data['setting']->email, $this->data['setting']->name);
-//					$message->to($input['email'], $input['fullName'])
-//					        ->subject('Account Created - ' . $this->data['setting']->website);
-//				});
-//			}
-			//  ********** END UPLOAD THE DOCUMENTS**********
-		}catch(\Exception $e)
-		{
-			DB::rollback();
-			throw $e;
-		}
-		DB::commit();
-		return Redirect::route('admin.personal.index')->with('success',"<strong>{$input['nombres']} {$input['apellidos']}</strong> Persona guardado en la Base de Datos");
-	}
+                'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
+                'telefono'  => $input['telefono'],
+                'foto'  =>  isset($filename)?$filename:'default.jpg',
+
+            ]);
+            // Insert Into Bank Details
+            if($this->data['setting']->personal_add==1)
+            {
+                $this->data['ben_name'] = $nombres;
+                $this->data['ben_email'] = $input['email'];
+                $this->data['ben_password'] = $input['password'];
+                //        Send Employee Add Mail
+                Mail::send('emails.admin.personales_add', $this->data, function ($message) use ($input) {
+                    $message->from($this->data['setting']->email, $this->data['setting']->name);
+                    $message->to($input['email'], $input['nombres']." ".$input['apellidos'])
+                        ->subject('Cuenta Creada - ' . $this->data['setting']->website);
+                });
+            }
+            //  ********** END UPLOAD THE DOCUMENTS**********
+
+        }catch(\Exception $e)
+        {
+            DB::rollback();
+            throw $e;
+        }
+
+        DB::commit();
+        return Redirect::route('admin.personal.index')->with('success',"<strong>{$nombres}</strong> exitosamente adicionado en le base de datos");
+    }
     /**
 	 * Show the form for editing the specified employee
 	 */
