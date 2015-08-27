@@ -42,6 +42,7 @@ class PersonalController extends \AdminBaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 		DB::beginTransaction();
+        dd("db");
 		try {
 			$nombres = explode(' ', $input['nombres']);
 			$apellidos = explode(' ', $input['apellidos']);
@@ -57,9 +58,7 @@ class PersonalController extends \AdminBaseController {
 				Image::make($image->getRealPath())
 				     ->fit(872, 724, function ($constraint) {
 					     $constraint->upsize();
-				     })->save($path.$filename);
-            }
-			Persona::create([
+				     })->save($path.$filename); } Persona::create([
 				'personalID'    => $input['nitci'],
 				'nombres'       => $input['nombres'],
 				'apellidos'     => $input['apellidos'],
