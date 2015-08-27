@@ -6,9 +6,9 @@
     <!-- END PAGE LEVEL STYLES -->
 @stop
 @section('mainarea')
-<!-- BEGIN PAGE HEADER-->
+<!-- BEGIN PAGE HEADER -->
     <h3 class="page-title">
-    <span class="fa fa-plus"></span>Nuevo Personal
+    <span class="fa fa-plus"></span>Nuevo Personal del tipo ?
     </h3>
     <div class="page-bar">
         <ul class="page-breadcrumb">
@@ -35,9 +35,9 @@
             <input  type="checkbox"  onchange="ToggleEmailNotification('ben_add');return false;" class="make-switch" name="ben_add" @if($setting->ben_add==1)checked	@endif data-on-color="success" data-on-text="Si"data-off-text="No" data-off-color="danger">
         </div>
      </div>
-    {{--INLCUDE ERROR MESSAGE BOX--}}
+
      @include('admin.common.error')
-     {{--END ERROR MESSAGE BOX--}}
+
     <hr>
     <div class="clearfix">
     </div>
