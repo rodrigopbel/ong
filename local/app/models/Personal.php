@@ -21,7 +21,6 @@ class Personal extends Eloquent {
 		],
 		'password' =>  [
 			'password'              =>  'required|confirmed',
-			'password_confirmation' =>  'required|min:5'
 		],
 		'personalInfo'=>[
 			'nombres'       =>   $nombresValidation,

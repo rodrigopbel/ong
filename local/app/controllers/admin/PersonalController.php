@@ -35,10 +35,11 @@ class PersonalController extends \AdminBaseController {
 	 */
 	public function store()
 	{
-        dd(Input::all());
+//        dd(Input::all());
 		$validator = Validator::make($input = Input::all(), Personal::rules('create'));
 		if ($validator->fails())
 		{
+            dd($validator);
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
