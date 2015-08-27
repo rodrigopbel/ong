@@ -34,7 +34,7 @@ class PersonalController extends \AdminBaseController {
 	 * Store a newly created employee in storage
 	 */
 	public function store()
-    {
+    {        dd(Input::all());
         $validator = Validator::make($input = Input::all(), Personal::rules('create'));
 
         if ($validator->fails())
@@ -65,15 +65,15 @@ class PersonalController extends \AdminBaseController {
 
             Personal::create([
                 'personalID'    => $input['nitci'],
-//                'objetivo'   => $input['objetivo'],
-                'nombres'      => ucwords(strtolower($input['nombres'])),
-                'apellidos'    => ucwords(strtolower($input['apellidos'])),
+//                'objetivo'    => $input['objetivo'],
+                'nombres'       => ucwords(strtolower($input['nombres'])),
+                'apellidos'     => ucwords(strtolower($input['apellidos'])),
                 'genero'        => $input['genero'],
                 'email'         => $input['email'],
                 'password'      => Hash::make($input['password']),
-                'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
-                'telefono'  => $input['telefono'],
-                'foto'  =>  isset($filename)?$filename:'default.jpg',
+                'fechanac'      => date('Y-m-d',strtotime($input['fechanac'])),
+                'telefono'      => $input['telefono'],
+                'foto'          =>  isset($filename)?$filename:'default.jpg',
 
             ]);
             // Insert Into Bank Details
