@@ -61,7 +61,7 @@ class ActividadesController extends \AdminBaseController {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        $actividad = array_combine($input['date'], $input['descripcion']);
+        $actividad = array_combine($input['date'], $input['descripcion'],$input['lugar']);
 
         foreach ($actividad as $index => $value){
             if($index =='')continue;
@@ -72,6 +72,7 @@ class ActividadesController extends \AdminBaseController {
 
             $holi = Actividad::find($add->id);
             $holi->descripcion = $value;
+            $holi->lugar = $value;
             $holi->save();
         }
         return Redirect::route('admin.actividades.index')->with('success',"<strong>Nueva Actividad</strong> Adicionada Exitosamente!");
