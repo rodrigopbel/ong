@@ -71,6 +71,7 @@
                                             <th> # </th>
                                             <th> Fecha </th>
                                             <th> Actividad</th>
+                                            <th> Lugar</th>
                                             <th> Dia </th>
                                             <th> Accion </th>
                                         </tr>
@@ -84,6 +85,7 @@
                                                     <td> {{($i+1)}} </td>
                                                     <td> {{ $actividadesArray[$month]['date'][$i] }} </td>
                                                     <td> {{ $actividadesArray[$month]['descripcion'][$i] }} </td>
+                                                    <td> {{ $actividadesArray[$month]['lugar'][$i] }} </td>
                                                     <td> {{ $actividadesArray[$month]['day'][$i] }} </td>
                                                     <td>
                                                         <button type="button" onclick="del('{{ $actividadesArray[$month]['id'][$i] }}',' {{ $actividadesArray[$month]['date'][$i] }}')" href="#" class="btn btn-xs red">
