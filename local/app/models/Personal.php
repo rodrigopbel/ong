@@ -1,5 +1,6 @@
 <?php
-class Personal extends Eloquent {
+class Personal extends Eloquent implements UserInterface, RemindableInterface{
+    use UserTrait, RemindableTrait;
     protected $fillable = [];
     protected $table="personal";
     protected $guarded = ['id'];
@@ -12,7 +13,7 @@ class Personal extends Eloquent {
 		$fotoPersonalValidation  = 'image|mimes:jpeg,jpg,png,bmp,gif,svg|max:4000';
 		$rules = [
 		'create' => [
-			'nitci'         =>  'required|unique:personal,nitic|alpha_dash',
+			'nitci'         =>  'required|unique:personal,nitic|numeric',
 			'nombres'       =>  $nombresValidation,
 			'apellidos'     =>  $apellidosValidation,
 			'email'         =>  'required|email|unique:personal',
@@ -26,7 +27,7 @@ class Personal extends Eloquent {
 			'nombres'       =>   $nombresValidation,
 			'apellidos'     =>   $apellidosValidation,
 			'email'         =>   "required|email|unique:personale,email,:id",
-			'profileImage'  =>   $fotoPersonalValidation,
+			'fotoPersonal'  =>   $fotoPersonalValidation,
 		],
 	];
 		$rules = $rules[$action];
