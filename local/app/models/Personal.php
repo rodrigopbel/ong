@@ -1,6 +1,6 @@
 <?php
-class Personal extends Eloquent implements UserInterface, RemindableInterface{
-    use UserTrait, RemindableTrait;
+class Personal extends Eloquent {
+
     protected $fillable = [];
     protected $table="personal";
     protected $guarded = ['id'];

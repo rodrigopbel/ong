@@ -34,14 +34,12 @@ class PersonalController extends \AdminBaseController {
 	 * Store a newly created employee in storage
 	 */
 	public function store()
-    {        dd(Input::all());
+    {
         $validator = Validator::make($input = Input::all(), Personal::rules('create'));
-
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-
         DB::beginTransaction();
         try {
             $nombres   = $input['nombres'];
