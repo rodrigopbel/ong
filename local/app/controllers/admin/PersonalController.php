@@ -35,13 +35,12 @@ class PersonalController extends \AdminBaseController {
      */
     public function store()
     {
-        dd(Input::all());
+//        dd(Input::all());
         $validator = Validator::make($input = Input::all(), Personal::rules('create'));
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-
         DB::beginTransaction();
         try {
             $nombres   = $input['nombres'];
@@ -55,7 +54,6 @@ class PersonalController extends \AdminBaseController {
                 $image 	    = Input::file('fotoPersonal');
                 $extension  = $image->getClientOriginalExtension();
                 $filename	= "{$nombres}_{$input['nitci']}.".strtolower($extension);
-
                 //                Image::make($image->getRealPath())->resize('872','724')->save($path.$filename);
                 Image::make($image->getRealPath())
                     ->fit(872, 724, function ($constraint) {
@@ -115,15 +113,9 @@ class PersonalController extends \AdminBaseController {
             $doc[$documents->type] =  $documents->fileName ;
         }
         $this->data['documents']  =   $doc;
-
         $this->data['bank_details']     =   Bank_detail::where('employeeID', '=' ,$id)->get()->first();
-
-
         return View::make('admin.employees.edit', $this->data);
     }
-
-
-
     /**
      * Update the specified employee in storage.
      */
@@ -132,18 +124,13 @@ class PersonalController extends \AdminBaseController {
         //----Bank Details Update-------
         if(Input::get('updateType')=='bank')
         {
-
             $validator = Validator::make($input = Input::all(), Employee::rules('bank'));
-
             if ($validator->fails())
             {
                 $output['status']   =   'error';
                 $output['msg']      =   $validator->getMessageBag()->toArray();
-
             }else{
-
                 $bank_details = Bank_detail::firstOrNew(['employeeID' => $id]);
-
                 $bank_details->accountName   = Input::get('accountName');
                 $bank_details->accountNumber = Input::get('accountNumber');
                 $bank_details->bank          = Input::get('bank');
@@ -151,29 +138,21 @@ class PersonalController extends \AdminBaseController {
                 $bank_details->ifsc          = Input::get('ifsc');
                 $bank_details->branch        = Input::get('branch');
                 $bank_details->save();
-
                 $output['status'] = 'success';
                 $output['msg'] = 'Bank details updated successfully';
             }
         }
-
         //-------Bank Details Update End--------
         //-------Company Details Update Start--------
-
         else if(Input::get('updateType')=='company')
         {
             $company_details = Employee::where('employeeID','=', $id)->first();
-
-
             $validator = Validator::make($input = Input::all(), Employee::rules('update',$company_details->id));
-
             if ($validator->fails())
             {
                 $output['status']   =   'error';
                 $output['msg']      =   $validator->getMessageBag()->toArray();
-
             }else{
-
                 $company_details->employeeID  = $id;
                 $company_details->designation = Input::get('designation');
                 $company_details->joiningDate = date('Y-m-d',strtotime(Input::get('joiningDate')));
@@ -195,62 +174,38 @@ class PersonalController extends \AdminBaseController {
                 $output['msg']    = 'Company Details updated successfully';
             }
         }
-
         //-------Company Details Update End--------------
-
-
         //-------Personal info Details Update Start----------
-
         else if(Input::get('updateType')=='personalInfo')
         {
-
             $employee   =   Employee::where('employeeID','=',$id)->get()->first();
-
-
             $validator = Validator::make($data = Input::all(),Employee::rules('personalInfo',$employee->id));
-
             if ($validator->fails())
             {
                 return Redirect::back()->with(['errorPersonal' => $validator->messages()->all()])->withInput();
             }
-
-
             $input  =   Input::all();
-
             $name   = explode(' ', $input['fullName']);
             $firstName = ucfirst($name[0]);
-
-
             $password = ($data['password']!='')?Hash::make(Input::get('password')):$data['oldpassword'];
-
             // Profile Image Upload
             if (Input::hasFile('profileImage'))
             {
                 $path       = public_path()."/profileImages/";
                 File::makeDirectory($path, $mode = 0777, true, true);
-
                 $image 	    = Input::file('profileImage');
-
-
                 $extension  = $image->getClientOriginalExtension();
                 $filename	= "{$firstName}_{$id}.".strtolower($extension);
-
                 //Image::make($image->getRealPath())->resize(872,724)->save("$path$filename");
-
                 Image::make($image->getRealPath())
                     ->fit(872, 724, function ($constraint) {
                         $constraint->upsize();
                     })->save($path . $filename);
-
-
             }else
             {
                 $filename   =   Input::get('hiddenImage');
             }
-
-
-
-            $employee->update(
+                $employee->update(
                 [
                     'fullName'      => ucwords(strtolower($input['fullName'])),
                     'fatherName'    => ucwords(strtolower($input['fatherName'])),
@@ -263,16 +218,12 @@ class PersonalController extends \AdminBaseController {
                     'permanentAddress' => $input['permanentAddress'],
                     'profileImage'     => $filename,
                 ]);
-
             return Redirect::route('admin.employees.edit',$id)->with('successPersonal',"<strong>Success</strong> Updated Successfully");
-
         }
         //-------Personal Details Update End-------------
-
         //-------Documents info Details Update Start--------
         else if(Input::get('updateType')=='documents')
         {
-
             // -------------- UPLOAD THE DOCUMENTS  -----------------
             $documents  =   ['resume','offerLetter','joiningLetter','contract','IDProof'];
 
@@ -295,49 +246,13 @@ class PersonalController extends \AdminBaseController {
                     $employee_document->fileName  =   $filename;
                     $employee_document->type      =   $document;
                     $employee_document->save();
-
                 }
             }
-
             return Redirect::route('admin.employees.edit',$id)->with('successDocuments',"<strong>Success</strong> Updated Successfully");
             //  ********** END UPLOAD THE DOCUMENTS**********
-
         }
         //-------Documents info Details Update END--------
-
-
         return Response::json($output, 200);
-    }
-
-
-
-    public function export(){
-        $employee   =   Employee::join('designation', 'employees.designation', '=', 'designation.id')
-            ->join('department', 'department.id', '=', 'designation.deptID')
-            ->leftJoin('bank_details', 'bank_details.employeeID', '=', 'employees.employeeID')
-            ->select('employees.id','employees.employeeID',
-                'employees.fullName','department.deptName as Department',
-                'designation.designation as Designation','employees.fatherName','employees.mobileNumber','employees.date_of_birth',
-                'employees.joiningDate','employees.localAddress','employees.permanentAddress','employees.status',
-                'employees.exit_date','employees.permanentAddress',
-                'bank_details.accountName','bank_details.accountNumber','bank_details.bank','bank_details.pan','bank_details.branch',
-                'bank_details.ifsc'
-            )->orderBy('id','asc')
-            ->get()->toArray();
-
-        $data = $employee;
-
-        Excel::create('employees'.time(), function($excel) use($data) {
-
-            $excel->sheet('Employees', function($sheet) use($data) {
-
-                $sheet->fromArray($data);
-
-            });
-
-        })->store('xls')->download('xls');
-
-
     }
     /**
      * Remove the specified employee from storage.
