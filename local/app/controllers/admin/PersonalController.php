@@ -42,7 +42,7 @@ class PersonalController extends \AdminBaseController {
             dd($validator);
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-
+        dd(Input::all());
 		DB::beginTransaction();
 //        dd("db");
 		try {
