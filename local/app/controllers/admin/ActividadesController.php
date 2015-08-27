@@ -61,7 +61,7 @@ class ActividadesController extends \AdminBaseController {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        $actividad = array_combine($input['date'], $input['descripcion'],$input['lugar']);
+        $actividad = array_combine($input['date'], $input['descripcion'], $input['lugar']);
 
         foreach ($actividad as $index => $value){
             if($index =='')continue;
