@@ -77,18 +77,18 @@ class PersonalController extends \AdminBaseController {
 
             ]);
             // Insert Into Bank Details
-            if($this->data['setting']->personal_add==1)
-            {
-                $this->data['ben_name'] = $nombres;
-                $this->data['ben_email'] = $input['email'];
-                $this->data['ben_password'] = $input['password'];
-                //        Send Employee Add Mail
-                Mail::send('emails.admin.personales_add', $this->data, function ($message) use ($input) {
-                    $message->from($this->data['setting']->email, $this->data['setting']->name);
-                    $message->to($input['email'], $input['nombres']." ".$input['apellidos'])
-                        ->subject('Cuenta Creada - ' . $this->data['setting']->website);
-                });
-            }
+//            if($this->data['setting']->personal_add==1)
+//            {
+//                $this->data['ben_name'] = $nombres;
+//                $this->data['ben_email'] = $input['email'];
+//                $this->data['ben_password'] = $input['password'];
+//                //        Send Employee Add Mail
+//                Mail::send('emails.admin.personales_add', $this->data, function ($message) use ($input) {
+//                    $message->from($this->data['setting']->email, $this->data['setting']->name);
+//                    $message->to($input['email'], $input['nombres']." ".$input['apellidos'])
+//                        ->subject('Cuenta Creada - ' . $this->data['setting']->website);
+//                });
+//            }
         //  ********** END UPLOAD THE DOCUMENTS**********
         }catch(\Exception $e)
         {
