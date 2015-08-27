@@ -41,7 +41,6 @@ class PersonalController extends \AdminBaseController {
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-
         DB::beginTransaction();
         try {
             $nombres   = $input['nombres'];
@@ -55,7 +54,6 @@ class PersonalController extends \AdminBaseController {
                 $image 	    = Input::file('fotoPersonal');
                 $extension  = $image->getClientOriginalExtension();
                 $filename	= "{$nombres}_{$input['nitci']}.".strtolower($extension);
-
                 //                Image::make($image->getRealPath())->resize('872','724')->save($path.$filename);
                 Image::make($image->getRealPath())
                     ->fit(872, 724, function ($constraint) {
