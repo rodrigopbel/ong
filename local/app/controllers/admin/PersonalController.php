@@ -36,14 +36,15 @@ class PersonalController extends \AdminBaseController {
      */
     public function store()
     {
-//        dd(Input::all());
-//        dd("cerca a la calidacion");
-        $validator = Validator::make($input = Input::all(), Personal::rules('create'));
+        $validator = Validator::make($input = Input::all(), Beneficiario::rules('create'));
+
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-        dd("la validacion paso");
+
+        DB::beginTransaction();
+        dd("paso la validacion");
     }
     /**
      * Show the form for editing the specified employee
