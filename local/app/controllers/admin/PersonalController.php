@@ -42,7 +42,7 @@ class PersonalController extends \AdminBaseController {
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-        dd("hola a todos");
+        dd("validacion pasadada");
     }
     /**
      * Show the form for editing the specified employee
