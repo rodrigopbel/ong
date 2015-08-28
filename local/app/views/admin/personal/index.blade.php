@@ -105,7 +105,7 @@
                                           {{ $personal->tipoPersonal }}
                                     </td>
                                     <td>
-                                    @if($employee->estado=='activo')
+                                    @if($personal->estado=='activo')
                                         <span class="label label-sm label-success"> Activo </span>
                                     @else
                                         <span class="label label-sm label-danger"> Inactivo </span>
