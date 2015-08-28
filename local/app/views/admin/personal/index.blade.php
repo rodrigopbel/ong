@@ -112,8 +112,8 @@
                                      @endif
                                     </td>
                                     <td class="">
-                                    <p> <a class="btn purple" href="{{ route('admin.personal.edit',$personal->personalID)  }}"><i class="fa fa-edit"></i> Editar</a></p>
-                                    <p>    <a class="btn red" style="width: 50px;" href="javascript:;" onclick="del('{{$personal->personalID}}','{{ $personal->email }}')"><i class="fa fa-trash"></i> Eliminar</a></p>
+                                    <p> <a class="btn purple" href="{{ route('admin.personal.edit',$personal->personalID)  }}"><i class="fa fa-edit"></i></a></p>
+                                    <p>    <a class="btn red" style="width: 50px;" href="javascript:;" onclick="del('{{$personal->personalID}}','{{ $personal->email }}')"><i class="fa fa-trash"></i></a></p>
                                     </td>
                                 </tr>
 							@endforeach
