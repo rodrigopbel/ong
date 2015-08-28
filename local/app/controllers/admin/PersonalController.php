@@ -76,6 +76,7 @@ class PersonalController extends \AdminBaseController {
                 'genero'        => $input['genero'],
                 'tipoPersonal'   => $input['tipoPersonal'],
                 'telefono'  => $input['telefono'],
+                'parentesco'  => $input['parentesco'],
                 'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
                 'fotoPersonal'  =>  isset($filename)?$filename:'default.jpg',
             ]);
