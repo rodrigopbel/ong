@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class PersonalController
@@ -41,47 +42,7 @@ class PersonalController extends \AdminBaseController {
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-//        DB::beginTransaction();
-        try {
-            $nombres   = $input['nombres'];
-            $apellidos = $input['apellidos'];
-            $filename   =   null;
-            // Profile Image Upload
-            if (Input::hasFile('fotoPersonal')) {
-                $path       = public_path()."/fotoPersonal/";
-                File::makeDirectory($path, $mode = 0777, true, true);
-
-                $image 	    = Input::file('fotoPersonal');
-                $extension  = $image->getClientOriginalExtension();
-                $filename	= "{$nombres}_{$input['nitci']}.".strtolower($extension);
-                //                Image::make($image->getRealPath())->resize('872','724')->save($path.$filename);
-                Image::make($image->getRealPath())
-                    ->fit(872, 724, function ($constraint) {
-                        $constraint->upsize();
-                    })->save($path.$filename);
-            }
-
-            Personal::create([
-                'personalID'    => $input['nitci'],
-//                'objetivo'    => $input['objetivo'],
-                'nombres'       => ucwords(strtolower($input['nombres'])),
-                'apellidos'     => ucwords(strtolower($input['apellidos'])),
-                'genero'        => $input['genero'],
-                'email'         => $input['email'],
-                'password'      => Hash::make($input['password']),
-                'fechanac'      => date('Y-m-d',strtotime($input['fechanac'])),
-                'telefono'      => $input['telefono'],
-                'foto'          =>  isset($filename)?$filename:'default.jpg',
-
-            ]);
-        }catch(\Exception $e)
-        {
-            DB::rollback();
-            throw $e;
-        }
-
-        DB::commit();
-        return Redirect::route('admin.personal.index')->with('success',"<strong>{$nombres}</strong> exitosamente adicionado en le base de datos");
+        dd("hola a todos");
     }
     /**
      * Show the form for editing the specified employee
