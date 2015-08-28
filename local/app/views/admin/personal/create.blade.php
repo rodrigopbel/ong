@@ -171,7 +171,7 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">Parentesco</label>
                             <div class="col-md-9">
-                                {{ Form::select('parentesco', array('ninguno' => 'Ninguno', 'papa' => 'Papa', 'mama' => 'Mama','tio' => 'Tio/a','hermano' => 'Hermano/a','otrofamiliar' =>'Otro Familiar'), Input::old('genero'),array('class'=>'form-control')) }}
+                                {{ Form::select('parentesco', array('ninguno' => 'Ninguno', 'papamama' => 'Papa/Mama', 'tiotia' => 'Tio/Tia', 'hermanohermana' => 'Hermano/Hermana','otro'=>'Otro Familiar'), Input::old('parentesco'),array('class'=>'form-control')) }}
                             </div>
                         </div>
                     </div>
