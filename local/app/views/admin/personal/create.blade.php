@@ -32,7 +32,7 @@
         <div class="col-md-6 form-group text-right">
             <span id="load_notification"></span>
             <strong>Notificaciones</strong><br>
-            <input  type="checkbox"  onchange="ToggleEmailNotification('ben_add');return false;" class="make-switch" name="ben_add" @if($setting->ben_add==1)checked	@endif data-on-color="success" data-on-text="Si"data-off-text="No" data-off-color="danger">
+            {{--<input  type="checkbox"  onchange="ToggleEmailNotification('ben_add');return false;" class="make-switch" name="ben_add" @if($setting->ben_add==1)checked	@endif data-on-color="success" data-on-text="Si"data-off-text="No" data-off-color="danger">--}}
         </div>
     </div>
     {{--INLCUDE ERROR MESSAGE BOX--}}
