@@ -38,12 +38,12 @@ class PersonalController extends \AdminBaseController {
     {
 //        dd(Input::all());
 //        dd("cerca a la calidacion");
-        $validator = Validator::make($input = Input::all(), Personal::rules('create'));
-        if ($validator->fails())
-        {
-            return Redirect::back()->withErrors($validator)->withInput();
-        }
-        dd($validator);
+//        $validator = Validator::make($input = Input::all(), Personal::rules('create'));
+//        if ($validator->fails())
+//        {
+//            return Redirect::back()->withErrors($validator)->withInput();
+//        }
+        dd("la validacion estaba mal");
     }
     /**
      * Show the form for editing the specified employee
