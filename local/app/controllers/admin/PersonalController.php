@@ -44,7 +44,64 @@ class PersonalController extends \AdminBaseController {
         }
 
         DB::beginTransaction();
-        dd("paso la validacion");
+        try {
+            $nombres = $input['nombres'];
+            $apellidos = $input['apellidos'];
+            $filename   =   null;
+            // Profile Image Upload
+            if (Input::hasFile('fotoPersonal')) {
+                $path       = public_path()."/foto/";
+                File::makeDirectory($path, $mode = 0777, true, true);
+
+                $image 	    = Input::file('fotoPersonal');
+                $extension  = $image->getClientOriginalExtension();
+                $filename	= "{$nombres}_{$input['personalID']}.".strtolower($extension);
+
+                //                Image::make($image->getRealPath())->resize('872','724')->save($path.$filename);
+                Image::make($image->getRealPath())
+                    ->fit(872, 724, function ($constraint) {
+                        $constraint->upsize();
+                    })->save($path.$filename);
+
+
+
+            }
+
+            Personal::create([
+                'personalID'    => $input['personalID'],
+                'nombres'      => ucwords(strtolower($input['nombres'])),
+                'apellidos'    => ucwords(strtolower($input['apellidos'])),
+                'email'         => $input['email'],
+                'password'      => Hash::make($input['password']),
+                'genero'        => $input['genero'],
+                'tipoPersonal'   => $input['tipoPersonal'],
+                'telefono'  => $input['telefono'],
+                'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
+                'fotoPersonal'  =>  isset($filename)?$filename:'default.jpg',
+            ]);
+
+//            if($this->data['setting']->ben_add==1)
+//            {
+//                $this->data['ben_name'] = $fullname;
+//                $this->data['ben_email'] = $input['email'];
+//                $this->data['ben_password'] = $input['password'];
+//                //        Send Employee Add Mail
+//                Mail::send('emails.admin.beneficiarios_add', $this->data, function ($message) use ($input) {
+//                    $message->from($this->data['setting']->email, $this->data['setting']->name);
+//                    $message->to($input['email'], $input['nombres']." ".$input['apellidos'])
+//                        ->subject('Cuenta Creada - ' . $this->data['setting']->website);
+//                });
+//            }
+//            //  ********** END UPLOAD THE DOCUMENTS**********
+
+        }catch(\Exception $e)
+        {
+            DB::rollback();
+            throw $e;
+        }
+
+        DB::commit();
+        return Redirect::route('admin.beneficiarios.index')->with('success',"<strong>{$fullname}</strong> exitosamente adicionado en le base de datos");
     }
     /**
      * Show the form for editing the specified employee
