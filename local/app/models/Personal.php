@@ -11,7 +11,7 @@ class Personal extends Eloquent {
         $ProfileImageValidation = 'image|mimes:jpeg,jpg,png,bmp,gif,svg|max:4000';
 		$rules = [
 		'create' => [
-			'personalID'    =>  'required|unique:personal,nitic|numeric',
+			'personalID'    =>  'required|unique:personal,personalID|numeric',
 			'nombres'       =>  $fullNameValidation,
 			'apellidos'     =>  $fullNameValidation,
 			'email'         =>  'required|email|unique:personal',
