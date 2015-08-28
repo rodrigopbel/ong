@@ -60,9 +60,9 @@ class ActividadesController extends \AdminBaseController {
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-        dd("la validacion esta mal");
         $actividad = array_combine($input['date'], $input['descripcion'], $input['lugar']);
 
+        dd("array combine");
         foreach ($actividad as $index => $value){
             if($index =='')continue;
             $add     =  Actividad::firstOrCreate([
