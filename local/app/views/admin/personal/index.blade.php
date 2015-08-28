@@ -64,10 +64,10 @@
                                      Foto
                                 </th>
 								<th style="text-align: center">
-									 Nombres
+									 Nombre Completo
 								</th>
 								<th class="text-center">
-                                	 Apellidos
+                                	 Parentesco
                                 </th>
 								<th class="text-center">
                                 	 Email
@@ -93,10 +93,10 @@
                                         {{HTML::image("/profileImages/{$personal->fotoPersonal}",'fotoPersonal',['height'=>'80px'])}}
                                     </td>
                                     <td class="text-center">
-                                          {{ $personal->nombres}}
+                                          {{ $personal->nombres}} . " " .    {{ $personal->apellidos}}
                                     </td>
                                     <td class="text-center">
-                                          {{ $personal->apellidos}}
+                                          {{ $personal->parentesco}}
                                     </td>
                                     <td class="text-center">
                                           {{ $personal->email}}
