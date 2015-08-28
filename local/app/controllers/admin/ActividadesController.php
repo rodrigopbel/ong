@@ -54,14 +54,14 @@ class ActividadesController extends \AdminBaseController {
      */
     public function store()
     {
-        dd(Input::all());
+
         Cache::forget('actividad_cache');
         $validator = Validator::make($input = Input::all(), Actividad::$rules);
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput();
         }
         $actividad = array_combine($input['date'], $input['descripcion'], $input['lugar']);
-        dd(Input::all());
+        dd("paso la validacion");
         foreach ($actividad as $index => $value){
             if($index =='')continue;
             $add     =  Actividad::firstOrCreate([
