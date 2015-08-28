@@ -119,7 +119,7 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">Telefono</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="mobileNumber" placeholder="Telefono" value="">
+                                <input type="text" class="form-control" name="telefono" placeholder="Telefono" value="{{Input::old('telefono')}}">
                             </div>
                         </div>
 
@@ -155,7 +155,7 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">NIT / CI</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="personalID" placeholder="NIT / CI" value="{{ Input::old('nitci') }}">
+                                <input type="text" class="form-control" name="personalID" placeholder="NIT / CI" value="{{ Input::old('personalID') }}">
                             </div>
                         </div>
                     </div>
