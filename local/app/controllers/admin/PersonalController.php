@@ -101,7 +101,7 @@ class PersonalController extends \AdminBaseController {
         }
 
         DB::commit();
-        return Redirect::route('admin.beneficiarios.index')->with('success',"<strong>{$fullname}</strong> exitosamente adicionado en le base de datos");
+        return Redirect::route('admin.personal.index')->with('success',"<strong>{$nombres}</strong> exitosamente adicionado en le base de datos");
     }
     /**
      * Show the form for editing the specified employee
