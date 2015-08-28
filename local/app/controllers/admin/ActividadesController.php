@@ -54,6 +54,7 @@ class ActividadesController extends \AdminBaseController {
      */
     public function store()
     {
+        dd(Input::all());
         Cache::forget('actividad_cache');
         $validator = Validator::make($input = Input::all(), Actividad::$rules);
         if ($validator->fails()) {
