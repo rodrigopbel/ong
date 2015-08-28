@@ -93,7 +93,7 @@
                                         {{HTML::image("/profileImages/{$personal->fotoPersonal}",'fotoPersonal',['height'=>'80px'])}}
                                     </td>
                                     <td class="text-center">
-                                          {{ $personal->nombres}} . " " .    {{ $personal->apellidos}}
+                                          {{ $personal->nombres}}   {{ $personal->apellidos}}
                                     </td>
                                     <td class="text-center">
                                           {{ $personal->parentesco}}
