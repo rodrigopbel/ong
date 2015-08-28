@@ -20,11 +20,11 @@
 				<ul class="page-breadcrumb">
 					<li>
 						<i class="fa fa-home"></i>
-						<a href="{{route('admin.dashboard.index')}}">Home</a>
+						<a href="{{route('admin.dashboard.index')}}">Inicio</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">awards</a>
+						<a href="#">Ayudas</a>
 						<i class="fa "></i>
 					</li>
 
@@ -38,14 +38,14 @@
                         				<div class="col-md-6">
 
 				 <a class="btn green" data-toggle="modal" href="{{URL::to('admin/awards/create')}}">
-                                        Add New Award
+                                       Nueva Ayuda
                 <i class="fa fa-plus"></i> </a>
                                         </div>
                         				<div class="col-md-6 form-group text-right">
 
                         				<span id="load_notification"></span>
                         					 <input  type="checkbox"  onchange="ToggleEmailNotification('award_notification');return false;" class="make-switch" name="award_notification" @if($setting->award_notification==1)checked	@endif data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">
-                        					<strong>Email Notification</strong><br>
+                        					<strong>Notificaciones de Email</strong><br>
 
 
                         				</div>
@@ -65,7 +65,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-trophy"></i>awards List
+								<i class="fa fa-trophy"></i>Lista de Ayudas
 							</div>
 							<div class="tools">
 							</div>
@@ -77,16 +77,16 @@
 							<table class="table table-striped table-bordered table-hover" id="awards">
 							<thead>
 							<tr>
-								<th> Hidden ID </th>
-								<th> EmployeeID </th>
-								<th> Awardee Name </th>
-								<th> Award </th>
-								<th> Gift </th>
+								<th> AyudaID </th>
+								<th> Beneficiario ID </th>
+								<th> Nombre de la Ayuda </th>
+								<th> Ayuda </th>
+								<th> Tipo de Ayuda </th>
 								<th> Hidden Month </th>
 								<th> For the Month </th>
 
 
-								<th> Action </th>
+								<th> Accion </th>
 							</tr>
 							</thead>
 							<tbody>
