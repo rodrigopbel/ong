@@ -84,39 +84,39 @@
 							</tr>
 							</thead>
 							<tbody>
-					        {{--@foreach ($personales as $personal)--}}
-                                {{--<tr id="row{{ $personal->personalID }}">--}}
-                                    {{--<td>--}}
-                                            {{--{{ $personal->personalID }}--}}
-                                    {{--</td>--}}
-                                    {{--<td class="text-center">--}}
-                                        {{--{{HTML::image("/profileImages/{$personal->foto}",'ProfileImage',['height'=>'80px'])}}--}}
-                                    {{--</td>--}}
-                                    {{--<td>--}}
-                                          {{--{{ $employee->nombres}}--}}
-                                    {{--</td>--}}
-                                    {{--<td>--}}
-                                          {{--{{ $personal->apellidos}}--}}
-                                    {{--</td>--}}
-                                    {{--<td class="text-center">--}}
-                                          {{--{{ $personal->email}}--}}
-                                    {{--</td>--}}
-                                     {{--<td>--}}
-                                          {{--{{ $personal->tipoPersonal }}--}}
-                                    {{--</td>--}}
-                                    {{--<td>--}}
-                                    {{--@if($employee->estado=='activo')--}}
-                                        {{--<span class="label label-sm label-success"> Activo </span>--}}
-                                    {{--@else--}}
-                                        {{--<span class="label label-sm label-danger"> Inactivo </span>--}}
-                                     {{--@endif--}}
-                                    {{--</td>--}}
-                                    {{--<td class="">--}}
-                                    {{--<p> <a class="btn purple" href="{{ route('admin.personal.edit',$employee->employeeID)  }}"><i class="fa fa-edit"></i> Editar</a></p>--}}
-                                    {{--<p>    <a class="btn red" style="width: 50px;" href="javascript:;" onclick="del('{{$personal->personalID}}','{{ $personal->email }}')"><i class="fa fa-trash"></i> Eliminar</a></p>--}}
-                                    {{--</td>--}}
-                                {{--</tr>--}}
-							{{--@endforeach--}}
+					        @foreach ($personales as $personal)
+                                <tr id="row{{ $personal->personalID }}">
+                                    <td>
+                                            {{ $personal->personalID }}
+                                    </td>
+                                    <td class="text-center">
+                                        {{HTML::image("/profileImages/{$personal->fotoPersonal}",'fotoPersonal',['height'=>'80px'])}}
+                                    </td>
+                                    <td>
+                                          {{ $employee->nombres}}
+                                    </td>
+                                    <td>
+                                          {{ $personal->apellidos}}
+                                    </td>
+                                    <td class="text-center">
+                                          {{ $personal->email}}
+                                    </td>
+                                     <td>
+                                          {{ $personal->tipoPersonal }}
+                                    </td>
+                                    <td>
+                                    @if($employee->estado=='activo')
+                                        <span class="label label-sm label-success"> Activo </span>
+                                    @else
+                                        <span class="label label-sm label-danger"> Inactivo </span>
+                                     @endif
+                                    </td>
+                                    <td class="">
+                                    <p> <a class="btn purple" href="{{ route('admin.personal.edit',$personal->personalID)  }}"><i class="fa fa-edit"></i> Editar</a></p>
+                                    <p>    <a class="btn red" style="width: 50px;" href="javascript:;" onclick="del('{{$personal->personalID}}','{{ $personal->email }}')"><i class="fa fa-trash"></i> Eliminar</a></p>
+                                    </td>
+                                </tr>
+							@endforeach
 							</tbody>
                         </table>
                     </div>
