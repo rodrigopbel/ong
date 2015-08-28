@@ -34,7 +34,7 @@ class ActividadesController extends \AdminBaseController {
         }
         $this->data['actividadesArray'] = $act;
 //        dd( $this->data['actividades']);
-                return View::make('admin.actividades.index', $this->data);
+        return View::make('admin.actividades.index', $this->data);
     }
 
     /**
@@ -56,13 +56,11 @@ class ActividadesController extends \AdminBaseController {
     {
         Cache::forget('actividad_cache');
         $validator = Validator::make($input = Input::all(), Actividad::$rules);
-
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-
         $actividad = array_combine($input['date'], $input['descripcion'], $input['lugar']);
-
+        dd(Input::all());
         foreach ($actividad as $index => $value){
             if($index =='')continue;
             $add     =  Actividad::firstOrCreate([
