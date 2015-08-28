@@ -24,12 +24,12 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
             'genero'                 =>  'required',
             'telefono'               =>  'required',
             'direccion'        		 =>  'required',
-			'foto'  					=>  $ProfileImageValidation,
-			'perfil'        =>  'max:1000',
-			'solicitud'   =>  'max:1000',
-			'certnac' =>  'max:1000',
-			'croquis'      =>  'max:1000',
-			'CIprueba'       =>  'max:1000',
+			'foto'  				 =>  $ProfileImageValidation,
+			'perfil'                 =>  'max:1000',
+			'solicitud'              =>  'max:1000',
+			'certnac'                =>  'max:1000',
+			'croquis'                =>  'max:1000',
+			'CIprueba'               =>  'max:1000',
 		],
 
 		'update'=>[
@@ -48,9 +48,9 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 
 		'personalInfo'=>[
 			'nombres'      =>   $fullNameValidation,
-			'apellidos'      =>   $fullNameValidation,
-			'email'         =>   "required|email|unique:beneficiarios,email,:id",
-			'foto'  =>   $ProfileImageValidation,
+			'apellidos'    =>   $fullNameValidation,
+			'email'        =>   "required|email|unique:beneficiarios,email,:id",
+			'foto'         =>   $ProfileImageValidation,
 		],
 
 	];

@@ -1,33 +1,39 @@
 <?php
 class Personal extends Eloquent {
 
-    protected $fillable = [];
+//    protected $fillable = [];
     protected $table="personal";
-    protected $guarded = ['id'];
-    protected $hidden  = ['password'];
-    // Validation Rules
+
+//    // Validation Rules
     public static function rules($action,$id=false, $merge=[])
 	{
-		$nombresValidation       = 'required';
-		$apellidosValidation     = 'required';
-		$fotoPersonalValidation  = 'image|mimes:jpeg,jpg,png,bmp,gif,svg|max:4000';
+        $fullNameValidation     = 'required';
+        $ProfileImageValidation = 'image|mimes:jpeg,jpg,png,bmp,gif,svg|max:4000';
 		$rules = [
 		'create' => [
-			'nitci'         =>  'required|unique:personal,nitic|numeric',
-			'nombres'       =>  $nombresValidation,
-			'apellidos'     =>  $apellidosValidation,
+			'personalID'    =>  'required|unique:personal,nitic|numeric',
+			'nombres'       =>  $fullNameValidation,
+			'apellidos'     =>  $fullNameValidation,
 			'email'         =>  'required|email|unique:personal',
 			'password'      =>  'required',
-			'fotoPersonal'  =>  $fotoPersonalValidation
+            'genero'        =>  'required',
+            'telefono'      =>  'required',
+			'fotoPersonal'  =>  $ProfileImageValidation
 		],
+
+        'update'=>[
+            'personalID'   =>   "required|unique:personal,personalID,:id"
+        ],
+
 		'password' =>  [
 			'password'              =>  'required|confirmed',
+            'password_confirmation' =>  'required|min:5'
 		],
 		'personalInfo'=>[
-			'nombres'       =>   $nombresValidation,
-			'apellidos'     =>   $apellidosValidation,
-			'email'         =>   "required|email|unique:personale,email,:id",
-			'fotoPersonal'  =>   $fotoPersonalValidation,
+			'nombres'       =>   $fullNameValidation,
+			'apellidos'     =>   $fullNameValidation,
+			'email'         =>   "required|email|unique:personal,email,:id",
+			'fotoPersonal'  =>   $ProfileImageValidation,
 		],
 	];
 		$rules = $rules[$action];
@@ -38,4 +44,7 @@ class Personal extends Eloquent {
 		}
 		return array_merge( $rules, $merge );
 	}
+
+        protected $guarded = ['id'];
+        protected $hidden  = ['password'];
 }
