@@ -86,7 +86,7 @@
 							<tbody>
 					        @foreach ($personales as $personal)
                                 <tr id="row{{ $personal->personalID }}">
-                                    <td>
+                                    <td class="text-center">
                                             {{ $personal->personalID }}
                                     </td>
                                     <td class="text-center">
