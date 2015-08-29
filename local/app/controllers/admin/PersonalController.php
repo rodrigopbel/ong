@@ -109,19 +109,9 @@ class PersonalController extends \AdminBaseController {
      */
     public function edit($id)
     {
-        $this->data['employeesActive']  =   'active';
-        $this->data['department']       =   Department::lists('deptName','id');
-        $this->data['employee']         =   Employee::where('employeeID', '=' ,$id)->get()->first();
-        $this->data['designation']      =   Designation::find($this->data['employee']->designation);
-
-        $doc = [];
-        foreach($this->data['employee']->getDocuments as $documents)
-        {
-            $doc[$documents->type] =  $documents->fileName ;
-        }
-        $this->data['documents']  =   $doc;
-        $this->data['bank_details']     =   Bank_detail::where('employeeID', '=' ,$id)->get()->first();
-        return View::make('admin.employees.edit', $this->data);
+        $this->data['personalActive']  =   'active';
+        $this->data['personal']         =   Personal::where('personalID', '=' ,$id)->get()->first();
+        return View::make('admin.personal.edit', $this->data);
     }
     /**
      * Update the specified employee in storage.

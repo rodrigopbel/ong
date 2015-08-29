@@ -18,7 +18,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="{{route('admin.employees.index')}}">Beneficiarios</a>
+                <a href="{{route('admin.personal.index')}}">Personas</a>
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
@@ -35,7 +35,7 @@
         					<div class="portlet box purple-wisteria">
         						<div class="portlet-title">
         							<div class="caption">
-        								<i class="fa fa-calendar"></i>Detalles de Persona
+        								<i class="fa fa-calendar"></i>Detalles de las Personas
         							</div>
         							<div class="actions">
 
@@ -50,7 +50,7 @@
 
                                 {{--------------------Personal Info Form--------------------------------------------}}
 
-        							{{Form::open(['method' => 'PATCH','route'=> ['admin.employees.update', $employee->employeeID],'class'   =>  'form-horizontal','id'  =>  'personal_details_form','files'=>true])}}
+        							{{Form::open(['method' => 'PATCH','route'=> ['admin.personal.update', $personal->personalID],'class'   =>  'form-horizontal','id'  =>  'personal_details_form','files'=>true])}}
         							<input type="hidden" name="updateType" class="form-control" value="personalInfo">
 
                                      @if(Session::get('successPersonal'))
@@ -77,8 +77,8 @@
         										<div class="col-md-9">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-        												 {{HTML::image("/profileImages/{$employee->profileImage}",'ProfileImage')}}
-                                                         <input type="hidden" name="hiddenImage" value="{{$employee->profileImage}}">
+        												 {{HTML::image("/profileImages/{$personal->fotoPersonal}",'ProfileImage')}}
+                                                         <input type="hidden" name="hiddenImage" value="{{$personal->fotoPersonal}}">
         												</div>
         												<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
         												</div>
@@ -105,20 +105,20 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Nombres<span class="required">* </span></label>
         										<div class="col-md-9">
-        											<input type="text" name="fullName" class="form-control" value="{{$employee->fullName}}">
+        											<input type="text" name="nombres" class="form-control" value="{{$personal->nombres}}">
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Apellidos</label>
         										<div class="col-md-9">
-        											<input type="text" name="fatherName" class="form-control" value="{{$employee->fatherName}}">
+        											<input type="text" name="apellidos" class="form-control" value="{{$personal->apellidos}}">
         										</div>
         									</div>
         									<div class="form-group">
         										<label class="control-label col-md-3">Fecha de Nacimiento</label>
         										<div class="col-md-3">
         											<div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-        												<input type="text" class="form-control" name="date_of_birth" readonly value="@if(empty($employee->date_of_birth))@else{{date('d-m-Y',strtotime($employee->date_of_birth))}}@endif" >
+        												<input type="text" class="form-control" name="fechanac" readonly value="@if(empty($personal->fechanac))@else{{date('d-m-Y',strtotime($personal->fechanac))}}@endif" >
         												<span class="input-group-btn">
         												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
         												</span>
@@ -128,43 +128,44 @@
         									<div class="form-group">
         										<label class="col-md-3 control-label">Genero</label>
         										<div class="col-md-9">
-        											<select class="form-control" name="gender">
+        											<select class="form-control" name="genero">
 
-        												<option value="male" @if($employee->gender=='male') selected @endif>Varon</option>
-        												<option value="female"  @if($employee->gender=='female') selected @endif>Mujer</option>
+        												<option value="hombre" @if($personal->genero=='Hombre') selected @endif>Hombre</option>
+        												<option value="mujer"  @if($personal->genero=='Mujer') selected @endif>Mujer</option>
+        												<option value="otros"  @if($personal->genero=='Otros') selected @endif>Otros</option>
         											</select>
         										</div>
         									</div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Tipo de Persona</label>
+                                                <div class="col-md-9">
+                                                    <select class="form-control" name="genero">
 
+                                                        <option value="hombre" @if($personal->tipoPersonal=='
+
+                                                        ') selected @endif>Hombre</option>
+                                                        <option value="mujer"  @if($personal->tipoPersonal=='Mujer') selected @endif>Mujer</option>
+                                                        <option value="otros"  @if($personal->tipoPersonal=='Otros') selected @endif>Otros</option>
+                                                    </select>
+                                                </div>
+                                            </div>
         									<div class="form-group">
         										<label class="col-md-3 control-label">Telefono</label>
         										<div class="col-md-9">
-        											<input type="text" name="mobileNumber" class="form-control" value="{{$employee->mobileNumber}}">
+        											<input type="text" name="telefono" class="form-control" value="{{$personal->telefono}}">
         										</div>
         									</div>
-        									<div class="form-group">
-        										<label class="col-md-3 control-label">Direccion Actual</label>
-        										<div class="col-md-9">
-        											<textarea name="localAddress" class="form-control" rows="3">{{$employee->localAddress}}</textarea>
-        										</div>
-        									</div>
-        									<div class="form-group">
-        										<label class="col-md-3 control-label">Direccion Permanente</label>
-        										<div class="col-md-9">
-        											<textarea name="permanentAddress" class="form-control" rows="3">{{$employee->permanentAddress}}</textarea>
-        										</div>
-        									</div>
-        									<h4><strong>Cuenta de Beneficiario</strong></h4>
+        									<h4><strong>Cuenta de la Persona</strong></h4>
         									<div class="form-group">
                                                     <label class="col-md-3 control-label">Email<span class="required">* </span></label>
                                                     <div class="col-md-9">
-                                                        <input type="text" name="email" class="form-control" value="{{$employee->email}}">
+                                                        <input type="text" name="email" class="form-control" value="{{$personal->email}}">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-3 control-label">Password</label>
                                                     <div class="col-md-9">
-                                                        <input type="hidden" name="oldpassword" value="{{$employee->password}}">
+                                                        <input type="hidden" name="password" value="{{$personal->password}}">
                                                         <input type="text" name="password" class="form-control">
                                                     </div>
                                                 </div>
@@ -173,353 +174,182 @@
         						</div>
         					</div>
         				</div>
-        				<div class="col-md-6 col-sm-6">
-        					<div class="portlet box red-sunglo">
-        						<div class="portlet-title">
-        							<div class="caption">
-        								<i class="fa fa-calendar"></i>Objetivo de la Ayuda
-        							</div>
-        							<div class="actions">
-        								<a href="javascript:;" onclick="UpdateDetails('{{$employee->employeeID}}','company');return false" data-loading-text="Updating..." class="demo-loading-btn-ajax btn btn-sm btn-default ">
-        								<i class="fa fa-save"></i> Guardar </a>
-        							</div>
-        						</div>
-        						<div class="portlet-body">
+        				{{--<div class="col-md-6 col-sm-6">--}}
+        					{{--<div class="portlet box red-sunglo">--}}
+        						{{--<div class="portlet-title">--}}
+        							{{--<div class="caption">--}}
+        								{{--<i class="fa fa-calendar"></i>Objetivo de la Ayuda--}}
+        							{{--</div>--}}
+        							{{--<div class="actions">--}}
+        								{{--<a href="javascript:;" onclick="UpdateDetails('{{$employee->employeeID}}','company');return false" data-loading-text="Updating..." class="demo-loading-btn-ajax btn btn-sm btn-default ">--}}
+        								{{--<i class="fa fa-save"></i> Guardar </a>--}}
+        							{{--</div>--}}
+        						{{--</div>--}}
+        						{{--<div class="portlet-body">--}}
 
         						{{--------------------Company Form--------------------------------------------}}
-        							{{Form::open(['class'   =>  'form-horizontal','id'  =>  'company_details_form'])}}
-        							<input type="hidden" name="updateType" class="form-control" value="company">
-                                    <div id="alert_company">
+        							{{--{{Form::open(['class'   =>  'form-horizontal','id'  =>  'company_details_form'])}}--}}
+        							{{--<input type="hidden" name="updateType" class="form-control" value="company">--}}
+                                    {{--<div id="alert_company">--}}
                                                 {{--INLCUDE ERROR MESSAGE BOX--}}
-                                                   @include('admin.common.error')
+                                                   {{--@include('admin.common.error')--}}
                                                    {{--END ERROR MESSAGE BOX--}}
-                                    </div>
+                                    {{--</div>--}}
 
-        								<div class="form-body">
-        									<div class="form-group">
-        										<label class="col-md-3 control-label">Caso #<span class="required">* </span></label>
-        										<div class="col-md-9">
-        											<input type="text" name="employeeID" class="form-control" readonly value="{{$employee->employeeID}}">
-        										</div>
-        									</div>
-        									<div class="form-group">
-        										<label class="col-md-3 control-label">Destino<span class="required">* </span></label>
-        										<div class="col-md-9">
-        											 {{ Form::select('department', $department,$designation->deptID,['class' => 'form-control select2me','id'=>'department','onchange'=>'dept();return false;']) }}
-        										</div>
-        									</div>
-        									<div class="form-group">
-        										<label class="col-md-3 control-label">Objetivo<span class="required">* </span></label>
-        										<div class="col-md-9">
+        								{{--<div class="form-body">--}}
+        									{{--<div class="form-group">--}}
+        										{{--<label class="col-md-3 control-label">Caso #<span class="required">* </span></label>--}}
+        										{{--<div class="col-md-9">--}}
+        											{{--<input type="text" name="employeeID" class="form-control" readonly value="{{$employee->employeeID}}">--}}
+        										{{--</div>--}}
+        									{{--</div>--}}
+        									{{--<div class="form-group">--}}
+        										{{--<label class="col-md-3 control-label">Destino<span class="required">* </span></label>--}}
+        										{{--<div class="col-md-9">--}}
+        											 {{--{{ Form::select('department', $department,$designation->deptID,['class' => 'form-control select2me','id'=>'department','onchange'=>'dept();return false;']) }}--}}
+        										{{--</div>--}}
+        									{{--</div>--}}
+        									{{--<div class="form-group">--}}
+        										{{--<label class="col-md-3 control-label">Objetivo<span class="required">* </span></label>--}}
+        										{{--<div class="col-md-9">--}}
 
-        											 <select  class="select2me form-control" name="designation" id="designation" >
+        											 {{--<select  class="select2me form-control" name="designation" id="designation" >--}}
 
-                                                     </select>
-        										</div>
-        									</div>
-        									<div class="form-group">
-        										<label class="control-label col-md-3">Fecha de Solicitud</label>
-        										<div class="col-md-3">
-        											<div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-        												<input type="text" class="form-control" name="joiningDate" readonly value="@if(empty($employee->joiningDate))00-00-0000 @else {{date('d-m-Y',strtotime($employee->joiningDate))}} @endif">
-        												<span class="input-group-btn">
-        												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
-        												</span>
-        											</div>
-        										</div>
-        									</div>
-        									<div class="form-group">
-                                                    <label class="control-label col-md-3">Fecha de Devinculacion</label>
-                                                    <div class="col-md-3">
-                                                        <div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                                                            <input type="text" class="form-control" name="exit_date" readonly value="@if(empty($employee->exit_date)) @else {{date('d-m-Y',strtotime($employee->exit_date))}} @endif">
-                                                            <span class="input-group-btn">
-                                                            <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                	<div class="form-group">
-														<label class="control-label col-md-3">Estado</label>
-														<div class="col-md-3">
-															   <input  type="checkbox" value="active" onchange="remove_exit();" class="make-switch" name="status" @if($employee->status=='active')checked	@endif data-on-color="success" data-on-text="Activado" data-off-text="Desactivado" data-off-color="danger">
-														</div>
-														<div class="col-md-6">
-														  (<strong>Nota:</strong>Estado activo cuando)
-														</div>
-													</div>
+                                                     {{--</select>--}}
+        										{{--</div>--}}
+        									{{--</div>--}}
+        									{{--<div class="form-group">--}}
+        										{{--<label class="control-label col-md-3">Fecha de Solicitud</label>--}}
+        										{{--<div class="col-md-3">--}}
+        											{{--<div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-viewmode="years">--}}
+        												{{--<input type="text" class="form-control" name="joiningDate" readonly value="@if(empty($employee->joiningDate))00-00-0000 @else {{date('d-m-Y',strtotime($employee->joiningDate))}} @endif">--}}
+        												{{--<span class="input-group-btn">--}}
+        												{{--<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>--}}
+        												{{--</span>--}}
+        											{{--</div>--}}
+        										{{--</div>--}}
+        									{{--</div>--}}
+        									{{--<div class="form-group">--}}
+                                                    {{--<label class="control-label col-md-3">Fecha de Devinculacion</label>--}}
+                                                    {{--<div class="col-md-3">--}}
+                                                        {{--<div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-viewmode="years">--}}
+                                                            {{--<input type="text" class="form-control" name="exit_date" readonly value="@if(empty($employee->exit_date)) @else {{date('d-m-Y',strtotime($employee->exit_date))}} @endif">--}}
+                                                            {{--<span class="input-group-btn">--}}
+                                                            {{--<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>--}}
+                                                            {{--</span>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                                	{{--<div class="form-group">--}}
+														{{--<label class="control-label col-md-3">Estado</label>--}}
+														{{--<div class="col-md-3">--}}
+															   {{--<input  type="checkbox" value="active" onchange="remove_exit();" class="make-switch" name="status" @if($employee->status=='active')checked	@endif data-on-color="success" data-on-text="Activado" data-off-text="Desactivado" data-off-color="danger">--}}
+														{{--</div>--}}
+														{{--<div class="col-md-6">--}}
+														  {{--(<strong>Nota:</strong>Estado activo cuando)--}}
+														{{--</div>--}}
+													{{--</div>--}}
 
-        									<hr>
-        									<h4><strong>monto Requerido  ( <i class="fa {{$setting->currency_icon}}"></i> )</strong></h4>
+        									{{--<hr>--}}
+        									{{--<h4><strong>monto Requerido  ( <i class="fa {{$setting->currency_icon}}"></i> )</strong></h4>--}}
 
-                                         @foreach($employee->getSalary as $salary)
-                                         <div id="salary{{$salary->id}}">
-                                              <div class="form-group" >
-                                                    <div class="col-md-5">
-                                                        <input type="text" class="form-control" name="type[{{$salary->id}}]" value="{{$salary->type}}">
-                                                     </div>
+                                         {{--@foreach($employee->getSalary as $salary)--}}
+                                         {{--<div id="salary{{$salary->id}}">--}}
+                                              {{--<div class="form-group" >--}}
+                                                    {{--<div class="col-md-5">--}}
+                                                        {{--<input type="text" class="form-control" name="type[{{$salary->id}}]" value="{{$salary->type}}">--}}
+                                                     {{--</div>--}}
 
-                                                    <div class="col-md-5">
-                                                        <input type="text" class="form-control" name="salary[{{$salary->id}}]" value="{{$salary->salary}}">
-                                                    </div>
+                                                    {{--<div class="col-md-5">--}}
+                                                        {{--<input type="text" class="form-control" name="salary[{{$salary->id}}]" value="{{$salary->salary}}">--}}
+                                                    {{--</div>--}}
 
-                                                    <div class="col-md-2">
-                                                        <a class="btn btn-sm red" onclick="del('{{$salary->id}}','{{$salary->type}}')"><i class="fa fa-trash"></i> </a>
+                                                    {{--<div class="col-md-2">--}}
+                                                        {{--<a class="btn btn-sm red" onclick="del('{{$salary->id}}','{{$salary->type}}')"><i class="fa fa-trash"></i> </a>--}}
 
-                                                    </div>
-                                                </div>
-                                                </div>
-                                         @endforeach
-                                 <a class="" data-toggle="modal" href="#static">
-                                         Agregar Otro Monto Requerido
-                                                <i class="fa fa-plus"></i> </a>
-        								</div>
-        							{{Form::close()}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                                {{--</div>--}}
+                                         {{--@endforeach--}}
+                                 {{--<a class="" data-toggle="modal" href="#static">--}}
+                                         {{--Agregar Otro Monto Requerido--}}
+                                                {{--<i class="fa fa-plus"></i> </a>--}}
+        								{{--</div>--}}
+        							{{--{{Form::close()}}--}}
 
 
         							{{----------------Company Form end -------------}}
 
-        						</div>
-        					</div>
+        						{{--</div>--}}
+        					{{--</div>--}}
 
-        					<div class="portlet box red-sunglo">
-        						<div class="portlet-title">
-        							<div class="caption">
-        								<i class="fa fa-calendar"></i>Zonificacion de Beneficiario
-        							</div>
-        							<div class="actions">
-        								<a href="javascript:;" onclick="UpdateDetails('{{$employee->employeeID}}','bank');return false" data-loading-text="Updating..."  class="demo-loading-btn-ajax btn btn-sm btn-default ">
-        								<i class="fa fa-save"></i> Guardar </a>
-        							</div>
-        						</div>
-        						<div class="portlet-body">
+        					{{--<div class="portlet box red-sunglo">--}}
+        						{{--<div class="portlet-title">--}}
+        							{{--<div class="caption">--}}
+        								{{--<i class="fa fa-calendar"></i>Zonificacion de Beneficiario--}}
+        							{{--</div>--}}
+        							{{--<div class="actions">--}}
+        								{{--<a href="javascript:;" onclick="UpdateDetails('{{$employee->employeeID}}','bank');return false" data-loading-text="Updating..."  class="demo-loading-btn-ajax btn btn-sm btn-default ">--}}
+        								{{--<i class="fa fa-save"></i> Guardar </a>--}}
+        							{{--</div>--}}
+        						{{--</div>--}}
+        						{{--<div class="portlet-body">--}}
 
         						{{--------------------Bank Account Form--------------------------------------------}}
-        							{{Form::open(['class'   =>  'form-horizontal','id'  =>  'bank_details_form'])}}
-        							<input type="hidden" name="updateType" class="form-control" value="bank">
+        							{{--{{Form::open(['class'   =>  'form-horizontal','id'  =>  'bank_details_form'])}}--}}
+        							{{--<input type="hidden" name="updateType" class="form-control" value="bank">--}}
 
-        							<div id="alert_bank"></div>
-        								<div class="form-body">
-        									<div class="form-group">
-        										<label class="col-md-3 control-label">Departamento</label>
-        										<div class="col-md-9">
-        											<input type="text" name="accountName" class="form-control" value="{{$bank_details->accountName or ''}}">
-        										</div>
-        									</div>
-        									<div class="form-group">
-        										<label class="col-md-3 control-label">Provincia</label>
-        										<div class="col-md-9">
-        											<input type="text" name="accountNumber" class="form-control" value="{{$bank_details->accountNumber or ''}}">
-        										</div>
-        									</div>
-        									<div class="form-group">
-        										<label class="col-md-3 control-label">Localidad</label>
-        										<div class="col-md-9">
-        											<input type="text" name="bank" class="form-control" value="{{$bank_details->bank or ''}}">
-        										</div>
-        									</div>
-        									<div class="form-group">
-        										<label class="col-md-3 control-label">Seccion</label>
-        										<div class="col-md-9">
-        											<input type="text" name="ifsc" class="form-control" value="{{$bank_details->ifsc or ''}}">
-        										</div>
-        									</div>
+        							{{--<div id="alert_bank"></div>--}}
+        								{{--<div class="form-body">--}}
+        									{{--<div class="form-group">--}}
+        										{{--<label class="col-md-3 control-label">Departamento</label>--}}
+        										{{--<div class="col-md-9">--}}
+        											{{--<input type="text" name="accountName" class="form-control" value="{{$bank_details->accountName or ''}}">--}}
+        										{{--</div>--}}
+        									{{--</div>--}}
+        									{{--<div class="form-group">--}}
+        										{{--<label class="col-md-3 control-label">Provincia</label>--}}
+        										{{--<div class="col-md-9">--}}
+        											{{--<input type="text" name="accountNumber" class="form-control" value="{{$bank_details->accountNumber or ''}}">--}}
+        										{{--</div>--}}
+        									{{--</div>--}}
+        									{{--<div class="form-group">--}}
+        										{{--<label class="col-md-3 control-label">Localidad</label>--}}
+        										{{--<div class="col-md-9">--}}
+        											{{--<input type="text" name="bank" class="form-control" value="{{$bank_details->bank or ''}}">--}}
+        										{{--</div>--}}
+        									{{--</div>--}}
+        									{{--<div class="form-group">--}}
+        										{{--<label class="col-md-3 control-label">Seccion</label>--}}
+        										{{--<div class="col-md-9">--}}
+        											{{--<input type="text" name="ifsc" class="form-control" value="{{$bank_details->ifsc or ''}}">--}}
+        										{{--</div>--}}
+        									{{--</div>--}}
 
-       									    <div class="form-group">
-        										<label class="col-md-3 control-label">Zona</label>
-        										<div class="col-md-9">
-        											<input type="text" name="pan" class="form-control" value="{{$bank_details->pan or ''}}">
-        										</div>
-        									</div>
+       									    {{--<div class="form-group">--}}
+        										{{--<label class="col-md-3 control-label">Zona</label>--}}
+        										{{--<div class="col-md-9">--}}
+        											{{--<input type="text" name="pan" class="form-control" value="{{$bank_details->pan or ''}}">--}}
+        										{{--</div>--}}
+        									{{--</div>--}}
 
-        									<div class="form-group">
-        										<label class="col-md-3 control-label">Canton</label>
-        										<div class="col-md-9">
-        											<input type="text" name="branch" class="form-control" value="{{$bank_details->branch or '' }}">
-        										</div>
-        									</div>
-        								</div>
-        							{{Form::close()}}
+        									{{--<div class="form-group">--}}
+        										{{--<label class="col-md-3 control-label">Canton</label>--}}
+        										{{--<div class="col-md-9">--}}
+        											{{--<input type="text" name="branch" class="form-control" value="{{$bank_details->branch or '' }}">--}}
+        										{{--</div>--}}
+        									{{--</div>--}}
+        								{{--</div>--}}
+        							{{--{{Form::close()}}--}}
         						{{-------------------Bank Account Form end-----------------------------------------}}
 
 
-        						</div>
-        					</div>
+        						{{--</div>--}}
+        					{{--</div>--}}
         				</div>
         			</div>
         			<div class="clearfix">
-        			<div class="row ">
-        				<div class="col-md-12 col-sm-12">
-        					<div class="portlet box purple-wisteria">
-        						<div class="portlet-title">
-        							<div class="caption">
-        								<i class="fa fa-calendar"></i>Documentos
-        							</div>
-        							<div class="actions">
-        								<button onclick="$('#documents_details_form').submit();"  data-loading-text="Updating..."  class="demo-loading-btn btn btn-sm btn-default ">
-        								<i class="fa fa-save" ></i> Guardar </button>
-        							</div>
-        						</div>
-        						<div class="portlet-body">
-        							<div class="portlet-body">
-                                {{--------------------Documents Info Form--------------------------------------------}}
 
-                                    {{Form::open(['method' => 'PATCH','route'=> ['admin.employees.update', $employee->employeeID],'class'   =>  'form-horizontal','id'  =>  'documents_details_form','files'=>true])}}
-                                    <input type="hidden" name="updateType" class="form-control" value="documents">
-
-                                     @if(Session::get('successDocuments'))
-                                            <div class="alert alert-success"><i class="fa fa-check"></i> {{ Session::get('successDocuments') }}</div>
-                                     @endif
-
-                                     @if(Session::get('errorDocuments'))
-                                         <div class="alert alert-danger"><i class="fa fa-warning"></i> {{ Session::get('errorDocuments') }}</div>
-                                     @endif
-
-        								<div class="form-body">
-        									<div class="form-group">
-        										<label class="control-label col-md-2">Perfil</label>
-        										<div class="col-md-5">
-        											<div class="fileinput fileinput-new" data-provides="fileinput">
-        												<div class="input-group input-large">
-        													<div class="form-control uneditable-input" data-trigger="fileinput">
-        														<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
-        														</span>
-        													</div>
-        													<span class="input-group-addon btn default btn-file">
-        													<span class="fileinput-new">
-        													Seleccionar archivo</span>
-        													<span class="fileinput-exists">
-        													Cambiar </span>
-        													<input type="file" name="resume">
-        													</span>
-        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Eliminar </a>
-        												</div>
-        											</div>
-        										</div>
-        										<div class="col-md-3">
-        										@if(isset($documents['resume']))
-        											<a href="https://docs.google.com/viewer?url={{URL::to('employee_documents/resume/'.$documents['resume'])}}" target="_blank" class="btn purple">View Resume</a>
-        										@endif
-        										</div>
-        									</div>
-        									<div class="form-group">
-        										<label class="control-label col-md-2">Carta de Solicitud</label>
-        										<div class="col-md-5">
-        											<div class="fileinput fileinput-new" data-provides="fileinput">
-        												<div class="input-group input-large">
-        													<div class="form-control uneditable-input" data-trigger="fileinput">
-        														<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
-        														</span>
-        													</div>
-        													<span class="input-group-addon btn default btn-file">
-        													<span class="fileinput-new">
-        													Seleccionar archivo </span>
-        													<span class="fileinput-exists">
-        													Cambiar </span>
-        													<input type="file" name="offerLetter">
-        													</span>
-        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-                                                                Eliminar </a>
-        												</div>
-        											</div>
-        										</div>
-        										<div class="col-md-3">
-        										     @if(isset($documents['offerLetter']))
-        											    <a href="https://docs.google.com/viewer?url={{URL::to('employee_documents/offerLetter/'.$documents['offerLetter'])}}" target="_blank" class="btn purple">Offer Letter</a>
-        											@endif
-        										</div>
-        									</div>
-        									<div class="form-group">
-        										<label class="control-label col-md-2">Certificado de Nacimiento</label>
-        										<div class="col-md-5">
-        											<div class="fileinput fileinput-new" data-provides="fileinput">
-        												<div class="input-group input-large">
-        													<div class="form-control uneditable-input" data-trigger="fileinput">
-        														<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
-        														</span>
-        													</div>
-        													<span class="input-group-addon btn default btn-file">
-        													<span class="fileinput-new">
-        													Seleccionar archivo </span>
-        													<span class="fileinput-exists">
-        													Cambiar </span>
-        													<input type="file" name="joiningLetter">
-        													</span>
-        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">Eliminar </a>
-        												</div>
-        											</div>
-        										</div>
-        										<div class="col-md-3">
-        										@if(isset($documents['joiningLetter']))
-        											<a href="https://docs.google.com/viewer?url={{URL::to('employee_documents/joiningLetter/'.$documents['joiningLetter'])}}" target="_blank" class="btn purple">View Joining Letter</a>
-        										@endif
-        										</div>
-        									</div>
-        									<div class="form-group">
-        										<label class="control-label col-md-2">Croquis</label>
-        										<div class="col-md-5">
-        											<div class="fileinput fileinput-new" data-provides="fileinput">
-        												<div class="input-group input-large">
-        													<div class="form-control uneditable-input" data-trigger="fileinput">
-        														<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
-        														</span>
-        													</div>
-        													<span class="input-group-addon btn default btn-file">
-        													<span class="fileinput-new">
-        													Seleccionar archivo </span>
-        													<span class="fileinput-exists">
-        													Cambiar </span>
-        													<input type="file" name="contract">
-        													</span>
-        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-                                                            Eliminar </a>
-        												</div>
-        											</div>
-        										</div>
-        										<div class="col-md-3">
-        										 @if(isset($documents['contract']))
-        											<a href="https://docs.google.com/viewer?url={{URL::to('employee_documents/contract/'.$documents['contract'])}}" target="_blank"  class="btn purple">View Contract</a>
-        										@endif
-        										</div>
-        									</div>
-        									<div class="form-group">
-        										<label class="control-label col-md-2">Carnet de Identidad</label>
-        										<div class="col-md-5">
-        											<div class="fileinput fileinput-new" data-provides="fileinput">
-        												<div class="input-group input-large">
-        													<div class="form-control uneditable-input" data-trigger="fileinput">
-        														<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
-        														</span>
-        													</div>
-        													<span class="input-group-addon btn default btn-file">
-        													<span class="fileinput-new">
-        													Seleccionar archivo </span>
-        													<span class="fileinput-exists">
-        													Cambiar </span>
-        													<input type="file" name="IDProof">
-        													</span>
-        													<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-        													Eliminar </a>
-        												</div>
-        											</div>
-        										</div>
-        										<div class="col-md-3">
-        										@if(isset($documents['IDProof']))
-        											<a href="https://docs.google.com/viewer?url={{URL::to('employee_documents/IDProof/'.$documents['IDProof'])}}" target="_blank"  class="btn purple">View ID Proof</a>
-        										@endif
-        										</div>
-        									</div>
-        								</div>
-        							</form>
-
-        						</div>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="clearfix">
-        			</div>
-        		</div>
 
                          {{-------------DELETE MODAL CALLING------------}}
                             @include('admin.common.delete')
