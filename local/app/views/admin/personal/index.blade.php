@@ -96,9 +96,6 @@
                                           {{ $personal->nombres}}   {{ $personal->apellidos}}
                                     </td>
                                     <td class="text-center">
-                                          {{ $personal->parentesco}}
-                                    </td>
-                                    <td class="text-center">
                                           {{ $personal->email}}
                                     </td>
                                     <td class="text-center">
