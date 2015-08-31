@@ -37,19 +37,11 @@
 									<div class="row">
                         				<div class="col-md-6">
 
-				 <a class="btn green" data-toggle="modal" href="{{URL::to('admin/awards/create')}}">
+				 <a class="btn green" data-toggle="modal" href="{{URL::to('admin/ayudas/create')}}">
                                        Nueva Ayuda
                 <i class="fa fa-plus"></i> </a>
                                         </div>
-                        				<div class="col-md-6 form-group text-right">
-
-                        				<span id="load_notification"></span>
-                        					 <input  type="checkbox"  onchange="ToggleEmailNotification('award_notification');return false;" class="make-switch" name="award_notification" @if($setting->award_notification==1)checked	@endif data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">
-                        					<strong>Notificaciones de Email</strong><br>
-
-
-                        				</div>
-                                     </div>
+                                    </div>
                                      <hr>
 			<div class="row">
 				<div class="col-md-12">
@@ -138,7 +130,7 @@
         	$('#awards').dataTable( {
                         "bProcessing": true,
                         "bServerSide": true,
-                        "sAjaxSource": "{{ route("admin.ajax_awards") }}",
+                        "sAjaxSource": "{{ route("admin.ajax_ayudas") }}",
                         "aaSorting": [[ 1, "asc" ]],
                         "aoColumns": [
                             { 'sClass': 'center', "bSortable": true  },
@@ -184,7 +176,7 @@
 			$('#info').html('Are you sure ! You want to delete <strong>'+award+'</strong> given to <strong>'+awardeeName+'</strong>??');
 			$("#delete").click(function()
 			{
-					var url = "{{ route('admin.awards.destroy',':id') }}";
+					var url = "{{ route('admin.ayudas.destroy',':id') }}";
 					url = url.replace(':id',id);
 					 $.ajax({
 

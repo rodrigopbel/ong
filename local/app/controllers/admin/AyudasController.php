@@ -6,28 +6,28 @@ class AyudasController extends \AdminBaseController {
     public function __construct()
     {
         parent::__construct();
-        $this->data['awardsOpen'] ='active open';
+        $this->data['ayudasOpen'] ='active open';
         $this->data['pageTitle']  =  'Awards';
     }
 
     //    Display a listing of awards
     public function index()
 	{
-		$this->data['awards'] = Award::all();
+		$this->data['ayudas'] = Award::all();
 
-        $this->data['awardsActive'] =   'active';
+        $this->data['ayudasActive'] =   'active';
 
-		return View::make('admin.awards.index', $this->data);
+		return View::make('admin.ayudas.index', $this->data);
 	}
 
 
     //Datatable ajax request
-    public function ajax_awards()
+    public function ajax_ayudas()
     {
 
 
 	    $result =
-		    Award::select('awards.id','awards.employeeID','fullName','awardName','gift','forMonth','awards.forYear')
+		    Ayuda::select('awards.id','awards.employeeID','fullName','awardName','gift','forMonth','awards.forYear')
 		      ->join('employees', 'awards.employeeID', '=', 'employees.employeeID')
 			  ->orderBy('awards.created_at','desc');
 
@@ -54,7 +54,7 @@ class AyudasController extends \AdminBaseController {
 	                                        ->where('status','=','active')
 	                                        ->lists('full_name','employeeID');
 
-		return View::make('admin.awards.create',$this->data);
+		return View::make('admin.ayudas.create',$this->data);
 	}
 
 	/**
@@ -64,14 +64,14 @@ class AyudasController extends \AdminBaseController {
 	public function store()
 	{
 
-		$validator = Validator::make($input = Input::all(), Award::$rules);
+		$validator = Validator::make($input = Input::all(), Ayuda::$rules);
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-        if($this->data['setting']->award_notification==1)
+        if($this->data['setting']->ayuda_notification==1)
         {
             $employee = Employee::select('email','fullName')->where('employeeID', '=', $input['employeeID'])->first();
 
@@ -79,7 +79,7 @@ class AyudasController extends \AdminBaseController {
 	        $this->data['employee_name'] = $employee->fullName;
 
             //        Send award Mail
-            Mail::send('emails.admin.award', $this->data, function ($message) use ($employee) {
+            Mail::send('emails.admin.ayuda', $this->data, function ($message) use ($employee) {
                 $message->from($this->data['setting']->email, $this->data['setting']->name);
                 $message->to($employee['email'], $employee['fullName'])
                     ->subject('Award - ' . $this->data['awardName']);
@@ -87,7 +87,7 @@ class AyudasController extends \AdminBaseController {
         }
 		Award::create($input);
 
-		return Redirect::route('admin.awards.index')->with('success',"<strong>{$input['awardName']}</strong> is awarded");
+		return Redirect::route('admin.ayuda.index')->with('success',"<strong>{$input['awardName']}</strong> is awarded");
 	}
 
 
@@ -126,7 +126,7 @@ class AyudasController extends \AdminBaseController {
 
 		$award->update($data);
 
-		return Redirect::route('admin.awards.edit',$id)->with('success',"<strong>Success</strong> Updated Successfully");
+		return Redirect::route('admin.ayudas.edit',$id)->with('success',"<strong>Success</strong> Updated Successfully");
 	}
 
 	/**

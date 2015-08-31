@@ -24,7 +24,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="{{ route('admin.awards.index') }}">Ayuda</a>
+						<a href="{{ route('admin.ayudas.index') }}">Ayuda</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
