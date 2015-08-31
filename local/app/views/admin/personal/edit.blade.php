@@ -8,7 +8,7 @@
 @section('mainarea')
 <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title" xmlns="http://www.w3.org/1999/html">
-        Detalles del Beneficiario
+        Detalles de la Persona
     </h3>
     <div class="page-bar">
         <ul class="page-breadcrumb">
@@ -366,7 +366,6 @@
                             </div>
                             <div class="modal-body">
                                 <div class="portlet-body form">
-
                             <!-------------- BEGIN FORM------------>
                                 {{Form::open(array('route'=>"admin.salary.store",'class'=>'form-horizontal ','method'=>'POST'))}}
                                 <input   type="hidden" name="employeeID" value="{{$employee->employeeID}}"/>
@@ -430,28 +429,6 @@
             dept();
 
         });
-
-
-      function dept(){
-
-                  $.getJSON("{{ route('admin.departments.ajax_designation')}}",
-                  { deptID: $('#department').val() },
-                  function(data) {
-                       var model = $('#designation');
-                             model.empty();
-                       var selected='';
-                       var match= {{ $employee->designation}};
-                      $.each(data, function(index, element) {
-                          if(element.id==match)selected='selected';
-                          else selected='';
-                          model.append("<option value='"+element.id+"' "+selected+">" + element.designation + "</option>");
-                      });
-
-                 });
-
-
-            }
-
 // Javascript function to update the company info and Bank Info
        function UpdateDetails(id,type){
 
