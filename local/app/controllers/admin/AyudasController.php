@@ -27,17 +27,17 @@ class AyudasController extends \AdminBaseController {
 
 
 	    $result =
-		    Ayuda::select('awards.id','awards.employeeID','fullName','awardName','gift','forMonth','awards.forYear')
-		      ->join('employees', 'awards.employeeID', '=', 'employees.employeeID')
-			  ->orderBy('awards.created_at','desc');
+		    Ayuda::select('ayudas.id','ayudas.beneficiarioID','tipo_aporte','aportanteID','montoaporte','anonimo','ayudas.porelAnio')
+		      ->join('beneficiarios', 'ayudas.employeeID', '=', 'beneficiarios.beneficiarioID')
+			  ->orderBy('ayudas.created_at','desc');
 
         return Datatables::of($result)
             ->add_column('For Month',function($row) {
                 return ucfirst($row->forMonth).' '.$row->forYear;
             })
             ->add_column('edit', '
-                        <a  class="btn purple"  href="{{ route(\'admin.awards.edit\',$id)}}" ><i class="fa fa-edit"></i> View/Edit</a>
-                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $fullName}}\',\'{{ $awardName }}\');return false;" class="btn red">
+                        <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i> View/Edit</a>
+                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $fullName}}\',\'{{ $ayudaName }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i> Delete</a>')
 
             ->remove_column('forYear')
@@ -49,10 +49,10 @@ class AyudasController extends \AdminBaseController {
 
 	public function create()
 	{
-        $this->data['addAwardsActive'] = 'active';
-        $this->data['employees'] = Employee::selectRaw('CONCAT(fullName, " (EmpID:", employeeID,")") as full_name, employeeID')
+        $this->data['addAyudasActive'] = 'active';
+        $this->data['beneficioarios'] = Beneficiario::selectRaw('CONCAT(fullName, " (EmpID:", beneficiarioID,")") as full_name, beneficiarioID')
 	                                        ->where('status','=','active')
-	                                        ->lists('full_name','employeeID');
+	                                        ->lists('full_name','beneficiarioID');
 
 		return View::make('admin.ayudas.create',$this->data);
 	}
@@ -73,21 +73,21 @@ class AyudasController extends \AdminBaseController {
 
         if($this->data['setting']->ayuda_notification==1)
         {
-            $employee = Employee::select('email','fullName')->where('employeeID', '=', $input['employeeID'])->first();
+            $employee = Beneficiario::select('email','fullName')->where('beneficiarioID', '=', $input['beneficiarioID'])->first();
 
-            $this->data['awardName'] = $input['awardName'];
-	        $this->data['employee_name'] = $employee->fullName;
+            $this->data['ayudaName'] = $input['ayudaName'];
+	        $this->data['beneficiario_name'] = $employee->fullName;
 
             //        Send award Mail
             Mail::send('emails.admin.ayuda', $this->data, function ($message) use ($employee) {
                 $message->from($this->data['setting']->email, $this->data['setting']->name);
                 $message->to($employee['email'], $employee['fullName'])
-                    ->subject('Award - ' . $this->data['awardName']);
+                    ->subject('Ayuda - ' . $this->data['ayudaName']);
             });
         }
 		Award::create($input);
 
-		return Redirect::route('admin.ayuda.index')->with('success',"<strong>{$input['awardName']}</strong> is awarded");
+		return Redirect::route('admin.ayuda.index')->with('success',"<strong>{$input['ayudaName']}</strong> is awarded");
 	}
 
 
@@ -101,10 +101,10 @@ class AyudasController extends \AdminBaseController {
 	public function edit($id)
 	{
 
-        $this->data['award']    = Award::find($id);
-        $this->data['addAwardsActive'] = 'active';
-        $this->data['employees'] = Employee::lists('fullName','employeeID');
-		return View::make('admin.awards.edit', $this->data);
+        $this->data['ayuda']    = Award::find($id);
+        $this->data['addAyudasActive'] = 'active';
+        $this->data['beneficiarios'] = Beneficiario::lists('fullName','beneficiarioID');
+		return View::make('admin.ayudas.edit', $this->data);
 	}
 
 	/**
@@ -117,7 +117,7 @@ class AyudasController extends \AdminBaseController {
 	{
 		$award = Award::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Award::$rules);
+		$validator = Validator::make($data = Input::all(), Ayuda::$rules);
 
 		if ($validator->fails())
 		{
