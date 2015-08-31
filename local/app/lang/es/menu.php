@@ -20,6 +20,8 @@ return [
 	'destinosList'        	=>  'Lista',
 	'award'                 =>  'Award',
 	'awardList'             =>  'Award List',
+    'ayudas'                =>  'Ayudas',
+    'ayudasList'            =>  'Lista',
 	'expense'               =>  'Expense',
 	'expenseList'           =>  'Expense List',
 	'actividades'           =>  'Actividades',
