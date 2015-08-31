@@ -109,6 +109,26 @@
                     </ul>
                 </li>
                 {{----------------------------------------------------------------------}}
+
+
+                {{---------------------------------------Ayudas-------------------------------}}
+                <li class="{{ $awardsOpen or ''}}">
+                    <a href="javascript:;">
+                        <i class="fa fa-trophy"></i>
+                        <span class="title">{{Lang::get('menu.award')}}</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="{{ $awardsActive or ''}}">
+                            <a href="{{route('admin.awards.index')}}">
+                                <i class="fa  fa-gift"></i>
+                                {{Lang::get('menu.awardList')}}</a>
+                        </li>
+                    </ul>
+                </li>
+                {{---------------------------------------------------------------------------}}
+
+
                 {{---------------------------------------COnfiguraciones-------------------------------}}
                 <li class="{{ $settingOpen or ''}}">
                      <a href="javascript:;">

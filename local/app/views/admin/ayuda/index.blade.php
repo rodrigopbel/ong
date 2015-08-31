@@ -202,7 +202,7 @@
 		                  	   		$('#deleteModal').modal('hide');
 		                  	   		 $('#row'+id).fadeOut(500);
 
-		                 	  		$('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Successfully Deleted</p>");
+		                 	  		$('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Eliminada exitosamente!</p>");
 		                  	 }
 		           		 });
 				})

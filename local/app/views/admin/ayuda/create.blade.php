@@ -14,17 +14,17 @@
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Award page
+			Ayuda
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
 					<li>
 						<i class="fa fa-home"></i>
-						<a href="{{route('admin.dashboard.index')}}">Home</a>
+						<a href="{{route('admin.dashboard.index')}}">Inicio</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="{{ route('admin.awards.index') }}">Awards</a>
+						<a href="{{ route('admin.awards.index') }}">Ayuda</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
@@ -62,11 +62,11 @@
                                     <div class="form-body">
 
                                         <div class="form-group">
-                                        <label class="col-md-2 control-label">Award Name: <span class="required">
+                                        <label class="col-md-2 control-label">Nombre de la Ayuda: <span class="required">
                                         * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="awardName" placeholder="Award Name" value="{{ Input::old('awardName') }}">
+                                                <input type="text" class="form-control" name="awardName" placeholder="Nombre de la ayuda" value="{{ Input::old('awardName') }}">
                                             </div>
                                         </div>
 
@@ -80,23 +80,23 @@
                                         </div>
 
                                      <div class="form-group">
-                                        <label class="col-md-2 control-label">Cash price:  <span class="fa {{$setting->currency_icon}}"></span></label>
+                                        <label class="col-md-2 control-label">Monto:  <span class="fa {{$setting->currency_icon}}"></span></label>
 
                                                 <div class="col-md-6">
-                                                    <input type="text" class="form-control" name="cashPrice" placeholder="CashPrice" value="{{ Input::old('cashPrice') }}">
+                                                    <input type="text" class="form-control" name="cashPrice" placeholder="Monto" value="{{ Input::old('cashPrice') }}">
                                                 </div>
                                     </div>
 
 
                                      <div class="form-group">
-                                        <label class="col-md-2 control-label">Employee name:</label>
+                                        <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
 
                                             <div class="col-md-8">
                                              {{ Form::select('employeeID', $employees,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Select Employee...']) }}
                                            </div>
 
                                           <div class="form-group">
-                                          <label class="col-md-2 control-label">Month:</label>
+                                          <label class="col-md-2 control-label">Mes:</label>
 
                                               <div class="col-md-3">
                                                 <select class="form-control  select2me" name="forMonth">
@@ -116,7 +116,7 @@
                                              </select>
                                                  </div>
 
-                                                         <label class="col-md-2 control-label">Year:</label>
+                                                         <label class="col-md-2 control-label">Año:</label>
 
                                                    <div class="col-md-3">
                                                    {{ Form::selectYear('forYear', 2013, date('Y'),date('Y'),['class' => 'form-control select2me']) }}
@@ -128,7 +128,7 @@
                                         <div class="form-actions">
                                             <div class="row">
                                                 <div class="col-md-offset-3 col-md-9">
-                                                    <button type="submit" data-loading-text="Submitting..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Submit</button>
+                                                    <button type="submit" data-loading-text="Actualizando..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Guardar</button>
 
                                                 </div>
                                             </div>

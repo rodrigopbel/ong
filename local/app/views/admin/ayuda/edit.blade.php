@@ -20,15 +20,15 @@
 				<ul class="page-breadcrumb">
 					<li>
 						<i class="fa fa-home"></i>
-						<a href="{{route('admin.dashboard.index')}}">Home</a>
+						<a href="{{route('admin.dashboard.index')}}">Inicio</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="{{ route('admin.awards.index') }}">Awards</a>
+						<a href="{{ route('admin.awards.index') }}">Ayudas </a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href=""> Edit an Awards</a>
+						<a href=""> Editar Ayuda</a>
 					</li>
 				</ul>
 			
@@ -50,7 +50,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-edit"></i>Edit Award
+								<i class="fa fa-edit"></i>Editar Ayuda
 							</div>
 							<div class="tools">
 							</div>
@@ -64,11 +64,11 @@
                                     <div class="form-body">
 
                                         <div class="form-group">
-                                        <label class="col-md-2 control-label">Award Name: <span class="required">
+                                        <label class="col-md-2 control-label">Nombre de la Ayuda: <span class="required">
                                         * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="awardName" placeholder="Award Name" value="{{ $award->awardName }}">
+                                                <input type="text" class="form-control" name="awardName" placeholder="Nombre de la Ayuda" value="{{ $award->awardName }}">
                                             </div>
                                         </div>
 
@@ -82,16 +82,16 @@
                                         </div>
 
                                      <div class="form-group">
-                                        <label class="col-md-2 control-label">Cash price: ( <span class="fa {{$setting->currency_icon}}"></span> )</label>
+                                        <label class="col-md-2 control-label">Monto: ( <span class="fa {{$setting->currency_icon}}"></span> )</label>
 
                                                 <div class="col-md-6">
-                                                    <input type="text" class="form-control" name="cashPrice" placeholder="CashPrice" value="{{ $award->cashPrice }}">
+                                                    <input type="text" class="form-control" name="cashPrice" placeholder="Monto" value="{{ $award->cashPrice }}">
                                                 </div>
                                     </div>
 
 
                                      <div class="form-group">
-                                        <label class="col-md-2 control-label">Employee name:</label>
+                                        <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
 
                                             <div class="col-md-8">
                                             {{ Form::select('employeeID', $employees,$award->employeeID,['class'=>'form-control input-xlarge select2me']) }}
@@ -99,28 +99,28 @@
                                     </div>
 
                                      <div class="form-group">
-                                        <label class="col-md-2 control-label">Month:</label>
+                                        <label class="col-md-2 control-label">Mes:</label>
 
                                               <div class="col-md-3">
                                              <select class="form-control select2me" name="forMonth">
-                                                <option value="" selected="selected">Month</option>
-                                                <option value="january"  @if($award->forMonth=='january')selected='selected'@endif >January</option>
-                                                <option value="february" @if($award->forMonth=='february')selected='selected'@endif>February</option>
-                                                <option value="march"    @if($award->forMonth=='march')selected='selected'@endif>March</option>
-                                                <option value="april"    @if($award->forMonth=='april')selected='selected'@endif>April</option>
-                                                <option value="may"      @if($award->forMonth=='may')selected='selected'@endif>May</option>
-                                                <option value="june"     @if($award->forMonth=='june')selected='selected'@endif>June</option>
-                                                <option value="july"     @if($award->forMonth=='july')selected='selected'@endif>July</option>
-                                                <option value="august"   @if($award->forMonth=='august')selected='selected'@endif>August</option>
-                                                <option value="september" @if($award->forMonth=='september')selected='selected'@endif>September</option>
-                                                <option value="october"  @if($award->forMonth=='october')selected='selected'@endif>October</option>
-                                                <option value="november" @if($award->forMonth=='november')selected='selected'@endif>November</option>
-                                                <option value="december" @if($award->forMonth=='december')selected='selected'@endif>December</option>
+                                                <option value="" selected="selected">Mes</option>
+                                                <option value="january"  @if($award->forMonth=='january')selected='selected'@endif >Enero</option>
+                                                <option value="february" @if($award->forMonth=='february')selected='selected'@endif>Febrero</option>
+                                                <option value="march"    @if($award->forMonth=='march')selected='selected'@endif>Marzo</option>
+                                                <option value="april"    @if($award->forMonth=='april')selected='selected'@endif>Abril</option>
+                                                <option value="may"      @if($award->forMonth=='may')selected='selected'@endif>Mayo</option>
+                                                <option value="june"     @if($award->forMonth=='june')selected='selected'@endif>Junio</option>
+                                                <option value="july"     @if($award->forMonth=='july')selected='selected'@endif>Julio</option>
+                                                <option value="august"   @if($award->forMonth=='august')selected='selected'@endif>Agosto</option>
+                                                <option value="september" @if($award->forMonth=='september')selected='selected'@endif>Septiembre</option>
+                                                <option value="october"  @if($award->forMonth=='october')selected='selected'@endif>Octubre</option>
+                                                <option value="november" @if($award->forMonth=='november')selected='selected'@endif>Noviembre</option>
+                                                <option value="december" @if($award->forMonth=='december')selected='selected'@endif>Diciembre</option>
                                          </select>
 
                                                </div>
 
-                                             <label class="col-md-2 control-label">Year:</label>
+                                             <label class="col-md-2 control-label">Año:</label>
 
                                                    <div class="col-md-3">
                                                             {{ Form::selectYear('forYear', 2013, 2015,$award->forYear,['class'=>'form-control select2me']) }}
@@ -131,7 +131,7 @@
                         								<div class="form-actions">
                         									<div class="row">
                         										<div class="col-md-offset-3 col-md-9">
-                        											<button type="submit" data-loading-text="Updating..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Submit</button>
+                        											<button type="submit" data-loading-text="Actualizando..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Guardar</button>
 
                         										</div>
                         									</div>
