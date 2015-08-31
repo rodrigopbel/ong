@@ -7,13 +7,13 @@ class AyudasController extends \AdminBaseController {
     {
         parent::__construct();
         $this->data['ayudasOpen'] ='active open';
-        $this->data['pageTitle']  =  'Awards';
+        $this->data['pageTitle']  =  'Ayudas';
     }
 
     //    Display a listing of awards
     public function index()
 	{
-		$this->data['ayudas'] = Award::all();
+		$this->data['ayudas'] = Ayuda::all();
 
         $this->data['ayudasActive'] =   'active';
 
