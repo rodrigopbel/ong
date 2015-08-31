@@ -4,8 +4,8 @@ class Ayuda extends \Eloquent {
 
 	// Add your validation rules here
 	public static $rules = [
-		'awardName'     =>  'required',
-        'employeeID'     =>  'required',
+		'ayudaName'      =>  'required',
+        'beneficiarioID' =>  'required',
         'gift'           =>   'required'
 
 	];
