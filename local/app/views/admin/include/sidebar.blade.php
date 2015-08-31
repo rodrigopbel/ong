@@ -128,7 +128,7 @@
                         <li class="{{ $awardsActive or ''}}">
                             <a href="{{route('admin.ayudas.index')}}">
                                 <i class="fa  fa-gift"></i>
-                                {{Lang::get('menu.awardList')}}</a>
+                                {{Lang::get('menu.ayudasList')}}</a>
                         </li>
                     </ul>
                 </li>
