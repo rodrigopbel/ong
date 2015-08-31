@@ -50,7 +50,7 @@ class AyudasController extends \AdminBaseController {
 	public function create()
 	{
         $this->data['addAyudasActive'] = 'active';
-        $this->data['beneficioarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (EmpID:", beneficiarioID,")") as apellidos, beneficiarioID')
+        $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (EmpID:", beneficiarioID,")") as apellidos, beneficiarioID')
 	                                        ->where('status','=','active')
 	                                        ->lists('apellidos','beneficiarioID');
 
@@ -101,7 +101,7 @@ class AyudasController extends \AdminBaseController {
 	public function edit($id)
 	{
 
-        $this->data['ayuda']    = Award::find($id);
+        $this->data['ayuda']    = Ayuda::find($id);
         $this->data['addAyudasActive'] = 'active';
         $this->data['beneficiarios'] = Beneficiario::lists('apellidos','beneficiarioID');
 		return View::make('admin.ayudas.edit', $this->data);
