@@ -65,10 +65,6 @@
                                 </th>
 								<th style="text-align: center">
 									 Nombre Completo
-								</th>
-								<th class="text-center">
-                                	 Parentesco
-                                </th>
 								<th class="text-center">
                                 	 Email
                                 </th>
