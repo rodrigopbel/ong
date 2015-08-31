@@ -63,9 +63,10 @@
 								<th class="text-center">
                                      Foto
                                 </th>
-                                <th class="text-center">
+								<th style="text-align: center">
 									 Nombre Completo
 								</th>
+
 								<th class="text-center">
                                 	 Email
                                 </th>
