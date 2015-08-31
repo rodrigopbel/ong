@@ -76,7 +76,7 @@
                                             * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="gift" placeholder="Gift" value="{{ Input::old('gift') }}" >
+                                                <input type="text" class="form-control" name="gift" placeholder="Gift" value="{{ Input::old('tipo_aporte') }}" >
                                             </div>
                                         </div>
 
@@ -84,7 +84,7 @@
                                         <label class="col-md-2 control-label">Monto:  <span class="fa {{$setting->currency_icon}}"></span></label>
 
                                                 <div class="col-md-6">
-                                                    <input type="text" class="form-control" name="cashPrice" placeholder="Monto" value="{{ Input::old('cashPrice') }}">
+                                                    <input type="text" class="form-control" name="cashPrice" placeholder="Monto" value="{{ Input::old('montoaporte') }}">
                                                 </div>
                                     </div>
 
@@ -93,7 +93,7 @@
                                         <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
 
                                             <div class="col-md-8">
-                                             {{ Form::select('beneficiarioID', $employees,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
+                                             {{ Form::select('beneficiarioID', $beneficiarios,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
                                            </div>
 
                                           <div class="form-group">
