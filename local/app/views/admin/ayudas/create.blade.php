@@ -35,7 +35,6 @@
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
-            dd("mensaje");
 			<div class="row">
 				<div class="col-md-12">
 					<!-- BEGIN EXAMPLE TABLE PORTLET-->
