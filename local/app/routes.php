@@ -58,6 +58,9 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::get('actividades/mark_sunday', 'ActividadesController@Sunday');
     Route::resource('actividades', 'ActividadesController',['except' => ['show'],'as' => 'admin']);
 
+    //  Ayudas Routing
+    Route::get('ajax_ayudas/',['as'=>'admin.ajax_ayudas','uses'=> 'AyudasController@ajax_ayudas']);
+    Route::resource('ayudas', 'AyudasController',['as' => 'admin']);
 
 
     //    Employees Routing
