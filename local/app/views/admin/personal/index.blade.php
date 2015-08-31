@@ -63,12 +63,9 @@
 								<th class="text-center">
                                      Foto
                                 </th>
-								<th style="text-align: center">
+                                <th class="text-center">
 									 Nombre Completo
 								</th>
-								<th class="text-center">
-                                	 Parentesco
-                                </th>
 								<th class="text-center">
                                 	 Email
                                 </th>
@@ -94,9 +91,6 @@
                                     </td>
                                     <td class="text-center">
                                           {{ $personal->nombres}}   {{ $personal->apellidos}}
-                                    </td>
-                                    <td class="text-center">
-                                        {{ $personal->paresntesco}}
                                     </td>
                                     <td class="text-center">
                                           {{ $personal->email}}
