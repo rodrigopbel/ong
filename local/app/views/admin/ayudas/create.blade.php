@@ -56,7 +56,7 @@
 						<div class="portlet-body form">
 
 						<!-- BEGIN FORM-->
-						{{Form::open(array('url'=>"admin/awards",'class'=>'form-horizontal form-bordered','method'=>'POST'))}}
+						{{Form::open(array('url'=>"admin/ayudas",'class'=>'form-horizontal form-bordered','method'=>'POST'))}}
 
 
                                     <div class="form-body">

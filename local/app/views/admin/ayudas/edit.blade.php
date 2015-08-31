@@ -59,7 +59,7 @@
 						<div class="portlet-body form">
 
 						<!------------------------ BEGIN FORM---------------------->
-						{{ Form::model($award, ['method' => 'PATCH', 'route' => ['admin.awards.update', $award->id],'class'=>'form-horizontal form-bordered']) }}
+						{{ Form::model($award, ['method' => 'PATCH', 'route' => ['admin.ayudas.update', $award->id],'class'=>'form-horizontal form-bordered']) }}
 
                                     <div class="form-body">
 

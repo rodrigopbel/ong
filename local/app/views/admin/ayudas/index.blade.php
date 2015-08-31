@@ -66,7 +66,7 @@
 						<div class="portlet-body">
 
 
-							<table class="table table-striped table-bordered table-hover" id="awards">
+							<table class="table table-striped table-bordered table-hover" id="ayudas">
 							<thead>
 							<tr>
 								<th> AyudaID </th>
@@ -127,7 +127,7 @@
 	<script>
 
 
-        	$('#awards').dataTable( {
+        	$('#ayudas').dataTable( {
                         "bProcessing": true,
                         "bServerSide": true,
                         "sAjaxSource": "{{ route("admin.ajax_ayudas") }}",
@@ -169,11 +169,11 @@
 
 
 
-		function del(id,awardeeName,award)
+		function del(id,awardeeName,ayuda)
 		{
 
 			$('#deleteModal').appendTo("body").modal('show');
-			$('#info').html('Are you sure ! You want to delete <strong>'+award+'</strong> given to <strong>'+awardeeName+'</strong>??');
+			$('#info').html('Are you sure ! You want to delete <strong>'+ayuda+'</strong> given to <strong>'+awardeeName+'</strong>??');
 			$("#delete").click(function()
 			{
 					var url = "{{ route('admin.ayudas.destroy',':id') }}";
