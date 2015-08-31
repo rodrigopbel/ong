@@ -66,7 +66,7 @@
                                         * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="awardName" placeholder="Nombre de la ayuda" value="{{ Input::old('awardName') }}">
+                                                <input type="text" class="form-control" name="ayudaName" placeholder="Nombre de la ayuda" value="{{ Input::old('ayudaName') }}">
                                             </div>
                                         </div>
 
@@ -92,7 +92,7 @@
                                         <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
 
                                             <div class="col-md-8">
-                                             {{ Form::select('employeeID', $employees,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Select Employee...']) }}
+                                             {{ Form::select('beneficiarioID', $employees,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
                                            </div>
 
                                           <div class="form-group">
