@@ -38,7 +38,7 @@ class AyudasController extends \AdminBaseController {
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i> View/Edit</a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $apellidos}}\',\'{{ $ayudaName }}\');return false;" class="btn red">
-                        <i class="fa fa-trash"></i> Delete</a>')
+                        <i class="fa fa-trash"></i> Borrar</a>')
 
             ->remove_column('forYear')
 

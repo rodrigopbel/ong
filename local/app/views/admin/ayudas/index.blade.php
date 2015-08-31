@@ -70,13 +70,11 @@
 							<tr>
 								<th> AyudaID </th>
 								<th> Beneficiario ID </th>
-								<th> Nombre de la Ayuda </th>
+								<th> Aapellido </th>
 								<th> Ayuda </th>
 								<th> Tipo de Ayuda </th>
-								<th> Hidden Month </th>
-								<th> For the Month </th>
-
-
+								<th> Monto Aporte </th>
+								<th> Por el Mes </th>
 								<th> Accion </th>
 							</tr>
 							</thead>
