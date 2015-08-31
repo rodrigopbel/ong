@@ -115,12 +115,12 @@
                 <li class="{{ $awardsOpen or ''}}">
                     <a href="javascript:;">
                         <i class="fa fa-trophy"></i>
-                        <span class="title">{{Lang::get('menu.ayuda')}}</span>
+                        <span class="title">{{Lang::get('menu.ayudas')}}</span>
                         <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
                         <li class="{{ $awardsActive or ''}}">
-                            <a href="{{route('admin.ayuda.index')}}">
+                            <a href="{{route('admin.ayudas.index')}}">
                                 <i class="fa  fa-gift"></i>
                                 {{Lang::get('menu.awardList')}}</a>
                         </li>
