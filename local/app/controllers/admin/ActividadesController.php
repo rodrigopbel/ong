@@ -9,7 +9,7 @@ class ActividadesController extends \AdminBaseController {
         $this->data['pageTitle'] =  'Actividad';
         $month = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
         $this->data['months']       =   $month;
-        $this->data['currentMonth'] =   date('%B');
+        $this->data['currentMonth'] =   $month[date('n')-1];
     }
     public function index()
     {
