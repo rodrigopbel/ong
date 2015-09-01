@@ -71,11 +71,11 @@
                                         </div>
 
                                         <div class="form-group">
-                                        <label class="col-md-2 control-label">Gift Item: <span class="required">
+                                        <label class="col-md-2 control-label">Tipo Aporte: <span class="required">
                                             * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="tipo_aporte" placeholder="Gift" value="{{ Input::old('tipo_aporte') }}" >
+                                                <input type="text" class="form-control" name="tipo_aporte" placeholder="Tipo Aporte" value="{{ Input::old('tipo_aporte') }}" >
                                             </div>
                                         </div>
 
