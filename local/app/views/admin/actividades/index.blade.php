@@ -42,7 +42,8 @@
     <div class="row">
         <div class="col-md-3">
             <ul class="ver-inline-menu tabbable margin-bottom-10">
-{{dd($months)}}
+{{dd($months, $currentMonth)}}
+
                 @foreach($months as $month)
                     <li @if($month == $currentMonth) class="active" @endif >
 
