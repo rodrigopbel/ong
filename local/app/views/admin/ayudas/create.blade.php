@@ -28,7 +28,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="">Give an Awards</a>
+						<a href="">Nueva Ayuda</a>
 					</li>
 				</ul>
 			
@@ -47,7 +47,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-trophy"></i>Give an Award
+								<i class="fa fa-trophy"></i>Nueva Ayuda
 							</div>
 							<div class="tools">
 							</div>
@@ -75,7 +75,7 @@
                                             * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="gift" placeholder="Gift" value="{{ Input::old('tipo_aporte') }}" >
+                                                <input type="text" class="form-control" name="tipo_aporte" placeholder="Gift" value="{{ Input::old('tipo_aporte') }}" >
                                             </div>
                                         </div>
 
@@ -83,7 +83,7 @@
                                         <label class="col-md-2 control-label">Monto:  <span class="fa {{$setting->currency_icon}}"></span></label>
 
                                                 <div class="col-md-6">
-                                                    <input type="text" class="form-control" name="cashPrice" placeholder="Monto" value="{{ Input::old('montoaporte') }}">
+                                                    <input type="text" class="form-control" name="montoaporte" placeholder="Monto" value="{{ Input::old('montoaporte') }}">
                                                 </div>
                                     </div>
 
@@ -101,18 +101,18 @@
                                               <div class="col-md-3">
                                                 <select class="form-control  select2me" name="forMonth">
                                                     <option value="" selected="selected">Month</option>
-                                                    <option value="january"  @if(strtolower(date('F'))=='january')selected='selected'@endif >January</option>
-                                                    <option value="february" @if(strtolower(date('F'))=='february')selected='selected'@endif>February</option>
-                                                    <option value="march"    @if(strtolower(date('F'))=='march')selected='selected'@endif>March</option>
-                                                    <option value="april"    @if(strtolower(date('F'))=='april')selected='selected'@endif>April</option>
-                                                    <option value="may"      @if(strtolower(date('F'))=='may')selected='selected'@endif>May</option>
-                                                    <option value="june"     @if(strtolower(date('F'))=='june')selected='selected'@endif>June</option>
-                                                    <option value="july"     @if(strtolower(date('F'))=='july')selected='selected'@endif>July</option>
-                                                    <option value="august"   @if(strtolower(date('F'))=='august')selected='selected'@endif>August</option>
-                                                    <option value="september" @if(strtolower(date('F'))=='september')selected='selected'@endif>September</option>
-                                                    <option value="october"  @if(strtolower(date('F'))=='october')selected='selected'@endif>October</option>
-                                                    <option value="november" @if(strtolower(date('F'))=='november')selected='selected'@endif>November</option>
-                                                    <option value="december" @if(strtolower(date('F'))=='december')selected='selected'@endif>December</option>
+                                                    <option value="enero"  @if(strtolower(date('F'))=='enero')selected='selected'@endif >Enero</option>
+                                                    <option value="febrero" @if(strtolower(date('F'))=='febrero')selected='selected'@endif>Febrero</option>
+                                                    <option value="marzo"    @if(strtolower(date('F'))=='marzo')selected='selected'@endif>Marzo</option>
+                                                    <option value="abril"    @if(strtolower(date('F'))=='abril')selected='selected'@endif>Abril</option>
+                                                    <option value="mayo"      @if(strtolower(date('F'))=='mayo')selected='selected'@endif>Mayo</option>
+                                                    <option value="junio"     @if(strtolower(date('F'))=='junio')selected='selected'@endif>Junio</option>
+                                                    <option value="julio"     @if(strtolower(date('F'))=='julio')selected='selected'@endif>Julio</option>
+                                                    <option value="agosto"   @if(strtolower(date('F'))=='agosto')selected='selected'@endif>Agosto</option>
+                                                    <option value="septiembre" @if(strtolower(date('F'))=='septiembre')selected='selected'@endif>Septiembre</option>
+                                                    <option value="octubre"  @if(strtolower(date('F'))=='octubre')selected='selected'@endif>Octubre</option>
+                                                    <option value="noviembre" @if(strtolower(date('F'))=='noviembre')selected='selected'@endif>Noviembre</option>
+                                                    <option value="dicimbre" @if(strtolower(date('F'))=='dicimbre')selected='selected'@endif>Diciembre</option>
                                              </select>
                                                  </div>
 
