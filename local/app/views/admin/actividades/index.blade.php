@@ -35,8 +35,8 @@
     </div>
     <div class="row">
         <div class="col-md-3"><a class="btn green" data-toggle="modal" href="#static">
-                Nueva Actividad
-                <i class="fa fa-plus"></i> </a></div>
+            Nueva Actividad
+            <i class="fa fa-plus"></i> </a></div>
     </div>
     <hr>
     <div class="row">
@@ -54,7 +54,6 @@
         </div>
         <div class="col-md-9">
             <div class="tab-content">
-
                 @foreach($months as $month)
                     <div id="{{$month}}" class="tab-pane @if($month == $currentMonth) active @endif">
                         <div class="portlet box blue">
@@ -62,7 +61,6 @@
                                 <div class="caption">
                                     <i class="fa fa-calendar"></i>{{$month}}
                                 </div>
-
                             </div>
                             <div class="portlet-body">
                                 <div class="table-scrollable">
