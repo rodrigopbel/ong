@@ -12,7 +12,7 @@ class ActividadesController extends \AdminBaseController {
     }
     public function index()
     {
-        dd($this->data);
+
         $this->data['actividades']         =   Actividad::orderBy('date', 'ASC')->get();;
         $this->data['actividadActive']    =   'active';
         $act        = array();
