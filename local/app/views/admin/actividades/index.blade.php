@@ -55,7 +55,6 @@
         <div class="col-md-9">
             <div class="tab-content">
 
-                {{dd($currentMonth)}}
                 @foreach($months as $month)
                     <div id="{{$month}}" class="tab-pane @if($month == $currentMonth) active @endif">
                         <div class="portlet box blue">
