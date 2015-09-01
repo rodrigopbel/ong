@@ -74,6 +74,7 @@ class AyudasController extends \AdminBaseController {
         if($this->data['setting']->ayuda_notification==1)
         {
             $employee = Beneficiario::select('email','apellidos')->where('beneficiarioID', '=', $input['beneficiarioID'])->first();
+            dd($employee);
 
             $this->data['ayudaName'] = $input['ayudaName'];
 	        $this->data['beneficiario_name'] = $employee->apellidos;
