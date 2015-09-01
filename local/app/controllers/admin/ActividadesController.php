@@ -6,14 +6,10 @@ class ActividadesController extends \AdminBaseController {
         parent::__construct();
         $this->data['actividadOpen'] ='active open';
         $this->data['pageTitle'] =  'Actividad';
-        for ($m=1; $m<=12; $m++)
-        {
-            $month[] = date('F', mktime(0,0,0,$m, 1, date('Y')));
-        }
+        $month = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
         $this->data['months']       =   $month;
         $this->data['currentMonth'] =   date('F');
     }
-
     public function index()
     {
 
