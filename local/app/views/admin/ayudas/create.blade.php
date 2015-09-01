@@ -94,7 +94,7 @@
                                             <div class="col-md-8">
                                              {{ Form::select('beneficiarioID', $beneficiarios,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
                                            </div>
-
+                                                    dd($beneficiarios);
                                           <div class="form-group">
                                           <label class="col-md-2 control-label">Mes:</label>
 
