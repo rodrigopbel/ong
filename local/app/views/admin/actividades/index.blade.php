@@ -43,7 +43,6 @@
         <div class="col-md-3">
             <ul class="ver-inline-menu tabbable margin-bottom-10">
 
-
                 @foreach($months as $month)
                     <li @if($month == $currentMonth) class="active" @endif >
 
