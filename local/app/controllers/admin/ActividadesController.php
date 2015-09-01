@@ -30,7 +30,7 @@ class ActividadesController extends \AdminBaseController {
             $act[date('F', strtotime($actividad->date))]['day'][] = date('D', strtotime($actividad->date));
         }
         $this->data['actividadesArray'] = $act;
-        dd(  $this->data['actividadesArray']);
+        dd(  $this->data['actividades']);
         return View::make('admin.actividades.index', $this->data);
     }
 
