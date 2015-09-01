@@ -27,7 +27,7 @@ class AyudasController extends \AdminBaseController {
 
 
 	    $result =
-		    Ayuda::select('ayudas.id','ayudas.beneficiarioID','apellidos','tipo_aporte','montoaporte','anonimo','ayudas.porelAnio')
+		    Ayuda::select('ayudas.id','ayudas.beneficiarioID','beneficiarios.apellidos','ayudas.tipo_aporte','ayudas.montoaporte','ayudas.anonimo','ayudas.porelAnio')
 		      ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
 			  ->orderBy('ayudas.created_at','desc');
 
@@ -37,7 +37,7 @@ class AyudasController extends \AdminBaseController {
             })
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i> View/Edit</a>
-                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $apellidos}}\',\'{{ $ayudaName }}\');return false;" class="btn red">
+                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $tipo_aporte}}\',\'{{ $montoaporte }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i> Borrar</a>')
 
             ->remove_column('forYear')
