@@ -352,7 +352,7 @@
         			</div>
         			<div class="clearfix">
         			<div class="row ">
-        				<div class="col-md-12 col-sm-12">
+        				<div class="col-md-6 col-sm-6">
         					<div class="portlet box purple-wisteria">
         						<div class="portlet-title">
         							<div class="caption">
@@ -520,6 +520,176 @@
         					</div>
         				</div>
         			</div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="portlet box red-sunglo">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-calendar"></i>Detalles de la Donacion
+                                    </div>
+                                    <div class="actions">
+                                        <a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->beneficiarioID}}','company');return false" data-loading-text="Updating..." class="demo-loading-btn-ajax btn btn-sm btn-default ">
+                                            <i class="fa fa-save"></i> Guardar </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+
+                                    {{--------------------Company Form--------------------------------------------}}
+                                    {{Form::open(['class'   =>  'form-horizontal','id'  =>  'company_details_form'])}}
+                                    <input type="hidden" name="updateType" class="form-control" value="donacion">
+                                    <div id="alert_company">
+                                        {{--INLCUDE ERROR MESSAGE BOX--}}
+                                        @include('admin.common.error')
+                                        {{--END ERROR MESSAGE BOX--}}
+                                    </div>
+
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Caso #<span class="required">* </span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="beneficiarioID" class="form-control" readonly value="{{$beneficiario->beneficiarioID}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Destino<span class="required">* </span></label>
+                                            <div class="col-md-9">
+                                                {{ Form::select('destino', $destinos,$beneficiario->getObjetivo->destID,['class' => 'form-control select2me','id'=>'destino','onchange'=>'objetivos();return false;']) }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Objetivo<span class="required">* </span></label>
+                                            <div class="col-md-9">
+
+                                                <select  class="select2me form-control" name="objetivo" id="objetivo" >
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Fecha de Solicitud</label>
+                                            <div class="col-md-3">
+                                                <div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
+                                                    <input type="text" class="form-control" name="fechaing" readonly value="@if(empty($beneficiario->fechaing))00-00-0000 @else {{date('d-m-Y',strtotime($beneficiario->fechaing))}} @endif">
+        												<span class="input-group-btn">
+        												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+        												</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Fecha de Devinculacion</label>
+                                            <div class="col-md-3">
+                                                <div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
+                                                    <input type="text" class="form-control" name="fecha_desvinculacion" readonly value="@if(empty($beneficiario->fecha_desvinculacion)) @else {{date('d-m-Y',strtotime($beneficiario->fecha_desvinculacion))}} @endif">
+                                                            <span class="input-group-btn">
+                                                            <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+                                                            </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Estado</label>
+                                            <div class="col-md-3">
+                                                <input  type="checkbox" value="activo" onchange="remove_exit();" class="make-switch" name="status" @if($beneficiario->status=='activo')checked	@endif data-on-color="success" data-on-text="Activo" data-off-text="Inactivo" data-off-color="danger">
+                                            </div>
+                                        </div>
+
+                                        <hr>
+                                        <h4><strong>Monto Requerido  ( <i class="fa {{$setting->currency_icon}}"></i> )</strong></h4>
+
+                                        @foreach($beneficiario->getSoldonacion as $solicitud)
+                                            <div id="salary{{$solicitud->id}}">
+                                                <div class="form-group" >
+                                                    <div class="col-md-5">
+                                                        <input type="text" class="form-control" name="tipo[{{$solicitud->id}}]" value="{{$solicitud->tipo}}">
+                                                    </div>
+
+                                                    <div class="col-md-5">
+                                                        <input type="text" class="form-control" name="monto[{{$solicitud->id}}]" value="{{$solicitud->monto}}">
+                                                    </div>
+
+                                                    <div class="col-md-2">
+                                                        <a class="btn btn-sm red" onclick="del('{{$solicitud->id}}','{{$solicitud->tipo}}')"><i class="fa fa-trash"></i> </a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                        <a class="" data-toggle="modal" href="#static">
+                                            Nuevo
+                                            <i class="fa fa-plus"></i> </a>
+                                    </div>
+                                    {{Form::close()}}
+
+
+                                    {{----------------Company Form end -------------}}
+
+                                </div>
+                            </div>
+
+                            <div class="portlet box red-sunglo">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-calendar"></i>Zonificacion
+                                    </div>
+                                    <div class="actions">
+                                        <a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->beneficiarioID}}','zonificacion');return false" data-loading-text="Actualizando..."  class="demo-loading-btn-ajax btn btn-sm btn-default ">
+                                            <i class="fa fa-save"></i> Guardar </a>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+
+                                    {{--------------------Bank Account Form--------------------------------------------}}
+                                    {{Form::open(['class'   =>  'form-horizontal','id'  =>  'bank_details_form'])}}
+                                    <input type="hidden" name="updateType" class="form-control" value="zonificacion">
+
+                                    <div id="alert_bank"></div>
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Departamento</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="departamento" class="form-control" value="{{$zonificacion->departamento or ''}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Provincia</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="provincia" class="form-control" value="{{$zonificacion->provincia or ''}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Localidad</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="localidad" class="form-control" value="{{$zonificacion->localidad or ''}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Canton</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="canton" class="form-control" value="{{$zonificacion->canton or ''}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Zona</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="zona" class="form-control" value="{{$zonificacion->zona or ''}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Nota</label>
+                                            <div class="col-md-9">
+                                                <textarea class="form-control" name="otros" rows="3">{{$zonificacion->otros or '' }}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{Form::close()}}
+                                    {{-------------------Bank Account Form end-----------------------------------------}}
+
+
+                                </div>
+                            </div>
+                        </div>
         			<div class="clearfix">
         			</div>
         		</div>
