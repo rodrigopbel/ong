@@ -6,7 +6,7 @@ class Ayuda extends \Eloquent {
 	public static $rules = [
 		'ayudaName'      =>  'required',
         'beneficiarioID' =>  'required',
-        'gift'           =>   'required'
+        'aportanteID'    =>   'required'
 
 	];
 
