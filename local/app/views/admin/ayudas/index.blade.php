@@ -70,11 +70,11 @@
 							<tr>
 								<th> AyudaID </th>
 								<th> Beneficiario ID </th>
+								<th> Aportante ID </th>
 								<th> Apellido </th>
-								<th> Nombre </th>
-								<th> Tipo de Ayuda </th>
-								<th> Monto Aporte </th>
+								<th> Monto de Aporte </th>
 								<th> Por el Mes </th>
+								<th> Por el Año </th>
 								<th> Accion </th>
 							</tr>
 							</thead>
