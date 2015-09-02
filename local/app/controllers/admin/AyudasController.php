@@ -85,7 +85,7 @@ class AyudasController extends \AdminBaseController {
                     ->subject('Ayuda - ' . $this->data['ayudaName']);
             });
         }
-		Award::create($input);
+        Ayuda::create($input);
 
 		return Redirect::route('admin.ayudas.index')->with('success',"<strong>{$input['ayudaName']}</strong> is awarded");
 	}
@@ -115,7 +115,7 @@ class AyudasController extends \AdminBaseController {
 	 */
 	public function update($id)
 	{
-		$award = Award::findOrFail($id);
+		$award = Ayuda::findOrFail($id);
 
 		$validator = Validator::make($data = Input::all(), Ayuda::$rules);
 
