@@ -94,13 +94,13 @@
                                             <div class="col-md-8">
                                              {{ Form::select('beneficiarioID', $beneficiarios,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
                                            </div>
-                                                    dd($beneficiarios);
+
                                           <div class="form-group">
                                           <label class="col-md-2 control-label">Mes:</label>
 
                                               <div class="col-md-3">
                                                 <select class="form-control  select2me" name="forMonth">
-                                                    <option value="" selected="selected">Month</option>
+                                                    <option value="" selected="selected">Mes</option>
                                                     <option value="enero"  @if(strtolower(date('F'))=='enero')selected='selected'@endif >Enero</option>
                                                     <option value="febrero" @if(strtolower(date('F'))=='febrero')selected='selected'@endif>Febrero</option>
                                                     <option value="marzo"    @if(strtolower(date('F'))=='marzo')selected='selected'@endif>Marzo</option>
