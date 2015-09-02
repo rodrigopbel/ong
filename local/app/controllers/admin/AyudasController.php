@@ -24,7 +24,22 @@ class AyudasController extends \AdminBaseController {
             Ayuda::select('ayudas.id','ayudas.beneficiarioID','ayudas.montoaporte','ayudas.porelMes','ayudas.porelAnio')
                 ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
                 ->orderBy('ayudas.created_at','desc');
-        dd($result);
+
+        return Datatables::of($result)
+            ->add_column('For Month',function($row) {
+                return ucfirst($row->porelMes).' '.$row->porelAnio;
+            })
+            ->add_column('edit', '
+                        <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i> View/Edit</a>
+                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $tipo_aporte}}\',\'{{ $montoaporte }}\');return false;" class="btn red">
+                        <i class="fa fa-trash"></i> Borrar</a>')
+
+            ->remove_column('porelAnio')
+
+
+
+            ->make();
+
 	}
 
 
