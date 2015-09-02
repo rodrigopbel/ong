@@ -626,69 +626,7 @@
                                 </div>
                             </div>
 
-                            <div class="portlet box red-sunglo">
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class="fa fa-calendar"></i>Zonificacion
-                                    </div>
-                                    <div class="actions">
-                                        <a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->beneficiarioID}}','zonificacion');return false" data-loading-text="Actualizando..."  class="demo-loading-btn-ajax btn btn-sm btn-default ">
-                                            <i class="fa fa-save"></i> Guardar </a>
-                                    </div>
-                                </div>
-                                <div class="portlet-body">
 
-                                    {{--------------------Bank Account Form--------------------------------------------}}
-                                    {{Form::open(['class'   =>  'form-horizontal','id'  =>  'bank_details_form'])}}
-                                    <input type="hidden" name="updateType" class="form-control" value="zonificacion">
-
-                                    <div id="alert_bank"></div>
-                                    <div class="form-body">
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Departamento</label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="departamento" class="form-control" value="{{$zonificacion->departamento or ''}}">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Provincia</label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="provincia" class="form-control" value="{{$zonificacion->provincia or ''}}">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Localidad</label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="localidad" class="form-control" value="{{$zonificacion->localidad or ''}}">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Canton</label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="canton" class="form-control" value="{{$zonificacion->canton or ''}}">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Zona</label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="zona" class="form-control" value="{{$zonificacion->zona or ''}}">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Nota</label>
-                                            <div class="col-md-9">
-                                                <textarea class="form-control" name="otros" rows="3">{{$zonificacion->otros or '' }}</textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {{Form::close()}}
-                                    {{-------------------Bank Account Form end-----------------------------------------}}
-
-
-                                </div>
-                            </div>
                         </div>
         			<div class="clearfix">
         			</div>
