@@ -7,9 +7,15 @@ class ActividadesController extends \AdminBaseController {
         setlocale(LC_ALL,"es_ES");
         $this->data['actividadOpen'] ='active open';
         $this->data['pageTitle'] =  'Actividad';
-        $month = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+//        $month = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+        for ($m=1; $m<=12; $m++)
+        {
+            $month[] = date('F', mktime(0,0,0,$m, 1, date('Y')));
+        }
         $this->data['months']       =   $month;
-        $this->data['currentMonth'] =   $month[date('n')-1];
+        $this->data['currentMonth'] =   date('F');
+//        $this->data['months']       =   $month;
+//        $this->data['currentMonth'] =   $month[date('n')-1];
     }
     public function index()
     {
@@ -32,7 +38,6 @@ class ActividadesController extends \AdminBaseController {
 
 
         $this->data['actividadesArray'] = $act;
-        dd(  $act);
         return View::make('admin.actividades.index', $this->data);
     }
 
