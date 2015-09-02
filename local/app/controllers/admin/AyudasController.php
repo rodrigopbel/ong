@@ -126,7 +126,7 @@ class AyudasController extends \AdminBaseController {
 
 		$award->update($data);
 
-		return Redirect::route('admin.ayudas.edit',$id)->with('success',"<strong>Success</strong> Updated Successfully");
+		return Redirect::route('admin.ayudas.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
 	}
 
 	/**
@@ -138,7 +138,7 @@ class AyudasController extends \AdminBaseController {
 	public function destroy($id)
 	{
 		if (Request::ajax()) {
-			Award::destroy($id);
+			Ayuda::destroy($id);
 			$output['success'] = 'deleted';
 
 			return Response::json($output, 200);

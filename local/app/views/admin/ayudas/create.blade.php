@@ -62,14 +62,21 @@
                                     <div class="form-body">
 
                                         <div class="form-group">
-                                        <label class="col-md-2 control-label">Nombre de la Ayuda: <span class="required">
+                                            <label class="col-md-2 control-label">Monto Aporte: <span class="required">
+                                         </span>
+                                            </label>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" name="montoaporte" placeholder="Monto Aporte" value="{{ Input::old('montoaporte') }}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Anomino: <span class="required">
                                         * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="ayudaName" placeholder="Nombre de la ayuda" value="{{ Input::old('ayudaName') }}">
+                                                <input type="text" class="form-control" name="anonimo" placeholder="Anonimo" value="{{ Input::old('anonimo') }}">
                                             </div>
                                         </div>
-
                                         <div class="form-group">
                                         <label class="col-md-2 control-label">Tipo Aporte: <span class="required">
                                             * </span>
@@ -123,6 +130,12 @@
 
                                                  </div>
                                             </div>
+
+                                         <label class="col-md-2 control-label">Nombre del Aportante:</label>
+
+                                         <div class="col-md-8">
+                                             {{ Form::select('beneficiarioID', $personal,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Aportante...']) }}
+                                         </div>
 
                                         </div>
                                         <div class="form-actions">
