@@ -527,48 +527,53 @@
                                         <i class="fa fa-calendar"></i>Detalles de el/los Responsable/s
                                     </div>
                                     <div class="actions">
-                                        <a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->beneficiarioID}}','company');return false" data-loading-text="Updating..." class="demo-loading-btn-ajax btn btn-sm btn-default ">
+                                        <a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->personal->personalID}}','company');return false" data-loading-text="Updating..." class="demo-loading-btn-ajax btn btn-sm btn-default ">
                                             <i class="fa fa-save"></i> Guardar </a>
                                     </div>
                                 </div>
                                 <div class="portlet-body">
 
-                                    {{--------------------Company Form--------------------------------------------}}
-                                    {{Form::open(['class'   =>  'form-horizontal','id'  =>  'company_details_form'])}}
-                                    <input type="hidden" name="updateType" class="form-control" value="donacion">
-                                    <div id="alert_company">
-                                        {{--INLCUDE ERROR MESSAGE BOX--}}
-                                        @include('admin.common.error')
-                                        {{--END ERROR MESSAGE BOX--}}
-                                    </div>
+                                    {{--------------------Bank Account Form--------------------------------------------}}
+                                    {{Form::open(['class'   =>  'form-horizontal','id'  =>  'bank_details_form'])}}
+                                    <input type="hidden" name="updateType" class="form-control" value="zonificacion">
 
+                                    <div id="alert_bank"></div>
                                     <div class="form-body">
-                                        @foreach($beneficiario->getSoldonacion as $solicitud)
-                                            <div id="salary{{$solicitud->id}}">
-                                                <div class="form-group" >
-                                                    <div class="col-md-5">
-                                                        <input type="text" class="form-control" name="tipo[{{$solicitud->id}}]" value="{{$solicitud->tipo}}">
-                                                    </div>
-
-                                                    <div class="col-md-5">
-                                                        <input type="text" class="form-control" name="monto[{{$solicitud->id}}]" value="{{$solicitud->monto}}">
-                                                    </div>
-
-                                                    <div class="col-md-2">
-                                                        <a class="btn btn-sm red" onclick="del('{{$solicitud->id}}','{{$solicitud->tipo}}')"><i class="fa fa-trash"></i> </a>
-
-                                                    </div>
-                                                </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Cedula de Identidad</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="ciResponsable" class="form-control" value="{{$beneficiario->beneficiarioID or ''}}">
                                             </div>
-                                        @endforeach
-                                        <a class="" data-toggle="modal" href="#static">
-                                            Nuevo
-                                            <i class="fa fa-plus"></i> </a>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Nombres</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="nombresReponsable" class="form-control" value="{{$beneficiario->nombres or ''}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Apellido</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="localidad" class="form-control" value="{{$beneficiario->apellidos or ''}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Ocupacion</label>
+                                            <div class="col-md-9">
+                                                {{ Form::select('ocupacion', array('ninguno' => 'Ninguno', 'estudiante' => 'Estudiante', 'uni' => 'Universitario/a','profesional' => 'Profesional'), Input::old('ocupacion'),array('class'=>'form-control')) }}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Parentesco</label>
+                                            <div class="col-md-9">
+                                                {{ Form::select('parentesco', array('ninguno' => 'Ninguno', 'papamama' => 'Papa/Mama', 'tiotia' => 'Tio/Tia', 'hermanohermana' => 'Hermano/Hermana','otro'=>'Otro Familiar'), Input::old('parentesco'),array('class'=>'form-control')) }}
+                                            </div>
+                                        </div>
                                     </div>
                                     {{Form::close()}}
+                                    {{-------------------Bank Account Form end-----------------------------------------}}
 
-
-                                    {{----------------Company Form end -------------}}
 
                                 </div>
                             </div>
