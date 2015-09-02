@@ -14,7 +14,7 @@
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			<i class="fa fa-edit"></i> Edit <small>{{ $award->awardName }} given to {{ $award->employeeDetails->fullName }}</small>
+			<i class="fa fa-edit"></i> Edit <small>{{ $ayuda->ayudaName }} given to {{ $ayuda->employeeDetails->fullName }}</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -59,7 +59,7 @@
 						<div class="portlet-body form">
 
 						<!------------------------ BEGIN FORM---------------------->
-						{{ Form::model($award, ['method' => 'PATCH', 'route' => ['admin.ayudas.update', $award->id],'class'=>'form-horizontal form-bordered']) }}
+						{{ Form::model($ayuda, ['method' => 'PATCH', 'route' => ['admin.ayudas.update', $ayuda->id],'class'=>'form-horizontal form-bordered']) }}
 
                                     <div class="form-body">
 
@@ -68,7 +68,7 @@
                                         * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="awardName" placeholder="Nombre de la Ayuda" value="{{ $award->awardName }}">
+                                                <input type="text" class="form-control" name="awardName" placeholder="Nombre de la Ayuda" value="{{ $ayuda->awardName }}">
                                             </div>
                                         </div>
 
@@ -77,7 +77,7 @@
                                             * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="gift" placeholder="Gift" value="{{ $award->gift }}" >
+                                                <input type="text" class="form-control" name="montoaporte" placeholder="Gift" value="{{ $ayuda->montoaporte }}" >
                                             </div>
                                         </div>
 
@@ -85,7 +85,7 @@
                                         <label class="col-md-2 control-label">Monto: ( <span class="fa {{$setting->currency_icon}}"></span> )</label>
 
                                                 <div class="col-md-6">
-                                                    <input type="text" class="form-control" name="cashPrice" placeholder="Monto" value="{{ $award->cashPrice }}">
+                                                    <input type="text" class="form-control" name="cashPrice" placeholder="Monto" value="{{ $ayuda->cashPrice }}">
                                                 </div>
                                     </div>
 
@@ -94,7 +94,7 @@
                                         <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
 
                                             <div class="col-md-8">
-                                            {{ Form::select('employeeID', $employees,$award->employeeID,['class'=>'form-control input-xlarge select2me']) }}
+                                            {{ Form::select('employeeID', $employees,$ayuda->employeeID,['class'=>'form-control input-xlarge select2me']) }}
 
                                     </div>
 
@@ -104,18 +104,18 @@
                                               <div class="col-md-3">
                                              <select class="form-control select2me" name="forMonth">
                                                 <option value="" selected="selected">Mes</option>
-                                                <option value="january"  @if($award->forMonth=='january')selected='selected'@endif >Enero</option>
-                                                <option value="february" @if($award->forMonth=='february')selected='selected'@endif>Febrero</option>
-                                                <option value="march"    @if($award->forMonth=='march')selected='selected'@endif>Marzo</option>
-                                                <option value="april"    @if($award->forMonth=='april')selected='selected'@endif>Abril</option>
-                                                <option value="may"      @if($award->forMonth=='may')selected='selected'@endif>Mayo</option>
-                                                <option value="june"     @if($award->forMonth=='june')selected='selected'@endif>Junio</option>
-                                                <option value="july"     @if($award->forMonth=='july')selected='selected'@endif>Julio</option>
-                                                <option value="august"   @if($award->forMonth=='august')selected='selected'@endif>Agosto</option>
-                                                <option value="september" @if($award->forMonth=='september')selected='selected'@endif>Septiembre</option>
-                                                <option value="october"  @if($award->forMonth=='october')selected='selected'@endif>Octubre</option>
-                                                <option value="november" @if($award->forMonth=='november')selected='selected'@endif>Noviembre</option>
-                                                <option value="december" @if($award->forMonth=='december')selected='selected'@endif>Diciembre</option>
+                                                <option value="enero"  @if($ayuda->forMonth=='enero')selected='selected'@endif >Enero</option>
+                                                <option value="febrero" @if($ayuda->forMonth=='febrero')selected='selected'@endif>Febrero</option>
+                                                <option value="marzo"    @if($ayuda->forMonth=='marzo')selected='selected'@endif>Marzo</option>
+                                                <option value="abril"    @if($ayuda->forMonth=='abril')selected='selected'@endif>Abril</option>
+                                                <option value="mayo"      @if($ayuda->forMonth=='mayo')selected='selected'@endif>Mayo</option>
+                                                <option value="junio"     @if($ayuda->forMonth=='junio')selected='selected'@endif>Junio</option>
+                                                <option value="julio"     @if($ayuda->forMonth=='julio')selected='selected'@endif>Julio</option>
+                                                <option value="agosto"   @if($ayuda->forMonth=='agosto')selected='selected'@endif>Agosto</option>
+                                                <option value="septiembre" @if($ayuda->forMonth=='septiembre')selected='selected'@endif>Septiembre</option>
+                                                <option value="octubre"  @if($ayuda->forMonth=='octubre')selected='selected'@endif>Octubre</option>
+                                                <option value="noviembre" @if($ayuda->forMonth=='noviembre')selected='selected'@endif>Noviembre</option>
+                                                <option value="dicimbre" @if($ayuda->forMonth=='dicimbre')selected='selected'@endif>Diciembre</option>
                                          </select>
 
                                                </div>
@@ -123,7 +123,7 @@
                                              <label class="col-md-2 control-label">Año:</label>
 
                                                    <div class="col-md-3">
-                                                            {{ Form::selectYear('forYear', 2013, 2015,$award->forYear,['class'=>'form-control select2me']) }}
+                                                            {{ Form::selectYear('forYear', 2013, 2015,$ayuda->forYear,['class'=>'form-control select2me']) }}
                                              </div>
                                                             </div>
 
