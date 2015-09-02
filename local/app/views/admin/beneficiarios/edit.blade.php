@@ -461,7 +461,7 @@
         									</div>
         									<div class="form-group">
         										<label class="control-label col-md-2">Perfil</label>
-        										<div class="col-md-5">
+        										<div class="col-md-9">
         											<div class="fileinput fileinput-new" data-provides="fileinput">
         												<div class="input-group input-large">
         													<div class="form-control uneditable-input" data-trigger="fileinput">
