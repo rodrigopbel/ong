@@ -70,11 +70,13 @@
 							<tr>
 								<th> AyudaID </th>
 								<th> Beneficiario ID </th>
-								<th> Aportante ID </th>
-								{{--<th> Apellido </th>--}}
+								<th> Tipo Aporte</th>
 								<th> Monto de Aporte </th>
+								<th> Anonimo </th>
 								<th> Por el Mes </th>
-								{{--<th> Por el Año </th>--}}
+								<th> Por el Año </th>
+
+
 								<th> Accion </th>
 							</tr>
 							</thead>
