@@ -14,7 +14,7 @@
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			<i class="fa fa-edit"></i> Edit <small>{{ $ayuda->ayudaName }} given to {{ $ayuda->beneficiarioDetails->beneficiarioID }}</small>
+			<i class="fa fa-edit"></i> Edit <small>{{ $ayuda->montoaporte }} given to {{ $ayuda->beneficiarioDetails->beneficiarioID }}</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -61,16 +61,16 @@
 						<!------------------------ BEGIN FORM---------------------->
 						{{ Form::model($ayuda, ['method' => 'PATCH', 'route' => ['admin.ayudas.update', $ayuda->id],'class'=>'form-horizontal form-bordered']) }}
 
-                                    <div class="form-body">
+                                    {{--<div class="form-body">--}}
 
-                                        <div class="form-group">
-                                        <label class="col-md-2 control-label">Nombre de la Ayuda: <span class="required">
-                                        * </span>
-                                            </label>
-                                            <div class="col-md-6">
-                                                <input type="text" class="form-control" name="ayudaName" placeholder="Nombre de la Ayuda" value="{{ $ayuda->ayudaName }}">
-                                            </div>
-                                        </div>
+                                        {{--<div class="form-group">--}}
+                                        {{--<label class="col-md-2 control-label">Nombre de la Ayuda: <span class="required">--}}
+                                        {{--* </span>--}}
+                                            {{--</label>--}}
+                                            {{--<div class="col-md-6">--}}
+                                                {{--<input type="text" class="form-control" name="ayudaName" placeholder="Nombre de la Ayuda" value="{{ $ayuda->ayudaName }}">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
 
 
                                      <div class="form-group">
