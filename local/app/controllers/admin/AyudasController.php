@@ -27,10 +27,10 @@ class AyudasController extends \AdminBaseController {
 
 
 	    $result =
-		    Ayuda::select('ayudas.id','ayudas.beneficiarioID','ayudas.aportanteID','ayudas.montoaporte','ayudas.porelMes')
+		    Ayuda::select('ayudas.id','ayudas.beneficiarioID','ayudas.montoaporte','ayudas.porelMes','ayudas.porelAnio')
 		      ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
 			  ->orderBy('ayudas.created_at','desc');
-            dd($result);
+
         return Datatables::of($result)
             ->add_column('For Month',function($row) {
                 return ucfirst($row->porelMes).' '.$row->porelAnio;
