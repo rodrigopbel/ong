@@ -17,7 +17,14 @@ class AyudasController extends \AdminBaseController {
 
         $this->data['ayudasActive'] =   'active';
 
-		return View::make('admin.ayudas.index', $this->data);
+//		return View::make('admin.ayudas.index', $this->data);
+
+
+        $result =
+            Ayuda::select('ayudas.id','ayudas.beneficiarioID','ayudas.montoaporte','ayudas.porelMes','ayudas.porelAnio')
+                ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
+                ->orderBy('ayudas.created_at','desc');
+        dd($result);
 	}
 
 
@@ -73,15 +80,15 @@ class AyudasController extends \AdminBaseController {
 
         if($this->data['setting']->ayuda_notification==1)
         {
-            $employee = Beneficiario::select('email','apellidos')->where('beneficiarioID', '=', $input['beneficiarioID'])->first();
+            $beneficiario = Beneficiario::select('email','apellidos')->where('beneficiarioID', '=', $input['beneficiarioID'])->first();
 
             $this->data['ayudaName'] = $input['ayudaName'];
-	        $this->data['beneficiario_name'] = $employee->apellidos;
+	        $this->data['beneficiario_name'] = $beneficiario->apellidos;
 
             //        Send award Mail
-            Mail::send('emails.admin.ayuda', $this->data, function ($message) use ($employee) {
+            Mail::send('emails.admin.ayuda', $this->data, function ($message) use ($beneficiario) {
                 $message->from($this->data['setting']->email, $this->data['setting']->name);
-                $message->to($employee['email'], $employee['apellidos'])
+                $message->to($beneficiario['email'], $beneficiario['apellidos'])
                     ->subject('Ayuda - ' . $this->data['ayudaName']);
             });
         }
@@ -115,7 +122,7 @@ class AyudasController extends \AdminBaseController {
 	 */
 	public function update($id)
 	{
-		$award = Ayuda::findOrFail($id);
+		$ayuda = Ayuda::findOrFail($id);
 
 		$validator = Validator::make($data = Input::all(), Ayuda::$rules);
 
@@ -124,7 +131,7 @@ class AyudasController extends \AdminBaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		$award->update($data);
+        $ayuda->update($data);
 
 		return Redirect::route('admin.ayudas.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
 	}
