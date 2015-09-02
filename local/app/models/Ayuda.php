@@ -14,7 +14,7 @@ class Ayuda extends \Eloquent {
     protected $guarded = ['id'];
 //    protected $fillable = ['username', 'email', 'password'];
 
-    public function employeeDetails(){
+    public function beneficiarioDetails(){
 
         return $this->belongsTo('Beneficiario','beneficiarioID','beneficiarioID');
     }
