@@ -527,7 +527,7 @@
                                         <i class="fa fa-calendar"></i>Detalles de el/los Responsable/s
                                     </div>
                                     <div class="actions">
-                                        <a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->personal->personalID}}','company');return false" data-loading-text="Updating..." class="demo-loading-btn-ajax btn btn-sm btn-default ">
+                                        {{--<a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->personal->personalID}}','company');return false" data-loading-text="Updating..." class="demo-loading-btn-ajax btn btn-sm btn-default ">--}}
                                             <i class="fa fa-save"></i> Guardar </a>
                                     </div>
                                 </div>
