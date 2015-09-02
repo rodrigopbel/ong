@@ -27,20 +27,20 @@ class AyudasController extends \AdminBaseController {
 
 
 	    $result =
-		    Ayuda::select('ayudas.id','ayudas.beneficiarioID','ayudas.aportanteID','beneficiarios.apellidos','ayudas.montoaporte','ayudas.anonimo')
+		    Ayuda::select('ayudas.id','ayudas.beneficiarioID','ayudas.aportanteID','beneficiarios.apellidos','ayudas.montoaporte','ayudas.anonimo','ayudas.porelMes')
 		      ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
 			  ->orderBy('ayudas.created_at','desc');
 
         return Datatables::of($result)
             ->add_column('For Month',function($row) {
-                return ucfirst($row->forMonth).' '.$row->forYear;
+                return ucfirst($row->porelMes).' '.$row->porelAnio;
             })
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i> View/Edit</a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $tipo_aporte}}\',\'{{ $montoaporte }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i> Borrar</a>')
 
-            ->remove_column('forYear')
+            ->remove_column('porelAnio')
 
 
 
