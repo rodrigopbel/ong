@@ -166,11 +166,11 @@
 
 
 
-		function del(id,awardeeName,ayuda)
+		function del(id,ayudaaName,ayuda)
 		{
 
 			$('#deleteModal').appendTo("body").modal('show');
-			$('#info').html('Are you sure ! You want to delete <strong>'+ayuda+'</strong> given to <strong>'+awardeeName+'</strong>??');
+			$('#info').html('Are you sure ! You want to delete <strong>'+ayuda+'</strong> given to <strong>'+ayudaaName+'</strong>??');
 			$("#delete").click(function()
 			{
 					var url = "{{ route('admin.ayudas.destroy',':id') }}";
