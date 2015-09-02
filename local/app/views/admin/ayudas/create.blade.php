@@ -131,11 +131,11 @@
                                                  </div>
                                             </div>
 
-                                         <label class="col-md-2 control-label">Nombre del Aportante:</label>
+                                         {{--<label class="col-md-2 control-label">Nombre del Aportante:</label>--}}
 
-                                         <div class="col-md-8">
-                                             {{ Form::select('personalID', $personal,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Aportante...']) }}
-                                         </div>
+                                         {{--<div class="col-md-8">--}}
+                                             {{--{{ Form::select('personalID', $personal,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Aportante...']) }}--}}
+                                         {{--</div>--}}
 
                                         </div>
                                         <div class="form-actions">
