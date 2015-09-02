@@ -74,7 +74,7 @@
 								{{--<th> Apellido </th>--}}
 								<th> Monto de Aporte </th>
 								<th> Por el Mes </th>
-								<th> Por el Año </th>
+								{{--<th> Por el Año </th>--}}
 								<th> Accion </th>
 							</tr>
 							</thead>
