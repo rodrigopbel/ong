@@ -14,7 +14,7 @@
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			<i class="fa fa-edit"></i> Edit <small>{{ $ayuda->ayudaName }} given to {{ $ayuda->employeeDetails->fullName }}</small>
+			<i class="fa fa-edit"></i> Edit <small>{{ $ayuda->ayudaName }} given to {{ $ayuda->beneficiarioDetails->beneficiarioID }}</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -68,24 +68,16 @@
                                         * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="awardName" placeholder="Nombre de la Ayuda" value="{{ $ayuda->awardName }}">
+                                                <input type="text" class="form-control" name="ayudaName" placeholder="Nombre de la Ayuda" value="{{ $ayuda->ayudaName }}">
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                        <label class="col-md-2 control-label">Gift Item: <span class="required">
-                                            * </span>
-                                            </label>
-                                            <div class="col-md-6">
-                                                <input type="text" class="form-control" name="montoaporte" placeholder="Gift" value="{{ $ayuda->montoaporte }}" >
-                                            </div>
-                                        </div>
 
                                      <div class="form-group">
                                         <label class="col-md-2 control-label">Monto: ( <span class="fa {{$setting->currency_icon}}"></span> )</label>
 
                                                 <div class="col-md-6">
-                                                    <input type="text" class="form-control" name="cashPrice" placeholder="Monto" value="{{ $ayuda->cashPrice }}">
+                                                    <input type="text" class="form-control" name="montoaporte" placeholder="Monto" value="{{ $ayuda->montoaporte }}">
                                                 </div>
                                     </div>
 
@@ -94,7 +86,7 @@
                                         <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
 
                                             <div class="col-md-8">
-                                            {{ Form::select('employeeID', $employees,$ayuda->employeeID,['class'=>'form-control input-xlarge select2me']) }}
+                                            {{ Form::select('beneficiarioID', $beneficiarios,$ayuda->beneficiarioID,['class'=>'form-control input-xlarge select2me']) }}
 
                                     </div>
 
@@ -123,7 +115,7 @@
                                              <label class="col-md-2 control-label">Año:</label>
 
                                                    <div class="col-md-3">
-                                                            {{ Form::selectYear('forYear', 2013, 2015,$ayuda->forYear,['class'=>'form-control select2me']) }}
+                                                            {{ Form::selectYear('porelAnio', 2013, 2015,$ayuda->porelAnio,['class'=>'form-control select2me']) }}
                                              </div>
                                                             </div>
 

@@ -63,7 +63,7 @@
 
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Monto Aporte: <span class="required">
-                                         </span>
+                                        * </span>
                                             </label>
                                             <div class="col-md-6">
                                                 <input type="text" class="form-control" name="montoaporte" placeholder="Monto Aporte" value="{{ Input::old('montoaporte') }}">
@@ -85,17 +85,7 @@
                                                 <input type="text" class="form-control" name="tipo_aporte" placeholder="Tipo Aporte" value="{{ Input::old('tipo_aporte') }}" >
                                             </div>
                                         </div>
-
-                                     <div class="form-group">
-                                        <label class="col-md-2 control-label">Monto:  <span class="fa {{$setting->currency_icon}}"></span></label>
-
-                                                <div class="col-md-6">
-                                                    <input type="text" class="form-control" name="montoaporte" placeholder="Monto" value="{{ Input::old('montoaporte') }}">
-                                                </div>
-                                    </div>
-
-
-                                     <div class="form-group">
+                                        <div class="form-group">
                                         <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
 
                                             <div class="col-md-8">
