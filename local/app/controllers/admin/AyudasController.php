@@ -31,18 +31,15 @@ class AyudasController extends \AdminBaseController {
 			  ->orderBy('ayudas.created_at','desc');
 
         return Datatables::of($result)
-            ->add_column('For Month',function($row) {
+            ->add_column('Por el Mes',function($row) {
                 return ucfirst($row->porelMes).' '.$row->porelAnio;
             })
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i> Editar</a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $apellidos}}\',\'{{ $montoaporte }}\');return false;" class="btn red">
-                        <i class="fa fa-trash"></i> Borrar</a>')
+                        <i class="fa fa-trash"></i> Eliminar</a>')
 
             ->remove_column('porelAnio')
-
-
-
             ->make();
     }
 
@@ -66,14 +63,12 @@ class AyudasController extends \AdminBaseController {
 
 	public function store()
 	{
-
 		$validator = Validator::make($input = Input::all(), Ayuda::$rules);
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-
 
         Ayuda::create([
             'beneficiarioID'   => $input['beneficiarioID'],
