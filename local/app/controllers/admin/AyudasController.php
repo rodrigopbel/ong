@@ -86,7 +86,7 @@ class AyudasController extends \AdminBaseController {
 
         ]);
 
-		return Redirect::route('admin.ayudas.index')->with('success',"<strong>Guardado</strong> is awarded");
+		return Redirect::route('admin.ayudas.index')->with('success',"<strong>Guardado</strong> Exitosamente");
 	}
 
 
@@ -123,7 +123,15 @@ class AyudasController extends \AdminBaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-        $ayuda->update($data);
+        $ayuda->update([
+            'beneficiarioID'   => $input['beneficiarioID'],
+            'tipo_aporte'    => $input['tipo_aporte'],
+            'aportanteID'    => $input['personalID'],
+            'montoaporte'    => $input['montoaporte'],
+            'anonimo'        => $input['anonimo'],
+            'porelMes'  => $input['porelMes'],
+            'porelAnio'  => $input['porelAnio']
+        ]);
 
 		return Redirect::route('admin.ayudas.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
 	}
