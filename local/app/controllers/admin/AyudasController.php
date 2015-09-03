@@ -73,24 +73,18 @@ class AyudasController extends \AdminBaseController {
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-dd($input);
-//        if($this->data['setting']->ayuda_notification==1)
-//        {
-//            $beneficiario = Beneficiario::select('email','apellidos')->where('beneficiarioID', '=', $input['beneficiarioID'])->first();
-//            $personal = Personal::select('nombres')->where('personalID', '=', $input['personalID'])->first();
-//
-//            $this->data['montoaporte'] = $input['montoaporte'];
-//	        $this->data['beneficiario_name'] = $beneficiario->apellidos;
-//            $this->data['personal_name'] = $personal->nombres;
-//
-//            //        Send award Mail
-//            Mail::send('emails.admin.ayuda', $this->data, function ($message) use ($beneficiario) {
-//                $message->from($this->data['setting']->email, $this->data['setting']->name);
-//                $message->to($beneficiario['email'], $beneficiario['apellidos'])
-//                    ->subject('Ayuda - ' . $this->data['montoaporte']);
-//            });
-//        }
-        Ayuda::create($input);
+
+
+        Ayuda::create([
+            'montoaporte'    => $input['montoaporte'],
+            'anonimo'        => $input['anonimo'],
+            'tipo_aporte'    => $input['tipo_aporte'],
+            'aportanteID'    => $input['personalID'],
+            'beneficiarioID'   => $input['beneficiarioID'],
+            'porelMes'  => $input['porelMes'],
+            'porelAnio'  => $input['porelAnio'],
+
+        ]);
 
 		return Redirect::route('admin.ayudas.index')->with('success',"<strong>{$input['ayudaName']}</strong> is awarded");
 	}
