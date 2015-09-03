@@ -127,16 +127,47 @@ class PersonalController extends \AdminBaseController {
                 $output['status']   =   'error';
                 $output['msg']      =   $validator->getMessageBag()->toArray();
             }else{
-                $bank_details = Bank_detail::firstOrNew(['employeeID' => $id]);
-                $bank_details->accountName   = Input::get('accountName');
-                $bank_details->accountNumber = Input::get('accountNumber');
-                $bank_details->bank          = Input::get('bank');
-                $bank_details->pan           = Input::get('pan');
-                $bank_details->ifsc          = Input::get('ifsc');
-                $bank_details->branch        = Input::get('branch');
-                $bank_details->save();
+
+                // Profile Image Upload
+                if (Input::hasFile('foto'))
+                {
+                    $path       = public_path()."/personalImages/";
+                    File::makeDirectory($path, $mode = 0777, true, true);
+
+                    $image 	    = Input::file('fotoPersonal');
+
+                    $fullname = Input::get('nombres')." ". Input::get('apellidos');
+                    $extension  = $image->getClientOriginalExtension();
+                    $filename	= "{$fullname}_{$id}.".strtolower($extension);
+
+                    //Image::make($image->getRealPath())->resize(872,724)->save("$path$filename");
+
+                    Image::make($image->getRealPath())
+                        ->fit(872, 724, function ($constraint) {
+                            $constraint->upsize();
+                        })->save($path . $filename);
+
+
+                }else
+                {
+                    $filename   =   Input::get('hiddenImage');
+                }
+
+
+                $responsable = Personal::firstOrNew(['personalID' => $id]);
+                $responsable->nombres       = ucwords(strtolower($input['nombres']));
+                $responsable->apellidos     = ucwords(strtolower($input['apellidos']));
+                $responsable->email         = Input::get('email');
+                $responsable->password      = Hash::make($input['password']);
+                $responsable->genero        = Input::get('genero');
+                $responsable->tipoPersonal  = Input::get('tipoPersonal');
+                $responsable->telefono      = Input::get('telefono');
+                $responsable->parentesco    = Input::get('parentesco');
+                $responsable->fechanac      = date('Y-m-d',strtotime(Input::get('fechanac')));
+                $responsable->fotoPersonal  =  isset($filename)?$filename:'default.jpg';
+                $responsable->save();
                 $output['status'] = 'success';
-                $output['msg'] = 'Bank details updated successfully';
+                $output['msg'] = 'Persona actualizad correctamente....';
             }
         }
         //-------Documents info Details Update END--------
