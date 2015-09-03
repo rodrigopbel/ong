@@ -542,7 +542,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Cedula de Identidad</label>
                                             <div class="col-md-9">
-                                                <input type="text" name="ciResponsable" class="form-control" value="{{$beneficiario->responsable->personalID or ''}}">
+                                                <input type="text" name="ciResponsable" class="form-control" value="{{$beneficiario->responsable->personalID  or ''}}">
                                             </div>
                                         </div>
                                         <div class="form-group">
