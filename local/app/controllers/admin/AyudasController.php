@@ -81,7 +81,7 @@ class AyudasController extends \AdminBaseController {
 
             $this->data['montoaporte'] = $input['montoaporte'];
 	        $this->data['beneficiario_name'] = $beneficiario->apellidos;
-            $this->data['personal_name'] = $beneficiario->nombres;
+            $this->data['personal_name'] = $personal->nombres;
 
             //        Send award Mail
             Mail::send('emails.admin.ayuda', $this->data, function ($message) use ($beneficiario) {
