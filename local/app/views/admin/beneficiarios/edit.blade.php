@@ -566,13 +566,13 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Parentesco</label>
                                             <div class="col-md-9">
-                                                <select class="form-control" name="genero">
+                                                <select class="form-control" name="parentesco">
 
-                                                    <option value="ninguno" @if($beneficiario->genero=='Ninguno') selected @endif>Ninguno</option>
-                                                    <option value="papamama"  @if($beneficiario->genero=='Papa / Mama') selected @endif>Pama / mama</option>
-                                                    <option value="tiotia"  @if($beneficiario->genero=='Tio / Tia') selected @endif>Tio /Ti</option>
-                                                    <option value="hermanohermana"  @if($beneficiario->genero=='Hermano / Hermana') selected @endif>Hermano / hermana</option>
-                                                    <option value="otro"  @if($beneficiario->genero=='Otro Familiar') selected @endif>Otro Familiar</option>
+                                                    <option value="ninguno" @if($beneficiario->parentesco=='Ninguno') selected @endif>Ninguno</option>
+                                                    <option value="papamama"  @if($beneficiario->parentesco=='Papa / Mama') selected @endif>Papa / mama</option>
+                                                    <option value="tiotia"  @if($beneficiario->parentesco=='Tio / Tia') selected @endif>Tio /Ti</option>
+                                                    <option value="hermanohermana"  @if($beneficiario->parentesco=='Hermano / Hermana') selected @endif>Hermano / hermana</option>
+                                                    <option value="otro"  @if($beneficiario->parentesco=='Otro Familiar') selected @endif>Otro Familiar</option>
                                                 </select>
                                             </div>
                                         </div>
