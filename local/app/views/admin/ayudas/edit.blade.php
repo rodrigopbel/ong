@@ -80,7 +80,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
+                                            <label class="col-md-2 control-label">Nombre del Aportante:</label>
 
                                             <div class="col-md-8">
                                                 {{ Form::select('personalID', $personales,$ayuda->aportanteID,['class'=>'form-control input-xlarge select2me']) }}
