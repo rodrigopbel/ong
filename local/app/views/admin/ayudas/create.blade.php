@@ -121,7 +121,7 @@
                                                     <option value="septiembre" @if(strtolower(date('F'))=='septiembre')selected='selected'@endif>Septiembre</option>
                                                     <option value="octubre"  @if(strtolower(date('F'))=='octubre')selected='selected'@endif>Octubre</option>
                                                     <option value="noviembre" @if(strtolower(date('F'))=='noviembre')selected='selected'@endif>Noviembre</option>
-                                                    <option value="dicimbre" @if(strtolower(date('F'))=='dicimbre')selected='selected'@endif>Diciembre</option>
+                                                    <option value="diciembre" @if(strtolower(date('F'))=='diciembre')selected='selected'@endif>Diciembre</option>
                                                 </select>
                                             </div>
 

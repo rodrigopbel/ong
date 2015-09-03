@@ -60,9 +60,7 @@
                                     <div class="form-body">
 
                                         <div class="form-group">
-                                        <label class="col-md-2 control-label">Tipo de Ayuda: <span class="required">
-                                        * </span>
-                                            </label>
+                                        <label class="col-md-2 control-label">Tipo de Ayuda: </label>
                                             <div class="col-md-6">
                                                 {{ Form::select('tipo_aporte', array('ap' => 'AP', 'a' => 'A'), Input::old('tipo_aporte'),array('class'=>'form-control')) }}
                                             </div>
@@ -71,14 +69,14 @@
                                         <label class="col-md-2 control-label">Monto: ( <span class="fa {{$setting->currency_icon}}"></span> )</label>
 
                                                 <div class="col-md-6">
-                                                    <input type="text" class="form-control" name="montoaporte" placeholder="Monto" value="{{ $ayuda->montoaporte }}">
+                                                    <input type="text" class="form-control" name="montoaporte"  value="{{ $ayuda->montoaporte }}">
                                                 </div>
                                     </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Anonimo: </label>
 
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="anonimo" placeholder="Monto" value="{{ $ayuda->anonimo }}">
+                                                <input type="text" class="form-control" name="anonimo"  value="{{ $ayuda->anonimo }}">
                                             </div>
                                         </div>
                                         <div class="form-group">
