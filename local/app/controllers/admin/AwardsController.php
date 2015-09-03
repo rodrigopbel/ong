@@ -49,7 +49,7 @@ class AwardsController extends \AdminBaseController {
 
 	public function create()
 	{
-        $this->data['addAwardsActive'] = 'active';
+        $this->data['addAwardsActive'] = 'activo';
         $this->data['employees'] = Employee::selectRaw('CONCAT(fullName, " (EmpID:", employeeID,")") as full_name, employeeID')
 	                                        ->where('status','=','active')
 	                                        ->lists('full_name','employeeID');
