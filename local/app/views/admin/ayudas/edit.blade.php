@@ -62,7 +62,9 @@
                                         <div class="form-group">
                                         <label class="col-md-2 control-label">Tipo de Ayuda: </label>
                                             <div class="col-md-6">
-                                                {{ Form::select('tipo_aporte', array('ap' => 'AP', 'a' => 'A'), Input::old('tipo_aporte'),array('class'=>'form-control')) }}
+                                                <option value="ap" @if($ayuda->tipo_aporte=='ap') selected @endif>AP</option>
+                                                <option value="a"  @if($ayuda->tipo_aporte=='a') selected @endif>A</option>
+                                                {{--{{ Form::select('tipo_aporte', array('ap' => 'AP', 'a' => 'A'), Input::old('tipo_aporte'),array('class'=>'form-control')) }}--}}
                                             </div>
                                         </div>
                                      <div class="form-group">
