@@ -103,6 +103,7 @@ class AyudasController extends \AdminBaseController {
         $this->data['ayuda']    = Ayuda::find($id);
         $this->data['addAyudasActive'] = 'active';
         $this->data['beneficiarios'] = Beneficiario::lists('apellidos','beneficiarioID');
+        $this->data['personales'] = Personal::lists('nombres','personalID');
 		return View::make('admin.ayudas.edit', $this->data);
 	}
 
@@ -126,9 +127,9 @@ class AyudasController extends \AdminBaseController {
         $ayuda->update([
             'beneficiarioID' => $input['beneficiarioID'],
             'tipo_aporte'    => $input['tipo_aporte'],
-
+            'aportanteID'    => $input['personalID'],
             'montoaporte'    => $input['montoaporte'],
-
+            'anonimo'        => $input['anonimo'],
             'porelMes'       => $input['porelMes'],
             'porelAnio'      => $input['porelAnio']
         ]);

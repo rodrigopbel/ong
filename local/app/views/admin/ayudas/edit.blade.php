@@ -80,15 +80,30 @@
                                                     <input type="text" class="form-control" name="montoaporte" placeholder="Monto" value="{{ $ayuda->montoaporte }}">
                                                 </div>
                                     </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Anonimo: </label>
+
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" name="anonimo" placeholder="Monto" value="{{ $ayuda->anonimo }}">
+                                            </div>
+                                        </div>
 
 
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
+
+                                            <div class="col-md-8">
+                                                {{ Form::select('personalID', $personales,$ayuda->aportanteID,['class'=>'form-control input-xlarge select2me']) }}
+
+                                            </div>
+                                        </div>
                                      <div class="form-group">
                                         <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
 
                                             <div class="col-md-8">
                                             {{ Form::select('beneficiarioID', $beneficiarios,$ayuda->beneficiarioID,['class'=>'form-control input-xlarge select2me']) }}
 
-                                    </div>
+                                             </div>
 
                                      <div class="form-group">
                                         <label class="col-md-2 control-label">Mes:</label>
