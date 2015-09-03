@@ -73,7 +73,7 @@ class AyudasController extends \AdminBaseController {
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-
+dd($input);
 //        if($this->data['setting']->ayuda_notification==1)
 //        {
 //            $beneficiario = Beneficiario::select('email','apellidos')->where('beneficiarioID', '=', $input['beneficiarioID'])->first();
