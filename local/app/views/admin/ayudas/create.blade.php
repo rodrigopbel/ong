@@ -87,7 +87,7 @@
                                                  </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Tipo Aporte: <span class="required">
+                                            <label class="col-md-2 control-label">Id Aporte: <span class="required">
                                             * </span>
                                             </label>
                                             <div class="col-md-6">
