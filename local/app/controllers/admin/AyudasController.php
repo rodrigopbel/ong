@@ -122,7 +122,7 @@ class AyudasController extends \AdminBaseController {
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-
+        dd(Input::all());
         $ayuda->update([
             'beneficiarioID' => $input['beneficiarioID'],
             'tipo_aporte'    => $input['tipo_aporte'],
@@ -132,7 +132,7 @@ class AyudasController extends \AdminBaseController {
             'porelMes'       => $input['porelMes'],
             'porelAnio'      => $input['porelAnio']
         ]);
-        dd($ayuda->update);
+
 		return Redirect::route('admin.ayudas.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
 	}
 
