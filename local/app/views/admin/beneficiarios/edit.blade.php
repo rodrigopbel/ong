@@ -578,17 +578,12 @@
                                     </div>
                                     {{Form::close()}}
                                     {{-------------------Bank Account Form end-----------------------------------------}}
-
-
                                 </div>
                             </div>
-
-
                         </div>
         			<div class="clearfix">
         			</div>
         		</div>
-
                          {{-------------DELETE MODAL CALLING------------}}
                             @include('admin.common.delete')
                         {{---------------DELETE MODAL CALLING END--------}}
