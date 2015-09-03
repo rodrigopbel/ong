@@ -98,7 +98,9 @@ class AyudasController extends \AdminBaseController {
         $this->data['ayuda']    = Ayuda::find($id);
         $this->data['addAyudasActive'] = 'active';
         $this->data['beneficiarios'] = Beneficiario::lists('apellidos','beneficiarioID');
-        $this->data['personales'] = Personal::lists('nombres','personalID');
+        $this->data['personales'] = Personal::selectRaw('CONCAT(nombres, " (IDP:", personalID,")") as nombres, personalID')
+                                    ->where('tipoPersonal','=','aportante')
+                                    ->lists('nombres','personalID');
 		return View::make('admin.ayudas.edit', $this->data);
 	}
 
