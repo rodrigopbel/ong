@@ -568,11 +568,11 @@
                                             <div class="col-md-9">
                                                 <select class="form-control" name="parentesco">
 
-                                                    <option value="ninguno" @if($beneficiario->parentesco=='Ninguno') selected @endif>Ninguno</option>
-                                                    <option value="papamama"  @if($beneficiario->parentesco=='Papa / Mama') selected @endif>Papa / mama</option>
-                                                    <option value="tiotia"  @if($beneficiario->parentesco=='Tio / Tia') selected @endif>Tio /Ti</option>
-                                                    <option value="hermanohermana"  @if($beneficiario->parentesco=='Hermano / Hermana') selected @endif>Hermano / hermana</option>
-                                                    <option value="otro"  @if($beneficiario->parentesco=='Otro Familiar') selected @endif>Otro Familiar</option>
+                                                    <option value="ninguno" @if($responsable->parentesco=='Ninguno') selected @endif>Ninguno</option>
+                                                    <option value="papamama"  @if($responsable->parentesco=='Papa/Mama') selected @endif>Papa / mama</option>
+                                                    <option value="tiotia"  @if($responsable->parentesco=='Tio/Tia') selected @endif>Tio /Ti</option>
+                                                    <option value="hermanohermana"  @if($responsable->parentesco=='Hermano/Hermana') selected @endif>Hermano / hermana</option>
+                                                    <option value="otro"  @if($responsable->parentesco=='Otro Familiar') selected @endif>Otro Familiar</option>
                                                 </select>
                                             </div>
                                         </div>
