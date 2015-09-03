@@ -109,6 +109,17 @@ class BeneficiariosController extends \AdminBaseController {
 				'otros'        =>  $input['otros']
 
 			]);
+
+            Personal::create([
+                'beneficiarioID'    => $input['beneficiarioID'],
+                'personalID'        => $input['nitci'],
+                'nombres'           => $input['nombres'],
+                'apellidos'         => $input['apellidos'],
+                'ocupacion'         => $input['ocupacion'],
+                'parentesco'        => $input['parentesco'],
+                'tipoPersonal'      => 'responsable'
+            ]);
+
 			$fullname = $input['nombres']." ".$input['apellidos'];
 			// -------------- UPLOAD THE DOCUMENTS  -----------------
 			$documents  =   ['certnac','CIprueba','solicitud','croquis','perfil'];
