@@ -77,15 +77,17 @@ class AyudasController extends \AdminBaseController {
         if($this->data['setting']->ayuda_notification==1)
         {
             $beneficiario = Beneficiario::select('email','apellidos')->where('beneficiarioID', '=', $input['beneficiarioID'])->first();
+            $personal = Personal::select('nombres')->where('personalID', '=', $input['personalID'])->first();
 
-            $this->data['ayudaName'] = $input['ayudaName'];
+            $this->data['montoaporte'] = $input['montoaporte'];
 	        $this->data['beneficiario_name'] = $beneficiario->apellidos;
+            $this->data['personal_name'] = $beneficiario->nombres;
 
             //        Send award Mail
             Mail::send('emails.admin.ayuda', $this->data, function ($message) use ($beneficiario) {
                 $message->from($this->data['setting']->email, $this->data['setting']->name);
                 $message->to($beneficiario['email'], $beneficiario['apellidos'])
-                    ->subject('Ayuda - ' . $this->data['ayudaName']);
+                    ->subject('Ayuda - ' . $this->data['montoaporte']);
             });
         }
         Ayuda::create($input);
