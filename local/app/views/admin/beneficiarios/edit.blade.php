@@ -563,7 +563,6 @@
                                                 <input type="text" name="nombresReponsable" class="form-control" value="{{$responsable->ocupacion or ''}}">
                                             </div>
                                         </div>
-
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Parentesco</label>
                                             <div class="col-md-9">
