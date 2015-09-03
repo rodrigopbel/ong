@@ -49,7 +49,7 @@ class AyudasController extends \AdminBaseController {
 	public function create()
 	{
         $this->data['addAyudasActive'] = 'active';
-        $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (EmpID:", beneficiarioID,")") as apellidos, beneficiarioID')
+        $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (beneficiarioID:", beneficiarioID,")") as apellidos, beneficiarioID')
 	                                        ->where('status','=','active')
 	                                        ->lists('apellidos','beneficiarioID');
         dd($this->data['beneficiarios']);
