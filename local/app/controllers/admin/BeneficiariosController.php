@@ -109,15 +109,15 @@ class BeneficiariosController extends \AdminBaseController {
 				'otros'        =>  $input['otros']
 
 			]);
-
+            $tipo = 'responsable';
             Personal::create([
                 'beneficiarioID'    => $input['beneficiarioID'],
-                'personalID'        => $input['nitci'],
-                'nombres'           => $input['nombres'],
-                'apellidos'         => $input['apellidos'],
-                'ocupacion'         => $input['ocupacion'],
+                'personalID'        => $input['nitcit'],
+                'nombres'           => $input['nombresReponsable'],
+                'apellidos'         => $input['apellidosResponsable'],
+                'ocupacion'         => $input['ocupacionResponsable'],
                 'parentesco'        => $input['parentesco'],
-                'tipoPersonal'      => 'responsable'
+                'tipoPersonal'      => $tipo
             ]);
 
 			$fullname = $input['nombres']." ".$input['apellidos'];
