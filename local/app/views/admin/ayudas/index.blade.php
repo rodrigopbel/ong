@@ -172,7 +172,7 @@
 		{
 
 			$('#deleteModal').appendTo("body").modal('show');
-			$('#info').html('Are you sure ! You want to delete <strong>'+ayuda+'</strong> given to <strong>'+ayudaaName+'</strong>??');
+			$('#info').html('Esta seguro de Eliminar <strong>'+ayuda+'</strong> dado a <strong>'+ayudaaName+'</strong>??');
 			$("#delete").click(function()
 			{
 					var url = "{{ route('admin.ayudas.destroy',':id') }}";
