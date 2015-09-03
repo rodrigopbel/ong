@@ -82,8 +82,9 @@
                                             * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="tipo_aporte" placeholder="Tipo Aporte" value="{{ Input::old('tipo_aporte') }}" >
-                                            </div>
+                                                {{ Form::select('tipo_aporte', array('ap' => 'AP', 'a' => 'A'), Input::old('tipo_aporte'),array('class'=>'form-control')) }}
+
+                                                 </div>
                                         </div>
                                         <div class="form-group">
                                         <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
