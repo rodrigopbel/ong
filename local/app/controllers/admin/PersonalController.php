@@ -122,6 +122,7 @@ class PersonalController extends \AdminBaseController {
         if(Input::get('updateType')=='responsable')
         {
             $validator = Validator::make($input = Input::all(), Personal::rules('create'));
+            dd(Input::all());
             if ($validator->fails())
             {
                 $output['status']   =   'error';
