@@ -4,9 +4,9 @@ class Ayuda extends \Eloquent {
 
 	// Add your validation rules here
 	public static $rules = [
-		'ayudaName'      =>  'required',
+		//'ayudaName'      =>  'required',
         'beneficiarioID' =>  'required',
-//        'aportanteID'    =>  'required'
+     'aportanteID'    =>  'required'
 
 	];
 
