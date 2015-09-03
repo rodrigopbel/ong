@@ -183,7 +183,7 @@ class BeneficiariosController extends \AdminBaseController {
 		$this->data['objetivo']      =   Objetivo::find($this->data['beneficiario']->objetivo);
         $this->data['responsable']      =  Personal::where('tipoPersonal', '=', 'responsable')->where('beneficiarioID','=',$id)->get()->first();
 		$doc = [];
-        dd($this->data['responsable']);
+//        dd($this->data['responsable']);
 		foreach($this->data['beneficiario']->getDocuments as $documents)
 		{
 			$doc[$documents->type] =  $documents->fileName ;
