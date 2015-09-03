@@ -421,6 +421,60 @@
 								</div>
 						</div>
         			</div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="portlet box red-sunglo">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-calendar"></i>Detalles de el/los Responsable/s
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+
+
+                                    <input type="hidden" name="updateType" class="form-control" value="responsable">
+
+                                    <div id="alert_bank"></div>
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Cedula de Identidad</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="nitcit" class="form-control" value="{{Input::old('nitcit')}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Nombres</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="nombresReponsable" class="form-control" value="{{Input::old('nombresReponsable')}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Apellido</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="apellidosResponsable" class="form-control" value="{{Input::old('apellidosResponsable')}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Ocupacion</label>
+                                            <div class="col-md-9">
+                                                <input type="text" name="ocupacionResponsable" class="form-control" value="{{Input::old('ocupacionResponsable')}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Parentesco</label>
+                                            <div class="col-md-9">
+                                                {{ Form::select('parentesco', array('Papa/Mama' => 'Papa/Mama', 'Tio/Tia' => 'Tio/Tia', 'Hermano/Hermana' => 'Hermano/Hermana','OtroFamiliar/OtroFamiliar'), Input::old('parentesco'),array('class'=>'form-control')) }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {{-------------------Bank Account Form end-----------------------------------------}}
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
         			<div class="clearfix">
         			</div>
         			<div class="form-actions">
