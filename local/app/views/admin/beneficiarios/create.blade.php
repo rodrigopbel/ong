@@ -462,7 +462,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Parentesco</label>
                                             <div class="col-md-9">
-                                                {{ Form::select('parentesco', array('Papa/Mama' => 'Papa/Mama', 'Tio/Tia' => 'Tio/Tia', 'Hermano/Hermana' => 'Hermano/Hermana','OtroFamiliar/OtroFamiliar'), Input::old('parentesco'),array('class'=>'form-control')) }}
+                                                {{ Form::select('parentesco', array('Ninguno'=>'Ninguno','Papa/Mama' => 'Papa/Mama', 'Tio/Tia' => 'Tio/Tia', 'Hermano/Hermana' => 'Hermano/Hermana','OtroFamiliar/OtroFamiliar'), Input::old('parentesco'),array('class'=>'form-control')) }}
                                             </div>
                                         </div>
                                     </div>
