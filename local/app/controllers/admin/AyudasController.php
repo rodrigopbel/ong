@@ -27,7 +27,7 @@ class AyudasController extends \AdminBaseController {
 
 
 	    $result =
-		    Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','tipo_aporte','montoaporte','anonimo','porelMes','ayudas.porelAnio')
+		    Ayuda::select('ayudas.id','beneficiarios.apellido','tipo_aporte','montoaporte','anonimo','porelMes','ayudas.porelAnio')
 		      ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
 			  ->orderBy('ayudas.created_at','desc');
 
