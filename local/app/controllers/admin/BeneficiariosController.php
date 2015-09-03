@@ -20,6 +20,7 @@ class BeneficiariosController extends \AdminBaseController {
         $this->data['responsables']        =   Personal::where('tipoPersonal','=', '');
 		Debugbar::info($this->data['beneficiarios'] );
 		$this->data['beneficiariosActive'] =   'active';
+        $this->data['responsable']         =  Personal::where('tipoPersonal', '=', 'responsable')->firstOrFail();
 		return View::make('admin.beneficiarios.index', $this->data);
 	}
 
