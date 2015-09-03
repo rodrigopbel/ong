@@ -53,10 +53,10 @@ class AyudasController extends \AdminBaseController {
 	                                        ->where('status','=','activo')
 	                                        ->lists('apellidos','beneficiarioID');
 
-        $this->data['personal'] = Personal::selectRaw('CONCAT(nombres, " (IDP:", personalID,")") as nombres, personalID')
+        $this->data['personales'] = Personal::selectRaw('CONCAT(nombres, " (IDP:", personalID,")") as nombres, personalID')
                                             ->where('tipoPersonal','=','aportantes')
                                             ->lists('nombres','personalID');
-
+            dd($this->data['personales']);
 		return View::make('admin.ayudas.create',$this->data);
 	}
 
