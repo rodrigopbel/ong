@@ -89,7 +89,7 @@ class AyudasController extends \AdminBaseController {
 //                $message->to($beneficiario['email'], $beneficiario['apellidos'])
 //                    ->subject('Ayuda - ' . $this->data['montoaporte']);
 //            });
-        }
+//        }
         Ayuda::create($input);
 
 		return Redirect::route('admin.ayudas.index')->with('success',"<strong>{$input['ayudaName']}</strong> is awarded");
