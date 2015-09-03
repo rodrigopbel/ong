@@ -74,7 +74,7 @@ class AyudasController extends \AdminBaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-        dd($input);
+
         Ayuda::create([
             'beneficiarioID'   => $input['beneficiarioID'],
             'tipo_aporte'    => $input['tipo_aporte'],
