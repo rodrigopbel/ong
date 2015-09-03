@@ -126,7 +126,7 @@ class AyudasController extends \AdminBaseController {
         $ayuda->update([
             'beneficiarioID' => $input['beneficiarioID'],
             'tipo_aporte'    => $input['tipo_aporte'],
-            'aportanteID'    => $input['personalID'],
+
             'montoaporte'    => $input['montoaporte'],
             'anonimo'        => $input['anonimo'],
             'porelMes'       => $input['porelMes'],
