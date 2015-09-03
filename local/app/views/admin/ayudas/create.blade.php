@@ -62,6 +62,31 @@
                                     <div class="form-body">
 
                                         <div class="form-group">
+                                            <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
+
+                                            <div class="col-md-8">
+                                                {{ Form::select('beneficiarioID', $beneficiarios,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Tipo Aporte: <span class="required">
+                                            * </span>
+                                            </label>
+                                            <div class="col-md-6">
+                                                {{ Form::select('tipo_aporte', array('ap' => 'AP', 'a' => 'A'), Input::old('tipo_aporte'),array('class'=>'form-control')) }}
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Id Aporte: </label>
+                                            <div class="col-md-6">
+                                                {{ Form::select('personalID', $personales,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Aportante...']) }}
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
                                             <label class="col-md-2 control-label">Monto Aporte: <span class="required">
                                         * </span>
                                             </label>
@@ -77,33 +102,12 @@
                                                 <input type="text" class="form-control" name="anonimo" placeholder="Anonimo" value="{{ Input::old('anonimo') }}">
                                             </div>
                                         </div>
+
+
                                         <div class="form-group">
-                                        <label class="col-md-2 control-label">Tipo Aporte: <span class="required">
-                                            * </span>
-                                            </label>
-                                            <div class="col-md-6">
-                                                {{ Form::select('tipo_aporte', array('ap' => 'AP', 'a' => 'A'), Input::old('tipo_aporte'),array('class'=>'form-control')) }}
+                                            <label class="col-md-2 control-label">Mes:</label>
 
-                                                 </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Id Aporte: </label>
-                                            <div class="col-md-6">
-                                                {{ Form::select('personalID', $personales,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Aportante...']) }}
-
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                        <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
-
-                                            <div class="col-md-8">
-                                             {{ Form::select('beneficiarioID', $beneficiarios,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
-                                           </div>
-
-                                          <div class="form-group">
-                                          <label class="col-md-2 control-label">Mes:</label>
-
-                                              <div class="col-md-3">
+                                            <div class="col-md-3">
                                                 <select class="form-control  select2me" name="porelMes">
                                                     <option value="" selected="selected">Mes</option>
                                                     <option value="enero"  @if(strtolower(date('F'))=='enero')selected='selected'@endif >Enero</option>
@@ -118,17 +122,15 @@
                                                     <option value="octubre"  @if(strtolower(date('F'))=='octubre')selected='selected'@endif>Octubre</option>
                                                     <option value="noviembre" @if(strtolower(date('F'))=='noviembre')selected='selected'@endif>Noviembre</option>
                                                     <option value="dicimbre" @if(strtolower(date('F'))=='dicimbre')selected='selected'@endif>Diciembre</option>
-                                             </select>
-                                                 </div>
-
-                                                         <label class="col-md-2 control-label">Año:</label>
-
-                                                   <div class="col-md-3">
-                                                   {{ Form::selectYear('porelAnio', 2013, date('Y'),date('Y'),['class' => 'form-control select2me']) }}
-
-                                                 </div>
+                                                </select>
                                             </div>
 
+                                            <label class="col-md-2 control-label">Año:</label>
+
+                                            <div class="col-md-3">
+                                                {{ Form::selectYear('porelAnio', 2013, date('Y'),date('Y'),['class' => 'form-control select2me']) }}
+
+                                            </div>
                                         </div>
                                         <div class="form-actions">
                                             <div class="row">
