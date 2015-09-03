@@ -20,7 +20,7 @@ class BeneficiariosController extends \AdminBaseController {
         $this->data['responsables']        =   Personal::where('tipoPersonal','=', '');
 		Debugbar::info($this->data['beneficiarios'] );
 		$this->data['beneficiariosActive'] =   'active';
-        $this->data['responsable']         =  Personal::where('tipoPersonal', '=', 'responsable')->firstOrFail();
+
 		return View::make('admin.beneficiarios.index', $this->data);
 	}
 
@@ -170,7 +170,7 @@ class BeneficiariosController extends \AdminBaseController {
 		$this->data['destinos']      =     Destino::lists('destino','id');
 		$this->data['beneficiario']  =   Beneficiario::where('beneficiarioID', '=' ,$id)->get()->first();
 		$this->data['objetivo']      =   Objetivo::find($this->data['beneficiario']->objetivo);
-
+        $this->data['responsable']         =  Personal::where('tipoPersonal', '=', 'responsable')->get()->first();
 		$doc = [];
 		foreach($this->data['beneficiario']->getDocuments as $documents)
 		{
