@@ -14,7 +14,7 @@
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			<i class="fa fa-edit"></i> Edit <small>{{ $ayuda->tipo_aporte }} given to {{ $ayuda->beneficiarioDetails->beneficiarioID }}</small>
+			<i class="fa fa-edit"></i> Edit <small>{{ $ayuda->montoaporte }} given to {{ $ayuda->beneficiarioDetails->beneficiarioID }}</small>
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
