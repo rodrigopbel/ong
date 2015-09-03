@@ -52,7 +52,6 @@ class AyudasController extends \AdminBaseController {
         $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (ID:", beneficiarioID,")") as apellidos, beneficiarioID')
 	                                        ->where('status','=','activo')
 	                                        ->lists('apellidos','beneficiarioID');
-        dd($this->data['beneficiarios']);
 		return View::make('admin.ayudas.create',$this->data);
 	}
 
