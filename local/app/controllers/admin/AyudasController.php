@@ -35,9 +35,9 @@ class AyudasController extends \AdminBaseController {
                 return ucfirst($row->porelMes).' '.$row->porelAnio;
             })
             ->add_column('edit', '
-                        <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i> Editar</a>
+                        <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $apellidos}}\',\'{{ $montoaporte }}\');return false;" class="btn red">
-                        <i class="fa fa-trash"></i> Eliminar</a>')
+                        <i class="fa fa-trash"></i></a>')
 
             ->remove_column('porelAnio')
             ->make();
