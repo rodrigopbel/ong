@@ -128,7 +128,7 @@ class AyudasController extends \AdminBaseController {
             'tipo_aporte'    => $input['tipo_aporte'],
 
             'montoaporte'    => $input['montoaporte'],
-            'anonimo'        => $input['anonimo'],
+
             'porelMes'       => $input['porelMes'],
             'porelAnio'      => $input['porelAnio']
         ]);
