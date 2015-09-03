@@ -35,7 +35,7 @@ class AyudasController extends \AdminBaseController {
                 return ucfirst($row->porelMes).' '.$row->porelAnio;
             })
             ->add_column('edit', '
-                        <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i> View/Edit</a>
+                        <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i> Editar</a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $apellidos}}\',\'{{ $montoaporte }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i> Borrar</a>')
 
@@ -52,9 +52,10 @@ class AyudasController extends \AdminBaseController {
         $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (ID:", beneficiarioID,")") as apellidos, beneficiarioID')
 	                                        ->where('status','=','activo')
 	                                        ->lists('apellidos','beneficiarioID');
-        $this->data['personal'] = Personal::selectRaw('CONCAT(apellidos, " (ID:", personalID,")") as apellidos, personalID')
+
+        $this->data['personal'] = Personal::selectRaw('CONCAT(nombres, " (IDP:", personalID,")") as nombres, personalID')
                                             ->where('tipoPersonal','=','aportantes')
-                                            ->lists('apellidos','personalID');
+                                            ->lists('nombres','personalID');
 
 		return View::make('admin.ayudas.create',$this->data);
 	}
