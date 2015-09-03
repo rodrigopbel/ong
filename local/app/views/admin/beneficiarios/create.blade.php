@@ -429,10 +429,6 @@
                                     </div>
                                 </div>
                                 <div class="portlet-body">
-
-
-                                    <input type="hidden" name="updateType" class="form-control" value="responsable">
-
                                     <div id="alert_bank"></div>
                                     <div class="form-body">
                                         <div class="form-group">
