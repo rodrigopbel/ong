@@ -566,7 +566,14 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Parentesco</label>
                                             <div class="col-md-9">
-                                                {{ Form::select('parentesco', array('ninguno' => 'Ninguno', 'papamama' => 'Papa/Mama', 'tiotia' => 'Tio/Tia', 'hermanohermana' => 'Hermano/Hermana','otro'=>'Otro Familiar'), Input::old('parentesco'),array('class'=>'form-control')) }}
+                                                <select class="form-control" name="genero">
+
+                                                    <option value="ninguno" @if($beneficiario->genero=='Ninguno') selected @endif>Ninguno</option>
+                                                    <option value="papamama"  @if($beneficiario->genero=='Papa / Mama') selected @endif>Pama / mama</option>
+                                                    <option value="tiotia"  @if($beneficiario->genero=='Tio / Tia') selected @endif>Tio /Ti</option>
+                                                    <option value="hermanohermana"  @if($beneficiario->genero=='Hermano / Hermana') selected @endif>Hermano / hermana</option>
+                                                    <option value="otro"  @if($beneficiario->genero=='Otro Familiar') selected @endif>Otro Familiar</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
