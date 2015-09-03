@@ -133,7 +133,7 @@ class AyudasController extends \AdminBaseController {
             'porelMes'       => $input['porelMes'],
             'porelAnio'      => $input['porelAnio']
         ]);
-
+dd( $ayuda->update);
 		return Redirect::route('admin.ayudas.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
 	}
 
