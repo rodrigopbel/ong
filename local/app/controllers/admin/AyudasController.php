@@ -25,7 +25,6 @@ class AyudasController extends \AdminBaseController {
     public function ajax_ayudas()
     {
 
-
 	    $result =
 		    Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','montoaporte','anonimo','porelMes','ayudas.porelAnio')
 		      ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
