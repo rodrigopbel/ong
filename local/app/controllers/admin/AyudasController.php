@@ -49,9 +49,9 @@ class AyudasController extends \AdminBaseController {
 	public function create()
 	{
         $this->data['addAyudasActive'] = 'active';
-        $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (ID:", beneficiarioID,")") as apellidos, beneficiarioID')
-	                                        ->where('status','=','activo')
-	                                        ->lists('apellidos','beneficiarioID');
+//        $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (ID:", beneficiarioID,")") as apellidos, beneficiarioID')
+//	                                        ->where('status','=','activo')
+//	                                        ->lists('apellidos','beneficiarioID');
         $this->data['personal'] = Beneficiario::selectRaw('CONCAT(apellidos, " (ID:", personalID,")") as apellidos, personalID')
                                             ->where('tipoPersonal','=','aportantes')
                                             ->lists('apellidos','personalID');
