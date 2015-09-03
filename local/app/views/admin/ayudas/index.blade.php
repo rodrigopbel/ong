@@ -70,7 +70,7 @@
 							<tr>
 								<th> AyudaID </th>
 								<th> Beneficiario ID </th>
-								<th> Tipo Aporte</th>
+								<th> Apellido Beneficiario</th>
 								<th> Monto de Aporte </th>
 								<th> Anonimo </th>
 								<th> Por el Mes </th>
