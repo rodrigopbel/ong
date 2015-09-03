@@ -86,7 +86,7 @@ class AyudasController extends \AdminBaseController {
 
         ]);
 
-		return Redirect::route('admin.ayudas.index')->with('success',"<strong>{$input['ayudaName']}</strong> is awarded");
+		return Redirect::route('admin.ayudas.index')->with('success',"<strong>Guardado</strong> is awarded");
 	}
 
 

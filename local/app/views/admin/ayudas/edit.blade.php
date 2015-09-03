@@ -107,7 +107,7 @@
                                                 <option value="septiembre" @if($ayuda->forMonth=='septiembre')selected='selected'@endif>Septiembre</option>
                                                 <option value="octubre"  @if($ayuda->forMonth=='octubre')selected='selected'@endif>Octubre</option>
                                                 <option value="noviembre" @if($ayuda->forMonth=='noviembre')selected='selected'@endif>Noviembre</option>
-                                                <option value="dicimbre" @if($ayuda->forMonth=='dicimbre')selected='selected'@endif>Diciembre</option>
+                                                <option value="diciembre" @if($ayuda->forMonth=='diciembre')selected='selected'@endif>Diciembre</option>
                                          </select>
 
                                                </div>
