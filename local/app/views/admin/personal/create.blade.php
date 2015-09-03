@@ -166,7 +166,7 @@
                                 {{ Form::select('ocupacion', array('ninguno' => 'Ninguno', 'estudiante' => 'Estudiante', 'uni' => 'Universitario/a','profesional' => 'Profesional'), Input::old('ocupacion'),array('class'=>'form-control')) }}
                             </div>
                         </div>
-                    </div>
+                    </div>6
                     <div class="form-body">
                         <div class="form-group">
                             <label class="col-md-3 control-label">Parentesco</label>

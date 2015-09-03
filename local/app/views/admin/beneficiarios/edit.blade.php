@@ -527,7 +527,7 @@
                                         <i class="fa fa-calendar"></i>Detalles de el/los Responsable/s
                                     </div>
                                     <div class="actions">
-                                        {{--<a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->personal->personalID}}','company');return false" data-loading-text="Updating..." class="demo-loading-btn-ajax btn btn-sm btn-default ">--}}
+                                        <a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->beneficiarioID}}','responsable');return false" data-loading-text="Updating..." class="demo-loading-btn-ajax btn btn-sm btn-default ">
                                             <i class="fa fa-save"></i> Guardar </a>
                                     </div>
                                 </div>
@@ -535,7 +535,7 @@
 
                                     {{--------------------Bank Account Form--------------------------------------------}}
                                     {{Form::open(['class'   =>  'form-horizontal','id'  =>  'bank_details_form'])}}
-                                    <input type="hidden" name="updateType" class="form-control" value="zonificacion">
+                                    <input type="hidden" name="updateType" class="form-control" value="responsable">
 
                                     <div id="alert_bank"></div>
                                     <div class="form-body">
