@@ -527,7 +527,7 @@
                                         <i class="fa fa-calendar"></i>Detalles de el/los Responsable/s
                                     </div>
                                     <div class="actions">
-                                        <a href="javascript:;" onclick="UpdateDetails('{{$beneficiario->beneficiarioID}}','responsable');return false" data-loading-text="Updating..." class="demo-loading-btn-ajax btn btn-sm btn-default ">
+                                        <a href="javascript:;" onclick="UpdateDetails('{{$responsable->personalID}}','responsable');return false" data-loading-text="Updating..." class="demo-loading-btn-ajax btn btn-sm btn-default ">
                                             <i class="fa fa-save"></i> Guardar </a>
                                     </div>
                                 </div>
@@ -548,13 +548,13 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Nombres</label>
                                             <div class="col-md-9">
-                                                <input type="text" name="nombresReponsable" class="form-control" value="{{$beneficiario->nombres or ''}}">
+                                                <input type="text" name="nombresReponsable" class="form-control" value="{{$responsable->nombres or ''}}">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Apellido</label>
                                             <div class="col-md-9">
-                                                <input type="text" name="localidad" class="form-control" value="{{$beneficiario->apellidos or ''}}">
+                                                <input type="text" name="localidad" class="form-control" value="{{$responsable->apellidos or ''}}">
                                             </div>
                                         </div>
                                         <div class="form-group">
