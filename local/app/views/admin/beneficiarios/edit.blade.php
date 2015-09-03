@@ -560,7 +560,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Ocupacion</label>
                                             <div class="col-md-9">
-                                                {{ Form::select('ocupacion', array('ninguno' => 'Ninguno', 'estudiante' => 'Estudiante', 'uni' => 'Universitario/a','profesional' => 'Profesional'), Input::old('ocupacion'),array('class'=>'form-control')) }}
+                                                <input type="text" name="nombresReponsable" class="form-control" value="{{$responsable->ocupacion or ''}}">
                                             </div>
                                         </div>
 
