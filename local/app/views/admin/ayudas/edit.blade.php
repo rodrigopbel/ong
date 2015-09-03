@@ -93,7 +93,7 @@
                                             <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
 
                                             <div class="col-md-8">
-                                                {{ Form::select('personalID', $peronal,$ayuda->aportanteID,['class'=>'form-control input-xlarge select2me']) }}
+                                                {{ Form::select('personalID', $personal,$ayuda->aportanteID,['class'=>'form-control input-xlarge select2me']) }}
 
                                             </div>
                                         </div>
