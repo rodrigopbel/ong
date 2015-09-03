@@ -68,7 +68,7 @@
                                         * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="tipo_aporte" placeholder="Tipo de Ayuda" value="{{ $ayuda->tipo_aporte }}">
+                                                {{ Form::select('tipo_aporte', array('ap' => 'AP', 'a' => 'A'), Input::old('tipo_aporte'),array('class'=>'form-control')) }}
                                             </div>
                                         </div>
 
@@ -94,20 +94,20 @@
                                         <label class="col-md-2 control-label">Mes:</label>
 
                                               <div class="col-md-3">
-                                             <select class="form-control select2me" name="forMonth">
+                                             <select class="form-control select2me" name="porelMes">
                                                 <option value="" selected="selected">Mes</option>
-                                                <option value="enero"  @if($ayuda->forMonth=='enero')selected='selected'@endif >Enero</option>
-                                                <option value="febrero" @if($ayuda->forMonth=='febrero')selected='selected'@endif>Febrero</option>
-                                                <option value="marzo"    @if($ayuda->forMonth=='marzo')selected='selected'@endif>Marzo</option>
-                                                <option value="abril"    @if($ayuda->forMonth=='abril')selected='selected'@endif>Abril</option>
-                                                <option value="mayo"      @if($ayuda->forMonth=='mayo')selected='selected'@endif>Mayo</option>
-                                                <option value="junio"     @if($ayuda->forMonth=='junio')selected='selected'@endif>Junio</option>
-                                                <option value="julio"     @if($ayuda->forMonth=='julio')selected='selected'@endif>Julio</option>
-                                                <option value="agosto"   @if($ayuda->forMonth=='agosto')selected='selected'@endif>Agosto</option>
-                                                <option value="septiembre" @if($ayuda->forMonth=='septiembre')selected='selected'@endif>Septiembre</option>
-                                                <option value="octubre"  @if($ayuda->forMonth=='octubre')selected='selected'@endif>Octubre</option>
-                                                <option value="noviembre" @if($ayuda->forMonth=='noviembre')selected='selected'@endif>Noviembre</option>
-                                                <option value="diciembre" @if($ayuda->forMonth=='diciembre')selected='selected'@endif>Diciembre</option>
+                                                <option value="enero"  @if($ayuda->porelMes=='enero')selected='selected'@endif >Enero</option>
+                                                <option value="febrero" @if($ayuda->porelMes=='febrero')selected='selected'@endif>Febrero</option>
+                                                <option value="marzo"    @if($ayuda->porelMes=='marzo')selected='selected'@endif>Marzo</option>
+                                                <option value="abril"    @if($ayuda->porelMes=='abril')selected='selected'@endif>Abril</option>
+                                                <option value="mayo"      @if($ayuda->porelMes=='mayo')selected='selected'@endif>Mayo</option>
+                                                <option value="junio"     @if($ayuda->porelMes=='junio')selected='selected'@endif>Junio</option>
+                                                <option value="julio"     @if($ayuda->porelMes=='julio')selected='selected'@endif>Julio</option>
+                                                <option value="agosto"   @if($ayuda->porelMes=='agosto')selected='selected'@endif>Agosto</option>
+                                                <option value="septiembre" @if($ayuda->porelMes=='septiembre')selected='selected'@endif>Septiembre</option>
+                                                <option value="octubre"  @if($ayuda->porelMes=='octubre')selected='selected'@endif>Octubre</option>
+                                                <option value="noviembre" @if($ayuda->porelMes=='noviembre')selected='selected'@endif>Noviembre</option>
+                                                <option value="diciembre" @if($ayuda->porelMes=='diciembre')selected='selected'@endif>Diciembre</option>
                                          </select>
 
                                                </div>
