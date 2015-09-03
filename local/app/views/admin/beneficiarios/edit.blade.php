@@ -572,7 +572,7 @@
                                                     <option value="papamama"  @if($responsable->parentesco=='Papa/Mama') selected @endif>Papa / mama</option>
                                                     <option value="tiotia"  @if($responsable->parentesco=='Tio/Tia') selected @endif>Tio /Ti</option>
                                                     <option value="hermanohermana"  @if($responsable->parentesco=='Hermano/Hermana') selected @endif>Hermano / hermana</option>
-                                                    <option value="otro"  @if($responsable->parentesco=='Otro Familiar') selected @endif>Otro Familiar</option>
+                                                    <option value="otro"  @if($responsable->parentesco=='OtroFamiliar') selected @endif>Otro Familiar</option>
                                                 </select>
                                             </div>
                                         </div>
