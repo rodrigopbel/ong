@@ -1,28 +1,28 @@
 <?php
 
-class AyudasController extends \AdminBaseController {
+class DonacionesController extends \AdminBaseController {
 
 
     public function __construct()
     {
         parent::__construct();
-        $this->data['ayudasOpen'] ='active open';
-        $this->data['pageTitle']  =  'Ayudas';
+        $this->data['donacionesOpen'] ='active open';
+        $this->data['pageTitle']  =  'Donaciones';
     }
 
     //    Display a listing of awards
     public function index()
 	{
-		$this->data['ayudas'] = Ayuda::all();
+		$this->data['donaciones'] = Donacion::all();
 
-        $this->data['ayudasActive'] =   'active';
+        $this->data['donacionesActive'] =   'active';
 
-		return View::make('admin.ayudas.index', $this->data);
+		return View::make('admin.donaciones.index', $this->data);
 	}
 
 
     //Datatable ajax request
-    public function ajax_ayudas()
+    public function ajax_donaciones()
     {
 
 	    $result =

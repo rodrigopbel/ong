@@ -51,6 +51,7 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::get('beneficiarios/beneficiariosLogin/{id}',['as'=>'admin.beneficiarios.benLogin','uses'=>'BeneficiariosController@benLogin']);
     Route::resource('beneficiarios', 'BeneficiariosController',['except' => ['show'],'as' => 'admin']);
 
+
     //    Personal Routing
     Route::resource('personal', 'PersonalController',['except' => ['show'],'as' => 'admin']);
 
@@ -61,6 +62,11 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     //  Ayudas Routing
     Route::get('ajax_ayudas/',['as'=>'admin.ajax_ayudas','uses'=> 'AyudasController@ajax_ayudas']);
     Route::resource('ayudas', 'AyudasController',['as' => 'admin']);
+
+
+    //  Donaciones Routing
+    Route::get('ajax_donaciones/',['as'=>'admin.ajax_donaciones','uses'=> 'DonacionesController@ajax_donaciones']);
+    Route::resource('donaciones', 'DonacionesController',['as' => 'admin']);
 
 
     //    Employees Routing

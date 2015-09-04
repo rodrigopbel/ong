@@ -14,14 +14,16 @@ return [
 	*/
 
 	'dashboard'             =>  'Dashboard',
-	'beneficiarios'             =>  'Beneficiarios',
-	'beneficiariosList'          =>  'Lista',
+	'beneficiarios'         =>  'Beneficiarios',
+	'beneficiariosList'     =>  'Lista',
 	'destinos'            	=>  'Destinos',
 	'destinosList'        	=>  'Lista',
 	'award'                 =>  'Award',
 	'awardList'             =>  'Award List',
     'ayudas'                =>  'Ayudas',
     'ayudasList'            =>  'Lista',
+    'donaciones'            =>  'Donaciones',
+    'donacionesList'        =>  'Lista',
 	'expense'               =>  'Expense',
 	'expenseList'           =>  'Expense List',
 	'actividades'           =>  'Actividades',
