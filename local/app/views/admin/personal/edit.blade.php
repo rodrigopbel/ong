@@ -51,7 +51,7 @@
                                 {{--------------------Personal Info Form--------------------------------------------}}
 
         							{{Form::open(['method' => 'PATCH','route'=> ['admin.personal.update', $personal->personalID],'class'   =>  'form-horizontal','id'  =>  'personal_details_form','files'=>true])}}
-        							<input type="hidden" name="updateType" class="form-control" value="personalInfo">
+        							<input type="hidden" name="updateType" class="form-control" value="responsable">
 
                                      @if(Session::get('successPersonal'))
                                             <div class="alert alert-success"><i class="fa fa-check"></i> {{ Session::get('successPersonal') }}</div>
