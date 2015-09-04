@@ -88,7 +88,7 @@
         													Sellecionar imagen </span>
         													<span class="fileinput-exists">
         													Cambiar </span>
-        													<input type="file" name="profileImage">
+        													<input type="file" name="fotoPersonal">
         													</span>
         													<a href="#" class="btn red fileinput-exists" data-dismiss="fileinput">
         													Eliminar </a>
