@@ -22,6 +22,8 @@ return [
 	'awardList'             =>  'Award List',
     'ayudas'                =>  'Ayudas',
     'ayudasList'            =>  'Lista',
+    'donaciones'            =>  'Donaciones',
+    'donacionesList'        =>  'Lista',
 	'expense'               =>  'Expense',
 	'expenseList'           =>  'Expense List',
 	'actividades'           =>  'Actividades',

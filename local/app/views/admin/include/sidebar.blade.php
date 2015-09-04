@@ -133,6 +133,23 @@
                 </li>
                 {{---------------------------------------------------------------------------}}
 
+                {{---------------------------------------Donaciones-------------------------------}}
+                <li class="{{ $donacionesOpen or ''}}">
+                    <a href="javascript:;">
+                        <i class="fa fa-trophy"></i>
+                        <span class="title">{{Lang::get('menu.donaciones')}}</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="{{ $donacioensActive or ''}}">
+                            <a href="{{route('admin.donaciones.index')}}">
+                                <i class="fa  fa-gift"></i>
+                                {{Lang::get('menu.donacionesList')}}</a>
+                        </li>
+                    </ul>
+                </li>
+                {{---------------------------------------------------------------------------}}
+
 
                 {{---------------------------------------COnfiguraciones-------------------------------}}
                 <li class="{{ $settingOpen or ''}}">
