@@ -13,7 +13,7 @@
 @section('mainarea')
 
 
-            
+       {{dd("llego dentro de la templeta")}}
             <!-- BEGIN PAGE HEADER-->
             <h3 class="page-title">
             Dashboard <small>Reportes & Estadisticas</small>
@@ -29,7 +29,7 @@
                         <a href="#">Dashboard</a>
                     </li>
                 </ul>
-           
+
             </div>
             <!-- END PAGE HEADER-->
 
