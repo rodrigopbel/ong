@@ -122,7 +122,7 @@ class PersonalController extends \AdminBaseController {
 
         if(Input::get('updateType')=='responsable')
         {
-            dd(Input::all());
+//            dd(Input::all());
             $validator = Validator::make($input = Input::all(), Personal::rules('create'));
 
             if ($validator->fails())
@@ -130,7 +130,6 @@ class PersonalController extends \AdminBaseController {
                 $output['status']   =   'error';
                 $output['msg']      =   $validator->getMessageBag()->toArray();
             }else{
-
                 // Profile Image Upload
                 if (Input::hasFile('foto'))
                 {
