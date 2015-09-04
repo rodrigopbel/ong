@@ -123,9 +123,9 @@ class AwardsController extends \AdminBaseController {
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-        dd($data);
-		$award->update($data);
 
+		$award->update($data);
+        dd($award);
 		return Redirect::route('admin.awards.edit',$id)->with('success',"<strong>Success</strong> Updated Successfully");
 	}
 
