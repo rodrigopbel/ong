@@ -16,7 +16,7 @@ class DonacionesController extends \AdminBaseController {
 		$this->data['donaciones'] = Donacion::all();
 
         $this->data['donacionesActive'] =   'active';
-
+dd("jabefkjb");
 		return View::make('admin.donaciones.index', $this->data);
 	}
 
@@ -31,13 +31,15 @@ class DonacionesController extends \AdminBaseController {
 			  ->orderBy('donaciones.created_at','desc');
 
         return Datatables::of($result)
-
-            ->add_column('edit', '
-                        <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
-                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripciondon}}\',\'{{ $montodonacion }}\');return false;" class="btn red">
-                        <i class="fa fa-trash"></i></a>')
-
-            ->remove_column('porelAnio')
+//            ->add_column('Por el Mes',function($row) {
+//                return ucfirst($row->porelMes).' '.$row->porelAnio;
+//            })
+//            ->add_column('edit', '
+//                        <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
+//                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripciondon}}\',\'{{ $montodonacion }}\');return false;" class="btn red">
+//                        <i class="fa fa-trash"></i></a>')
+//
+//            ->remove_column('porelAnio')
             ->make();
     }
 
