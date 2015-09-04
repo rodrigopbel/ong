@@ -117,7 +117,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Nit / CI</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" name="nitci" class="form-control" value="{{$personal->personalID}}">
+                                                    <input type="text" name="personalID" class="form-control" value="{{$personal->personalID}}">
                                                 </div>
                                             </div>
         									<div class="form-group">
