@@ -27,7 +27,6 @@ class Personal extends Eloquent {
 		'personalInfo'=>[
 			'nombres'       =>   $fullNameValidation,
 			'apellidos'     =>   $fullNameValidation,
-			'email'         =>   "required|email|unique:personal,email,:id",
 			'fotoPersonal'  =>   $ProfileImageValidation,
 		],
 	];
