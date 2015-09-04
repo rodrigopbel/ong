@@ -60,7 +60,7 @@
     {{Form::close()}}
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <button href=" {{ URL::to('/voluntarios') }} " type="button" class="btn btn-default">Left</button>
+            <a href=" {{ URL::to('/login') }} ">Voluntario</a>
         </div>
     </div>
 </div><!--/container-->
