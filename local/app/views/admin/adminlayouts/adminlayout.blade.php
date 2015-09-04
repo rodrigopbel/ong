@@ -6,11 +6,11 @@
 <html lang="en" class="no-js">
 
         @include('admin.include.head')
-        {{dd("ggg")}}
+
 <body class="page-header-fixed page-quick-sidebar-over-content page-style-square"> 
 
         @include('admin.include.header')
-
+        {{dd("aaa")}}
         <div class="clearfix">
         </div>
 
