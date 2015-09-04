@@ -10,7 +10,7 @@
 
 <body class="page-header-fixed page-quick-sidebar-over-content page-style-square">
 
-@include('admin.include.header')
+
 
 <div class="clearfix">
 </div>
@@ -41,15 +41,6 @@
                             <a href="#">Nuevo</a>
                         </li>
                     </ul>
-                </div>
-                <!-- END PAGE HEADER-->
-                <div class="row">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6 form-group text-right">
-                        <span id="load_notification"></span>
-                        <strong>Notificaciones</strong><br>
-                        {{--<input  type="checkbox"  onchange="ToggleEmailNotification('ben_add');return false;" class="make-switch" name="ben_add" @if($setting->ben_add==1)checked	@endif data-on-color="success" data-on-text="Si"data-off-text="No" data-off-color="danger">--}}
-                    </div>
                 </div>
                 {{--INLCUDE ERROR MESSAGE BOX--}}
                 @include('admin.common.error')
