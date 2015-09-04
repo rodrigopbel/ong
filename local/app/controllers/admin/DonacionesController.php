@@ -40,7 +40,7 @@ dd("aaaa");
                         <i class="fa fa-trash"></i></a>')
 //
 //            ->remove_column('porelAnio')
-//            ->make();
+            ->make();
     }
 
 	public function create()
