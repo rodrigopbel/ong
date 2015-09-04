@@ -4,7 +4,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en" class="no-js">
-
+{{dd("prueba")}}
         @include('admin.include.head')
 
 <body class="page-header-fixed page-quick-sidebar-over-content page-style-square"> 
