@@ -142,7 +142,7 @@
 
         $.ajax({
             type: "POST",
-            url: " {{ route('admin.voluntarios.store') }} ",
+            url: " {{ route('voluntarios.store') }} ",
             dataType: 'json',
             data: $('.login-form').serialize()
         }).done( function( response ) {
