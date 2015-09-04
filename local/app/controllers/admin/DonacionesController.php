@@ -8,6 +8,7 @@ class DonacionesController extends \AdminBaseController {
         parent::__construct();
         $this->data['donacionesOpen'] ='active open';
         $this->data['pageTitle']  =  'Donaciones';
+        dd("jabefkjb");
     }
 
     //    Display a listing of awards
@@ -16,7 +17,7 @@ class DonacionesController extends \AdminBaseController {
 		$this->data['donaciones'] = Donacion::all();
 
         $this->data['donacionesActive'] =   'active';
-        dd("jabefkjb");
+
 		return View::make('admin.donaciones.index', $this->data);
 	}
 
@@ -59,21 +60,18 @@ class DonacionesController extends \AdminBaseController {
 
 	public function store()
 	{
-		$validator = Validator::make($input = Input::all(), Ayuda::$rules);
+		$validator = Validator::make($input = Input::all(), Donacion::$rules);
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-        Ayuda::create([
-            'beneficiarioID' => $input['beneficiarioID'],
-            'tipo_aporte'    => $input['tipo_aporte'],
-            'aportanteID'    => $input['personalID'],
-            'montoaporte'    => $input['montoaporte'],
-            'anonimo'        => $input['anonimo'],
-            'porelMes'       => $input['porelMes'],
-            'porelAnio'      => $input['porelAnio']
+        Donacion::create([
+            'aportanteID' => $input['beneficiarioID'],
+            'descripcion'    => $input['tipo_aporte'],
+            'montodonacion'    => $input['personalID'],
+            'fechadon'      => $input['porelAnio']
 
         ]);
 
@@ -91,7 +89,7 @@ class DonacionesController extends \AdminBaseController {
 	public function edit($id)
 	{
 
-        $this->data['ayuda']    = Ayuda::find($id);
+        $this->data['donacion']    = Donacion::find($id);
         $this->data['addDonacionesActive'] = 'active';
         $this->data['personales'] = Personal::selectRaw('CONCAT(nombres, " (ID:", personalID,")") as nombres, personalID')
                                     ->where('tipoPersonal','=','aportante')
@@ -107,16 +105,16 @@ class DonacionesController extends \AdminBaseController {
 	 */
 	public function update($id)
 	{
-		$ayuda = Ayuda::findOrFail($id);
+		$donacion = Donacion::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Ayuda::$rules);
+		$validator = Validator::make($data = Input::all(), Donacion::$rules);
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-        $ayuda->update([
+        $donacion->update([
 
             'beneficiarioID' => $data['beneficiarioID'],
             'tipo_aporte'    => $data['tipo_aporte'],
@@ -138,7 +136,7 @@ class DonacionesController extends \AdminBaseController {
 	public function destroy($id)
 	{
 		if (Request::ajax()) {
-			Ayuda::destroy($id);
+			Donacion::destroy($id);
 			$output['success'] = 'deleted';
 
 			return Response::json($output, 200);
