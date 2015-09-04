@@ -17,12 +17,10 @@ class Personal extends Eloquent {
 		    'genero'        =>  'required',
 			'fotoPersonal'  =>  $ProfileImageValidation
 		],
-
         'update'=>[
             'personalID'   =>   "required|unique:personal,personalID,:id"
         ],
-
-		'password' =>  [
+        'password' =>  [
 			'password'              =>  'required|confirmed',
             'password_confirmation' =>  'required|min:5'
 		],
