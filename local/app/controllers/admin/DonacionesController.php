@@ -16,7 +16,7 @@ class DonacionesController extends \AdminBaseController {
 		$this->data['donaciones'] = Donacion::all();
 
         $this->data['donacionesActive'] =   'active';
-dd("jabefkjb");
+        dd("jabefkjb");
 		return View::make('admin.donaciones.index', $this->data);
 	}
 
@@ -40,7 +40,7 @@ dd("jabefkjb");
 //                        <i class="fa fa-trash"></i></a>')
 //
 //            ->remove_column('porelAnio')
-            ->make();
+//            ->make();
     }
 
 	public function create()
