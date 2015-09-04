@@ -190,7 +190,7 @@ class BeneficiariosController extends \AdminBaseController {
         }
         $this->data['documents']  =   $doc;
         $this->data['zonificacion']     =   Zonificacion::where('beneficiarioID', '=' ,$id)->where('tipoPersonal', '=', 'responsable')->get()->first();
-        dd($this->data['responsable'] );
+        dd($this->data['beneficiario'] );
         return View::make('admin.beneficiarios.edit', $this->data);
     }
 
