@@ -21,6 +21,8 @@
         Route::post('leave_store',['as'=>'front.leave_store','uses'=>'DashboardController@leave_store']);
 
         Route::resource('dashboard','DashboardController');
+
+        Route::get('voluntarios', 'VoluntarioController@getIndex');
     });
 
 # Admin Login
