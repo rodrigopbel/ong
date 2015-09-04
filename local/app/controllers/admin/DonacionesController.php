@@ -26,9 +26,9 @@ class DonacionesController extends \AdminBaseController {
     {
 
 	    $result =
-		    Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','montoaporte','anonimo','porelMes','ayudas.porelAnio')
-		      ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
-			  ->orderBy('ayudas.created_at','desc');
+		    Ayuda::select('donaciones.id','personal.personalID','descripciondon','montodonacion','donaciones.fechadon')
+		      ->join('personal', 'donaciones.personalID', '=', 'personal.personalID')
+			  ->orderBy('donaciones.created_at','desc');
 
         return Datatables::of($result)
             ->add_column('Por el Mes',function($row) {
@@ -36,7 +36,7 @@ class DonacionesController extends \AdminBaseController {
             })
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
-                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $apellidos}}\',\'{{ $montoaporte }}\');return false;" class="btn red">
+                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripciondon}}\',\'{{ $montodonacion }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
 
             ->remove_column('porelAnio')
@@ -45,16 +45,12 @@ class DonacionesController extends \AdminBaseController {
 
 	public function create()
 	{
-        $this->data['addAyudasActive'] = 'active';
-        $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (ID:", beneficiarioID,")") as apellidos, beneficiarioID')
-	                                        ->where('status','=','activo')
-	                                        ->lists('apellidos','beneficiarioID');
-
+        $this->data['addDonacionesActive'] = 'active';
         $this->data['personales'] = Personal::selectRaw('CONCAT(nombres, " (IDP:", personalID,")") as nombres, personalID')
                                             ->where('tipoPersonal','=','aportante')
                                             ->lists('nombres','personalID');
 
-		return View::make('admin.ayudas.create',$this->data);
+		return View::make('admin.donaciones.create',$this->data);
 	}
 
 	/**
@@ -81,7 +77,7 @@ class DonacionesController extends \AdminBaseController {
 
         ]);
 
-		return Redirect::route('admin.ayudas.index')->with('success',"<strong>Guardado</strong> Exitosamente");
+		return Redirect::route('admin.donaciones.index')->with('success',"<strong>Guardado</strong> Exitosamente");
 	}
 
 
@@ -96,12 +92,11 @@ class DonacionesController extends \AdminBaseController {
 	{
 
         $this->data['ayuda']    = Ayuda::find($id);
-        $this->data['addAyudasActive'] = 'active';
-        $this->data['beneficiarios'] = Beneficiario::lists('apellidos','beneficiarioID');
+        $this->data['addDonacionesActive'] = 'active';
         $this->data['personales'] = Personal::selectRaw('CONCAT(nombres, " (ID:", personalID,")") as nombres, personalID')
                                     ->where('tipoPersonal','=','aportante')
                                     ->lists('nombres','personalID');
-		return View::make('admin.ayudas.edit', $this->data);
+		return View::make('admin.donaciones.edit', $this->data);
 	}
 
 	/**
@@ -131,7 +126,7 @@ class DonacionesController extends \AdminBaseController {
             'porelMes'       => $data['porelMes'],
             'porelAnio'      => $data['porelAnio']
         ]);
-		return Redirect::route('admin.ayudas.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
+		return Redirect::route('admin.donaciones.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
 	}
 
 	/**
