@@ -98,7 +98,7 @@
 <!-- END LOGIN -->
 <!-- BEGIN COPYRIGHT -->
 <div class="copyright">
-    {{date('Y')}} &copy; {{$setting->website}}
+    {{date('Y')}} &copy; Fundacion UniFranz
 </div>
 <!-- END COPYRIGHT -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
