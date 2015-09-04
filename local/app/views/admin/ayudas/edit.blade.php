@@ -69,7 +69,7 @@
                                             </div>
                                         </div>
                                      <div class="form-group">
-                                        <label class="col-md-2 control-label">Monto: ( <span class="fa {{$setting->currency_icon}}"></span> )</label>
+                                        <label class="col-md-2 control-label">Monto: ( <span class="fa {{$setting->currency_icon}}"></span> BS.)</label>
 
                                                 <div class="col-md-6">
                                                     <input type="text" class="form-control" name="montoaporte"  value="{{ $ayuda->montoaporte }}">
