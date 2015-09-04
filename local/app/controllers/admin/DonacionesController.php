@@ -4,7 +4,7 @@ class DonacionesController extends \AdminBaseController {
 
 
     public function __construct()
-    {
+    {dd("hola");
         parent::__construct();
         $this->data['donacionesOpen'] ='active open';
         $this->data['pageTitle']  =  'Donaciones';
