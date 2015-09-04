@@ -281,6 +281,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 
 			$input  =   Input::all();
+            dd($input);
 			$fullname = $input['nombres']." ".$input['apellidos'];
 
 			$password = ($data['password']!='')?Hash::make(Input::get('password')):$data['oldpassword'];
