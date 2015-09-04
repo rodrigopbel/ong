@@ -141,7 +141,7 @@
                         <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
-                        <li class="{{ $donacioensActive or ''}}">
+                        <li class="{{ $donacionesActive or ''}}">
                             <a href="{{route('admin.donaciones.index')}}">
                                 <i class="fa  fa-gift"></i>
                                 {{Lang::get('menu.donacionesList')}}</a>
