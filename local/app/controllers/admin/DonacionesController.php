@@ -15,7 +15,7 @@ dd("aaaa");
 
     //    Display a listing of awards
     public function index()
-	{dd("joalskn");
+	{
 		$this->data['donaciones'] = Donacion::all();
         $this->data['donacionesActive'] =   'active';
 		return View::make('admin.donaciones.index', $this->data);
@@ -26,7 +26,7 @@ dd("aaaa");
     {
 
 	    $result =
-		    Ayuda::select('donaciones.id','personal.personalID','descripcion','montodonacion','donaciones.fechadon')
+		    Ayuda::select('donaciones.id','personal.personalID','descripcion','montodonacion','fechadon')
 		      ->join('personal', 'donaciones.aportanteID', '=', 'personal.personalID')
 			  ->orderBy('donaciones.created_at','desc');
 
