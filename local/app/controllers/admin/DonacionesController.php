@@ -26,7 +26,7 @@ dd("aaaa");
     {
 
 	    $result =
-		    Ayuda::select('donaciones.id','personal.personalID','descripcion','montodonacion','fechadon')
+            Donacion::select('donaciones.id','personal.personalID','descripcion','montodonacion','fechadon')
 		      ->join('personal', 'donaciones.aportanteID', '=', 'personal.personalID')
 			  ->orderBy('donaciones.created_at','desc');
 
@@ -67,10 +67,10 @@ dd("aaaa");
 		}
 
         Donacion::create([
-            'aportanteID' => $input['beneficiarioID'],
-            'descripcion'    => $input['tipo_aporte'],
-            'montodonacion'    => $input['personalID'],
-            'fechadon'      => $input['porelAnio']
+            'aportanteID' => $input['aportanteID'],
+            'descripcion'    => $input['descripcion'],
+            'montodonacion'    => $input['montodonacion'],
+            'fechadon'      => $input['fechadon']
 
         ]);
 
@@ -115,13 +115,10 @@ dd("aaaa");
 
         $donacion->update([
 
-            'beneficiarioID' => $data['beneficiarioID'],
-            'tipo_aporte'    => $data['tipo_aporte'],
-            'aportanteID'    => $data['personalID'],
-            'montoaporte'    => $data['montoaporte'],
-            'anonimo'        => $data['anonimo'],
-            'porelMes'       => $data['porelMes'],
-            'porelAnio'      => $data['porelAnio']
+            'aportanteID' => $input['aportanteID'],
+            'descripcion'    => $input['descripcion'],
+            'montodonacion'    => $input['montodonacion'],
+            'fechadon'      => $input['fechadon']
         ]);
 		return Redirect::route('admin.donaciones.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
 	}
