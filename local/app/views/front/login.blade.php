@@ -55,9 +55,10 @@
                 <button type="submit" class="btn-u btn-block input-group" id="submitbutton" onclick="login();return false;">Ingresar </button>
             </div>
         </div>
-
+        <hr/>
             <div class="col-md-10 col-md-offset-1">
-                <a href=" {{ URL::to('/voluntarios') }} ">Voluntarios</a>
+                <span>Quieres ser un Voluntario,
+                <a href=" {{ URL::to('/voluntarios') }} ">Click Aqui</a></span>
             </div>
 
     </div>
