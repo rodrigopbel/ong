@@ -6,9 +6,8 @@
     Route::get('/',['as'=>'login','uses'=>'LoginController@index']);
     Route::post('/login',['as'=>'login','uses'=>'LoginController@ajaxLogin']);
     Route::get('logout', ['as'=>'front.logout','uses'=>'LoginController@logout']);
-# Voluntarios Formulario]
-
-    Route::resource('voluntarios', 'VoluntarioController');
+# Voluntarios Formulario
+//    Route::resource('voluntarios', 'VoluntarioController');
 # Beneficiario Panel
     Route::group(array('before' => 'auth.beneficiarios'), function()
     {
