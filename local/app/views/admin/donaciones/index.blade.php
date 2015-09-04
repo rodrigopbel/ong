@@ -124,7 +124,7 @@
 	<script>
 
 
-        	$('#ayudas').dataTable( {
+        	$('#donaciones').dataTable( {
                         "bProcessing": true,
                         "bServerSide": true,
                         "sAjaxSource": "{{ route("admin.ajax_donaciones") }}",

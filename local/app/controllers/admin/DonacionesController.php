@@ -26,9 +26,9 @@ class DonacionesController extends \AdminBaseController {
     {
 
 	    $result =
-		    Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','montoaporte','anonimo','porelMes','ayudas.porelAnio')
-		      ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
-			  ->orderBy('ayudas.created_at','desc');
+		    Ayuda::select('donaciones.id','personal.personalID','descripciondon','montodonacion','donaciones.fechadon')
+		      ->join('personal', 'donaciones.personalID', '=', 'personal.personalID')
+			  ->orderBy('donaciones.created_at','desc');
 
         return Datatables::of($result)
             ->add_column('Por el Mes',function($row) {
