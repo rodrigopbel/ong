@@ -60,7 +60,7 @@
     {{Form::close()}}
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <button><a href="/">Quieres ser un Voluntario Click Aqui </a></button>
+            <button href="{{ route('/') }}" type="button" class="btn btn-default">Left</button>
         </div>
     </div>
 </div><!--/container-->
