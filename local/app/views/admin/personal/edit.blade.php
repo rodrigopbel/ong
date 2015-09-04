@@ -141,9 +141,10 @@
                                                 <div class="col-md-9">
                                                     <select class="form-control" name="genero">
 
-                                                        <option value="hombre" @if($personal->tipoPersonal=='Hombre') selected @endif>Hombre</option>
-                                                        <option value="mujer"  @if($personal->tipoPersonal=='Mujer') selected @endif>Mujer</option>
-                                                        <option value="otros"  @if($personal->tipoPersonal=='Otros') selected @endif>Otros</option>
+                                                        <option value="hombre" @if($personal->tipoPersonal=='administrador') selected @endif>Administrador</option>
+                                                        <option value="otros"  @if($personal->tipoPersonal=='aportante') selected @endif>Aportante</option>
+                                                        <option value="mujer"  @if($personal->tipoPersonal=='responsable') selected @endif>Responsable</option>
+                                                        <option value="otros"  @if($personal->tipoPersonal=='voluntario') selected @endif>Voluntario</option>
                                                     </select>
                                                 </div>
                                             </div>
