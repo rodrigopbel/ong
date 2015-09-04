@@ -2,10 +2,11 @@
 
 class DonacionesController extends \AdminBaseController {
 
-
+dd("aaaa");
 
     public function __construct()
     {
+
         parent::__construct();
         $this->data['donacionesOpen'] ='active open';
         $this->data['pageTitle']  =  'Donaciones';
