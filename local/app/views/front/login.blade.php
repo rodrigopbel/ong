@@ -58,9 +58,9 @@
         <hr/>
             <div class="col-md-10 col-md-offset-1">
                 <span>Quieres ser un Voluntario,
-                <a href=" {{ URL::to('/voluntarios') }} ">Click Aqui</a></span>
+                <a href=" {{ URL::to('/voluntarios') }} " type="button">Click Aqui</a></span>
             </div>
-
+        <br/>
     </div>
 
     <!--End Reg Block-->
