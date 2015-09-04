@@ -122,7 +122,7 @@ class AyudasController extends \AdminBaseController {
 		}
 
         $ayuda->update([
-//        dd($ayuda);
+
             'beneficiarioID' => $input['beneficiarioID'],
             'tipo_aporte'    => $input['tipo_aporte'],
             'aportanteID'    => $input['personalID'],
