@@ -81,11 +81,11 @@
 							</thead>
 							<tbody>
                         <tr >
-                                <td>{{-- Hidden ID --}}</td>
-                                <td>{{-- EmployeeID --}}</td>
-                                <td>{{-- Awardee Name --}}</td>
-                                <td>{{-- Award --}} </td>
-                                <td>{{-- Gift --}}</td>
+                                <td>{{-- Donacion ID --}}</td>
+                                <td>{{-- AportanteID --}}</td>
+                                <td>{{-- Descripcion --}}</td>
+                                <td>{{-- Monto --}} </td>
+                                <td>{{-- Fecha --}}</td>
 
 
                                 <td>{{-- Action --}} </td>
