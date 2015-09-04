@@ -120,7 +120,7 @@ class AyudasController extends \AdminBaseController {
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-        dd($data);
+
         $ayuda->update($data);
         dd($ayuda);
 //        'beneficiarioID' => $input['beneficiarioID'],
