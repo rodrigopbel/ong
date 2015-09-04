@@ -150,7 +150,31 @@
                 </li>
                 {{---------------------------------------------------------------------------}}
 
-
+                {{---------------------------------------Reportes-------------------------------}}
+                <li class="{{ $actividadOpen or ''}}">
+                    <a href="javascript:;">
+                        <i class="fa fa-send"></i>
+                        <span class="title">{{Lang::get('menu.reportes')}}</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="{{ $actividadActive or ''}}">
+                            <a href="{{route('admin.reportes.index')}}">
+                                <i class="fa fa-calendar"></i>
+                                {{Lang::get('menu.reportesBen')}}
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="sub-menu">
+                        <li class="{{ $actividadActive or ''}}">
+                            <a href="{{route('admin.reportes.index')}}">
+                                <i class="fa fa-calendar"></i>
+                                {{Lang::get('menu.reportesTran')}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                {{----------------------------------------------------------------------}}
                 {{---------------------------------------COnfiguraciones-------------------------------}}
                 <li class="{{ $settingOpen or ''}}">
                      <a href="javascript:;">
