@@ -35,6 +35,7 @@ return [
     'personalList'          =>  'Lista',
     'reportes'              =>  'Reportes',
     'reportesBen'           =>  'Reportes de Beneficiarios',
+    'reportesTran'           =>  'Reportes de Transacciones',
     'attendance'            =>  'Attendance',
 	'markAttendance'        =>  'Mark Attendance',
 	'viewAttendance'        =>  'View Attendance',

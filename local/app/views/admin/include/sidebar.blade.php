@@ -165,6 +165,14 @@
                             </a>
                         </li>
                     </ul>
+                    <ul class="sub-menu">
+                        <li class="{{ $actividadActive or ''}}">
+                            <a href="{{route('admin.actividades.index')}}">
+                                <i class="fa fa-calendar"></i>
+                                {{Lang::get('menu.reportesTran')}}
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 {{----------------------------------------------------------------------}}
                 {{---------------------------------------COnfiguraciones-------------------------------}}
