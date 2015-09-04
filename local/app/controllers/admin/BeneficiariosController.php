@@ -326,7 +326,7 @@ class BeneficiariosController extends \AdminBaseController {
 					'direccionperm' => $input['direccionperm']
 				]);
 
-			return Redirect::route('admin.beneficiarios.edit',$id)->with('successPersonal',"<strong>Actualizacion</strong> Existosa");
+			return Redirect::route('admin.personal.edit',$id)->with('successPersonal',"<strong>Actualizacion</strong> Existosa");
 
 		}
 		else if(Input::get('updateType')=='documents')
