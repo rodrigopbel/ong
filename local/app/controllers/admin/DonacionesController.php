@@ -4,7 +4,7 @@ class DonacionesController extends \AdminBaseController {
 
 
     public function __construct()
-    { dd("joalskn");
+    {
         parent::__construct();
         $this->data['donacionesOpen'] ='active open';
         $this->data['pageTitle']  =  'Donaciones';
@@ -13,7 +13,7 @@ class DonacionesController extends \AdminBaseController {
 
     //    Display a listing of awards
     public function index()
-	{
+	{dd("joalskn");
 		$this->data['donaciones'] = Donacion::all();
         $this->data['donacionesActive'] =   'active';
 		return View::make('admin.donaciones.index', $this->data);
