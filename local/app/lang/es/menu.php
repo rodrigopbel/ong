@@ -33,6 +33,8 @@ return [
 	'personalRes'           =>  'Responsable',
 	'personalVol'           =>  'Voluntario',
     'personalList'          =>  'Lista',
+    'reportes'              =>  'Reportes',
+    'reportesBen'           =>  'Reportes de Beneficiarios',
     'attendance'            =>  'Attendance',
 	'markAttendance'        =>  'Mark Attendance',
 	'viewAttendance'        =>  'View Attendance',
