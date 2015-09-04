@@ -3,280 +3,163 @@
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en" class="no-js">
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8"/>
+    <title>Voluntario | Registro </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
-{{HTML::style('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css')}}
-{{HTML::style('assets/global/plugins/bootstrap-datepicker/css/datepicker3.css')}}
+    <!-- BEGIN  STYLES -->
+    {{ HTML::style("assets/global/plugins/font-awesome/css/font-awesome.min.css") }}
+    {{ HTML::style("assets/global/plugins/bootstrap/css/bootstrap.min.css") }}
+    {{ HTML::style("assets/admin/pages/css/login-soft.css") }}
+    {{ HTML::style("assets/global/css/components.css") }}
+    {{ HTML::style("assets/admin/layout/css/layout.css") }}
+    {{ HTML::style("assets/admin/layout/css/themes/darkblue.css") }}
+    <!-- END STYLES -->
 
-<body class="page-header-fixed page-quick-sidebar-over-content page-style-square">
 
-
-
-<div class="clearfix">
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="login">
+<!-- BEGIN LOGO -->
+<div class="logo">
+    <a href="javacript:;">
+        {{HTML::image("assets/admin/layout/img/logo-big.png",'Logo',array('class'=>'logo-default','height'=>'30px','width'=>'117px'))}}
+    </a>
 </div>
+<!-- END LOGO -->
+<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+<div class="menu-toggler sidebar-toggler">
+</div>
+<!-- END SIDEBAR TOGGLER BUTTON -->
+<!-- BEGIN LOGIN -->
+<div class="content">
+    <!-- BEGIN LOGIN FORM -->
+    {{ Form::open(array('url' => '','class' =>'login-form')) }}
 
-<!-- BEGIN CONTAINER -->
-<div class="page-container">
-    <!-- BEGIN CONTENT -->
-    <div class="page-content-wrapper">
-        <div class="page-content">
-
-
-                <!-- BEGIN PAGE HEADER-->
-                <h3 class="page-title">
-                    <span class="fa fa-plus"></span>Nuevo Personal
-                </h3>
-                <div class="page-bar">
-                    <ul class="page-breadcrumb">
-                        <li>
-                            <i class="fa fa-home"></i>
-                            <a href="{{route('admin.dashboard.index')}}">Inicio</a>
-                            <i class="fa fa-angle-right"></i>
-                        </li>
-                        <li>
-                            <a href="{{route('admin.personal.index')}}">Personales</a>
-                            <i class="fa fa-angle-right"></i>
-                        </li>
-                        <li>
-                            <a href="#">Nuevo</a>
-                        </li>
-                    </ul>
-                </div>
-                {{--INLCUDE ERROR MESSAGE BOX--}}
-                @include('admin.common.error')
-                {{--END ERROR MESSAGE BOX--}}
-                <hr>
-                <div class="clearfix">
-                </div>
-                {{Form::open(array('route'=>"admin.personal.store",'class'=>'form-horizontal','method'=>'POST','files' => true))}}
-                <div class="row ">
-                    <div class="col-md-6 col-sm-6">
-                        <div class="portlet box purple-wisteria">
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    <i class="fa fa-calendar"></i>Datos Generales
-                                </div>
-                            </div>
-                            <div class="portlet-body">
-                                <div class="form-body">
-                                    <div class="form-group ">
-                                        <label class="control-label col-md-3">Foto</label>
-                                        <div class="col-md-9">
-                                            <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""/>
-                                                </div>
-                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
-                                                </div>
-                                                <div>
-                                            <span class="btn default btn-file">
-                                            <span class="fileinput-new">
-                                            Seleccionar Imagen </span>
-                                            <span class="fileinput-exists">
-                                            Cambiar </span>
-                                             <input type="file" name="fotoPersonal">
-                                            </span>
-                                                    <a href="#" class="btn red fileinput-exists" data-dismiss="fileinput">
-                                                        Eliminar </a>
-                                                </div>
-                                            </div>
-                                            <div class="clearfix margin-top-10">
-                                        <span class="label label-danger">
-                                        NOTA! </span> Tamano de Imagen (872px x 724px)
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Nombres <span class="required">* </span></label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="nombres" placeholder="Nombres de la Persona" value="{{ Input::old('nombres') }}">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Apellidos</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="apellidos" placeholder="Apellidos de la Persona"value="{{ Input::old('apellidos') }}">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3">Fecha de Nacimiento</label>
-                                        <div class="col-md-3">
-                                            <div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                                                <input type="text" class="form-control" name="fechanac" readonly value="{{ Input::old('fechanac') }}">
-                                        <span class="input-group-btn">
-                                        <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
-                                        </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Genero</label>
-                                        <div class="col-md-9">
-                                            {{ Form::select('genero', array('hombre' => 'Hombre', 'mujer' => 'Mujer', 'otros' => 'Otros'), Input::old('genero'),array('class'=>'form-control')) }}
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Tipo de Persona</label>
-                                        <div class="col-md-9">
-
-                                            {{ Form::select('tipoPersonal', array('aportantes' => 'Aportantes', 'administrador' => 'Administrador', 'voluntario' => 'Voluntario'), Input::old('tipoPersonal'),array('class'=>'form-control')) }}
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Telefono</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="telefono" placeholder="Telefono" value="{{Input::old('telefono')}}">
-                                        </div>
-                                    </div>
-
-                                    <h4><strong>Cuenta de Beneficiario</strong></h4>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Email<span class="required">* </span></label>
-                                        <div class="col-md-9">
-                                            <input type="text" name="email" class="form-control" value="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Contrasena<span class="required">* </span></label>
-                                        <div class="col-md-9">
-                                            <input type="hidden" name="oldpassword">
-                                            <input type="password" name="password" class="form-control" value="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6">
-                        <div class="portlet box red-sunglo">
-                            <div class="portlet-title">
-                                <div class="caption">
-                                    <i class="fa fa-calendar"></i> Datos Especiales
-                                </div>
-
-                            </div>
-                            <div class="portlet-body">
-
-                                <div class="form-body">
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">NIT / CI</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="personalID" placeholder="NIT / CI" value="{{ Input::old('personalID') }}">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-body">
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Ocupacion</label>
-                                        <div class="col-md-9">
-                                            {{ Form::select('ocupacion', array('ninguno' => 'Ninguno', 'estudiante' => 'Estudiante', 'uni' => 'Universitario/a','profesional' => 'Profesional'), Input::old('ocupacion'),array('class'=>'form-control')) }}
-                                        </div>
-                                    </div>
-                                </div>6
-                                <div class="form-body">
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Parentesco</label>
-                                        <div class="col-md-9">
-                                            {{ Form::select('parentesco', array('ninguno' => 'Ninguno', 'papamama' => 'Papa/Mama', 'tiotia' => 'Tio/Tia', 'hermanohermana' => 'Hermano/Hermana','otro'=>'Otro Familiar'), Input::old('parentesco'),array('class'=>'form-control')) }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {{--<div class="portlet box red-sunglo">--}}
-                        {{--<div class="portlet-title">--}}
-                        {{--<div class="caption">--}}
-                        {{--<i class="fa fa-calendar"></i>Zonificacion--}}
-                        {{--</div>--}}
-
-                        {{--</div>--}}
-                        {{--<div class="portlet-body">--}}
-
-                        {{--<div class="form-body">--}}
-                        {{--<div class="form-group">--}}
-                        {{--<label class="col-md-3 control-label">Departamento</label>--}}
-                        {{--<div class="col-md-9">--}}
-                        {{--<input type="text" class="form-control" name="departamento" placeholder="Departamento" value="{{Input::old('departamento')}}">--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="form-group">--}}
-                        {{--<label class="col-md-3 control-label">Provincia</label>--}}
-                        {{--<div class="col-md-9">--}}
-                        {{--<input type="text" class="form-control" name="provincia" placeholder="Provincia" value="{{Input::old('provincia')}}">--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="form-group">--}}
-                        {{--<label class="col-md-3 control-label">Localidad</label>--}}
-                        {{--<div class="col-md-9">--}}
-                        {{--<input type="text" class="form-control" name="localidad" placeholder="Localidad" value="{{Input::old('localidad')}}">--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="form-group">--}}
-                        {{--<label class="col-md-3 control-label">Canton</label>--}}
-                        {{--<div class="col-md-9">--}}
-                        {{--<input type="text" class="form-control" name="canton" placeholder="Canton" value="{{Input::old('canton')}}">--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="form-group">--}}
-                        {{--<label class="col-md-3 control-label">Zona</label>--}}
-                        {{--<div class="col-md-9">--}}
-                        {{--<input type="text" class="form-control" name="zona" placeholder="Zona" value="{{Input::old('zona')}}">--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group">--}}
-                        {{--<label class="col-md-3 control-label">Nota</label>--}}
-                        {{--<div class="col-md-9">--}}
-                        {{--<textarea class="form-control" name="otros" rows="3">{{Input::old('otros')}}</textarea>--}}
-
-                        {{--</div>--}}
-                        {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--</div>--}}
-                        {{--</div>--}}
-                    </div>
-                    <div class="clearfix">
-                    </div>
-                    <div class="form-actions">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-offset-3 col-md-9">
-                                        <button type="submit" data-loading-text="Guardando..." class="demo-loading-btn btn green">
-                                            <i class="fa fa-plus"></i>	Guardar
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-        </div>
+    <h3 class="form-title">Nuevo Voluntario</h3>
+    <div id="alert">
 
     </div>
-    <!-- END CONTENT -->
+    <div class="form-group">
+        <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+        <label class="control-label visible-ie8 visible-ie9">Nombres</label>
+        <div class="input-icon">
+            <i class="fa fa-user"></i>
+            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Nombres" name="nombres"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">Apellidos</label>
+        <div class="input-icon">
+            <i class="fa fa-lock"></i>
+            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Apellidos" name="apellidos"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">Cedula de Identidad</label>
+        <div class="input-icon">
+            <i class="fa fa-lock"></i>
+            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Cedula de Identidad" name="ci"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">Telefono</label>
+        <div class="input-icon">
+            <i class="fa fa-lock"></i>
+            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Telefono" name="telefono"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">Email</label>
+        <div class="input-icon">
+            <i class="fa fa-lock"></i>
+            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Telefono" name="telefono"/>
+        </div>
+    </div>
+    <div class="form-actions">
+
+        <button type="submit" class="btn blue pull-right" id="submitbutton" onclick="login();return false;">
+            Ingresar <i class="m-icon-swapright m-icon-white"></i>
+        </button>
+    </div>
+
+    {{Form::close()}}
+    <!-- END LOGIN FORM -->
+
 
 </div>
-<!-- END CONTAINER -->
+<!-- END LOGIN -->
+<!-- BEGIN COPYRIGHT -->
+<div class="copyright">
+    {{date('Y')}} &copy; {{$setting->website}}
+</div>
+<!-- END COPYRIGHT -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+{{HTML::script('assets/global/plugins/respond.min.js')}}
+{{HTML::script('assets/global/plugins/excanvas.min.js')}}
+<![endif]-->
+{{ HTML::script("assets/global/plugins/jquery.min.js")}}
+{{ HTML::script("assets/global/plugins/bootstrap/js/bootstrap.min.js") }}
+{{ HTML::script("assets/global/plugins/backstretch/jquery.backstretch.min.js") }}
+{{ HTML::script("assets/global/scripts/metronic.js") }}
+{{ HTML::script("assets/admin/layout/scripts/demo.js") }}
 
-@include('admin.include.footer')
+<!-- END PAGE LEVEL SCRIPTS -->
 
-{{HTML::script('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js')}}
-{{HTML::script('assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js')}}
-{{HTML::script("assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js")}}
-{{HTML::script('assets/admin/pages/scripts/components-pickers.js')}}
+<script>
+    jQuery(document).ready(function() {
+        Metronic.init(); // init metronic core components
+
+        // init background slide images
+        $.backstretch([
+                    "{{ URL::asset('assets/admin/pages/media/bg/1.jpg') }}",
+                    "{{ URL::asset('assets/admin/pages/media/bg/2.jpg') }}",
+                    "{{ URL::asset('assets/admin/pages/media/bg/3.jpg') }}",
+                    "{{ URL::asset('assets/admin/pages/media/bg/4.jpg') }}"
+                ], {
+                    fade: 1000,
+                    duration: 8000
+                }
+        );
+    });
+</script>
+
+
+<script>
+    function login(){
+
+        $('#alert').html('<div class="alert alert-info">Verificando..</div>');
+        $("#submitbutton").prop('disabled', true);
+
+        $.ajax({
+            type: "POST",
+            url: " {{ route('admin.voluntarios.store') }} ",
+            dataType: 'json',
+            data: $('.login-form').serialize()
+        }).done( function( response ) {
+
+            if(response.status == "success"){
+                $('#alert').html('<div class="alert alert-success"><span class="fa fa-success"></span>'+response.msg+'</div>');
+                window.location.href= "{{ URL::to('/admin/dashboard/') }}";
+
+            }else if(response.status == "error"){
+                $("#submitbutton").prop('disabled', false);
+                $('#alert').html('<div class="alert alert-danger"><span class="fa fa-warning"></span> '+response.msg+'</div>');
+            }
+        });
+    }
+
+</script>
+<!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
 </html>
-
-
