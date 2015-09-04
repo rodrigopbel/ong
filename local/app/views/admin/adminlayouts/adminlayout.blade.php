@@ -17,7 +17,7 @@
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
 
-         @include('admin.include.sidebar')
+         {{--@include('admin.include.sidebar')--}}
     {{dd("fff")}}
     <!-- BEGIN CONTENT -->
     <div class="page-content-wrapper">
