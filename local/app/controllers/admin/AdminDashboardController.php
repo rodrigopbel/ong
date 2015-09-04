@@ -80,7 +80,7 @@ ORDER BY month ;"));
         }
         $this->data['expense'] = implode(',',$expensevalue);
 
-dd("maldita sea");
+
         return View::make('admin/dashboard',$this->data);
 
     }
