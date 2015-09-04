@@ -328,6 +328,30 @@ class BeneficiariosController extends \AdminBaseController {
             return Redirect::route('admin.beneficiarios.edit',$id)->with('successPersonal',"<strong>Actualizacion</strong> Existosa");
 
         }
+        else if(Input::get('updateType')=='responsable')
+        {
+//            dd(Input::all());
+            $per  =   Personal::where('personalID','=',$id)->get()->first();
+
+            $validator = Validator::make($input = Input::all(), Personal::rules('personalInfo', $per->id));
+
+            if ($validator->fails())
+            {
+                $output['status']   =   'error';
+                $output['msg']      =   $validator->getMessageBag()->toArray();
+            }else{
+                $responsable = Personal::firstOrNew(['personalID' => $id]);
+                $responsable->personalID    = $input['ciResponsable'];
+                $responsable->nombres       = ucwords(strtolower($input['nombresReponsable']));
+                $responsable->apellidos     = ucwords(strtolower($input['apellidosResponsable']));
+                $responsable->ocupacion     = $input['ocupacionResponsable'];
+                $responsable->tipoPersonal  = "Responsable";
+                $responsable->parentesco    = Input::get('parentesco');
+                $responsable->save();
+                $output['status'] = 'success';
+                $output['msg'] = 'Persona actualizad correctamente....';
+            }
+        }
         else if(Input::get('updateType')=='documents')
         {
 

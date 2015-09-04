@@ -547,13 +547,13 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Apellido</label>
                                             <div class="col-md-9">
-                                                <input type="text" name="localidad" class="form-control" value="{{$responsable->apellidos or ''}}">
+                                                <input type="text" name="apellidosResponsable" class="form-control" value="{{$responsable->apellidos or ''}}">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Ocupacion</label>
                                             <div class="col-md-9">
-                                                <input type="text" name="nombresReponsable" class="form-control" value="{{$responsable->ocupacion or ''}}">
+                                                <input type="text" name="ocupacionResponsable" class="form-control" value="{{$responsable->ocupacion or ''}}">
                                             </div>
                                         </div>
                                         <div class="form-group">
