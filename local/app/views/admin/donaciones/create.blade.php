@@ -14,7 +14,7 @@
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Ayuda
+                Donaciones
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">

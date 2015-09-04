@@ -24,7 +24,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="{{ route('admin.ayudas.index') }}">Donaciones </a>
+						<a href="{{ route('admin.donaciones.index') }}">Donaciones </a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
@@ -55,7 +55,7 @@
 
 						<div class="portlet-body form">
 						<!------------------------ BEGIN FORM---------------------->
-						{{ Form::model($donacion, ['method' => 'PATCH', 'route' => ['admin.doanciones.update', $donacion->id],'class'=>'form-horizontal form-bordered']) }}
+						{{ Form::model($donacion, ['method' => 'PATCH', 'route' => ['admin.donaciones.update', $donacion->id],'class'=>'form-horizontal form-bordered']) }}
 
                                     <div class="form-body">
                                         <div class="form-group">

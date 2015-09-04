@@ -24,7 +24,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Ayudas</a>
+						<a href="#">Donaciones</a>
 						<i class="fa "></i>
 					</li>
 
