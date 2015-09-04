@@ -114,6 +114,12 @@
         											<input type="text" name="apellidos" class="form-control" value="{{$personal->apellidos}}">
         										</div>
         									</div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Nit / CI</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" name="nitci" class="form-control" value="{{$personal->nitci}}">
+                                                </div>
+                                            </div>
         									<div class="form-group">
         										<label class="control-label col-md-3">Fecha de Nacimiento</label>
         										<div class="col-md-3">
@@ -146,6 +152,12 @@
                                                         <option value="mujer"  @if($personal->tipoPersonal=='responsable') selected @endif>Responsable</option>
                                                         <option value="otros"  @if($personal->tipoPersonal=='voluntario') selected @endif>Voluntario</option>
                                                     </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Ocupacion</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" name="ocupacion" class="form-control" value="{{$personal->ocupacion}}">
                                                 </div>
                                             </div>
         									<div class="form-group">
