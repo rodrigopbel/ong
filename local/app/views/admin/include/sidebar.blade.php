@@ -151,28 +151,28 @@
                 {{---------------------------------------------------------------------------}}
 
                 {{---------------------------------------Reportes-------------------------------}}
-                {{--<li class="{{ $actividadOpen or ''}}">--}}
-                    {{--<a href="javascript:;">--}}
-                        {{--<i class="fa fa-send"></i>--}}
-                        {{--<span class="title">{{Lang::get('menu.reportes')}}</span>--}}
-                        {{--<span class="arrow "></span>--}}
-                    {{--</a>--}}
-                    {{--<ul class="sub-menu">--}}
-                        {{--<li class="{{ $actividadActive or ''}}">--}}
-                            {{--<a href="{{route('admin.reportes.reportesBeneficiarios')}}">--}}
-                                {{--<i class="fa fa-calendar"></i>--}}
-                                {{--{{Lang::get('menu.reportesBen')}}--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li class="{{ $actividadActive or ''}}">--}}
-                            {{--<a href="{{route('admin.reportes.reportesTransacciones')}}">--}}
-                                {{--<i class="fa fa-calendar"></i>--}}
-                                {{--{{Lang::get('menu.reportesTran')}}--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                    {{--</ul>--}}
+                <li class="{{ $actividadOpen or ''}}">
+                    <a href="javascript:;">
+                        <i class="fa fa-send"></i>
+                        <span class="title">{{Lang::get('menu.reportes')}}</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="{{ $actividadActive or ''}}">
+                            <a href="{{route('admin.reportes.reportesben')}}">
+                                <i class="fa fa-calendar"></i>
+                                {{Lang::get('menu.reportesBen')}}
+                            </a>
+                        </li>
+                        <li class="{{ $actividadActive or ''}}">
+                            <a href="{{route('admin.reportes.reportestran')}}">
+                                <i class="fa fa-calendar"></i>
+                                {{Lang::get('menu.reportesTran')}}
+                            </a>
+                        </li>
+                    </ul>
 
-                {{--</li>--}}
+                </li>
                 {{----------------------------------------------------------------------}}
                 {{---------------------------------------COnfiguraciones-------------------------------}}
                 <li class="{{ $settingOpen or ''}}">

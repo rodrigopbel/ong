@@ -2,11 +2,11 @@
 
 class ReportesController extends \AdminBaseController {
 
-    public function reportesBeneficiarios()
+    public function reportesben()
     {
         return "hola reportes Beneficiarios";
     }
-    public function reportesTransacciones()
+    public function reportestran()
     {
         return "hola reportes Transacciones";
     }
