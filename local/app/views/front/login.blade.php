@@ -55,12 +55,13 @@
                 <button type="submit" class="btn-u btn-block input-group" id="submitbutton" onclick="login();return false;">Ingresar </button>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <a href=" {{ URL::to('/voluntarios') }} ">Voluntario</a>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <a href=" {{ URL::to('/voluntarios') }} ">Voluntario</a>
+            </div>
         </div>
     </div>
+
     <!--End Reg Block-->
     {{Form::close()}}
 
