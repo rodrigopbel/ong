@@ -71,13 +71,13 @@ class AyudasController extends \AdminBaseController {
 		}
 
         Ayuda::create([
-            'beneficiarioID'   => $input['beneficiarioID'],
+            'beneficiarioID' => $input['beneficiarioID'],
             'tipo_aporte'    => $input['tipo_aporte'],
             'aportanteID'    => $input['personalID'],
             'montoaporte'    => $input['montoaporte'],
             'anonimo'        => $input['anonimo'],
-            'porelMes'  => $input['porelMes'],
-            'porelAnio'  => $input['porelAnio']
+            'porelMes'       => $input['porelMes'],
+            'porelAnio'      => $input['porelAnio']
 
         ]);
 
@@ -98,7 +98,9 @@ class AyudasController extends \AdminBaseController {
         $this->data['ayuda']    = Ayuda::find($id);
         $this->data['addAyudasActive'] = 'active';
         $this->data['beneficiarios'] = Beneficiario::lists('apellidos','beneficiarioID');
-        $this->data['personales'] = Personal::lists('nombres','personalID');
+        $this->data['personales'] = Personal::selectRaw('CONCAT(nombres, " (ID:", personalID,")") as nombres, personalID')
+                                    ->where('tipoPersonal','=','aportante')
+                                    ->lists('nombres','personalID');
 		return View::make('admin.ayudas.edit', $this->data);
 	}
 
@@ -118,7 +120,7 @@ class AyudasController extends \AdminBaseController {
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-
+        dd( $data);
         $ayuda->update([
             'beneficiarioID' => $input['beneficiarioID'],
             'tipo_aporte'    => $input['tipo_aporte'],
@@ -128,7 +130,7 @@ class AyudasController extends \AdminBaseController {
             'porelMes'       => $input['porelMes'],
             'porelAnio'      => $input['porelAnio']
         ]);
-dd( $ayuda->update);
+
 		return Redirect::route('admin.ayudas.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
 	}
 

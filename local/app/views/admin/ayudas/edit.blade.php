@@ -14,7 +14,7 @@
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			<i class="fa fa-edit"></i> Edit <small>{{ $ayuda->montoaporte }} given to {{ $ayuda->beneficiarioDetails->beneficiarioID }}</small>
+			<i class="fa fa-edit"></i> Edit
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
@@ -40,12 +40,9 @@
 					<!-- BEGIN EXAMPLE TABLE PORTLET-->
 
                     <div id="load">
-
                                    {{--INLCUDE ERROR MESSAGE BOX--}}
                                    @include('admin.common.error')
                                    {{--END ERROR MESSAGE BOX--}}
-
-
                       </div>
 					<div class="portlet box blue">
 						<div class="portlet-title">
@@ -57,40 +54,33 @@
 						</div>
 
 						<div class="portlet-body form">
-
 						<!------------------------ BEGIN FORM---------------------->
 						{{ Form::model($ayuda, ['method' => 'PATCH', 'route' => ['admin.ayudas.update', $ayuda->id],'class'=>'form-horizontal form-bordered']) }}
 
                                     <div class="form-body">
 
                                         <div class="form-group">
-                                        <label class="col-md-2 control-label">Tipo de Ayuda: <span class="required">
-                                        * </span>
-                                            </label>
+                                        <label class="col-md-2 control-label">Tipo de Ayuda: </label>
                                             <div class="col-md-6">
                                                 {{ Form::select('tipo_aporte', array('ap' => 'AP', 'a' => 'A'), Input::old('tipo_aporte'),array('class'=>'form-control')) }}
                                             </div>
                                         </div>
-
-
                                      <div class="form-group">
                                         <label class="col-md-2 control-label">Monto: ( <span class="fa {{$setting->currency_icon}}"></span> )</label>
 
                                                 <div class="col-md-6">
-                                                    <input type="text" class="form-control" name="montoaporte" placeholder="Monto" value="{{ $ayuda->montoaporte }}">
+                                                    <input type="text" class="form-control" name="montoaporte"  value="{{ $ayuda->montoaporte }}">
                                                 </div>
                                     </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Anonimo: </label>
 
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="anonimo" placeholder="Monto" value="{{ $ayuda->anonimo }}">
+                                                <input type="text" class="form-control" name="anonimo"  value="{{ $ayuda->anonimo }}">
                                             </div>
                                         </div>
-
-
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
+                                            <label class="col-md-2 control-label">Nombre del Aportante:</label>
 
                                             <div class="col-md-8">
                                                 {{ Form::select('personalID', $personales,$ayuda->aportanteID,['class'=>'form-control input-xlarge select2me']) }}
@@ -104,7 +94,6 @@
                                             {{ Form::select('beneficiarioID', $beneficiarios,$ayuda->beneficiarioID,['class'=>'form-control input-xlarge select2me']) }}
 
                                              </div>
-
                                      <div class="form-group">
                                         <label class="col-md-2 control-label">Mes:</label>
 
