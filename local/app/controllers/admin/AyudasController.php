@@ -120,16 +120,16 @@ class AyudasController extends \AdminBaseController {
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
-        dd($data);
+//        dd($data);
         $ayuda->update([
 
-            'beneficiarioID' => $input['beneficiarioID'],
-            'tipo_aporte'    => $input['tipo_aporte'],
-            'aportanteID'    => $input['personalID'],
-            'montoaporte'    => $input['montoaporte'],
-            'anonimo'        => $input['anonimo'],
-            'porelMes'       => $input['porelMes'],
-            'porelAnio'      => $input['porelAnio']
+            'beneficiarioID' => $data['beneficiarioID'],
+            'tipo_aporte'    => $data['tipo_aporte'],
+            'aportanteID'    => $data['personalID'],
+            'montoaporte'    => $data['montoaporte'],
+            'anonimo'        => $data['anonimo'],
+            'porelMes'       => $data['porelMes'],
+            'porelAnio'      => $data['porelAnio']
         ]);
 		return Redirect::route('admin.ayudas.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
 	}
