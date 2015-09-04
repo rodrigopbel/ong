@@ -95,7 +95,6 @@
 
                                             <div class="col-md-8">
                                                 {{ Form::select('beneficiarioID', $beneficiarios,$ayuda->beneficiarioID,['class'=>'form-control input-xlarge select2me']) }}
-
                                              </div>
                                      </div>
                                         <div class="form-group">
