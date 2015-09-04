@@ -117,14 +117,14 @@
 
 
                 {{---------------------------------------Ayudas-------------------------------}}
-                <li class="{{ $awardsOpen or ''}}">
+                <li class="{{ $ayudasOpen or ''}}">
                     <a href="javascript:;">
                         <i class="fa fa-trophy"></i>
                         <span class="title">{{Lang::get('menu.ayudas')}}</span>
                         <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
-                        <li class="{{ $awardsActive or ''}}">
+                        <li class="{{ $ayudasActive or ''}}">
                             <a href="{{route('admin.ayudas.index')}}">
                                 <i class="fa  fa-gift"></i>
                                 {{Lang::get('menu.ayudasList')}}</a>
