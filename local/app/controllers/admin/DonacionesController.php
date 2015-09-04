@@ -27,7 +27,7 @@ dd("jabefkjb");
 
 	    $result =
 		    Ayuda::select('donaciones.id','personal.personalID','descripciondon','montodonacion','donaciones.fechadon')
-		      ->join('personal', 'donaciones.personalID', '=', 'personal.personalID')
+		      ->join('personal', 'donaciones.aportanteID', '=', 'personal.personalID')
 			  ->orderBy('donaciones.created_at','desc');
 
         return Datatables::of($result)
