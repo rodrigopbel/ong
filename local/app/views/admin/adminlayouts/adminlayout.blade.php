@@ -10,7 +10,6 @@
 <body class="page-header-fixed page-quick-sidebar-over-content page-style-square"> 
 
         @include('admin.include.header')
-        {{dd("ddd")}}
         <div class="clearfix">
         </div>
 
@@ -19,6 +18,7 @@
 
          {{--@include('admin.include.sidebar')--}}
 
+    {{dd("ddd")}}
     <!-- BEGIN CONTENT -->
     <div class="page-content-wrapper">
         <div class="page-content">
