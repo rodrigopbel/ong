@@ -181,7 +181,7 @@ class BeneficiariosController extends \AdminBaseController {
         $this->data['destinos']      =     Destino::lists('destino','id');
         $this->data['beneficiario']  =   Beneficiario::where('beneficiarioID', '=' ,$id)->get()->first();
         $this->data['objetivo']      =   Objetivo::find($this->data['beneficiario']->objetivo);
-        $this->data['responsable']      =  Personal::where('tipoPersonal', '=', 'responsable')->where('beneficiarioID','=',$id)->get()->first();
+        $this->data['responsable']      =  Personal::where('tipoPersonal', '=', 'responsable')->get()->first();
         $doc = [];
 //        dd($this->data['responsable']);
         foreach($this->data['beneficiario']->getDocuments as $documents)
