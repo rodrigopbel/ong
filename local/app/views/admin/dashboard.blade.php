@@ -268,5 +268,4 @@
                 });
             </script>
             <!-- END PAGE LEVEL PLUGINS -->
-    {{dd("fgsdgdg")}}
 @stop
