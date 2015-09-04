@@ -55,7 +55,7 @@
 
 						<div class="portlet-body form">
 						<!------------------------ BEGIN FORM---------------------->
-						{{ Form::model($donacion, ['method' => 'PATCH', 'route' => ['admin.doanciones.update', $donacion->id],'class'=>'form-horizontal form-bordered']) }}
+						{{ Form::model($donacion, ['method' => 'PATCH', 'route' => ['admin.donaciones.update', $donacion->id],'class'=>'form-horizontal form-bordered']) }}
 
                                     <div class="form-body">
                                         <div class="form-group">
