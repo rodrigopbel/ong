@@ -14,8 +14,8 @@ return [
 	*/
 
 	'dashboard'             =>  'Dashboard',
-	'beneficiarios'             =>  'Beneficiarios',
-	'beneficiariosList'          =>  'Lista',
+	'beneficiarios'         =>  'Beneficiarios',
+	'beneficiariosList'     =>  'Lista',
 	'destinos'            	=>  'Destinos',
 	'destinosList'        	=>  'Lista',
 	'award'                 =>  'Award',
