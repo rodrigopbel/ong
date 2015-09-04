@@ -561,9 +561,9 @@
                                             <div class="col-md-9">
                                                 <select class="form-control" name="parentesco">
                                                     <option value="Ninguno" @if($responsable->parentesco=='Ninguno') selected @endif>Ninguno</option>
-                                                    <option value="Papa/Mama"  @if($responsable->parentesco=='Papa/Mama') selected @endif>Papa / mama</option>
-                                                    <option value="Tio/Tia"  @if($responsable->parentesco=='Tio/Tia') selected @endif>Tio /Ti</option>
-                                                    <option value="Hermano/Hermana"  @if($responsable->parentesco=='Hermano/Hermana') selected @endif>Hermano / hermana</option>
+                                                    <option value="Papa/Mama"  @if($responsable->parentesco=='Papa / Mama') selected @endif>Papa / mama</option>
+                                                    <option value="Tio/Tia"  @if($responsable->parentesco=='Tio / Tia') selected @endif>Tio /Tia</option>
+                                                    <option value="Hermano/Hermana"  @if($responsable->parentesco=='Hermano / Hermana') selected @endif>Hermano / hermana</option>
                                                     <option value="OtroFamilia"  @if($responsable->parentesco=='OtroFamiliar') selected @endif>Otro Familiar</option>
                                                 </select>
                                             </div>
