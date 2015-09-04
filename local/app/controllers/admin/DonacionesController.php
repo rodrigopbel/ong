@@ -35,7 +35,7 @@ dd("aaaa");
 //                return ucfirst($row->porelMes).' '.$row->porelAnio;
 //            })
             ->add_column('edit', '
-                        <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
+                        <a  class="btn purple"  href="{{ route(\'admin.donaciones.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripciondon}}\',\'{{ $montodonacion }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
 //
