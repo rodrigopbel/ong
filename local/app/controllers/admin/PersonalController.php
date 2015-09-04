@@ -127,7 +127,7 @@ class PersonalController extends \AdminBaseController {
                 $output['status']   =   'error';
                 $output['msg']      =   $validator->getMessageBag()->toArray();
             }else{
-
+                dd(Input::all());
                 // Profile Image Upload
                 if (Input::hasFile('foto'))
                 {
