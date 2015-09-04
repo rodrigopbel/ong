@@ -51,23 +51,16 @@
 
 
         						<div class="portlet-body">
-
-
                                 {{--------------------Personal Info Form--------------------------------------------}}
-
         							{{Form::open(['method' => 'PATCH','route'=> ['admin.beneficiarios.update', $beneficiario->beneficiarioID],'class'   =>  'form-horizontal','id'  =>  'personal_details_form','files'=>true])}}
         							<input type="hidden" name="updateType" class="form-control" value="personalInfo">
-
                                      @if(Session::get('successPersonal'))
                                             <div class="alert alert-success"><i class="fa fa-check"></i> {{ Session::get('successPersonal') }}</div>
                                      @endif
-
-
                                       @if (Session::get('errorPersonal'))
-
-                                             <div class="alert alert-danger alert-dismissable ">
-                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-                                                 @foreach (Session::get('errorPersonal') as $error)
+                                          <div class="alert alert-danger alert-dismissable ">
+                                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                                          @foreach (Session::get('errorPersonal') as $error)
                                                      <p><strong><i class="fa fa-warning"></i></strong> {{ $error }}</p>
                                                  @endforeach
                                              </div>
