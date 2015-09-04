@@ -142,7 +142,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="{{ $donacionesActive or ''}}">
-                            <a href="{{route('admin.donaciones.index')}}">
+                            <a href="{{route('admin.donaciones.func')}}">
                                 <i class="fa  fa-gift"></i>
                                 {{Lang::get('menu.donacionesList')}}</a>
                         </li>

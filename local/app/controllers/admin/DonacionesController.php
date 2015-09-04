@@ -2,6 +2,9 @@
 
 class DonacionesController extends \AdminBaseController {
 
+    public function func(){
+        return 'sjkkjbf';
+    }
 
     public function __construct()
     {
