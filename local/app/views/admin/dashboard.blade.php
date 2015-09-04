@@ -267,6 +267,5 @@ $(function () {
     });
 });
 </script>
-
-        <!-- END PAGE LEVEL PLUGINS -->
+                    <!-- END PAGE LEVEL PLUGINS -->
 @stop
