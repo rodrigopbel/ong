@@ -403,10 +403,7 @@ class BeneficiariosController extends \AdminBaseController {
         //-------Documents info Details Update END--------
         return Response::json($output, 200);
     }
-
-
-
-    public function export(){
+  public function export(){
         $ben   =   Beneficiario::join('objetivo', 'beneficiarios.objetivo', '=', 'objetivo.id')
             ->join('destino', 'destino.id', '=', 'objetivo.destID')
             ->leftJoin('zonificacion_beneficiario', 'zonificacion_beneficiario.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
@@ -430,9 +427,7 @@ class BeneficiariosController extends \AdminBaseController {
             });
 
         })->store('xls')->download('xls');
-
-
-    }
+     }
     /**
      * Remove the specified  from storage.
      */
