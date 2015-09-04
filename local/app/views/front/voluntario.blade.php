@@ -86,7 +86,7 @@
     <div class="form-actions">
 
         <button type="submit" class="btn blue pull-right" id="submitbutton" onclick="login();return false;">
-            Ingresar <i class="m-icon-swapright m-icon-white"></i>
+            Registrarse <i class="m-icon-swapright m-icon-white"></i>
         </button>
     </div>
 
