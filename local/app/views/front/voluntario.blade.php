@@ -80,13 +80,13 @@
         <label class="control-label visible-ie8 visible-ie9">Email</label>
         <div class="input-icon">
             <i class="fa fa-lock"></i>
-            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Telefono" name="telefono"/>
+            <input class="form-control placeholder-no-fix" type="email" autocomplete="off" placeholder="Email" name="telefono"/>
         </div>
     </div>
     <div class="form-actions">
 
         <button type="submit" class="btn blue pull-right" id="submitbutton" onclick="login();return false;">
-            Ingresar <i class="m-icon-swapright m-icon-white"></i>
+            Registrarse <i class="m-icon-swapright m-icon-white"></i>
         </button>
     </div>
 
@@ -142,7 +142,7 @@
 
         $.ajax({
             type: "POST",
-            url: " {{ route('admin.voluntarios.store') }} ",
+            url: " {{ route('voluntarios.store') }} ",
             dataType: 'json',
             data: $('.login-form').serialize()
         }).done( function( response ) {

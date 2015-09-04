@@ -7,6 +7,10 @@ class VoluntarioController extends \BaseController {
        return View::make('front.voluntario');
     }
 
+    public function store()
+    {
+        return "guardado exitoso";
+    }
 
 
 }
