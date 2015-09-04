@@ -119,10 +119,11 @@ class PersonalController extends \AdminBaseController {
     public function update($id)
     {
         //----Bank Details Update-------
+        dd(Input::all());
         if(Input::get('updateType')=='responsable')
         {
             $validator = Validator::make($input = Input::all(), Personal::rules('create'));
-            dd(Input::all());
+
             if ($validator->fails())
             {
                 $output['status']   =   'error';
