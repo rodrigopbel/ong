@@ -58,6 +58,11 @@
     </div>
     <!--End Reg Block-->
     {{Form::close()}}
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <button href=" {{ URL::to('/voluntarios') }} " type="button" class="btn btn-default">Left</button>
+        </div>
+    </div>
 </div><!--/container-->
 <!--=== End Content Part ===-->
 <!-- JS Global Compulsory -->

@@ -6,7 +6,8 @@
     Route::get('/',['as'=>'login','uses'=>'LoginController@index']);
     Route::post('/login',['as'=>'login','uses'=>'LoginController@ajaxLogin']);
     Route::get('logout', ['as'=>'front.logout','uses'=>'LoginController@logout']);
-
+# Voluntarios Formulario
+    Route::get('/voluntarios', 'VoluntarioController@getIndex');
 # Beneficiario Panel
     Route::group(array('before' => 'auth.beneficiarios'), function()
     {
@@ -21,6 +22,8 @@
         Route::post('leave_store',['as'=>'front.leave_store','uses'=>'DashboardController@leave_store']);
 
         Route::resource('dashboard','DashboardController');
+
+
     });
 
 # Admin Login
