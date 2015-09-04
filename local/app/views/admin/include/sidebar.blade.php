@@ -159,13 +159,13 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="{{ $actividadActive or ''}}">
-                            <a href="{{route('admin.reportes.reportesben')}}">
+                            <a href="{{route('admin.reports.reportesben')}}">
                                 <i class="fa fa-calendar"></i>
                                 {{Lang::get('menu.reportesBen')}}
                             </a>
                         </li>
                         <li class="{{ $actividadActive or ''}}">
-                            <a href="{{route('admin.reportes.reportestran')}}">
+                            <a href="{{route('admin.reports.reportestran')}}">
                                 <i class="fa fa-calendar"></i>
                                 {{Lang::get('menu.reportesTran')}}
                             </a>
