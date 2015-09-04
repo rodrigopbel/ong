@@ -67,10 +67,10 @@ dd("aaaa");
 		}
 
         Donacion::create([
-            'aportanteID' => $input['aportanteID'],
+            'aportanteID'    => $input['aportanteID'],
             'descripcion'    => $input['descripcion'],
-            'montodonacion'    => $input['montodonacion'],
-            'fechadon'      => $input['fechadon']
+            'montodonacion'  => $input['montodonacion'],
+            'fechadon'       => $input['fechadon']
 
         ]);
 
@@ -115,10 +115,10 @@ dd("aaaa");
 
         $donacion->update([
 
-            'aportanteID' => $input['aportanteID'],
-            'descripcion'    => $input['descripcion'],
-            'montodonacion'    => $input['montodonacion'],
-            'fechadon'      => $input['fechadon']
+            'aportanteID'        => $input['aportanteID'],
+            'descripcion'        => $input['descripcion'],
+            'montodonacion'      => $input['montodonacion'],
+            'fechadon'           => $input['fechadon']
         ]);
 		return Redirect::route('admin.donaciones.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
 	}

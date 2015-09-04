@@ -65,7 +65,7 @@
                                             <label class="col-md-2 control-label">Descripcion de la Donacion:</label>
 
                                             <div class="col-md-8">
-                                                <input type="text" class="form-control" name="descripciondon" placeholder="Descripcion de la Donacion" value="{{ Input::old('descripciondon') }}">
+                                                <input type="text" class="form-control" name="descripcion" placeholder="Descripcion de la Donacion" value="{{ Input::old('descripcion') }}">
                                             </div>
                                         </div>
                                         <div class="form-group">
