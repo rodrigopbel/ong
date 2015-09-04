@@ -119,9 +119,9 @@ class PersonalController extends \AdminBaseController {
     public function update($id)
     {
         //----Bank Details Update-------
-        if(Input::get('updateType')=='bank')
+        if(Input::get('updateType')=='responsable')
         {
-            $validator = Validator::make($input = Input::all(), Employee::rules('bank'));
+            $validator = Validator::make($input = Input::all(), Personal::rules('create'));
             if ($validator->fails())
             {
                 $output['status']   =   'error';
@@ -138,115 +138,6 @@ class PersonalController extends \AdminBaseController {
                 $output['status'] = 'success';
                 $output['msg'] = 'Bank details updated successfully';
             }
-        }
-        //-------Bank Details Update End--------
-        //-------Company Details Update Start--------
-        else if(Input::get('updateType')=='company')
-        {
-            $company_details = Employee::where('employeeID','=', $id)->first();
-            $validator = Validator::make($input = Input::all(), Employee::rules('update',$company_details->id));
-            if ($validator->fails())
-            {
-                $output['status']   =   'error';
-                $output['msg']      =   $validator->getMessageBag()->toArray();
-            }else{
-                $company_details->employeeID  = $id;
-                $company_details->designation = Input::get('designation');
-                $company_details->joiningDate = date('Y-m-d',strtotime(Input::get('joiningDate')));
-                $company_details->exit_date   = (trim(Input::get('exit_date'))!='')?date('Y-m-d',strtotime(Input::get('exit_date'))):null;
-
-                $company_details->status      = (Input::get('status')!='active')?'inactive':'active';
-                $company_details->save();
-                if(isset($input['salary']))
-                {
-                    foreach ($input['salary'] as $index => $value)
-                    {
-                        $salary_details = Salary::find($index);
-                        $salary_details->type = $input['type'][$index];
-                        $salary_details->salary = $value;
-                        $salary_details->save();
-                    }
-                }
-                $output['status'] = 'success';
-                $output['msg']    = 'Company Details updated successfully';
-            }
-        }
-        //-------Company Details Update End--------------
-        //-------Personal info Details Update Start----------
-        else if(Input::get('updateType')=='personalInfo')
-        {
-            $employee   =   Employee::where('employeeID','=',$id)->get()->first();
-            $validator = Validator::make($data = Input::all(),Employee::rules('personalInfo',$employee->id));
-            if ($validator->fails())
-            {
-                return Redirect::back()->with(['errorPersonal' => $validator->messages()->all()])->withInput();
-            }
-            $input  =   Input::all();
-            $name   = explode(' ', $input['fullName']);
-            $firstName = ucfirst($name[0]);
-            $password = ($data['password']!='')?Hash::make(Input::get('password')):$data['oldpassword'];
-            // Profile Image Upload
-            if (Input::hasFile('profileImage'))
-            {
-                $path       = public_path()."/profileImages/";
-                File::makeDirectory($path, $mode = 0777, true, true);
-                $image 	    = Input::file('profileImage');
-                $extension  = $image->getClientOriginalExtension();
-                $filename	= "{$firstName}_{$id}.".strtolower($extension);
-                //Image::make($image->getRealPath())->resize(872,724)->save("$path$filename");
-                Image::make($image->getRealPath())
-                    ->fit(872, 724, function ($constraint) {
-                        $constraint->upsize();
-                    })->save($path . $filename);
-            }else
-            {
-                $filename   =   Input::get('hiddenImage');
-            }
-                $employee->update(
-                [
-                    'fullName'      => ucwords(strtolower($input['fullName'])),
-                    'fatherName'    => ucwords(strtolower($input['fatherName'])),
-                    'gender'        => $input['gender'],
-                    'email'         => $input['email'],
-                    'password'      => $password,
-                    'date_of_birth' => (trim(Input::get('date_of_birth'))!='')?date('Y-m-d',strtotime(Input::get('date_of_birth'))):null,
-                    'mobileNumber'  => $input['mobileNumber'],
-                    'localAddress'  => $input['localAddress'],
-                    'permanentAddress' => $input['permanentAddress'],
-                    'profileImage'     => $filename,
-                ]);
-            return Redirect::route('admin.employees.edit',$id)->with('successPersonal',"<strong>Success</strong> Updated Successfully");
-        }
-        //-------Personal Details Update End-------------
-        //-------Documents info Details Update Start--------
-        else if(Input::get('updateType')=='documents')
-        {
-            // -------------- UPLOAD THE DOCUMENTS  -----------------
-            $documents  =   ['resume','offerLetter','joiningLetter','contract','IDProof'];
-
-            foreach ($documents as $document) {
-                if (Input::hasFile($document)) {
-
-                    $path = public_path()."/employee_documents/{$document}/";
-                    File::makeDirectory($path, $mode = 0777, true, true);
-
-                    $file 	= Input::file($document);
-                    $extension  = $file->getClientOriginalExtension();
-
-                    $employee   =   Employee::where('employeeID','=',$id)->get()->first();
-                    $nameArray  =   explode(' ',$employee->fullName);
-                    $firstName  =   $nameArray[0];
-                    $filename	= "{$document}_{$id}_{$firstName}.$extension";
-
-                    Input::file($document)->move($path, $filename);
-                    $employee_document  =   Employee_document::firstOrNew(['employeeID'=>$id,'type'=>$document]);
-                    $employee_document->fileName  =   $filename;
-                    $employee_document->type      =   $document;
-                    $employee_document->save();
-                }
-            }
-            return Redirect::route('admin.employees.edit',$id)->with('successDocuments',"<strong>Success</strong> Updated Successfully");
-            //  ********** END UPLOAD THE DOCUMENTS**********
         }
         //-------Documents info Details Update END--------
         return Response::json($output, 200);

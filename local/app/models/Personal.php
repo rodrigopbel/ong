@@ -17,7 +17,6 @@ class Personal extends Eloquent {
 			'email'         =>  'required|email|unique:personal',
 			'password'      =>  'required',
             'genero'        =>  'required',
-            'telefono'      =>  'required',
 			'fotoPersonal'  =>  $ProfileImageValidation
 		],
 
