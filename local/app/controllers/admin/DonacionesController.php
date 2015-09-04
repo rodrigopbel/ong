@@ -8,19 +8,16 @@ class DonacionesController extends \AdminBaseController {
         parent::__construct();
         $this->data['donacionesOpen'] ='active open';
         $this->data['pageTitle']  =  'Donaciones';
-        dd("jabefkjb");
+
     }
 
     //    Display a listing of awards
     public function index()
 	{
 		$this->data['donaciones'] = Donacion::all();
-
         $this->data['donacionesActive'] =   'active';
-
 		return View::make('admin.donaciones.index', $this->data);
 	}
-
 
     //Datatable ajax request
     public function ajax_donaciones()
