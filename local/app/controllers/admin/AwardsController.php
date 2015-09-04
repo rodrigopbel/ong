@@ -125,6 +125,7 @@ class AwardsController extends \AdminBaseController {
 		}
 
 		$award->update($data);
+
         dd($award);
 		return Redirect::route('admin.awards.edit',$id)->with('success',"<strong>Success</strong> Updated Successfully");
 	}
