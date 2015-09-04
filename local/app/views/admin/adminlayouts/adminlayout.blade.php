@@ -4,9 +4,9 @@
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en" class="no-js">
-{{dd("prueba")}}
-        @include('admin.include.head')
 
+        @include('admin.include.head')
+        {{dd("ggg")}}
 <body class="page-header-fixed page-quick-sidebar-over-content page-style-square"> 
 
         @include('admin.include.header')
