@@ -281,7 +281,6 @@ class BeneficiariosController extends \AdminBaseController {
 
 
 			$input  =   Input::all();
-
 			$fullname = $input['nombres']." ".$input['apellidos'];
 
 			$password = ($data['password']!='')?Hash::make(Input::get('password')):$data['oldpassword'];
@@ -327,7 +326,7 @@ class BeneficiariosController extends \AdminBaseController {
 					'direccionperm' => $input['direccionperm']
 				]);
 
-			return Redirect::route('admin.personal.index',$id)->with('successPersonal',"<strong>Actualizacion</strong> Existosa");
+			return Redirect::route('admin.beneficiarios.edit',$id)->with('successPersonal',"<strong>Actualizacion</strong> Existosa");
 
 		}
 		else if(Input::get('updateType')=='documents')
