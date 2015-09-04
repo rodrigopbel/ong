@@ -159,20 +159,19 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="{{ $actividadActive or ''}}">
-                            <a href="{{route('admin.reportes.index')}}">
+                            <a href="{{route('admin.reportes.reportesBeneficiarios')}}">
                                 <i class="fa fa-calendar"></i>
                                 {{Lang::get('menu.reportesBen')}}
                             </a>
                         </li>
-                    </ul>
-                    <ul class="sub-menu">
                         <li class="{{ $actividadActive or ''}}">
-                            <a href="{{route('admin.reportes.index')}}">
+                            <a href="{{route('admin.reportes.reportesTransacciones')}}">
                                 <i class="fa fa-calendar"></i>
                                 {{Lang::get('menu.reportesTran')}}
                             </a>
                         </li>
                     </ul>
+
                 </li>
                 {{----------------------------------------------------------------------}}
                 {{---------------------------------------COnfiguraciones-------------------------------}}
