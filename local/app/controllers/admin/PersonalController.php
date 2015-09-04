@@ -175,7 +175,7 @@ class PersonalController extends \AdminBaseController {
             }
         }
         //-------Documents info Details Update END--------
-        return Response::json($output, 200);
+        return Redirect::route('admin.personal.edit',$id)->with('successPersonal',"<strong>Actualizacion</strong> Existosa");
     }
     /**
      * Remove the specified employee from storage.
