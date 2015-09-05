@@ -62,14 +62,14 @@
                                             <label class="col-md-2 control-label">Descripcion de la Donacion: </label>
 
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="anonimo"  value="{{ $donacion->descripciondon }}">
+                                                <input type="text" class="form-control" name="descripcion"  value="{{ $donacion->descripcion }}">
                                             </div>
                                         </div>
                                      <div class="form-group">
                                         <label class="col-md-2 control-label">Monto: ( <span class="fa {{$setting->currency_icon}}"></span> )</label>
 
                                                 <div class="col-md-6">
-                                                    <input type="text" class="form-control" name="montoaporte"  value="{{ $donacion->montodonacion }}">
+                                                    <input type="text" class="form-control" name="montodonacion"  value="{{ $donacion->montodonacion }}">
                                                 </div>
                                     </div>
 
