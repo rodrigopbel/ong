@@ -32,9 +32,7 @@ class ReportsController extends \AdminBaseController {
         Session::flash('success',"<strong>{$input['type']}</strong> Created");
         return Redirect::route('admin.employees.edit',Input::get('employeeID'));
     }
-
-
-	public function update($id)
+    public function update($id)
 	{
 		//
 	}
