@@ -1,13 +1,21 @@
 <?php
 
 class ReportsController extends \AdminBaseController {
-
+    public function __construct()
+    {
+        parent::__construct();
+        setlocale(LC_ALL,"es_ES");
+        $this->data['reportOpen'] ='active open';
+        $this->data['pageTitle'] =  'Reportes';
+    }
     public function reportesben()
     {
+        $this->data['reporteActive']    =   'active';
         return "hola reportes Beneficiarios";
     }
     public function reportestran()
     {
+        $this->data['reporteActive']    =   'active';
         return "hola reportes Transacciones";
     }
     public function store()
