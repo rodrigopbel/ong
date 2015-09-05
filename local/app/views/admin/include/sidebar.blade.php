@@ -159,7 +159,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="{{ $reporteActive or ''}}">
-                            <a href="{{route('adminreports.beneficiarios')}}">
+                            <a href="{{route('admin.reports.beneficiarios')}}">
                                 <i class="fa fa-calendar"></i>
                                 {{Lang::get('menu.reportesBen')}}
                             </a>
