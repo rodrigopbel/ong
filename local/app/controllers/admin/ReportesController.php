@@ -8,6 +8,10 @@ class ReportsController extends \AdminBaseController {
         $this->data['reportOpen'] ='active open';
         $this->data['pageTitle'] =  'Reportes';
     }
+    public function index()
+    {
+        return "hola index";
+    }
     public function reportesben()
     {
         $this->data['reporteActive']    =   'active';
