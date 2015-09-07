@@ -82,7 +82,7 @@
                                 <td>{{-- Descripcion --}}</td>
                                 <td>{{-- Monto --}} </td>
                                 <td>{{-- Fecha --}}</td>
-                                <td>  Fecha </td>
+                                <td>{{-- Fecha --}}</td>
 
 
                                 <td>{{-- Action --}} </td>
