@@ -23,7 +23,7 @@ class DonacionesController extends \AdminBaseController {
     //Datatable ajax request
     public function ajax_donaciones()
     {
-
+        dd("mensaje");
 	    $result =
             Donacion::select('donaciones.id','personal.personalID','descripcion','montodonacion','created_at')
 		      ->join('personal', 'donaciones.aportanteID', '=', 'personal.personalID')
