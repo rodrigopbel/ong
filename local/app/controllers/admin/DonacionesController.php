@@ -2,8 +2,6 @@
 
 class DonacionesController extends \AdminBaseController {
 
-dd("aaaa");
-
     public function __construct()
     {
 
@@ -115,10 +113,10 @@ dd("aaaa");
 
         $donacion->update([
 
-            'aportanteID'        => $input['aportanteID'],
-            'descripcion'        => $input['descripcion'],
-            'montodonacion'      => $input['montodonacion'],
-            'fechadon'           => $input['fechadon']
+            'aportanteID'        => $data['aportanteID'],
+            'descripcion'        => $data['descripcion'],
+            'montodonacion'      => $data['montodonacion'],
+            'fechadon'           => $data['fechadon']
         ]);
 		return Redirect::route('admin.donaciones.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
 	}

@@ -1,5 +1,5 @@
 @extends('admin.adminlayouts.adminlayout')
-
+{{dd("hola mundo")}}
 @section('head')
 	<!-- BEGIN PAGE LEVEL STYLES -->
 	{{HTML::style("assets/global/plugins/select2/select2.css")}}
