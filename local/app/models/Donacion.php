@@ -7,7 +7,7 @@ class Donacion extends \Eloquent {
 	public static $rules = [
 		//'ayudaName'      =>  'required',
        // 'beneficiarioID' =>  'required',
-       'aportanteID'    =>  'required'
+      // 'aportanteID'    =>  'required'
 
 	];
 
