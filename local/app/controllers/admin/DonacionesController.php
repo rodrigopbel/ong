@@ -14,6 +14,7 @@ class DonacionesController extends \AdminBaseController {
     //    Display a listing of awards
     public function index()
 	{
+        dd("hola a todos");
 		$this->data['donaciones'] = Donacion::all();
         $this->data['donacionesActive'] =   'active';
 		return View::make('admin.donaciones.index', $this->data);
