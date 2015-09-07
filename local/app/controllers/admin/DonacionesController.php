@@ -40,7 +40,7 @@ class DonacionesController extends \AdminBaseController {
                         <i class="fa fa-trash"></i></a>')
 
 
-//            ->make();
+            ->make();
     }
 
 	public function create()
