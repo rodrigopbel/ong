@@ -65,9 +65,9 @@ class DonacionesController extends \AdminBaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-        dd($input);
+//        dd($input);
         Donacion::create([
-            'aportanteID'    => $input['aportanteID'],
+            'aportanteID'    => $input['personalID'],
             'descripcion'    => $input['descripcion'],
             'montodonacion'  => $input['montodonacion']
 
