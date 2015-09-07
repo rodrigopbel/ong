@@ -28,7 +28,7 @@ class DonacionesController extends \AdminBaseController {
             Donacion::select('donaciones.id','personal.personalID','descripcion','montodonacion','created_at')
 		      ->join('personal', 'donaciones.aportanteID', '=', 'personal.personalID')
 			  ->orderBy('donaciones.created_at','desc');
-dd($result);
+
         return Datatables::of($result)
 //            ->add_column('Por el Mes',function($row) {
 //                return ucfirst($row->porelMes).' '.$row->porelAnio;

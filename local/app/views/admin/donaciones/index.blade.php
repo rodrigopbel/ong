@@ -67,7 +67,7 @@
 								<th> Aportante ID </th>
 								<th> Descripcion</th>
 								<th> Monto </th>
-								<th> fecha </th>
+								<th> fecha Creacion </th>
 								<th> Accion </th>
 							</tr>
 							</thead>
