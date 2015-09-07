@@ -18,12 +18,13 @@ class DonacionesController extends \AdminBaseController {
 		$this->data['donaciones'] = Donacion::all();
         $this->data['donacionesActive'] =   'active';
 		return View::make('admin.donaciones.index', $this->data);
+        dd("mensaje");
 	}
 
     //Datatable ajax request
     public function ajax_donaciones()
     {
-        dd("mensaje");
+
 	    $result =
             Donacion::select('donaciones.id','personal.personalID','descripcion','montodonacion','created_at')
 		      ->join('personal', 'donaciones.aportanteID', '=', 'personal.personalID')
@@ -115,7 +116,7 @@ class DonacionesController extends \AdminBaseController {
 
         $donacion->update([
 
-            'aportanteID'        => $data['aportanteID'],
+            'aportanteID'        => $data['personalID'],
             'descripcion'        => $data['descripcion'],
             'montodonacion'      => $data['montodonacion'],
             'fechadon'           => $data['fechadon']
