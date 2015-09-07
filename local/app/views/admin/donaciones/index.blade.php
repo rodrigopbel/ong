@@ -68,7 +68,7 @@
 								<th> Descripcion</th>
 								<th> Monto </th>
 								<th> Fecha Creacion </th>
-                                {{--<th> Fecha Creacion </th>--}}
+                                <th> Fecha Creacion </th>
                                 {{--<th> Fecha Creacion </th>--}}
 
 
@@ -82,7 +82,7 @@
                                 <td>{{-- Descripcion --}}</td>
                                 <td>{{-- Monto --}} </td>
                                 <td>{{-- Fecha --}}</td>
-                                {{--<td> --}}{{-- Fecha --}}{{--</td>--}}
+                                <td>  Fecha </td>
 
 
                                 <td>{{-- Action --}} </td>
@@ -126,6 +126,7 @@
                         "aoColumns": [
                             { 'sClass': 'center', "bSortable": true  },
                             { 'sClass': 'center', "bSortable": true  },
+                            { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
