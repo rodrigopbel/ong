@@ -38,7 +38,7 @@ class DonacionesController extends \AdminBaseController {
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripcion}}\',\'{{ $montodonacion }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
 
-            ->remove_column('created_at')
+
             ->make();
     }
 
