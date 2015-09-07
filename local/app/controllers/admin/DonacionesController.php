@@ -116,10 +116,10 @@ class DonacionesController extends \AdminBaseController {
 
             'aportanteID'        => $data['personalID'],
             'descripcion'        => $data['descripcion'],
-            'montodonacion'      => $data['montodonacion'],
-            'fechadon'           => $data['fechadon']
+            'montodonacion'      => $data['montodonacion']
+
         ]);
-		return Redirect::route('admin.donaciones.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
+		return Redirect::route('admin.donaciones.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa!");
 	}
 
 	/**
