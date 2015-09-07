@@ -71,9 +71,9 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::get('ajax_donaciones/',['as'=>'admin.ajax_donaciones','uses'=> 'DonacionesController@ajax_donaciones']);
     Route::resource('donaciones', 'DonacionesController',['as' => 'admin']);
     // Reportes Routing
-//    Route::resource('reports','ReportsController',['as'=>'admin']);
-    Route::get('reports/beneficiarios','ReportsController@reportesben',['as'=>'admin']);
-    Route::get('reports/transacciones','ReportsController@reportestran',['as'=>'admin']);
+    Route::resource('reports','ReportsController',['as'=>'admin']);
+//    Route::get('reports/beneficiarios','ReportsController@reportesben',['as'=>'admin']);
+//    Route::get('reports/transacciones','ReportsController@reportestran',['as'=>'admin']);
 
     //    Employees Routing
 	Route::get('employees/export',['as'=>'admin.employees.export','uses'=>'BeneficiariosController@export']);
