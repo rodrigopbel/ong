@@ -69,6 +69,8 @@
 								<th> Monto </th>
 								<th> Fecha Creacion </th>
                                 <th> Fecha Creacion </th>
+
+
 								<th> Accion </th>
 							</tr>
 							</thead>
@@ -80,6 +82,8 @@
                                 <td>{{-- Monto --}} </td>
                                 <td>{{-- Fecha --}}</td>
                                 <td>{{-- Fecha --}}</td>
+
+
                                 <td>{{-- Action --}} </td>
                             </tr>
                         </tbody>
