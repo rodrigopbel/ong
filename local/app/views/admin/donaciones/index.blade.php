@@ -68,7 +68,7 @@
 								<th> Descripcion</th>
 								<th> Monto </th>
 								<th> Fecha Creacion </th>
-                                <th> Fecha Creacion </th>
+                                {{--<th> Fecha Creacion </th>--}}
                                 {{--<th> Fecha Creacion </th>--}}
 
 
