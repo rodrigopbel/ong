@@ -1,17 +1,12 @@
 @extends('admin.adminlayouts.adminlayout')
-{{dd("hola mundo")}}
+{{--{{dd("hola mundo")}}--}}
 @section('head')
 	<!-- BEGIN PAGE LEVEL STYLES -->
 	{{HTML::style("assets/global/plugins/select2/select2.css")}}
 	{{HTML::style("assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css")}}
 	<!-- END PAGE LEVEL STYLES -->
-
 @stop
-
-
 @section('mainarea')
-
-
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 			{{$pageTitle}}
