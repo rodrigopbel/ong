@@ -72,7 +72,7 @@ class DonacionesController extends \AdminBaseController {
             'fechadon'       => $input['fechadon']
 
         ]);
-
+        dd(Donacion);
 		return Redirect::route('admin.donaciones.index')->with('success',"<strong>Guardado</strong> Exitosamente");
 	}
 
