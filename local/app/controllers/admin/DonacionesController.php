@@ -28,14 +28,14 @@ class DonacionesController extends \AdminBaseController {
             Donacion::select('donaciones.id','personal.personalID','descripcion','montodonacion','created_at')
 		      ->join('personal', 'donaciones.aportanteID', '=', 'personal.personalID')
 			  ->orderBy('donaciones.created_at','desc');
-
+dd($result);
         return Datatables::of($result)
 //            ->add_column('Por el Mes',function($row) {
 //                return ucfirst($row->porelMes).' '.$row->porelAnio;
 //            })
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.donaciones.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
-                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripciondon}}\',\'{{ $montodonacion }}\');return false;" class="btn red">
+                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripcion}}\',\'{{ $montodonacion }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
 //
 //            ->remove_column('porelAnio')
