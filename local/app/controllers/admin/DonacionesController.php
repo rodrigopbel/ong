@@ -68,11 +68,11 @@ class DonacionesController extends \AdminBaseController {
         Donacion::create([
             'aportanteID'    => $input['aportanteID'],
             'descripcion'    => $input['descripcion'],
-            'montodonacion'  => $input['montodonacion'],
-            'fechadon'       => $input['fechadon']
+            'montodonacion'  => $input['montodonacion']
+
 
         ]);
-        dd(Donacion);
+        dd("dsdas");
 		return Redirect::route('admin.donaciones.index')->with('success',"<strong>Guardado</strong> Exitosamente");
 	}
 
