@@ -68,9 +68,6 @@
 								<th> Descripcion</th>
 								<th> Monto </th>
 								<th> fecha </th>
-
-
-
 								<th> Accion </th>
 							</tr>
 							</thead>
@@ -81,21 +78,16 @@
                                 <td>{{-- Descripcion --}}</td>
                                 <td>{{-- Monto --}} </td>
                                 <td>{{-- Fecha --}}</td>
-
-
                                 <td>{{-- Action --}} </td>
                             </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- END EXAMPLE TABLE PORTLET-->
 
-
-
-							</tbody>
-							</table>
-						</div>
-					</div>
-					<!-- END EXAMPLE TABLE PORTLET-->
-
-				</div>
-			</div>
+        </div>
+    </div>
 			<!-- END PAGE CONTENT-->
 
 			{{--DELETE MODAL CALLING--}}
