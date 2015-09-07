@@ -5,7 +5,6 @@ class Donacion extends \Eloquent {
 	// Add your validation rules here
     protected $table="donaciones";
 	public static $rules = [
-		//'ayudaName'      =>  'required',
 
     //'aportanteID'    =>  'required'
 
