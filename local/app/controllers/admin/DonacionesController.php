@@ -31,9 +31,9 @@ class DonacionesController extends \AdminBaseController {
 			  ->orderBy('donaciones.created_at','desc');
 
         return Datatables::of($result)
-//            ->add_column('Por el Mes',function($row) {
-//                return ucfirst($row->created_at).' '.$row->created_at;
-//            })
+            ->add_column('Por el Mes',function($row) {
+                return ucfirst($row->created_at).' '.$row->created_at;
+            })
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.donaciones.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripcion}}\',\'{{ $montodonacion }}\');return false;" class="btn red">
