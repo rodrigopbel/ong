@@ -6,7 +6,7 @@ class Donacion extends \Eloquent {
     protected $table="donaciones";
 	public static $rules = [
 
-   'personalID'    =>  'required'
+   'aportanteID'    =>  'required'
 
 	];
 
