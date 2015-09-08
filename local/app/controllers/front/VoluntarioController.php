@@ -25,7 +25,7 @@ class VoluntarioController extends \BaseController {
                 'apellidos'  => $input['apellidos'],
                 'ci'         => $input['ci'],
                 'telefono'   => $input['telefono'],
-                'email'	     =>	$input['email'],
+                'email'	     =>	$input['email']
             ];
             //Reglas de los Campos de Email y Password
             $rules  =[
@@ -33,7 +33,7 @@ class VoluntarioController extends \BaseController {
                 'apellidos'   => 'required',
                 'ci'          => 'required',
                 'telefono'    => 'required',
-                'email'	      => 'required|email',
+                'email'	      => 'required|email'
             ];
             $validator	= Validator::make($input,$rules);
             //Verificacion previa de los campos, antes de la Autenticacion
@@ -47,7 +47,7 @@ class VoluntarioController extends \BaseController {
                 'apellidos'   => $input['apellidos'],
                 'ci'   => $input['ci'],
                 'telefono'   => $input['telefono'],
-                'email'	    =>	$input['email'],
+                'email'	    =>	$input['email']
             ];
 
             Voluntario::create([
