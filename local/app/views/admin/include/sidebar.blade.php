@@ -164,12 +164,7 @@
                                 {{Lang::get('menu.reportesBen')}}
                             </a>
                         </li>
-                        <li class="{{ $reporteActive or ''}}">
-                            <a href="{{route('admin.reports.index')}}">
-                                <i class="fa fa-calendar"></i>
-                                {{Lang::get('menu.reportesTran')}}
-                            </a>
-                        </li>
+
                     </ul>
                 </li>
                 {{----------------------------------------------------------------------}}
