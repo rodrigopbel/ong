@@ -57,7 +57,7 @@ class VoluntarioController extends \BaseController {
                 'telefono'   => $input['telefono'],
                 'email'	    =>	$input['email']
             ]);
-
+            $output = "Registrado exitosamente";
             return Response::json($output, 200);
         }
     }
