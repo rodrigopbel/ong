@@ -10,9 +10,10 @@ class ReportsController extends \AdminBaseController {
     public function index()
     {
         $this->data['ayudas'] = Ayuda::all();
-        $this->data['reportes'] = Beneficiario::all();
+        $this->data['beneficiarios'] = Beneficiario::all();
+        $this->data['aportantes'] = Personal::where($this->data['beneficiarios']->getBeneficiario);
         $this->data['ayudasActive'] =   'active';
-        dd ($this->data['reportes']);
+        dd ($this->data['aportantes']);
 
     }
     public function reportesben()

@@ -41,4 +41,10 @@ class Personal extends Eloquent {
 
         protected $guarded = ['id'];
         protected $hidden  = ['password'];
+
+
+    public function getBeneficiario()
+    {
+        return $this->has('Beneficiario','beneficiarioID','beneficiarioID');
+    }
 }
