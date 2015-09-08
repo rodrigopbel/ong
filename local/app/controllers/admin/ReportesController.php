@@ -9,9 +9,9 @@ class ReportsController extends \AdminBaseController {
     }
     public function index()
     {
-        $this->data['ayudas'] = Ayuda::all();
-        $this->data['beneficiarios'] = Beneficiario::all();
-        $this->data['ayudasActive'] =   'active';
+//        $this->data['ayudas'] = Ayuda::all();
+//        $this->data['beneficiarios'] = Beneficiario::all();
+//        $this->data['ayudasActive'] =   'active';
 //        $this->data['reporte'] = Ayuda::select('ayudas.gastos','donaciones.montodonacion','donaciones.aportanteID','ayudas.requerimiento','ayudas.created_at','beneficiarios.nombres','beneficiarios.apellidos')
 //                                ->join('beneficiarios', 'ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
 //                                ->join('donaciones', 'ayudas.aportanteID','=','donaciones.aportanteID')
@@ -29,7 +29,7 @@ class ReportsController extends \AdminBaseController {
 //            Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','requerimiento','centroSalud','nit','numfactura','gastos','ayudas.created_at')
 //                ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
 //                ->orderBy('ayudas.created_at','desc');
-        dd ($result);
+        dd($result);
 
     }
     public function reportesben()
