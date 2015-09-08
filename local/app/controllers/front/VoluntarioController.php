@@ -14,7 +14,7 @@ class VoluntarioController extends \BaseController {
     }
     public function registrar()
     {
-        dd("guardado exitoso");
+        dd("guardado  aaaa  exitoso");
     }
     public  function ajaxRegister()
     {
