@@ -133,7 +133,6 @@
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
-
                             { 'sClass': 'center', "bSortable": false }
 
                         ],
@@ -156,6 +155,7 @@
                         "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
                             var row = $(nRow);
                             row.attr("id", 'row'+aData['0']);
+                            console.log(aData);
                         }
 
              });
