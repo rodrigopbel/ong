@@ -22,7 +22,7 @@ class ReportsController extends \AdminBaseController {
 //            ->where('personal','personal.tipoPersonal','=','aportante')
             ->groupBy('ayudas.id');
         $result = Ayuda::all();
-        dd($result);
+        dd($result['requerimiento']);
         return View::make('admin.reportes.index', $this->data);
     }
 
