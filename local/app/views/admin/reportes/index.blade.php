@@ -75,7 +75,6 @@
                                 <th> Ingresos </th>
                                 <th> Gastos </th>
                                 <th> Saldo </th>
-                                <th> Saldo </th>
                             </tr>
 							</thead>
 							<tbody>
@@ -86,7 +85,6 @@
                                 <td>{{-- Fecha Ayuda --}} </td>
                                 <td>{{-- Ingresos --}}</td>
                                 <td>{{-- Gastos --}}</td>
-                                <td>{{-- Saldo --}}</td>
                                 <td>{{-- Saldo --}}</td>
 
                             </tr>
@@ -135,7 +133,7 @@
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
-                            { 'sClass': 'center', "bSortable": true },
+
                             { 'sClass': 'center', "bSortable": false }
 
                         ],
