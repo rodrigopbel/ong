@@ -56,7 +56,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-trophy"></i>Lista de Ayudas
+								<i class="fa fa-trophy"></i>Reportes
 							</div>
 							<div class="tools">
 							</div>
