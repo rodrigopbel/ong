@@ -26,7 +26,7 @@ class ReportsController extends \AdminBaseController {
             Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','requerimiento','centroSalud','nit','numfactura','gastos','ayudas.created_at')
                 ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
                 ->orderBy('ayudas.created_at','desc');
-        dd($result);
+        dd("maldita sea");
 //        return View::make('admin.reportes.index', $this->data);
     }
 
