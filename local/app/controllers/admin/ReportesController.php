@@ -24,7 +24,7 @@ class ReportsController extends \AdminBaseController {
     public function ajax_reportes()
     {
 
-        $result = Ayuda::select('ayudas.id','beneficiarios.nombres','requerimiento','created_at','donaciones.montodonacion','gastos',('donaciones.montodonacion'-'gastos'))
+        $result = Ayuda::select('ayudas.id','beneficiarios.nombres','requerimiento','created_at','donaciones.montodonacion','gastos',('donaciones.montodonacion'-'gastos'),'ayudas.created_at')
                 ->join('personal', 'ayudas.aportanteID', '=', 'personal.personalID')
                 ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
                 ->join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
