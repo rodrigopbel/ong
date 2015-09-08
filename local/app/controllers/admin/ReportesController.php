@@ -1,6 +1,6 @@
 <?php
 
-class ReportesController extends \AdminBaseController {
+class ReportsController extends \AdminBaseController {
 
     public function __construct()
     {
