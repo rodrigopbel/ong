@@ -14,7 +14,19 @@ class VoluntarioController extends \BaseController {
     }
     public function registrar()
     {
-        dd("guardado  aaaa  exitoso");
+//        dd("guardado  aaaa  exitoso");
+
+        $input = Input::all();
+        dd($input);
+        $tipo = 'voluntario';
+        Personal::create([
+            'nombres'    => $input['nombres'],
+            'apellidos'  => $input['apellidos'],
+            'ci'         => $input['ci'],
+            'telefono'   => $input['telefono'],
+            'email'	     =>	$input['email']
+        ]);
+
     }
     public  function ajaxRegister()
     {
