@@ -19,7 +19,7 @@ class ReportsController extends \AdminBaseController {
             ->join('personal', 'ayudas.aportanteID', '=', 'personal.personalID')
             ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
             ->join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
-            ->where('personal','personal.tipoPersonal','=','aportante')
+//            ->where('personal','personal.tipoPersonal','=','aportante')
             ->groupBy('ayudas.id');
 
         dd($result);
