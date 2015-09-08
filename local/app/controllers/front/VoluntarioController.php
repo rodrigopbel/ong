@@ -45,7 +45,7 @@ class VoluntarioController extends \BaseController {
             $data	=	[
                 'nombres'   => $input['nombres'],
                 'apellidos'   => $input['apellidos'],
-                'ci'   => $input['ci'],
+                'ci'         => $input['ci'],
                 'telefono'   => $input['telefono'],
                 'email'	    =>	$input['email']
             ];
