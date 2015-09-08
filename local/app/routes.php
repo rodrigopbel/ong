@@ -8,8 +8,8 @@
     Route::get('logout', ['as'=>'front.logout','uses'=>'LoginController@logout']);
 # Voluntarios Formulario
     Route::resource('voluntarios', 'VoluntarioController');
-Route::get('/voluntarios/register',['as'=>'voluntario.register','uses'=>'VoluntarioController@ajaxRegister']);
-Route::get('/voluntarios/registrar',['as'=>'voluntario/registrar','uses'=>'VoluntarioController@registrar']);
+//Route::get('/voluntarios/register',['as'=>'voluntario.register','uses'=>'VoluntarioController@ajaxRegister']);
+Route::get('/voluntarios/registrar',['as'=>'voluntario.registrar','uses'=>'VoluntarioController@registrar']);
 # Beneficiario Panel
     Route::group(array('before' => 'auth.beneficiarios'), function()
     {
