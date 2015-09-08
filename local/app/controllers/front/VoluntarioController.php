@@ -18,15 +18,16 @@ class VoluntarioController extends \BaseController {
 
         $input = Input::all();
 //        dd($input);
-        $tipo = 'voluntario';
+        $tipo = 'Voluntario';
         Personal::create([
             'nombres'    => $input['nombres'],
             'apellidos'  => $input['apellidos'],
             'personalID' => $input['ci'],
             'telefono'   => $input['telefono'],
-            'email'	     =>	$input['email']
+            'email'	     =>	$input['email'],
+            'tipoPersonal' => $tipo
         ]);
-        return Redirect::route('/');
+        return view::make('front.login');
 
     }
     public  function ajaxRegister()
