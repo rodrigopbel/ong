@@ -32,14 +32,14 @@ class AyudasController extends \AdminBaseController {
 
         return Datatables::of($result)
             ->add_column('Por el Mes',function($row) {
-                return ucfirst($row->porelMes).' '.$row->porelAnio;
+                return ucfirst($row->created_at).' '.$row->created_at;
             })
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $apellidos}}\',\'{{ $requerimiento }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
 
-            ->remove_column('porelAnio')
+//            ->remove_column('porelAnio')
             ->make();
     }
 
