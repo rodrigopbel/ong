@@ -21,11 +21,11 @@ class VoluntarioController extends \BaseController {
             $output =   [];
             $input  = Input::all();
             $data	=	[
-                'nombres'   => $input['nombres'],
-                'apellidos'   => $input['apellidos'],
-                'ci'   => $input['ci'],
+                'nombres'    => $input['nombres'],
+                'apellidos'  => $input['apellidos'],
+                'ci'         => $input['ci'],
                 'telefono'   => $input['telefono'],
-                'email'	    =>	$input['email'],
+                'email'	     =>	$input['email'],
             ];
             //Reglas de los Campos de Email y Password
             $rules  =[
