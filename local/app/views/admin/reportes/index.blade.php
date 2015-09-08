@@ -79,7 +79,7 @@
                                 <th> Gastos </th>
 
 
-								<th> Accion </th>
+
 							</tr>
 							</thead>
 							<tbody>
@@ -94,7 +94,6 @@
                                 <td>{{-- Fecha Ayuda --}}</td>
                                 <td>{{-- Gastos --}}</td>
 
-                                <td>{{-- Action --}} </td>
                             </tr>
 
 
@@ -138,7 +137,6 @@
                         "aoColumns": [
                             { 'sClass': 'center', "bSortable": true  },
                             { 'sClass': 'center', "bSortable": true  },
-                            { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
