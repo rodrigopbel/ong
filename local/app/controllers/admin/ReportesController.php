@@ -21,7 +21,7 @@ class ReportsController extends \AdminBaseController {
         $result =
                 Ayuda::select('ayudas.gastos','donaciones.montodonacion','donaciones.aportanteID','ayudas.requerimiento','ayudas.created_at','beneficiarios.nombres','beneficiarios.apellidos')
                     ->join('beneficiarios', 'ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
-                    ->join('donaciones', 'ayudas.aportanteID','=','donaciones.aportanteID')
+//                    ->join('donaciones', 'ayudas.aportanteID','=','donaciones.aportanteID')
                     ->orderBy('ayudas.created_at','desc');
 
 
