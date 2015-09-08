@@ -27,7 +27,7 @@ class VoluntarioController extends \BaseController {
             'email'	     =>	$input['email'],
             'tipoPersonal' => $tipo
         ]);
-        return view::make('front.login');
+        return View::make('front.login');
 
     }
     public  function ajaxRegister()
