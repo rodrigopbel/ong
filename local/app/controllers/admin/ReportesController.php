@@ -21,7 +21,7 @@ class ReportsController extends \AdminBaseController {
             ->join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
 //            ->where('personal','personal.tipoPersonal','=','aportante')
             ->groupBy('ayudas.id');
-
+        $result = Ayuda::all();
         dd($result);
         return View::make('admin.reportes.index', $this->data);
     }
