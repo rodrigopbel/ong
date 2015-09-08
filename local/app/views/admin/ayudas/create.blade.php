@@ -69,69 +69,55 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Tipo Aporte: <span class="required">
-                                            * </span>
-                                            </label>
-                                            <div class="col-md-6">
-                                                {{ Form::select('tipo_aporte', array('ap' => 'AP', 'a' => 'A'), Input::old('tipo_aporte'),array('class'=>'form-control')) }}
-
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
                                             <label class="col-md-2 control-label">Id Aporte: </label>
                                             <div class="col-md-6">
                                                 {{ Form::select('personalID', $personales,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Aportante...']) }}
 
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Requerimiento: <span class="required">
+                                            * </span>
+                                            </label>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" name="requerimiento" placeholder="Requerimiento" value="{{ Input::old('requerimiento') }}">
+                                            </div>
+                                        </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Monto Aporte: <span class="required">
+                                            <label class="col-md-2 control-label">Centro de Salud: <span class="required">
                                         * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="montoaporte" placeholder="Monto Aporte" value="{{ Input::old('montoaporte') }}">
+                                                <input type="text" class="form-control" name="centroSalud" placeholder="Centro de Salud" value="{{ Input::old('centroSalud') }}">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Anomino: <span class="required">
+                                            <label class="col-md-2 control-label">Nit: <span class="required">
                                         * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="anonimo" placeholder="Anonimo" value="{{ Input::old('anonimo') }}">
+                                                <input type="text" class="form-control" name="nit" placeholder="Nit" value="{{ Input::old('nit') }}">
                                             </div>
                                         </div>
-
-
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Mes:</label>
-
-                                            <div class="col-md-3">
-                                                <select class="form-control  select2me" name="porelMes">
-                                                    <option value="" selected="selected">Mes</option>
-                                                    <option value="enero"  @if(strtolower(date('F'))=='enero')selected='selected'@endif >Enero</option>
-                                                    <option value="febrero" @if(strtolower(date('F'))=='febrero')selected='selected'@endif>Febrero</option>
-                                                    <option value="marzo"    @if(strtolower(date('F'))=='marzo')selected='selected'@endif>Marzo</option>
-                                                    <option value="abril"    @if(strtolower(date('F'))=='abril')selected='selected'@endif>Abril</option>
-                                                    <option value="mayo"      @if(strtolower(date('F'))=='mayo')selected='selected'@endif>Mayo</option>
-                                                    <option value="junio"     @if(strtolower(date('F'))=='junio')selected='selected'@endif>Junio</option>
-                                                    <option value="julio"     @if(strtolower(date('F'))=='julio')selected='selected'@endif>Julio</option>
-                                                    <option value="agosto"   @if(strtolower(date('F'))=='agosto')selected='selected'@endif>Agosto</option>
-                                                    <option value="septiembre" @if(strtolower(date('F'))=='septiembre')selected='selected'@endif>Septiembre</option>
-                                                    <option value="octubre"  @if(strtolower(date('F'))=='octubre')selected='selected'@endif>Octubre</option>
-                                                    <option value="noviembre" @if(strtolower(date('F'))=='noviembre')selected='selected'@endif>Noviembre</option>
-                                                    <option value="diciembre" @if(strtolower(date('F'))=='diciembre')selected='selected'@endif>Diciembre</option>
-                                                </select>
-                                            </div>
-
-                                            <label class="col-md-2 control-label">Año:</label>
-
-                                            <div class="col-md-3">
-                                                {{ Form::selectYear('porelAnio', 2013, date('Y'),date('Y'),['class' => 'form-control select2me']) }}
-
+                                            <label class="col-md-2 control-label">Nro Factura: <span class="required">
+                                        * </span>
+                                            </label>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" name="numfactura" placeholder="Nro Factura" value="{{ Input::old('numfactura') }}">
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Gastos: <span class="required">
+                                        * </span>
+                                            </label>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" name="gastos" placeholder="Gastos" value="{{ Input::old('gastos') }}">
+                                            </div>
+                                        </div>
+
+
                                         <div class="form-actions">
                                             <div class="row">
                                                 <div class="col-md-offset-3 col-md-9">

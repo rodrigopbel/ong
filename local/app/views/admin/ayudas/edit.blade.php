@@ -60,26 +60,34 @@
                                     <div class="form-body">
 
                                         <div class="form-group">
-                                        <label class="col-md-2 control-label">Tipo de Ayuda: </label>
+                                        <label class="col-md-2 control-label">Requerimiento: </label>
                                             <div class="col-md-6">
-                                                <select class="form-control" name="tipo_aporte">
-                                                    <option value="ap" @if($ayuda->tipo_aporte=='ap') selected @endif>AP</option>
-                                                    <option value="a"  @if($ayuda->tipo_aporte=='a') selected @endif>A</option>
-                                                </select>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" name="requerimiento"  value="{{ $ayuda->requerimiento }}">
+                                                </div>
                                             </div>
                                         </div>
-                                     <div class="form-group">
-                                        <label class="col-md-2 control-label">Monto: ( <span class="fa {{$setting->currency_icon}}"></span> BS.)</label>
-
-                                                <div class="col-md-6">
-                                                    <input type="text" class="form-control" name="montoaporte"  value="{{ $ayuda->montoaporte }}">
-                                                </div>
-                                    </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Anonimo: </label>
+                                            <label class="col-md-2 control-label">Centro de Salud: </label>
+                                            <div class="col-md-6">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" name="centroSalud"  value="{{ $ayuda->centroSalud }}">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Nit: </label>
 
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="anonimo"  value="{{ $ayuda->anonimo }}">
+                                                <input type="text" class="form-control" name="nit"  value="{{ $ayuda->nit }}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Nro de Factura: </label>
+
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" name="numfactura"  value="{{ $ayuda->numfactura }}">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -98,33 +106,13 @@
                                              </div>
                                      </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Mes:</label>
+                                            <label class="col-md-2 control-label">Gastos: ( <span class="fa {{$setting->currency_icon}}"></span> BS.)</label>
 
-                                            <div class="col-md-3">
-                                                <select class="form-control select2me" name="porelMes">
-                                                    <option value="" selected="selected">Mes</option>
-                                                    <option value="enero"  @if($ayuda->porelMes=='enero')selected='selected'@endif >Enero</option>
-                                                    <option value="febrero" @if($ayuda->porelMes=='febrero')selected='selected'@endif>Febrero</option>
-                                                    <option value="marzo"    @if($ayuda->porelMes=='marzo')selected='selected'@endif>Marzo</option>
-                                                    <option value="abril"    @if($ayuda->porelMes=='abril')selected='selected'@endif>Abril</option>
-                                                    <option value="mayo"      @if($ayuda->porelMes=='mayo')selected='selected'@endif>Mayo</option>
-                                                    <option value="junio"     @if($ayuda->porelMes=='junio')selected='selected'@endif>Junio</option>
-                                                    <option value="julio"     @if($ayuda->porelMes=='julio')selected='selected'@endif>Julio</option>
-                                                    <option value="agosto"   @if($ayuda->porelMes=='agosto')selected='selected'@endif>Agosto</option>
-                                                    <option value="septiembre" @if($ayuda->porelMes=='septiembre')selected='selected'@endif>Septiembre</option>
-                                                    <option value="octubre"  @if($ayuda->porelMes=='octubre')selected='selected'@endif>Octubre</option>
-                                                    <option value="noviembre" @if($ayuda->porelMes=='noviembre')selected='selected'@endif>Noviembre</option>
-                                                    <option value="diciembre" @if($ayuda->porelMes=='diciembre')selected='selected'@endif>Diciembre</option>
-                                                </select>
-
-                                            </div>
-
-                                            <label class="col-md-2 control-label">Año:</label>
-
-                                            <div class="col-md-3">
-                                                {{ Form::selectYear('porelAnio', 2013, 2015,$ayuda->porelAnio,['class'=>'form-control select2me']) }}
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" name="gastos"  value="{{ $ayuda->gastos }}">
                                             </div>
                                         </div>
+
                         								<div class="form-actions">
                         									<div class="row">
                         										<div class="col-md-offset-3 col-md-9">

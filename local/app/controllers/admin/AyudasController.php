@@ -26,7 +26,7 @@ class AyudasController extends \AdminBaseController {
     {
 
 	    $result =
-		    Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','montoaporte','anonimo','porelMes','ayudas.porelAnio')
+		    Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','requerimiento','centroSalud','nit','numfactura','gastos','ayudas.created_at')
 		      ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
 			  ->orderBy('ayudas.created_at','desc');
 
@@ -36,7 +36,7 @@ class AyudasController extends \AdminBaseController {
             })
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
-                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $apellidos}}\',\'{{ $montoaporte }}\');return false;" class="btn red">
+                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $apellidos}}\',\'{{ $requerimiento }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
 
             ->remove_column('porelAnio')
@@ -72,12 +72,12 @@ class AyudasController extends \AdminBaseController {
 
         Ayuda::create([
             'beneficiarioID' => $input['beneficiarioID'],
-            'tipo_aporte'    => $input['tipo_aporte'],
             'aportanteID'    => $input['personalID'],
-            'montoaporte'    => $input['montoaporte'],
-            'anonimo'        => $input['anonimo'],
-            'porelMes'       => $input['porelMes'],
-            'porelAnio'      => $input['porelAnio']
+            'requerimiento'  => $input['requerimiento'],
+            'centroSalud'    => $input['centroSalud'],
+            'nit'            => $input['nit'],
+            'numfactura'     => $input['numfactura'],
+            'gastos'         => $input['gastos']
 
         ]);
 
@@ -124,12 +124,12 @@ class AyudasController extends \AdminBaseController {
         $ayuda->update([
 
             'beneficiarioID' => $data['beneficiarioID'],
-            'tipo_aporte'    => $data['tipo_aporte'],
             'aportanteID'    => $data['personalID'],
-            'montoaporte'    => $data['montoaporte'],
-            'anonimo'        => $data['anonimo'],
-            'porelMes'       => $data['porelMes'],
-            'porelAnio'      => $data['porelAnio']
+            'requerimiento'  => $data['requerimiento'],
+            'centroSalud'    => $data['centroSalud'],
+            'nit'            => $data['nit'],
+            'numfactura'     => $data['numfactura'],
+            'gastos'         => $data['gastos']
         ]);
 		return Redirect::route('admin.ayudas.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
 	}

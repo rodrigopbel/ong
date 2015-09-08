@@ -71,10 +71,12 @@
 								<th> AyudaID </th>
 								<th> Beneficiario ID </th>
 								<th> Apellido Beneficiario</th>
-								<th> Monto de Aporte </th>
-								<th> Anonimo </th>
-								<th> Por el Mes </th>
-								<th> Por el Año </th>
+								<th> Requerimiento </th>
+								<th> Centro de Salud </th>
+								<th> Nit </th>
+								<th> Nro Factura </th>
+                                <th> Fecha Ayuda </th>
+                                <th> Gastos </th>
 
 
 								<th> Accion </th>
@@ -84,11 +86,13 @@
                         <tr >
                                 <td>{{-- Hidden ID --}}</td>
                                 <td>{{-- EmployeeID --}}</td>
-                                <td>{{-- Awardee Name --}}</td>
-                                <td>{{-- Award --}} </td>
-                                <td>{{-- Gift --}}</td>
-                                <td>{{-- HIdden Month --}}</td>
-                                <td>{{-- Month --}}</td>
+                                <td>{{-- Apellido Beneiciario --}}</td>
+                                <td>{{-- Reuqerimiento --}} </td>
+                                <td>{{-- Centro de Salud --}}</td>
+                                <td>{{-- Nit --}}</td>
+                                <td>{{-- Nro Factura --}}</td>
+                                <td>{{-- Fecha Ayuda --}}</td>
+                                <td>{{-- Gastos --}}</td>
 
                                 <td>{{-- Action --}} </td>
                             </tr>
@@ -134,6 +138,8 @@
                         "aoColumns": [
                             { 'sClass': 'center', "bSortable": true  },
                             { 'sClass': 'center', "bSortable": true  },
+                            { 'sClass': 'center', "bSortable": true },
+                            { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
