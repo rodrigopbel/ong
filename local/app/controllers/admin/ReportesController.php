@@ -12,7 +12,6 @@ class ReportsController extends \AdminBaseController {
     //    Display a listing of awards
     public function index()
     {
-        dd("hola");
 //        $this->data['reportes'] = Reprote::all();
 
         $this->data['reportesActive'] =   'active';
