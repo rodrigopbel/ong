@@ -39,7 +39,7 @@ class AyudasController extends \AdminBaseController {
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $apellidos}}\',\'{{ $requerimiento }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
 
-//            ->remove_column('porelAnio')
+            ->remove_column('created_at')
             ->make();
     }
 
