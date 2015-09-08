@@ -41,7 +41,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
     <!-- BEGIN LOGIN FORM -->
-    {{ Form::open(array('url' => '','class' =>'login-form')) }}
+    {{ Form::open(array('url' => 'voluntario.registrar','class' =>'login-form')) }}
 
     <h3 class="form-title">Nuevo Voluntario</h3>
     <div id="alert">
@@ -85,7 +85,7 @@
     </div>
     <div class="form-actions">
 
-        <button type="submit" class="btn blue pull-right" id="submitbutton" onclick="login();return false;">
+        <button type="submit" class="btn blue pull-right" id="submitbutton" >
             Registrarse <i class="m-icon-swapright m-icon-white"></i>
         </button>
     </div>

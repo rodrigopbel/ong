@@ -12,7 +12,10 @@ class VoluntarioController extends \BaseController {
     {
         return "guardado exitoso";
     }
-
+    public function registrar()
+    {
+        dd("guardado exitoso");
+    }
     public  function ajaxRegister()
     {
 
