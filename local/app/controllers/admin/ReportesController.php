@@ -12,15 +12,24 @@ class ReportsController extends \AdminBaseController {
         $this->data['ayudas'] = Ayuda::all();
         $this->data['beneficiarios'] = Beneficiario::all();
         $this->data['ayudasActive'] =   'active';
-        $this->data['reporte'] = Ayuda::select('ayudas.gastos','donaciones.montodonacion','donaciones.aportanteID','ayudas.requerimiento','ayudas.created_at','beneficiarios.nombres','beneficiarios.apellidos')
-                                ->join('beneficiarios', 'ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
-                                ->join('donaciones', 'ayudas.aportanteID','=','donaciones.aportanteID')
-                                ->orderBy('ayudas.created_at','desc');
+//        $this->data['reporte'] = Ayuda::select('ayudas.gastos','donaciones.montodonacion','donaciones.aportanteID','ayudas.requerimiento','ayudas.created_at','beneficiarios.nombres','beneficiarios.apellidos')
+//                                ->join('beneficiarios', 'ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
+//                                ->join('donaciones', 'ayudas.aportanteID','=','donaciones.aportanteID')
+//                                ->orderBy('ayudas.created_at','desc');
+
+
+        $result =
+                Ayuda::select('ayudas.gastos','donaciones.montodonacion','donaciones.aportanteID','ayudas.requerimiento','ayudas.created_at','beneficiarios.nombres','beneficiarios.apellidos')
+                    ->join('beneficiarios', 'ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
+                    ->join('donaciones', 'ayudas.aportanteID','=','donaciones.aportanteID')
+                    ->orderBy('ayudas.created_at','desc');
+
+
 //        $result =
 //            Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','requerimiento','centroSalud','nit','numfactura','gastos','ayudas.created_at')
 //                ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
 //                ->orderBy('ayudas.created_at','desc');
-        dd ($this->data['reporte']);
+        dd ($result);
 
     }
     public function reportesben()
