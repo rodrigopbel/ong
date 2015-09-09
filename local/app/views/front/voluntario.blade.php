@@ -141,8 +141,8 @@
         $("#submitbutton").prop('disabled', true);
 
         $.ajax({
-            type: "POST",
-            url: "  {{ URL::to('/voluntarios/register') }} ",
+            type: "GET",
+            url::to( "  {{ URL::to('/voluntarios/register') }} "),
             dataType: 'json',
             data: $('.login-form').serialize()
         }).done( function( response ) {
