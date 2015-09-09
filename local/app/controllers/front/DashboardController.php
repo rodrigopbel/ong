@@ -12,7 +12,7 @@ class DashboardController extends \BaseController {
 //        Total leaves except
 	    $total_leave    =   Leavetype::where('leaveType','<>','half day')->sum('num_of_leave');
         $this->data['leaveLeft']       =    array_sum(Attendance::absentEmployee($this->data['personalID'])).'/'.$total_leave;
-        $this->data['personal']    =    Beneficiario::find(Auth::personales()->get()->id);
+        $this->data['personal']    =    Personal::find(Auth::personales()->get()->id);
         $this->data['holidays']        =    Holiday::orderBy('date','ASC')->remember(10,'holiday_cache')->get();
         $this->data['ayudas']          =    Ayuda::select('*')->orderBy('created_at','desc')->get();
         $this->data['attendance']      =    Attendance::where('employeeID', '=',$this->data['personalID'])
@@ -27,7 +27,7 @@ class DashboardController extends \BaseController {
 //        $this->data['zonificacion']       = Zonificacion::where('beneficiarioID', '=', Auth::beneficiarios()->get()->beneficiarioID)->get();
 //        $this->data['zonificacion']       = Personal::has('zonificacion')->get();
         $this->data['attendance_count']   = Attendance::attendanceCount($this->data['personalID']);
-        $this->data['current_month_birthdays']   = Beneficiario ::currentMonthBirthday();
+        $this->data['current_month_birthdays']   = Personal ::currentMonthBirthday();
 //        dd($this->data['zonificacion']);
 
     }
@@ -102,7 +102,7 @@ class DashboardController extends \BaseController {
         $admins = Admin::select('email')->get()->toArray();
         foreach ($admins as $admin){
             Mail::send('emails.leave_request', $this->data, function ($message) use ($admin) {
-                $message->from(Auth::beneficiarios()->get()->email, Auth::beneficiarios()->get()->fullName);
+                $message->from(Auth::personales()->get()->email, Auth::personales()->get()->fullName);
                 $message->to($admin['email'])
                     ->subject('Leave Request - ' . $this->data['setting']->website);
             });
@@ -173,7 +173,7 @@ class DashboardController extends \BaseController {
 
         }else{
 
-            $employee = Employee::find(Auth::beneficiarios()->get()->id);
+            $employee = Employee::find(Auth::personales()->get()->id);
             $employee->password =   Hash::make($input['password']);
             $employee->save();
             //        Send change password email
@@ -181,7 +181,7 @@ class DashboardController extends \BaseController {
             {
                 $message->from($this->data['setting']->email, $this->data['setting']->name);
 
-                $message->to(Auth::beneficiarios()->get()->email, Auth::beneficiarios()->get()->fullName)
+                $message->to(Auth::personales()->get()->email, Auth::personales()->get()->fullName)
                     ->subject('Change Password - '.$this->data['setting']->website);
             });
 
