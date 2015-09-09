@@ -29,6 +29,8 @@ class VoluntarioController extends \BaseController {
   return View::make('front.login',$this->data);
 //        return Redirect::route('front.login')->with('success'," Voluntario adicionado");
     }
+
+    
     public  function ajaxRegister()
     {
 
