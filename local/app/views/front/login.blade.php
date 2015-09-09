@@ -110,7 +110,6 @@
             data: $('#login-form').serialize()
 
         }).done( function( response ) {
-            console.log(response);
 
             $('#alert').html('');
             if(response.status == "success")
@@ -141,11 +140,7 @@
 
             }
 
-        }.error(function (e)
-                {
-                    console.log(e);
-                }
-        ));
+        });
     }
 
 </script>
