@@ -22,8 +22,8 @@ class VoluntarioController extends \BaseController {
             'email'	     =>	$input['email'],
             'tipoPersonal' => $tipo
         ]);
-//        return View::make('front.login',$this->data);
-        return Redirect::route('front.login')->with(" Voluntario adicionado");
+        return View::make('front.login',$this->data);
+//        return Redirect::route('front.login')->with(" Voluntario adicionado");
     }
 
     
