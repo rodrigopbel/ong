@@ -21,7 +21,7 @@ class ReportsController extends \AdminBaseController {
 //        echo($ben);
         foreach (Beneficiario::all() as $ben)
         {
-            $benAyu = $ben->author->gastos;
+            $benAyu[] = $ben->author->gastos;
         }
         var_dump($benAyu);
 //        return View::make('admin.reportes.index', $this->data);
