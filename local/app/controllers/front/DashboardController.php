@@ -5,14 +5,14 @@ class DashboardController extends \BaseController {
 	public function __construct()
     {
         parent::__construct();
-        $this->data['pageTitle']   =   'Dashboard';
+        $this->data['pageTitle']   =   'Dashboard';dd("error");
         $this->data['personalID']  =   Auth::personales()->get()->personalID;
 	    $this->data['leaveTypes']  =    Attendance::leaveTypesEmployees();
 	    $this->data['leaveTypeWithoutHalfDay']   =   Attendance::leaveTypesEmployees('halfday');
 //        Total leaves except
 	    $total_leave    =   Leavetype::where('leaveType','<>','half day')->sum('num_of_leave');
         $this->data['leaveLeft']       =    array_sum(Attendance::absentEmployee($this->data['personalID'])).'/'.$total_leave;
-        $this->data['personal']    =    Personal::find(Auth::personales()->get()->id);
+        $this->data['personal']        =    Personal::find(Auth::personales()->get()->id);
         $this->data['holidays']        =    Holiday::orderBy('date','ASC')->remember(10,'holiday_cache')->get();
         $this->data['ayudas']          =    Ayuda::select('*')->orderBy('created_at','desc')->get();
         $this->data['attendance']      =    Attendance::where('employeeID', '=',$this->data['personalID'])
