@@ -21,7 +21,7 @@ class ReportsController extends \AdminBaseController {
         $this->data['xyz'] = Ayuda::select('ayudas.gastos','ayudas.aportanteID','ayudas.id')
                             ->join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
                             ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
-                            ->get();
+                            ->groupBy('ayudas.id');
         $this->data['abc'] = $this->data['xyz']->groupBy('ayudas.id');
         echo $this->data['abc'];
 //            $this->data['ayudas'] = Ayuda::all();
