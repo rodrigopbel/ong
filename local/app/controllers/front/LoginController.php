@@ -11,7 +11,7 @@ class LoginController extends \BaseController {
 
 	public function index()
 	{
-        if(Auth::aportantes()->check())
+        if(Auth::personales()->check())
         {
             return Redirect::route('dashboard.index');
         }else
