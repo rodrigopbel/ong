@@ -11,7 +11,7 @@ class VoluntarioController extends \BaseController {
     public function registrar()
     {
 
-        $validator = Validator::make($input = Input::all(),Voluntario::$rules);
+        $validator = Validator::make($input = Input::all());
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
@@ -29,6 +29,8 @@ class VoluntarioController extends \BaseController {
   return View::make('front.login',$this->data);
 //        return Redirect::route('front.login')->with('success'," Voluntario adicionado");
     }
+
+    
     public  function ajaxRegister()
     {
 
