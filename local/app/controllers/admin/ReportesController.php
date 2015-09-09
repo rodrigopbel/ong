@@ -18,13 +18,12 @@ class ReportsController extends \AdminBaseController {
 //        Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','requerimiento','centroSalud','nit','numfactura','gastos','ayudas.created_at')
 //            ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
 //            ->orderBy('ayudas.created_at','desc');
-        $this->data['xyz'] = Ayuda::select('ayudas.gastos','ayudas.aportanteID')
+        $this->data['xyz'] = Ayuda::select('ayudas.gastos','ayudas.aportanteID','ayudas.id')
                             ->join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
                             ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
-                            ->grouBy('ayudas.id')
-                            ->get();
-
-        echo $this->data['xyz'];
+                            ->groupBy('ayudas.id');
+        $this->data['abc'] = $this->data['xyz']->groupBy('ayudas.id');
+        echo $this->data['abc'];
 //            $this->data['ayudas'] = Ayuda::all();
 //            $ben = Beneficiario::all();
 //            $ayuBen = $ben->ayudas;
