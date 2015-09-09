@@ -8,7 +8,7 @@
                 <div class="col-sm-6">
                     <div class="panel panel-profile no-bg">
                         <div class="panel-heading overflow-h">
-                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Beneficiario</h2>
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Aportante</h2>
                         </div>
                         <div class="panel-body panelHolder">
                             <table class="table table-light margin-bottom-0">
@@ -18,7 +18,7 @@
                                             <span class="primary-link">Nombre</span>
                                         </td>
                                         <td>
-                                             {{$beneficiario->nombres}}
+                                             {{$personal->nombres}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -26,7 +26,7 @@
                                             <span class="primary-link">Apellidos</span>
                                         </td>
                                         <td>
-                                            {{$beneficiario->apellidos}}
+                                            {{$personal->apellidos}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -34,7 +34,7 @@
                                             <span class="primary-link">Fecha de Nacimiento</span>
                                         </td>
                                         <td>
-                                             {{ date('d-M-Y',strtotime($beneficiario->fechanac))}}
+                                             {{ date('d-M-Y',strtotime($personal->fechanac))}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -42,7 +42,7 @@
                                             <span class="primary-link">Genero</span>
                                         </td>
                                         <td>
-                                            {{ucfirst($beneficiario->genero)}}
+                                            {{ucfirst($personal->genero)}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -50,7 +50,7 @@
                                             <span class="primary-link">Email</span>
                                         </td>
                                         <td>
-                                            {{$beneficiario->email}}
+                                            {{$personal->email}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -58,7 +58,7 @@
                                             <span class="primary-link">Telefono</span>
                                         </td>
                                         <td>
-                                             {{$beneficiario->telefono}}
+                                             {{$personal->telefono}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -66,14 +66,14 @@
                                             <span class="primary-link">Direccion</span>
                                         </td>
                                         <td>
-                                            {{$beneficiario->direccion}}
+                                            {{$personal->direccion}}
                                         </td>
                                     </tr>																															<tr>
                                         <td>
                                             <span class="primary-link">Direccion Permanente</span>
                                         </td>
                                         <td>
-                                            {{$beneficiario->direccionperm}}
+                                            {{$personal->direccionperm}}
                                         </td>
                                     </tr>
                                     </tbody>
@@ -96,14 +96,14 @@
                                             {{$beneficiario->beneficiarioID}}
                                         </td>
                                     </tr>
-                                    {{--<tr>--}}
-                                        {{--<td>--}}
-                                            {{--<span class="primary-link">Destino</span>--}}
-                                        {{--</td>--}}
-                                        {{--<td>--}}
-                                            {{--{{$beneficiario->getDesignation->department->deptName}}--}}
-                                        {{--</td>--}}
-                                    {{--</tr>--}}
+                                    <tr>
+                                        <td>
+                                            <span class="primary-link">Destino</span>
+                                        </td>
+                                        <td>
+                                            {{$beneficiario->getDesignation->department->deptName}}
+                                        </td>
+                                    </tr>
                                     {{--<tr>--}}
                                         {{--<td>--}}
                                             {{--<span class="primary-link">Objetivo</span>--}}
@@ -112,27 +112,27 @@
                                             {{--{{$beneficiario->getDesignation->designation}}--}}
                                         {{--</td>--}}
                                     {{--</tr>--}}
-                                    {{--<tr>--}}
-                                        {{--<td>--}}
-                                            {{--<span class="primary-link">Fecha de Solicitud</span>--}}
-                                        {{--</td>--}}
-                                        {{--<td>--}}
-                                             {{--{{date('d-M-Y',strtotime($beneficiario->diaingreso))}}--}}
-                                        {{--</td>--}}
-                                    {{--</tr>--}}
-                                    {{--<tr>--}}
-                                        {{--<td>--}}
-                                            {{--<span class="primary-link">Monto Requerido ( <i class="fa {{$setting->currency_icon}}"></i> )</span>--}}
-                                        {{--</td>--}}
-                                        {{--<td>--}}
+                                    <tr>
+                                        <td>
+                                            <span class="primary-link">Fecha de Solicitud</span>
+                                        </td>
+                                        <td>
+                                             {{date('d-M-Y',strtotime($beneficiario->diaingreso))}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="primary-link">Monto Requerido ( <i class="fa {{$setting->currency_icon}}"></i> )</span>
+                                        </td>
+                                        <td>
 
-                                            {{--@foreach($beneficiario->getSoldonacion as $salary)--}}
-                                                {{--<p>{{$salary->type}} : {{$salary->salary}} <i class="fa {{$setting->currency_icon}}"></i> </p>--}}
-                                            {{--@endforeach--}}
+                                            @foreach($beneficiario->getSoldonacion as $salary)
+                                                <p>{{$salary->type}} : {{$salary->salary}} <i class="fa {{$setting->currency_icon}}"></i> </p>
+                                            @endforeach
 
 
-                                        {{--</td>--}}
-                                    {{--</tr>--}}
+                                        </td>
+                                    </tr>
                                     </tbody>
                                     </table>
                         </div>

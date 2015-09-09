@@ -29,7 +29,7 @@ class AyudasController extends \AdminBaseController {
 		    Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','requerimiento','centroSalud','nit','numfactura','gastos','ayudas.created_at')
 		      ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
 			  ->orderBy('ayudas.created_at','desc');
-
+dd($resut);
         return Datatables::of($result)
             ->add_column('Por el Mes',function($row) {
                 return ucfirst($row->created_at).' '.$row->created_at;
