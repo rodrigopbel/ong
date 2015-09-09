@@ -8,16 +8,9 @@ class VoluntarioController extends \BaseController {
         return View::make('front.voluntario');
     }
 
-    public function store()
-    {
-        return "guardado exitoso";
-    }
     public function registrar()
     {
-//        dd("guardado  aaaa  exitoso");
-
         $input = Input::all();
-//        dd($input);
         $tipo = 'Voluntario';
         Personal::create([
             'nombres'    => $input['nombres'],
@@ -27,8 +20,8 @@ class VoluntarioController extends \BaseController {
             'email'	     =>	$input['email'],
             'tipoPersonal' => $tipo
         ]);
-        return View::make('front.login',$this->data);
-
+//        return View::make('front.login',$this->data);
+        return Redirect::route('front.login')->with('success',"<strong>{$nombres}</strong> Voluntario adicionado");
     }
     public  function ajaxRegister()
     {
