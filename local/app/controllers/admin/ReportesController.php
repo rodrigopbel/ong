@@ -24,7 +24,7 @@ class ReportsController extends \AdminBaseController {
             $benAyu[] = $ben->ayudas;
 //            echo $ben->ayudas;
         }
-        dd($benAyu);
+        var_dump($benAyu);
 //        return View::make('admin.reportes.index', $this->data);
     }
 
