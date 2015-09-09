@@ -26,9 +26,9 @@ class ReportsController extends \AdminBaseController {
         }
         foreach(Personal::all() as $per)
         {
-            $perA = $per->where('tipoPersonal','=','Aportante');
+//            $perA = $per->where('tipoPersonal','=','Aportante');
 //            $perDon[] = $per;
-            echo $perA->donaciones;
+            echo $per->donaciones()->where('tipoPersonal','=','Aportante');
         }
 //        echo($perDon);
 //        return View::make('admin.reportes.index', $this->data);
