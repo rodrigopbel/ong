@@ -40,10 +40,11 @@
                     @endif
 
 					</div>
-
-                    {{--<div class="col-md-8">--}}
-                    {{--{{ Form::select('beneficiarioID', $beneficiarios,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}--}}
-                    {{--</div>--}}
+                    {{Form::open(array('url'=>"admin/ayudas",'class'=>'form-horizontal form-bordered','method'=>'POST'))}}
+                    <div class="col-md-8">
+                    {{ Form::select('beneficiarioID', $beneficiarios,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
+                    </div>
+                    {{ Form::close() }}
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
@@ -52,9 +53,6 @@
 							<div class="tools">
 							</div>
 						</div>
-                        <div class="form-group">
-                            <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
-                        </div>
 						<div class="portlet-body">
 
 
