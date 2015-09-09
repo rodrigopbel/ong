@@ -51,9 +51,9 @@ class LoginController extends \BaseController {
                 'status'    =>  'activo'
             ];
             // Check if  exists in database with the credentials of not
-            if (Auth::beneficiarios()->attempt($data))
+            if (Auth::personales()->attempt($data))
             {
-		            $event =  Event::fire('auth.login', Auth::beneficiarios()->get());
+		            $event =  Event::fire('auth.login', Auth::personales()->get());
 		            $output['status'] = 'success';
 		            $output['msg']    = Lang::get('messages.loginSuccess');
 	                return Response::json($output, 200);
@@ -61,7 +61,7 @@ class LoginController extends \BaseController {
 
 	        // For Blocked Users
 	        $data['status']         =   'inactive';
-          if(Auth::beneficiarios()->validate($data))
+          if(Auth::personales()->validate($data))
             {
 	            $output['status']	=	'error';
 	            $output['msg']		=	['error'=>Lang::get('messages.loginBlocked')];
@@ -77,7 +77,7 @@ class LoginController extends \BaseController {
     }
     public function logout()
     {
-        Auth::beneficiarios()->logout();
+        Auth::personales()->logout();
 
         return Redirect::to('/');
     }
