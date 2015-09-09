@@ -3,6 +3,7 @@
 class Ayuda extends \Eloquent {
 
 	// Add your validation rules here
+    protected $table = "ayudas";
 	public static $rules = [
 		//'ayudaName'      =>  'required',
         'beneficiarioID' =>  'required',
