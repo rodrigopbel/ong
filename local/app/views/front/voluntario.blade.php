@@ -41,7 +41,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
     <!-- BEGIN LOGIN FORM -->
-    {{ Form::open(array('route' => 'voluntario.registrar','method'=>'POST','class' =>'login-form')) }}
+    {{ Form::open(array('url' => 'voluntario.registrar','class' =>'login-form')) }}
 
     <h3 class="form-title">Nuevo Voluntario</h3>
     <div id="alert">
