@@ -29,7 +29,7 @@ class ReportsController extends \AdminBaseController {
         {
 //            $perA = $per->where('tipoPersonal','=','Aportante');
 //            $perDon[] = $per;
-            echo $per::where('tipoPersonal','=','Aportante')->get();
+            echo $per::where('tipoPersonal','=','Aportante')->donaciones()->get();
         }
 //        echo($perDon);
 //        return View::make('admin.reportes.index', $this->data);
