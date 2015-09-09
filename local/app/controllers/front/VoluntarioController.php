@@ -23,7 +23,7 @@ class VoluntarioController extends \BaseController {
             'tipoPersonal' => $tipo
         ]);
 //        return View::make('front.login',$this->data);
-        return Redirect::route('front.login')->with('success'," Voluntario adicionado");
+        return Redirect::route('front.login')->with(" Voluntario adicionado");
     }
 
     
