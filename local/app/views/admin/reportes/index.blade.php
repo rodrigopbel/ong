@@ -33,11 +33,11 @@
 			<!-- BEGIN PAGE CONTENT-->
 <div class="row">
     <div class="col-md-12">
-        {{Form::open(array('url'=>"#",'class'=>'form-horizontal form-bordered','method'=>'POST'))}}
+        {{Form::open(array('url'=>"",'class'=>'form-horizontal form-bordered','method'=>'POST'))}}
         <div class="col-md-8">
             <label for="">Seleccione el Beneficiario para el reporte: </label>
-            {{ Form::select('beneficiarioID', $beneficiarios,null,['class' => 'form-control input-xlarge select2me generarReporte','data-placeholder'=>'Seleccionar Beneficiario...']) }}
-            <button type="submit" data-loading-text="Generando..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Generar Reporte</button>
+            {{ Form::select('beneficiarioID', $beneficiarios,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
+            <button type="submit" data-loading-text="Generando..." class="demo-loading-btn btn green generarReporte"><i class="fa fa-check"></i> Generar Reporte</button>
         </div>
         {{ Form::close() }}
     </div>
