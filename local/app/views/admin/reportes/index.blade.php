@@ -35,6 +35,7 @@
     <div class="col-md-12">
         {{Form::open(array('url'=>"admin/ayudas",'class'=>'form-horizontal form-bordered','method'=>'POST'))}}
         <div class="col-md-8">
+            <label for="">Seleccione el Beneficiario para el reporte: </label>
             {{ Form::select('beneficiarioID', $beneficiarios,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
         </div>
         {{ Form::close() }}
