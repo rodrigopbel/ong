@@ -20,6 +20,7 @@ class ReportsController extends \AdminBaseController {
 //            ->orderBy('ayudas.created_at','desc');
         $this->data['xyz'] = Ayuda::select('ayudas.gastos')
                             ->join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
+                            ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
                             ->get();
 
         echo $this->data['xyz'];
