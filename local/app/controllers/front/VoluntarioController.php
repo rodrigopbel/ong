@@ -11,6 +11,20 @@ class VoluntarioController extends \BaseController {
     public function registrar()
     {
         $input = Input::all();
+        $rules  =[
+            'nombres'     => 'required',
+            'apellidos'   => 'required',
+            'ci'          => 'required|ci|unique:personal',
+            'telefono'    => 'required',
+            'email'	      => 'required|email'
+        ];
+        $validator	= Validator::make($input,$rules);
+        //Verificacion previa de los campos, antes de la Autenticacion
+        if($validator->fails())
+        {
+            $output['status'] = 'error';
+            $output['msg']    =  $validator->getMessageBag()->toArray();
+        }
         $tipo = 'Voluntario';
         Personal::create([
             'nombres'    => $input['nombres'],
