@@ -6,16 +6,16 @@ class DashboardController extends \BaseController {
     {
         parent::__construct();
         $this->data['pageTitle']   =   'Dashboard';
-        $this->data['beneficiarioID']  =   Auth::beneficiarios()->get()->beneficiarioID;
+        $this->data['personalID']  =   Auth::personales()->get()->personalID;
 	    $this->data['leaveTypes']  =    Attendance::leaveTypesEmployees();
 	    $this->data['leaveTypeWithoutHalfDay']   =   Attendance::leaveTypesEmployees('halfday');
 //        Total leaves except
 	    $total_leave    =   Leavetype::where('leaveType','<>','half day')->sum('num_of_leave');
-        $this->data['leaveLeft']       =    array_sum(Attendance::absentEmployee($this->data['beneficiarioID'])).'/'.$total_leave;
-        $this->data['beneficiario']    =    Beneficiario::find(Auth::beneficiarios()->get()->id);
+        $this->data['leaveLeft']       =    array_sum(Attendance::absentEmployee($this->data['personalID'])).'/'.$total_leave;
+        $this->data['personal']    =    Beneficiario::find(Auth::personales()->get()->id);
         $this->data['holidays']        =    Holiday::orderBy('date','ASC')->remember(10,'holiday_cache')->get();
         $this->data['ayudas']          =    Ayuda::select('*')->orderBy('created_at','desc')->get();
-        $this->data['attendance']      =    Attendance::where('employeeID', '=',$this->data['beneficiarioID'])
+        $this->data['attendance']      =    Attendance::where('employeeID', '=',$this->data['personalID'])
                                                         ->where(function($query)
                                                         {
                                                             $query->where('application_status','=','approved')
@@ -25,8 +25,8 @@ class DashboardController extends \BaseController {
                                                     ->get();
 //        $this->data['zonificacion']    =    Zonificacion::where("beneficiarioID",  Auth::beneficiarios()->get()->id)->get();
 //        $this->data['zonificacion']       = Zonificacion::where('beneficiarioID', '=', Auth::beneficiarios()->get()->beneficiarioID)->get();
-        $this->data['zonificacion']       = Beneficiario::has('zonificacion')->get();
-        $this->data['attendance_count']   = Attendance::attendanceCount($this->data['beneficiarioID']);
+//        $this->data['zonificacion']       = Personal::has('zonificacion')->get();
+        $this->data['attendance_count']   = Attendance::attendanceCount($this->data['personalID']);
         $this->data['current_month_birthdays']   = Beneficiario ::currentMonthBirthday();
 //        dd($this->data['zonificacion']);
 
@@ -37,7 +37,7 @@ class DashboardController extends \BaseController {
         $this->data['noticeboards']       =     Noticeboard::where('status','=','active')->orderBy('created_at','DESC')->get();
         $this->data['holiday_color']      = ['info','error','success','pending',''];
         $this->data['holiday_font_color'] = ['blue','red','green','yellow','dark'];
-        return View::make('front.beneficiarioDashboard',$this->data);
+        return View::make('front.aportanteDashboard',$this->data);
 	}
 
 //	show leave Page
