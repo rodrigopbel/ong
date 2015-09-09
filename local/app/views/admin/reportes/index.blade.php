@@ -11,7 +11,7 @@
 
 @section('mainarea')
 
-{{dd("hola a todos")}}
+{{--{{dd("hola a todos")}}--}}
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 			{{$pageTitle}}
@@ -27,23 +27,23 @@
 						<a href="#">Reportes</a>
 						<i class="fa "></i>
 					</li>
-
 				</ul>
-
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
 			<div class="row">
 				<div class="col-md-12">
-
 					<!-- BEGIN EXAMPLE TABLE PORTLET-->
 					<div id="load">
-
 					@if(Session::get('success'))
 					    <div class="alert alert-success">{{ Session::get('success') }}</div>
                     @endif
 
 					</div>
+
+                    {{--<div class="col-md-8">--}}
+                    {{--{{ Form::select('beneficiarioID', $beneficiarios,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}--}}
+                    {{--</div>--}}
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
@@ -54,10 +54,6 @@
 						</div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
-
-                            {{--<div class="col-md-8">--}}
-                                {{--{{ Form::select('beneficiarioID', $beneficiarios,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}--}}
-                            {{--</div>--}}
                         </div>
 						<div class="portlet-body">
 
@@ -116,80 +112,80 @@
 
 <!-- END PAGE LEVEL PLUGINS -->
 
-	<script>
+	{{--<script>--}}
 
 
-        	$('#reportes').dataTable( {
-                        "bProcessing": true,
-                        "bServerSide": true,
-                        "sAjaxSource": "{{ route("admin.ajax_reportes") }}",
-                        "aaSorting": [[ 1, "asc" ]],
-                        "aoColumns": [
-                            { 'sClass': 'center', "bSortable": true  },
-                            { 'sClass': 'center', "bSortable": true  },
-                            { 'sClass': 'center', "bSortable": true },
-                            { 'sClass': 'center', "bSortable": true },
-                            { 'sClass': 'center', "bSortable": true },
-                            { 'sClass': 'center', "bSortable": false }
+        	{{--$('#reportes').dataTable( {--}}
+                        {{--"bProcessing": true,--}}
+                        {{--"bServerSide": true,--}}
+                        {{--"sAjaxSource": "{{ route("admin.ajax_reportes") }}",--}}
+                        {{--"aaSorting": [[ 1, "asc" ]],--}}
+                        {{--"aoColumns": [--}}
+                            {{--{ 'sClass': 'center', "bSortable": true  },--}}
+                            {{--{ 'sClass': 'center', "bSortable": true  },--}}
+                            {{--{ 'sClass': 'center', "bSortable": true },--}}
+                            {{--{ 'sClass': 'center', "bSortable": true },--}}
+                            {{--{ 'sClass': 'center', "bSortable": true },--}}
+                            {{--{ 'sClass': 'center', "bSortable": false }--}}
 
-                        ],
-                        "columnDefs": [
-                                    {
-                                        "targets": [ 0 ],
-                                        "visible": false,
-                                        "searchable": false
-                                    },{
-									  "targets": [ 5 ],
-									  "visible": false,
-									  "searchable": true
-								  }
-                                    ],
-                        "lengthMenu": [
-										[5, 15, 20, -1],
-										[5, 15, 20, "All"] // change per page values here
-									],
-                        "sPaginationType": "full_numbers",
-                        "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
-                            var row = $(nRow);
-                            row.attr("id", 'row'+aData['0']);
-                            console.log(aData);
-                        }
+                        {{--],--}}
+                        {{--"columnDefs": [--}}
+                                    {{--{--}}
+                                        {{--"targets": [ 0 ],--}}
+                                        {{--"visible": false,--}}
+                                        {{--"searchable": false--}}
+                                    {{--},{--}}
+									  {{--"targets": [ 5 ],--}}
+									  {{--"visible": false,--}}
+									  {{--"searchable": true--}}
+								  {{--}--}}
+                                    {{--],--}}
+                        {{--"lengthMenu": [--}}
+										{{--[5, 15, 20, -1],--}}
+										{{--[5, 15, 20, "All"] // change per page values here--}}
+									{{--],--}}
+                        {{--"sPaginationType": "full_numbers",--}}
+                        {{--"fnRowCallback": function( nRow, aData, iDisplayIndex ) {--}}
+                            {{--var row = $(nRow);--}}
+                            {{--row.attr("id", 'row'+aData['0']);--}}
+                            {{--console.log(aData);--}}
+                        {{--}--}}
 
-             });
+             {{--});--}}
 
 
 
-		function del(id,ayudaaName,ayuda)
-		{
+		{{--function del(id,ayudaaName,ayuda)--}}
+		{{--{--}}
 
-			$('#deleteModal').appendTo("body").modal('show');
-			$('#info').html('Esta seguro de Eliminar <strong>'+ayuda+'</strong> dado a <strong>'+ayudaaName+'</strong>??');
-			$("#delete").click(function()
-			{
-					var url = "{{ route('admin.ayudas.destroy',':id') }}";
-					url = url.replace(':id',id);
-					 $.ajax({
+			{{--$('#deleteModal').appendTo("body").modal('show');--}}
+			{{--$('#info').html('Esta seguro de Eliminar <strong>'+ayuda+'</strong> dado a <strong>'+ayudaaName+'</strong>??');--}}
+			{{--$("#delete").click(function()--}}
+			{{--{--}}
+					{{--var url = "{{ route('admin.ayudas.destroy',':id') }}";--}}
+					{{--url = url.replace(':id',id);--}}
+					 {{--$.ajax({--}}
 
-		                type: "DELETE",
-		                url : url,
-		                dataType: 'json',
-		                data: {"id":id}
+		                {{--type: "DELETE",--}}
+		                {{--url : url,--}}
+		                {{--dataType: 'json',--}}
+		                {{--data: {"id":id}--}}
 
-		            	}).done(function(response)
-		           		  {
+		            	{{--}).done(function(response)--}}
+		           		  {{--{--}}
 
-		               	 	 if(response.success == "deleted")
-		                 	 {
-		                 	 		$("html, body").animate({ scrollTop: 0 }, "slow");
-		                  	   		$('#deleteModal').modal('hide');
-		                  	   		 $('#row'+id).fadeOut(500);
+		               	 	 {{--if(response.success == "deleted")--}}
+		                 	 {{--{--}}
+		                 	 		{{--$("html, body").animate({ scrollTop: 0 }, "slow");--}}
+		                  	   		{{--$('#deleteModal').modal('hide');--}}
+		                  	   		 {{--$('#row'+id).fadeOut(500);--}}
 
-		                 	  		$('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Eliminada exitosamente!</p>");
-		                  	 }
-		           		 });
-				})
+		                 	  		{{--$('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Eliminada exitosamente!</p>");--}}
+		                  	 {{--}--}}
+		           		 {{--});--}}
+				{{--})--}}
 
-			}
-</script>
+			{{--}--}}
+{{--</script>--}}
 @stop
 	
