@@ -16,8 +16,10 @@ class ReportsController extends \AdminBaseController {
 //        $this->data['reportes'] = Reprote::all();
         $this->data['reportesActive'] =   'active';
 
-        $this->data['xyz'] = Ayuda::select('gastos')
-                            ->join('Beneficiario', 'beneficiarioID','=','Beneficiario.beneficiarioID')
+        $this->data['xyz'] = DB::table('ayudas')
+                            ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
+                            ->join('donaciones', 'ayudas.aportanteID', '=', 'donaciones.aportanteID')
+                            ->select('ayudas.gastos')
                             ->get();
         echo $this->data['xyz'];
 //            $this->data['ayudas'] = Ayuda::all();
