@@ -16,11 +16,7 @@ class AyudasController extends \AdminBaseController {
 		$this->data['ayudas'] = Ayuda::all();
 
         $this->data['ayudasActive'] =   'active';
-        $result =
-            Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','requerimiento','centroSalud','nit','numfactura','gastos','ayudas.created_at')
-                ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
-                ->orderBy('ayudas.created_at','desc');
-        dd($resut);
+
 		return View::make('admin.ayudas.index', $this->data);
 	}
 
