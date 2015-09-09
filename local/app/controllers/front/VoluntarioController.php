@@ -18,6 +18,13 @@ class VoluntarioController extends \BaseController {
             'telefono'    => 'required',
             'email'	      => 'required|email'
         ];
+        $data	=	[
+            'nombres'    => $input['nombres'],
+            'apellidos'  => $input['apellidos'],
+            'ci'         => $input['ci'],
+            'telefono'   => $input['telefono'],
+            'email'	     =>	$input['email']
+        ];
         $validator	= Validator::make($input,$rules);
         //Verificacion previa de los campos, antes de la Autenticacion
         if($validator->fails())
