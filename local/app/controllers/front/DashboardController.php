@@ -12,7 +12,7 @@ class DashboardController extends \BaseController {
 //        Total leaves except
 	    $total_leave    =   Leavetype::where('leaveType','<>','half day')->sum('num_of_leave');
         $this->data['leaveLeft']       =    array_sum(Attendance::absentEmployee($this->data['personalID'])).'/'.$total_leave;
-        $this->data['personal']    =    Beneficiario::find(Auth::personales()->get()->id);
+        $this->data['personal']    =    Personal::find(Auth::personales()->get()->id);
         $this->data['holidays']        =    Holiday::orderBy('date','ASC')->remember(10,'holiday_cache')->get();
         $this->data['ayudas']          =    Ayuda::select('*')->orderBy('created_at','desc')->get();
         $this->data['attendance']      =    Attendance::where('employeeID', '=',$this->data['personalID'])
