@@ -61,7 +61,13 @@
 							<div class="tools">
 							</div>
 						</div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
 
+                            <div class="col-md-8">
+                                {{ Form::select('beneficiarioID', $beneficiarios,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
+                            </div>
+                        </div>
 						<div class="portlet-body">
 
 
