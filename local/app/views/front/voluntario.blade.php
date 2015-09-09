@@ -41,7 +41,7 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
     <!-- BEGIN LOGIN FORM -->
-    {{ Form::open(array('url' => ' ','class' =>'login-form')) }}
+    {{ Form::open(array('route' => 'voluntario.registrar','method'=>'POST','class' =>'login-form')) }}
 
     <h3 class="form-title">Nuevo Voluntario</h3>
     <div id="alert">
@@ -52,7 +52,7 @@
         <label class="control-label visible-ie8 visible-ie9">Nombres</label>
         <div class="input-icon">
             <i class="fa fa-user"></i>
-            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Nombres" name="nombres" id="nombres" />
+            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Nombres" name="nombres" id +"/>
         </div>
     </div>
     <div class="form-group">
@@ -115,50 +115,48 @@
 
 <!-- END PAGE LEVEL SCRIPTS -->
 
-{{--<script>--}}
-    {{--jQuery(document).ready(function() {--}}
-        {{--Metronic.init(); // init metronic core components--}}
+<script>
+    jQuery(document).ready(function() {
+        Metronic.init(); // init metronic core components
 
-        {{--// init background slide images--}}
-        {{--$.backstretch([--}}
-                    {{--"{{ URL::asset('assets/admin/pages/media/bg/1.jpg') }}",--}}
-                    {{--"{{ URL::asset('assets/admin/pages/media/bg/2.jpg') }}",--}}
-                    {{--"{{ URL::asset('assets/admin/pages/media/bg/3.jpg') }}",--}}
-                    {{--"{{ URL::asset('assets/admin/pages/media/bg/4.jpg') }}"--}}
-                {{--], {--}}
-                    {{--fade: 1000,--}}
-                    {{--duration: 8000--}}
-                {{--}--}}
-        {{--);--}}
-    {{--});--}}
+        // init background slide images
+        $.backstretch([
+                    "{{ URL::asset('assets/admin/pages/media/bg/1.jpg') }}",
+                    "{{ URL::asset('assets/admin/pages/media/bg/2.jpg') }}",
+                    "{{ URL::asset('assets/admin/pages/media/bg/3.jpg') }}",
+                    "{{ URL::asset('assets/admin/pages/media/bg/4.jpg') }}"
+                ], {
+                    fade: 1000,
+                    duration: 8000
+                }
+        );
+    });
 </script>
 
 
 <script>
     function verificacion(){
 
-        var nom;
-        nom=$('#nombres').val;
-        alert(nom);
+
         $('#alert').html('<div class="alert alert-info">Verificando..</div>');
         $("#submitbutton").prop('disabled', true);
 
-        {{--$.ajax({--}}
-            {{--type: "GET",--}}
-            {{--url::to( "  {{ URL::to('/voluntarios/register') }} "),--}}
-            {{--dataType: 'json',--}}
-            {{--data: $('.login-form').serialize()--}}
-        {{--}).done( function( response ) {--}}
+        $.ajax({
+            type: "GET",
+            url::to( "  {{ URL::to('/voluntarios/register') }} "),
+            dataType: 'json',
+            data: $('.login-form').serialize()
+        }).done( function( response ) {
 
-            {{--if(response.status == "success"){--}}
-                {{--$('#alert').html('<div class="alert alert-success"><span class="fa fa-success"></span>'+response.msg+'</div>');--}}
-                {{--window.location.href= "{{ URL::to('/admin/dashboard/') }}";--}}
+            if(response.status == "success"){
+                $('#alert').html('<div class="alert alert-success"><span class="fa fa-success"></span>'+response.msg+'</div>');
+                window.location.href= "{{ URL::to('/admin/dashboard/') }}";
 
-            {{--}else if(response.status == "error"){--}}
-                {{--$("#submitbutton").prop('disabled', false);--}}
-                {{--$('#alert').html('<div class="alert alert-danger"><span class="fa fa-warning"></span> '+response.msg+'</div>');--}}
-            {{--}--}}
-        {{--});--}}
+            }else if(response.status == "error"){
+                $("#submitbutton").prop('disabled', false);
+                $('#alert').html('<div class="alert alert-danger"><span class="fa fa-warning"></span> '+response.msg+'</div>');
+            }
+        });
     }
 
 </script>
