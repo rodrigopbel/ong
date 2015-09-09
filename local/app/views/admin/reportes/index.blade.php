@@ -36,7 +36,7 @@
         {{Form::open(array('url'=>"",'class'=>'form-horizontal form-bordered','method'=>'POST'))}}
         <div class="col-md-8">
             <label for="">Seleccione el Beneficiario para el reporte: </label>
-            {{ Form::select('beneficiarioID', $beneficiarios,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
+            {{ Form::select('beneficiarioID', $beneficiarios,null,['id'=>'beneficiario','class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
             <button type="submit" data-loading-text="Generando..." class="demo-loading-btn btn green generarReporte"><i class="fa fa-check"></i> Generar Reporte</button>
         </div>
         {{ Form::close() }}
@@ -121,7 +121,7 @@
 	<script>
         $('.generarReporte').bind('click',function(e){
             e.preventDefault();
-            alert($('.benefeciarioID').val);
+            alert($('#benefeciario').val());
         });
 
        	{{--$('#reportes').dataTable( {--}}
