@@ -11,7 +11,7 @@
 # Voluntarios Formulario
     Route::resource('voluntarios', 'VoluntarioController');
 //Route::get('/voluntarios/register',['as'=>'voluntario.register','uses'=>'VoluntarioController@ajaxRegister']);
-Route::post('/voluntarios/ajaxRegister',['as'=>'voluntario.ajaxRegister','uses'=>'VoluntarioController@registrar']);
+Route::post('/voluntarios/registrar',['as'=>'voluntario.registrar','uses'=>'VoluntarioController@registrar']);
 
 
 # Beneficiario Panel
