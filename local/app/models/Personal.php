@@ -47,4 +47,9 @@ class Personal extends Eloquent {
     {
         return $this->has('Beneficiario','beneficiarioID','beneficiarioID');
     }
+
+    public function donaciones()
+    {
+        return $this->hasMany('Donaciones','aportanteID','personalID');
+    }
 }
