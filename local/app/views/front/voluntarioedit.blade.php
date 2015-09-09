@@ -41,9 +41,9 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
     <!-- BEGIN LOGIN FORM -->
-    {{ Form::open(array('url' => ' ','class' =>'login-form')) }}
+    {{ Form::model($voluntario, ['method' => 'PATCH', 'route' => ['voluntario.registrar', $voluntario->id],'class'=>'form-horizontal form-bordered']) }}
 
-    <h3 class="form-title">Nuevo Voluntario</h3>
+    <h3 class="form-title">Voluntario</h3>
     <div id="alert">
 
     </div>
@@ -52,42 +52,32 @@
         <label class="control-label visible-ie8 visible-ie9">Nombres</label>
         <div class="input-icon">
             <i class="fa fa-user"></i>
-            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Nombres" name="nombres" id="nombres" />
+            <input type="text" class="form-control" name="nombres"  value="{{ $voluntario->nombres }}">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label visible-ie8 visible-ie9">Apellidos</label>
         <div class="input-icon">
             <i class="fa fa-lock"></i>
-            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Apellidos" name="apellidos"/>
+            <input type="text" class="form-control" name="apellidos"  value="{{ $voluntario->apellidos }}">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label visible-ie8 visible-ie9">Cedula de Identidad</label>
         <div class="input-icon">
             <i class="fa fa-lock"></i>
-            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Cedula de Identidad" name="ci"/>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label visible-ie8 visible-ie9">Telefono</label>
-        <div class="input-icon">
-            <i class="fa fa-lock"></i>
-            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Telefono" name="telefono"/>
+            <input type="text" class="form-control" name="telefono"  value="{{ $voluntario-> telefono}}">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label visible-ie8 visible-ie9">Email</label>
         <div class="input-icon">
             <i class="fa fa-lock"></i>
-            <input class="form-control placeholder-no-fix" type="email" autocomplete="off" placeholder="Email" name="email"/>
+            <input type="text" class="form-control" name="email"  value="{{ $voluntario-> email}}">
         </div>
     </div>
     <div class="form-actions">
-
-        <button type="submit" class="btn blue pull-right" id="submitbutton" onclick="verificacion();return false;">
-            Registrarse <i class="m-icon-swapright m-icon-white"></i>
-        </button>
+        <button type="submit" data-loading-text="Actualizando..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Guardar</button>
     </div>
 
     {{Form::close()}}
@@ -115,53 +105,24 @@
 
 <!-- END PAGE LEVEL SCRIPTS -->
 
-{{--<script>--}}
-    {{--jQuery(document).ready(function() {--}}
-        {{--Metronic.init(); // init metronic core components--}}
-
-        {{--// init background slide images--}}
-        {{--$.backstretch([--}}
-                    {{--"{{ URL::asset('assets/admin/pages/media/bg/1.jpg') }}",--}}
-                    {{--"{{ URL::asset('assets/admin/pages/media/bg/2.jpg') }}",--}}
-                    {{--"{{ URL::asset('assets/admin/pages/media/bg/3.jpg') }}",--}}
-                    {{--"{{ URL::asset('assets/admin/pages/media/bg/4.jpg') }}"--}}
-                {{--], {--}}
-                    {{--fade: 1000,--}}
-                    {{--duration: 8000--}}
-                {{--}--}}
-        {{--);--}}
-    {{--});--}}
-</script>
-
-
 <script>
-    function verificacion(){
+    jQuery(document).ready(function() {
+        Metronic.init(); // init metronic core components
 
-        var nom;
-        nom=$('#nombres').val;
-        alert(nom);
-        $('#alert').html('<div class="alert alert-info">Verificando..</div>');
-        $("#submitbutton").prop('disabled', true);
-
-        {{--$.ajax({--}}
-            {{--type: "GET",--}}
-            {{--url::to( "  {{ URL::to('/voluntarios/register') }} "),--}}
-            {{--dataType: 'json',--}}
-            {{--data: $('.login-form').serialize()--}}
-        {{--}).done( function( response ) {--}}
-
-            {{--if(response.status == "success"){--}}
-                {{--$('#alert').html('<div class="alert alert-success"><span class="fa fa-success"></span>'+response.msg+'</div>');--}}
-                {{--window.location.href= "{{ URL::to('/admin/dashboard/') }}";--}}
-
-            {{--}else if(response.status == "error"){--}}
-                {{--$("#submitbutton").prop('disabled', false);--}}
-                {{--$('#alert').html('<div class="alert alert-danger"><span class="fa fa-warning"></span> '+response.msg+'</div>');--}}
-            {{--}--}}
-        {{--});--}}
-    }
-
+        // init background slide images
+        $.backstretch([
+                    "{{ URL::asset('assets/admin/pages/media/bg/1.jpg') }}",
+                    "{{ URL::asset('assets/admin/pages/media/bg/2.jpg') }}",
+                    "{{ URL::asset('assets/admin/pages/media/bg/3.jpg') }}",
+                    "{{ URL::asset('assets/admin/pages/media/bg/4.jpg') }}"
+                ], {
+                    fade: 1000,
+                    duration: 8000
+                }
+        );
+    });
 </script>
+
 <!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
