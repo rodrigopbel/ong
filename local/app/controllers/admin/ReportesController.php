@@ -14,10 +14,11 @@ class ReportsController extends \AdminBaseController {
     {
 
 //        $this->data['reportes'] = Reprote::all();
-
         $this->data['reportesActive'] =   'active';
-        $this->data['ayudas'] = Ayuda::all();
-        dd($this->data['ayudas']);
+//        $this->data['ayudas'] = Ayuda::all();
+        $ben = Beneficiario::all();
+        $ayuBen = $ben->ayudas;
+        dd($ayuBen);
         return View::make('admin.reportes.index', $this->data);
     }
 
