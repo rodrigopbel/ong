@@ -15,23 +15,27 @@ class ReportsController extends \AdminBaseController {
 
 //        $this->data['reportes'] = Reprote::all();
         $this->data['reportesActive'] =   'active';
+
+        $this->data['xyz'] = DB::select('gastos')
+                            ->join('Beneficiario', 'beneficiarioID','=','Beneficiario.beneficiarioID')
+                            ->get();
+        echo $this->data['xyz'];
 //            $this->data['ayudas'] = Ayuda::all();
 //            $ben = Beneficiario::all();
 //            $ayuBen = $ben->ayudas;
 //            echo($ayuBen);
-        foreach (Beneficiario::all() as $ben)
-        {
-            $benAyu[] = $ben->ayudas;
-//            echo $ben->ayudas;
-        }
-        echo '----------';
-        foreach(Personal::where('tipoPersonal','=','Aportante') as $per)
-        {
-            echo $per;
-//            $perA = $per->where('tipoPersonal','=','Aportante');
-//            $perDon[] = $per;
+//        foreach (Beneficiario::all() as $ben)
+//        {
+//            $benAyu[] = $ben->ayudas;
+////            echo $ben->ayudas;
+//        }
+//        echo '----------';
+//        foreach(Personal::all() as $per)
+//        {
+////            $perA = $per->where('tipoPersonal','=','Aportante');
+////            $perDon[] = $per;
 //            echo $per::where('tipoPersonal','=','Aportante')->get()->first();
-        }
+//        }
 //        echo($perDon);
 //        return View::make('admin.reportes.index', $this->data);
     }
