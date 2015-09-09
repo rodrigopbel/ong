@@ -20,8 +20,8 @@ class VoluntarioController extends \BaseController {
             'email'	     =>	$input['email'],
             'tipoPersonal' => $tipo
         ]);
-   return View::make('front.login',$this->data);
-//        return Redirect::route('front.login')->with('success',"<strong>{$nombres}</strong> Voluntario adicionado");
+//   return View::make('front.login',$this->data);
+        return Redirect::route('front.login')->with('success'," Voluntario adicionado");
     }
     public  function ajaxRegister()
     {
