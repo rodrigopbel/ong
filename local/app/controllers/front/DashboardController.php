@@ -15,14 +15,14 @@ class DashboardController extends \BaseController {
         $this->data['personal']        =    Personal::find(Auth::personales()->get()->id);
         $this->data['holidays']        =    Holiday::orderBy('date','ASC')->remember(10,'holiday_cache')->get();
         $this->data['ayudas']          =    Ayuda::select('*')->orderBy('created_at','desc')->get();
-        $this->data['attendance']      =    Attendance::where('employeeID', '=',$this->data['personalID'])
-                                                        ->where(function($query)
-                                                        {
-                                                            $query->where('application_status','=','approved')
-                                                                  ->orWhere('application_status','=',null)
-                                                                  ->orWhere('status','=','present');
-                                                        })
-                                                    ->get();
+//        $this->data['attendance']      =    Attendance::where('employeeID', '=',$this->data['personalID'])
+//                                                        ->where(function($query)
+//                                                        {
+//                                                            $query->where('application_status','=','approved')
+//                                                                  ->orWhere('application_status','=',null)
+//                                                                  ->orWhere('status','=','present');
+//                                                        })
+//                                                    ->get();
 //        $this->data['zonificacion']    =    Zonificacion::where("beneficiarioID",  Auth::beneficiarios()->get()->id)->get();
 //        $this->data['zonificacion']       = Zonificacion::where('beneficiarioID', '=', Auth::beneficiarios()->get()->beneficiarioID)->get();
 //        $this->data['zonificacion']       = Personal::has('zonificacion')->get();
