@@ -18,7 +18,7 @@ class ReportsController extends \AdminBaseController {
 
         $this->data['xyz'] = DB::table('ayudas')
                             ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
-                            ->join('donaciones', 'ayudas.aportanteID', '=', 'donaciones.aportanteID')
+//                            ->join('donaciones', 'ayudas.aportanteID', '=', 'donaciones.aportanteID')
                             ->select('ayudas.gastos')
                             ->get();
         echo $this->data['xyz'];
