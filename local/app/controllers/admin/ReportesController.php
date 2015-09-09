@@ -24,10 +24,11 @@ class ReportsController extends \AdminBaseController {
             $benAyu[] = $ben->ayudas;
 //            echo $ben->ayudas;
         }
-        foreach(Personal::all()->where('tipoPersonal','=','Aportante') as $per)
+        foreach(Personal::all() as $per)
         {
+            $perA = $per->where('tipoPersonal','=','Aportante');
 //            $perDon[] = $per;
-            echo $per->donaciones;
+            echo $perA->donaciones;
         }
 //        echo($perDon);
 //        return View::make('admin.reportes.index', $this->data);
