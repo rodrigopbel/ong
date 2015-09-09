@@ -37,9 +37,9 @@ App::after(function($request, $response)
 
 
 
-    Route::filter('auth.beneficiarios', function()
+    Route::filter('auth.personales', function()
     {
-        if (!Auth::beneficiarios()->check()) {
+        if (!Auth::personales()->check()) {
             return Redirect::to("/");
         }
     });
