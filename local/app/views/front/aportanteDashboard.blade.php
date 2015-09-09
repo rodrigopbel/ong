@@ -69,13 +69,13 @@
                                             {{$personal->direccion}}
                                         </td>
                                     </tr>																															<tr>
-                                        <td>
-                                            <span class="primary-link">Direccion Permanente</span>
-                                        </td>
-                                        <td>
-                                            {{$personal->direccionperm}}
-                                        </td>
-                                    </tr>
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Direccion Permanente</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                            {{--{{$personal->direccionperm}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
                                     </tbody>
                                     </table>
                         </div>
@@ -86,24 +86,24 @@
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i>Destino de la Ayuda</h2>
                         </div>
                         <div class="panel-body panelHolder">
-                            <table class="table table-light margin-bottom-0">
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Caso #</span>
-                                        </td>
-                                        <td>
-                                            {{$beneficiario->beneficiarioID}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Destino</span>
-                                        </td>
-                                        <td>
-                                            {{$beneficiario->getDesignation->department->deptName}}
-                                        </td>
-                                    </tr>
+                            {{--<table class="table table-light margin-bottom-0">--}}
+                                    {{--<tbody>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Caso #</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                            {{--{{$beneficiario->beneficiarioID}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Destino</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                            {{--{{$beneficiario->getDesignation->department->deptName}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
                                     {{--<tr>--}}
                                         {{--<td>--}}
                                             {{--<span class="primary-link">Objetivo</span>--}}
@@ -112,90 +112,90 @@
                                             {{--{{$beneficiario->getDesignation->designation}}--}}
                                         {{--</td>--}}
                                     {{--</tr>--}}
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Fecha de Solicitud</span>
-                                        </td>
-                                        <td>
-                                             {{date('d-M-Y',strtotime($beneficiario->diaingreso))}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Monto Requerido ( <i class="fa {{$setting->currency_icon}}"></i> )</span>
-                                        </td>
-                                        <td>
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Fecha de Solicitud</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                             {{--{{date('d-M-Y',strtotime($beneficiario->diaingreso))}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Monto Requerido ( <i class="fa {{$setting->currency_icon}}"></i> )</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
 
-                                            @foreach($beneficiario->getSoldonacion as $salary)
-                                                <p>{{$salary->type}} : {{$salary->salary}} <i class="fa {{$setting->currency_icon}}"></i> </p>
-                                            @endforeach
+                                            {{--@foreach($beneficiario->getSoldonacion as $salary)--}}
+                                                {{--<p>{{$salary->type}} : {{$salary->salary}} <i class="fa {{$setting->currency_icon}}"></i> </p>--}}
+                                            {{--@endforeach--}}
 
 
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                    </table>
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--</tbody>--}}
+                                    {{--</table>--}}
                         </div>
                     </div>
-                    <div class="panel panel-profile no-bg margin-top-20">
-                        <div class="panel-heading overflow-h">
-                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Zonificacion</h2>
-                        </div>
-                        <div class="panel-body panelHolder">
-                            <table class="table table-light margin-bottom-0">
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Departamento</span>
-                                        </td>
-                                        <td>
-                                             {{$beneficiario->zonificacion->departamento or ''}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Provincia</span>
-                                        </td>
-                                        <td>
-                                             {{$beneficiario->zonificacion->provincia or ''}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Localidad</span>
-                                        </td>
-                                        <td>
-                                             {{$beneficiario->zonificacion->localidad or ''}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Canton</span>
-                                        </td>
-                                        <td>
-                                             {{$beneficiario->zonificacion->canton or ''}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Zona</span>
-                                        </td>
-                                        <td>
-                                             {{$beneficiario->zonificacion->zona or ''}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Nota</span>
-                                        </td>
-                                        <td>
-                                              {{$beneficiario->zonificacion->otros or ''}}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    {{--<div class="panel panel-profile no-bg margin-top-20">--}}
+                        {{--<div class="panel-heading overflow-h">--}}
+                            {{--<h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Zonificacion</h2>--}}
+                        {{--</div>--}}
+                        {{--<div class="panel-body panelHolder">--}}
+                            {{--<table class="table table-light margin-bottom-0">--}}
+                                    {{--<tbody>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Departamento</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                             {{--{{$beneficiario->zonificacion->departamento or ''}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Provincia</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                             {{--{{$beneficiario->zonificacion->provincia or ''}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Localidad</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                             {{--{{$beneficiario->zonificacion->localidad or ''}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Canton</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                             {{--{{$beneficiario->zonificacion->canton or ''}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Zona</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                             {{--{{$beneficiario->zonificacion->zona or ''}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Nota</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                              {{--{{$beneficiario->zonificacion->otros or ''}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                {{--</tbody>--}}
+                            {{--</table>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
                 <!--End Profile Post-->
 
