@@ -12,37 +12,21 @@ class ReportsController extends \AdminBaseController {
     //    Display a listing of awards
     public function index()
     {
-
-//        $this->data['reportes'] = Reprote::all();
+//        $this->data['beneficiarios'] = Beneficiario::all();
         $this->data['reportesActive'] =   'active';
-//        Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','requerimiento','centroSalud','nit','numfactura','gastos','ayudas.created_at')
-//            ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
-//            ->orderBy('ayudas.created_at','desc');
-        $this->data['xyz'] = Ayuda::select('ayudas.gastos','ayudas.aportanteID','ayudas.id')
-                            ->join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
-                            ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
-                            ->groupBy('ayudas.id');
-        $this->data['abc'] = $this->data['xyz']->groupBy('ayudas.id');
-        echo $this->data['abc'];
-//            $this->data['ayudas'] = Ayuda::all();
-//            $ben = Beneficiario::all();
-//            $ayuBen = $ben->ayudas;
-//            echo($ayuBen);
-//        foreach (Beneficiario::all() as $ben)
-//        {
-//            $benAyu[] = $ben->ayudas;
-////            echo $ben->ayudas;
-//        }
-//        echo '----------';
-//        foreach(Personal::all() as $per)
-//        {
-////            $perA = $per->where('tipoPersonal','=','Aportante');
-////            $perDon[] = $per;
-//            echo $per::where('tipoPersonal','=','Aportante')->get()->first();
-//        }
-//        echo($perDon);
-//        return View::make('admin.reportes.index', $this->data);
+        $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (ID:", beneficiarioID,")") as apellidos, beneficiarioID')
+                                ->where('status','=','activo')
+                                ->lists('apellidos','beneficiarioID');
+//
+//        $this->data['xyz'] = Ayuda::select('ayudas.gastos','ayudas.aportanteID','ayudas.id')
+//                            ->join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
+//                            ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
+//                            ->get();
+//        $this->data['abc'] = $this->data['xyz']->groupBy('ayudas.id');
+//        echo $this->data['abc'];
+        return View::make('admin.reportes.index', $this->data);
     }
+
 
 
     //Datatable ajax request
