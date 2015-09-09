@@ -10,14 +10,8 @@ class VoluntarioController extends \BaseController {
 
     public function registrar()
     {
-        $rules  =[
-            'nombres'     => 'required',
-            'apellidos'   => 'required',
-            'ci'          => 'required|ci|unique:personal',
-            'telefono'    => 'required',
-            'email'	      => 'required|email'
-        ];
-        $validator = Validator::make($input = Input::all(),$rules);
+
+        $validator = Validator::make($input = Input::all(),Personal::rules('create'));
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
