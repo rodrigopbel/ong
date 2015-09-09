@@ -11,11 +11,7 @@ class VoluntarioController extends \BaseController {
     public function registrar()
     {
 
-        $validator = Validator::make($input = Input::all());
-        if ($validator->fails())
-        {
-            return Redirect::back()->withErrors($validator)->withInput();
-        }
+        $input  = Input::all();
 
         $tipo = 'Voluntario';
         Personal::create([
@@ -26,7 +22,7 @@ class VoluntarioController extends \BaseController {
             'email'	     =>	$input['email'],
             'tipoPersonal' => $tipo
         ]);
-  return View::make('front.login',$this->data);
+        return View::make('front.login',$this->data);
 //        return Redirect::route('front.login')->with('success'," Voluntario adicionado");
     }
 
