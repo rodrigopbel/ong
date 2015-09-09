@@ -8,7 +8,7 @@
                 <div class="col-sm-6">
                     <div class="panel panel-profile no-bg">
                         <div class="panel-heading overflow-h">
-                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Beneficiario</h2>
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Aportante</h2>
                         </div>
                         <div class="panel-body panelHolder">
                             <table class="table table-light margin-bottom-0">
@@ -18,7 +18,7 @@
                                             <span class="primary-link">Nombre</span>
                                         </td>
                                         <td>
-                                             {{$beneficiario->nombres}}
+                                             {{$personal->nombres}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -26,7 +26,7 @@
                                             <span class="primary-link">Apellidos</span>
                                         </td>
                                         <td>
-                                            {{$beneficiario->apellidos}}
+                                            {{$personal->apellidos}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -34,7 +34,7 @@
                                             <span class="primary-link">Fecha de Nacimiento</span>
                                         </td>
                                         <td>
-                                             {{ date('d-M-Y',strtotime($beneficiario->fechanac))}}
+                                             {{ date('d-M-Y',strtotime($personal->fechanac))}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -42,7 +42,7 @@
                                             <span class="primary-link">Genero</span>
                                         </td>
                                         <td>
-                                            {{ucfirst($beneficiario->genero)}}
+                                            {{ucfirst($personal->genero)}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -50,7 +50,7 @@
                                             <span class="primary-link">Email</span>
                                         </td>
                                         <td>
-                                            {{$beneficiario->email}}
+                                            {{$personal->email}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -58,7 +58,7 @@
                                             <span class="primary-link">Telefono</span>
                                         </td>
                                         <td>
-                                             {{$beneficiario->telefono}}
+                                             {{$personal->telefono}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -66,16 +66,16 @@
                                             <span class="primary-link">Direccion</span>
                                         </td>
                                         <td>
-                                            {{$beneficiario->direccion}}
+                                            {{$personal->direccion}}
                                         </td>
                                     </tr>																															<tr>
-                                        <td>
-                                            <span class="primary-link">Direccion Permanente</span>
-                                        </td>
-                                        <td>
-                                            {{$beneficiario->direccionperm}}
-                                        </td>
-                                    </tr>
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Direccion Permanente</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                            {{--{{$beneficiario->direccionperm}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
                                     </tbody>
                                     </table>
                         </div>
@@ -86,16 +86,16 @@
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i>Destino de la Ayuda</h2>
                         </div>
                         <div class="panel-body panelHolder">
-                            <table class="table table-light margin-bottom-0">
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Caso #</span>
-                                        </td>
-                                        <td>
-                                            {{$beneficiario->beneficiarioID}}
-                                        </td>
-                                    </tr>
+                            {{--<table class="table table-light margin-bottom-0">--}}
+                                    {{--<tbody>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Caso #</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                            {{--{{$beneficiario->beneficiarioID}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
                                     {{--<tr>--}}
                                         {{--<td>--}}
                                             {{--<span class="primary-link">Destino</span>--}}
@@ -133,69 +133,69 @@
 
                                         {{--</td>--}}
                                     {{--</tr>--}}
-                                    </tbody>
-                                    </table>
+                                    {{--</tbody>--}}
+                                    {{--</table>--}}
                         </div>
                     </div>
-                    <div class="panel panel-profile no-bg margin-top-20">
-                        <div class="panel-heading overflow-h">
-                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Zonificacion</h2>
-                        </div>
-                        <div class="panel-body panelHolder">
-                            <table class="table table-light margin-bottom-0">
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Departamento</span>
-                                        </td>
-                                        <td>
-                                             {{$beneficiario->zonificacion->departamento or ''}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Provincia</span>
-                                        </td>
-                                        <td>
-                                             {{$beneficiario->zonificacion->provincia or ''}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Localidad</span>
-                                        </td>
-                                        <td>
-                                             {{$beneficiario->zonificacion->localidad or ''}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Canton</span>
-                                        </td>
-                                        <td>
-                                             {{$beneficiario->zonificacion->canton or ''}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Zona</span>
-                                        </td>
-                                        <td>
-                                             {{$beneficiario->zonificacion->zona or ''}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Nota</span>
-                                        </td>
-                                        <td>
-                                              {{$beneficiario->zonificacion->otros or ''}}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    {{--<div class="panel panel-profile no-bg margin-top-20">--}}
+                        {{--<div class="panel-heading overflow-h">--}}
+                            {{--<h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Zonificacion</h2>--}}
+                        {{--</div>--}}
+                        {{--<div class="panel-body panelHolder">--}}
+                            {{--<table class="table table-light margin-bottom-0">--}}
+                                    {{--<tbody>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Departamento</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                             {{--{{$beneficiario->zonificacion->departamento or ''}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Provincia</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                             {{--{{$beneficiario->zonificacion->provincia or ''}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Localidad</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                             {{--{{$beneficiario->zonificacion->localidad or ''}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Canton</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                             {{--{{$beneficiario->zonificacion->canton or ''}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Zona</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                             {{--{{$beneficiario->zonificacion->zona or ''}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Nota</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                              {{--{{$beneficiario->zonificacion->otros or ''}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
+                                {{--</tbody>--}}
+                            {{--</table>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
                 <!--End Profile Post-->
 
@@ -205,7 +205,7 @@
 
                     <div class="panel panel-profile margin-top-20">
                         <div class="panel-heading overflow-h">
-                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Donaciones Recibidas</h2>
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Donaciones Realizadas</h2>
                         </div>
                         {{--<div id="scrollbar3" class="panel-body contentHolder">--}}
 
