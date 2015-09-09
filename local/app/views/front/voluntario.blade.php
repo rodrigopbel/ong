@@ -115,22 +115,22 @@
 
 <!-- END PAGE LEVEL SCRIPTS -->
 
-<script>
-    jQuery(document).ready(function() {
-        Metronic.init(); // init metronic core components
+{{--<script>--}}
+    {{--jQuery(document).ready(function() {--}}
+        {{--Metronic.init(); // init metronic core components--}}
 
-        // init background slide images
-        $.backstretch([
-                    "{{ URL::asset('assets/admin/pages/media/bg/1.jpg') }}",
-                    "{{ URL::asset('assets/admin/pages/media/bg/2.jpg') }}",
-                    "{{ URL::asset('assets/admin/pages/media/bg/3.jpg') }}",
-                    "{{ URL::asset('assets/admin/pages/media/bg/4.jpg') }}"
-                ], {
-                    fade: 1000,
-                    duration: 8000
-                }
-        );
-    });
+        {{--// init background slide images--}}
+        {{--$.backstretch([--}}
+                    {{--"{{ URL::asset('assets/admin/pages/media/bg/1.jpg') }}",--}}
+                    {{--"{{ URL::asset('assets/admin/pages/media/bg/2.jpg') }}",--}}
+                    {{--"{{ URL::asset('assets/admin/pages/media/bg/3.jpg') }}",--}}
+                    {{--"{{ URL::asset('assets/admin/pages/media/bg/4.jpg') }}"--}}
+                {{--], {--}}
+                    {{--fade: 1000,--}}
+                    {{--duration: 8000--}}
+                {{--}--}}
+        {{--);--}}
+    {{--});--}}
 </script>
 
 
@@ -143,22 +143,22 @@
         $('#alert').html('<div class="alert alert-info">Verificando..</div>');
         $("#submitbutton").prop('disabled', true);
 
-        $.ajax({
-            type: "GET",
-            url::to( "  {{ URL::to('/voluntarios/register') }} "),
-            dataType: 'json',
-            data: $('.login-form').serialize()
-        }).done( function( response ) {
+        {{--$.ajax({--}}
+            {{--type: "GET",--}}
+            {{--url::to( "  {{ URL::to('/voluntarios/register') }} "),--}}
+            {{--dataType: 'json',--}}
+            {{--data: $('.login-form').serialize()--}}
+        {{--}).done( function( response ) {--}}
 
-            if(response.status == "success"){
-                $('#alert').html('<div class="alert alert-success"><span class="fa fa-success"></span>'+response.msg+'</div>');
-                window.location.href= "{{ URL::to('/admin/dashboard/') }}";
+            {{--if(response.status == "success"){--}}
+                {{--$('#alert').html('<div class="alert alert-success"><span class="fa fa-success"></span>'+response.msg+'</div>');--}}
+                {{--window.location.href= "{{ URL::to('/admin/dashboard/') }}";--}}
 
-            }else if(response.status == "error"){
-                $("#submitbutton").prop('disabled', false);
-                $('#alert').html('<div class="alert alert-danger"><span class="fa fa-warning"></span> '+response.msg+'</div>');
-            }
-        });
+            {{--}else if(response.status == "error"){--}}
+                {{--$("#submitbutton").prop('disabled', false);--}}
+                {{--$('#alert').html('<div class="alert alert-danger"><span class="fa fa-warning"></span> '+response.msg+'</div>');--}}
+            {{--}--}}
+        {{--});--}}
     }
 
 </script>
