@@ -50,6 +50,6 @@ class Personal extends Eloquent {
 
     public function donaciones()
     {
-        return $this->hasMany('Donaciones','aportanteID','personalID');
+        return $this->hasMany('Donacion','aportanteID','personalID');
     }
 }
