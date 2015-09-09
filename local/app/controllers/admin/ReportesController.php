@@ -19,7 +19,7 @@ class ReportsController extends \AdminBaseController {
 //        $ben = Beneficiario::find(9);
 //        $ayuBen = $ben->ayudas;
 //        echo($ben);
-        foreach (Beneficiario::with('ayudas')->get() as $ben)
+        foreach (Beneficiario::all() as $ben)
         {
             $benAyu = $ben->author->gastos;
         }
