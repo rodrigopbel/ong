@@ -24,7 +24,7 @@ class ReportsController extends \AdminBaseController {
             $benAyu[] = $ben->ayudas;
 //            echo $ben->ayudas;
         }
-        foreach(Personal::all()->where('tipoPersonal','=','Aportante') as $per)
+        foreach(Personal::all()as $per)
         {
             $perDon[] = $per->donaciones;
         }
