@@ -48,7 +48,7 @@ class VoluntarioController extends \BaseController {
             $rules  =[
                 'nombres'     => 'required',
                 'apellidos'   => 'required',
-                'ci'          => 'required',
+                'ci'          => 'required|ci|unique:personal',
                 'telefono'    => 'required',
                 'email'	      => 'required|email'
             ];
