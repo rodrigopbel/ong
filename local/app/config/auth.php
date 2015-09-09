@@ -7,10 +7,10 @@ return array(
             'driver' => 'eloquent',
             'model' => 'Admin'
         ),
-        'personales' => array(
+        'beneficiarios' => array(
             'driver' => 'eloquent',
-            'model'  => 'Personal',
-            'table'  => 'personal'
+            'model'  => 'Beneficiario',
+            'table'  => 'beneficiarios'
         )
     ),
 
