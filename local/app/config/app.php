@@ -129,7 +129,6 @@ return array(
         'Bllim\Datatables\DatatablesServiceProvider',
 		'Maatwebsite\Excel\ExcelServiceProvider',
 		'Barryvdh\Debugbar\ServiceProvider',
-		'Spatie\Activitylog\ActivitylogServiceProvider',
 
 	),
 
@@ -201,8 +200,7 @@ return array(
         'Image'             => 'Intervention\Image\Facades\Image',
         'Datatables'        => 'Bllim\Datatables\Facade\Datatables',
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',
-		'Debugbar' => 'Barryvdh\Debugbar\Facade',
-		'Activity' => 'Spatie\Activitylog\ActivitylogFacade',
+		'Debugbar' => 'Barryvdh\Debugbar\Facade'
 
 	),
 
