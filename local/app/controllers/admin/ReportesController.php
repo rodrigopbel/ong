@@ -18,7 +18,7 @@ class ReportsController extends \AdminBaseController {
 //        $this->data['ayudas'] = Ayuda::all();
         $ben = Beneficiario::find(9);
         $ayuBen = $ben->ayudas;
-        echo($ayuBen);
+        echo($ben);
 //        return View::make('admin.reportes.index', $this->data);
     }
 
