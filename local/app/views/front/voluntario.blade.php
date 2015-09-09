@@ -85,7 +85,7 @@
     </div>
     <div class="form-actions">
 
-        <button type="submit" class="btn blue pull-right" id="submitbutton" >
+        <button type="submit" class="btn blue pull-right" id="submitbutton" onclick="verificacion();return false;">
             Registrarse <i class="m-icon-swapright m-icon-white"></i>
         </button>
     </div>
@@ -135,7 +135,7 @@
 
 
 <script>
-    function login(){
+    function verificacion(){
 
         $('#alert').html('<div class="alert alert-info">Verificando..</div>');
         $("#submitbutton").prop('disabled', true);
