@@ -12,13 +12,14 @@ class ReportsController extends \AdminBaseController {
     //    Display a listing of awards
     public function index()
     {
+        dd("hola a todos");
 //        $this->data['reportes'] = Reprote::all();
 
         $this->data['reportesActive'] =   'active';
 
         $ayudas = Ayuda::all();
         $ayuBene = $ayudas->beneficiario();
-        dd($ayudas);
+
         return View::make('admin.reportes.index', $this->data);
     }
 
