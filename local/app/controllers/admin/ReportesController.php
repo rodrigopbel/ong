@@ -27,8 +27,9 @@ class ReportsController extends \AdminBaseController {
         foreach(Personal::all()as $per)
         {
             $perDon[] = $per;
+            echo $perDon;
         }
-        echo($perDon);
+//        echo($perDon);
 //        return View::make('admin.reportes.index', $this->data);
     }
 
