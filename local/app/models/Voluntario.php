@@ -12,13 +12,4 @@ class Voluntario extends \Eloquent {
             'telefono'    => 'required',
             'email'	      => 'required|email'
 	];
-
-	// Don't forget to fill this array
-    protected $guarded = ['id'];
-//    protected $fillable = ['username', 'email', 'password'];
-
-
-
-
-
 }

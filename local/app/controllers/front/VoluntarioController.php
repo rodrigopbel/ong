@@ -11,7 +11,7 @@ class VoluntarioController extends \BaseController {
     public function registrar()
     {
 
-        $validator = Validator::make($input = Input::all(),Voluntario::$rules);
+        $validator = Validator::make($input = Input::all(), Voluntario::$rules);
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
