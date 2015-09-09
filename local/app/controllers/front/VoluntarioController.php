@@ -10,7 +10,6 @@ class VoluntarioController extends \BaseController {
 
     public function registrar()
     {
-        $input = Input::all();
         $rules  =[
             'nombres'     => 'required',
             'apellidos'   => 'required',
@@ -18,20 +17,12 @@ class VoluntarioController extends \BaseController {
             'telefono'    => 'required',
             'email'	      => 'required|email'
         ];
-        $data	=	[
-            'nombres'    => $input['nombres'],
-            'apellidos'  => $input['apellidos'],
-            'ci'         => $input['ci'],
-            'telefono'   => $input['telefono'],
-            'email'	     =>	$input['email']
-        ];
-        $validator	= Validator::make($input,$rules);
-        //Verificacion previa de los campos, antes de la Autenticacion
-        if($validator->fails())
+        $validator = Validator::make($input = Input::all(),$rules);
+        if ($validator->fails())
         {
-            $output['status'] = 'error';
-            $output['msg']    =  $validator->getMessageBag()->toArray();
+            return Redirect::back()->withErrors($validator)->withInput();
         }
+
         $tipo = 'Voluntario';
         Personal::create([
             'nombres'    => $input['nombres'],
