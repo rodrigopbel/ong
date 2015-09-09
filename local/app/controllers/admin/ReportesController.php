@@ -15,15 +15,15 @@ class ReportsController extends \AdminBaseController {
 
 //        $this->data['reportes'] = Reprote::all();
         $this->data['reportesActive'] =   'active';
-//        $this->data['ayudas'] = Ayuda::all();
-//        $ben = Beneficiario::find(9);
-//        $ayuBen = $ben->ayudas;
-//        echo($ben);
-        foreach (Beneficiario::all() as $ben)
-        {
-            $benAyu[] = $ben->author->gastos;
-        }
-        var_dump($benAyu);
+            $this->data['ayudas'] = Ayuda::all();
+            $ben = Beneficiario::all();
+            $ayuBen = $ben->ayudas;
+            echo($ayuBen);
+//        foreach (Beneficiario::all() as $ben)
+//        {
+//            $benAyu[] = $ben->author->gastos;
+//        }
+//        var_dump($benAyu);
 //        return View::make('admin.reportes.index', $this->data);
     }
 
