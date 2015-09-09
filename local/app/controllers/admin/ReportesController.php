@@ -16,7 +16,9 @@ class ReportsController extends \AdminBaseController {
 
         $this->data['reportesActive'] =   'active';
 
-
+        $ayudas = Ayuda::all();
+        $ayuBene = $ayudas->beneficiario();
+dd($ayuBene);
         return View::make('admin.reportes.index', $this->data);
     }
 
