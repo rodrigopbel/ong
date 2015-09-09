@@ -33,15 +33,6 @@
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
-									{{--<div class="row">--}}
-                        				{{--<div class="col-md-6">--}}
-
-				 {{--<a class="btn green" data-toggle="modal" href="{{URL::to('admin/reportes/create')}}">--}}
-                                       {{--Nueva Ayuda--}}
-                {{--<i class="fa fa-plus"></i> </a>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                     <hr>
 			<div class="row">
 				<div class="col-md-12">
 
