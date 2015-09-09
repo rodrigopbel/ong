@@ -11,7 +11,7 @@
 
 @section('mainarea')
 
-{{dd("hola a todos")}}
+{{--{{dd("hola a todos")}}--}}
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 			{{$pageTitle}}
