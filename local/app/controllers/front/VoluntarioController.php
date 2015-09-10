@@ -20,6 +20,11 @@ class VoluntarioController extends \BaseController {
             'email'	      => 'required|email'
         ];
         $validator	= Validator::make($input,$rules);
+        if($validator->fails())
+        {
+            $output['status'] = 'error';
+            $output['msg']    =  $validator->getMessageBag()->toArray();
+        }
         $tipo = 'Voluntario';
         Personal::create([
             'nombres'    => $input['nombres'],
