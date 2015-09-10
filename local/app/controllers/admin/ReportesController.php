@@ -20,7 +20,8 @@ class ReportsController extends \AdminBaseController {
         $result =
             Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','requerimiento','centroSalud','nit','numfactura','gastos','ayudas.created_at')
                 ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
-                ->orderBy('ayudas.created_at','desc');
+                ->orderBy('ayudas.created_at','desc')
+                ->get();
         echo('***********');
         echo ($result);
 //        dd( Datatables::of($result));
