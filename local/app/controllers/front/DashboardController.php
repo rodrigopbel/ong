@@ -26,7 +26,7 @@ class DashboardController extends \BaseController {
 //        $this->data['zonificacion']    =    Zonificacion::where("beneficiarioID",  Auth::beneficiarios()->get()->id)->get();
 //        $this->data['zonificacion']       = Zonificacion::where('beneficiarioID', '=', Auth::beneficiarios()->get()->beneficiarioID)->get();
 //        $this->data['zonificacion']       = Personal::has('zonificacion')->get();
-        $this->data['attendance_count']   = Attendance::attendanceCount($this->data['personalID']);
+//        $this->data['attendance_count']   = Attendance::attendanceCount($this->data['personalID']);
 //        $this->data['current_month_birthdays']   = Personal ::currentMonthBirthday();
 //        dd($this->data['zonificacion']);
 
