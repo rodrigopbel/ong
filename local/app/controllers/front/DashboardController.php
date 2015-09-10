@@ -27,12 +27,13 @@ class DashboardController extends \BaseController {
 //        $this->data['zonificacion']       = Zonificacion::where('beneficiarioID', '=', Auth::beneficiarios()->get()->beneficiarioID)->get();
 //        $this->data['zonificacion']       = Personal::has('zonificacion')->get();
         $this->data['attendance_count']   = Attendance::attendanceCount($this->data['personalID']);
-        $this->data['current_month_birthdays']   = Personal ::currentMonthBirthday();
+//        $this->data['current_month_birthdays']   = Personal ::currentMonthBirthday();
 //        dd($this->data['zonificacion']);
 
     }
 	public function index()
 	{
+
         $this->data['homeActive']         =    'active';
         $this->data['noticeboards']       =     Noticeboard::where('status','=','active')->orderBy('created_at','DESC')->get();
         $this->data['holiday_color']      = ['info','error','success','pending',''];
@@ -45,7 +46,7 @@ class DashboardController extends \BaseController {
 	{
         $this->data['leaveActive'] =    'active';
 
-        $this->data['attendance']         = Attendance::where('employeeID', '=',  $this->data['employeeID'] )->get();
+//        $this->data['attendance']         = Attendance::where('employeeID', '=',  $this->data['employeeID'] )->get();
 
         return View::make('front.leave',$this->data);
 	}
