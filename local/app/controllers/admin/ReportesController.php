@@ -43,6 +43,8 @@ class ReportsController extends \AdminBaseController {
 //        return Datatables::of($result)
 //
 //            ->make();
+
+        echo $result;
         return Response::json("holas", 200);
     }
     public function reportesben()
