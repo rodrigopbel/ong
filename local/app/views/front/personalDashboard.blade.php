@@ -81,7 +81,7 @@
                         </div>
                         <div class="panel-body panelHolder" >
                             <div id="scrollbar3" class="panel-body contentHolder">
-                                <div class="alert-blocks" style="background:#red">
+                                <div class="alert-blocks" style="background:#7F7F00; color:#fff">
                                     <div class="overflow-h">
                                         <strong class="color-dark">  ID Beneficiario<small class="color-dark pull-right"><em>Gasto Realizado</em></small></strong>
                                         <small class="color-dark">Requerimiento</small><small class="color-dark ">Nro Factura</small>
