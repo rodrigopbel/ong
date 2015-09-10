@@ -64,7 +64,8 @@ class ReportsController extends \AdminBaseController {
         if(Input::get('beneficiario')){
             $this->data['beneficiarios'] = Beneficiario::where('beneficiarioID','=',Input::get('beneficiario'))->get();
             $this->data['ayudas'] = Ayuda::where('beneficiarioID','=',Input::get('beneficiario'))->get();
-            $this->data['donaciones'] = Donacion::where('aportanteID','=',Input::get('aportanteID'))->get();
+            $b = json_decode($this->data['ayudas']);
+            $this->data['donaciones'] = Donacion::where('aportanteID','=',$b[0]->aportanteID)->get();
 
             return $this->data;
         } else {
