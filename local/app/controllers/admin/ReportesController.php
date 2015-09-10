@@ -46,8 +46,9 @@ class ReportsController extends \AdminBaseController {
 
 //        echo $result;
         if(Request::ajax()){
-            $input = Input::all();
-            $idBen = "asd";
+            $input = json_decode(Input::all());
+
+            $idBen = $input->{'id'};
             $ayudas = new stdClass();
             $ayudas->idBen = $idBen;
             $ayudas->name = "guillermo";
