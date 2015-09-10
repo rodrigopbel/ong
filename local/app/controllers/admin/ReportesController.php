@@ -46,8 +46,15 @@ class ReportsController extends \AdminBaseController {
 
 //        echo $result;
         if(Request::ajax()){
+            $idBen = Input::get('id');
+            $ayudas = Ayuda::select('ayudas.created_at','ayudas.gastos')
+                                    ->join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
+                                    ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
+                                    ->groupBy('ayudas.id');
             $input = Input::all();
-            return Response::json($input);
+//            return Response::json($input);
+            $json_ayudas = json_encode($ayudas);
+            return Response::json($json_ayudas);
         }else{
             return Response::json("error de sintaxis");
         }
