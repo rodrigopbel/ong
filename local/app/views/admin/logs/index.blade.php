@@ -74,6 +74,9 @@
                             <th class="text-center">
 
                             </th>
+                            <th class="text-center">
+
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -98,6 +101,9 @@
                                 </td>
                                 <td>
                                     {{ $log->created_at }}
+                                </td>
+                                <td>
+
                                 </td>
                                 <td>
 
