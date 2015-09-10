@@ -62,7 +62,7 @@
     <!--End Reg Block-->
     {{Form::close()}}
     <div class="col-md-10 col-md-offset-1">
-                <span>Quieres ser un Voluntario,
+                <span class="vol">Quieres ser un Voluntario,
                 <a href=" {{ route('voluntarios.index') }} " type="button">Click Aqui</a></span>
     </div>
     <br/>

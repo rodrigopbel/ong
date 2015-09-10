@@ -65,6 +65,11 @@ body {
 	text-align: center;
 }
 
+.vol{
+    background:#D14D00 ;
+    color:#fff;
+}
+
 /*For Mobile Devices*/
 @media (max-width: 500px) { 
 	.reg-block {
