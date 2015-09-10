@@ -3,10 +3,12 @@ use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
+use Spatie\Activitylog\LogsActivityInterface;
+use Spatie\Activitylog\LogsActivity;
 
-class Beneficiario extends Eloquent implements UserInterface, RemindableInterface {
+class Beneficiario extends Eloquent implements UserInterface, RemindableInterface, LogsActivityInterface {
 
-    use UserTrait, RemindableTrait;
+    use UserTrait, RemindableTrait, LogsActivity;
 	protected $table="beneficiarios";
 	// Validation Rules
 	public static function rules($action,$id=false, $merge=[])
@@ -184,4 +186,25 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
     {
         return $this->hasMany('Ayuda','beneficiarioID','beneficiarioID');
     }
+
+	public function getActivityDescriptionForEvent($eventName)
+	{
+		if ($eventName == 'created')
+		{
+			return 'Beneficiario "' . $this->name . '" se creo';
+		}
+
+		if ($eventName == 'updated')
+		{
+			return 'Beneficiario "' . $this->name . '" se actualizo ';
+		}
+
+		if ($eventName == 'deleted')
+		{
+			return 'Beneficiario "' . $this->name . '" se borro';
+		}
+
+		return '';
+	}
+
 }
