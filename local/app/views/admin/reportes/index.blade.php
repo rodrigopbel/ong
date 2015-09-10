@@ -116,12 +116,12 @@
 <!-- END PAGE LEVEL PLUGINS -->
 	<script>
 
-//        $('#beneficiario').on('change',function(){
-//            var data = {
-//                'id' : $(this).val()
-//            };
-//            console.log(data);
-//        });
+        $('#beneficiario').on('change',function(){
+            data = {
+                'id' : $(this).val()
+            };
+            console.log(data);
+        });
         {{--$('.generarReporte').on('click', function(){--}}
 {{--//            alert($('#beneficiario').val());--}}
 {{--//            console.log($('#beneficiario').val());--}}
@@ -152,7 +152,7 @@
             $.ajax({
                 url: '{{route("admin.ajax_reportes")}}',
                 type: 'POST',
-                data : {id : $('#beneficiario').val()},
+                data : data,
                 contentType: 'application/x-www-form-urlencoded',
                 dataType: 'JSON',
                 beforeSend: function(){
