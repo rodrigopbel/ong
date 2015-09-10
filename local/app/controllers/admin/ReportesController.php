@@ -26,7 +26,7 @@ class ReportsController extends \AdminBaseController {
         foreach($bens as $ben)
         {
 //            $result[] = $ben->ayudas()->where('beneficiarioID','=','666');
-            echo ($ben->ayudas()->where('beneficiarioID','=','666'));
+            echo ($ben->ayudas);
 
         }
         echo('***********');
