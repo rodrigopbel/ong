@@ -46,11 +46,7 @@
                 @endif
 
             </div>
-            <a href="{{route('admin.logs.create')}}" class="btn green">
-                Nuevo <i class="fa fa-plus"></i>
-            </a>
-
-            <hr>
+             <hr>
             <div class="portlet box blue">
 
                 <div class="portlet-title">
@@ -72,10 +68,7 @@
                         <thead>
                         <tr>
                             <th class="text-center">
-                                ID Usuario
-                            </th>
-                            <th class="text-center">
-                                ID contenido
+                                ID Beneficiario o Personal
                             </th>
                             <th style="text-align: center">
                                 tipo de contenido
@@ -98,10 +91,7 @@
 
                         @foreach ($logs as $log)
                             <tr id="row{{ $log->user_id }}">
-                                <td>
-                                    {{ $log->user_id }}
 
-                                </td>
                                 <td>
                                     {{ $log->content_id}}
                                 </td>
