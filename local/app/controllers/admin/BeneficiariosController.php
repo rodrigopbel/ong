@@ -335,14 +335,7 @@ class BeneficiariosController extends \AdminBaseController {
                     'direccionperm' => $input['direccionperm']
                 ]);
 
-            Activity::log([
-                'contentId'   => $id,
-                'contentType' => 'Beneficiario',
-                'action'      => 'Update '. Input::get('updateType'),
-                'description' => 'ACtualizacion del un Beneficiario',
-                'details'     => 'Usuario: '. Auth::admin()->get()->name,
-                'updated'     => $id ? true : false
-            ]);
+
 
             return Redirect::route('admin.beneficiarios.edit',$id)->with('successPersonal',"<strong>Actualizacion</strong> Existosa");
 
@@ -414,11 +407,27 @@ class BeneficiariosController extends \AdminBaseController {
 
                 }
             }
+            Activity::log([
+                'contentId'   => $id,
+                'contentType' => 'Beneficiario',
+                'action'      => 'Update '. Input::get('updateType'),
+                'description' => 'Actualizacion de un Beneficiario',
+                'details'     => 'Usuario: '. Auth::admin()->get()->name,
+                'updated'     => $id ? true : false
+            ]);
 
             return Redirect::route('admin.beneficiarios.edit',$id)->with('successDocuments',"<strong>Actualizacion</strong> Existosa");
             //  ********** END UPLOAD THE DOCUMENTS**********
 
         }
+        Activity::log([
+            'contentId'   => $id,
+            'contentType' => 'Beneficiario',
+            'action'      => 'Update '. Input::get('updateType'),
+            'description' => 'ACtualizacion de un Beneficiario',
+            'details'     => 'Usuario: '. Auth::admin()->get()->name,
+            'updated'     => $id ? true : false
+        ]);
         //-------Documents info Details Update END--------
         return Response::json($output, 200);
     }
