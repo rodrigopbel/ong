@@ -30,7 +30,7 @@ class ReportsController extends \AdminBaseController {
 //
 //        }
         $ben = Ayuda::select('ayudas.gastos','beneficiarios.nombres')->where('beneficiarioID','=','666')
-            ->join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')->get();
+            ->where('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')->get();
 
         echo ($ben);
         echo('***********');
