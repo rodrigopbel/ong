@@ -129,6 +129,8 @@
             var data = {
                 'id' : id
             };
+
+
             $.ajax({
                 url: '{{route("admin.ajax_reportes")}}',
                 type: 'POST',
