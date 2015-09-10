@@ -34,6 +34,7 @@ class ReportsController extends \AdminBaseController {
         $don = Donacion::where('aportanteID','=','321')->get();
         $b = json_decode($ben);
 //        $benA = $ben->aportanteID;
+        echo ($b[0]->aportanteID);
         print_r ($b[0]->aportanteID);
 
 
