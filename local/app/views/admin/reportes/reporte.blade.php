@@ -1,5 +1,5 @@
 @extends('admin.adminlayouts.adminlayout')
-
+@extends('front.layouts.frontlayout')
 @section('head')
 
     <!-- BEGIN PAGE LEVEL STYLES -->
@@ -34,97 +34,6 @@
     </div>
     <!-- END PAGE HEADER-->
     <div class="row ">
-        <div class="col-md-6 col-sm-6">
-            <div class="portlet box purple-wisteria">
-                <div class="portlet-title">
-                    <div class="caption">
-                        <i class="fa fa-calendar"></i>Detalles Generales
-                    </div>
-                </div>
-
-
-                <div class="portlet-body">
-                    {{--------------------Personal Info Form--------------------------------------------}}
-                    <form action="#">
-                    <div class="form-body">
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Nombres<span class="required">* </span></label>
-
-                            <div class="col-md-9">
-                                <label class="col-md-3 control-label">{{$beneficiario[0]->nombres}}</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Apellidos</label>
-
-                            <div class="col-md-9">
-                                <input type="text" name="apellidos" class="form-control"
-                                       value="{{$beneficiario[0]->apellidos}}">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Fecha de Nacimiento</label>
-
-                            <div class="col-md-3">
-                                <div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy"
-                                     data-date-viewmode="years">
-                                    <input type="text" class="form-control" name="date_of_birth" readonly
-                                           value="@if(empty($beneficiario[0]->fechanac))@else{{date('d-m-Y',strtotime($beneficiario[0]->fechanac))}}@endif">
-        												<span class="input-group-btn">
-        												<button class="btn default" type="button"><i
-                                                                    class="fa fa-calendar"></i></button>
-        												</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Genero</label>
-
-                            <div class="col-md-9">
-                                <select class="form-control" name="genero">
-
-                                    <option value="hombre" @if($beneficiario[0]->genero=='hombre') selected @endif>Varon
-                                    </option>
-                                    <option value="mujer"  @if($beneficiario[0]->genero=='mujer') selected @endif>Mujer
-                                    </option>
-                                    <option value="otros"  @if($beneficiario[0]->genero=='otros') selected @endif>Otros
-                                    </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Telefono</label>
-
-                            <div class="col-md-9">
-                                <input type="text" name="telefono" class="form-control"
-                                       value="{{$beneficiario[0]->telefono}}">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Direccion Actual</label>
-
-                            <div class="col-md-9">
-                                <textarea name="direccion" class="form-control"
-                                          rows="3">{{$beneficiario[0]->direccion}}</textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Direccion Permanente</label>
-
-                            <div class="col-md-9">
-                                <textarea name="direccionperm" class="form-control"
-                                          rows="3">{{$beneficiario[0]->direccionperm}}</textarea>
-                            </div>
-                        </div>
-
-
-
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
         <div class="profile-body">
             <div class="row margin-bottom-20">
                 <!--Profile Post-->
