@@ -248,12 +248,12 @@
 
                     <div class="panel panel-profile margin-top-20">
                         <div class="panel-heading overflow-h">
-                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-send"></i> Otros</h2>
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-send"></i> Donaciones</h2>
                         </div>
                         <div id="scrollbar3" class="panel-body contentHolder">
                          @if(count($donaciones))
                             @foreach($donaciones as $donacion)
-                            ver todas las  donaciones
+                            Donacion:
                             @if(strtotime($donacion->date)>time())
                                 <div class="alert-blocks alert-blocks-{{$donacion_color[$donacion->id%count($donacion_color)]}}">
                                     <div class="overflow-h">
