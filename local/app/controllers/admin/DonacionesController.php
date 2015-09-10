@@ -71,6 +71,7 @@ class DonacionesController extends \AdminBaseController {
 //        dd($input);
         Donacion::create([
             'aportanteID'    => $input['personalID'],
+            'beneficiarioID' => $input['beneficiarioID'],
             'descripcion'    => $input['descripcion'],
             'montodonacion'  => $input['montodonacion']
 
