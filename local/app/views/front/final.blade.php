@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="error-v3">
-                    <h3>!Ya eres Voluntario!</h3>
+                    <h2>!Ya eres Voluntario!</h2>
                     <p></p>
                 </div>
             </div>
