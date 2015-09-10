@@ -207,19 +207,19 @@
                         <div class="panel-heading overflow-h">
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Donaciones Realizadas</h2>
                         </div>
-                        {{--<div id="scrollbar3" class="panel-body contentHolder">--}}
+                        <div id="scrollbar3" class="panel-body contentHolder">
 
-                            {{--@foreach($awards as $award)--}}
-                                {{--<div class="alert-blocks">--}}
-                                    {{--<div class="overflow-h">--}}
-                                        {{--<strong class="color-dark">{{Str::words($award->employeeDetails->fullName,1,'')}} <small class="pull-right"><em>{{ucfirst($award->forMonth)}} {{$award->forYear}}</em></small></strong>--}}
-                                        {{--<small class="award-name">{{$award->awardName}}</small>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--@endforeach--}}
+                            @foreach($donaciones as $donacion)
+                                <div class="alert-blocks">
+                                    <div class="overflow-h">
+                                        <strong class="color-dark">{{Str::words($donacion->descripcion,1,'')}} <small class="pull-right"><em>{{($donacion->montodonacion)}}</em></small></strong>
+                                        <small class="award-name">{{$donacion->created_at}}</small>
+                                    </div>
+                                </div>
+                            @endforeach
 
 
-                        {{--</div>--}}
+                        </div>
                     </div>
                     <hr>
 
@@ -254,15 +254,15 @@
                          @if(count($donaciones))
                             @foreach($donaciones as $donacion)
                             Donacion:
-                            {{--@if(strtotime($donacion->date)>time())--}}
+                            @if(strtotime($donacion->date)>time())
                                 <div class="alert-blocks alert-blocks-{{$donacion_color[$donacion->id%count($donacion_color)]}}">
                                     <div class="overflow-h">
-                                        <strong class="color-{{$$donacion_font_color[$donacion->id%count($donacion_font_color)]}}">{{$donacion->monto}}
+                                        <strong class="color-{{$$donacion_font_color[$donacion->id%count($donacion_font_color)]}}">{{$donacion->montodonacion}}
                                             <small class="pull-right"><em>{{date('d M Y',strtotime($donacion->created_at))}}</em></small>
                                         </strong>
                                     </div>
                                 </div>
-                             {{--@endif--}}
+                             @endif
                             @endforeach
                         @endif
 
