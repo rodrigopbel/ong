@@ -33,11 +33,14 @@
 			<!-- BEGIN PAGE CONTENT-->
 <div class="row">
     <div class="col-md-12">
-        {{Form::open(array('class'=>'form-horizontal form-bordered','method'=>'POST'))}}
+        {{Form::open(array('id' => 'reporte-form'))}}
         <div class="col-md-8">
+
+            <div id="alert"></div>
             <label for="">Seleccione el Beneficiario para el reporte: </label>
-            {{ Form::select('beneficiarioID', $beneficiarios,null,['id'=>'beneficiario','class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
+            {{ Form::select('beneficiarioID', $beneficiarios,null,['id'=>'beneficiario','name' => 'beneficiario','class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
             <button type="submit" data-loading-text="Generando..." class="demo-loading-btn btn green generarReporte"><i class="fa fa-check"></i> Generar Reporte</button>
+            <button type="submit" class="btn-u btn-block input-group" id="submitbutton" onclick="reporte();return false;">Generar Reporte </button>
         </div>
         {{ Form::close() }}
     </div>
@@ -114,107 +117,51 @@
 	{{ HTML::script("assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js")}}
 
 <!-- END PAGE LEVEL PLUGINS -->
-	<script>
-        $('#beneficiario').on('change',function(){
-            data = {
-                'id' : $(this).val()
-            };
-            console.log(data);
-        });
+<script>
+    function login(){
 
-        $('.generarReporte').on('click',function(){
-            console.log("entro auqi");
-            id = $('#beneficiario').val();
-            $('#reportes').dataTable( {
-                "bProcessing": true,
-                "bServerSide": true,
-                "sAjaxSource": "{{ route("admin/reportes/"+id) }}",
-                "aaSorting": [[ 1, "asc" ]],
-                "aoColumns": [
-                    { 'sClass': 'center', "bSortable": true  },
-                    { 'sClass': 'center', "bSortable": true  },
-                    { 'sClass': 'center', "bSortable": true },
-                    { 'sClass': 'center', "bSortable": true },
-                    { 'sClass': 'center', "bSortable": true },
-                    { 'sClass': 'center', "bSortable": true },
-                    { 'sClass': 'center', "bSortable": true },
-                    { 'sClass': 'center', "bSortable": true },
-                    { 'sClass': 'center', "bSortable": true },
-                    { 'sClass': 'center', "bSortable": false }
+        $('#alert').html('<div class="alert alert-info"><span class="fa fa-info"></span> {{Lang::get('messages.submitting')}}</div>');
+        $("#submitbutton").prop('disabled', true);
 
+        $.ajax({
+            type: "POST",
+            url: " {{ URL::to('/reportesben') }} ",
+            dataType: 'json',
+            data: $('#reporte-form').serialize()
 
-                ],
-                "columnDefs": [
+        }).done( function( response ) {
+
+            $('#alert').html('');
+            if(response.status == "success")
+            {
+                $('#alert').html('<div class="alert alert-success alert-dismissable"><span class="fa fa-check"></span> '+response.msg+'</div>');
+                $('.input-group').remove();
+                $('#submitbutton').remove();
+                window.location.href= "{{route('donaciones')}}";
+            }
+            else if(response.status == "error")
+            {
+
+                var arr = response.msg;
+                var alert1 ='';
+
+                $("#submitbutton").prop('disabled', false);
+
+                $.each(arr, function(index, value)
+                {
+                    if (value.length != 0)
                     {
-                        "targets": [ 0 ],
-                        "visible": false,
-                        "searchable": false
-                    },{
-                        "targets": [ 5 ],
-                        "visible": false,
-                        "searchable": true
+                        alert1 += '<p>&#10006;  '+ value+ '</p>';
+
                     }
-                ],
-                "lengthMenu": [
-                    [5, 15, 20, -1],
-                    [5, 15, 20, "All"] // change per page values here
-                ],
-                "sPaginationType": "full_numbers",
-                "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
-                    var row = $(nRow);
-                    row.attr("id", 'row'+aData['0']);
-                }
+                });
 
-            });
+                $('#alert').html('<div class="alert alert-danger alert-dismissable"> '+alert1+'</div>');
+
+            }
+
         });
-        {{--$('.generarReporte').on('click', function(){--}}
-{{--//            alert($('#beneficiario').val());--}}
-{{--//            console.log($('#beneficiario').val());--}}
-            {{--var id = $('#beneficiario').val();--}}
-            {{--var data = {--}}
-                {{--'id' : id--}}
-            {{--};--}}
-            {{--$.ajax({--}}
-                {{--url: '{{route("admin.ajax_reportes")}}',--}}
-                {{--type: 'GET',--}}
-                {{--data : data,--}}
-                {{--dataType: 'JSON',--}}
-                {{--beforeSend: function(){--}}
-                    {{--console.log("generando reporte");--}}
-                {{--},--}}
-                {{--error : function (){--}}
-                    {{--console.log("surgio algun error");--}}
-                {{--},--}}
-                {{--success: function(respuesta){--}}
-
-                        {{--console.log(respuesta);--}}
-{{--//                    }--}}
-                {{--}--}}
-            {{--});--}}
-        {{--});--}}
-        {{--$('form').on('submit',function(e){--}}
-            {{--e.preventDefault();--}}
-            {{--$.ajax({--}}
-                {{--url: '{{route("admin.ajax_reportes")}}',--}}
-                {{--type: 'GET',--}}
-                {{--data : data,--}}
-                {{--dataType: 'JSON',--}}
-                {{--beforeSend: function(){--}}
-                    {{--console.log("generando reporte");--}}
-                {{--},--}}
-                {{--error : function (e){--}}
-                    {{--console.log(e);--}}
-                {{--},--}}
-                {{--success: function(respuesta){--}}
-                    {{--if(respuesta){--}}
-                        {{--console.log(respuesta);--}}
-                    {{--}--}}
-                {{--}--}}
-            {{--});--}}
-        {{--});--}}
-
-
-
+    }
 </script>
 @stop
 	

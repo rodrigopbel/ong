@@ -55,24 +55,16 @@ class ReportsController extends \AdminBaseController {
 
 
     }
-    public function genrepo($id)
+    public function genrepo()
     {
-        $result =
-            Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','requerimiento','centroSalud','nit','numfactura','gastos','ayudas.created_at')
-                ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
-                ->orderBy('ayudas.created_at','desc');
-
-        return Datatables::of($result)
-            ->add_column('Por el Mes',function($row) {
-                return ucfirst($row->created_at).' '.$row->created_at;
-            })
-            ->add_column('edit', '
-                        <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
-                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $apellidos}}\',\'{{ $requerimiento }}\');return false;" class="btn red">
-                        <i class="fa fa-trash"></i></a>')
-
-            ->remove_column('created_at')
-            ->make();
+        if(Request::ajax())
+        {
+            $output = [];
+            $input = Input::all();
+            $idBen = $input['beneficiario'];
+            $this->data['ayudasben'] = Ayuda::where('beneficiarioID','=',$idBen)->get();
+            return Response::json($this->data['ayudasben'],200);
+        }
     }
     public function reportesben()
     {
