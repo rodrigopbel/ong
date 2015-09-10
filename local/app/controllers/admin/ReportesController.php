@@ -29,7 +29,7 @@ class ReportsController extends \AdminBaseController {
 //            echo ($ben->ayudas);
 //
 //        }
-        $ben = Beneficiario::find('666');
+        $ben = Beneficiario::where('beneficiarioID','666');
         echo $ben;
         echo('***********');
 //        echo (json_encode($result));
