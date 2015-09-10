@@ -1,5 +1,5 @@
 @extends('admin.adminlayouts.adminlayout')
-
+{{dd("dentro")}}
 @section('head')
 
 	<!-- BEGIN PAGE LEVEL STYLES -->
