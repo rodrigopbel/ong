@@ -64,10 +64,16 @@ body {
 .reg-block-header p {
 	text-align: center;
 }
-
+.voluntaio{
+    width: 100%;
+}
 .vol{
     background:#D14D00 ;
-    color:#fff;
+    color: #fff;
+    padding: 20px;
+    font-size: 16px;
+    text-align: center;
+
 }
 
 /*For Mobile Devices*/
