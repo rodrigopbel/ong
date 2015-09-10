@@ -335,52 +335,52 @@
 
     <script>
 
-    	$(document).ready(function() {
+    	{{--$(document).ready(function() {--}}
 
-    		$('#calendar').fullCalendar({
-    //			defaultDate: '2014-11-12',
-    			editable: false,
-    			eventLimit: true, // allow "more" link when too many events
-			eventRender: function(event, element) {
-						if(event.className=="holiday"){
-							var dataToFind = moment(event.start).format('YYYY-MM-DD');
-                            	$('.fc-day[data-date="'+dataToFind+'"]').css('background', 'rgba(255, 224, 205, 1)');
-                            }
-				},
-    			events: [
+    		{{--$('#calendar').fullCalendar({--}}
+    {{--//			defaultDate: '2014-11-12',--}}
+    			{{--editable: false,--}}
+    			{{--eventLimit: true, // allow "more" link when too many events--}}
+			{{--eventRender: function(event, element) {--}}
+						{{--if(event.className=="holiday"){--}}
+							{{--var dataToFind = moment(event.start).format('YYYY-MM-DD');--}}
+                            	{{--$('.fc-day[data-date="'+dataToFind+'"]').css('background', 'rgba(255, 224, 205, 1)');--}}
+                            {{--}--}}
+				{{--},--}}
+    			{{--events: [--}}
 
     				    {{-- Attendance on calendar --}}
-                        @foreach($attendance as $attend)
-                        {
+                        {{--@foreach($attendance as $attend)--}}
+                        {{--{--}}
 
-                            title: "{{$attend->status}}",
-                            start:'{{$attend->date}}',
+                            {{--title: "{{$attend->status}}",--}}
+                            {{--start:'{{$attend->date}}',--}}
 
-                            @if($attend->status=='absent')
-                                	color: '#e50000',
-                                 	title: "{{$attend->status}}-{{$attend->leaveType}}",
-                             @endif
+                            {{--@if($attend->status=='absent')--}}
+                                	{{--color: '#e50000',--}}
+                                 	{{--title: "{{$attend->status}}-{{$attend->leaveType}}",--}}
+                             {{--@endif--}}
 
 
-                        },
-                        @endforeach
+                        {{--},--}}
+                        {{--@endforeach--}}
 
                         {{--Holidays on Calendar--}}
-                        @foreach($holidays as $holiday)
-                        {
-                        	className:"holiday",
-                            title: "{{$holiday->occassion}}",
-                            start:'{{$holiday->date}}',
-                            color: 'grey'
+                        {{--@foreach($holidays as $holiday)--}}
+                        {{--{--}}
+                        	{{--className:"holiday",--}}
+                            {{--title: "{{$holiday->occassion}}",--}}
+                            {{--start:'{{$holiday->date}}',--}}
+                            {{--color: 'grey'--}}
 
-                        },
-                        @endforeach
-    			]
-    		});
+                        {{--},--}}
+                        {{--@endforeach--}}
+    			{{--]--}}
+    		{{--});--}}
 
 
 
-    	});
+    	{{--});--}}
 
     	function show_notice(id)
     	{
