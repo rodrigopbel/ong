@@ -45,40 +45,8 @@
 
                 <div class="portlet-body">
                     {{--------------------Personal Info Form--------------------------------------------}}
-                    {{Form::open(['method' => 'PATCH','route'=> ['admin.beneficiarios.update', $beneficiario->beneficiarioID],'class'   =>  'form-horizontal','id'  =>  'personal_details_form','files'=>true])}}
+
                     <div class="form-body">
-                        <div class="form-group ">
-                            <label class="control-label col-md-3">Foto</label>
-
-                            <div class="col-md-9">
-                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                        {{HTML::image("/profileImages/{$beneficiario[0]->foto}",'foto')}}
-                                        <input type="hidden" name="hiddenImage" value="{{$beneficiario[0]->foto}}">
-                                    </div>
-                                    <div class="fileinput-preview fileinput-exists thumbnail"
-                                         style="max-width: 200px; max-height: 150px;">
-                                    </div>
-                                    <div>
-        													<span class="btn default btn-file">
-        													<span class="fileinput-new">
-        													Sellecionar imagen </span>
-        													<span class="fileinput-exists">
-        													Cambiar </span>
-        													<input type="file" name="foto">
-        													</span>
-                                        <a href="#" class="btn red fileinput-exists" data-dismiss="fileinput">
-                                            Eliminar </a>
-                                    </div>
-                                </div>
-
-                                <div class="clearfix margin-top-10">
-                                                            <span class="label label-danger">
-                                                            NOTA! </span> Tamano de imagen (872px x 724px)
-
-                                </div>
-                            </div>
-                        </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Nombres<span class="required">* </span></label>
 
@@ -168,7 +136,7 @@
                             </div>
                         </div>
                     </div>
-                    {{Form::close()}}
+
                 </div>
             </div>
         </div>
