@@ -37,7 +37,6 @@
             <div class="row margin-bottom-20">
                 <!--Profile Post-->
                 <div class="col-sm-6">
-                    <div class="panel panel-profile no-bg">
                         <div class="panel-heading overflow-h">
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Aportante</h2>
                         </div>
