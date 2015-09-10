@@ -25,10 +25,12 @@ class ReportsController extends \AdminBaseController {
         $bens = Beneficiario::all();
         foreach($bens as $ben)
         {
-            $result[] = $ben->ayudas()->where('beneficiarioID','=','666');
+//            $result[] = $ben->ayudas()->where('beneficiarioID','=','666');
+            echo ($ben->ayudas);
+
         }
         echo('***********');
-        echo (json_encode($result));
+//        echo (json_encode($result));
 //        dd( Datatables::of($result));
 //        return View::make('admin.reportes.index', $this->data);
     }
