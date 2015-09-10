@@ -61,7 +61,7 @@ class ReportsController extends \AdminBaseController {
     }
     public function ReporteGen()
     {
-        return "hola reportes Beneficiarios";
+        return Input::get('id');
     }
     public function reportestran()
     {
