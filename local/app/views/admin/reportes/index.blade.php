@@ -119,11 +119,14 @@
 <!-- END PAGE LEVEL PLUGINS -->
 
 	<script>
-        $('.generarReporte').bind('click',function(e){
-            e.preventDefault();
-            alert($('#benefeciario').value);
-            console.log("error");
+    $(document).ready(function(){
+        $('#beneficiario').on('change',function(){
+            var data = {
+                'id' : $(this).val()
+            }
+            console.log(data);
         });
+    });
 
        	{{--$('#reportes').dataTable( {--}}
             {{--"bProcessing": true,--}}
