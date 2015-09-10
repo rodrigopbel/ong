@@ -7,7 +7,7 @@
     <!-- END PAGE LEVEL STYLES -->
 @stop
 
-
+{{$beneficiario}}
 @section('mainarea')
 
     <!-- BEGIN PAGE HEADER-->
