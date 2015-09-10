@@ -49,6 +49,7 @@ class ReportsController extends \AdminBaseController {
             $input = Input::all();
             $id = json_decode($input);
             $idBen = $id -> id;
+            var_dump($idBen);
             $ayudas = new stdClass();
             $ayudas->idBen = $idBen;
             $ayudas->name = "guillermo";
