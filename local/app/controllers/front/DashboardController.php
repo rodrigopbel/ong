@@ -15,7 +15,7 @@ class DashboardController extends \BaseController {
         $this->data['personal']        =    Personal::find(Auth::personales()->get()->id);
         $this->data['donaciones']      =    Donacion::where('aportanteID', '=', Auth::personales()->get()->personalID)->get();
         $this->data['ayudas']          =    Ayuda::where('aportanteID', '=', Auth::personales()->get()->personalID)->get();
-        $this->data['beneficiarios']   =    Beneficiario::where('beneficiarioID', '=',('ayudas')->get();
+        $this->data['beneficiarios']   =    Beneficiario::where('beneficiarioID', '=', $this->data['ayudas'] )->get();
 
 //        $this->data['donaciones']      =    Donacion::where('personalID', '=', )
 //                                                        select('monto')->orderBy('created_at','desc')->get();
