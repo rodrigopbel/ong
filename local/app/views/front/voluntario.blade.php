@@ -70,6 +70,12 @@
         </div>
     </div>
     <div class="form-group">
+        <label class="col-md-3 control-label">Genero</label>
+        <div class="col-md-9">
+            {{ Form::select('genero', array('Hombre' => 'Hombre', 'Mujer' => 'Mujer', 'Otros' => 'Otros'), Input::old('genero'),array('class'=>'form-control')) }}
+        </div>
+    </div>
+    <div class="form-group">
         <label class="control-label visible-ie8 visible-ie9">Telefono</label>
         <div class="input-icon">
             <i class="fa fa-lock"></i>
