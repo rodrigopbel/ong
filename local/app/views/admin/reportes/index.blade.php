@@ -153,6 +153,7 @@
                 url: '{{route("admin.ajax_reportes")}}',
                 type: 'POST',
                 data : {id : $('#beneficiario').val()},
+                contentType: 'application/x-www-form-urlencoded',
                 dataType: 'JSON',
                 beforeSend: function(){
                     console.log("generando reporte");
