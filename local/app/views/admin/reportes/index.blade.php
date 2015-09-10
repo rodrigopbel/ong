@@ -33,14 +33,15 @@
 			<!-- BEGIN PAGE CONTENT-->
 <div class="row">
     <div class="col-md-12">
-        {{Form::open(array('id' => 'reporte-form'))}}
+        {{--{{Form::open(array('id' => 'reporte-form',''))}}--}}
+        {{ Form::open(['route' => 'ReporteBen', 'method' => 'GET', 'role' => 'form']) }}
         <div class="col-md-8">
 
             <div id="alert"></div>
             <label for="">Seleccione el Beneficiario para el reporte: </label>
             {{ Form::select('beneficiarioID', $beneficiarios,null,['id'=>'beneficiario','name' => 'beneficiario','class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
             <button type="submit" data-loading-text="Generando..." class="demo-loading-btn btn green generarReporte"><i class="fa fa-check"></i> Generar Reporte</button>
-            <button type="submit" class="btn-u btn-block input-group" id="submitbutton" onclick="reporte();return false;">Generar Reporte </button>
+
         </div>
         {{ Form::close() }}
     </div>
@@ -118,50 +119,7 @@
 
 <!-- END PAGE LEVEL PLUGINS -->
 <script>
-    function login(){
 
-        $('#alert').html('<div class="alert alert-info"><span class="fa fa-info"></span> {{Lang::get('messages.submitting')}}</div>');
-        $("#submitbutton").prop('disabled', true);
-
-        $.ajax({
-            type: "POST",
-            url: " {{ URL::to('/reportesben') }} ",
-            dataType: 'json',
-            data: $('#reporte-form').serialize()
-
-        }).done( function( response ) {
-
-            $('#alert').html('');
-            if(response.status == "success")
-            {
-                $('#alert').html('<div class="alert alert-success alert-dismissable"><span class="fa fa-check"></span> '+response.msg+'</div>');
-                $('.input-group').remove();
-                $('#submitbutton').remove();
-                window.location.href= "{{route('donaciones')}}";
-            }
-            else if(response.status == "error")
-            {
-
-                var arr = response.msg;
-                var alert1 ='';
-
-                $("#submitbutton").prop('disabled', false);
-
-                $.each(arr, function(index, value)
-                {
-                    if (value.length != 0)
-                    {
-                        alert1 += '<p>&#10006;  '+ value+ '</p>';
-
-                    }
-                });
-
-                $('#alert').html('<div class="alert alert-danger alert-dismissable"> '+alert1+'</div>');
-
-            }
-
-        });
-    }
 </script>
 @stop
 	

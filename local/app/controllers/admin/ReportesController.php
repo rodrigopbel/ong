@@ -55,20 +55,12 @@ class ReportsController extends \AdminBaseController {
 
 
     }
-    public function genrepo()
+    public function ReporteBen()
     {
-        if(Request::ajax())
-        {
-            $output = [];
-            $input = Input::all();
-            $idBen = $input['beneficiario'];
-            $this->data['ayudasben'] = Ayuda::where('beneficiarioID','=',$idBen)->get();
-            return Response::json($this->data['ayudasben'],200);
-        }
+       return Redirect::route('ReporteBen',[Input::get('beneficiario')]);
     }
-    public function reportesben()
+    public function ReporteGen()
     {
-        $this->data['reporteActive']    =   'active';
         return "hola reportes Beneficiarios";
     }
     public function reportestran()
