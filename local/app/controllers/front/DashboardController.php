@@ -46,7 +46,7 @@ class DashboardController extends \BaseController {
 	{
         $this->data['leaveActive'] =    'active';
 
-        $this->data['attendance']         = Attendance::where('employeeID', '=',  $this->data['employeeID'] )->get();
+//        $this->data['attendance']         = Attendance::where('employeeID', '=',  $this->data['employeeID'] )->get();
 
         return View::make('front.leave',$this->data);
 	}
