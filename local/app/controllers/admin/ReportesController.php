@@ -29,17 +29,9 @@ class ReportsController extends \AdminBaseController {
 //            echo ($ben->ayudas);
 //
 //        }
-        $ben = Ayuda::where('beneficiarioID','=','666')->get();
-
-        $don = Donacion::where('aportanteID','=','321')->get();
-        $b = json_decode($ben);
-//        $benA = $ben->aportanteID;
-        print_r ($b);
 
 
-//        echo (json_encode($result));
-//        dd( Datatables::of($result));
-//        return View::make('admin.reportes.index', $this->data);
+        return View::make('admin.reportes.index', $this->data);
     }
 
 
@@ -47,38 +39,16 @@ class ReportsController extends \AdminBaseController {
     //Datatable ajax request
     public function ajax_reportes()
     {
-
-//        $result   =   Ayuda::join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
-//            ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
-//            ->join('personal', 'ayudas.aportanteID', '=', 'personal.personalID')
-//            ->select('ayudas.id','beneficiarios.nombres','requerimiento','created_at','donaciones.montodonacion','gastos',('donaciones.montodonacion'-'gastos'))
-//            ->where('personal','personal.tipoPersonal','=','aportante')
-//            ->orderBy('beneficiarios.apellidos','asc')
-//            ->groupBy('ayudas.id')
-//            ->get();
-//        $result = Ayuda::select('ayudas.id','beneficiarios.nombres','requerimiento','created_at','donaciones.montodonacion','gastos',('donaciones.montodonacion'-'gastos'))
-//                ->join('personal', 'ayudas.aportanteID', '=', 'personal.personalID')
-//                ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
-//                ->join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
-//                ->where('personal','personal.tipoPersonal','=','aportante')
-//                ->groupBy('ayudas.id');
-//
-//        return Datatables::of($result)
-//
-//            ->make();
-
-//        echo $result;
         if(Request::ajax()){
-            $idBen = Input::get('id');
-            $ayudas = Ayuda::select('ayudas.created_at','ayudas.gastos')
-                                    ->join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
-                                    ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
-                                    ->groupBy('ayudas.id');
-            $input = Input::all();
-//            return Response::json($input);
-            var_dump($ayudas);
-            $json_ayudas = json_encode($ayudas);
-            return Response::json($json_ayudas);
+
+            $idBenObject = Input::get('id');
+//            $idBen = json_decode($idBenObject);
+            $ben = Ayuda::where('beneficiarioID','=',$idBenObject)->get();
+            $b = json_decode($ben);
+            $don = Donacion::where('aportanteID','=',$b[0]->aportanteID)->get();
+
+//            echo ($don);
+            return Response::json(Input::all());
         }else{
             return Response::json("error de sintaxis");
         }
