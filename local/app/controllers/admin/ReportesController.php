@@ -17,11 +17,16 @@ class ReportsController extends \AdminBaseController {
                                 ->where('status','=','activo')
                                 ->lists('apellidos','beneficiarioID');
 //       666
-        $result =
-            Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','requerimiento','centroSalud','nit','numfactura','gastos','ayudas.created_at')
-                ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
-                ->orderBy('ayudas.created_at','desc')
-                ->get();
+//        $result =
+//            Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','requerimiento','centroSalud','nit','numfactura','gastos','ayudas.created_at')
+//                ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
+//                ->orderBy('ayudas.created_at','desc')
+//                ->get();
+        $bens = Beneficiario::all();
+        foreach($bens as $ben)
+        {
+            $result[] = $ben->ayudas()->where('beneficiarioID','=','666');
+        }
         echo('***********');
         echo ($result);
 //        dd( Datatables::of($result));
