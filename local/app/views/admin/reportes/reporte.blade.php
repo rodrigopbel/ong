@@ -12,7 +12,7 @@
 
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title" xmlns="http://www.w3.org/1999/html">
-        Reporte del Beneficiario
+        Detalles del Beneficiario
     </h3>
     <div class="page-bar">
         <ul class="page-breadcrumb">
@@ -25,6 +25,10 @@
                 <a href="{{route('admin.beneficiarios.index')}}">Beneficiarios</a>
                 <i class="fa fa-angle-right"></i>
             </li>
+            <li>
+                <a href="">Editar </a>
+
+            </li>
         </ul>
     </div>
     <!-- END PAGE HEADER-->
@@ -33,8 +37,9 @@
             <div class="row margin-bottom-20">
                 <!--Profile Post-->
                 <div class="col-sm-6">
+                    <div class="panel panel-profile no-bg" style="border-radius:10px; border:1px solid black">
                         <div class="panel-heading overflow-h">
-                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Beneficiario</h2>
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Aportante</h2>
                         </div>
                         <div class="panel-body panelHolder">
                             <table class="table table-light margin-bottom-0">
@@ -44,7 +49,7 @@
                                         <span class="primary-link">Nombre</span>
                                     </td>
                                     <td>
-                                        {{$beneficiario[0]->nombres}}
+                                        David
                                     </td>
                                 </tr>
                                 <tr>
@@ -52,7 +57,7 @@
                                         <span class="primary-link">Apellidos</span>
                                     </td>
                                     <td>
-                                        {{$beneficiario[0]->apellidos}}
+                                        Vargas
                                     </td>
                                 </tr>
                                 <tr>
@@ -60,7 +65,7 @@
                                         <span class="primary-link">Genero</span>
                                     </td>
                                     <td>
-                                        {{ucfirst($beneficiario[0]->genero)}}
+                                        Hombre
                                     </td>
                                 </tr>
                                 <tr>
@@ -68,7 +73,7 @@
                                         <span class="primary-link">Email</span>
                                     </td>
                                     <td>
-                                        {{$beneficiario[0]->email}}
+                                        davidvargas@gmail.com
                                     </td>
                                 </tr>
                                 <tr>
@@ -76,7 +81,7 @@
                                         <span class="primary-link">Telefono</span>
                                     </td>
                                     <td>
-                                        {{$beneficiario[0]->telefono}}
+                                        76543210
                                     </td>
                                 </tr>
                                 <tr>
@@ -84,7 +89,7 @@
                                         <span class="primary-link">Direccion</span>
                                     </td>
                                     <td>
-                                        {{$beneficiario[0]->direccion}}
+                                        zona villa fatima
                                     </td>
                                 </tr>
 
@@ -92,29 +97,74 @@
                             </table>
                         </div>
                     </div>
+                    <div class="panel-heading overflow-h">
+                        <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Aportante</h2>
+                    </div>
+                    <div class="panel-body panelHolder">
+                        <table class="table table-light margin-bottom-0">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <span class="primary-link">Nombre</span>
+                                </td>
+                                <td>
+                                    {{$beneficiario[0]->nombres}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="primary-link">Apellidos</span>
+                                </td>
+                                <td>
+                                    {{$beneficiario[0]->apellidos}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="primary-link">Genero</span>
+                                </td>
+                                <td>
+                                    {{ucfirst($beneficiario[0]->genero)}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="primary-link">Email</span>
+                                </td>
+                                <td>
+                                    {{$beneficiario[0]->email}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="primary-link">Telefono</span>
+                                </td>
+                                <td>
+                                    {{$beneficiario[0]->telefono}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="primary-link">Direccion</span>
+                                </td>
+                                <td>
+                                    {{$beneficiario[0]->direccion}}
+                                </td>
+                            </tr>
 
-                </div>
-            <div class="col-sm-6">
-                <div class="panel-heading overflow-h">
-                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Ayudas</h2>
-                </div>
-                <div class="panel-body panelHolder">
-                    <table class="table table-light margin-bottom-0">
-                        <tbody>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-
         </div>
-            </div>
-            <hr>
-        </div>
+        <hr>
+    </div>
     </div>
 
 
     {{------------------------------------END NEW SALARY ADD MODALS--------------------------------------}}
-{{--@stop--}}
+@stop
 @section('footerjs')
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     {{ HTML::script('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js')}}
