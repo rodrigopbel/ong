@@ -39,7 +39,7 @@ class ReportsController extends \AdminBaseController {
         echo('***********');
         $b = json_decode($ben);
         $benA = $ben->aportanteID;
-        echo ($benA);
+        echo ($b);
 
 
 //        echo (json_encode($result));
