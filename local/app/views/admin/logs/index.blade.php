@@ -7,7 +7,7 @@
 	<!-- END PAGE LEVEL STYLES -->
 
 @stop
-
+{{dd('23232')}}
 
 @section('mainarea')
 
