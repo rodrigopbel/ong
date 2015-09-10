@@ -17,7 +17,7 @@ class ReportsController extends \AdminBaseController {
                                 ->where('status','=','activo')
                                 ->lists('apellidos','beneficiarioID');
 //       666
-        $ayudas= Ayuda::find('666');
+        $ayudas= Ayuda::all();
         dd($ayudas);
 //        return View::make('admin.reportes.index', $this->data);
     }
