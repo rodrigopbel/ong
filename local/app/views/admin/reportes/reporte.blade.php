@@ -12,7 +12,7 @@
 
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title" xmlns="http://www.w3.org/1999/html">
-        Reporte del Beneficiario {{$beneficiios[0]->nombres}}
+        Reporte del Beneficiario
     </h3>
     <div class="page-bar">
         <ul class="page-breadcrumb">
@@ -24,10 +24,6 @@
             <li>
                 <a href="{{route('admin.beneficiarios.index')}}">Beneficiarios</a>
                 <i class="fa fa-angle-right"></i>
-            </li>
-            <li>
-                <a href="">Editar </a>
-
             </li>
         </ul>
     </div>
@@ -105,16 +101,6 @@
                 <div class="panel-body panelHolder">
                     <table class="table table-light margin-bottom-0">
                         <tbody>
-                        {{--@foreach($beneficiario[0][ayudas] as $ayuda)--}}
-                        {{--<tr>--}}
-                            {{--<td>--}}
-                                {{--<span class="primary-link">Requerimiento</span>--}}
-                            {{--</td>--}}
-                            {{--<td>--}}
-                                {{--{{$ayuda->requerimiento}}--}}
-                            {{--</td>--}}
-                        {{--</tr>--}}
-                        {{--@endforeach--}}
                         </tbody>
                     </table>
                 </div>
