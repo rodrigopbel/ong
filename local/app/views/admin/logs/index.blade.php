@@ -57,7 +57,7 @@
                                 ID Beneficiario o Personal
                             </th>
                             <th style="text-align: center">
-                                tipo de contenido
+                                Tipo de contenido
                             </th>
                             <th class="text-center">
                                 Accion
@@ -70,6 +70,9 @@
                             </th>
                             <th class="text-center">
                                 Fecha de Actividad
+                            </th>
+                            <th class="text-center">
+
                             </th>
                         </tr>
                         </thead>
@@ -95,6 +98,9 @@
                                 </td>
                                 <td>
                                     {{ $log->created_at }}
+                                </td>
+                                <td>
+
                                 </td>
                             </tr>
                         @endforeach
