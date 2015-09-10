@@ -72,31 +72,18 @@
                                        value="{{$beneficiario->apellidos}}">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Fecha de Nacimiento</label>
-                            <div class="col-md-3">
-                                <div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy"
-                                     data-date-viewmode="years">
-                                    <input type="text" class="form-control" name="date_of_birth" readonly
-                                        value="@if(empty($beneficiario->fechanac))@else{{date('d-m-Y',strtotime($beneficiario->fechanac))}}@endif">
-                                        <span class="input-group-btn">
-                                        <button class="btn default" type="button"><i
-                                                    class="fa fa-calendar"></i></button>
-                                        </span>
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="form-group">
                             <label class="col-md-3 control-label">Genero</label>
 
                             <div class="col-md-9">
                                 <select class="form-control" name="genero">
 
-                                    <option value="hombre" @if($beneficiario->genero=='hombre') selected @endif>Varon
+                                    <option value="hombre" @if($beneficiario->genero=='Hombre') selected @endif>Hombre
                                     </option>
-                                    <option value="mujer"  @if($beneficiario->genero=='mujer') selected @endif>Mujer
+                                    <option value="mujer"  @if($beneficiario->genero=='Mujer') selected @endif>Mujer
                                     </option>
-                                    <option value="otros"  @if($beneficiario->genero=='otros') selected @endif>Otros
+                                    <option value="otros"  @if($beneficiario->genero=='Otros') selected @endif>Otros
                                     </option>
                                 </select>
                             </div>
