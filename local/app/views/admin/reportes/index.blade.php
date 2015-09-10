@@ -123,6 +123,7 @@
         });
 
         $('.generarReporte').on('click',function(){
+            console.log("entro auqi");
             id = $('#beneficiario').val();
             $('#reportes').dataTable( {
                 "bProcessing": true,
