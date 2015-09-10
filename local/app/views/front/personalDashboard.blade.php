@@ -209,7 +209,7 @@
                         </div>
                         <div id="scrollbar3" class="panel-body contentHolder">
                             <div class="overflow-h">
-                                <strong class="color-dark">Descripcion  <small class="pull-right"><em>Fecha de Doancion</em></small></strong>
+                                <strong class="color-dark">  Descripcion<small class="pull-right"><em>Fecha de Donacion</em></small></strong>
                                 <small class="award-name">Monto</small>
                             </div>
                             @foreach($donaciones as $donacion)
