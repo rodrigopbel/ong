@@ -124,7 +124,7 @@
             				<p>
             				<h3 style="text-align: center">{{ $personal->nombres . " ". $personal->apellidos }}</h3>
             				<h6 style="text-align: center">{{$personal->getObjetivo->destinos->destino}}</h6>
-            				<h6 style="text-align: center;background: rgb(235, 235, 235);padding: 10px;"><strong>En Solicitud hace : </strong>{{$personal->duracionVinculacion($personal->personalID)}}</h6>
+            				{{--<h6 style="text-align: center;background: rgb(235, 235, 235);padding: 10px;"><strong>En Solicitud hace : </strong>{{$personal->duracionVinculacion($personal->personalID)}}</h6>--}}
             				</p>
                             <hr>
             				<div class="service-block-v3 service-block-u">
