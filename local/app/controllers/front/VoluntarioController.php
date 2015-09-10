@@ -19,9 +19,7 @@ class VoluntarioController extends \BaseController {
 
         DB::beginTransaction();
         try {
-            $nombres = $input['nombres'];
-            $apellidos = $input['apellidos'];
-dd("holalsd");
+
             Voluntario::create([
                 'personalID'    => $input['personalID'],
                 'nombres'      => ucwords(strtolower($input['nombres'])),
