@@ -70,6 +70,7 @@ class ReportsController extends \AdminBaseController {
             foreach($this->data['beneficiario'] as $ben)
             {
                 $this->data['beneficiario']['ayudas'] = $ben->ayudas;
+                $this->data['beneficiario']['donaciones'] = $ben->donaciones;
             }
             return $this->data;
         } else {
