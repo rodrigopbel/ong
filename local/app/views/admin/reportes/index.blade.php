@@ -121,7 +121,7 @@
 	<script>
         $('.generarReporte').bind('click',function(e){
             e.preventDefault();
-            alert($('.benefeciario').val());
+            alert($('#benefeciario').val());
         });
 
        	{{--$('#reportes').dataTable( {--}}
