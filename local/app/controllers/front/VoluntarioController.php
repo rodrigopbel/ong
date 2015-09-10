@@ -12,7 +12,14 @@ class VoluntarioController extends \BaseController {
     {
 
         $input  = Input::all();
-
+        $rules  =[
+            'nombres'     => 'required',
+            'apellidos'   => 'required',
+            'ci'          => 'required|ci|unique:personal',
+            'telefono'    => 'required',
+            'email'	      => 'required|email'
+        ];
+        $validator	= Validator::make($input,$rules);
         $tipo = 'Voluntario';
         Personal::create([
             'nombres'    => $input['nombres'],
