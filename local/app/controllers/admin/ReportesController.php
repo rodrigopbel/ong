@@ -16,7 +16,14 @@ class ReportsController extends \AdminBaseController {
         $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (ID:", beneficiarioID,")") as apellidos, beneficiarioID')
                                 ->where('status','=','activo')
                                 ->lists('apellidos','beneficiarioID');
-        return View::make('admin.reportes.index', $this->data);
+//       666
+        $result =
+            Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','requerimiento','centroSalud','nit','numfactura','gastos','ayudas.created_at')
+                ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
+                ->orderBy('ayudas.created_at','desc');
+
+        dd( Datatables::of($result));
+//        return View::make('admin.reportes.index', $this->data);
     }
 
 
