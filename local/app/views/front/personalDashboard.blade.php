@@ -158,30 +158,6 @@
                         </div>
                     </div>
 
-                    {{--<div class="panel panel-profile margin-top-20">--}}
-                        {{--<div class="panel-heading overflow-h">--}}
-                            {{--<h2 class="panel-title heading-sm pull-left"><i class="fa fa-send"></i> Donaciones</h2>--}}
-                        {{--</div>--}}
-                        {{--<div id="scrollbar3" class="panel-body contentHolder">--}}
-                         {{--@if(count($donaciones))--}}
-                            {{--@foreach($donaciones as $donacion)--}}
-                            {{--Donacion:--}}
-                            {{--@if(strtotime($donacion->date)>time())--}}
-                                {{--<div class="alert-blocks alert-blocks-{{$donacion_color[$donacion->id%count($donacion_color)]}}">--}}
-                                    {{--<div class="overflow-h">--}}
-                                        {{--<strong class="color-{{$$donacion_font_color[$donacion->id%count($donacion_font_color)]}}">{{$donacion->montodonacion}}--}}
-                                            {{--<small class="pull-right"><em>{{date('d M Y',strtotime($donacion->created_at))}}</em></small>--}}
-                                        {{--</strong>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                             {{--@endif--}}
-                            {{--@endforeach--}}
-                        {{--@endif--}}
-
-                        {{--</div>--}}
-                    {{--</div>--}}
-
-
                 </div>
                 <!--End Profile Event-->
 
