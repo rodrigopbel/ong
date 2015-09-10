@@ -12,6 +12,7 @@ class LogsController extends \AdminBaseController {
         parent::__construct();
         $this->data['logsOpen'] =   'active open';
         $this->data['pageTitle']     =   'Logs';
+        dd("error");
     }
 
     public function index()
