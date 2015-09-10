@@ -1,1 +1,1 @@
-{{ $this->data}}
+{{ $beneficiario}}
