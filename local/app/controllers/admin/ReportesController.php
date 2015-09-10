@@ -22,13 +22,15 @@ class ReportsController extends \AdminBaseController {
 //                ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
 //                ->orderBy('ayudas.created_at','desc')
 //                ->get();
-        $bens = Beneficiario::all();
-        foreach($bens as $ben)
-        {
-//            $result[] = $ben->ayudas()->where('beneficiarioID','=','666');
-            echo ($ben->ayudas);
-
-        }
+//        $bens = Beneficiario::all();
+//        foreach($bens as $ben)
+//        {
+////            $result[] = $ben->ayudas()->where('beneficiarioID','=','666');
+//            echo ($ben->ayudas);
+//
+//        }
+        $ben = Beneficiario::find('666');
+        echo $ben;
         echo('***********');
 //        echo (json_encode($result));
 //        dd( Datatables::of($result));
