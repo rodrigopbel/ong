@@ -57,7 +57,7 @@
                                 ID Beneficiario o Personal
                             </th>
                             <th style="text-align: center">
-                                tipo de contenido
+                                Tipo de contenido
                             </th>
                             <th class="text-center">
                                 Accion
