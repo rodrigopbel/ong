@@ -117,7 +117,6 @@
 	{{ HTML::script("assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js")}}
 
 <!-- END PAGE LEVEL PLUGINS -->
-
 	<script>
     $(document).ready(function(){
         $('#beneficiario').on('change',function(){
@@ -126,15 +125,14 @@
             }
             console.log(data);
         });
-
-        {{--$('.generarReporte').on('click', function(){--}}
-            {{--alert($('#beneficiario').val());--}}
-            {{--console.log($('#beneficiario').val());--}}
-            {{--var id = $('#beneficiario').val();--}}
-            {{--$.post('{{route("admin.ajax_reportes."+id)}}', data, function(data, textStatus, xhr){--}}
-               {{--console.log(data);--}}
-            {{--});--}}
-        {{--});--}}
+        $('.generarReporte').on('click', function(){
+//            alert($('#beneficiario').val());
+//            console.log($('#beneficiario').val());
+            var id = $('#beneficiario').val();
+            $.post('{{route("admin.ajax_reportes."+id)}}', data, function(data, textStatus, xhr){
+               console.log(data);
+            });
+        });
     });
 
        	{{--$('#reportes').dataTable( {--}}
