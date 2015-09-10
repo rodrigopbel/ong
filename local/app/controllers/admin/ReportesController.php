@@ -29,8 +29,8 @@ class ReportsController extends \AdminBaseController {
             $this->data['beneficiario'] = Beneficiario::where('beneficiarioID','=',Input::get('beneficiario'))->get();
             foreach($this->data['beneficiario'] as $ben)
             {
-                $this->data['beneficiario']['ayudas'] = $ben->ayudas;
-                $this->data['beneficiario']['donaciones'] = $ben->donaciones;
+                $this->data['ayudas'] = $ben->ayudas;
+                $this->data['donaciones'] = $ben->donaciones;
             }
 //            return( $this->data);
             return View::make('admin.reportes.reporte',$this->data);
