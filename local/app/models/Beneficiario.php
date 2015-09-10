@@ -186,24 +186,4 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
         return $this->hasMany('Ayuda','beneficiarioID','beneficiarioID');
     }
 
-	public function getActivityDescriptionForEvent($eventName)
-	{
-		if ($eventName == 'created')
-		{
-			return 'Beneficiario "' . $this->name . '" se creo';
-		}
-
-		if ($eventName == 'updated')
-		{
-			return 'Beneficiario "' . $this->name . '" se actualizo ';
-		}
-
-		if ($eventName == 'deleted')
-		{
-			return 'Beneficiario "' . $this->name . '" se borro';
-		}
-
-		return '';
-	}
-
 }
