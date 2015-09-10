@@ -7,7 +7,7 @@
 	<!-- END PAGE LEVEL STYLES -->
 
 @stop
-{{dd('23232')}}
+
 
 @section('mainarea')
 
@@ -171,37 +171,37 @@
 
 
 
-		function del(id,ayudaaName,ayuda)
-		{
+		{{--function del(id,ayudaaName,ayuda)--}}
+		{{--{--}}
 
-			$('#deleteModal').appendTo("body").modal('show');
-			$('#info').html('Esta seguro de Eliminar <strong>'+ayuda+'</strong> dado a <strong>'+ayudaaName+'</strong>??');
-			$("#delete").click(function()
-			{
-					var url = "{{ route('admin.ayudas.destroy',':id') }}";
-					url = url.replace(':id',id);
-					 $.ajax({
+			{{--$('#deleteModal').appendTo("body").modal('show');--}}
+			{{--$('#info').html('Esta seguro de Eliminar <strong>'+ayuda+'</strong> dado a <strong>'+ayudaaName+'</strong>??');--}}
+			{{--$("#delete").click(function()--}}
+			{{--{--}}
+					{{--var url = "{{ route('admin.ayudas.destroy',':id') }}";--}}
+					{{--url = url.replace(':id',id);--}}
+					 {{--$.ajax({--}}
 
-		                type: "DELETE",
-		                url : url,
-		                dataType: 'json',
-		                data: {"id":id}
+		                {{--type: "DELETE",--}}
+		                {{--url : url,--}}
+		                {{--dataType: 'json',--}}
+		                {{--data: {"id":id}--}}
 
-		            	}).done(function(response)
-		           		  {
+		            	{{--}).done(function(response)--}}
+		           		  {{--{--}}
 
-		               	 	 if(response.success == "deleted")
-		                 	 {
-		                 	 		$("html, body").animate({ scrollTop: 0 }, "slow");
-		                  	   		$('#deleteModal').modal('hide');
-		                  	   		 $('#row'+id).fadeOut(500);
+		               	 	 {{--if(response.success == "deleted")--}}
+		                 	 {{--{--}}
+		                 	 		{{--$("html, body").animate({ scrollTop: 0 }, "slow");--}}
+		                  	   		{{--$('#deleteModal').modal('hide');--}}
+		                  	   		 {{--$('#row'+id).fadeOut(500);--}}
 
-		                 	  		$('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Eliminada exitosamente!</p>");
-		                  	 }
-		           		 });
-				})
+		                 	  		{{--$('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Eliminada exitosamente!</p>");--}}
+		                  	 {{--}--}}
+		           		 {{--});--}}
+				{{--})--}}
 
-			}
+			{{--}--}}
 </script>
 @stop
 	
