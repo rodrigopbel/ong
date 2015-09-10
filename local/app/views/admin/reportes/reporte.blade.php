@@ -31,6 +31,8 @@
     <!-- END PAGE HEADER-->
     <div class="clearfix">
     </div>
+
+    {{dd("entro hasta aqui")}}
     <div class="row ">
         <div class="col-md-6 col-sm-6">
             <div class="portlet box purple-wisteria">
