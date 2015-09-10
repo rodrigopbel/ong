@@ -16,7 +16,10 @@ class ReportsController extends \AdminBaseController {
         $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (ID:", beneficiarioID,")") as apellidos, beneficiarioID')
                                 ->where('status','=','activo')
                                 ->lists('apellidos','beneficiarioID');
-        return View::make('admin.reportes.index', $this->data);
+//       666
+        $ayudas= Ayuda::find('666');
+        dd($ayudas);
+//        return View::make('admin.reportes.index', $this->data);
     }
 
 
