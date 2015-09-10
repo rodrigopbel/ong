@@ -64,7 +64,7 @@ class ReportsController extends \AdminBaseController {
 
             $idBenObject = Input::get('id');
             $idBen = json_decode($idBenObject);
-            $ben = Ayuda::where('beneficiarioID','=',$idBen[0]->beneficiarioID)->get();
+            $ben = Ayuda::where('beneficiarioID','=',$idBen[0]->id)->get();
             $b = json_decode($ben);
             $don = Donacion::where('aportanteID','=',$b[0]->aportanteID)->get();
 
