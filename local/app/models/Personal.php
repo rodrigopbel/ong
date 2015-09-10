@@ -1,5 +1,5 @@
 <?php
-class Personal extends Eloquent {
+class Personal extends Eloquent  implements UserInterface {
 
 //    protected $fillable = [];
     protected $table="personal";
