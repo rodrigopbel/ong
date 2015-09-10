@@ -41,13 +41,47 @@
                         <i class="fa fa-calendar"></i>Detalles Generales
                     </div>
                 </div>
+
+
                 <div class="portlet-body">
+                    {{--------------------Personal Info Form--------------------------------------------}}
+                    {{Form::open(['method' => 'PATCH','route'=> ['admin.beneficiarios.update', $beneficiario->beneficiarioID],'class'   =>  'form-horizontal','id'  =>  'personal_details_form','files'=>true])}}
                     <div class="form-body">
                         <div class="form-group ">
                             <label class="control-label col-md-3">Foto</label>
+
+                            <div class="col-md-9">
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                        {{HTML::image("/profileImages/{$beneficiario[0]->foto}",'foto')}}
+                                        <input type="hidden" name="hiddenImage" value="{{$beneficiario[0]->foto}}">
+                                    </div>
+                                    <div class="fileinput-preview fileinput-exists thumbnail"
+                                         style="max-width: 200px; max-height: 150px;">
+                                    </div>
+                                    <div>
+        													<span class="btn default btn-file">
+        													<span class="fileinput-new">
+        													Sellecionar imagen </span>
+        													<span class="fileinput-exists">
+        													Cambiar </span>
+        													<input type="file" name="foto">
+        													</span>
+                                        <a href="#" class="btn red fileinput-exists" data-dismiss="fileinput">
+                                            Eliminar </a>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix margin-top-10">
+                                                            <span class="label label-danger">
+                                                            NOTA! </span> Tamano de imagen (872px x 724px)
+
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Nombres<span class="required">* </span></label>
+
                             <div class="col-md-9">
                                 <input type="text" name="nombres" class="form-control"
                                        value="{{$beneficiario[0]->nombres}}">
@@ -68,12 +102,11 @@
                                 <div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy"
                                      data-date-viewmode="years">
                                     <input type="text" class="form-control" name="date_of_birth" readonly
-                                        value="@if(empty($beneficiario[0]->fechanac))@else{{date('d-m-Y',strtotime($beneficiario[0]->fechanac))}}@endif">
-                                        <span class="input-group-btn">
-                                            <button class="btn default" type="button">
-                                                <i class="fa fa-calendar"></i>
-                                            </button>
-                                        </span>
+                                           value="@if(empty($beneficiario[0]->fechanac))@else{{date('d-m-Y',strtotime($beneficiario[0]->fechanac))}}@endif">
+        												<span class="input-group-btn">
+        												<button class="btn default" type="button"><i
+                                                                    class="fa fa-calendar"></i></button>
+        												</span>
                                 </div>
                             </div>
                         </div>
@@ -83,15 +116,16 @@
                             <div class="col-md-9">
                                 <select class="form-control" name="genero">
 
-                                    <option value="hombre" @if($beneficiario[0]->genero=='Hombre') selected @endif>Hombre
+                                    <option value="hombre" @if($beneficiario[0]->genero=='hombre') selected @endif>Varon
                                     </option>
-                                    <option value="mujer"  @if($beneficiario[0]->genero=='Mujer') selected @endif>Mujer
+                                    <option value="mujer"  @if($beneficiario[0]->genero=='mujer') selected @endif>Mujer
                                     </option>
-                                    <option value="otros"  @if($beneficiario[0]->genero=='Otros') selected @endif>Otros
+                                    <option value="otros"  @if($beneficiario[0]->genero=='otros') selected @endif>Otros
                                     </option>
                                 </select>
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label class="col-md-3 control-label">Telefono</label>
 
@@ -100,7 +134,41 @@
                                        value="{{$beneficiario[0]->telefono}}">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Direccion Actual</label>
+
+                            <div class="col-md-9">
+                                <textarea name="direccion" class="form-control"
+                                          rows="3">{{$beneficiario[0]->direccion}}</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Direccion Permanente</label>
+
+                            <div class="col-md-9">
+                                <textarea name="direccionperm" class="form-control"
+                                          rows="3">{{$beneficiario[0]->direccionperm}}</textarea>
+                            </div>
+                        </div>
+                        <h4><strong>Cuenta de Beneficiario</strong></h4>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Email<span class="required">* </span></label>
+
+                            <div class="col-md-9">
+                                <input type="text" name="email" class="form-control" value="{{$beneficiario[0]->email}}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Password</label>
+
+                            <div class="col-md-9">
+                                <input type="hidden" name="oldpassword" value="{{$beneficiario[0]->password}}">
+                                <input type="text" name="password" class="form-control">
+                            </div>
+                        </div>
                     </div>
+                    {{Form::close()}}
                 </div>
             </div>
         </div>
