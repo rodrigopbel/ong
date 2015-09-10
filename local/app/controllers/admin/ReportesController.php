@@ -50,7 +50,7 @@ class ReportsController extends \AdminBaseController {
             $idBen = $input->{'id'};
 //            var_dump($idBen);
             $reponse = '{
-                "id" : $input->{"id"},
+                "id" : $idBen,
                 "algo" : "guillermo"
             }';
             return Response::json($reponse);
