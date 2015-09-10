@@ -23,7 +23,7 @@ class VoluntarioController extends \BaseController {
             $tipo = 'Voluntario';
 
             Voluntario::create([
-                'ci'          => 'required|ci|unique:personal',
+                'personalID'   => $input['ci'],
                 'nombres'      => ucwords(strtolower($input['nombres'])),
                 'apellidos'    => ucwords(strtolower($input['apellidos'])),
                 'email'         => $input['email'],

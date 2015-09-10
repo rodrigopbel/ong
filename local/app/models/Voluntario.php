@@ -4,10 +4,10 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Voluntario extends Eloquent  implements UserInterface, RemindableInterface  {
+class Voluntario extends Eloquent  {
 
 //    protected $fillable = [];
-	use UserTrait, RemindableTrait;
+
     protected $table="personal";
 
 //    // Validation Rules
