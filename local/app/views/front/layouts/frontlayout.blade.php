@@ -161,24 +161,24 @@
 
 
                             <!--Notification-->
-                     @if(count($current_month_birthdays)>0)
-                            <div class="panel-heading-v2 overflow-h">
-                                <h2 class="heading-xs pull-left"><i class="fa fa-birthday-cake"></i> Birthdays</h2>
-                            </div>
-                            <ul id="scrollbar5" class="list-unstyled contentHolder margin-bottom-20" style="height: auto">
-                            @foreach($current_month_birthdays as $birthday)
-                                <li class="notification">
-                                 {{HTML::image("/profileImages/{$birthday->profileImage}",'ProfileImage',['class'=>"rounded-x"])}}
+                     {{--@if(count($current_month_birthdays)>0)--}}
+                            {{--<div class="panel-heading-v2 overflow-h">--}}
+                                {{--<h2 class="heading-xs pull-left"><i class="fa fa-birthday-cake"></i> Birthdays</h2>--}}
+                            {{--</div>--}}
+                            {{--<ul id="scrollbar5" class="list-unstyled contentHolder margin-bottom-20" style="height: auto">--}}
+                            {{--@foreach($current_month_birthdays as $birthday)--}}
+                                {{--<li class="notification">--}}
+                                 {{--{{HTML::image("/profileImages/{$birthday->profileImage}",'ProfileImage',['class'=>"rounded-x"])}}--}}
 
-                                    <div class="overflow-h">
-                                        <span><strong>{{$birthday->fullName}}</strong> has birthday on</span>
-                                        <strong>{{date('d F',strtotime($birthday->date_of_birth))}}</strong>
-                                    </div>
-                                </li>
-                             @endforeach
+                                    {{--<div class="overflow-h">--}}
+                                        {{--<span><strong>{{$birthday->fullName}}</strong> has birthday on</span>--}}
+                                        {{--<strong>{{date('d F',strtotime($birthday->date_of_birth))}}</strong>--}}
+                                    {{--</div>--}}
+                                {{--</li>--}}
+                             {{--@endforeach--}}
 
-                            </ul>
-                      @endif
+                            {{--</ul>--}}
+                      {{--@endif--}}
                             <!--End Notification-->
 
 
