@@ -1,5 +1,5 @@
 @extends('admin.adminlayouts.adminlayout')
-{{--{{dd("holas")}}--}}
+{{"holas"}}
 
 @section('head')
 
