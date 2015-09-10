@@ -18,7 +18,6 @@ class ReportsController extends \AdminBaseController {
                                 ->lists('apellidos','beneficiarioID');
         return View::make('admin.reportes.index', $this->data);
     }
-
     public function ReporteBen()
     {
        return Redirect::route('ReporteBen',[Input::get('beneficiario')]);
@@ -26,17 +25,20 @@ class ReportsController extends \AdminBaseController {
     public function ReporteGen()
     {
         if(Input::get('beneficiario')){
+
             $this->data['beneficiario'] = Beneficiario::where('beneficiarioID','=',Input::get('beneficiario'))->get();
             foreach($this->data['beneficiario'] as $ben)
             {
                 $this->data['beneficiario']['ayudas'] = $ben->ayudas;
                 $this->data['beneficiario']['donaciones'] = $ben->donaciones;
             }
-            echo($this->data);
-//            return View::make('admin.reportes.reporte', $this->data);
+            $this->data['ayudas'] = Ayuda::where();
+            return $this->data;
         } else {
             return Redirect::route('admin.reportes.index');
         }
+//        return Input::get('beneficiario');
+
     }
     public function reportestran()
     {
