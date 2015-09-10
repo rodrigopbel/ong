@@ -33,7 +33,7 @@ class ReportsController extends \AdminBaseController {
                 $this->data['beneficiario']['donaciones'] = $ben->donaciones;
             }
             $this->data['ayudas'] = Ayuda::where();
-            return $this->data;
+            echo $this->data;
         } else {
             return Redirect::route('admin.reportes.index');
         }
