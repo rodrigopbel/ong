@@ -21,7 +21,7 @@ class VoluntarioController extends \BaseController {
         try {
             $nombres = $input['nombres'];
             $apellidos = $input['apellidos'];
-
+dd("holalsd");
             Voluntario::create([
                 'personalID'    => $input['personalID'],
                 'nombres'      => ucwords(strtolower($input['nombres'])),
