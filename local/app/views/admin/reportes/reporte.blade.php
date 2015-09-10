@@ -164,6 +164,7 @@
                 </div>
             </div>
         </div>
+    </div>
         {{------------------------------------END NEW SALARY ADD MODALS--------------------------------------}}
 
         @stop
@@ -181,120 +182,4 @@
 
             <!-- END PAGE LEVEL PLUGINS -->
 
-
-
-
-            <script>
-                jQuery(document).ready(function () {
-                    ComponentsPickers.init();
-                    objetivos();
-
-                });
-
-                function objetivos() {
-
-                    $.getJSON("{{ URL::to('admin/destinos/ajax_objetivos/')}}",
-                            {destID: $('#destino').val()},
-                            function (data) {
-                                var model = $('#objetivo');
-                                model.empty();
-                                var selected = '';
-                                var match = {{ $beneficiario->objetivo}}
-                                        $.each(data, function (index, element) {
-                                            model.append("<option value='" + element.id + "'>" + element.objetivo + "</option>");
-                                        });
-
-                            });
-
-                }
-
-                // Javascript function to update the company info and Bank Info
-                function UpdateDetails(id, type) {
-
-                    var form_id = '';
-                    var alert_div = '';
-
-                    if (type == 'zonificacion') {
-                        form_id = '#bank_details_form';
-                        alert_div = '#alert_bank'
-
-                    } else {
-                        form_id = '#company_details_form';
-                        alert_div = '#alert_company';
-                    }
-                    $(alert_div).html('<div class="alert alert-info"><span class="fa fa-info"></span> Guardando..</div>');
-                    var url = "{{ route('admin.beneficiarios.update',':id') }}";
-                    url = url.replace(':id', id);
-                    $.ajax({
-                        type: "PATCH",
-                        url: url,
-                        dataType: 'json',
-                        data: $(form_id).serialize()
-
-                    }).done(function (response) {
-                        $(alert_div).html('');
-                        if (response.status == "success") {
-                            $(alert_div).html('<div class="alert alert-success alert-dismissable"><button class="close" data-close="alert"></button><span class="fa fa-check"></span> ' + response.msg + '</div>');
-
-                        } else if (response.status == "error") {
-                            var arr = response.msg;
-                            var alert = '';
-                            $.each(arr, function (index, value) {
-                                if (value.length != 0) {
-                                    alert += '<p><span class="fa fa-warning"></span> ' + value + '</p>';
-
-                                }
-                            });
-
-                            $(alert_div).append('<div class="alert alert-danger alert-dismissable"><button class="close" data-close="alert"></button> ' + alert + '</div>');
-                        }
-                    });
-                }
-
-                function del(id, type) {
-
-                    var alert_div = '#alert_company';
-                    $('#deleteModal').appendTo("body").modal('show');
-                    $('#info').html('Eliminar  <strong>' + type + '</strong> Donacion??.');
-                    $("#delete").click(function () {
-                        var url = "{{ route('admin.salary.destroy',':id') }}";
-                        url = url.replace(':id', id);
-                        $.ajax({
-
-                            type: "DELETE",
-                            url: url,
-                            dataType: 'json',
-                            data: {"id": id}
-
-                        }).done(function (response) {
-                            if (response.success == "deleted") {
-                                $('#deleteModal').modal('hide');
-                                $('#salary' + id).remove();
-                                $(alert_div).html('<div class="alert alert-success alert-dismissable"><button class="close" data-close="alert"></button><span class="fa fa-check"></span> ' + response.msg + '</div>');
-                            }
-                        });
-                    })
-
-                }
-
-                function remove_exit() {
-                    if ($("input[name=status]:checked").val() == "active") {
-                        $("input[name=exit_date]").val("");
-                    }
-                }
-
-
-                $("input[name=exit_date]").change(function () {
-                    $("input[name=status]").bootstrapSwitch('state', false);
-
-                });
-            </script>
-
-            @if(Session::get('successDocuments'))
-                {{--Move to bottom of page if success comes from documents--}}
-                <script>
-                    $("html, body").animate({scrollTop: $(document).height()}, 2000);
-                </script>
-    @endif
-
-@stop
+        @stop
