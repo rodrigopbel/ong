@@ -339,10 +339,10 @@ class BeneficiariosController extends \AdminBaseController {
 
             Activity::log([
                 'contentId'   => $id,
-                'user_id'     => Auth::admin()->get()->id,
                 'contentType' => 'Beneficiario',
-                'action'      => 'Update '. Input::get('updateType'),
-                'description' => 'ACtualizacion de un Beneficiario',
+                'user_id'     => Auth::admin()->get()->id,
+                'action'      => 'Update',
+                'description' => 'Actualizacion '. Input::get('updateType'),
                 'details'     => 'Usuario: '. Auth::admin()->get()->name,
                 'updated'     => $id ? true : false
             ]);
@@ -420,8 +420,8 @@ class BeneficiariosController extends \AdminBaseController {
                 'contentId'   => $id,
                 'contentType' => 'Beneficiario',
                 'user_id'     => Auth::admin()->get()->id,
-                'action'      => 'Update '. Input::get('updateType'),
-                'description' => 'Actualizacion de un Beneficiario',
+                'action'      => 'Update',
+                'description' => 'Actualizacion '. Input::get('updateType'),
                 'details'     => 'Usuario: '. Auth::admin()->get()->name,
                 'updated'     => $id ? true : false
             ]);
@@ -432,10 +432,10 @@ class BeneficiariosController extends \AdminBaseController {
         }
         Activity::log([
             'contentId'   => $id,
-            'user_id'     => Auth::admin()->get()->id,
             'contentType' => 'Beneficiario',
-            'action'      => 'Update '. Input::get('updateType'),
-            'description' => 'ACtualizacion de un Beneficiario',
+            'user_id'     => Auth::admin()->get()->id,
+            'action'      => 'Update',
+            'description' => 'Actualizacion '. Input::get('updateType'),
             'details'     => 'Usuario: '. Auth::admin()->get()->name,
             'updated'     => $id ? true : false
         ]);
@@ -473,7 +473,7 @@ class BeneficiariosController extends \AdminBaseController {
           'user_id'     => Auth::admin()->get()->id,
           'contentType' => 'Beneficiario',
           'action'      => 'Export ',
-          'description' => 'ACtualizacion de un Beneficiario',
+          'description' => 'Exportacion de Beneficiarios',
           'details'     => 'Usuario: '. Auth::admin()->get()->name,
           'updated'     =>  false
       ]);
@@ -490,7 +490,7 @@ class BeneficiariosController extends \AdminBaseController {
             'user_id'     => Auth::admin()->get()->id,
             'contentType' => 'Beneficiario',
             'action'      => 'Delete ',
-            'description' => 'ACtualizacion de un Beneficiario',
+            'description' => 'Eliminacion',
             'details'     => 'Usuario: '. Auth::admin()->get()->name,
             'updated'     => $id ? true : false
         ]);
