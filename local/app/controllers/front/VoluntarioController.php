@@ -29,7 +29,7 @@ class VoluntarioController extends \BaseController {
             'email'	     =>	$input['email'],
             'tipoPersonal' => $tipo
         ]);
-        return View::make('front.login',$this->data);
+        return View::make('front.final',$this->data);
 //        return Redirect::route('front.login')->with(" Voluntario adicionado");
     }
 
