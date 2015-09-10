@@ -109,46 +109,88 @@
 
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 	{{ HTML::script("assets/global/plugins/select2/select2.min.js")}}
-  {{HTML::script("assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js")}}
+    {{HTML::script("assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js")}}
 	{{ HTML::script("assets/global/plugins/datatables/media/js/jquery.dataTables.min.js")}}
 	{{ HTML::script("assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js")}}
 
 <!-- END PAGE LEVEL PLUGINS -->
 	<script>
-
         $('#beneficiario').on('change',function(){
             data = {
                 'id' : $(this).val()
             };
             console.log(data);
         });
-        $('.generarReporte').on('click', function(){
-//            alert($('#beneficiario').val());
-//            console.log($('#beneficiario').val());
-            var id = $('#beneficiario').val();
-            var data = {
-                'id' : id
-            };
+
+        $('.generarReporte').on('click',function(){
+            id = $('#beneficiario').val();
+            $('#reportes').dataTable( {
+                "bProcessing": true,
+                "bServerSide": true,
+                "sAjaxSource": "{{ route("admin/reportes/"+id) }}",
+                "aaSorting": [[ 1, "asc" ]],
+                "aoColumns": [
+                    { 'sClass': 'center', "bSortable": true  },
+                    { 'sClass': 'center', "bSortable": true  },
+                    { 'sClass': 'center', "bSortable": true },
+                    { 'sClass': 'center', "bSortable": true },
+                    { 'sClass': 'center', "bSortable": true },
+                    { 'sClass': 'center', "bSortable": true },
+                    { 'sClass': 'center', "bSortable": true },
+                    { 'sClass': 'center', "bSortable": true },
+                    { 'sClass': 'center', "bSortable": true },
+                    { 'sClass': 'center', "bSortable": false }
 
 
-            $.ajax({
-                url: '{{route("admin.ajax_reportes")}}',
-                type: 'POST',
-                data : data,
-                dataType: 'JSON',
-                beforeSend: function(){
-                    console.log("generando reporte");
-                },
-                error : function (){
-                    console.log("surgio algun error");
-                },
-                success: function(respuesta){
-                    if(respuesta){
-                        console.log(respuesta);
+                ],
+                "columnDefs": [
+                    {
+                        "targets": [ 0 ],
+                        "visible": false,
+                        "searchable": false
+                    },{
+                        "targets": [ 5 ],
+                        "visible": false,
+                        "searchable": true
                     }
+                ],
+                "lengthMenu": [
+                    [5, 15, 20, -1],
+                    [5, 15, 20, "All"] // change per page values here
+                ],
+                "sPaginationType": "full_numbers",
+                "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+                    var row = $(nRow);
+                    row.attr("id", 'row'+aData['0']);
                 }
+
             });
         });
+        {{--$('.generarReporte').on('click', function(){--}}
+{{--//            alert($('#beneficiario').val());--}}
+{{--//            console.log($('#beneficiario').val());--}}
+            {{--var id = $('#beneficiario').val();--}}
+            {{--var data = {--}}
+                {{--'id' : id--}}
+            {{--};--}}
+            {{--$.ajax({--}}
+                {{--url: '{{route("admin.ajax_reportes")}}',--}}
+                {{--type: 'GET',--}}
+                {{--data : data,--}}
+                {{--dataType: 'JSON',--}}
+                {{--beforeSend: function(){--}}
+                    {{--console.log("generando reporte");--}}
+                {{--},--}}
+                {{--error : function (){--}}
+                    {{--console.log("surgio algun error");--}}
+                {{--},--}}
+                {{--success: function(respuesta){--}}
+
+                        {{--console.log(respuesta);--}}
+{{--//                    }--}}
+                {{--}--}}
+            {{--});--}}
+        {{--});--}}
         {{--$('form').on('submit',function(e){--}}
             {{--e.preventDefault();--}}
             {{--$.ajax({--}}
@@ -171,41 +213,7 @@
         {{--});--}}
 
 
-       	{{--$('#reportes').dataTable( {--}}
-            {{--"bProcessing": true,--}}
-            {{--"bServerSide": true,--}}
-            {{--"sAjaxSource": "{{ route("admin.ajax_reportes") }}",--}}
-            {{--"aaSorting": [[ 1, "asc" ]],--}}
-            {{--"aoColumns": [--}}
-                {{--{ 'sClass': 'center', "bSortable": true  },--}}
-                {{--{ 'sClass': 'center', "bSortable": true  },--}}
-                {{--{ 'sClass': 'center', "bSortable": true },--}}
-                {{--{ 'sClass': 'center', "bSortable": true },--}}
-                {{--{ 'sClass': 'center', "bSortable": true },--}}
-                {{--{ 'sClass': 'center', "bSortable": false }--}}
-            {{--],--}}
-            {{--"columnDefs": [--}}
-                        {{--{--}}
-                            {{--"targets": [ 0 ],--}}
-                            {{--"visible": false,--}}
-                            {{--"searchable": false--}}
-                        {{--},{--}}
-                          {{--"targets": [ 5 ],--}}
-                          {{--"visible": false,--}}
-                          {{--"searchable": true--}}
-                      {{--}--}}
-                        {{--],--}}
-            {{--"lengthMenu": [--}}
-                            {{--[5, 15, 20, -1],--}}
-                            {{--[5, 15, 20, "All"] // change per page values here--}}
-                        {{--],--}}
-            {{--"sPaginationType": "full_numbers",--}}
-            {{--"fnRowCallback": function( nRow, aData, iDisplayIndex ) {--}}
-                {{--var row = $(nRow);--}}
-                {{--row.attr("id", 'row'+aData['0']);--}}
-                {{--console.log(aData);--}}
-            {{--}--}}
-        {{--});--}}
+
 </script>
 @stop
 	

@@ -80,6 +80,7 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     // Reportes Routing
     Route::get('ajax_reportes/',['as'=>'admin.ajax_reportes','uses'=> 'ReportsController@ajax_reportes']);
     Route::resource('reportes','ReportsController',['as'=>'admin']);
+    Route::get('reportes/{id}','ReportsController',['as'=>'admin']);
 //    Route::get('reports/beneficiarios','ReportsController@reportesben',['as'=>'admin']);
 //    Route::get('reports/transacciones','ReportsController@reportestran',['as'=>'admin']);
 
