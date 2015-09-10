@@ -48,16 +48,7 @@ class ReportsController extends \AdminBaseController {
         if(Request::ajax()){
             $input = Input::all();
             $id = json_decode($input);
-            $idBen = $id -> id;
-            var_dump($idBen);
-            $ayudas = new stdClass();
-            $ayudas->idBen = $idBen;
-            $ayudas->name = "guillermo";
-            $ayudas->nayudas = array("a1" => 8815,"a2" => 546,"a3" => 333);
-//            var_dump($idBen);
-            $name = "guillermo";
-            $reponse = array($idBen,$name);
-            return Response::json(json_encode($ayudas));
+            return Response::json(json_encode($id));
         }else{
             return Response::json("error de sintaxis");
         }
