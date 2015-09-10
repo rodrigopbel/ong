@@ -81,11 +81,11 @@
                         </div>
                     </div>
 
-                    <div class="panel panel-profile no-bg margin-top-20">
+                    <div class="panel panel-profile  margin-top-20">
                         <div class="panel-heading overflow-h">
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i>Destino de la Ayuda</h2>
                         </div>
-                        <div class="panel-body panelHolder">
+                        <div class="panel-body panelHolder" >
                             <div id="scrollbar3" class="panel-body contentHolder">
                                 <div class="overflow-h">
                                     <strong class="color-dark">  ID Beneficiario<small class="pull-right"><em>Gasto Realizado</em></small></strong>
@@ -110,8 +110,6 @@
 
                 <!--Notice Board -->
                 <div class="col-sm-6 md-margin-bottom-20">
-
-
                     <div class="panel panel-profile margin-top-20">
                         <div class="panel-heading overflow-h">
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Donaciones Realizadas</h2>
