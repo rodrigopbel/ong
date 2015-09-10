@@ -33,8 +33,6 @@
         </ul>
     </div>
     <!-- END PAGE HEADER-->
-    <div class="clearfix">
-    </div>
     <div class="row ">
         <div class="col-md-6 col-sm-6">
             <div class="portlet box purple-wisteria">
@@ -42,73 +40,72 @@
                     <div class="caption">
                         <i class="fa fa-calendar"></i>Detalles Generales
                     </div>
-                    <div class="portlet-body">
-                        <div class="form-body">
-                            <div class="form-group ">
-                                <label class="control-label col-md-3">Foto</label>
+                </div>
+                <div class="portlet-body">
+                    <div class="form-body">
+                        <div class="form-group ">
+                            <label class="control-label col-md-3">Foto</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Nombres<span class="required">* </span></label>
+                            <div class="col-md-9">
+                                <input type="text" name="nombres" class="form-control"
+                                       value="{{$beneficiario[0]->nombres}}">
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Nombres<span class="required">* </span></label>
-                                <div class="col-md-9">
-                                    <input type="text" name="nombres" class="form-control"
-                                           value="{{$beneficiario[0]->nombres}}">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Apellidos</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Apellidos</label>
 
-                                <div class="col-md-9">
-                                    <input type="text" name="apellidos" class="form-control"
-                                           value="{{$beneficiario[0]->apellidos}}">
-                                </div>
+                            <div class="col-md-9">
+                                <input type="text" name="apellidos" class="form-control"
+                                       value="{{$beneficiario[0]->apellidos}}">
                             </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Fecha de Nacimiento</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Fecha de Nacimiento</label>
 
-                                <div class="col-md-3">
-                                    <div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy"
-                                         data-date-viewmode="years">
-                                        <input type="text" class="form-control" name="date_of_birth" readonly
-                                               value="@if(empty($beneficiario[0]->fechanac))@else{{date('d-m-Y',strtotime($beneficiario[0]->fechanac))}}@endif">
+                            <div class="col-md-3">
+                                <div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy"
+                                     data-date-viewmode="years">
+                                    <input type="text" class="form-control" name="date_of_birth" readonly
+                                        value="@if(empty($beneficiario[0]->fechanac))@else{{date('d-m-Y',strtotime($beneficiario[0]->fechanac))}}@endif">
                                         <span class="input-group-btn">
                                             <button class="btn default" type="button">
                                                 <i class="fa fa-calendar"></i>
                                             </button>
                                         </span>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Genero</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Genero</label>
 
-                                <div class="col-md-9">
-                                    <select class="form-control" name="genero">
+                            <div class="col-md-9">
+                                <select class="form-control" name="genero">
 
-                                        <option value="hombre" @if($beneficiario[0]->genero=='Hombre') selected @endif>Hombre
-                                        </option>
-                                        <option value="mujer"  @if($beneficiario[0]->genero=='Mujer') selected @endif>Mujer
-                                        </option>
-                                        <option value="otros"  @if($beneficiario[0]->genero=='Otros') selected @endif>Otros
-                                        </option>
-                                    </select>
-                                </div>
+                                    <option value="hombre" @if($beneficiario[0]->genero=='Hombre') selected @endif>Hombre
+                                    </option>
+                                    <option value="mujer"  @if($beneficiario[0]->genero=='Mujer') selected @endif>Mujer
+                                    </option>
+                                    <option value="otros"  @if($beneficiario[0]->genero=='Otros') selected @endif>Otros
+                                    </option>
+                                </select>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">Telefono</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Telefono</label>
 
-                                <div class="col-md-9">
-                                    <input type="text" name="telefono" class="form-control"
-                                           value="{{$beneficiario[0]->telefono}}">
-                                </div>
+                            <div class="col-md-9">
+                                <input type="text" name="telefono" class="form-control"
+                                       value="{{$beneficiario[0]->telefono}}">
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
+
 
     {{------------------------------------END NEW SALARY ADD MODALS--------------------------------------}}
 @stop
