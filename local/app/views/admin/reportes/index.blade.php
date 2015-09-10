@@ -116,23 +116,43 @@
 <!-- END PAGE LEVEL PLUGINS -->
 	<script>
 
-        $('#beneficiario').on('change',function(){
-            var data = {
-                'id' : $(this).val()
-            };
-            console.log(data);
-        });
-        $('.generarReporte').on('click', function(){
-//            alert($('#beneficiario').val());
-//            console.log($('#beneficiario').val());
-            var id = $('#beneficiario').val();
-            var data = {
-                'id' : id
-            };
+//        $('#beneficiario').on('change',function(){
+//            var data = {
+//                'id' : $(this).val()
+//            };
+//            console.log(data);
+//        });
+        {{--$('.generarReporte').on('click', function(){--}}
+{{--//            alert($('#beneficiario').val());--}}
+{{--//            console.log($('#beneficiario').val());--}}
+            {{--var id = $('#beneficiario').val();--}}
+            {{--var data = {--}}
+                {{--'id' : id--}}
+            {{--};--}}
+            {{--$.ajax({--}}
+                {{--url: '{{route("admin.ajax_reportes")}}',--}}
+                {{--type: 'POST',--}}
+                {{--data : data,--}}
+                {{--dataType: 'JSON',--}}
+                {{--beforeSend: function(){--}}
+                    {{--console.log("generando reporte");--}}
+                {{--},--}}
+                {{--error : function (){--}}
+                    {{--console.log("surgio algun error");--}}
+                {{--},--}}
+                {{--success: function(respuesta){--}}
+                    {{--if(respuesta){--}}
+                        {{--console.log(respuesta);--}}
+                    {{--}--}}
+                {{--}--}}
+            {{--});--}}
+        {{--});--}}
+        $('form').on('submit',function(e){
+            e.preventDefault();
             $.ajax({
                 url: '{{route("admin.ajax_reportes")}}',
                 type: 'POST',
-                data : data,
+                data : {id : $('#beneficiario').val()},
                 dataType: 'JSON',
                 beforeSend: function(){
                     console.log("generando reporte");
