@@ -53,6 +53,7 @@ class ReportsController extends \AdminBaseController {
                                     ->groupBy('ayudas.id');
             $input = Input::all();
 //            return Response::json($input);
+            var_dump($ayudas);
             $json_ayudas = json_encode($ayudas);
             return Response::json($json_ayudas);
         }else{
