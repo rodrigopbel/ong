@@ -20,6 +20,5 @@ class Ayuda extends \Eloquent {
 
         return $this->belongsTo('Beneficiario','beneficiarioID','beneficiarioID');
     }
-
-
+    
 }
