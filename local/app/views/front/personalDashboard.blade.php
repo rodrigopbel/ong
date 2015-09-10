@@ -29,14 +29,14 @@
                                             {{$personal->apellidos}}
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="primary-link">Fecha de Nacimiento</span>
-                                        </td>
-                                        <td>
-                                             {{ date('d-M-Y',strtotime($personal->fechanac))}}
-                                        </td>
-                                    </tr>
+                                    {{--<tr>--}}
+                                        {{--<td>--}}
+                                            {{--<span class="primary-link">Fecha de Ingreso</span>--}}
+                                        {{--</td>--}}
+                                        {{--<td>--}}
+                                             {{--{{ date('d-M-Y',strtotime($personal->fechanac))}}--}}
+                                        {{--</td>--}}
+                                    {{--</tr>--}}
                                     <tr>
                                         <td>
                                             <span class="primary-link">Genero</span>
