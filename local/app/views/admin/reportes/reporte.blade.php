@@ -1,1 +1,1 @@
-$beneficiario->nombres
+{{ $beneficiario->nombres}}
