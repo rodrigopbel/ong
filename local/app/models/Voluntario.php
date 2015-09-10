@@ -4,10 +4,10 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Voluntario extends Eloquent  implements UserInterface, RemindableInterface  {
+class Voluntario extends Eloquent  {
 
 //    protected $fillable = [];
-	use UserTrait, RemindableTrait;
+
     protected $table="personal";
 
 //    // Validation Rules
@@ -24,19 +24,7 @@ class Voluntario extends Eloquent  implements UserInterface, RemindableInterface
             'tipoPersonal'  =>  'required',
 
 		],
-        'update'=>[
-            'personalID'   =>   "required|unique:personal,personalID,:id"
-        ],
-        'password' =>  [
-			'password'              =>  'required|confirmed',
-            'password_confirmation' =>  'required|min:5'
-		],
-		'personalInfo'=>[
-			'nombres'       =>   $fullNameValidation,
-			'apellidos'     =>   $fullNameValidation,
-            'email'        =>   "required|email",
-			'fotoPersonal'  =>   $ProfileImageValidation,
-		],
+
 	];
 		$rules = $rules[$action];
 		if ($id) {
@@ -50,14 +38,4 @@ class Voluntario extends Eloquent  implements UserInterface, RemindableInterface
         protected $guarded = ['id'];
         protected $hidden  = ['password'];
 
-
-    public function getayudas()
-    {
-        return $this->hasMany('Ayuda','aportanteID','personalID');
-    }
-
-    public function getdonaciones()
-    {
-        return $this->hasMany('Donacion','aportanteID','personalID');
-    }
 }
