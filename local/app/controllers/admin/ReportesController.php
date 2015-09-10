@@ -39,27 +39,6 @@ class ReportsController extends \AdminBaseController {
     //Datatable ajax request
     public function ajax_reportes()
     {
-
-//        $result   =   Ayuda::join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
-//            ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
-//            ->join('personal', 'ayudas.aportanteID', '=', 'personal.personalID')
-//            ->select('ayudas.id','beneficiarios.nombres','requerimiento','created_at','donaciones.montodonacion','gastos',('donaciones.montodonacion'-'gastos'))
-//            ->where('personal','personal.tipoPersonal','=','aportante')
-//            ->orderBy('beneficiarios.apellidos','asc')
-//            ->groupBy('ayudas.id')
-//            ->get();
-//        $result = Ayuda::select('ayudas.id','beneficiarios.nombres','requerimiento','created_at','donaciones.montodonacion','gastos',('donaciones.montodonacion'-'gastos'))
-//                ->join('personal', 'ayudas.aportanteID', '=', 'personal.personalID')
-//                ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
-//                ->join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
-//                ->where('personal','personal.tipoPersonal','=','aportante')
-//                ->groupBy('ayudas.id');
-//
-//        return Datatables::of($result)
-//
-//            ->make();
-
-//        echo $result;
         if(Request::ajax()){
 
             $idBenObject = Input::get('id');
@@ -69,7 +48,7 @@ class ReportsController extends \AdminBaseController {
             $don = Donacion::where('aportanteID','=',$b[0]->aportanteID)->get();
 
 //            echo ($don);
-            return Response::json($ben);
+            return Response::json(array('html' => Input::get('id') ));
         }else{
             return Response::json("error de sintaxis");
         }
