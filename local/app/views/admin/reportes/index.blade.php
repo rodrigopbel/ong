@@ -33,7 +33,7 @@
 			<!-- BEGIN PAGE CONTENT-->
 <div class="row">
     <div class="col-md-12">
-        {{Form::open(array('url'=>"",'class'=>'form-horizontal form-bordered','method'=>'POST'))}}
+        {{Form::open(array('class'=>'form-horizontal form-bordered','method'=>'POST'))}}
         <div class="col-md-8">
             <label for="">Seleccione el Beneficiario para el reporte: </label>
             {{ Form::select('beneficiarioID', $beneficiarios,null,['id'=>'beneficiario','class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
@@ -128,7 +128,12 @@
         });
 
         $('.generarReporte').on('click', function(){
+            alert($('#beneficiario').val());
             console.log($('#beneficiario').val());
+            var id = $('#beneficiario').val();
+            $.post('{{route("admin.ajax_reportes."+id)}}', data, function(data, textStatus, xhr){
+               console.log(data);
+            });
         });
     });
 
