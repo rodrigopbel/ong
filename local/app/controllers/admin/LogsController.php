@@ -17,7 +17,7 @@ class LogsController extends \AdminBaseController {
 
     public function index()
     {
-        $this->data['logs']  =  Log::all();
+        $this->data['logs']  =  Activity::all();
 
 //        Debugbar::info($this->data['logs'] );
         $this->data['logsActive'] =   'active';
