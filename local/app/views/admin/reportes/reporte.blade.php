@@ -51,8 +51,7 @@
                             <label class="col-md-3 control-label">Nombres<span class="required">* </span></label>
 
                             <div class="col-md-9">
-                                <input type="text" name="nombres" class="form-control"
-                                       value="{{$beneficiario[0]->nombres}}">
+                                <label class="col-md-3 control-label">{{$beneficiario[0]->nombres}}</label>
                             </div>
                         </div>
                         <div class="form-group">
@@ -118,7 +117,7 @@
                                           rows="3">{{$beneficiario[0]->direccionperm}}</textarea>
                             </div>
                         </div>
-                        <h4><strong>Cuenta de Beneficiario</strong></h4>
+
 
                         <div class="form-group">
                             <label class="col-md-3 control-label">Email<span class="required">* </span></label>
