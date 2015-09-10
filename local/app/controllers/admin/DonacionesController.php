@@ -73,6 +73,15 @@ class DonacionesController extends \AdminBaseController {
 
         ]);
 
+		Activity::log([
+			'contentId'   => $input['personalID'],
+			'contentType' => 'Donacion',
+			'user_id'     => Auth::admin()->get()->id,
+			'action'      => 'Create',
+			'description' => 'Creacion '. $input['descripcion'],
+			'details'     => 'Usuario: '. Auth::admin()->get()->name,
+			'updated'     => $input['personalID'] ? true : false
+		]);
 		return Redirect::route('admin.donaciones.index')->with('success',"<strong>Guardado</strong> Exitosamente");
 	}
 
@@ -119,6 +128,17 @@ class DonacionesController extends \AdminBaseController {
             'montodonacion'      => $data['montodonacion']
 
         ]);
+
+		Activity::log([
+			'contentId'   => $data['personalID'],
+			'contentType' => 'Donacion',
+			'user_id'     => Auth::admin()->get()->id,
+			'action'      => 'Update',
+			'description' => 'Creacion '. $data['descripcion'],
+			'details'     => 'Usuario: '. Auth::admin()->get()->name,
+			'updated'     => $data['personalID'] ? true : false
+		]);
+
 		return Redirect::route('admin.donaciones.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa!");
 	}
 
@@ -133,6 +153,15 @@ class DonacionesController extends \AdminBaseController {
 		if (Request::ajax()) {
 			Donacion::destroy($id);
 			$output['success'] = 'deleted';
+			Activity::log([
+				'contentId'   => $id,
+				'contentType' => 'Donacion',
+				'user_id'     => Auth::admin()->get()->id,
+				'action'      => 'Update',
+				'description' => 'Eliminacion '. $id,
+				'details'     => 'Usuario: '. Auth::admin()->get()->name,
+				'updated'     => $id ? true : false
+			]);
 
 			return Response::json($output, 200);
 		}else{

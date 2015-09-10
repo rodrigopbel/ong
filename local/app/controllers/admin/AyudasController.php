@@ -81,6 +81,17 @@ class AyudasController extends \AdminBaseController {
 
         ]);
 
+		Activity::log([
+			'contentId'   =>  $input['beneficiarioID'],
+			'contentType' => 'Ayuda',
+			'user_id'     => Auth::admin()->get()->id,
+			'action'      => 'Create',
+			'description' => 'Creacion '. $input['requerimiento'],
+			'details'     => 'Usuario: '. Auth::admin()->get()->name,
+			'updated'     => $input['beneficiarioID'] ? true : false
+		]);
+
+
 		return Redirect::route('admin.ayudas.index')->with('success',"<strong>Guardado</strong> Exitosamente");
 	}
 
@@ -131,6 +142,17 @@ class AyudasController extends \AdminBaseController {
             'numfactura'     => $data['numfactura'],
             'gastos'         => $data['gastos']
         ]);
+
+		Activity::log([
+			'contentId'   =>  $id,
+			'contentType' => 'Ayuda',
+			'user_id'     => Auth::admin()->get()->id,
+			'action'      => 'Create',
+			'description' => 'Actualizacion '. $data['beneficiarioID'],
+			'details'     => 'Usuario: '. Auth::admin()->get()->name,
+			'updated'     => $id ? true : false
+		]);
+
 		return Redirect::route('admin.ayudas.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
 	}
 
@@ -145,7 +167,15 @@ class AyudasController extends \AdminBaseController {
 		if (Request::ajax()) {
 			Ayuda::destroy($id);
 			$output['success'] = 'deleted';
-
+			Activity::log([
+				'contentId'   =>  $id,
+				'contentType' => 'Ayuda',
+				'user_id'     => Auth::admin()->get()->id,
+				'action'      => 'Create',
+				'description' => 'Eliminacion '. $id,
+				'details'     => 'Usuario: '. Auth::admin()->get()->name,
+				'updated'     => $id ? true : false
+			]);
 			return Response::json($output, 200);
 		}else{
 			throw(new Exception('Wrong request'));

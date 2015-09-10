@@ -81,6 +81,16 @@ class PersonalController extends \AdminBaseController {
                 'fotoPersonal'  =>  isset($filename)?$filename:'default.jpg',
             ]);
 
+            Activity::log([
+                'contentId'   =>  $input['personalID'],
+                'contentType' => 'Personal',
+                'user_id'     => Auth::admin()->get()->id,
+                'action'      => 'Create',
+                'description' => 'Creacion '. $input['tipoPersonal'],
+                'details'     => 'Usuario: '. Auth::admin()->get()->name,
+                'updated'     => $input['personalID'] ? true : false
+            ]);
+
 //            if($this->data['setting']->ben_add==1)
 //            {
 //                $this->data['ben_name'] = $fullname;
@@ -170,6 +180,17 @@ class PersonalController extends \AdminBaseController {
                 $responsable->fechanac      = date('Y-m-d',strtotime(Input::get('fechanac')));
                 $responsable->fotoPersonal  =  isset($filename)?$filename:'default.jpg';
                 $responsable->save();
+
+                Activity::log([
+                    'contentId'   =>  $id,
+                    'contentType' => 'Personal',
+                    'user_id'     => Auth::admin()->get()->id,
+                    'action'      => 'Update',
+                    'description' => 'Actualizacion  '. Input::get('tipoPersonal'),
+                    'details'     => 'Usuario: '. Auth::admin()->get()->name,
+                    'updated'     => $id ? true : false
+                ]);
+
                 $output['status'] = 'success';
                 $output['msg'] = 'Persona actualizad correctamente....';
             }
@@ -184,7 +205,18 @@ class PersonalController extends \AdminBaseController {
     public function destroy($id)
     {
         Employee::where('employeeID', '=', $id)->delete();
+        Activity::log([
+            'contentId'   =>  $id,
+            'contentType' => 'Personal',
+            'user_id'     => Auth::admin()->get()->id,
+            'action'      => 'Delete',
+            'description' => 'Eliminacion  '. $id,
+            'details'     => 'Usuario: '. Auth::admin()->get()->name,
+            'updated'     => $id ? true : false
+        ]);
+
         $output['success']  =   'deleted';
+
         return Response::json($output, 200);
     }
 
