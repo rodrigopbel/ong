@@ -48,7 +48,7 @@ class ReportsController extends \AdminBaseController {
             $don = Donacion::where('aportanteID','=',$b[0]->aportanteID)->get();
 
 //            echo ($don);
-            return Response::json(array('html' => Input::get('id') ));
+            return Response::json(array('html' => Input::all() ));
         }else{
             return Response::json("error de sintaxis");
         }
