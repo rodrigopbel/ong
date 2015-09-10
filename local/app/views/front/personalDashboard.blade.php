@@ -68,14 +68,8 @@
                                         <td>
                                             {{$personal->direccion}}
                                         </td>
-                                    </tr>																															<tr>
-                                        {{--<td>--}}
-                                            {{--<span class="primary-link">Direccion Permanente</span>--}}
-                                        {{--</td>--}}
-                                        {{--<td>--}}
-                                            {{--{{$beneficiario->direccionperm}}--}}
-                                        {{--</td>--}}
-                                    {{--</tr>--}}
+                                    </tr>
+
                                     </tbody>
                                     </table>
                         </div>
@@ -87,9 +81,11 @@
                         </div>
                         <div class="panel-body panelHolder" >
                             <div id="scrollbar3" class="panel-body contentHolder">
-                                <div class="overflow-h">
-                                    <strong class="color-dark">  ID Beneficiario<small class="pull-right"><em>Gasto Realizado</em></small></strong>
-                                    <small class="award-name">Requerimiento</small><small class="award-name">Nro Factura</small>
+                                <div class="alert-blocks">
+                                    <div class="overflow-h">
+                                        <strong class="color-dark">  ID Beneficiario<small class="pull-right"><em>Gasto Realizado</em></small></strong>
+                                        <small class="award-name">Requerimiento</small><small class="award-name">Nro Factura</small>
+                                    </div>
                                 </div>
                                 @foreach($ayudas as $ayuda)
                                     <div class="alert-blocks">
@@ -115,9 +111,11 @@
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Donaciones Realizadas</h2>
                         </div>
                         <div id="scrollbar3" class="panel-body contentHolder">
-                            <div class="overflow-h">
-                                <strong class="color-dark">  Descripcion<small class="pull-right"><em>Fecha de Donacion</em></small></strong>
-                                <small class="award-name">Monto</small>
+                            <div class="alert-blocks">
+                                <div class="overflow-h">
+                                    <strong class="color-dark">  Descripcion<small class="pull-right"><em>Fecha de Donacion</em></small></strong>
+                                    <small class="award-name">Monto</small>
+                                </div>
                             </div>
                             @foreach($donaciones as $donacion)
                                 <div class="alert-blocks">
