@@ -119,25 +119,79 @@
                         </div>
 
 
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Email<span class="required">* </span></label>
 
-                            <div class="col-md-9">
-                                <input type="text" name="email" class="form-control" value="{{$beneficiario[0]->email}}">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Password</label>
-
-                            <div class="col-md-9">
-                                <input type="hidden" name="oldpassword" value="{{$beneficiario[0]->password}}">
-                                <input type="text" name="password" class="form-control">
-                            </div>
-                        </div>
                     </div>
                     </form>
                 </div>
             </div>
+        </div>
+        <div class="profile-body">
+            <div class="row margin-bottom-20">
+                <!--Profile Post-->
+                <div class="col-sm-6">
+                    <div class="panel panel-profile no-bg">
+                        <div class="panel-heading overflow-h">
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Aportante</h2>
+                        </div>
+                        <div class="panel-body panelHolder">
+                            <table class="table table-light margin-bottom-0">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="primary-link">Nombre</span>
+                                    </td>
+                                    <td>
+                                        {{$beneficiario[0]->nombres}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="primary-link">Apellidos</span>
+                                    </td>
+                                    <td>
+                                        {{$beneficiario[0]->apellidos}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="primary-link">Genero</span>
+                                    </td>
+                                    <td>
+                                        {{ucfirst($beneficiario[0]->genero)}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="primary-link">Email</span>
+                                    </td>
+                                    <td>
+                                        {{$beneficiario[0]->email}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="primary-link">Telefono</span>
+                                    </td>
+                                    <td>
+                                        {{$beneficiario[0]->telefono}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="primary-link">Direccion</span>
+                                    </td>
+                                    <td>
+                                        {{$beneficiario[0]->direccion}}
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
         </div>
     </div>
 
