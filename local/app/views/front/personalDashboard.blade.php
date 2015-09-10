@@ -254,7 +254,7 @@
                          @if(count($donaciones))
                             @foreach($donaciones as $donacion)
                             Donacion:
-                            {{--@if(strtotime($donacion->date)>time())--}}
+                            @if(strtotime($donacion->date)>time())
                                 <div class="alert-blocks alert-blocks-{{$donacion_color[$donacion->id%count($donacion_color)]}}">
                                     <div class="overflow-h">
                                         <strong class="color-{{$$donacion_font_color[$donacion->id%count($donacion_font_color)]}}">{{$donacion->montodonacion}}
@@ -262,7 +262,7 @@
                                         </strong>
                                     </div>
                                 </div>
-                             {{--@endif--}}
+                             @endif
                             @endforeach
                         @endif
 
