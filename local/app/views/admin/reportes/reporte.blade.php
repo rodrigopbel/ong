@@ -6,8 +6,7 @@
     {{HTML::style('assets/global/plugins/bootstrap-datepicker/css/datepicker3.css')}}
     <!-- END PAGE LEVEL STYLES -->
 @stop
-{{$beneficiario}}
-{{$ayudas}}
+
 
 @section('mainarea')
 
@@ -37,7 +36,7 @@
         <div class="profile-body">
             <div class="row margin-bottom-20">
                 <!--Profile Post-->
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <div class="panel-heading overflow-h">
                         <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Aportante</h2>
                     </div>
@@ -108,18 +107,77 @@
                     </div>
                     <div class="panel-body panelHolder">
                         <table class="table table-light margin-bottom-0">
+                            @foreach($ayudas as $ayuda)
                             <tbody>
-                            {{--@foreach($ayudas[0] as $ayuda)--}}
-                            {{--<tr>--}}
-                                {{--<td>--}}
-                                    {{--<span class="primary-link">Requerimiento</span>--}}
-                                {{--</td>--}}
-                                {{--<td>--}}
-                                    {{--{{$ayuda->requerimiento}}--}}
-                                {{--</td>--}}
-                            {{--</tr>--}}
-                            {{--@endforeach--}}
+                            <tr>
+                                <td>
+                                    <span class="primary-link">Requerimiento</span>
+                                </td>
+                                <td>
+                                    {{$ayuda->requerimiento}}
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <span class="primary-link">Fecha de Ayuda</span>
+                                </td>
+                                <td>
+                                    {{$ayuda->created_at}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="primary-link">Gastos / Egresos</span>
+                                </td>
+                                <td>
+                                    {{$ayuda->gastos}}
+                                </td>
+                            </tr>
                             </tbody>
+                            @endforeach
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div><div class="profile-body">
+            <div class="row margin-bottom-20">
+                <!--Profile Post-->
+                <div class="col-sm-6">
+                    <div class="panel-heading overflow-h">
+                        <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle de las Ayudas</h2>
+                    </div>
+                    <div class="panel-body panelHolder">
+                        <table class="table table-light margin-bottom-0">
+                            @foreach($donaciones as $donacion)
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="primary-link">Aportante ID</span>
+                                    </td>
+                                    <td>
+                                        {{$donacion->aportanteID}}
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <span class="primary-link">Fecha de Donacion</span>
+                                    </td>
+                                    <td>
+                                        {{$donacion->created_at}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="primary-link">Monto Donacion / Ingresos</span>
+                                    </td>
+                                    <td>
+                                        {{$donacion->montodonacion}}
+                                    </td>
+                                </tr>
+                                </tbody>
+                            @endforeach
                         </table>
                     </div>
                 </div>
