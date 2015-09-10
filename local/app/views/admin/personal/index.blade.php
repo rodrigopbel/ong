@@ -8,9 +8,9 @@
 @stop
 @section('mainarea')
 	<!-- BEGIN PAGE HEADER-->
-		<h3 class="page-title">
-			<small>Lista de Personal</small>
-		</h3>
+    <h3 class="page-title">
+        {{$pageTitle}}
+    </h3>
 		<div class="page-bar">
 			<ul class="page-breadcrumb">
 				<li>

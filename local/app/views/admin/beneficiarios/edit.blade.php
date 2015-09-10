@@ -12,8 +12,8 @@
 @section('mainarea')
 
     <!-- BEGIN PAGE HEADER-->
-    <h3 class="page-title" xmlns="http://www.w3.org/1999/html">
-        Detalles del Beneficiario
+    <h3 class="page-title">
+        {{$pageTitle}}
     </h3>
     <div class="page-bar">
         <ul class="page-breadcrumb">
