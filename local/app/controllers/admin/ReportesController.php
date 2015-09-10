@@ -61,7 +61,18 @@ class ReportsController extends \AdminBaseController {
     }
     public function ReporteGen()
     {
-        return Input::get('beneficiario');
+        if(Input::get('beneficiario')){
+            $this->data['beneficiarios'] = Beneficiario::where('beneficiarioID','=',Input::get('beneficiario'))->get();
+            $this->data['ayudas'] = Ayuda::where('beneficiarioID','=',Input::get('beneficiario'))->get();
+            $b = json_decode($this->data['ayudas']);
+            $this->data['donaciones'] = Donacion::where('aportanteID','=',$b[0]->aportanteID)->get();
+
+            return $this->data;
+        } else {
+            return Redirect::route('admin.reportes.index');
+        }
+//        return Input::get('beneficiario');
+
     }
     public function reportestran()
     {
