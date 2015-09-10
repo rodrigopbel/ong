@@ -7,7 +7,7 @@
     <!-- END PAGE LEVEL STYLES -->
 @stop
 
-{{$beneficiario}}
+
 @section('mainarea')
 
     <!-- BEGIN PAGE HEADER-->
@@ -105,16 +105,16 @@
                 <div class="panel-body panelHolder">
                     <table class="table table-light margin-bottom-0">
                         <tbody>
-                        @foreach($beneficiario[0][ayudas] as $ayuda)
-                        <tr>
-                            <td>
-                                <span class="primary-link">Requerimiento</span>
-                            </td>
-                            <td>
-                                {{$ayuda->requerimiento}}
-                            </td>
-                        </tr>
-                        @endforeach
+                        {{--@foreach($beneficiario[0][ayudas] as $ayuda)--}}
+                        {{--<tr>--}}
+                            {{--<td>--}}
+                                {{--<span class="primary-link">Requerimiento</span>--}}
+                            {{--</td>--}}
+                            {{--<td>--}}
+                                {{--{{$ayuda->requerimiento}}--}}
+                            {{--</td>--}}
+                        {{--</tr>--}}
+                        {{--@endforeach--}}
                         </tbody>
                     </table>
                 </div>
