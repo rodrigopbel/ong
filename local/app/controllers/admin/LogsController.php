@@ -12,7 +12,7 @@ class LogsController extends \AdminBaseController {
         parent::__construct();
         $this->data['logsOpen'] =   'active open';
         $this->data['pageTitle']     =   'Logs';
-
+        dd("error");
     }
 
     public function index()
@@ -20,7 +20,7 @@ class LogsController extends \AdminBaseController {
         $this->data['logs']       =   Log::all();
         Debugbar::info($this->data['logs'] );
         $this->data['logsActive'] =   'active';
-        dd("error");
+
         return View::make('admin.logs.index', $this->data);
     }
 
