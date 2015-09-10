@@ -32,18 +32,16 @@ class ReportsController extends \AdminBaseController {
                 $this->data['beneficiario']['ayudas'] = $ben->ayudas;
                 $this->data['beneficiario']['donaciones'] = $ben->donaciones;
             }
-            $this->data['ayudas'] = Ayuda::where();
             echo $this->data;
+            return View::make('admin.reportes.reporte',$this->data);
         } else {
             return Redirect::route('admin.reportes.index');
         }
 //        return Input::get('beneficiario');
-
     }
     public function reportestran()
     {
         $this->data['reporteActive']    =   'active';
         return "hola reportes Transacciones";
     }
-
 }
