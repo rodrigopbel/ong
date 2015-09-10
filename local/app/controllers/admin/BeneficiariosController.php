@@ -233,6 +233,8 @@ class BeneficiariosController extends \AdminBaseController {
                 $details->zona        = Input::get('zona');
                 $details->save();
 
+
+
                 $output['status'] = 'success';
                 $output['msg'] = 'Zonificacion actualizado exitosamente';
             }
@@ -332,6 +334,15 @@ class BeneficiariosController extends \AdminBaseController {
                     'foto'  =>  isset($filename)?$filename:'default.jpg',
                     'direccionperm' => $input['direccionperm']
                 ]);
+
+            Activity::log([
+                'contentId'   => $id,
+                'contentType' => 'Beneficiario',
+                'action'      => 'Update '. Input::get('updateType'),
+                'description' => 'ACtualizacion del un Beneficiario',
+                'details'     => 'Usuario: '. Auth::admin()->get()->name,
+                'updated'     => $id ? true : false
+            ]);
 
             return Redirect::route('admin.beneficiarios.edit',$id)->with('successPersonal',"<strong>Actualizacion</strong> Existosa");
 
