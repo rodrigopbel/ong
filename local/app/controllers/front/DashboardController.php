@@ -13,8 +13,9 @@ class DashboardController extends \BaseController {
 	    $total_leave    =   Leavetype::where('leaveType','<>','half day')->sum('num_of_leave');
         $this->data['leaveLeft']       =    array_sum(Attendance::absentEmployee($this->data['personalID'])).'/'.$total_leave;
         $this->data['personal']        =    Personal::find(Auth::personales()->get()->id);
-        $this->data['holidays']        =    Holiday::orderBy('date','ASC')->remember(10,'holiday_cache')->get();
-        $this->data['ayudas']          =    Ayuda::select('*')->orderBy('created_at','desc')->get();
+        $this->data['donaciones']        =    Donacion::where('aportanteID', '=', '$this->data['personalID']')->get();
+//        $this->data['donaciones']      =    Donacion::where('personalID', '=', )
+//                                                        select('monto')->orderBy('created_at','desc')->get();
 //        $this->data['attendance']      =    Attendance::where('employeeID', '=',$this->data['personalID'])
 //                                                        ->where(function($query)
 //                                                        {
@@ -36,8 +37,8 @@ class DashboardController extends \BaseController {
 
         $this->data['homeActive']         =    'active';
         $this->data['noticeboards']       =     Noticeboard::where('status','=','active')->orderBy('created_at','DESC')->get();
-        $this->data['holiday_color']      = ['info','error','success','pending',''];
-        $this->data['holiday_font_color'] = ['blue','red','green','yellow','dark'];
+        $this->data['donacion_color']      = ['info','error','success','pending',''];
+        $this->data['donacion_font_color'] = ['blue','red','green','yellow','dark'];
         return View::make('front.personalDashboard',$this->data);
 	}
 

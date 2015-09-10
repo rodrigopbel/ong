@@ -246,28 +246,28 @@
                         </div>
                     </div>
 
-                    {{--<div class="panel panel-profile margin-top-20">--}}
-                        {{--<div class="panel-heading overflow-h">--}}
-                            {{--<h2 class="panel-title heading-sm pull-left"><i class="fa fa-send"></i> Otros</h2>--}}
-                        {{--</div>--}}
-                        {{--<div id="scrollbar3" class="panel-body contentHolder">--}}
-                         {{--@if(count($holidays))--}}
-                            {{--@foreach($holidays as $holiday)--}}
-                            {{--Check for upcoming Holidays--}}
-                            {{--@if(strtotime($holiday->date)>time())--}}
-                                {{--<div class="alert-blocks alert-blocks-{{$holiday_color[$holiday->id%count($holiday_color)]}}">--}}
-                                    {{--<div class="overflow-h">--}}
-                                        {{--<strong class="color-{{$holiday_font_color[$holiday->id%count($holiday_font_color)]}}">{{$holiday->occassion}}--}}
-                                            {{--<small class="pull-right"><em>{{date('d M Y',strtotime($holiday->date))}}</em></small>--}}
-                                        {{--</strong>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                             {{--@endif--}}
-                            {{--@endforeach--}}
-                        {{--@endif--}}
+                    <div class="panel panel-profile margin-top-20">
+                        <div class="panel-heading overflow-h">
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-send"></i> Otros</h2>
+                        </div>
+                        <div id="scrollbar3" class="panel-body contentHolder">
+                         @if(count($donaciones))
+                            @foreach($donaciones as $donacion)
+                            ver todas las  donaciones
+                            @if(strtotime($donacion->date)>time())
+                                <div class="alert-blocks alert-blocks-{{$donacion_color[$donacion->id%count($donacion_color)]}}">
+                                    <div class="overflow-h">
+                                        <strong class="color-{{$$donacion_font_color[$donacion->id%count($donacion_font_color)]}}">{{$donacion->monto}}
+                                            <small class="pull-right"><em>{{date('d M Y',strtotime($donacion->created_at))}}</em></small>
+                                        </strong>
+                                    </div>
+                                </div>
+                             @endif
+                            @endforeach
+                        @endif
 
-                        {{--</div>--}}
-                    {{--</div>--}}
+                        </div>
+                    </div>
 
 
                 </div>
