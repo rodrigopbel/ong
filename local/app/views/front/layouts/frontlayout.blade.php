@@ -123,22 +123,22 @@
                             {{--<img class="img-responsive profile-img margin-bottom-20" src="front_assets/img/team/5.jpg" alt="">--}}
             				<p>
             				<h3 style="text-align: center">{{ $personal->nombres . " ". $personal->apellidos }}</h3>
-            				<h6 style="text-align: center">{{$personal->getObjetivo->destinos->destino}}</h6>
+            				{{--<h6 style="text-align: center">{{$personal->getObjetivo->destinos->destino}}</h6>--}}
             				{{--<h6 style="text-align: center;background: rgb(235, 235, 235);padding: 10px;"><strong>En Solicitud hace : </strong>{{$personal->duracionVinculacion($personal->personalID)}}</h6>--}}
             				</p>
                             <hr>
             				<div class="service-block-v3 service-block-u">
             						<!-- STAT -->
             							<div class="row profile-stat">
-            								<div class="col-md-6 col-sm-6 col-xs-6" data-toggle="tooltip" data-placement="bottom" >
-                                                <div class="uppercase profile-stat-title">
+            								{{--<div class="col-md-6 col-sm-6 col-xs-6" data-toggle="tooltip" data-placement="bottom" >--}}
+                                                {{--<div class="uppercase profile-stat-title">--}}
                                                     {{--{{count($employee->getAwards)}}--}}
-                                                </div>
-                                                <div class="uppercase profile-stat-text">
-                                                    Solicitudes
-                                                </div>
+                                                {{--</div>--}}
+                                                {{--<div class="uppercase profile-stat-text">--}}
+                                                    {{--Solicitudes--}}
+                                                {{--</div>--}}
 
-            								</div>
+            								{{--</div>--}}
             								<div class="col-md-6 col-sm-6 col-xs-6" data-toggle="tooltip" data-placement="bottom" >
                                                 <div class="uppercase profile-stat-title">
                                                     {{--{{count($employee->getAwards)}}--}}
@@ -161,24 +161,24 @@
 
 
                             <!--Notification-->
-                     @if(count($current_month_birthdays)>0)
-                            <div class="panel-heading-v2 overflow-h">
-                                <h2 class="heading-xs pull-left"><i class="fa fa-birthday-cake"></i> Birthdays</h2>
-                            </div>
-                            <ul id="scrollbar5" class="list-unstyled contentHolder margin-bottom-20" style="height: auto">
-                            @foreach($current_month_birthdays as $birthday)
-                                <li class="notification">
-                                 {{HTML::image("/profileImages/{$birthday->profileImage}",'ProfileImage',['class'=>"rounded-x"])}}
+                     {{--@if(count($current_month_birthdays)>0)--}}
+                            {{--<div class="panel-heading-v2 overflow-h">--}}
+                                {{--<h2 class="heading-xs pull-left"><i class="fa fa-birthday-cake"></i> Birthdays</h2>--}}
+                            {{--</div>--}}
+                            {{--<ul id="scrollbar5" class="list-unstyled contentHolder margin-bottom-20" style="height: auto">--}}
+                            {{--@foreach($current_month_birthdays as $birthday)--}}
+                                {{--<li class="notification">--}}
+                                 {{--{{HTML::image("/profileImages/{$birthday->profileImage}",'ProfileImage',['class'=>"rounded-x"])}}--}}
 
-                                    <div class="overflow-h">
-                                        <span><strong>{{$birthday->fullName}}</strong> has birthday on</span>
-                                        <strong>{{date('d F',strtotime($birthday->date_of_birth))}}</strong>
-                                    </div>
-                                </li>
-                             @endforeach
+                                    {{--<div class="overflow-h">--}}
+                                        {{--<span><strong>{{$birthday->fullName}}</strong> has birthday on</span>--}}
+                                        {{--<strong>{{date('d F',strtotime($birthday->date_of_birth))}}</strong>--}}
+                                    {{--</div>--}}
+                                {{--</li>--}}
+                             {{--@endforeach--}}
 
-                            </ul>
-                      @endif
+                            {{--</ul>--}}
+                      {{--@endif--}}
                             <!--End Notification-->
 
 
