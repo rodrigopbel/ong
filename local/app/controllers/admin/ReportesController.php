@@ -29,8 +29,8 @@ class ReportsController extends \AdminBaseController {
 //            echo ($ben->ayudas);
 //
 //        }
-        $ben = Beneficiario::where('beneficiarioID','666');
-        echo $ben;
+        $ben = Beneficiario::where('beneficiarioID','=','666')->get();
+        echo $ben->ayudas;
         echo('***********');
 //        echo (json_encode($result));
 //        dd( Datatables::of($result));
