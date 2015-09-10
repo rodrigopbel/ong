@@ -208,7 +208,10 @@
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Donaciones Realizadas</h2>
                         </div>
                         <div id="scrollbar3" class="panel-body contentHolder">
-
+                            <div class="overflow-h">
+                                <strong class="color-dark">Descripcion  <small class="pull-right"><em>Fecha de Doancion</em></small></strong>
+                                <small class="award-name">Monto</small>
+                            </div>
                             @foreach($donaciones as $donacion)
                                 <div class="alert-blocks">
                                     <div class="overflow-h">
