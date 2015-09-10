@@ -32,7 +32,7 @@ class ReportsController extends \AdminBaseController {
                 $this->data['beneficiario']['ayudas'] = $ben->ayudas;
                 $this->data['beneficiario']['donaciones'] = $ben->donaciones;
             }
-            print_r( $this->data);
+            echo( $this->data);
 //            return View::make('admin.reportes.reporte',$this->data);
         } else {
             return Redirect::route('admin.reportes.index');
