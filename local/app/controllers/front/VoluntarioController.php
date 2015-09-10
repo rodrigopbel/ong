@@ -2,11 +2,11 @@
 
 class VoluntarioController extends \BaseController {
 
-//    public function index()
-//    {
-//
-//        return View::make('front.voluntario');
-//    }
+    public function index()
+    {
+
+        return View::make('front.voluntario');
+    }
 
     public function registrar()
     {
@@ -22,7 +22,7 @@ class VoluntarioController extends \BaseController {
             $nombres = $input['nombres'];
             $apellidos = $input['apellidos'];
 
-            Personal::create([
+            Voluntario::create([
                 'personalID'    => $input['personalID'],
                 'nombres'      => ucwords(strtolower($input['nombres'])),
                 'apellidos'    => ucwords(strtolower($input['apellidos'])),
@@ -31,8 +31,6 @@ class VoluntarioController extends \BaseController {
                 'telefono'  => $input['telefono'],
                 'tipoPersonal' => $tipo
             ]);
-
-
 
         }catch(\Exception $e)
         {
