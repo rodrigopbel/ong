@@ -38,12 +38,10 @@ class ReportsController extends \AdminBaseController {
             return Redirect::route('admin.reportes.index');
         }
 //        return Input::get('beneficiario');
-
     }
     public function reportestran()
     {
         $this->data['reporteActive']    =   'active';
         return "hola reportes Transacciones";
     }
-
 }
