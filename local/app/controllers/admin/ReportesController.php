@@ -29,13 +29,9 @@ class ReportsController extends \AdminBaseController {
 //            echo ($ben->ayudas);
 //
 //        }
-        $ben = Ayuda::where('beneficiarioID','=','666')->get();
-        $b = json_decode($ben);
-        $don = Donacion::where('aportanteID','=',$b[0]->aportanteID)->get();
 
-        echo ($don);
 
-//        return View::make('admin.reportes.index', $this->data);
+        return View::make('admin.reportes.index', $this->data);
     }
 
 
@@ -65,16 +61,15 @@ class ReportsController extends \AdminBaseController {
 
 //        echo $result;
         if(Request::ajax()){
-            $idBen = Input::get('id');
-            $ayudas = Ayuda::select('ayudas.created_at','ayudas.gastos')
-                                    ->join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
-                                    ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
-                                    ->groupBy('ayudas.id');
-            $input = Input::all();
-//            return Response::json($input);
-            var_dump($ayudas);
-            $json_ayudas = json_encode($ayudas);
-            return Response::json($json_ayudas);
+
+            $idBenObject = Input::get('id');
+            $idBen = json_decode($idBenObject);
+            $ben = Ayuda::where('beneficiarioID','=',$idBen[0]->beneficiarioID)->get();
+            $b = json_decode($ben);
+            $don = Donacion::where('aportanteID','=',$b[0]->aportanteID)->get();
+
+            echo ($don);
+            return Response::json($ben);
         }else{
             return Response::json("error de sintaxis");
         }
