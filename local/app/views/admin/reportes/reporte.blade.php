@@ -10,7 +10,7 @@
 
 
 @section('mainarea')
-
+    {{dd("entro hasta aqui")}}
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title" xmlns="http://www.w3.org/1999/html">
         Reporte del Beneficiario
@@ -32,7 +32,7 @@
     <div class="clearfix">
     </div>
 
-    {{dd("entro hasta aqui")}}
+
     <div class="row ">
         <div class="col-md-6 col-sm-6">
             <div class="portlet box purple-wisteria">
