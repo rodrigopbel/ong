@@ -81,10 +81,10 @@
                         </div>
                         <div class="panel-body panelHolder" >
                             <div id="scrollbar3" class="panel-body contentHolder">
-                                <div class="alert-blocks" style="background:#7F7F00; color:#fff">
+                                <div class="alert-blocks" style="background:#fff">
                                     <div class="overflow-h">
-                                        <strong class="color-dark">  ID Beneficiario<small class="color-dark pull-right"><em>Gasto Realizado</em></small></strong>
-                                        <small class="color-dark">Requerimiento</small><small class="color-dark ">Nro Factura</small>
+                                        <strong class="color-dark">IDBeneficiario<small class="color-dark pull-right"><em>Gasto Realizado</em></small></strong>
+                                        <small class="color-dark">Requerimiento</small><small class="color-dark ">NroFactura</small>
                                     </div>
                                 </div>
                                 @foreach($ayudas as $ayuda)
@@ -111,7 +111,7 @@
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Donaciones Realizadas</h2>
                         </div>
                         <div id="scrollbar3" class="panel-body contentHolder">
-                            <div class="alert-blocks">
+                            <div class="alert-blocks" style="background:#fff">
                                 <div class="overflow-h">
                                     <strong class="color-dark">  Descripcion<small class="pull-right"><em>Fecha de Donacion</em></small></strong>
                                     <small class="award-name">Monto</small>
