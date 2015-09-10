@@ -87,6 +87,14 @@ class BeneficiariosController extends \AdminBaseController {
                 'direccionperm' => $input['direccionperm']
             ]);
 
+            Activity::log([
+                'contentId'   => $input['beneficiarioID'],
+                'contentType' => 'Beneficiario',
+                'action'      => 'Creacion',
+                'description' => 'Creacion del un Beneficiario',
+                'details'     => 'Usuario: '. Auth::admin()->get()->name,
+                'updated'     => $input['beneficiarioID'] ? true : false
+            ]);
             //  Insert into salary table
             if ($input['montosolicitado'] != '')
             {
