@@ -66,6 +66,7 @@ body {
 }
 .voluntario{
     width: 100%;
+    padding: 30px;
 }
 .vol{
     background:#D14D00 ;
@@ -73,7 +74,12 @@ body {
     padding: 20px;
     font-size: 16px;
     text-align: center;
+    width: 100%;
+    margin-top: 50px;
 
+}
+.vol a{
+    color:#fff;
 }
 
 /*For Mobile Devices*/
