@@ -9,8 +9,8 @@
 
 
 @section('mainarea')
-   <h3 class="page-title">
-        <small>Lista de Logs</small>
+    <h3 class="page-title">
+        {{$pageTitle}}
     </h3>
     <div class="page-bar">
         <ul class="page-breadcrumb">
