@@ -88,8 +88,8 @@
                         <div class="panel-body panelHolder">
                             <div id="scrollbar3" class="panel-body contentHolder">
                                 <div class="overflow-h">
-                                    <strong class="color-dark">  Descripcion<small class="pull-right"><em>Fecha de Donacion</em></small></strong>
-                                    <small class="award-name">Monto</small>
+                                    <strong class="color-dark">  ID Beneficiario<small class="pull-right"><em>Gasto Realizado</em></small></strong>
+                                    <small class="award-name">Requerimiento</small><small class="award-name">Nro Factura</small>
                                 </div>
                                 @foreach($ayudas as $ayuda)
                                     <div class="alert-blocks">
