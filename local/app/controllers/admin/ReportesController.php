@@ -29,11 +29,13 @@ class ReportsController extends \AdminBaseController {
 //            echo ($ben->ayudas);
 //
 //        }
-        $ben = Ayuda::where('beneficiarioID','=','666')
-            ->get();
-
-        echo ($ben);
+        $ben = Ayuda::where('beneficiarioID','=','666')->get();
+        $don = Donacion::where('aportanteID','=','321')->get();
+        $b = json_decode($ben);
+        echo ($b);
         echo('***********');
+        echo ($don);
+
 //        echo (json_encode($result));
 //        dd( Datatables::of($result));
 //        return View::make('admin.reportes.index', $this->data);
