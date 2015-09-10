@@ -19,13 +19,14 @@ class VoluntarioController extends \BaseController {
 
         DB::beginTransaction();
         try {
+            $nombres = $input['nombres'];
+            $tipo = 'Voluntario';
 
             Voluntario::create([
-                'personalID'    => $input['personalID'],
+                'ci'          => 'required|ci|unique:personal',
                 'nombres'      => ucwords(strtolower($input['nombres'])),
                 'apellidos'    => ucwords(strtolower($input['apellidos'])),
                 'email'         => $input['email'],
-                'genero'        => $input['genero'],
                 'telefono'  => $input['telefono'],
                 'tipoPersonal' => $tipo
             ]);
@@ -37,8 +38,8 @@ class VoluntarioController extends \BaseController {
         }
 
         DB::commit();
-        return View::make('front.final',$this->data);
-//        return Redirect::route('admin.personal.index')->with('success',"<strong>{$nombres}</strong> exitosamente adicionado en le base de datos");
+//        return View::make('front.final',$this->data);
+        return Redirect::route('front.final')->with('success',"<strong>{$nombres}</strong> exitosamente adicionado en le base de datos");
 //    }
 
 
