@@ -28,7 +28,7 @@ class ReportsController extends \AdminBaseController {
             $result[] = $ben->ayudas()->where('beneficiarioID','=','666');
         }
         echo('***********');
-        echo ($result);
+        echo (json_encode($result));
 //        dd( Datatables::of($result));
 //        return View::make('admin.reportes.index', $this->data);
     }
