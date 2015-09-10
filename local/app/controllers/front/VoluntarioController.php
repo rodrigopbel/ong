@@ -20,6 +20,11 @@ class VoluntarioController extends \BaseController {
             'email'	      => 'required|email'
         ];
         $validator	= Validator::make($input,$rules);
+        if($validator->fails())
+        {
+            $output['status'] = 'error';
+            $output['msg']    =  $validator->getMessageBag()->toArray();
+        }
         $tipo = 'Voluntario';
         Personal::create([
             'nombres'    => $input['nombres'],
@@ -29,7 +34,7 @@ class VoluntarioController extends \BaseController {
             'email'	     =>	$input['email'],
             'tipoPersonal' => $tipo
         ]);
-        return View::make('front.login',$this->data);
+        return View::make('front.final',$this->data);
 //        return Redirect::route('front.login')->with(" Voluntario adicionado");
     }
 
