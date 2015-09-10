@@ -36,7 +36,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="error-v3">
                     <h2>500</h2>
-                    <p>Sorry, the page you were looking for could not be found!</p>
+                    <p>Lo sentimos, la página que estás buscando no se pudo encontrar!</p>
                 </div>
             </div>
         </div>
@@ -50,9 +50,9 @@
                 <div class="service-block-in service-or">
                     <div class="service-bg"></div>
                     <i class="icon-directions"></i>
-                    <h4>Possible cause of the problem</h4>
-                    <p>The page you requested could not be found. However, the requested resource may be available again in the future.</p>
-                    <a class="btn-u btn-brd btn-u-light" href="{{ route('dashboard.index') }}"> Go back to Homepage</a>
+                    <h4>Posible causa del problema</h4>
+                    <p>La página solicitada no se pudo encontrar. Sin embargo, el recurso solicitado puede estar disponible de nuevo en el futuro.</p>
+                    <a class="btn-u btn-brd btn-u-light" href="{{ route('dashboard.index') }}">Volver a la página principal</a>
                 </div>
             </div>  
             
@@ -65,7 +65,7 @@
     <!--=== Sticky Footer ===-->
     <div class="container sticky-footer">
         <p class="copyright-space">
-            {{date('Y')}} &copy;  ALL Rights Reserved.
+            {{date('Y')}} &copy; {{$setting->website}}
         </p>  
     </div>
     <!--=== End Sticky-Footer ===-->
