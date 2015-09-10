@@ -1,5 +1,4 @@
 @extends('admin.adminlayouts.adminlayout')
-@extends('front.layouts.frontlayout')
 @section('head')
 
     <!-- BEGIN PAGE LEVEL STYLES -->
