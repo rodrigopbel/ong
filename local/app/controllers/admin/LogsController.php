@@ -27,8 +27,7 @@ class LogsController extends \AdminBaseController {
 
 	    $result =
 		    Log::select('activity_log.id','activity_log.user_id','content_id','content_type','action','description','details','developer','ayudas.created_at')
-		      ->from('activity_log')
-			  ->orderBy('activity_log.created_at','desc');
+		     			  ->orderBy('activity_log.created_at','desc');
 
         return Datatables::of($result)
             ->add_column('Por el Mes',function($row) {
