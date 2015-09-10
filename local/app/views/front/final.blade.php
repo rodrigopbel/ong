@@ -66,7 +66,7 @@
     <!--=== Sticky Footer ===-->
     <div class="container sticky-footer">
         <p class="copyright-space">
-            {{date('Y')}} &copy;  ALL Rights Reserved.
+            {{date('Y')}} &copy; {{$setting->website}}
         </p>  
     </div>
     <!--=== End Sticky-Footer ===-->
