@@ -117,7 +117,6 @@
 	{{ HTML::script("assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js")}}
 
 <!-- END PAGE LEVEL PLUGINS -->
-
 	<script>
     $(document).ready(function(){
         $('#beneficiario').on('change',function(){
@@ -126,7 +125,6 @@
             }
             console.log(data);
         });
-
         $('.generarReporte').on('click', function(){
 //            alert($('#beneficiario').val());
 //            console.log($('#beneficiario').val());
