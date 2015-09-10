@@ -63,13 +63,13 @@ class ReportsController extends \AdminBaseController {
         if(Request::ajax()){
 
             $idBenObject = Input::get('id');
-            $idBen = json_decode($idBenObject);
-            $ben = Ayuda::where('beneficiarioID','=',$idBen[0]->id)->get();
+//            $idBen = json_decode($idBenObject);
+            $ben = Ayuda::where('beneficiarioID','=',$idBenObject)->get();
             $b = json_decode($ben);
             $don = Donacion::where('aportanteID','=',$b[0]->aportanteID)->get();
 
 //            echo ($don);
-            return Response::json($idBenObject);
+            return Response::json($ben);
         }else{
             return Response::json("error de sintaxis");
         }
