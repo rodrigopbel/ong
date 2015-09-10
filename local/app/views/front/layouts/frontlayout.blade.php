@@ -92,7 +92,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="" data-toggle="modal" data-target=".change_password_modal" id="change_password_link">Cambiar Contraseña</a></li>
                                 <!-- Logout -->
-                                @if(Auth::beneficiarios()->check())
+                                @if(Auth::personales()->check())
                                 <li>
                                     <a href="{{route('front.logout')}}">
                                         Salir
@@ -124,7 +124,7 @@
             				<p>
             				<h3 style="text-align: center">{{ $personal->nombres . " ". $personal->apellidos }}</h3>
             				<h6 style="text-align: center">{{$personal->getObjetivo->destinos->destino}}</h6>
-            				<h6 style="text-align: center;background: rgb(235, 235, 235);padding: 10px;"><strong>En Solicitud hace : </strong>{{$personal->duracionVinculacion($personal->beneficiarioID)}}</h6>
+            				<h6 style="text-align: center;background: rgb(235, 235, 235);padding: 10px;"><strong>En Solicitud hace : </strong>{{$personal->duracionVinculacion($personal->personalID)}}</h6>
             				</p>
                             <hr>
             				<div class="service-block-v3 service-block-u">
