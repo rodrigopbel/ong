@@ -6,8 +6,8 @@ class LogsController extends \AdminBaseController {
     public function __construct()
     {
         parent::__construct();
-        $this->data['ayudasOpen'] ='active open';
-        $this->data['pageTitle']  =  'Ayudas';
+        $this->data['logsOpen'] ='active open';
+        $this->data['pageTitle']  =  'Logs';
     }
 
     //    Display a listing of awards
