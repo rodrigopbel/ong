@@ -71,6 +71,9 @@
                             <th class="text-center">
                                 Fecha de Actividad
                             </th>
+                            <th class="text-center">
+
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -95,6 +98,9 @@
                                 </td>
                                 <td>
                                     {{ $log->created_at }}
+                                </td>
+                                <td>
+
                                 </td>
                             </tr>
                         @endforeach
