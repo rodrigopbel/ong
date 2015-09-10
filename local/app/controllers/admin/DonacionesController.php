@@ -48,6 +48,10 @@ class DonacionesController extends \AdminBaseController {
                                             ->where('tipoPersonal','=','aportante')
                                             ->lists('nombres','personalID');
 
+        $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (ID:", beneficiarioID,")") as apellidos, beneficiarioID')
+            ->where('status','=','activo')
+            ->lists('apellidos','beneficiarioID');
+
 		return View::make('admin.donaciones.create',$this->data);
 	}
 
