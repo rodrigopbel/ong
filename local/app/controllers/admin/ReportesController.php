@@ -47,7 +47,6 @@ class ReportsController extends \AdminBaseController {
 //        echo $result;
         if(Request::ajax()){
             $input = Input::all();
-            $id = json_decode($input);
             return Response::json($input);
         }else{
             return Response::json("error de sintaxis");
