@@ -157,8 +157,8 @@
                 beforeSend: function(){
                     console.log("generando reporte");
                 },
-                error : function (){
-                    console.log("surgio algun error");
+                error : function (e){
+                    console.log(e);
                 },
                 success: function(respuesta){
                     if(respuesta){
