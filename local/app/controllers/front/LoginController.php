@@ -31,7 +31,7 @@ class LoginController extends \BaseController {
             $data	=	[
                 'email'	    =>	$input['email'],
                 'password'	=>	$input['password'],
-	            'status'    =>  'activo'
+	            'estado'    =>  'activo'
             ];
             //Reglas de los Campos de Email y Password
             $rules  =[
@@ -48,7 +48,7 @@ class LoginController extends \BaseController {
             $data	=	[
                 'email'	    =>	$input['email'],
                 'password'	=>	$input['password'],
-                'status'    =>  'activo'
+                'estado'    =>  'activo'
             ];
             // Check if  exists in database with the credentials of not
             if (Auth::personales()->attempt($data))
@@ -60,7 +60,7 @@ class LoginController extends \BaseController {
             }
 
 	        // For Blocked Users
-	        $data['status']         =   'inactive';
+	        $data['estado']         =   'inactive';
           if(Auth::personales()->validate($data))
             {
 	            $output['status']	=	'error';
