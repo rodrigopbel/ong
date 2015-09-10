@@ -45,7 +45,7 @@
 
                 <div class="portlet-body">
                     {{--------------------Personal Info Form--------------------------------------------}}
-
+                    <form action="#">
                     <div class="form-body">
                         <div class="form-group">
                             <label class="col-md-3 control-label">Nombres<span class="required">* </span></label>
@@ -135,7 +135,7 @@
                             </div>
                         </div>
                     </div>
-
+                    </form>
                 </div>
             </div>
         </div>
