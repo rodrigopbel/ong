@@ -1,1 +1,1 @@
-{{dd("hola a todos")}}
+{{ $this->data}}
