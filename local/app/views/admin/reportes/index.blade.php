@@ -131,7 +131,7 @@
             };
             $.ajax({
                 url: '{{route("admin.ajax_reportes")}}',
-                type: 'POST',
+                type: 'GET',
                 data : data,
                 dataType: 'JSON',
                 beforeSend: function(){
