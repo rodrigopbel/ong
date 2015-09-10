@@ -126,6 +126,10 @@
             }
             console.log(data);
         });
+
+        $('.generarReporte').on('click', function(){
+            console.log($('#beneficiario').val());
+        });
     });
 
        	{{--$('#reportes').dataTable( {--}}
