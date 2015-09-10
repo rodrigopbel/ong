@@ -51,7 +51,7 @@ return array(
 	| If false, user ID will not be automatically set.
 	|
 	*/
-	'autoSetUserId' => true,
+	'autoSetUserId' => false,
 
 	/*
 	|--------------------------------------------------------------------------
