@@ -105,7 +105,7 @@
                 <div class="panel-body panelHolder">
                     <table class="table table-light margin-bottom-0">
                         <tbody>
-                        @foreach($beneficiario[0]->ayudas as $ayuda)
+                        @foreach($beneficiario[0][ayudas] as $ayuda)
                         <tr>
                             <td>
                                 <span class="primary-link">Requerimiento</span>
@@ -114,7 +114,7 @@
                                 {{$ayuda->requerimiento}}
                             </td>
                         </tr>
-                         @endforeach
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
