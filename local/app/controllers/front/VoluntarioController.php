@@ -21,8 +21,8 @@ class VoluntarioController extends \BaseController {
         try {
             $nombres = $input['nombres'];
             $apellidos = $input['apellidos'];
-
-            Personal::create([
+dd("holalsd");
+            Voluntario::create([
                 'personalID'    => $input['personalID'],
                 'nombres'      => ucwords(strtolower($input['nombres'])),
                 'apellidos'    => ucwords(strtolower($input['apellidos'])),
@@ -31,8 +31,6 @@ class VoluntarioController extends \BaseController {
                 'telefono'  => $input['telefono'],
                 'tipoPersonal' => $tipo
             ]);
-
-
 
         }catch(\Exception $e)
         {
