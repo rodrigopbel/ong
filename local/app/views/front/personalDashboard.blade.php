@@ -91,11 +91,11 @@
                                     <strong class="color-dark">  Descripcion<small class="pull-right"><em>Fecha de Donacion</em></small></strong>
                                     <small class="award-name">Monto</small>
                                 </div>
-                                @foreach($ayudas as $ayuda)
+                                @foreach($beneficiarios as $beneficiario)
                                     <div class="alert-blocks">
                                         <div class="overflow-h">
-                                            <strong class="color-dark">{{Str::words($ayuda->requerimiento,1,'')}} <small class="pull-right"><em>{{($ayuda->created_at)}}</em></small></strong>
-                                            <small class="award-name">{{$ayuda->gastos}}</small>
+                                            <strong class="color-dark">{{Str::words($beneficiario->nombres,1,'')}} <small class="pull-right"><em>{{($beneficiario->created_at)}}</em></small></strong>
+                                            <small class="award-name">{{$beneficiario->apellidos}}</small>
                                         </div>
                                     </div>
                                 @endforeach
