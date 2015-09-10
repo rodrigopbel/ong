@@ -35,8 +35,8 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="error-v3">
-                    <h2>!Ya eres Voluntario!</h2>
-                    <p>Gracias por participar y ser parte de Nosotros!</p>
+                    <h3>!Ya eres Voluntario!</h3>
+                    <p></p>
                 </div>
             </div>
         </div>
@@ -50,9 +50,9 @@
                 <div class="service-block-in service-or">
                     <div class="service-bg"></div>
                     <i class="icon-directions"></i>
-                    <h4>Possible cause of the problem</h4>
-                    <p>The page you requested could not be found. However, the requested resource may be available again in the future.</p>
-                    <a class="btn-u btn-brd btn-u-light" href="{{ route('dashboard.index') }}"> Go back to Homepage</a>
+                    <h4>Gracias por participar y ser parte de Nosotros!</h4>
+
+                    <a class="btn-u btn-brd btn-u-light" href="{{ route('dashboard.index') }}"> Volver a la Pagina Principal</a>
                 </div>
             </div>  
             
