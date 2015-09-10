@@ -194,6 +194,24 @@
                          </ul>
                     </li>
                 {{---------------------------------------/Settings-------------------------------}}
+                {{---------------------------------------Logs-------------------------------}}
+                <li class="{{ $logsOpen or ''}}">
+                    <a href="javascript:;">
+                        <i class="fa fa-trophy"></i>
+                        <span class="title">{{Lang::get('menu.logs')}}</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="{{ $logsActive or ''}}">
+                            <a href="{{route('admin.logs.index')}}">
+                                <i class="fa  fa-gift"></i>
+                                {{Lang::get('menu.logsList')}}</a>
+                        </li>
+                    </ul>
+                </li>
+                {{---------------------------------------------------------------------------}}
+
+
 				</li>
 			</ul>
 			<!-- END SIDEBAR MENU -->
