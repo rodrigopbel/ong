@@ -30,14 +30,12 @@ class ReportsController extends \AdminBaseController {
 //
 //        }
         $ben = Ayuda::where('beneficiarioID','=','666')->get();
-        $benA = $ben->aportanteID;
-        $don = Donacion::where('aportanteID','=','321')->get();
-        echo('***********');
-        $b = json_decode($ben);
 
-        echo ($benA);
-        echo('***********');
-        echo ($don);
+        $don = Donacion::where('aportanteID','=','321')->get();
+        $b = json_decode($ben);
+        $benA = $ben->aportanteID;
+        print_r ($b);
+
 
 //        echo (json_encode($result));
 //        dd( Datatables::of($result));
