@@ -17,8 +17,8 @@ class LogsController extends \AdminBaseController {
 
     public function index()
     {
-        $this->data['logs']  =   Log::all();
-        dd("error ggdfg");
+//        $this->data['logs']  =  Log::all();
+//        dd("error ggdfg");
         Debugbar::info($this->data['logs'] );
         $this->data['logsActive'] =   'active';
 
