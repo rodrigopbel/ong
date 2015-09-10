@@ -25,14 +25,14 @@ class ReportsController extends \AdminBaseController {
     public function ajax_reportes()
     {
 
-        $result   =   Ayuda::join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
-            ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
-            ->join('personal', 'ayudas.aportanteID', '=', 'personal.personalID')
-            ->select('ayudas.id','beneficiarios.nombres','requerimiento','created_at','donaciones.montodonacion','gastos',('donaciones.montodonacion'-'gastos'))
-            ->where('personal','personal.tipoPersonal','=','aportante')
-            ->orderBy('beneficiarios.apellidos','asc')
-            ->groupBy('ayudas.id')
-            ->get();
+//        $result   =   Ayuda::join('beneficiarios','ayudas.beneficiarioID','=','beneficiarios.beneficiarioID')
+//            ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
+//            ->join('personal', 'ayudas.aportanteID', '=', 'personal.personalID')
+//            ->select('ayudas.id','beneficiarios.nombres','requerimiento','created_at','donaciones.montodonacion','gastos',('donaciones.montodonacion'-'gastos'))
+//            ->where('personal','personal.tipoPersonal','=','aportante')
+//            ->orderBy('beneficiarios.apellidos','asc')
+//            ->groupBy('ayudas.id')
+//            ->get();
 //        $result = Ayuda::select('ayudas.id','beneficiarios.nombres','requerimiento','created_at','donaciones.montodonacion','gastos',('donaciones.montodonacion'-'gastos'))
 //                ->join('personal', 'ayudas.aportanteID', '=', 'personal.personalID')
 //                ->join('donaciones','ayudas.aportanteID','=','donaciones.aportanteID')
@@ -44,8 +44,8 @@ class ReportsController extends \AdminBaseController {
 //
 //            ->make();
 
-        echo $result;
-        return Response::json("holas", 200);
+//        echo $result;
+        return Response::json("entro aqui");
     }
     public function reportesben()
     {

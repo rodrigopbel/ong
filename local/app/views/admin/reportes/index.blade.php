@@ -104,9 +104,6 @@
                 @include('admin.common.delete')
             {{--DELETE MODAL CALLING END--}}
 @stop
-
-
-
 @section('footerjs')
 
 
@@ -118,7 +115,7 @@
 
 <!-- END PAGE LEVEL PLUGINS -->
 	<script>
-    $(document).ready(function(){
+
         $('#beneficiario').on('change',function(){
             var data = {
                 'id' : $(this).val()
@@ -129,11 +126,25 @@
 //            alert($('#beneficiario').val());
 //            console.log($('#beneficiario').val());
             var id = $('#beneficiario').val();
-            $.post('{{route("admin.ajax_reportes."+id)}}', data, function(data, textStatus, xhr){
-               console.log(data);
+            $.ajax({
+                url: '{{route("admin.ajax_reportes")}}',
+                type: 'POST',
+                data : data,
+                dataType: 'JSON',
+                beforeSend: function(){
+                    console.log("generando reporte");
+                },
+                error : function (){
+                    console.log("surgio algun error");
+                },
+                success: function(respuesta){
+                    if(respuesta){
+                        console.log(respuesta);
+                    }
+                }
             });
         });
-    });
+
 
        	{{--$('#reportes').dataTable( {--}}
             {{--"bProcessing": true,--}}
