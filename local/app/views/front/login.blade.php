@@ -32,9 +32,11 @@
 <!--=== Content Part ===-->    
 <div class="container">
     <!--Reg Block-->
-    <div class="col-md-10 col-md-offset-1 voluntario">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="voluntario">
                 <span class="vol">Quieres ser un Voluntario,
                 <a href=" {{ route('voluntarios.index') }} " type="button">Click Aqui</a></span>
+        </div>
     </div>
     {{ Form::open(array('id'=>'login-form')) }}
     <div class="reg-block">
