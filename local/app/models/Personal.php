@@ -53,9 +53,9 @@ class Personal extends Eloquent  implements UserInterface, RemindableInterface  
         protected $hidden  = ['password'];
 
 
-    public function getBeneficiario()
+    public function getAyudas()
     {
-        return $this->has('Beneficiario','beneficiarioID','beneficiarioID');
+        return $this->has('Ayuda','aportanteID','aportanteID');
     }
 
     public function getdonaciones()
