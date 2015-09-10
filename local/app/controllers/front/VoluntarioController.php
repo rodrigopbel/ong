@@ -10,7 +10,7 @@ class VoluntarioController extends \BaseController {
 
     public function registrar()
     {
-        $validator = Validator::make($input = Input::all(), Personal::rules('create'));
+        $validator = Validator::make($input = Input::all(), Voluntario::rules('create'));
 
         if ($validator->fails())
         {
