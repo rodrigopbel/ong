@@ -119,7 +119,7 @@
         $('#beneficiario').on('change',function(){
             var data = {
                 'id' : $(this).val()
-            }
+            };
             console.log(data);
         });
         $('.generarReporte').on('click', function(){
@@ -128,7 +128,7 @@
             var id = $('#beneficiario').val();
             var data = {
                 'id' : id
-            }
+            };
             $.ajax({
                 url: '{{route("admin.ajax_reportes")}}',
                 type: 'POST',
