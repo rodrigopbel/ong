@@ -128,7 +128,7 @@
 
 
     {{------------------------------------END NEW SALARY ADD MODALS--------------------------------------}}
-@stop
+{{--@stop--}}
 @section('footerjs')
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     {{ HTML::script('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js')}}
