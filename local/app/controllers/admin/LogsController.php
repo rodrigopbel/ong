@@ -30,11 +30,11 @@ class LogsController extends \AdminBaseController {
 		     			  ->orderBy('activity_log.created_at','desc');
 
         return Datatables::of($result)
-            ->add_column('Por el Mes',function($row) {
-                return ucfirst($row->created_at).' '.$row->created_at;
-            })
+//            ->add_column('Por el Mes',function($row) {
+//                return ucfirst($row->created_at).' '.$row->created_at;
+//            })
 
-            ->make();
+//            ->make();
     }
 
 //	public function create()
