@@ -485,6 +485,15 @@ class BeneficiariosController extends \AdminBaseController {
     public function destroy($id)
     {
         Beneficiario::where('beneficiarioID', '=', $id)->delete();
+        Activity::log([
+            'contentId'   => $id,
+            'user_id'     => Auth::admin()->get()->id,
+            'contentType' => 'Beneficiario',
+            'action'      => 'Delete ',
+            'description' => 'ACtualizacion de un Beneficiario',
+            'details'     => 'Usuario: '. Auth::admin()->get()->name,
+            'updated'     => $id ? true : false
+        ]);
         $output['success']  =   'deleted';
         return Response::json($output, 200);
     }
