@@ -49,10 +49,8 @@ class ReportsController extends \AdminBaseController {
             $input = Input::all();
             $idBen = $input->{'id'};
 //            var_dump($idBen);
-            $reponse = '{
-                "id" : $idBen,
-                "algo" : "guillermo"
-            }';
+            $name = "guillermo";
+            $reponse = array($idBen,$name);
             return Response::json($reponse);
         }else{
             return Response::json("error de sintaxis");
