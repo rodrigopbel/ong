@@ -337,8 +337,15 @@ class BeneficiariosController extends \AdminBaseController {
                     'direccionperm' => $input['direccionperm']
                 ]);
 
-
-
+            Activity::log([
+                'contentId'   => $id,
+                'user_id'     => Auth::admin()->get()->id,
+                'contentType' => 'Beneficiario',
+                'action'      => 'Update '. Input::get('updateType'),
+                'description' => 'ACtualizacion de un Beneficiario',
+                'details'     => 'Usuario: '. Auth::admin()->get()->name,
+                'updated'     => $id ? true : false
+            ]);
             return Redirect::route('admin.beneficiarios.edit',$id)->with('successPersonal',"<strong>Actualizacion</strong> Existosa");
 
         }
@@ -435,6 +442,7 @@ class BeneficiariosController extends \AdminBaseController {
         //-------Documents info Details Update END--------
         return Response::json($output, 200);
     }
+
   public function export(){
         $ben   =   Beneficiario::join('objetivo', 'beneficiarios.objetivo', '=', 'objetivo.id')
             ->join('destino', 'destino.id', '=', 'objetivo.destID')
@@ -459,6 +467,16 @@ class BeneficiariosController extends \AdminBaseController {
             });
 
         })->store('xls')->download('xls');
+
+      Activity::log([
+          'contentId'   => 'All',
+          'user_id'     => Auth::admin()->get()->id,
+          'contentType' => 'Beneficiario',
+          'action'      => 'Export ',
+          'description' => 'ACtualizacion de un Beneficiario',
+          'details'     => 'Usuario: '. Auth::admin()->get()->name,
+          'updated'     =>  false
+      ]);
      }
     /**
      * Remove the specified  from storage.
