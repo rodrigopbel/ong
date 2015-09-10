@@ -153,7 +153,7 @@
                 url: '{{route("admin.ajax_reportes")}}',
                 type: 'GET',
                 data : data,
-                contentType: 'application/x-www-form-urlencoded',
+//                contentType: 'application/x-www-form-urlencoded',
                 dataType: 'JSON',
                 beforeSend: function(){
                     console.log("generando reporte");
