@@ -22,6 +22,7 @@ class ReportsController extends \AdminBaseController {
                 ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
                 ->orderBy('ayudas.created_at','desc');
         echo('***********');
+        var_dump($result);
         dd( Datatables::of($result));
 //        return View::make('admin.reportes.index', $this->data);
     }
