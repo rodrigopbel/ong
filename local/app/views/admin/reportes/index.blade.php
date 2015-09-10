@@ -141,9 +141,9 @@
                     console.log("surgio algun error");
                 },
                 success: function(respuesta){
-                    if(respuesta){
+
                         console.log(respuesta);
-                    }
+//                    }
                 }
             });
         });
