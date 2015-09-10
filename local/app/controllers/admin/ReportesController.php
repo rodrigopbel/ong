@@ -30,7 +30,8 @@ class ReportsController extends \AdminBaseController {
 //
 //        }
         $ben = Beneficiario::where('beneficiarioID','=','666')->get();
-        echo $ben->ayudas;
+
+        echo ($ben->ayudas);
         echo('***********');
 //        echo (json_encode($result));
 //        dd( Datatables::of($result));
