@@ -20,7 +20,12 @@ body {
 	line-height: 200px;
 	padding-bottom: 10px;
 }
-
+.error-v h2 {
+    color: #eee;
+    font-size: 100px;
+    line-height: 100px;
+    padding-bottom: 10px;
+}
 .error-v3 p {
 	color: #eee;
 	font-size: 25px;

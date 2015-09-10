@@ -34,7 +34,7 @@
         <!-- Error Block -->
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <div class="error-v3">
+                <div class="error-v">
                     <h2>!Ya eres Voluntario!</h2>
                     <p></p>
                 </div>
