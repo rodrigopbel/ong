@@ -42,7 +42,7 @@
             @endif
 
         </div>
-        {{dd($beneficiario)}}
+        {{dd($beneficiario->nombres)}}
         <div class="col-md-6 col-sm-6">
             <div class="portlet box purple-wisteria">
                 <div class="portlet-title">
