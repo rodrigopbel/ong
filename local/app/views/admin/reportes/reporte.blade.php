@@ -7,12 +7,12 @@
     <!-- END PAGE LEVEL STYLES -->
 @stop
 
-
+{{$beneficiario}}
 @section('mainarea')
 
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title" xmlns="http://www.w3.org/1999/html">
-        Detalles del Beneficiario
+        Reporte del Beneficiario {{$beneficiios[0]->nombres}}
     </h3>
     <div class="page-bar">
         <ul class="page-breadcrumb">
@@ -38,7 +38,7 @@
                 <!--Profile Post-->
                 <div class="col-sm-6">
                         <div class="panel-heading overflow-h">
-                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Aportante</h2>
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Beneficiario</h2>
                         </div>
                         <div class="panel-body panelHolder">
                             <table class="table table-light margin-bottom-0">
@@ -96,7 +96,31 @@
                             </table>
                         </div>
                     </div>
+
                 </div>
+            <div class="col-sm-6">
+                <div class="panel-heading overflow-h">
+                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Ayudas</h2>
+                </div>
+                <div class="panel-body panelHolder">
+                    <table class="table table-light margin-bottom-0">
+                        <tbody>
+                        @foreach($beneficiario[0][ayudas] as $ayuda)
+                        <tr>
+                            <td>
+                                <span class="primary-link">Requerimiento</span>
+                            </td>
+                            <td>
+                                {{$ayuda->requerimiento}}
+                            </td>
+                        </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
             </div>
             <hr>
         </div>
