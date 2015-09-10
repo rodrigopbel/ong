@@ -126,6 +126,9 @@
 //            alert($('#beneficiario').val());
 //            console.log($('#beneficiario').val());
             var id = $('#beneficiario').val();
+            var data = {
+                'id' : id
+            }
             $.ajax({
                 url: '{{route("admin.ajax_reportes")}}',
                 type: 'POST',
