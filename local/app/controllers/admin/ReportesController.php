@@ -24,8 +24,8 @@ class ReportsController extends \AdminBaseController {
     }
     public function ReporteGen()
     {
-        if(Input::get('beneficiario')){
-
+        if(Input::get('beneficiario'))
+        {
             $this->data['beneficiario'] = Beneficiario::where('beneficiarioID','=',Input::get('beneficiario'))->get();
             foreach($this->data['beneficiario'] as $ben)
             {

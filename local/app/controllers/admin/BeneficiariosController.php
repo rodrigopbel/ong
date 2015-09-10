@@ -204,9 +204,6 @@ class BeneficiariosController extends \AdminBaseController {
 //        dd($this->data['responsable'] );
         return View::make('admin.beneficiarios.edit', $this->data);
     }
-
-
-
     /**
      * Update the specified in storage.
      */
