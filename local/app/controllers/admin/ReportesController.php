@@ -45,7 +45,10 @@ class ReportsController extends \AdminBaseController {
 //            ->make();
 
 //        echo $result;
-        return Response::json("entro aqui");
+        if(Request::ajax()){
+            return Response::json("entro aqui");
+        }
+
     }
     public function reportesben()
     {
