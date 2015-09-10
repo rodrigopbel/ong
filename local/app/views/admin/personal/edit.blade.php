@@ -136,9 +136,9 @@
         										<div class="col-md-9">
         											<select class="form-control" name="genero">
 
-        												<option value="hombre" @if($personal->genero=='Hombre') selected @endif>Hombre</option>
-        												<option value="mujer"  @if($personal->genero=='Mujer') selected @endif>Mujer</option>
-        												<option value="otros"  @if($personal->genero=='Otros') selected @endif>Otros</option>
+        												<option value="Hombre" @if($personal->genero=='Hombre') selected @endif>Hombre</option>
+        												<option value="Mujer"  @if($personal->genero=='Mujer') selected @endif>Mujer</option>
+        												<option value="Otros"  @if($personal->genero=='Otros') selected @endif>Otros</option>
         											</select>
         										</div>
         									</div>
