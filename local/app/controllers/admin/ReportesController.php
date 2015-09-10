@@ -71,7 +71,7 @@ class ReportsController extends \AdminBaseController {
             $this->data['datos'] = Beneficiario::where('beneficiarioID','=',Input::get('beneficiario'))->get();
             foreach($this->data['datos'] as $ben)
             {
-                $this->data['datos']['ayudas'] = $this->data['datos']->ayudas;
+                $this->data['datos']['ayudas'] = $ben->ayudas;
             }
             return $this->data;
         } else {
