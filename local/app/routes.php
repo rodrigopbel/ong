@@ -86,7 +86,7 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
 
     //  Logs Routing
 //    Route::get('logs/export',['as'=>'admin.logs.export','uses'=>'LogsController@export']);
-//    Route::get('logs/employeeLogin/{id}',['as'=>'admin.employees.employeeLogin','uses'=>'BeneficiariosController@employeesLogin']);
+//   0 Route::get('logs/employeeLogin/{id}',['as'=>'admin.employees.employeeLogin','uses'=>'BeneficiariosController@employeesLogin']);
     Route::resource('logs', 'LogsController',['except' => ['show'],'as' => 'admin']);
 
     //    Employees Routing
