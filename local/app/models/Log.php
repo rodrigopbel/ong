@@ -12,7 +12,7 @@ class Log extends \Eloquent {
 //	];
 
 	// Don't forget to fill this array
-    protected $guarded = ['id'];
+//    protected $guarded = ['id'];
 //    protected $fillable = ['username', 'email', 'password'];
 
 
