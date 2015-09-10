@@ -4,7 +4,7 @@
     <!-- BEGIN PAGE LEVEL STYLES -->
     {{HTML::style('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css')}}
     {{HTML::style('assets/global/plugins/bootstrap-datepicker/css/datepicker3.css')}}
-    {{ HTML::style('front_assets/css/pages/profile.css') }}
+    {{--{{ HTML::style('front_assets/css/pages/profile.css') }}--}}
     <!-- END PAGE LEVEL STYLES -->
 @stop
 @section('mainarea')
