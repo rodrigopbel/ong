@@ -8,9 +8,9 @@
     <!-- END PAGE LEVEL STYLES -->
 @stop
 
-
+{{dd("entro hasta aqui")}}
 @section('mainarea')
-    {{dd("entro hasta aqui")}}
+
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title" xmlns="http://www.w3.org/1999/html">
         Reporte del Beneficiario
