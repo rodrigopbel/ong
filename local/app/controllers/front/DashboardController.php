@@ -13,7 +13,7 @@ class DashboardController extends \BaseController {
 	    $total_leave    =   Leavetype::where('leaveType','<>','half day')->sum('num_of_leave');
         $this->data['leaveLeft']       =    array_sum(Attendance::absentEmployee($this->data['personalID'])).'/'.$total_leave;
         $this->data['personal']        =    Personal::find(Auth::personales()->get()->id);
-        $this->data['donaciones']        =    Donacion::where('aportanteID', '=', '$this->data['personalID']')->get();
+        $this->data['donaciones']        =    Donacion::where('aportanteID', '=', Auth::personales()->get()->personalID)->get();
 //        $this->data['donaciones']      =    Donacion::where('personalID', '=', )
 //                                                        select('monto')->orderBy('created_at','desc')->get();
 //        $this->data['attendance']      =    Attendance::where('employeeID', '=',$this->data['personalID'])
