@@ -105,14 +105,14 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">Genero</label>
                             <div class="col-md-9">
-                                {{ Form::select('genero', array('hombre' => 'Hombre', 'mujer' => 'Mujer', 'otros' => 'Otros'), Input::old('genero'),array('class'=>'form-control')) }}
+                                {{ Form::select('genero', array('Hombre' => 'Hombre', 'Mujer' => 'Mujer', 'Otros' => 'Otros'), Input::old('genero'),array('class'=>'form-control')) }}
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Tipo de Persona</label>
                             <div class="col-md-9">
 
-                                {{ Form::select('tipoPersonal', array('aportantes' => 'Aportantes', 'administrador' => 'Administrador', 'voluntario' => 'Voluntario'), Input::old('tipoPersonal'),array('class'=>'form-control')) }}
+                                {{ Form::select('tipoPersonal', array('Aportante' => 'Aportante', 'Administrador' => 'Administrador','Responsable' => 'Responsable', 'Voluntario' => 'Voluntario'), Input::old('tipoPersonal'),array('class'=>'form-control')) }}
 
                             </div>
                         </div>

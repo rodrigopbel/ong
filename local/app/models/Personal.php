@@ -23,6 +23,7 @@ class Personal extends Eloquent  implements UserInterface, RemindableInterface  
 		    'genero'        =>  'required',
             'email'         =>  'required|email',
             'password'      =>  'required',
+            'tipoPersonal'  =>  'required',
 			'fotoPersonal'  =>  $ProfileImageValidation
 		],
         'update'=>[
