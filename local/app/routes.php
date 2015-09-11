@@ -58,7 +58,6 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::get('administrator', 'AdminDashboardController@create', ['except' => ['show','create', 'as' => 'admin']]);
     Route::post('administrator/create', 'AdminDashboardController@guardar', ['except' => ['show','create', 'as' => 'admin']]);
 
-
     //    Beneficiarios Routing
     Route::get('beneficiarios/export',['as'=>'admin.beneficiarios.export','uses'=>'BeneficiariosController@export']);
     Route::get('beneficiarios/beneficiariosLogin/{id}',['as'=>'admin.beneficiarios.benLogin','uses'=>'BeneficiariosController@benLogin']);
