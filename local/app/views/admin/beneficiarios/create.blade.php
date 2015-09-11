@@ -147,20 +147,20 @@
         										</div>
         									</div>
 
-											<h4><strong>Cuenta de Beneficiario</strong></h4>
-        									<div class="form-group">
-                                                    <label class="col-md-3 control-label">Email<span class="required">* </span></label>
-                                                    <div class="col-md-9">
-                                                        <input type="text" name="email" class="form-control" value="{{ Input::old('email') }}">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-3 control-label">Contrasena<span class="required">* </span></label>
-                                                    <div class="col-md-9">
-                                                        <input type="hidden" name="oldpassword">
-                                                        <input type="text" name="password" class="form-control" value="{{ Input::old('password') }}">
-                                                    </div>
-                                                </div>
+											{{--<h4><strong>Cuenta de Beneficiario</strong></h4>--}}
+        									{{--<div class="form-group">--}}
+                                                    {{--<label class="col-md-3 control-label">Email<span class="required">* </span></label>--}}
+                                                    {{--<div class="col-md-9">--}}
+                                                        {{--<input type="text" name="email" class="form-control" value="{{ Input::old('email') }}">--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                                {{--<div class="form-group">--}}
+                                                    {{--<label class="col-md-3 control-label">Contrasena<span class="required">* </span></label>--}}
+                                                    {{--<div class="col-md-9">--}}
+                                                        {{--<input type="hidden" name="oldpassword">--}}
+                                                        {{--<input type="text" name="password" class="form-control" value="{{ Input::old('password') }}">--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
 
         								</div>
 
