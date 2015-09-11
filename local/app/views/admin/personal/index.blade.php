@@ -129,9 +129,10 @@
     {{ HTML::script("assets/admin/pages/scripts/table-managed.js")}}
 <!-- END PAGE LEVEL PLUGINS -->
 	<script>
-	jQuery(document).ready(function() {
-	   TableManaged.init();
-	});
+        jQuery(document).ready(function() {
+
+            TableManaged.init();
+        });
 	</script>
 	<script>
 	function del(id,name)
