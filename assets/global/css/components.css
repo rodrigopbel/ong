@@ -12764,8 +12764,8 @@ Transparent Button
     color: #777;
 }
 
-.profile .panel-heading-v2.overflow-h i.pull-right,
-.profile .panel-heading.overflow-h a:hover i {
+ .panel-heading-v2.overflow-h i.pull-right,
+.panel-heading.overflow-h a:hover i {
     color: #555;
 }
 
@@ -12774,78 +12774,78 @@ Transparent Button
 }
 
 /*Notification*/
-.profile .notification {
+ .notification {
     overflow: hidden;
     margin-bottom: 10px;
     padding: 15px 15px 0 0;
     border-top: 1px solid #eee;
 }
 
-.profile .notification:first-child {
+ .notification:first-child {
     border-top: none;
 }
 
-.profile .notification img,
-.profile .notification i {
+ .notification img,
+ .notification i {
     float: left;
     margin-right: 10px;
 }
 
-.profile .notification img {
+ .notification img {
     width: 40px;
     height: 35px;
 }
 
-.profile .notification span {
+ .notification span {
     color: #777;
     display: block;
 }
 
-.profile .notification small {
+.notification small {
     color: #999;
     font-size: 11px;
 }
 
-.profile .notification h4 {
+ .notification h4 {
     margin: 0 0 3px;
     font-size: 14px;
 }
 
-.profile .notification p {
+ .notification p {
     color: #777;
     font-size: 12px;
 }
 
 /*Profile Post*/
-.profile .profile-post {
+ .profile-post {
     background: #fff;
     margin-bottom: 2px;
     padding: 7px 7px 7px 0;
 }
 
-.profile .profile-post.color-one {
+.profile-post.color-one {
     border-left: 2px solid #72c02c;
 }
-.profile .profile-post.color-two {
+ .profile-post.color-two {
     border-left: 2px solid #3498db;
 }
-.profile .profile-post.color-three {
+ .profile-post.color-three {
     border-left: 2px solid #e74c3c;
 }
-.profile .profile-post.color-four {
+ .profile-post.color-four {
     border-left: 2px solid #9b6bcc;
 }
-.profile .profile-post.color-five {
+ .profile-post.color-five {
     border-left: 2px solid #555;
 }
-.profile .profile-post.color-six {
+ .profile-post.color-six {
     border-left: 2px solid #f1c40f;
 }
-.profile .profile-post.color-seven {
+ .profile-post.color-seven {
     border-left: 2px solid #27d7e7;
 }
 
-.profile .profile-post span.profile-post-numb {
+ .profile-post span.profile-post-numb {
     float: left;
     color: #999;
     font-size: 18px;
@@ -12853,42 +12853,42 @@ Transparent Button
     padding: 0px 12px;
 }
 
-.profile .profile-post:hover span.profile-post-numb {
+ .profile-post:hover span.profile-post-numb {
     color: #72c02c;
 }
 
-.profile .profile-post-in {
+ .profile-post-in {
     overflow: hidden;
 }
 
-.profile .profile-post-in h3 a {
+ .profile-post-in h3 a {
     color: #555;
     text-transform: uppercase;
 }
 
-.profile .profile-post-in p {
+ .profile-post-in p {
     color: #999;
     margin-bottom: 5px;
 }
 
 /*Profile Event*/
-.profile .profile-event .heading-xs {
+ .profile-event .heading-xs {
     margin-top: 0;
     text-transform: uppercase;
 }
 
-.profile .profile-event {
+ .profile-event {
     background: #fff;
     padding: 10px 15px;
     margin-bottom: 2px;
 }
 
-.profile .profile-event p {
+ .profile-event p {
     color: #737373;
     margin-bottom: 5px;
 }
 
-.profile .date-formats {
+ .date-formats {
     color: #fff;
     float: left;
     text-align: center;
@@ -12897,7 +12897,7 @@ Transparent Button
     padding: 7px 10px 4px;
 }
 
-.profile .date-formats span {
+ .date-formats span {
     display: block;
     font-size: 22px;
     font-weight: 200;
@@ -12905,64 +12905,64 @@ Transparent Button
 }
 
 /*Table*/
-.profile .table {
+ .table {
     background: #fff;
 }
 
-.profile .table > thead > tr > th,
-.profile .table > tbody > tr > th,
-.profile .table > tfoot > tr > th,
-.profile .table > thead > tr > td,
-.profile .table > tbody > tr > td,
-.profile .table > tfoot > tr > td {
+ .table > thead > tr > th,
+ .table > tbody > tr > th,
+ .table > tfoot > tr > th,
+ .table > thead > tr > td,
+ .table > tbody > tr > td,
+ .table > tfoot > tr > td {
     padding: 11px;
 }
 
 /*Comment*/
-.profile .comment {
+ .comment {
     border-bottom: 1px solid #eee;
     padding: 15px 15px 5px;
 }
 
-.profile .comment img {
+ .comment img {
     float: left;
     width: 50px;
     height: 50px;
     margin-right: 15px;
 }
 
-.profile .comment strong {
+.comment strong {
     display: block;
     line-height: 15px;
     margin-bottom: 3px;
 }
 
-.profile .comment p {
+ .comment p {
     font-size: 12px;
     margin-bottom: 0;
     line-height: 17px;
 }
 
-.profile .comment small {
+ .comment small {
     color: #bbb;
     font-weight: 200;
 }
 
-.profile .comment-list li {
+ .comment-list li {
     color: #999;
     font-size: 11px;
 }
 
-.profile .comment-list li a {
+ .comment-list li a {
     color: #555;
 }
 
-.profile .comment-list li a:hover {
+ .comment-list li a:hover {
     color: #555;
     text-decoration: none;
 }
 
-.profile .comment-list li:hover i {
+.comment-list li:hover i {
     color: #72c02c;
 }
 
