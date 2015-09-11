@@ -1,10 +1,13 @@
 <?php
-
-
+use Illuminate\Support\Facades\DB;
+/**
+ * Class BeneficiarioController
+ * This Controller is for the all the related function applied on beneficiarios
+ */
 class BeneficiariosController extends \AdminBaseController {
 
     /**
-     * Constructor for the Employees
+     * Constructor for the Beneficiarios
      */
 
     public function __construct()
@@ -20,7 +23,6 @@ class BeneficiariosController extends \AdminBaseController {
         $this->data['responsables']        =   Personal::where('tipoPersonal','=', '');
         Debugbar::info($this->data['beneficiarios'] );
         $this->data['beneficiariosActive'] =   'active';
-
         return View::make('admin.beneficiarios.index', $this->data);
     }
 
@@ -31,7 +33,6 @@ class BeneficiariosController extends \AdminBaseController {
     {
         $this->data['beneficiariosActive'] =   'active';
         $this->data['destinos']      =     Destino::lists('destino','id');
-
         return View::make('admin.beneficiarios.create',$this->data);
     }
 
@@ -40,6 +41,8 @@ class BeneficiariosController extends \AdminBaseController {
      */
     public function store()
     {
+//        dd(Input::all());
+//        dd(Beneficiario::rules('create'));
         $validator = Validator::make($input = Input::all(), Beneficiario::rules('create'));
 
         if ($validator->fails())

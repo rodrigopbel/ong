@@ -179,8 +179,7 @@
     			{
     					var url = "{{ route('admin.beneficiarios.destroy',':id') }}";
 						url = url.replace(':id',id);
-
-    					 $.ajax({
+                        $.ajax({
     		                type: "DELETE",
     		                url : url,
     		                dataType: 'json',
