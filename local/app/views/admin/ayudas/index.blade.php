@@ -69,8 +69,8 @@
 							<thead>
 							<tr>
 								<th> AyudaID </th>
-								<th> Beneficiario ID </th>
 								<th> Apellido Beneficiario</th>
+								<th> Nombre Aportante</th>
 								<th> Requerimiento </th>
 								<th> Centro de Salud </th>
 								<th> Nit </th>
@@ -85,8 +85,8 @@
 							<tbody>
                         <tr >
                                 <td>{{-- Hidden ID --}}</td>
-                                <td>{{-- EmployeeID --}}</td>
-                                <td>{{-- Apellido Beneiciario --}}</td>
+                                <td>{{-- Apellido Beneficiario --}}</td>
+                                <td>{{-- Nombre Aportante --}}</td>
                                 <td>{{-- Reuqerimiento --}} </td>
                                 <td>{{-- Centro de Salud --}}</td>
                                 <td>{{-- Nit --}}</td>
