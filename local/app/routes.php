@@ -99,30 +99,30 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
 
 
     //  Awards Routing
-    Route::get('ajax_awards/',['as'=>'admin.ajax_awards','uses'=> 'AwardsController@ajax_awards']);
-    Route::resource('awards', 'AwardsController',['as' => 'admin']);
+//    Route::get('ajax_awards/',['as'=>'admin.ajax_awards','uses'=> 'AwardsController@ajax_awards']);
+//    Route::resource('awards', 'AwardsController',['as' => 'admin']);
 
     //  Department Routing
-    Route::get('departments/ajax_designation/',['as'=>'admin.departments.ajax_designation','uses'=> 'DepartmentsController@ajax_designation']);
-    Route::resource('departments', 'DepartmentsController',['except' => ['show','create'],'as' => 'admin']);
+//    Route::get('departments/ajax_designation/',['as'=>'admin.departments.ajax_designation','uses'=> 'DepartmentsController@ajax_designation']);
+//    Route::resource('departments', 'DepartmentsController',['except' => ['show','create'],'as' => 'admin']);
 
 
 
 
     //    Expense Routing
-    Route::get('ajax_expenses/',['as'=>'admin.ajax_expenses','uses'=> 'ExpensesController@ajax_expenses']);
-    Route::resource('expenses', 'ExpensesController',['except' => ['show'],'as' => 'admin']);
+//    Route::get('ajax_expenses/',['as'=>'admin.ajax_expenses','uses'=> 'ExpensesController@ajax_expenses']);
+//    Route::resource('expenses', 'ExpensesController',['except' => ['show'],'as' => 'admin']);
 
     //    Holiday Routing
-    Route::get('holidays/mark_sunday', 'HolidaysController@Sunday');
-    Route::resource('holidays', 'HolidaysController',['as' => 'admin']);
+//    Route::get('holidays/mark_sunday', 'HolidaysController@Sunday');
+//    Route::resource('holidays', 'HolidaysController',['as' => 'admin']);
 
     //  Routing for the attendance
     Route::get('attendances/report/{attendances}', ['as'=>'admin.attendance.report','uses'=>'AttendancesController@report']);
     Route::resource('attendances', 'AttendancesController',['as' => 'admin']);
 
     //    Routing or the leavetypes
-    Route::resource('leavetypes', 'LeavetypesController',['except'=>['show'],'as' => 'admin']);
+//    Route::resource('leavetypes', 'LeavetypesController',['except'=>['show'],'as' => 'admin']);
 
     //    Leave Applications routing
     Route::get('leave_applications/ajaxApplications',['as'=>'admin.leave_applications','uses'=> 'LeaveApplicationsController@ajaxApplications']);
@@ -132,15 +132,15 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::resource('settings', 'SettingsController',['only'=>['edit','update'],'as' => 'admin']);
 
     //    Salary Routing
-    Route::resource('salary','SalaryController',['only'=>['destroy','update','store'],'as' => 'admin']);
+//    Route::resource('salary','SalaryController',['only'=>['destroy','update','store'],'as' => 'admin']);
 
     //    Profile Setting
     Route::resource('profile_settings', 'ProfileSettingsController',['only'=>['edit','update'],'as' => 'admin']);
 
     //   Notification Setting
 
-//	Route::post('ajax_update_notification',['as'=>'admin.ajax_update_notification','uses'=> 'NotificationSettingsController@ajax_update_notification']);
-//    Route::resource('notificationSettings', 'NotificationSettingsController',['only'=>['edit','update'],'as' => 'admin']);
+	Route::post('ajax_update_notification',['as'=>'admin.ajax_update_notification','uses'=> 'NotificationSettingsController@ajax_update_notification']);
+    Route::resource('notificationSettings', 'NotificationSettingsController',['only'=>['edit','update'],'as' => 'admin']);
 
 //    //  Notice Board
 //    Route::get('ajax_notices/',['as'=>'admin.ajax_notices','uses'=> 'NoticeboardsController@ajax_notices']);
