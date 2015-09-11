@@ -19,8 +19,6 @@ class AyudasController extends \AdminBaseController {
 
 		return View::make('admin.ayudas.index', $this->data);
 	}
-
-
     //Datatable ajax request
     public function ajax_ayudas()
     {
