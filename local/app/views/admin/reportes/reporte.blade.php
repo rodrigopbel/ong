@@ -33,7 +33,7 @@
             <div class="row margin-bottom-20">
                 <!--Profile Post-->
                 <div class="col-sm-6">
-                    <div class="panel-heading overflow-h">
+                    <div class="panel panel-profile">
                         <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Aportante</h2>
                     </div>
                     <div class="panel-body panelHolder">
@@ -95,7 +95,7 @@
 
 
                 <div class="col-sm-6">
-                    <div class="panel panel-profile no-bg">
+                    <div class="panel panel-profile">
                         <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle de las Ayudas</h2>
                     </div>
                     <div class="panel-body panelHolder">
@@ -138,7 +138,7 @@
             <div class="row margin-bottom-20">
                 <!--Profile Post-->
                 <div class="col-sm-6">
-                    <div class="panel-heading overflow-h">
+                    <div class="panel panel-profile">
                         <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle de las Donaciones</h2>
                     </div>
                     <div class="panel-body panelHolder">
