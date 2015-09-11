@@ -75,6 +75,7 @@ class BeneficiariosController extends \AdminBaseController {
 
             Beneficiario::create([
                 'beneficiarioID'    => $input['beneficiarioID'],
+                'responsableID'    => $input['nitci'],
                 'objetivo'   => $input['objetivo'],
                 'nombres'      => ucwords(strtolower($input['nombres'])),
                 'apellidos'    => ucwords(strtolower($input['apellidos'])),
@@ -83,7 +84,6 @@ class BeneficiariosController extends \AdminBaseController {
                 'password'      => Hash::make($input['password']),
                 'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
                 'telefono'  => $input['telefono'],
-                'fechaing'   => $input['fechaing'],
                 'direccion'  => $input['direccion'],
                 'foto'  =>  isset($filename)?$filename:'default.jpg',
                 'fechaing'   =>  date('Y-m-d',strtotime($input['fechaing'])),
