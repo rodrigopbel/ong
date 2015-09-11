@@ -49,7 +49,7 @@ class BeneficiariosController extends \AdminBaseController {
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-//        dd($input);
+
         DB::beginTransaction();
         try {
             $nombres = $input['nombres'];
@@ -72,7 +72,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 
             }
-
+//        dd($input);
             Beneficiario::create([
                 'beneficiarioID'    => $input['beneficiarioID'],
                 'responsableID'    => $input['nitci'],
