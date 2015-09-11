@@ -20,8 +20,6 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 			'beneficiarioID'         =>  'required|unique:beneficiarios,beneficiarioID|alpha_dash',
 			'nombres'                =>  $fullNameValidation,
 			'apellidos'              =>  $fullNameValidation,
-//			'email'                  =>  'required|email|unique:beneficiarios',
-//			'password'               =>  'required',
             'genero'                 =>  'required',
             'telefono'               =>  'required',
             'direccion'        		 =>  'required',
@@ -36,12 +34,6 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 		'update'=>[
 			'beneficiarioID'   =>   "required|unique:beneficiarios,beneficiarioID,:id"
 		],
-
-//		'password' =>  [
-//			'password'              =>  'required|confirmed',
-//			'password_confirmation' =>  'required|min:5'
-//		],
-
 		'zonificacion' => [
 			'departamento'   =>   'required',
 			'zona' 			=>   'required'
@@ -50,7 +42,6 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 		'personalInfo'=>[
 			'nombres'      =>   $fullNameValidation,
 			'apellidos'    =>   $fullNameValidation,
-//			'email'        =>   "required|email|unique:beneficiarios,email,:id",
 			'foto'         =>   $ProfileImageValidation,
 		],
 
