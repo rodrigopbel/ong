@@ -22,21 +22,6 @@ class ReportsController extends \AdminBaseController {
     {
        return Redirect::route('ReporteBen',[Input::get('beneficiario')]);
     }
-    public function ReporteBenMen()
-    {
-
-        if(Input::all())
-        {
-            $this->data['beneficiario'] = Beneficiario::where('beneficiarioID','=',Input::get('beneficiario'))->get();
-            foreach($this->data['beneficiario'] as $ben)
-            {
-                $this->data['ayudas'] = $ben->ayudas;
-                $this->data['donaciones'] = $ben->donaciones;
-            }
-            $this->data['ayudaMes'] = $this->data['ayudas'];
-        }
-        return $this->data;
-    }
     public function ReporteGen()
     {
         if(Input::get('beneficiario'))
