@@ -4,7 +4,6 @@
     <!-- BEGIN PAGE LEVEL STYLES -->
     {{HTML::style('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css')}}
     {{HTML::style('assets/global/plugins/bootstrap-datepicker/css/datepicker3.css')}}
-    {{--{{ HTML::style('assets/global/css/profile.css') }}--}}
     <!-- END PAGE LEVEL STYLES -->
 @stop
 @section('mainarea')
@@ -33,7 +32,7 @@
             <div class="row margin-bottom-20">
                 <!--Profile Post-->
                 <div class="col-sm-6">
-                    <div class="panel panel-profile">
+                    <div class="panel panel-profile reporte">
                         <div class="panel-heading overflow-h">
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Aportante</h2>
                         </div>
