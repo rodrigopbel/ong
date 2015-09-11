@@ -51,6 +51,7 @@ class BeneficiariosController extends \AdminBaseController {
         }
 
         DB::beginTransaction();
+        dd("hasta aqui");
         try {
             $nombres = $input['nombres'];
             $filename   =   null;
@@ -72,7 +73,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 
             }
-//        dd($input);
+
             Beneficiario::create([
                 'beneficiarioID'    => $input['beneficiarioID'],
                 'responsableID'    => $input['nitci'],
