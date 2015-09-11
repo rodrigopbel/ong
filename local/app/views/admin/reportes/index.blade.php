@@ -47,61 +47,7 @@
     </div>
 </div> <br/>
 
-			<div class="row">
-				<div class="col-md-12">
-					<!-- BEGIN EXAMPLE TABLE PORTLET-->
-					<div id="load">
-					@if(Session::get('success'))
-					    <div class="alert alert-success">{{ Session::get('success') }}</div>
-                    @endif
 
-					</div>
-
-					<div class="portlet box blue">
-						<div class="portlet-title">
-							<div class="caption">
-								<i class="fa fa-trophy"></i>Reportes
-							</div>
-							<div class="tools">
-							</div>
-						</div>
-						<div class="portlet-body">
-
-
-							<table class="table table-striped table-bordered table-hover" id="reportes">
-							<thead>
-							<tr>
-								<th> AyudaID </th>
-								<th> Nombre Beneficiario </th>
-								<th> Requerimiento </th>
-                                <th> Fecha Ayuda </th>
-                                <th> Ingresos </th>
-                                <th> Gastos </th>
-                                <th> Saldo </th>
-                            </tr>
-							</thead>
-							<tbody>
-                        <tr >
-                                <td>{{-- AyudaID --}}</td>
-                                <td>{{-- Nombre Beneficiario --}}</td>
-                                <td>{{-- Requerimiento --}}</td>
-                                <td>{{-- Fecha Ayuda --}} </td>
-                                <td>{{-- Ingresos --}}</td>
-                                <td>{{-- Gastos --}}</td>
-                                <td>{{-- Saldo --}}</td>
-
-                            </tr>
-
-
-
-							</tbody>
-							</table>
-						</div>
-					</div>
-					<!-- END EXAMPLE TABLE PORTLET-->
-
-				</div>
-			</div>
 			<!-- END PAGE CONTENT-->
 
 			{{--DELETE MODAL CALLING--}}
