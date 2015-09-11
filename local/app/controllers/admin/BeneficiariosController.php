@@ -43,7 +43,7 @@ class BeneficiariosController extends \AdminBaseController {
     public function store()
     {
         $validator = Validator::make($input = Input::all(), Beneficiario::rules('create'));
-
+        dd(Input::all());
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
