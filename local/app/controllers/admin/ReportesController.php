@@ -18,6 +18,14 @@ class ReportsController extends \AdminBaseController {
                                 ->lists('apellidos','beneficiarioID');
         return View::make('admin.reportes.index', $this->data);
     }
+    public function ReporteBen()
+    {
+       return Redirect::route('ReporteBen',[Input::get('beneficiario')]);
+    }
+    public function ReporteBenMen()
+    {
+        return (Input::all());
+    }
     public function ReporteGen()
     {
         if(Input::get('beneficiario'))

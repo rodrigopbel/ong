@@ -49,16 +49,24 @@
     <div class="col-md-12">
         <h2>Reportes Mensuales</h2>
         {{ Form::open(['route' => 'ReporteBenMen', 'method' => 'GET', 'role' => 'form']) }}
-        <label class="radio checked">
-            <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>
-            {{ Form::radio('paymentOption', '1', array('data-toggle' => 'radio')) }}
-            <b>Iron</b> - $1.50 / month / domain
-        </label>
-        <label class="radio">
-            <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>
-            {{ Form::radio('paymentOption', '2', array('data-toggle' => 'radio')) }}
-            <b>Gold</b> - $12.99 / year / domain
-        </label>
+        <div class="col-md-8">
+            <label class="radio checked">
+                <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>
+                {{ Form::radio('mes', '1', array('data-toggle' => 'radio')) }}
+                <b>Enero</b>
+            </label>
+            <label class="radio">
+                <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>
+                {{ Form::radio('mes', '2', array('data-toggle' => 'radio')) }}
+                <b>Febrero</b>
+            </label>
+            {{ Form::select('tipos', array(
+              'laraval' => array("design", "development"),
+              'startups' => array("advice", "strategy"),
+              'business' => array("marketing", "sales")
+            )) }}
+            <button type="submit" data-loading-text="Generando..." class="demo-loading-btn btn green generarReporte"><i class="fa fa-check"></i> Generar Reporte</button>
+        </div>
         {{ Form::close() }}
     </div>
 </div>
