@@ -6,8 +6,6 @@
     {{HTML::style('assets/global/plugins/bootstrap-datepicker/css/datepicker3.css')}}
     <!-- END PAGE LEVEL STYLES -->
 @stop
-
-
 @section('mainarea')
 
     <!-- BEGIN PAGE HEADER-->
