@@ -33,19 +33,33 @@
 			<!-- BEGIN PAGE CONTENT-->
 <div class="row">
     <div class="col-md-12">
+        <h2>Reportes Diarios</h2>
         {{--{{Form::open(array('id' => 'reporte-form',''))}}--}}
         {{ Form::open(['route' => 'ReporteBen', 'method' => 'GET', 'role' => 'form']) }}
         <div class="col-md-8">
-
             <div id="alert"></div>
             <label for="">Seleccione el Beneficiario para el reporte: </label>
             {{ Form::select('beneficiarioID', $beneficiarios,null,['id'=>'beneficiario','name' => 'beneficiario','class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
             <button type="submit" data-loading-text="Generando..." class="demo-loading-btn btn green generarReporte"><i class="fa fa-check"></i> Generar Reporte</button>
-
         </div>
         {{ Form::close() }}
     </div>
-</div> <br/>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h2>Reportes Mensuales</h2>
+        <label class="radio checked">
+            <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>
+            {{ Form::radio('paymentOption', '1', array('data-toggle' => 'radio')) }}
+            <b>Iron</b> - $1.50 / month / domain
+        </label>
+        <label class="radio">
+            <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>
+            {{ Form::radio('paymentOption', '2', array('data-toggle' => 'radio')) }}
+            <b>Gold</b> - $12.99 / year / domain
+        </label>
+    </div>
+</div>
 
 
 			<!-- END PAGE CONTENT-->
