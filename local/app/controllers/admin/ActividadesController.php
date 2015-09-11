@@ -63,7 +63,7 @@ class ActividadesController extends \AdminBaseController {
         }
 
         $actividad = array_combine($input['date'], $input['descripcion'] );
-        $lugar =>$input['lugar'];
+        $lugar = $input['lugar'];
         foreach ($actividad as $index => $value){
             if($index =='')continue;
             $add     =  Actividad::firstOrCreate([
