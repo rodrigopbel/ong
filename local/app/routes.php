@@ -56,7 +56,7 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
 
     // Administrator Routing
     Route::get('administrator', 'AdminDashboardController@create', ['except' => ['show','create', 'as' => 'admin']]);
-    Route::post('administrator/create', 'AdminDashboardController@store', ['except' => ['show','create', 'as' => 'admin']]);
+    Route::post('administrator/create', 'AdminDashboardController@guardar', ['except' => ['show','create', 'as' => 'admin']]);
 
 
     //    Beneficiarios Routing

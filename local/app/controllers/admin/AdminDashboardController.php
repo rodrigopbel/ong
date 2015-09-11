@@ -100,6 +100,9 @@ ORDER BY month ;"));
     {
         $this->data['personalActive']  =   'active';
         return View::make('admin.personal.createAdministrador',$this->data);
+    }public function guardar()
+    {
+        dd(Input::all());
     }
     public function store()
     {
