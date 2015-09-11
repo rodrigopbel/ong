@@ -28,7 +28,7 @@ class DonacionesController extends \AdminBaseController {
 	    $result =
             Donacion::select('donaciones.id','personal.nombres','beneficiarios.nombres','descripcion','montodonacion','donaciones.created_at')
 		        ->join('personal', 'donaciones.aportanteID', '=', 'personal.personalID')
-                ->join('beneficiarios', 'donaciones.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
+                ->where('beneficiarios', 'donaciones.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
 			  ->orderBy('donaciones.created_at','desc');
 
         return Datatables::of($result)
