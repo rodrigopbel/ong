@@ -51,11 +51,11 @@ class ReportsController extends \AdminBaseController {
             $this->data['egresoTotal'] = 0;
             foreach($this->data['ayudas'] as $ayuda)
             {
-                $this->data['ingresoTotal'] = $this->data['ingresoTotal'] + $ayuda->gastos;
+                $this->data['egresoTotal'] = $this->data['egresoTotal'] + $ayuda->gastos;
             }
             foreach($this->data['donaciones'] as $donacion)
             {
-                $this->data['egresoTotal'] = $this->data['egresoTotal'] + $donacion->montodonacion;
+                $this->data['ingresoTotal'] = $this->data['ingresoTotal'] + $donacion->montodonacion;
             }
             return $this->data;
 //            return View::make('admin.reportes.reporte',$this->data);
