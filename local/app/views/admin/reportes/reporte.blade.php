@@ -23,10 +23,7 @@
                 <a href="{{route('admin.beneficiarios.index')}}">Beneficiarios</a>
                 <i class="fa fa-angle-right"></i>
             </li>
-            <li>
-                <a href="">Editar </a>
 
-            </li>
         </ul>
     </div>
     <!-- END PAGE HEADER-->
@@ -35,9 +32,10 @@
             <div class="row margin-bottom-20">
                 <!--Profile Post-->
                 <div class="col-sm-6">
-                    <div class="panel-heading overflow-h">
-                        <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Aportante</h2>
-                    </div>
+                    <div class="panel panel-profile reporte">
+                        <div class="panel-heading overflow-h">
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Aportante</h2>
+                        </div>
                     <div class="panel-body panelHolder">
                         <table class="table table-light margin-bottom-0">
                             <tbody>
@@ -93,13 +91,15 @@
                             </tbody>
                         </table>
                     </div>
+                    </div>
                 </div>
 
 
                 <div class="col-sm-6">
-                    <div class="panel-heading overflow-h">
-                        <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle de las Ayudas</h2>
-                    </div>
+                    <div class="panel panel-profile">
+                        <div class="panel-heading overflow-h">
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle de las Ayudas</h2>
+                        </div>
                     <div class="panel-body panelHolder">
                         <table class="table table-light margin-bottom-0">
                             @foreach($ayudas as $ayuda)
@@ -133,6 +133,7 @@
                             @endforeach
                         </table>
                     </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -140,9 +141,10 @@
             <div class="row margin-bottom-20">
                 <!--Profile Post-->
                 <div class="col-sm-6">
-                    <div class="panel-heading overflow-h">
-                        <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle de las Donaciones</h2>
-                    </div>
+                    <div class="panel panel-profile">
+                        <div class="panel-heading overflow-h">
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle de las Donaciones</h2>
+                        </div>
                     <div class="panel-body panelHolder">
                         <table class="table table-light margin-bottom-0">
                             @foreach($donaciones as $donacion)
@@ -175,6 +177,7 @@
                                 </tbody>
                             @endforeach
                         </table>
+                    </div>
                     </div>
                 </div>
             </div>
