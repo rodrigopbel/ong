@@ -24,12 +24,15 @@ class AyudasController extends \AdminBaseController {
     //Datatable ajax request
     public function ajax_ayudas()
     {
-
-	    $result =
-		    Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','personal.personalID','personal.nombres','requerimiento','nit','numfactura','gastos','ayudas.created_at')
-		      ->where( 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
-                ->orwhere('ayudas.apotanteID', '=', 'personal.personalID')
-			  ->orderBy('ayudas.created_at','desc');
+        $result = DB::table('ayudas')
+            ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
+            ->join('personal','ayudas.apotanteID', '=', 'personal.personalID')
+            ->get();
+//	    $result =
+//		    Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','personal.personalID','personal.nombres','requerimiento','nit','numfactura','gastos','ayudas.created_at')
+//		      ->where( 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
+//                ->orwhere('ayudas.apotanteID', '=', 'personal.personalID')
+//			  ->orderBy('ayudas.created_at','desc');
 
         return Datatables::of($result)
             ->add_column('Por el Mes',function($row) {
