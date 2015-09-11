@@ -96,20 +96,6 @@ class PersonalController extends \AdminBaseController {
                 'updated'     => $input['personalID'] ? true : false
             ]);
 
-//            if($this->data['setting']->ben_add==1)
-//            {
-//                $this->data['ben_name'] = $fullname;
-//                $this->data['ben_email'] = $input['email'];
-//                $this->data['ben_password'] = $input['password'];
-//                //        Send Employee Add Mail
-//                Mail::send('emails.admin.beneficiarios_add', $this->data, function ($message) use ($input) {
-//                    $message->from($this->data['setting']->email, $this->data['setting']->name);
-//                    $message->to($input['email'], $input['nombres']." ".$input['apellidos'])
-//                        ->subject('Cuenta Creada - ' . $this->data['setting']->website);
-//                });
-//            }
-//            //  ********** END UPLOAD THE DOCUMENTS**********
-
         }catch(\Exception $e)
         {
             DB::rollback();
