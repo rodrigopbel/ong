@@ -76,6 +76,7 @@
 								<th> Nro Factura </th>
                                 <th> Fecha Ayuda </th>
                                 <th> Gastos </th>
+                                <th> Gastos </th>
 
 
 								<th> Accion </th>
@@ -91,6 +92,7 @@
                                 <td>{{-- Nro Factura --}}</td>
                                 <td>{{-- Fecha Ayuda --}}</td>
                                 <td>{{-- Gastos --}}</td>
+                                 <td>{{-- Gastos --}}</td>
 
                                 <td>{{-- Action --}} </td>
                             </tr>
@@ -136,6 +138,7 @@
                         "aoColumns": [
                             { 'sClass': 'center', "bSortable": true  },
                             { 'sClass': 'center', "bSortable": true  },
+                            { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
