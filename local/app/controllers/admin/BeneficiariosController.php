@@ -53,7 +53,7 @@ class BeneficiariosController extends \AdminBaseController {
         DB::beginTransaction();
 
         try {
-            dd("dentro del try");
+
             $nombres = $input['nombres'];
             $filename   =   null;
             // Profile Image Upload
@@ -74,7 +74,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 
             }
-
+            dd("arriba del create");
             Beneficiario::create([
                 'beneficiarioID'    => $input['beneficiarioID'],
                 'responsableID'    => $input['nitci'],
