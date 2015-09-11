@@ -63,7 +63,7 @@ class ActividadesController extends \AdminBaseController {
         }
 
         $actividad = array_combine($input['date'], $input['descripcion'] );
-
+        $lugar =>$input['lugar'];
         foreach ($actividad as $index => $value){
             if($index =='')continue;
             $add     =  Actividad::firstOrCreate([
@@ -73,7 +73,7 @@ class ActividadesController extends \AdminBaseController {
 
             $acti = Actividad::find($add->id);
             $acti->descripcion = $value;
-            $acti->lugar = $input['lugar'];
+            $acti->lugar = $lugar;
             $acti->save();
         }
         return Redirect::route('admin.actividades.index')->with('success',"<strong>Nueva Actividad</strong> Adicionada Exitosamente!");
