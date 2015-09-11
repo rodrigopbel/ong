@@ -61,10 +61,10 @@ class ActividadesController extends \AdminBaseController {
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-        $campos = [{
+        $campos = [
             'descripcion' => $input['descripcion'],
             'lugar'       => $input['lugar']
-        }];
+        ];
 
         $actividad = array_combine($input['date'], $campos);
 dd($actividad);
