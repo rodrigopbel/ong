@@ -44,7 +44,7 @@ class BeneficiariosController extends \AdminBaseController {
 //        dd(Input::all());
 //        dd(Beneficiario::rules('create'));
         $validator = Validator::make($input = Input::all(), Beneficiario::rules('create'));
-
+        dd(Input::all());
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
@@ -72,7 +72,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 
             }
-//        dd($input);
+
             Beneficiario::create([
                 'beneficiarioID'    => $input['beneficiarioID'],
                 'responsableID'    => $input['nitci'],
