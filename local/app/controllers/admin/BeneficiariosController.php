@@ -1,6 +1,5 @@
 <?php
 use Illuminate\Support\Facades\DB;
-use Illuminate\Validation\Validator;
 /**
  * Class BeneficiarioController
  * This Controller is for the all the related function applied on beneficiarios
@@ -34,7 +33,6 @@ class BeneficiariosController extends \AdminBaseController {
     {
         $this->data['beneficiariosActive'] =   'active';
         $this->data['destinos']      =     Destino::lists('destino','id');
-
         return View::make('admin.beneficiarios.create',$this->data);
     }
 
@@ -42,7 +40,6 @@ class BeneficiariosController extends \AdminBaseController {
      * Store a newly created in storage
      */
     public function store()
-
     {
 //        dd(Input::all());
 //        dd(Beneficiario::rules('create'));
