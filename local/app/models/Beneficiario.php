@@ -20,8 +20,6 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 			'beneficiarioID'         =>  'required|unique:beneficiarios,beneficiarioID|alpha_dash',
 			'nombres'                =>  $fullNameValidation,
 			'apellidos'              =>  $fullNameValidation,
-			'email'                  =>  'required|email|unique:beneficiarios',
-			'password'               =>  'required',
             'genero'                 =>  'required',
             'telefono'               =>  'required',
             'direccion'        		 =>  'required',
