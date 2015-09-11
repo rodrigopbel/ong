@@ -49,8 +49,9 @@ class BeneficiariosController extends \AdminBaseController {
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-        dd("holas");
+
         DB::beginTransaction();
+        dd("hasta aqui");
         try {
             $nombres = $input['nombres'];
             $filename   =   null;
