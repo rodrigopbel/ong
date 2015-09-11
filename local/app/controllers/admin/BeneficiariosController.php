@@ -76,8 +76,8 @@ class BeneficiariosController extends \AdminBaseController {
                 'nombres'      => ucwords(strtolower($input['nombres'])),
                 'apellidos'    => ucwords(strtolower($input['apellidos'])),
                 'genero'        => $input['genero'],
-//                'email'         => $input['email'],
-//                'password'      => Hash::make($input['password']),
+                'email'         => $input['email'],
+                'password'      => Hash::make($input['password']),
                 'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
                 'telefono'  => $input['telefono'],
                 'fechaing'   => $input['fechaing'],
@@ -152,11 +152,11 @@ class BeneficiariosController extends \AdminBaseController {
                 $this->data['ben_email'] = $input['email'];
                 $this->data['ben_password'] = $input['password'];
                 //        Send Employee Add Mail
-//                Mail::send('emails.admin.beneficiarios_add', $this->data, function ($message) use ($input) {
-//                    $message->from($this->data['setting']->email, $this->data['setting']->name);
-//                    $message->to($input['email'], $input['nombres']." ".$input['apellidos'])
-//                        ->subject('Cuenta Creada - ' . $this->data['setting']->website);
-//                });
+                Mail::send('emails.admin.beneficiarios_add', $this->data, function ($message) use ($input) {
+                    $message->from($this->data['setting']->email, $this->data['setting']->name);
+                    $message->to($input['email'], $input['nombres']." ".$input['apellidos'])
+                        ->subject('Cuenta Creada - ' . $this->data['setting']->website);
+                });
             }
             //  ********** END UPLOAD THE DOCUMENTS**********
 
@@ -291,8 +291,8 @@ class BeneficiariosController extends \AdminBaseController {
             $input  =   Input::all();
             $fullname = $input['nombres']." ".$input['apellidos'];
 
-//            $password = ($data['password']!='')?Hash::make(Input::get('password')):$data['oldpassword'];
-//
+            $password = ($data['password']!='')?Hash::make(Input::get('password')):$data['oldpassword'];
+
             // Profile Image Upload
             if (Input::hasFile('foto'))
             {
@@ -325,8 +325,8 @@ class BeneficiariosController extends \AdminBaseController {
                     'nombres'      => ucwords(strtolower($input['nombres'])),
                     'apellidos'    => ucwords(strtolower($input['apellidos'])),
                     'genero'        => $input['genero'],
-//                    'email'         => $input['email'],
-//                    'password'      => $password,
+                    'email'         => $input['email'],
+                    'password'      => $password,
                     'fechanac' => (trim(Input::get('fechanac'))!='')?date('Y-m-d',strtotime(Input::get('fechanac'))):null,
                     'telefono'  => $input['telefono'],
                     'direccion'  => $input['direccion'],

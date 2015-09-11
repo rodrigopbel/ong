@@ -20,8 +20,8 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 			'beneficiarioID'         =>  'required|unique:beneficiarios,beneficiarioID|alpha_dash',
 			'nombres'                =>  $fullNameValidation,
 			'apellidos'              =>  $fullNameValidation,
-//			'email'                  =>  'required|email|unique:beneficiarios',
-//			'password'               =>  'required',
+			'email'                  =>  'required|email|unique:beneficiarios',
+			'password'               =>  'required',
             'genero'                 =>  'required',
             'telefono'               =>  'required',
             'direccion'        		 =>  'required',
@@ -37,10 +37,10 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 			'beneficiarioID'   =>   "required|unique:beneficiarios,beneficiarioID,:id"
 		],
 
-//		'password' =>  [
-//			'password'              =>  'required|confirmed',
-//			'password_confirmation' =>  'required|min:5'
-//		],
+		'password' =>  [
+			'password'              =>  'required|confirmed',
+			'password_confirmation' =>  'required|min:5'
+		],
 
 		'zonificacion' => [
 			'departamento'   =>   'required',
@@ -50,7 +50,7 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 		'personalInfo'=>[
 			'nombres'      =>   $fullNameValidation,
 			'apellidos'    =>   $fullNameValidation,
-//			'email'        =>   "required|email|unique:beneficiarios,email,:id",
+			'email'        =>   "required|email|unique:beneficiarios,email,:id",
 			'foto'         =>   $ProfileImageValidation,
 		],
 
@@ -72,7 +72,7 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 	// Don't forget to fill this array
     protected $guarded = ['id'];
 
-//	protected $hidden  = ['password'];
+	protected $hidden  = ['password'];
 
     //Nuevos
 
@@ -97,8 +97,14 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
        // belongs('OtherClass','thisclasskey','otherclasskey')
        return $this->belongsTo('Designation','designation','id');
     }
-
-
+    public function getAwards()
+    {
+        return $this->hasMany('Award','employeeID','employeeID');
+    }
+    public function getBankDetail()
+    {
+        return $this->belongsTo('Bank_detail','employeeID','employeeID');
+    }
     public static function  currentMonthBirthday()
     {
         $birthdays = Employee::select('fullName', 'date_of_birth','profileImage')
