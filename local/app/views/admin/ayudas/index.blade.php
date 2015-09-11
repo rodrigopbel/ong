@@ -73,7 +73,7 @@
 								<th> Nombre Aportante</th>
 								<th> Requerimiento</th>
 								<th> Nit </th>
-								<th> Nro Factura </th>
+								{{--<th> Nro Factura </th>--}}
                                 <th> Gastos </th>
                                 <th> Fecha Ayuda </th>
                                 <th> Fecha Ayuda </th>
@@ -90,7 +90,7 @@
                                 <td>{{-- Nombre Aportante --}}</td>
                                 <td>{{-- Requerimiento --}} </td>
                                 <td>{{-- Nit --}}</td>
-                                <td>{{-- Nro Factura --}}</td>
+                                {{--<td>--}}{{-- Nro Factura --}}{{--</td>--}}
                                 <td>{{-- Gastos --}}</td>
                                 <td>{{-- Fecha Ayuda --}}</td>
                                <td>{{-- Fecha Ayuda --}}</td>
@@ -139,7 +139,7 @@
                         "sAjaxSource": "{{ route("admin.ajax_ayudas") }}",
                         "aaSorting": [[ 1, "asc" ]],
                         "aoColumns": [
-                            { 'sClass': 'center', "bSortable": true  },
+//                            { 'sClass': 'center', "bSortable": true  },
                             { 'sClass': 'center', "bSortable": true  },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
