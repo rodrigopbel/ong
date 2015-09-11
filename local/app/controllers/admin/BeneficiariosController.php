@@ -41,7 +41,7 @@ class BeneficiariosController extends \AdminBaseController {
      */
     public function store()
     {
-        dd(Input::all());
+//        dd(Input::all());
 //        dd(Beneficiario::rules('create'));
         $validator = Validator::make($input = Input::all(), Beneficiario::rules('create'));
 
@@ -80,8 +80,8 @@ class BeneficiariosController extends \AdminBaseController {
                 'nombres'      => ucwords(strtolower($input['nombres'])),
                 'apellidos'    => ucwords(strtolower($input['apellidos'])),
                 'genero'        => $input['genero'],
-//                'email'         => $input['email'],
-//                'password'      => Hash::make($input['password']),
+                'email'         => $input['email'],
+                'password'      => Hash::make($input['password']),
                 'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
                 'telefono'  => $input['telefono'],
                 'direccion'  => $input['direccion'],
