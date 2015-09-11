@@ -142,8 +142,9 @@
                 <!--Profile Post-->
                 <div class="col-sm-6">
                     <div class="panel panel-profile">
-                        <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle de las Donaciones</h2>
-                    </div>
+                        <div class="panel-heading overflow-h">
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle de las Donaciones</h2>
+                        </div>
                     <div class="panel-body panelHolder">
                         <table class="table table-light margin-bottom-0">
                             @foreach($donaciones as $donacion)
@@ -176,6 +177,7 @@
                                 </tbody>
                             @endforeach
                         </table>
+                    </div>
                     </div>
                 </div>
             </div>
