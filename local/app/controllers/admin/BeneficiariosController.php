@@ -19,7 +19,7 @@ class BeneficiariosController extends \AdminBaseController {
     public function index()
     {
         $this->data['beneficiarios']       =   Beneficiario::all();
-        $this->data['responsables']        =   Personal::where('tipoPersonal','=', '');
+//        $this->data['responsables']        =   Personal::where('tipoPersonal','=', '');
         Debugbar::info($this->data['beneficiarios'] );
         $this->data['beneficiariosActive'] =   'active';
 
