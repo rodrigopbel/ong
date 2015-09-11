@@ -77,6 +77,7 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     //  Donaciones Routing
     Route::get('ajax_donaciones/',['as'=>'admin.ajax_donaciones','uses'=> 'DonacionesController@ajax_donaciones']);
     Route::resource('donaciones', 'DonacionesController',['as' => 'admin']);
+
     // Reportes Routing
     Route::get('ajax_reportes/',['as'=>'admin.ajax_reportes','uses'=> 'ReportsController@ajax_reportes']);
     Route::resource('reportes','ReportsController',['as'=>'admin']);
@@ -88,14 +89,12 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
 
 
     //  Logs Routing
-//    Route::get('logs/export',['as'=>'admin.logs.export','uses'=>'LogsController@export']);
-//   0 Route::get('logs/employeeLogin/{id}',['as'=>'admin.employees.employeeLogin','uses'=>'BeneficiariosController@employeesLogin']);
     Route::resource('logs', 'LogsController',['except' => ['show'],'as' => 'admin']);
 
     //    Employees Routing
-	Route::get('employees/export',['as'=>'admin.employees.export','uses'=>'BeneficiariosController@export']);
-    Route::get('employees/employeeLogin/{id}',['as'=>'admin.employees.employeeLogin','uses'=>'BeneficiariosController@employeesLogin']);
-    Route::resource('employees', 'EmployeesController',['except' => ['show'],'as' => 'admin']);
+//	Route::get('employees/export',['as'=>'admin.employees.export','uses'=>'BeneficiariosController@export']);
+//    Route::get('employees/employeeLogin/{id}',['as'=>'admin.employees.employeeLogin','uses'=>'BeneficiariosController@employeesLogin']);
+//    Route::resource('employees', 'EmployeesController',['except' => ['show'],'as' => 'admin']);
 
 
     //  Awards Routing
