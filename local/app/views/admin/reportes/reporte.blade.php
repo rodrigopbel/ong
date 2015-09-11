@@ -107,8 +107,8 @@
                     </div>
                     <div class="panel-body panelHolder">
                         <table class="table table-light margin-bottom-0">
-                            <tbody>
                             @foreach($ayudas as $ayuda)
+                            <tbody>
                             <tr>
                                 <td>
                                     <span class="primary-link">Requerimiento</span>
@@ -117,8 +117,25 @@
                                     {{$ayuda->requerimiento}}
                                 </td>
                             </tr>
-                            @endforeach
+
+                            <tr>
+                                <td>
+                                    <span class="primary-link">Fecha de Ayuda</span>
+                                </td>
+                                <td>
+                                    {{$ayuda->created_at}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="primary-link">Gastos / Egresos</span>
+                                </td>
+                                <td>
+                                    {{$ayuda->gastos}}
+                                </td>
+                            </tr>
                             </tbody>
+                            @endforeach
                         </table>
                     </div>
                 </div>
