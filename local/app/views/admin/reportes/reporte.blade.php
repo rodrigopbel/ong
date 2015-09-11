@@ -6,8 +6,7 @@
     {{HTML::style('assets/global/plugins/bootstrap-datepicker/css/datepicker3.css')}}
     <!-- END PAGE LEVEL STYLES -->
 @stop
-{{$beneficiario}}
-{{$ayudas}}
+
 
 @section('mainarea')
 
@@ -109,16 +108,16 @@
                     <div class="panel-body panelHolder">
                         <table class="table table-light margin-bottom-0">
                             <tbody>
-                            {{--@foreach($ayudas[0] as $ayuda)--}}
-                            {{--<tr>--}}
-                                {{--<td>--}}
-                                    {{--<span class="primary-link">Requerimiento</span>--}}
-                                {{--</td>--}}
-                                {{--<td>--}}
-                                    {{--{{$ayuda->requerimiento}}--}}
-                                {{--</td>--}}
-                            {{--</tr>--}}
-                            {{--@endforeach--}}
+                            @foreach($ayudas as $ayuda)
+                            <tr>
+                                <td>
+                                    <span class="primary-link">Requerimiento</span>
+                                </td>
+                                <td>
+                                    {{$ayuda->requerimiento}}
+                                </td>
+                            </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
