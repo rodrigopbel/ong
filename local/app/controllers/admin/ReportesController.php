@@ -24,6 +24,16 @@ class ReportsController extends \AdminBaseController {
     }
     public function ReporteBenMen()
     {
+
+        if(Input::all())
+        {
+            $this->data['beneficiario'] = Beneficiario::where('beneficiarioID','=',Input::get('beneficiario'))->get();
+            foreach($this->data['beneficiario'] as $ben)
+            {
+                $this->data['ayudas'] = $ben->ayudas;
+                $this->data['donaciones'] = $ben->donaciones;
+            }
+        }
         return (Input::all());
     }
     public function ReporteGen()
@@ -42,6 +52,7 @@ class ReportsController extends \AdminBaseController {
             {
                 $this->data['ingresoTotal'] = $this->data['ingresoTotal'] + $ayuda->gastos;
             }
+            $this->data['ing'] = $this->data['ayudas']->sum('gastos')->get();
             return View::make('admin.reportes.reporte',$this->data);
         } else {
             return Redirect::route('admin.reportes.index');
