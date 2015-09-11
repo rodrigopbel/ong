@@ -75,7 +75,7 @@
 								<th> Nit </th>
                                 <th> Gastos </th>
                                 <th> Fecha Ayuda </th>
-                                <th> Fecha Ayuda </th>
+
 
 
 
@@ -91,7 +91,7 @@
                                 <td>{{-- Nit --}}</td>
                                 <td>{{-- Gastos --}}</td>
                                 <td>{{-- Fecha Ayuda --}}</td>
-                               <td>{{-- Fecha Ayuda --}}</td>
+
 
 
 
@@ -138,7 +138,6 @@
                         "aaSorting": [[ 1, "asc" ]],
                         "aoColumns": [
                               { 'sClass': 'center', "bSortable": true  },
-                            { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
