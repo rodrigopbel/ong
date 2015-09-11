@@ -37,9 +37,10 @@ class ReportsController extends \AdminBaseController {
                 $this->data['donaciones'] = $ben->donaciones;
             }
 //            return( $this->data);
+            $this->data['ingresoTotal'] = 0;
             foreach($this->data['ayudas'] as $ayuda)
             {
-                $this->data['ingresoTotal'] += $ayuda->gastos;
+                $this->data['ingresoTotal'] = $this->data['ingresoTotal'] + $ayuda->gastos;
             }
             return View::make('admin.reportes.reporte',$this->data);
         } else {
