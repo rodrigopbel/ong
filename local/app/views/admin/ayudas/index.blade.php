@@ -73,7 +73,7 @@
 								<th> Apellido Beneficiario</th>
                                 <th> apo </th>
 								<th> Nombre Aportante</th>
-								<th> Requerimiento </th>
+								<th> Requerimiento</th>
 								<th> Nit </th>
 								<th> Nro Factura </th>
                                 <th> Fecha Ayuda </th>
