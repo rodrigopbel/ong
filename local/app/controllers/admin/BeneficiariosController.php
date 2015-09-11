@@ -74,7 +74,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 
             }
-            dd("arriba del create");
+
             Beneficiario::create([
                 'beneficiarioID'    => $input['beneficiarioID'],
                 'responsableID'    => $input['nitci'],
@@ -100,7 +100,7 @@ class BeneficiariosController extends \AdminBaseController {
                 'lugar'  => $input['lugar']
             ]);
 
-
+            dd("arriba del create");
             //  Insert into salary table
             if ($input['montosolicitado'] != '')
             {
