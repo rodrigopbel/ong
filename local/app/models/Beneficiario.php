@@ -21,6 +21,8 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 			'nombres'                =>  $fullNameValidation,
 			'apellidos'              =>  $fullNameValidation,
             'genero'                 =>  'required',
+//			'email'        =>   "required|email|unique:beneficiarios,email,:id",
+//            'password'              =>  'required|confirmed',
             'telefono'               =>  'required',
             'direccion'        		 =>  'required',
 			'foto'  				 =>  $ProfileImageValidation,
@@ -34,11 +36,11 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 		'update'=>[
 			'beneficiarioID'   =>   "required|unique:beneficiarios,beneficiarioID,:id"
 		],
-
-		'password' =>  [
-			'password'              =>  'required|confirmed',
-			'password_confirmation' =>  'required|min:5'
-		],
+//
+//		'password' =>  [
+//			'password'              =>  'required|confirmed',
+//			'password_confirmation' =>  'required|min:5'
+//		],
 
 		'zonificacion' => [
 			'departamento'   =>   'required',
@@ -48,7 +50,7 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 		'personalInfo'=>[
 			'nombres'      =>   $fullNameValidation,
 			'apellidos'    =>   $fullNameValidation,
-			'email'        =>   "required|email|unique:beneficiarios,email,:id",
+//			'email'        =>   "required|email|unique:beneficiarios,email,:id",
 			'foto'         =>   $ProfileImageValidation,
 		],
 
@@ -65,12 +67,8 @@ class Beneficiario extends Eloquent implements UserInterface, RemindableInterfac
 		return array_merge( $rules, $merge );
 	}
 
-
-
 	// Don't forget to fill this array
     protected $guarded = ['id'];
-
-	protected $hidden  = ['password'];
 
     //Nuevos
 
