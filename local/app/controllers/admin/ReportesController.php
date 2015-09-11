@@ -30,11 +30,13 @@ class ReportsController extends \AdminBaseController {
             $this->data['beneficiario'] = Beneficiario::where('beneficiarioID','=',Input::get('beneficiario'))->get();
             foreach($this->data['beneficiario'] as $ben)
             {
-                $this->data['ayudas'] = $ben->ayudas;
+                $this->data['ayudas'] = $ben->ayudas->where(MONTH('created_at'),'=', '9');
                 $this->data['donaciones'] = $ben->donaciones;
             }
+
+
         }
-        return (Input::all());
+        return $this->data;
     }
     public function ReporteGen()
     {
