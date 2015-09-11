@@ -77,8 +77,6 @@
                                 <th> Fecha Ayuda </th>
 
 
-
-
 								<th> Accion </th>
 							</tr>
 							</thead>
@@ -91,8 +89,6 @@
                                 <td>{{-- Nit --}}</td>
                                 <td>{{-- Gastos --}}</td>
                                 <td>{{-- Fecha Ayuda --}}</td>
-
-
 
 
                                 <td>{{-- Action --}} </td>
@@ -137,7 +133,8 @@
                         "sAjaxSource": "{{ route("admin.ajax_ayudas") }}",
                         "aaSorting": [[ 1, "asc" ]],
                         "aoColumns": [
-                              { 'sClass': 'center', "bSortable": true  },
+                            { 'sClass': 'center', "bSortable": true  },
+                            { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
