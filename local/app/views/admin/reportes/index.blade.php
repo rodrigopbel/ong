@@ -77,7 +77,7 @@
                 <label class="col-md-2 control-label">Anios:</label>
 
                 <div class="col-md-3">
-                    <select class="form-control  select2me" name="meses">
+                    <select class="form-control  select2me" name="anios">
                         <option value="" selected="selected">Anios</option>
                         <option value="2015" selected='selected'>2015</option>
                         <option value="2016" selected='selected'>2016</option>
