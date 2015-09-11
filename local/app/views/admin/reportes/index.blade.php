@@ -50,6 +50,7 @@
         <h2>Reportes Mensuales</h2>
         {{ Form::open(['route' => 'ReporteBenMen', 'method' => 'GET', 'role' => 'form']) }}
         <div class="col-md-8">
+            {{ Form::select('beneficiarioID', $beneficiarios,null,['id'=>'beneficiario','name' => 'beneficiario','class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
             <label class="radio checked">
                 <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>
                 {{ Form::radio('mes', '1', array('data-toggle' => 'radio')) }}
@@ -60,10 +61,10 @@
                 {{ Form::radio('mes', '2', array('data-toggle' => 'radio')) }}
                 <b>Febrero</b>
             </label>
-            {{ Form::select('tipos', array(
-              'laraval' => array("design", "development"),
-              'startups' => array("advice", "strategy"),
-              'business' => array("marketing", "sales")
+            {{ Form::select('anios', array(
+              '2015' => array("2015"),
+              '2016' => array("2016"),
+              '2017' => array("2017")
             )) }}
             <button type="submit" data-loading-text="Generando..." class="demo-loading-btn btn green generarReporte"><i class="fa fa-check"></i> Generar Reporte</button>
         </div>
