@@ -41,7 +41,7 @@ class BeneficiariosController extends \AdminBaseController {
      */
     public function store()
     {
-        dd(Input::all());
+//        dd(Input::all());
 //        dd(Beneficiario::rules('create'));
         $validator = Validator::make($input = Input::all(), Beneficiario::rules('create'));
 
