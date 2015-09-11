@@ -103,6 +103,7 @@ ORDER BY month ;"));
     }
     public function store()
     {
+        dd(Input::all());
         $validator = Validator::make($input = Input::all(), Personal::rules('create'));
 
         if ($validator->fails())
