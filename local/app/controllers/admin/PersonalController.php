@@ -31,6 +31,11 @@ class PersonalController extends \AdminBaseController {
         return View::make('admin.personal.create',$this->data);
 //        dd("hola a todos");
     }
+    public function createAdministrador()
+    {
+        $this->data['personalActive']  =   'active';
+        return View::make('admin.personal.createAdministrador',$this->data);
+    }
     /**
      * Store a newly created employee in storage
      */
