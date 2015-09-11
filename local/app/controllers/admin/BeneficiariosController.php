@@ -1,6 +1,8 @@
 <?php
 
 
+use Illuminate\Validation\Validator;
+
 class BeneficiariosController extends \AdminBaseController {
 
     /**
