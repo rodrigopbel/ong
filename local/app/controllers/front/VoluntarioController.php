@@ -59,12 +59,14 @@ class VoluntarioController extends \BaseController {
 //        }
         $tipo = 'Voluntario';
         Personal::create([
-            'nombres'    => $input['nombres'],
-            'apellidos'  => $input['apellidos'],
-            'personalID' => $input['ci'],
-            'telefono'   => $input['telefono'],
-            'email'	     =>	$input['email'],
-            'tipoPersonal' => $tipo
+            'nombres'        => $input['nombres'],
+            'apellidos'      => $input['apellidos'],
+            'personalID'     => $input['ci'],
+            'telefono'       => $input['telefono'],
+            'email'	         =>	$input['email'],
+            'tipovoluntario' => $input['tipovoluntario'],
+            'ocupacion'      => $input['ocupacion'],
+            'tipoPersonal'   => $tipo
         ]);
 
         return View::make('front.final',$this->data);

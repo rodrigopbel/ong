@@ -84,6 +84,20 @@
             <input class="form-control placeholder-no-fix" type="email" autocomplete="off" placeholder="Email" name="email"/>
         </div>
     </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">Tipo de Voluntario</label>
+        <div class="input-icon">
+            <i class="fa fa-lock"></i>
+            <input class="form-control placeholder-no-fix" type="tipovoluntario" autocomplete="off" placeholder="Tipo de Voluntario" name="tipovoluntario"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">Institucion/Colegio</label>
+        <div class="input-icon">
+            <i class="fa fa-lock"></i>
+            <input class="form-control placeholder-no-fix" type="ocupacion" autocomplete="off" placeholder="Institucion/Colegio" name="ocupacion"/>
+        </div>
+    </div>
     <div class="form-actions">
 
         <button type="submit" class="btn blue pull-right" id="submitbutton" onclick="verificacion();return false;">

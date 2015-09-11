@@ -69,10 +69,11 @@
 							<thead>
 							<tr>
 								<th> AyudaID </th>
-								<th> Beneficiario ID </th>
+                                <th> ben </th>
 								<th> Apellido Beneficiario</th>
+                                <th> apo </th>
+								<th> Nombre Aportante</th>
 								<th> Requerimiento </th>
-								<th> Centro de Salud </th>
 								<th> Nit </th>
 								<th> Nro Factura </th>
                                 <th> Fecha Ayuda </th>
@@ -85,10 +86,11 @@
 							<tbody>
                         <tr >
                                 <td>{{-- Hidden ID --}}</td>
-                                <td>{{-- EmployeeID --}}</td>
-                                <td>{{-- Apellido Beneiciario --}}</td>
+                                 <td>{{-- ben ID --}}</td>
+                                <td>{{-- Apellido Beneficiario --}}</td>
+                                 <td>{{-- apo ID --}}</td>
+                                <td>{{-- Nombre Aportante --}}</td>
                                 <td>{{-- Reuqerimiento --}} </td>
-                                <td>{{-- Centro de Salud --}}</td>
                                 <td>{{-- Nit --}}</td>
                                 <td>{{-- Nro Factura --}}</td>
                                 <td>{{-- Fecha Ayuda --}}</td>
@@ -138,6 +140,7 @@
                         "aoColumns": [
                             { 'sClass': 'center', "bSortable": true  },
                             { 'sClass': 'center', "bSortable": true  },
+                            { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
