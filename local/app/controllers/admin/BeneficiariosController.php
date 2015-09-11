@@ -51,7 +51,7 @@ class BeneficiariosController extends \AdminBaseController {
         }
 
         DB::beginTransaction();
-        dd("hasta aqui");
+
         try {
             $nombres = $input['nombres'];
             $filename   =   null;
