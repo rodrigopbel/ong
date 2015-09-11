@@ -30,7 +30,7 @@ class ReportsController extends \AdminBaseController {
             $this->data['beneficiario'] = Beneficiario::where('beneficiarioID','=',Input::get('beneficiario'))->get();
             foreach($this->data['beneficiario'] as $ben)
             {
-                $this->data['ayudas'] = $ben->ayudas->raw("MONTH('created_at') =  '9'");;
+                $this->data['ayudas'] = $ben->ayudas->raw("MONTH('created_at') =  '5'");
                 $this->data['donaciones'] = $ben->donaciones;
             }
 
