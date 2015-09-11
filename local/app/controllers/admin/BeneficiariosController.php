@@ -87,7 +87,15 @@ class BeneficiariosController extends \AdminBaseController {
                 'direccion'  => $input['direccion'],
                 'foto'  =>  isset($filename)?$filename:'default.jpg',
                 'fechaing'   =>  date('Y-m-d',strtotime($input['fechaing'])),
-                'direccionperm' => $input['direccionperm']
+                'direccionperm' => $input['direccionperm'],
+                'iddiagnostico'  => $input['iddiagnostico'],
+                'diagnostico'  => $input['diagnostico'],
+                'fechadiagnostico'  => $input['fechadiagnostico'],
+                'tratamiento'  => $input['tratamiento'],
+                'razon'  => $input['razon'],
+                'duracion'  => $input['duracion'],
+                'referencia'  => $input['referencia'],
+                'lugar'  => $input['lugar']
             ]);
 
 
