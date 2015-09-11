@@ -12707,21 +12707,18 @@ Transparent Button
 /*reports*/
 /*Profile
 ------------------------------------*/
-.reporte{
-    background: #0083a8;
-}
 
-.profile .list-group i {
+ .list-group i {
     min-width: 20px;
     margin-right: 5px;
     text-align: center;
 }
 
-.profile .heading-sm-v2 {
+.heading-sm-v2 {
     font-size: 16px;
 }
 
-.profile .profile-body {
+ .profile-body {
     padding: 20px;
     background: #f7f7f7;
 }
@@ -12740,30 +12737,30 @@ Transparent Button
 }
 
 /*Panel Title Box*/
-.profile .panel-profile {
+ .panel-profile {
     border: none;
     margin-bottom: 0;
     box-shadow: none;
 }
-.profile .panel-profile.no-bg {
+ .panel-profile.no-bg {
     background: inherit;
 }
 
-.profile .panel-heading {
+ .panel-heading {
     color: #FFFFFF;
     background: #767676;
     padding: 7px 15px;
     border-bottom: solid 3px #f7f7f7;
 }
 
-.profile .panel-heading-v2.overflow-h i.pull-right,
-.profile .panel-heading.overflow-h i.pull-right {
+ .panel-heading-v2.overflow-h i.pull-right,
+.panel-heading.overflow-h i.pull-right {
     top: 7px;
     position: relative;
 }
 
-.profile .panel-heading-v2.overflow-h i.pull-right,
-.profile .panel-heading.overflow-h a i {
+ .panel-heading-v2.overflow-h i.pull-right,
+ .panel-heading.overflow-h a i {
     color: #777;
 }
 
@@ -12772,7 +12769,7 @@ Transparent Button
     color: #555;
 }
 
-.profile .panel-title {
+ .panel-title {
     font-size: 16px;
 }
 
