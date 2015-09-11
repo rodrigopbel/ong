@@ -31,12 +31,19 @@
         <div class="profile-body">
             <div class="row margin-bottom-20">
                 <!--Profile Post-->
+                <div class="col-sm-8">
+                    <div class="panel panel-profile reporte">
+                        <div class="panel-heading overflow-h">
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>{{$ingresoTotal}} - {{$egresoTotal}} = {{$saldo}} </h2></h2>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-sm-6">
                     <div class="panel panel-profile reporte">
                         <div class="panel-heading overflow-h">
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Beneficiario </h2>
-                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>{{$ingresoTotal}} - {{$egresoTotal}} = {{$saldo}} </h2>
                         </div>
+
                     <div class="panel-body panelHolder">
                         <table class="table table-light margin-bottom-0">
                             <tbody>
