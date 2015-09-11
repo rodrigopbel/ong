@@ -12967,11 +12967,11 @@ Transparent Button
 }
 
 /*Image Post*/
-.profile .img-post {
+ .img-post {
     position: relative;
 }
 
-.profile .img-post:before {
+ .img-post:before {
     top: 0;
     left: 0;
     width: 100%;
@@ -12981,7 +12981,7 @@ Transparent Button
     background: rgba(0,0,0,0.4);
 }
 
-.profile .img-post-in {
+ .img-post-in {
     left: 0;
     right: 0;
     bottom: 0;
@@ -12989,84 +12989,84 @@ Transparent Button
     position: absolute;
 }
 
-.profile .img-post-in h3 {
+ .img-post-in h3 {
     color: #fff;
     margin: 0 auto;
     font-weight: 200;
 }
 
-.profile .img-post-in small {
+ .img-post-in small {
     color: #999;
     display: block;
     margin-bottom: 15px;
 }
 
-.profile .img-post-in p {
+ .img-post-in p {
     color: #bbb;
 }
 
-.profile .img-post-list {
+ .img-post-list {
     margin-bottom: 0;
 }
 
-.profile .img-post-list li a,
-.profile .img-post-list li a:hover {
+ .img-post-list li a,
+ .img-post-list li a:hover {
     color: #fff;
     text-decoration: none;
 }
-.profile .img-post-list li a:hover i {
+.img-post-list li a:hover i {
     color: #72c02c;
 }
 
 /*Media*/
-.profile .media.media-v2 {
+ .media.media-v2 {
     margin-top: 0;
     padding: 25px 0 20px;
     border-top: 1px solid #eee;
 }
 
-.profile .media.media-v2:first-child {
+ .media.media-v2:first-child {
     border-top: none;
 }
 
-.profile .media.media-v2 .media.media-v2 {
+ .media.media-v2 .media.media-v2 {
     margin-top: 20px;
     padding-bottom: 0;
 }
 
-.profile .media.media-v2 img.media-object {
+ .media.media-v2 img.media-object {
     width: 50px;
     height: 50px;
     margin-right: 10px;
 }
 
 /*Media Body*/
-.profile .media.media-v2 .media-body {
+ .media.media-v2 .media-body {
     overflow: hidden;
 }
 
-.profile .media.media-v2 .media-body p {
+ .media.media-v2 .media-body p {
     color: #777;
     line-height: 1.4;
 }
 
 /*Media Heading*/
-.profile .media.media-v2 .media-heading {
+ .media.media-v2 .media-heading {
     margin: 0 0 5px;
     font-size: 13px;
     position: relative;
 }
 
-.profile .media.media-v2 .media-heading a,
-.profile .media.media-v2 .media-heading a:hover {
+ .media.media-v2 .media-heading a,
+ .media.media-v2 .media-heading a:hover {
     color: #555;
 }
 
-.profile .media.media-v2 .media-heading strong {
+ .media.media-v2 .media-heading strong {
     padding-right: 5px;
 }
 
-.profile .media.media-v2 .media-heading small {
+ .media.media-v2 .media-heading small {
     top: 7px;
     right: 0;
     color: #999;
@@ -13075,16 +13075,16 @@ Transparent Button
 }
 
 /*Results List*/
-.profile .results-list {
+ .results-list {
     margin-top: 4px;
 }
 
-.profile .results-list li a {
+ .results-list li a {
     color: #999;
 }
 
 /*Expand List*/
-.profile i.expand-list {
+ i.expand-list {
     color: #777;
     padding: 5px;
     min-width: 20px;
@@ -13094,17 +13094,17 @@ Transparent Button
     border: 1px solid #777;
 }
 
-.profile i.expand-list:hover {
+ i.expand-list:hover {
     color: #999;
     border-color: #999;
 }
 
 /*Image Uploaded*/
-.profile .img-uploaded li {
+ .img-uploaded li {
     padding: 0;
 }
 
-.profile .img-uploaded img {
+ .img-uploaded img {
     width: 120px;
     height: auto;
 }
@@ -13169,13 +13169,13 @@ Transparent Button
 /*Profile Me
 ------------------------------------*/
 /*Profile Biography*/
-.profile .profile-bio {
+ .profile-bio {
     background: #fff;
     position: relative;
     padding: 15px 10px 5px 15px;
 }
 
-.profile .profile-bio a {
+ .profile-bio a {
     left: 50%;
     bottom: 20px;
     margin-left: -60px;
@@ -13183,24 +13183,24 @@ Transparent Button
     position: absolute;
 }
 
-.profile .profile-bio h2 {
+.profile-bio h2 {
     margin-top: 0;
     font-weight: 200;
 }
 
-.profile .profile-bio span {
+ .profile-bio span {
     display: block;
 }
 
-.profile .profile-bio hr {
+ .profile-bio hr {
     margin: 12px 0 10px;
 }
 
-.profile .p-chart {
+ .p-chart {
     text-align: center;
 }
 
-.profile .p-chart h3 {
+.p-chart h3 {
     line-height: 20px;
     margin-bottom: 10px;
 }
@@ -13213,46 +13213,46 @@ Transparent Button
 }
 
 /*Timeline*/
-.profile .timeline-v2.timeline-me:before {
+ .timeline-v2.timeline-me:before {
     left: 19%;
 }
 
-.profile .timeline-v2.timeline-me p {
+ .timeline-v2.timeline-me p {
     margin-bottom: 0;
 }
 
-.profile .timeline-v2.timeline-me > li .cbp_tmtime {
+.timeline-v2.timeline-me > li .cbp_tmtime {
     width: 27%;
 }
 
-.profile .timeline-v2.timeline-me > li .cbp_tmicon {
+ .timeline-v2.timeline-me > li .cbp_tmicon {
     left: 19%;
 }
 
-.profile .timeline-v2.timeline-me > li .cbp_tmtime span:first-child {
+ .timeline-v2.timeline-me > li .cbp_tmtime span:first-child {
     color: #585f69;
     font-size: 16px;
     text-align: left;
     line-height: 20px;
 }
 
-.profile .timeline-v2.timeline-me > li .cbp_tmtime span:last-child {
+.timeline-v2.timeline-me > li .cbp_tmtime span:last-child {
     color: #999;
     font-size: 14px;
     text-align: left;
 }
 
-.profile .timeline-v2.timeline-me > li .cbp_tmlabel {
+.timeline-v2.timeline-me > li .cbp_tmlabel {
     padding: 0;
     background: inherit;
     margin: 0 0 20px 23%;
 }
 
-.profile .timeline-v2.timeline-me > li .cbp_tmlabel:after {
+.timeline-v2.timeline-me > li .cbp_tmlabel:after {
     border-color: inherit;
 }
 
-.profile .timeline-v2.timeline-me > li .cbp_tmlabel h2 {
+.timeline-v2.timeline-me > li .cbp_tmlabel h2 {
     margin: 0 auto;
     font-size: 17px;
     line-height: 20px;
@@ -13260,20 +13260,20 @@ Transparent Button
 }
 
 /*Social Contacts v2*/
-.profile .social-contacts-v2 {
+ .social-contacts-v2 {
     margin-bottom: 0;
 }
 
-.profile .social-contacts-v2 li {
+.social-contacts-v2 li {
     padding: 7px 0;
     border-top: 1px solid #f0f0f0;
 }
 
-.profile .social-contacts-v2 li:first-child {
+.social-contacts-v2 li:first-child {
     border-top: none;
 }
 
-.profile .social-contacts-v2 li i {
+ .social-contacts-v2 li i {
     font-size: 16px;
     min-width: 25px;
     margin-right: 7px;
@@ -13281,42 +13281,42 @@ Transparent Button
     display: inline-block;
 }
 
-.profile .social-contacts-v2 li i.tw {
+ .social-contacts-v2 li i.tw {
     color: #159ceb;
 }
-.profile .social-contacts-v2 li i.fb {
+ .social-contacts-v2 li i.fb {
     color: #4862a3;
 }
-.profile .social-contacts-v2 li i.sk {
+ .social-contacts-v2 li i.sk {
     color: #00aceb;
 }
-.profile .social-contacts-v2 li i.gp {
+ .social-contacts-v2 li i.gp {
     color: #dc4a38;
 }
-.profile .social-contacts-v2 li i.gm {
+ .social-contacts-v2 li i.gm {
     color: #c6574b;
 }
 
 /*Social Contacts v3*/
-.profile .social-contacts-v3 {
+ .social-contacts-v3 {
     margin-bottom: 0;
 }
 
-.profile .social-contacts-v3 li {
+ .social-contacts-v3 li {
     padding: 12px 0;
     border-top: 1px solid #f0f0f0;
 }
 
-.profile .social-contacts-v3 li:first-child {
+ .social-contacts-v3 li:first-child {
     padding-top: 0;
     border-top: none;
 }
 
-.profile .social-contacts-v3 li:last-child {
+ .social-contacts-v3 li:last-child {
     padding-bottom: 0;
 }
 
-.profile .social-contacts-v3 li i {
+ .social-contacts-v3 li i {
     color: #fff;
     width: 25px;
     height: 25px;
@@ -13326,63 +13326,63 @@ Transparent Button
     display: inline-block;
 }
 
-.profile .social-contacts-v3 li i.tw {
+ .social-contacts-v3 li i.tw {
     background: #159ceb;
 }
-.profile .social-contacts-v3 li i.fb {
+ .social-contacts-v3 li i.fb {
     background: #4862a3;
 }
-.profile .social-contacts-v3 li i.sk {
+ .social-contacts-v3 li i.sk {
     background: #00aceb;
 }
-.profile .social-contacts-v3 li i.gp {
+ .social-contacts-v3 li i.gp {
     background: #dc4a38;
 }
-.profile .social-contacts-v3 li i.gm {
+ .social-contacts-v3 li i.gm {
     background: #c6574b;
 }
 
 /*Profile Blog
 ------------------------------------*/
-.profile .blog-border {
+ .blog-border {
     border: 1px solid #f0f0f0;
 }
 
-.profile .profile-blog {
+ .profile-blog {
     padding: 20px;
     background: #fff;
 }
 
-.profile .profile-blog img {
+ .profile-blog img {
     float: left;
     width: 50px;
     height: 50px;
     margin-right: 20px;
 }
 
-.profile .profile-blog hr {
+ .profile-blog hr {
     margin: 12px 0 10px;
 }
 
-.profile .name-location {
+ .name-location {
     overflow: hidden;
 }
 
-.profile .name-location strong {
+ .name-location strong {
     color: #555;
     display: block;
     font-size: 16px;
 }
 
-.profile .name-location span a {
+ .name-location span a {
     color: #555;
 }
 
-.profile .name-location span a:hover {
+ .name-location span a:hover {
     color: #72c02c;
 }
 
-.profile .name-location span i {
+ .name-location span i {
     color: #72c02c;
     font-size: 18px;
     margin-right: 5px;
@@ -13390,97 +13390,97 @@ Transparent Button
 
 /*Profile Projects
 ------------------------------------*/
-.profile .projects {
+ .projects {
     background: #fff;
     padding: 20px 20px 10px;
 }
 
-.profile .projects h2 {
+ .projects h2 {
     margin: 0 0 5px;
     font-size: 22px;
     font-weight: 200;
 }
 
-.profile .projects h3 {
+ .projects h3 {
     margin-bottom: 5px;
 }
 
-.profile .projects .progress {
+.projects .progress {
     margin-bottom: 15px;
 }
 
-.profile .blog-info-v2 {
+ .blog-info-v2 {
     margin-left: 0;
     margin-bottom: 15px;
 }
 
-.profile .blog-info-v2 li {
+ .blog-info-v2 li {
     font-size: 12px;
     padding-left: 8px;
     line-height: 12px;
     border-left: 1px solid #eee;
 }
 
-.profile .blog-info-v2 li:first-child {
+.blog-info-v2 li:first-child {
     padding-left: 0;
     border-left: none;
 }
 
-.profile .blog-info-v2 li i {
+ .blog-info-v2 li i {
     margin-right: 3px;
 }
 
-.profile .project-share {
+.project-share {
     overflow: hidden;
     background: #fff;
     padding: 10px 20px;
     border-top: 1px solid #eee;
 }
 
-.profile .project-share ul {
+ .project-share ul {
     margin-left: 0;
     margin-bottom: 0;
 }
 
-.profile .comment-list-v2 li {
+ .comment-list-v2 li {
     color: #999;
     font-size: 14px;
     padding: 0 10px 0 0;
 }
 
-.profile .comment-list-v2 li a {
+ .comment-list-v2 li a {
     color: #555;
 }
 
-.profile .comment-list-v2 li i {
+ .comment-list-v2 li i {
     margin-right: 3px;
 }
 
-.profile .comment-list-v2 li a:hover {
+ .comment-list-v2 li a:hover {
     color: #555;
     text-decoration: none;
 }
 
-.profile .comment-list-v2 li:hover i {
+ .comment-list-v2 li:hover i {
     color: #72c02c;
 }
 
-.profile .star-vote li {
+ .star-vote li {
     padding: 0;
     font-size: 15px;
 }
 
 /*Profile History
 ------------------------------------*/
-.profile .timeline-v2:before {
+ .timeline-v2:before {
     background: #eee;
 }
 
-.profile .timeline-v2 > li .cbp_tmlabel {
+ .timeline-v2 > li .cbp_tmlabel {
     background: #fff;
 }
 
-.profile .timeline-v2 > li .cbp_tmlabel:after {
+ .timeline-v2 > li .cbp_tmlabel:after {
     border-right-color: #fff;
 }
 
@@ -13501,40 +13501,40 @@ Transparent Button
 /*Profile Settings
 ------------------------------------*/
 /*Profile Edit*/
-.profile .profile-edit {
+ .profile-edit {
     padding: 20px;
     background: #fff;
 }
 
-.profile .profile-edit h2 {
+ .profile-edit h2 {
     font-weight: 200;
 }
 
-.profile .profile-edit dt {
+ .profile-edit dt {
     text-align: inherit;
 }
 
-.profile .profile-edit hr {
+ .profile-edit hr {
     margin: 17px 0 15px;
 }
 
 /*Tab*/
-.profile .tab-content {
+ .tab-content {
     padding: 0;
 }
 
 @media (max-width: 768px) {
-    .profile .tab-v1 .nav-tabs {
+     .tab-v1 .nav-tabs {
         border-bottom: none;
     }
 }
 
 /*Sky Form*/
-.profile .sky-form {
+.sky-form {
     border: none;
 }
 
-.profile .sky-form .toggle-change i {
+ .sky-form .toggle-change i {
     left: 180px;
 }
 .table.table-light > tbody > tr > td {
