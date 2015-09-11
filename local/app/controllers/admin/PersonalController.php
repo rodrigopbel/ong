@@ -76,6 +76,8 @@ class PersonalController extends \AdminBaseController {
                 'personalID'    => $input['personalID'],
                 'nombres'      => ucwords(strtolower($input['nombres'])),
                 'apellidos'    => ucwords(strtolower($input['apellidos'])),
+                'email'         => $input['email'],
+                'password'      => Hash::make($input['password']),
                 'genero'        => $input['genero'],
                 'tipoPersonal'   => $input['tipoPersonal'],
                 'telefono'  => $input['telefono'],
