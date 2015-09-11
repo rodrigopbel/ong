@@ -69,15 +69,14 @@
 							<thead>
 							<tr>
 								<th> AyudaID </th>
-                                <th> ben </th>
-								<th> Apellido Beneficiario</th>
-                                <th> apo </th>
+                                <th> Apellido Beneficiario</th>
 								<th> Nombre Aportante</th>
 								<th> Requerimiento</th>
 								<th> Nit </th>
 								<th> Nro Factura </th>
-                                <th> Fecha Ayuda </th>
                                 <th> Gastos </th>
+                                <th> Fecha Ayuda </th>
+
 
 
 								<th> Accion </th>
@@ -86,15 +85,15 @@
 							<tbody>
                         <tr >
                                 <td>{{-- Hidden ID --}}</td>
-                                 <td>{{-- ben ID --}}</td>
                                 <td>{{-- Apellido Beneficiario --}}</td>
-                                 <td>{{-- apo ID --}}</td>
                                 <td>{{-- Nombre Aportante --}}</td>
-                                <td>{{-- Reuqerimiento --}} </td>
+                                <td>{{-- Requerimiento --}} </td>
                                 <td>{{-- Nit --}}</td>
                                 <td>{{-- Nro Factura --}}</td>
-                                <td>{{-- Fecha Ayuda --}}</td>
                                 <td>{{-- Gastos --}}</td>
+                                <td>{{-- Fecha Ayuda --}}</td>
+
+
 
                                 <td>{{-- Action --}} </td>
                             </tr>
@@ -146,9 +145,8 @@
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
-                            { 'sClass': 'center', "bSortable": true },
-                            { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": false }
+//                            { 'sClass': 'center', "bSortable": false }
 
 
                         ],
