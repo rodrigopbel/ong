@@ -27,8 +27,8 @@ class AyudasController extends \AdminBaseController {
 
 	    $result =
 		    Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','personal.personalID','personal.nombres','requerimiento','nit','numfactura','gastos','ayudas.created_at')
-		      ->where('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
-                ->where('personal', 'ayudas.apotanteID', '=', 'personal.personalID')
+		      ->where( 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
+                ->where('ayudas.apotanteID', '=', 'personal.personalID')
 			  ->orderBy('ayudas.created_at','desc');
 
         return Datatables::of($result)
