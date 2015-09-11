@@ -41,7 +41,7 @@
     <hr>
     <div class="clearfix">
     </div>
-    {{Form::open(array('route'=>"admin.administrator",'class'=>'form-horizontal','method'=>'POST','files' => true))}}
+    {{Form::open(array('url'=>"administrator/create",'class'=>'form-horizontal','method'=>'POST','files' => true))}}
     <div class="row ">
         <div class="col-md-6 col-sm-6">
             <div class="portlet box purple-wisteria">
