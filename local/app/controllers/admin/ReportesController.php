@@ -33,8 +33,10 @@ class ReportsController extends \AdminBaseController {
                 $this->data['ayudas'] = $ben->ayudas;
                 $this->data['donaciones'] = $ben->donaciones;
             }
+
+
         }
-        return (Input::all());
+        return $this->data;
     }
     public function ReporteGen()
     {
