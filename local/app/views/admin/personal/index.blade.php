@@ -40,7 +40,7 @@
             <a href="{{route('admin.personal.create')}}" class="btn green">
                 Nuevo <i class="fa fa-plus"></i>
             </a><hr>
-            <a href="{{URL::to('administrator.create')}}" class="btn green">
+            <a href="{{URL::to('administrator')}}" class="btn green">
                 Nuevo Administrador <i class="fa fa-plus"></i>
             </a><hr>
 			<div class="portlet box blue">
