@@ -145,8 +145,6 @@
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
-                            { 'sClass': 'center', "bSortable": true },
-                            { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": false }
 
 
