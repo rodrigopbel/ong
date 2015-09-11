@@ -87,7 +87,7 @@
                                 <td>{{-- Hidden ID --}}</td>
                                 <td>{{-- Apellido Beneficiario --}}</td>
                                 <td>{{-- Nombre Aportante --}}</td>
-                                <td>{{-- Reuqerimiento --}} </td>
+                                <td>{{-- Requerimiento --}} </td>
                                 <td>{{-- Nit --}}</td>
                                 <td>{{-- Nro Factura --}}</td>
                                 <td>{{-- Fecha Ayuda --}}</td>
@@ -138,6 +138,7 @@
                         "aoColumns": [
                             { 'sClass': 'center', "bSortable": true  },
                             { 'sClass': 'center', "bSortable": true  },
+                            { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
