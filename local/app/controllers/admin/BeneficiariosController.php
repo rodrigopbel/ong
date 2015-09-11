@@ -1,12 +1,13 @@
 <?php
-
-
 use Illuminate\Validation\Validator;
-
+/**
+ * Class BeneficiarioController
+ * This Controller is for the all the related function applied on beneficiarios
+ */
 class BeneficiariosController extends \AdminBaseController {
 
     /**
-     * Constructor for the Employees
+     * Constructor for the Beneficiarios
      */
 
     public function __construct()
@@ -19,10 +20,9 @@ class BeneficiariosController extends \AdminBaseController {
     public function index()
     {
         $this->data['beneficiarios']       =   Beneficiario::all();
-//        $this->data['responsables']        =   Personal::where('tipoPersonal','=', '');
+        $this->data['responsables']        =   Personal::where('tipoPersonal','=', '');
         Debugbar::info($this->data['beneficiarios'] );
         $this->data['beneficiariosActive'] =   'active';
-
         return View::make('admin.beneficiarios.index', $this->data);
     }
 
@@ -42,8 +42,9 @@ class BeneficiariosController extends \AdminBaseController {
      */
     public function store()
     {
-        $validator = Validator::make($input = Input::all(), Beneficiario::rules('create'));
         dd(Input::all());
+        $validator = Validator::make($input = Input::all(), Beneficiario::rules('create'));
+
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
