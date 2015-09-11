@@ -48,6 +48,7 @@
 <div class="row">
     <div class="col-md-12">
         <h2>Reportes Mensuales</h2>
+        {{ Form::open(['route' => 'ReporteBenMen', 'method' => 'GET', 'role' => 'form']) }}
         <label class="radio checked">
             <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>
             {{ Form::radio('paymentOption', '1', array('data-toggle' => 'radio')) }}
@@ -58,6 +59,7 @@
             {{ Form::radio('paymentOption', '2', array('data-toggle' => 'radio')) }}
             <b>Gold</b> - $12.99 / year / domain
         </label>
+        {{ Form::close() }}
     </div>
 </div>
 
