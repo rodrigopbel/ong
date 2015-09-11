@@ -74,7 +74,6 @@
                                 <th> apo </th>
 								<th> Nombre Aportante</th>
 								<th> Requerimiento </th>
-								<th> Centro de Salud </th>
 								<th> Nit </th>
 								<th> Nro Factura </th>
                                 <th> Fecha Ayuda </th>
@@ -92,7 +91,6 @@
                                  <td>{{-- apo ID --}}</td>
                                 <td>{{-- Nombre Aportante --}}</td>
                                 <td>{{-- Reuqerimiento --}} </td>
-                                <td>{{-- Centro de Salud --}}</td>
                                 <td>{{-- Nit --}}</td>
                                 <td>{{-- Nro Factura --}}</td>
                                 <td>{{-- Fecha Ayuda --}}</td>
@@ -142,7 +140,6 @@
                         "aoColumns": [
                             { 'sClass': 'center', "bSortable": true  },
                             { 'sClass': 'center', "bSortable": true  },
-                            { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
