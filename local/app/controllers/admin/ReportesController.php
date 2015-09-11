@@ -18,6 +18,24 @@ class ReportsController extends \AdminBaseController {
                                 ->lists('apellidos','beneficiarioID');
         return View::make('admin.reportes.index', $this->data);
     }
+    public function ReporteBen()
+    {
+       return Redirect::route('ReporteBen',[Input::get('beneficiario')]);
+    }
+    public function ReporteBenMen()
+    {
+
+        if(Input::all())
+        {
+            $this->data['beneficiario'] = Beneficiario::where('beneficiarioID','=',Input::get('beneficiario'))->get();
+            foreach($this->data['beneficiario'] as $ben)
+            {
+                $this->data['ayudas'] = $ben->ayudas;
+                $this->data['donaciones'] = $ben->donaciones;
+            }
+        }
+        return (Input::all());
+    }
     public function ReporteGen()
     {
         if(Input::get('beneficiario'))
@@ -29,6 +47,12 @@ class ReportsController extends \AdminBaseController {
                 $this->data['donaciones'] = $ben->donaciones;
             }
 //            return( $this->data);
+            $this->data['ingresoTotal'] = 0;
+            foreach($this->data['ayudas'] as $ayuda)
+            {
+                $this->data['ingresoTotal'] = $this->data['ingresoTotal'] + $ayuda->gastos;
+            }
+            $this->data['ing'] = $this->data['ayudas']->sum('gastos')->get();
             return View::make('admin.reportes.reporte',$this->data);
         } else {
             return Redirect::route('admin.reportes.index');

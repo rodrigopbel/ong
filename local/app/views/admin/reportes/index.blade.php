@@ -48,17 +48,49 @@
 <div class="row">
     <div class="col-md-12">
         <h2>Reportes Mensuales</h2>
+        <div class="form-group">
         {{ Form::open(['route' => 'ReporteBenMen', 'method' => 'GET', 'role' => 'form']) }}
-        <label class="radio checked">
-            <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>
-            {{ Form::radio('paymentOption', '1', array('data-toggle' => 'radio')) }}
-            <b>Iron</b> - $1.50 / month / domain
-        </label>
-        <label class="radio">
-            <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span>
-            {{ Form::radio('paymentOption', '2', array('data-toggle' => 'radio')) }}
-            <b>Gold</b> - $12.99 / year / domain
-        </label>
+        </div>
+        <div class="col-md-8">
+            {{ Form::select('beneficiarioID', $beneficiarios,null,['id'=>'beneficiario','name' => 'beneficiario','class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Beneficiario...']) }}
+            <div class="form-group">
+                <label class="col-md-2 control-label">Meses:</label>
+
+                <div class="col-md-3">
+                    <select class="form-control  select2me" name="meses">
+                        <option value="" selected="selected">Meses</option>
+                        <option value="1"  @if(strtolower(date('F'))=='january')selected='selected'@endif >Enero</option>
+                        <option value="2" @if(strtolower(date('F'))=='february')selected='selected'@endif>Febrero</option>
+                        <option value="3"    @if(strtolower(date('F'))=='march')selected='selected'@endif>Marzo</option>
+                        <option value="4"    @if(strtolower(date('F'))=='april')selected='selected'@endif>Abril</option>
+                        <option value="5"      @if(strtolower(date('F'))=='may')selected='selected'@endif>Mayo</option>
+                        <option value="6"     @if(strtolower(date('F'))=='june')selected='selected'@endif>Junio</option>
+                        <option value="7"     @if(strtolower(date('F'))=='july')selected='selected'@endif>Julio</option>
+                        <option value="8"   @if(strtolower(date('F'))=='august')selected='selected'@endif>Agosto</option>
+                        <option value="9" @if(strtolower(date('F'))=='september')selected='selected'@endif>Septiembre</option>
+                        <option value="10"  @if(strtolower(date('F'))=='october')selected='selected'@endif>Octubre</option>
+                        <option value="11" @if(strtolower(date('F'))=='november')selected='selected'@endif>Noviembre</option>
+                        <option value="12" @if(strtolower(date('F'))=='december')selected='selected'@endif>Diciembre</option>
+                    </select>
+                </div>
+
+                <label class="col-md-2 control-label">Anios:</label>
+
+                <div class="col-md-3">
+                    <select class="form-control  select2me" name="anios">
+                        <option value="" selected="selected">Anios</option>
+                        <option value="2015" selected='selected'>2015</option>
+                        <option value="2016" selected='selected'>2016</option>
+                        <option value="2017" selected='selected'>2017</option>
+                        <option value="2018" selected='selected'>2018</option>
+                        <option value="2019" selected='selected'>2019</option>
+                        <option value="2020" selected='selected'>2020</option>
+                    </select>
+
+                </div>
+            </div>
+            <button type="submit" data-loading-text="Generando..." class="demo-loading-btn btn green generarReporte"><i class="fa fa-check"></i> Generar Reporte</button>
+        </div>
         {{ Form::close() }}
     </div>
 </div>
