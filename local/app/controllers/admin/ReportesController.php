@@ -33,8 +33,7 @@ class ReportsController extends \AdminBaseController {
                 $this->data['ayudas'] = $ben->ayudas;
                 $this->data['donaciones'] = $ben->donaciones;
             }
-            $this->data['ayudaMes'] = $this->data['ayudas']->raw("MONTH('created_at') =  '5'");
-
+            $this->data['ayudaMes'] = $this->data['ayudas'];
         }
         return $this->data;
     }
