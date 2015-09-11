@@ -95,7 +95,7 @@
 
 
                 <div class="col-sm-6">
-                    <div class="panel-heading overflow-h">
+                    <div class="panel panel-profile no-bg">
                         <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle de las Ayudas</h2>
                     </div>
                     <div class="panel-body panelHolder">
