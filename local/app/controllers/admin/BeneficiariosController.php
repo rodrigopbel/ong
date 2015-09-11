@@ -51,8 +51,9 @@ class BeneficiariosController extends \AdminBaseController {
         }
 
         DB::beginTransaction();
-        dd("hasta aqui");
+
         try {
+
             $nombres = $input['nombres'];
             $filename   =   null;
             // Profile Image Upload
@@ -81,8 +82,6 @@ class BeneficiariosController extends \AdminBaseController {
                 'nombres'      => ucwords(strtolower($input['nombres'])),
                 'apellidos'    => ucwords(strtolower($input['apellidos'])),
                 'genero'        => $input['genero'],
-                'email'         => $input['email'],
-                'password'      => Hash::make($input['password']),
                 'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
                 'telefono'  => $input['telefono'],
                 'direccion'  => $input['direccion'],
@@ -99,7 +98,7 @@ class BeneficiariosController extends \AdminBaseController {
                 'lugar'  => $input['lugar']
             ]);
 
-
+            dd("abajo del create");
             //  Insert into salary table
             if ($input['montosolicitado'] != '')
             {
