@@ -34,9 +34,10 @@
                 <div class="col-sm-6">
                     <div class="panel panel-profile reporte">
                         <div class="panel-heading overflow-h">
-                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Beneficiario {{$ingresoTotal}}</h2>
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Beneficiario </h2>
                         </div>
                     <div class="panel-body panelHolder">
+                        <h3 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>{{$ingresoTotal}}   {{$egresoTotal}} </h3>
                         <table class="table table-light margin-bottom-0">
                             <tbody>
                             <tr>
