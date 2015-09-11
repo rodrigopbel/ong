@@ -69,7 +69,7 @@
 							<thead>
 							<tr>
 								<th> AyudaID </th>
-                                <th> Apellido Beneficiario</th
+                                <th> Apellido Beneficiario</th>
 								<th> Nombre Aportante</th>
 								<th> Requerimiento</th>
 								<th> Nit </th>
