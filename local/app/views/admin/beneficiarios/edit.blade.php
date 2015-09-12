@@ -10,7 +10,7 @@
 
 
 @section('mainarea')
-
+{{dd("entro a la vista")}}
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
         {{$pageTitle}}
