@@ -10,7 +10,7 @@
 
 
 @section('mainarea')
-{{dd("entro a la vista")}}
+
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
         {{$pageTitle}}
@@ -33,6 +33,7 @@
         </ul>
     </div>
     <!-- END PAGE HEADER-->
+    {{dd("end page header")}}
     <div class="clearfix">
     </div>
     <div class="row ">
