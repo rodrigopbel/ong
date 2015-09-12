@@ -693,53 +693,53 @@
         {{------------------------------------NEW SALARY ADD MODALS--------------------------------}}
 
         {{--<div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">--}}
-            {{--<div class="modal-dialog">--}}
-                {{--<div class="modal-content">--}}
-                    {{--<div class="modal-header">--}}
-                        {{--<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>--}}
-                        {{--<h4 class="modal-title"><strong>Nuevo</strong></h4>--}}
-                    {{--</div>--}}
-                    {{--<div class="modal-body">--}}
-                        {{--<div class="portlet-body form">--}}
+        {{--<div class="modal-dialog">--}}
+        {{--<div class="modal-content">--}}
+        {{--<div class="modal-header">--}}
+        {{--<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>--}}
+        {{--<h4 class="modal-title"><strong>Nuevo</strong></h4>--}}
+        {{--</div>--}}
+        {{--<div class="modal-body">--}}
+        {{--<div class="portlet-body form">--}}
 
-                            {{--<!-------------- BEGIN FORM------------>--}}
-                            {{--{{Form::open(array('route'=>"admin.salary.store",'class'=>'form-horizontal ','method'=>'POST'))}}--}}
-                            {{--<input type="hidden" name="employeeID" value="{{$beneficiario->beneficiarioID}}"/>--}}
+        {{--<!-------------- BEGIN FORM------------>--}}
+        {{--{{Form::open(array('route'=>"admin.salary.store",'class'=>'form-horizontal ','method'=>'POST'))}}--}}
+        {{--<input type="hidden" name="employeeID" value="{{$beneficiario->beneficiarioID}}"/>--}}
 
-                            {{--<div class="form-body">--}}
+        {{--<div class="form-body">--}}
 
-                                {{--<div class="form-group">--}}
-                                    {{--<div class="col-md-6">--}}
-                                        {{--<input class="form-control form-control-inline" name="type" type="text" value=""--}}
-                                               {{--placeholder="Tipo"/>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                                {{--<div class="form-group">--}}
-                                    {{--<div class="col-md-6">--}}
-                                        {{--<input class="form-control form-control-inline" type="text" name="salary"--}}
-                                               {{--placeholder="Monto"/>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
+        {{--<div class="form-group">--}}
+        {{--<div class="col-md-6">--}}
+        {{--<input class="form-control form-control-inline" name="type" type="text" value=""--}}
+        {{--placeholder="Tipo"/>--}}
+        {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="form-group">--}}
+        {{--<div class="col-md-6">--}}
+        {{--<input class="form-control form-control-inline" type="text" name="salary"--}}
+        {{--placeholder="Monto"/>--}}
+        {{--</div>--}}
+        {{--</div>--}}
+        {{--</div>--}}
 
-                            {{--<div class="form-actions">--}}
-                                {{--<div class="row">--}}
-                                    {{--<div class="col-md-offset-3 col-md-9">--}}
-                                        {{--<button type="submit" data-loading-text="Updating..."--}}
-                                                {{--class="demo-loading-btn btn green"><i class="fa fa-check"></i> Enviar--}}
-                                        {{--</button>--}}
+        {{--<div class="form-actions">--}}
+        {{--<div class="row">--}}
+        {{--<div class="col-md-offset-3 col-md-9">--}}
+        {{--<button type="submit" data-loading-text="Updating..."--}}
+        {{--class="demo-loading-btn btn green"><i class="fa fa-check"></i> Enviar--}}
+        {{--</button>--}}
 
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--{{ Form::close() }}--}}
-                            {{--<!-- -----------END FORM-------->--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<!-- END EXAMPLE TABLE PORTLET-->--}}
-                {{--</div>--}}
+        {{--</div>--}}
+        {{--</div>--}}
+        {{--</div>--}}
+        {{--{{ Form::close() }}--}}
+        {{--<!-- -----------END FORM-------->--}}
+        {{--</div>--}}
+        {{--</div>--}}
+        {{--<!-- END EXAMPLE TABLE PORTLET-->--}}
+        {{--</div>--}}
 
-            {{--</div>--}}
+        {{--</div>--}}
         {{--</div>--}}
     </div>
 
@@ -747,7 +747,7 @@
 
 @stop
 
-{{dd("6")}}
+
 
 @section('footerjs')
 
