@@ -68,7 +68,7 @@
                         </div>
                     @endif
 
-                    {{dd("1")}}
+
 
 
                     <div class="form-body">
@@ -194,6 +194,7 @@
                         </div>
                     </div>
                     {{Form::close()}}
+                    {{dd("2")}}
                 </div>
             </div>
         </div>
