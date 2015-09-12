@@ -74,7 +74,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 
             }
-
+            dd("llego hasta aqui");
             //  Insert into salary table
             if ($input['montosolicitado'] != '')
             {
@@ -107,7 +107,7 @@ class BeneficiariosController extends \AdminBaseController {
                 'parentesco'        => $input['parentesco'],
                 'tipoPersonal'      => $tipo
             ]);
-            dd("llego hasta aqui");
+
             Beneficiario::create([
                 'beneficiarioID'    => $input['beneficiarioID'],
                 'nombres'           => ucwords(strtolower($input['nombres'])),
