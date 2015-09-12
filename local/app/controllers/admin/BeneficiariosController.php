@@ -1,5 +1,4 @@
 <?php
-use Illuminate\Support\Facades\DB;
 /**
  * Class BeneficiarioController
  * This Controller is for the all the related function applied on beneficiarios
