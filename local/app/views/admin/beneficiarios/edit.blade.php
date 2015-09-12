@@ -689,7 +689,7 @@
         {{-------------DELETE MODAL CALLING------------}}
         @include('admin.common.delete')
         {{---------------DELETE MODAL CALLING END--------}}
-        {{dd("5")}}
+
         {{------------------------------------NEW SALARY ADD MODALS--------------------------------}}
 
         {{--<div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">--}}
