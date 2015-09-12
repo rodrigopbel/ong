@@ -82,8 +82,6 @@ class BeneficiariosController extends \AdminBaseController {
                 'nombres'      => ucwords(strtolower($input['nombres'])),
                 'apellidos'    => ucwords(strtolower($input['apellidos'])),
                 'genero'        => $input['genero'],
-                'email'         => $input['email'],
-                'password'      => Hash::make($input['password']),
                 'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
                 'telefono'  => $input['telefono'],
                 'direccion'  => $input['direccion'],
