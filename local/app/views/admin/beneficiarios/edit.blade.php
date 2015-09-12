@@ -194,7 +194,7 @@
                         </div>
                     </div>
                     {{Form::close()}}
-                    {{dd("2")}}
+
                 </div>
             </div>
         </div>
@@ -326,7 +326,7 @@
 
                 </div>
             </div>
-
+            {{dd("3")}}
             <div class="portlet box red-sunglo">
                 <div class="portlet-title">
                     <div class="caption">
