@@ -74,29 +74,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 
             }
-            dd(Input::all());
-            Beneficiario::create([
-                'beneficiarioID'    => $input['beneficiarioID'],
-                'objetivo'   => $input['objetivo'],
-                'nombres'      => ucwords(strtolower($input['nombres'])),
-                'apellidos'    => ucwords(strtolower($input['apellidos'])),
-                'genero'        => $input['genero'],
-                'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
-                'telefono'  => $input['telefono'],
-                'fechaing'   =>  date('Y-m-d',strtotime($input['fechaing'])),
-                'direccion'  => $input['direccion'],
-                'foto'  =>  isset($filename)?$filename:'default.jpg',
-                'direccionperm' => $input['direccionperm'],
-                'iddiagnostico'  => $input['iddiagnostico'],
-                'diagnostico'  => $input['diagnostico'],
-                'fechadiagnostico'  => $input['fechadiag'],
-                'tratamiento'  => $input['tratamiento'],
-                'razon'  => $input['razon'],
-                'duracion'  => $input['duracion'],
-                'referencia'  => $input['referencia'],
-                'lugar'  => $input['lugar']
 
-            ]);
             //  Insert into salary table
             if ($input['montosolicitado'] != '')
             {
@@ -129,7 +107,30 @@ class BeneficiariosController extends \AdminBaseController {
                 'parentesco'        => $input['parentesco'],
                 'tipoPersonal'      => $tipo
             ]);
+            Beneficiario::create([
+                'beneficiarioID'    => $input['beneficiarioID'],
+                'nombres'           => ucwords(strtolower($input['nombres'])),
+                'apellidos'         => ucwords(strtolower($input['apellidos'])),
+                'fechanac'          => date('Y-m-d',strtotime($input['fechanac'])),
+                'genero'            => $input['genero'],
+                'telefono'          => $input['telefono'],
+                'direccion'         => $input['direccion'],
+                'direccionperm'     => $input['direccionperm'],
+                'responsableID'     => $input['nitci'],
+                'foto'              =>  isset($filename)?$filename:'default.jpg',
+//                'destino'           => $input['destino'],
+                'objetivo'          => $input['objetivo'],
+                'fechaing'          =>  date('Y-m-d',strtotime($input['fechaing'])),
+                'iddiagnostico'     => $input['iddiagnostico'],
+                'diagnostico'       => $input['diagnostico'],
+                'fechadiagnostico'  => $input['fechadiag'],
+                'tratamiento'       => $input['tratamiento'],
+                'razon'             => $input['razon'],
+                'duracion'          => $input['duracion'],
+                'referencia'        => $input['referencia'],
+                'lugarlugar'        => $input['lugar']
 
+            ]);
             $fullname = $input['nombres']." ".$input['apellidos'];
             // -------------- UPLOAD THE DOCUMENTS  -----------------
             $documents  =   ['certnac','CIprueba','solicitud','croquis','perfil'];
