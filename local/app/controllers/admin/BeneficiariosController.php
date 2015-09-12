@@ -107,6 +107,7 @@ class BeneficiariosController extends \AdminBaseController {
                 'parentesco'        => $input['parentesco'],
                 'tipoPersonal'      => $tipo
             ]);
+            dd("llego hasta aqui");
             Beneficiario::create([
                 'beneficiarioID'    => $input['beneficiarioID'],
                 'nombres'           => ucwords(strtolower($input['nombres'])),
