@@ -74,7 +74,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 
             }
-            dd("llego hasta aqui");
+
             //  Insert into salary table
             if ($input['montosolicitado'] != '')
             {
@@ -86,6 +86,7 @@ class BeneficiariosController extends \AdminBaseController {
 
                 ]);
             }
+            dd("paso la soldonacion");
             // Insert Into Bank Details
             Zonificacion::create([
                 'beneficiarioID'    =>  $input['beneficiarioID'],
