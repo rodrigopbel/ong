@@ -74,7 +74,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 
             }
-            dd("entra aqui");
+            dd(Input::all());
             Beneficiario::create([
                 'beneficiarioID'    => $input['beneficiarioID'],
                 'objetivo'   => $input['objetivo'],
