@@ -100,7 +100,7 @@ class BeneficiariosController extends \AdminBaseController {
                 'lugar'  => $input['lugar']
             ]);
 
-            dd("arriba del create");
+            dd("abajo del create");
             //  Insert into salary table
             if ($input['montosolicitado'] != '')
             {
