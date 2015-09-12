@@ -1,12 +1,10 @@
 <?php
-/**
- * Class BeneficiarioController
- * This Controller is for the all the related function applied on beneficiarios
- */
+
+
 class BeneficiariosController extends \AdminBaseController {
 
     /**
-     * Constructor for the Beneficiarios
+     * Constructor for the Employees
      */
 
     public function __construct()
@@ -22,6 +20,7 @@ class BeneficiariosController extends \AdminBaseController {
         $this->data['responsables']        =   Personal::where('tipoPersonal','=', '');
         Debugbar::info($this->data['beneficiarios'] );
         $this->data['beneficiariosActive'] =   'active';
+
         return View::make('admin.beneficiarios.index', $this->data);
     }
 
@@ -32,6 +31,7 @@ class BeneficiariosController extends \AdminBaseController {
     {
         $this->data['beneficiariosActive'] =   'active';
         $this->data['destinos']      =     Destino::lists('destino','id');
+
         return View::make('admin.beneficiarios.create',$this->data);
     }
 
@@ -40,19 +40,15 @@ class BeneficiariosController extends \AdminBaseController {
      */
     public function store()
     {
-//        dd(Input::all());
-//        dd(Beneficiario::rules('create'));
         $validator = Validator::make($input = Input::all(), Beneficiario::rules('create'));
 
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-
+//        dd($input);
         DB::beginTransaction();
-
         try {
-
             $nombres = $input['nombres'];
             $filename   =   null;
             // Profile Image Upload
@@ -74,6 +70,23 @@ class BeneficiariosController extends \AdminBaseController {
 
             }
 
+            Beneficiario::create([
+                'beneficiarioID'    => $input['beneficiarioID'],
+                'objetivo'   => $input['objetivo'],
+                'nombres'      => ucwords(strtolower($input['nombres'])),
+                'apellidos'    => ucwords(strtolower($input['apellidos'])),
+                'genero'        => $input['genero'],
+                'email'         => $input['email'],
+                'password'      => Hash::make($input['password']),
+                'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
+                'telefono'  => $input['telefono'],
+                'fechaing'   => $input['fechaing'],
+                'direccion'  => $input['direccion'],
+                'foto'  =>  isset($filename)?$filename:'default.jpg',
+                'fechaing'   =>  date('Y-m-d',strtotime($input['fechaing'])),
+                'direccionperm' => $input['direccionperm']
+            ]);
+
             //  Insert into salary table
             if ($input['montosolicitado'] != '')
             {
@@ -85,7 +98,6 @@ class BeneficiariosController extends \AdminBaseController {
 
                 ]);
             }
-            dd("paso la soldonacion");
             // Insert Into Bank Details
             Zonificacion::create([
                 'beneficiarioID'    =>  $input['beneficiarioID'],
@@ -108,30 +120,6 @@ class BeneficiariosController extends \AdminBaseController {
                 'tipoPersonal'      => $tipo
             ]);
 
-            Beneficiario::create([
-                'beneficiarioID'    => $input['beneficiarioID'],
-                'nombres'           => ucwords(strtolower($input['nombres'])),
-                'apellidos'         => ucwords(strtolower($input['apellidos'])),
-                'fechanac'          => date('Y-m-d',strtotime($input['fechanac'])),
-                'genero'            => $input['genero'],
-                'telefono'          => $input['telefono'],
-                'direccion'         => $input['direccion'],
-                'direccionperm'     => $input['direccionperm'],
-                'responsableID'     => $input['nitci'],
-                'foto'              =>  isset($filename)?$filename:'default.jpg',
-//                'destino'           => $input['destino'],
-                'objetivo'          => $input['objetivo'],
-                'fechaing'          =>  date('Y-m-d',strtotime($input['fechaing'])),
-                'iddiagnostico'     => $input['iddiagnostico'],
-                'diagnostico'       => $input['diagnostico'],
-                'fechadiagnostico'  => $input['fechadiag'],
-                'tratamiento'       => $input['tratamiento'],
-                'razon'             => $input['razon'],
-                'duracion'          => $input['duracion'],
-                'referencia'        => $input['referencia'],
-                'lugarlugar'        => $input['lugar']
-
-            ]);
             $fullname = $input['nombres']." ".$input['apellidos'];
             // -------------- UPLOAD THE DOCUMENTS  -----------------
             $documents  =   ['certnac','CIprueba','solicitud','croquis','perfil'];
@@ -177,15 +165,6 @@ class BeneficiariosController extends \AdminBaseController {
             throw $e;
         }
 
-        Activity::log([
-            'contentId'   => $input['beneficiarioID'],
-            'contentType' => 'Beneficiario',
-            'action'      => 'Creacion',
-            'user_id'     => Auth::admin()->get()->id,
-            'description' => 'Creacion del un Beneficiario',
-            'details'     => 'Usuario: '. Auth::admin()->get()->name,
-            'updated'     => $input['beneficiarioID'] ? true : false
-        ]);
         DB::commit();
         return Redirect::route('admin.beneficiarios.index')->with('success',"<strong>{$fullname}</strong> exitosamente adicionado en le base de datos");
     }
@@ -212,9 +191,12 @@ class BeneficiariosController extends \AdminBaseController {
         }
         $this->data['documents']  =   $doc;
         $this->data['zonificacion']     =   Zonificacion::where('beneficiarioID', '=' ,$id)->get()->first();
-//        dd($this->data['responsable'] );
+        dd($this->data['responsable'] );
         return View::make('admin.beneficiarios.edit', $this->data);
     }
+
+
+
     /**
      * Update the specified in storage.
      */
@@ -242,8 +224,6 @@ class BeneficiariosController extends \AdminBaseController {
                 $details->canton          = Input::get('canton');
                 $details->zona        = Input::get('zona');
                 $details->save();
-
-
 
                 $output['status'] = 'success';
                 $output['msg'] = 'Zonificacion actualizado exitosamente';
@@ -345,41 +325,8 @@ class BeneficiariosController extends \AdminBaseController {
                     'direccionperm' => $input['direccionperm']
                 ]);
 
-            Activity::log([
-                'contentId'   => $id,
-                'contentType' => 'Beneficiario',
-                'user_id'     => Auth::admin()->get()->id,
-                'action'      => 'Update',
-                'description' => 'Actualizacion '. Input::get('updateType'),
-                'details'     => 'Usuario: '. Auth::admin()->get()->name,
-                'updated'     => $id ? true : false
-            ]);
             return Redirect::route('admin.beneficiarios.edit',$id)->with('successPersonal',"<strong>Actualizacion</strong> Existosa");
 
-        }
-        else if(Input::get('updateType')=='responsable')
-        {
-//            dd(Input::all());
-            $per  =   Personal::where('personalID','=',$id)->get()->first();
-
-            $validator = Validator::make($input = Input::all(), Personal::rules('personalInfo', $per->id));
-
-            if ($validator->fails())
-            {
-                $output['status']   =   'error';
-                $output['msg']      =   $validator->getMessageBag()->toArray();
-            }else{
-                $responsable = Personal::firstOrNew(['personalID' => $id]);
-                $responsable->personalID    = $input['ciResponsable'];
-                $responsable->nombres       = ucwords(strtolower($input['nombresReponsable']));
-                $responsable->apellidos     = ucwords(strtolower($input['apellidosResponsable']));
-                $responsable->ocupacion     = $input['ocupacionResponsable'];
-                $responsable->tipoPersonal  = "Responsable";
-                $responsable->parentesco    = Input::get('parentesco');
-                $responsable->save();
-                $output['status'] = 'success';
-                $output['msg'] = 'Persona actualizad correctamente....';
-            }
         }
         else if(Input::get('updateType')=='documents')
         {
@@ -424,34 +371,18 @@ class BeneficiariosController extends \AdminBaseController {
 
                 }
             }
-            Activity::log([
-                'contentId'   => $id,
-                'contentType' => 'Beneficiario',
-                'user_id'     => Auth::admin()->get()->id,
-                'action'      => 'Update',
-                'description' => 'Actualizacion '. Input::get('updateType'),
-                'details'     => 'Usuario: '. Auth::admin()->get()->name,
-                'updated'     => $id ? true : false
-            ]);
 
             return Redirect::route('admin.beneficiarios.edit',$id)->with('successDocuments',"<strong>Actualizacion</strong> Existosa");
             //  ********** END UPLOAD THE DOCUMENTS**********
 
         }
-        Activity::log([
-            'contentId'   => $id,
-            'contentType' => 'Beneficiario',
-            'user_id'     => Auth::admin()->get()->id,
-            'action'      => 'Update',
-            'description' => 'Actualizacion '. Input::get('updateType'),
-            'details'     => 'Usuario: '. Auth::admin()->get()->name,
-            'updated'     => $id ? true : false
-        ]);
         //-------Documents info Details Update END--------
         return Response::json($output, 200);
     }
 
-  public function export(){
+
+
+    public function export(){
         $ben   =   Beneficiario::join('objetivo', 'beneficiarios.objetivo', '=', 'objetivo.id')
             ->join('destino', 'destino.id', '=', 'objetivo.destID')
             ->leftJoin('zonificacion_beneficiario', 'zonificacion_beneficiario.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
@@ -476,16 +407,8 @@ class BeneficiariosController extends \AdminBaseController {
 
         })->store('xls')->download('xls');
 
-      Activity::log([
-          'contentId'   => 'All',
-          'user_id'     => Auth::admin()->get()->id,
-          'contentType' => 'Beneficiario',
-          'action'      => 'Export ',
-          'description' => 'Exportacion de Beneficiarios',
-          'details'     => 'Usuario: '. Auth::admin()->get()->name,
-          'updated'     =>  false
-      ]);
-     }
+
+    }
     /**
      * Remove the specified  from storage.
      */
@@ -493,15 +416,6 @@ class BeneficiariosController extends \AdminBaseController {
     public function destroy($id)
     {
         Beneficiario::where('beneficiarioID', '=', $id)->delete();
-        Activity::log([
-            'contentId'   => $id,
-            'user_id'     => Auth::admin()->get()->id,
-            'contentType' => 'Beneficiario',
-            'action'      => 'Delete ',
-            'description' => 'Eliminacion',
-            'details'     => 'Usuario: '. Auth::admin()->get()->name,
-            'updated'     => $id ? true : false
-        ]);
         $output['success']  =   'deleted';
         return Response::json($output, 200);
     }
