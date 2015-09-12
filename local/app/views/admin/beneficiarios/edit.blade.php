@@ -326,7 +326,7 @@
 
                 </div>
             </div>
-            {{dd("3")}}
+
             <div class="portlet box red-sunglo">
                 <div class="portlet-title">
                     <div class="caption">
@@ -600,6 +600,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 col-sm-6">
                 <div class="portlet box red-sunglo">
                     <div class="portlet-title">
@@ -688,7 +689,7 @@
         {{-------------DELETE MODAL CALLING------------}}
         @include('admin.common.delete')
         {{---------------DELETE MODAL CALLING END--------}}
-
+        {{dd("4")}}
         {{------------------------------------NEW SALARY ADD MODALS--------------------------------}}
 
         <div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
