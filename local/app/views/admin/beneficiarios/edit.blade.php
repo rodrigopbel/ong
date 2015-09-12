@@ -747,7 +747,7 @@
 
 @stop
 
-
+{{dd("6")}}
 
 @section('footerjs')
 
