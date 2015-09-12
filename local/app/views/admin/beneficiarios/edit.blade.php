@@ -33,7 +33,7 @@
         </ul>
     </div>
     <!-- END PAGE HEADER-->
-    {{dd("end page header")}}
+
     <div class="clearfix">
     </div>
     <div class="row ">
@@ -68,7 +68,7 @@
                         </div>
                     @endif
 
-
+                    {{dd("1")}}
 
 
                     <div class="form-body">
