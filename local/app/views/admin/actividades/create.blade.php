@@ -67,7 +67,7 @@
                                             * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="fechaAct" placeholder="Requerimiento" value="{{ Input::old('fechaAct') }}">
+                                                <input type="text" class="form-control" name="fechaAct" placeholder="echa de Actividad" value="{{ Input::old('fechaAct') }}">
                                             </div>
                                         </div>
 
@@ -76,7 +76,7 @@
                                         * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="descripcion" placeholder="Centro de Salud" value="{{ Input::old('descripcion') }}">
+                                                <input type="text" class="form-control" name="descripcion" placeholder="Descripcion" value="{{ Input::old('descripcion') }}">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -84,7 +84,7 @@
                                         * </span>
                                             </label>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" name="lugar" placeholder="Nit" value="{{ Input::old('lugar') }}">
+                                                <input type="text" class="form-control" name="lugar" placeholder="Lugar" value="{{ Input::old('lugar') }}">
                                             </div>
                                         </div>
 

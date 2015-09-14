@@ -22,7 +22,7 @@ class ActividadesController extends \AdminBaseController {
 
 
     //Datatable ajax request
-    public function ajax_ayudas()
+    public function ajax_actividades()
     {
 
         $result =

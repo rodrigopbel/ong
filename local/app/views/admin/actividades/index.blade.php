@@ -127,10 +127,10 @@
 	<script>
 
 
-        	$('#ayudas').dataTable( {
+        	$('#actividades').dataTable( {
                         "bProcessing": true,
                         "bServerSide": true,
-                        "sAjaxSource": "{{ route("admin.ajax_ayudas") }}",
+                        "sAjaxSource": "{{ route("admin.ajax_actividades") }}",
                         "aaSorting": [[ 1, "asc" ]],
                         "aoColumns": [
                             { 'sClass': 'center', "bSortable": true  },
@@ -169,11 +169,11 @@
 
 
 
-		function del(id,ayudaaName,ayuda)
+		function del(id,ayudaaName,actividad)
 		{
 
 			$('#deleteModal').appendTo("body").modal('show');
-			$('#info').html('Esta seguro de Eliminar <strong>'+ayuda+'</strong> dado a <strong>'+ayudaaName+'</strong>??');
+			$('#info').html('Esta seguro de Eliminar <strong>'+actividad+'</strong> dado a <strong>'+ayudaaName+'</strong>??');
 			$("#delete").click(function()
 			{
 					var url = "{{ route('admin.ayudas.destroy',':id') }}";
