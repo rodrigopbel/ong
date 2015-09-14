@@ -138,6 +138,6 @@ ORDER BY month ;"));
             'updated'     => $input['emailAdmin'] ? true : false
         ]);
         DB::commit();
-        return View::route('dashboard');
+        return Redirect::url('admin');
     }
 }
