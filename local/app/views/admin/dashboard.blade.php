@@ -29,6 +29,13 @@
                 <a href="#">Dashboard</a>
             </li>
         </ul>
+        <div id="load">
+
+            @if(Session::get('success'))
+                <div class="alert alert-success">{{ Session::get('success') }}</div>
+            @endif
+
+        </div>
         <a href="{{route('admin.dashboard.create')}}" class="btn green">
             Nuevo Administrador <i class="fa fa-plus"></i>
         </a>
@@ -152,6 +159,7 @@
             <script src="http://code.highcharts.com/modules/exporting.js"></script>
             <script>
                 function del(id, name) {
+                    console.log("entro aqui");
                     $('#deleteModal').appendTo("body").modal('show');
                     $('#info').html('Eliminar al Administrador : <strong>' + name + '</strong> ??');
                     $("#delete").click(function () {

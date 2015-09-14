@@ -138,7 +138,7 @@ ORDER BY month ;"));
             'updated'     => $input['emailAdmin'] ? true : false
         ]);
         DB::commit();
-        return Redirect::route('admin.dashboard.index');
+        return Redirect::route('admin.dashboard.index')->with('success',"<strong>{$fullname}</strong> exitosamente adicionado en le base de datos");;
     }
     public function destroy($id)
     {
