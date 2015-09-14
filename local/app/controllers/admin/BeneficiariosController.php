@@ -347,8 +347,6 @@ class BeneficiariosController extends \AdminBaseController {
                     'referencia'   	  	=>$input['referencia'],
                     'lugar'    			=>$input['lugar']
                 ]);
-
-
             Activity::log([
                 'contentId'   => $id,
                 'contentType' => 'Beneficiario',
