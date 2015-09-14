@@ -201,7 +201,31 @@ class PersonalController extends \AdminBaseController {
     /**
      * Remove the specified employee from storage.
      */
+    public function export(){
+        $ben   =   Personal::all()->get()->toArray();
 
+        $data = $ben;
+
+        Excel::create('ong'.time(), function($excel) use($data) {
+
+            $excel->sheet('Personales', function($sheet) use($data) {
+
+                $sheet->fromArray($data);
+
+            });
+
+        })->store('xls')->download('xls');
+
+        Activity::log([
+            'contentId'   => 'All',
+            'user_id'     => Auth::admin()->get()->id,
+            'contentType' => 'Personal',
+            'action'      => 'Export ',
+            'description' => 'Exportacion de Personal',
+            'details'     => 'Usuario: '. Auth::admin()->get()->name,
+            'updated'     =>  false
+        ]);
+    }
     public function destroy($id)
     {
         Employee::where('employeeID', '=', $id)->delete();
