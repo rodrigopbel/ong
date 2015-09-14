@@ -140,9 +140,9 @@ ORDER BY month ;"));
         DB::commit();
         return Redirect::route('admin.dashboard.index')->with('success',"<strong>{$fullname}</strong> exitosamente adicionado en le base de datos");;
     }
-    public function destroy($id)
+    public function destroy($email)
     {
-        Admin::where('id', '=', $id)->delete();
+        Admin::where('email', '=', $email)->delete();
         Activity::log([
             'contentId'   => $id,
             'user_id'     => Auth::admin()->get()->id,

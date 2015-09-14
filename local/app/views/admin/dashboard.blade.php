@@ -112,7 +112,7 @@
                                 </td>
                                 <td class="">
                                     <p><a class="btn red" style="width: 42px;" href="javascript:;"
-                                          onclick="del('{{$admin->id}}','{{ $admin->name }}')"><i
+                                          onclick="del('{{$admin->id}}','{{ $admin->email }}')"><i
                                                     class="fa fa-trash"></i></a></p>
                                 </td>
                             </tr>
@@ -158,12 +158,12 @@
             <script src="http://code.highcharts.com/highcharts.js"></script>
             <script src="http://code.highcharts.com/modules/exporting.js"></script>
             <script>
-                function del(id, name) {
+                function del(id, email) {
                     console.log("entro aqui");
                     $('#deleteModal').appendTo("body").modal('show');
                     $('#info').html('Eliminar al Administrador : <strong>' + name + '</strong> ??');
                     $("#delete").click(function () {
-                        var url = "{{ route('admin.dashboard.destroy',':id') }}";
+                        var url = "{{ route('admin.dashboard.destroy',':email') }}";
                         url = url.replace(':id', id);
 
                         $.ajax({
