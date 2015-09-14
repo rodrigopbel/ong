@@ -63,7 +63,6 @@
 
 
                             <div class="form-body">
-
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Fecha de Actividad</label>
                                             <div class="col-md-3">
