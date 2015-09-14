@@ -105,7 +105,7 @@ ORDER BY month ;"));
 
     public function store()
     {
-        $rules = array('nombreAdmin' =>'required', 'apellidoAdmin'=>'required','email'=>'required|email','password'=>'required');
+        $rules = array('nombreAdmin' =>'required', 'apellidoAdmin'=>'required','emailAdmin'=>'required|email','passwordAdmin'=>'required');
         $validator = Validator::make($input = Input::all(), $rules);
         if ($validator->fails())
         {
