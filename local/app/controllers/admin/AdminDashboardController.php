@@ -144,13 +144,13 @@ ORDER BY month ;"));
     {
         Admin::where('email', '=', $email)->delete();
         Activity::log([
-            'contentId'   => $id,
+            'contentId'   => $email,
             'user_id'     => Auth::admin()->get()->id,
             'contentType' => 'Administrador',
             'action'      => 'Delete ',
             'description' => 'Eliminacion',
             'details'     => 'Usuario: '. Auth::admin()->get()->name,
-            'updated'     => $id ? true : false
+            'updated'     => $email ? true : false
         ]);
         $output['success']  =   'deleted';
         return Response::json($output, 200);
