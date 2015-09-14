@@ -91,7 +91,7 @@
                         <li class="{{ $actividadesActive or ''}}">
                             <a href="{{route('admin.actividades.index')}}">
                                 <i class="fa  fa-gift"></i>
-                                {{Lang::get('menu.actvidadesList')}}</a>
+                                {{Lang::get('menu.actividadesList')}}</a>
                         </li>
                     </ul>
                 </li>
