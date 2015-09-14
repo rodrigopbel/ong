@@ -67,8 +67,12 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::get('personales/personalesLogin/{id}',['as'=>'admin.personales.perLogin','uses'=>'PersonalController@perLogin']);
 
     //    Actividades Routing
-    Route::get('actividades/mark_sunday', 'ActividadesController@Sunday');
-    Route::resource('actividades', 'ActividadesController',['except' => ['show'],'as' => 'admin']);
+//    Route::get('actividades/mark_sunday', 'ActividadesController@Sunday');
+//    Route::resource('actividades', 'ActividadesController',['except' => ['show'],'as' => 'admin']);
+
+    //  Ayudas Routing
+    Route::get('ajax_actividades/',['as'=>'admin.ajax_actividades','uses'=> 'ActividadesController@ajax_actividades']);
+    Route::resource('actividades', 'ActividadesController',['as' => 'admin']);
 
     //  Ayudas Routing
     Route::get('ajax_ayudas/',['as'=>'admin.ajax_ayudas','uses'=> 'AyudasController@ajax_ayudas']);

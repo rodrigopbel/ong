@@ -1,186 +1,175 @@
 <?php
 
-class ActividadesController extends \AdminBaseController {
+class Actividades2Controller extends \AdminBaseController {
+
+
     public function __construct()
     {
         parent::__construct();
-        setlocale(LC_ALL,"es_ES");
-        $this->data['actividadOpen'] ='active open';
-        $this->data['pageTitle'] =  'Actividad';
-        for ($m=1; $m<=12; $m++)
-        {
-            $month[] = date('F', mktime(0,0,0,$m, 1, date('Y')));
-        }
-        $this->data['months']       =   $month;
-        $this->data['currentMonth'] =   date('F');
+        $this->data['actividadesOpen'] ='active open';
+        $this->data['pageTitle']  =  'Actividades';
     }
+
+    //    Display a listing of awards
     public function index()
     {
-        setlocale(LC_ALL,"es_ES");
-        $this->data['actividades']         =   Actividad::orderBy('date', 'ASC')->get();;
-        $this->data['actividadActive']    =   'active';
-        $act        = array();
-        $year       = date("Y");
-        $dateArr    = $this->getDateForSpecificDayBetweenDates($year.'-01-01', $year.'-12-31', 0);
-        $this->data['number_of_sundays']      =   count($dateArr);
-        $this->data['actividades_in_db']      =  count($this->data['actividades']);
-        foreach($this->data['actividades'] as $actividad)
-        {
-            $act[date('F', strtotime($actividad->date))]['id'][] = $actividad->id;
-            $act[date('F', strtotime($actividad->date))]['date'][] = date('d F Y', strtotime($actividad->date));
-            $act[date('F', strtotime($actividad->date))]['descripcion'][] = $actividad->descripcion;
-            $act[date('F', strtotime($actividad->date))]['lugar'][] = $actividad->lugar;
-            $act[date('F', strtotime($actividad->date))]['day'][] = date('D', strtotime($actividad->date));
-        }
+        $this->data['actividades'] = Actividad::all();
 
+        $this->data['actividadesActive'] =   'active';
 
-        $this->data['actividadesArray'] = $act;
         return View::make('admin.actividades.index', $this->data);
     }
 
-    /**
-     * Show the form for creating a new holiday
-     *
-     * @return Response
-     */
+
+    //Datatable ajax request
+    public function ajax_ayudas()
+    {
+
+        $result =
+            Ayuda::select('actividades.id','fechaAct','descripcion','lugar','actividades.created_at')
+                ->from( 'actividades')
+                ->orderBy('actividades.created_at','desc');
+
+        return Datatables::of($result)
+            ->add_column('Por el Mes',function($row) {
+                return ucfirst($row->created_at).' '.$row->created_at;
+            })
+            ->add_column('edit', '
+                        <a  class="btn purple"  href="{{ route(\'admin.actividades.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
+                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripcion}}\',\'{{ $lugar }}\');return false;" class="btn red">
+                        <i class="fa fa-trash"></i></a>')
+
+            ->remove_column('created_at')
+            ->make();
+    }
+
     public function create()
     {
-        return View::make('admin.actividades.create');
+        $this->data['addActividadesActive'] = 'active';
+//        $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (ID:", beneficiarioID,")") as apellidos, beneficiarioID')
+//            ->where('status','=','activo')
+//            ->lists('apellidos','beneficiarioID');
+
+
+
+        return View::make('admin.actividades.create',$this->data);
     }
 
     /**
-     * Store a newly created holiday in storage.
-     *
-     * @return Response
+     * Store a newly created award in storage.
      */
+
     public function store()
     {
-
-        Cache::forget('actividad_cache');
         $validator = Validator::make($input = Input::all(), Actividad::$rules);
-        if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator)->withInput();
-        }
-
-        $actividad = array_combine($input['date'], $input['descripcion'] );
-
-        foreach ($actividad as $index => $value){
-            if($index =='')continue;
-            $add     =  Actividad::firstOrCreate([
-                'date' => date('Y-m-d',strtotime( $index)),
-
-            ]);
-
-            $holi = Actividad::find($add->id);
-            $holi->descripcion = $value;
-            $holi->lugar = $input['lugar'];
-            $holi->save();
-        }
-        return Redirect::route('admin.actividades.index')->with('success',"<strong>Nueva Actividad</strong> Adicionada Exitosamente!");
-    }
-
-    /**
-     * Display the specified holiday.
-     */
-    public function show($id)
-    {
-        $actividad = Actividad::findOrFail($id);
-
-        return View::make('admin.actividades.show', compact('actividad'));
-    }
-
-    /**
-     * Show the form for editing the specified actividad.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        $actividad = Actividad::find($id);
-
-        return View::make('admin.actividades.edit', compact('actividad'));
-    }
-
-    /**
-     * Update the specified actividad in storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        Cache::forget('actividad_cache');
-        $actividad = Actividad::findOrFail($id);
-
-        $validator = Validator::make($data = Input::all(), Actividad::$rules);
 
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        $actividad->update($data);
+        Actividad::create([
+            'fechaAct'   => $input['fechaAct'],
+            'descripcion'    => $input['descripcion'],
+            'lugar'  => $input['lugar']
+        ]);
 
-        return Redirect::route('admin.actividades.index');
+        Activity::log([
+            'contentId'   =>  $input['fechaAct'],
+            'contentType' => 'Actividad',
+            'user_id'     => Auth::admin()->get()->id,
+            'action'      => 'Create',
+            'description' => 'Creacion '. $input['descripcion'],
+            'details'     => 'Usuario: '. Auth::admin()->get()->name,
+            'updated'     => $input['fechaAct'] ? true : false
+        ]);
+
+
+        return Redirect::route('admin.actividades.index')->with('success',"<strong>Guardado</strong> Exitosamente");
+    }
+
+
+
+    /**
+     * Show the form for editing the specified award.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+
+        $this->data['actividad']    = Actividad::find($id);
+        $this->data['addActividadesActive'] = 'active';
+//        $this->data['beneficiarios'] = Beneficiario::lists('apellidos','beneficiarioID');
+//        $this->data['personales'] = Personal::selectRaw('CONCAT(nombres, " (ID:", personalID,")") as nombres, personalID')
+//            ->where('tipoPersonal','=','aportante')
+//            ->lists('nombres','personalID');
+        return View::make('admin.actividades.edit', $this->data);
     }
 
     /**
-     * Remove the specified holiday from storage.
+     * Update the specified award in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        $ayuda = Ayuda::findOrFail($id);
+
+        $validator = Validator::make($data = Input::all(), Ayuda::$rules);
+
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
+
+        $ayuda->update([
+
+            'fechaAct'       => $data['fechaAct'],
+            'descripcion'    => $data['descripcion'],
+            'lugar'          => $data['lugar']
+        ]);
+
+        Activity::log([
+            'contentId'   =>  $id,
+            'contentType' => 'Actividad',
+            'user_id'     => Auth::admin()->get()->id,
+            'action'      => 'Create',
+            'description' => 'Actualizacion '. $data['fechaAct'],
+            'details'     => 'Usuario: '. Auth::admin()->get()->name,
+            'updated'     => $id ? true : false
+        ]);
+
+        return Redirect::route('admin.actividades.edit',$id)->with('success',"<strong>Actualizacion</strong> Exitosa");
+    }
+
+    /**
+     * Remove the specified award from storage.
      *
      * @param  int  $id
      * @return Response
      */
     public function destroy($id)
     {
-        Actividad::destroy($id);
-        $output['success']  =   'deleted';
-
-        Cache::forget('actividad_cache');
-        return Response::json($output, 200);
-    }
-
-    public function Sunday()
-    {
-        Cache::forget('actividad_cache');
-
-        $year   = date("Y");
-        $dateArr = $this->getDateForSpecificDayBetweenDates($year.'-01-01', $year.'-12-31', 0);
-
-        foreach($dateArr as $date)
-        {
-            Actividad::firstOrCreate([
-                'date'  =>  $date,
-                'descripcion' =>'Sunday'
+        if (Request::ajax()) {
+            Actividad::destroy($id);
+            $output['success'] = 'deleted';
+            Activity::log([
+                'contentId'   =>  $id,
+                'contentType' => 'Actividad',
+                'user_id'     => Auth::admin()->get()->id,
+                'action'      => 'Create',
+                'description' => 'Eliminacion '. $id,
+                'details'     => 'Usuario: '. Auth::admin()->get()->name,
+                'updated'     => $id ? true : false
             ]);
+            return Response::json($output, 200);
+        }else{
+            throw(new Exception('Wrong request'));
         }
 
-
-        return Redirect::route('admin.actividades.index')->with('success',"<strong>All Sundays</strong> successfully added to the Database");;;
     }
 
-    public  function getDateForSpecificDayBetweenDates($startDate, $endDate, $weekdayNumber)
-    {
-        $startDate = strtotime($startDate);
-        $endDate = strtotime($endDate);
-
-        $dateArr = array();
-
-        do
-        {
-            if(date("w", $startDate) != $weekdayNumber)
-            {
-                $startDate += (24 * 3600); // add 1 day
-            }
-        } while(date("w", $startDate) != $weekdayNumber);
-
-
-        while($startDate <= $endDate)
-        {
-            $dateArr[] = date('Y-m-d', $startDate);
-            $startDate += (7 * 24 * 3600); // add 7 days
-        }
-
-        return($dateArr);
-    }
 }
