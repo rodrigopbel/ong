@@ -29,6 +29,9 @@
                 <a href="#">Dashboard</a>
             </li>
         </ul>
+        <a href="{{route('admin.dashboard.create')}}" class="btn green">
+            Nuevo Administrador <i class="fa fa-plus"></i>
+        </a>
 
     </div>
     <!-- END PAGE HEADER-->

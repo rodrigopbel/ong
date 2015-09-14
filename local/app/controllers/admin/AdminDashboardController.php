@@ -97,8 +97,8 @@ ORDER BY month ;"));
         return View::make("admin/screen_lock",$this->data);
     }
 
-    public function lista()
+    public function create()
     {
-        echo("holas");
+        return "hola a todos";
     }
 }

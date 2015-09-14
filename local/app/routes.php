@@ -55,9 +55,6 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::get('destinos/ajax_objetivos/',['as'=>'admin.destinos.ajax_objetivos','uses'=> 'DestinosController@ajax_objetivos']);
     Route::resource('destinos', 'DestinosController',['except' => ['show','create'],'as' => 'admin']);
 
-    // Administrator Routing
-    Route::get('administrator', 'AdminDashboardController@lista', ['except' => ['show','create', 'as' => 'admin.administrator']]);
-    Route::post('administrator/create', 'AdminDashboardController@guardar', ['except' => ['show','create', 'as' => 'admin']]);
 
     //    Beneficiarios Routing
     Route::get('beneficiarios/export',['as'=>'admin.beneficiarios.export','uses'=>'BeneficiariosController@export']);
