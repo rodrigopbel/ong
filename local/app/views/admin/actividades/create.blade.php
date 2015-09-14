@@ -5,6 +5,8 @@
     {{HTML::style("assets/global/plugins/bootstrap-select/bootstrap-select.min.css")}}
     {{HTML::style("assets/global/plugins/select2/select2.css")}}
     {{HTML::style("assets/global/plugins/jquery-multi-select/css/multi-select.css")}}
+    {{HTML::style('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css')}}
+    {{HTML::style('assets/global/plugins/bootstrap-datepicker/css/datepicker3.css')}}
     <!-- BEGIN THEME STYLES -->
 @stop
 
