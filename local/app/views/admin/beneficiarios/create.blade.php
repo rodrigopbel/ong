@@ -165,7 +165,87 @@
         								</div>
 
         						</div>
-        					</div>
+        					</div><div class="portlet box purple-wisteria">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-calendar"></i>Documentos Personales
+                                    </div>
+
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">CN</label>
+                                            <div class="col-md-5">
+                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                    <div class="input-group input-large">
+                                                        <div class="form-control uneditable-input" data-trigger="fileinput">
+                                                            <i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
+															</span>
+                                                        </div>
+														<span class="input-group-addon btn default btn-file">
+														<span class="fileinput-new">
+														Seleccionar Archivo </span>
+														<span class="fileinput-exists">
+														Cambiar </span>
+														<input type="file" name="certnac">
+														</span>
+                                                        <a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
+                                                            Eliminar </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">Croquis</label>
+                                            <div class="col-md-5">
+                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                    <div class="input-group input-large">
+                                                        <div class="form-control uneditable-input" data-trigger="fileinput">
+                                                            <i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
+															</span>
+                                                        </div>
+														<span class="input-group-addon btn default btn-file">
+														<span class="fileinput-new">
+														Seleccionar Archivo </span>
+														<span class="fileinput-exists">
+														Cambiar </span>
+														<input type="file" name="croquis">
+														</span>
+                                                        <a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
+                                                            Eliminar </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">CI</label>
+                                            <div class="col-md-5">
+                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                    <div class="input-group input-large">
+                                                        <div class="form-control uneditable-input" data-trigger="fileinput">
+                                                            <i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
+															</span>
+                                                        </div>
+														<span class="input-group-addon btn default btn-file">
+														<span class="fileinput-new">
+														Seleccionar Archivo</span>
+														<span class="fileinput-exists">
+														Cambiar </span>
+														<input type="file" name="CIprueba">
+														</span>
+                                                        <a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
+                                                            Eliminar </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
         				</div>
         				<div class="col-md-6 col-sm-6">
         					<div class="portlet box red-sunglo">
@@ -337,87 +417,7 @@
         			{{---------------Documents------------------}}
         			<div class="row ">
         				<div class="col-md-6 col-sm-6">
-        					<div class="portlet box purple-wisteria">
-        						<div class="portlet-title">
-        							<div class="caption">
-        								<i class="fa fa-calendar"></i>Documentos Personales
-        							</div>
 
-        						</div>
-        						<div class="portlet-body">
-									<div class="form-body">
-										<div class="form-group">
-											<label class="control-label col-md-2">CN</label>
-											<div class="col-md-5">
-												<div class="fileinput fileinput-new" data-provides="fileinput">
-													<div class="input-group input-large">
-														<div class="form-control uneditable-input" data-trigger="fileinput">
-															<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
-															</span>
-														</div>
-														<span class="input-group-addon btn default btn-file">
-														<span class="fileinput-new">
-														Seleccionar Archivo </span>
-														<span class="fileinput-exists">
-														Cambiar </span>
-														<input type="file" name="certnac">
-														</span>
-														<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-														Eliminar </a>
-													</div>
-												</div>
-											</div>
-
-										</div>
-										<div class="form-group">
-											<label class="control-label col-md-2">Croquis</label>
-											<div class="col-md-5">
-												<div class="fileinput fileinput-new" data-provides="fileinput">
-													<div class="input-group input-large">
-														<div class="form-control uneditable-input" data-trigger="fileinput">
-															<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
-															</span>
-														</div>
-														<span class="input-group-addon btn default btn-file">
-														<span class="fileinput-new">
-														Seleccionar Archivo </span>
-														<span class="fileinput-exists">
-														Cambiar </span>
-														<input type="file" name="croquis">
-														</span>
-														<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-														Eliminar </a>
-													</div>
-												</div>
-											</div>
-
-										</div>
-										<div class="form-group">
-											<label class="control-label col-md-2">CI</label>
-											<div class="col-md-5">
-												<div class="fileinput fileinput-new" data-provides="fileinput">
-													<div class="input-group input-large">
-														<div class="form-control uneditable-input" data-trigger="fileinput">
-															<i class="fa fa-file fileinput-exists"></i>&nbsp; <span class="fileinput-filename">
-															</span>
-														</div>
-														<span class="input-group-addon btn default btn-file">
-														<span class="fileinput-new">
-														Seleccionar Archivo</span>
-														<span class="fileinput-exists">
-														Cambiar </span>
-														<input type="file" name="CIprueba">
-														</span>
-														<a href="#" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput">
-														Eliminar </a>
-													</div>
-												</div>
-											</div>
-
-										</div>
-									</div>
-        						</div>
-        					</div>
         				</div>
 						<div class="col-md-6 col-sm-6">
 
