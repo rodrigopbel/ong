@@ -111,6 +111,7 @@ ORDER BY month ;"));
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
+        dd("paso la validacion");
         DB::beginTransaction();
         try {
             $filename   =   null;
