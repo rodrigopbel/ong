@@ -171,7 +171,7 @@
                             type: "DELETE",
                             url: url,
                             dataType: 'json',
-                            data: {"id": id}
+                            data: {"email": email}
 
                         }).done(function (response) {
 
