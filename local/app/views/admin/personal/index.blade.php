@@ -33,9 +33,9 @@
 			<div class="col-md-12">
 				<!-- BEGIN EXAMPLE TABLE PORTLET-->
 			<div id="load">
-				{{--@if(Session::get('success'))--}}
-                    {{--<div class="alert alert-success">{{ Session::get('success') }}</div>--}}
-                {{--@endif--}}
+				@if(Session::get('success'))
+                    <div class="alert alert-success">{{ Session::get('success') }}</div>
+                @endif
             </div>
             <a href="{{route('admin.personal.create')}}" class="btn green">
                 Nuevo <i class="fa fa-plus"></i>
@@ -45,13 +45,7 @@
 					<div class="caption">
 				    	<i class="fa fa-users"></i>Personal
 					</div>
-					<div class="tools" style="  padding: 5px;">
-                        <div class="btn-group pull-right">
-                        	<a  href="{{route('admin.personal.export') }}" class="btn yellow">
-								 <i class="fa fa-file-excel-o"></i>    Exportar
-                            </a>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="portlet-body">
                     <table class="table table-striped table-bordered table-hover" id="sample_personal">
