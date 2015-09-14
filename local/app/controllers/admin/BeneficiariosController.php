@@ -89,6 +89,7 @@ class BeneficiariosController extends \AdminBaseController {
                 'iddiagnostico'     =>$input['iddiag'],
                 'diagnostico'     	=>$input['diagnostico'],
                 'fechadiagnostico'  =>$input['fechadiag'],
+                'tratamiento'  =>$input['tratamiento'],
                 'razon'     		=>$input['razon'],
                 'duracion'    	 	=>$input['duracion'],
                 'referencia'   	  	=>$input['referencia'],
