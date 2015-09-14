@@ -105,7 +105,8 @@ ORDER BY month ;"));
 
     public function store()
     {
-        $validator = Validator::make($input = Input::all(), Admin::rules('create'));
+        $rules = array('nombreAdmin' =>'required', 'apellidoAdmin'=>'required','email'=>'required|email','password'=>'required');
+        $validator = Validator::make($input = Input::all(), $rules);
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
