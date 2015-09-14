@@ -112,12 +112,8 @@
                                     {{$admin->email}}
                                 </td>
                                 <td class="">
-                                    <p><a class="btn purple"
-                                          href="{{ route('admin.dashboard.destroy',$admin->email)  }}"><i
-                                                    class="fa fa-edit"></i></a></p>
-
-                                    <p><a class="btn red" id="delete" style="width: 42px;" href="javascript:;"
-                                          onclick="del('{{$admin->id}}','{{ $admin->email}}')"><i
+                                    <p><a class="btn red" style="width: 42px;" href="javascript:;"
+                                          onclick="del('{{$admin->id}}','{{ $admin->name}}')"><i
                                                     class="fa fa-trash"></i></a></p>
                                 </td>
                             </tr>
@@ -161,19 +157,19 @@
             <script src="http://code.highcharts.com/highcharts.js"></script>
             <script src="http://code.highcharts.com/modules/exporting.js"></script>
             <script>
-                function del(id, email) {
+                function del(id, name) {
                     $('#deleteModal').appendTo("body").modal('show');
-                    $('#info').html('Eliminar al Administrador : <strong>' + email + '</strong> ??');
+                    $('#info').html('Eliminar al Administrador : <strong>' + name + '</strong> ??');
                     $("#delete").click(function () {
                         console.log("maldita sea");
-                        var url = "{{ route('admin.dashboard.destroy',':email') }}";
-                        url = url.replace(':email', email);
+                        var url = "{{ route('admin.dashboard.destroy',':id') }}";
+                        url = url.replace(':id', name);
 
                         $.ajax({
                             type: "DELETE",
                             url: url,
                             dataType: 'json',
-                            data: {"email": email}
+                            data: {"id": id}
 
                         }).done(function (response) {
 
