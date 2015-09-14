@@ -86,7 +86,7 @@
                                     {{ $personal->nombres}}   {{ $personal->apellidos}}
                                 </td>
                                 <td class="text-center">
-                                    {{ $beneficiario->nombres}}
+                                    {{ $personal->email}}
                                 </td>
                                 <td class="text-center">
                                     {{ $personal->tipoPersonal }}
