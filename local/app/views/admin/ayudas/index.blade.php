@@ -69,13 +69,14 @@
 							<thead>
 							<tr>
 								<th> AyudaID </th>
-                                <th> AyudaID </th>
-                                <th> Apellido Beneficiario</th>
-								<th> Nombre Aportante</th>
-								<th> Requerimiento</th>
+								<th> Beneficiario ID </th>
+								<th> Apellido Beneficiario</th>
+								<th> Requerimiento </th>
+								<th> Centro de Salud </th>
 								<th> Nit </th>
-                                <th> Gastos </th>
+								<th> Nro Factura </th>
                                 <th> Fecha Ayuda </th>
+                                <th> Gastos </th>
 
 
 								<th> Accion </th>
@@ -84,14 +85,14 @@
 							<tbody>
                         <tr >
                                 <td>{{-- Hidden ID --}}</td>
-                               <td>{{-- Hidden ID --}}</td>
-                                <td>{{-- Apellido Beneficiario --}}</td>
-                                <td>{{-- Nombre Aportante --}}</td>
-                                <td>{{-- Requerimiento --}} </td>
+                                <td>{{-- EmployeeID --}}</td>
+                                <td>{{-- Apellido Beneiciario --}}</td>
+                                <td>{{-- Reuqerimiento --}} </td>
+                                <td>{{-- Centro de Salud --}}</td>
                                 <td>{{-- Nit --}}</td>
-                                <td>{{-- Gastos --}}</td>
+                                <td>{{-- Nro Factura --}}</td>
                                 <td>{{-- Fecha Ayuda --}}</td>
-
+                                <td>{{-- Gastos --}}</td>
 
                                 <td>{{-- Action --}} </td>
                             </tr>
@@ -135,6 +136,7 @@
                         "sAjaxSource": "{{ route("admin.ajax_ayudas") }}",
                         "aaSorting": [[ 1, "asc" ]],
                         "aoColumns": [
+                            { 'sClass': 'center', "bSortable": true  },
                             { 'sClass': 'center', "bSortable": true  },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },

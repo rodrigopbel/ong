@@ -40,9 +40,6 @@
             <a href="{{route('admin.personal.create')}}" class="btn green">
                 Nuevo <i class="fa fa-plus"></i>
             </a><hr>
-            <a href="{{URL::to('admin/administrator')}}" class="btn green">
-                Nuevo Administrador <i class="fa fa-plus"></i>
-            </a><hr>
 			<div class="portlet box blue">
                 <div class="portlet-title">
 					<div class="caption">
@@ -129,10 +126,9 @@
     {{ HTML::script("assets/admin/pages/scripts/table-managed.js")}}
 <!-- END PAGE LEVEL PLUGINS -->
 	<script>
-        jQuery(document).ready(function() {
-
-            TableManaged.init();
-        });
+	jQuery(document).ready(function() {
+	   TableManaged.init();
+	});
 	</script>
 	<script>
 	function del(id,name)

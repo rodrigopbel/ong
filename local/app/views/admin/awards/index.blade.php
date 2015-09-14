@@ -1,12 +1,17 @@
 @extends('admin.adminlayouts.adminlayout')
-{{--{{dd("hola mundo")}}--}}
+
 @section('head')
 	<!-- BEGIN PAGE LEVEL STYLES -->
 	{{HTML::style("assets/global/plugins/select2/select2.css")}}
 	{{HTML::style("assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css")}}
 	<!-- END PAGE LEVEL STYLES -->
+
 @stop
+
+
 @section('mainarea')
+
+
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 			{{$pageTitle}}
@@ -15,11 +20,11 @@
 				<ul class="page-breadcrumb">
 					<li>
 						<i class="fa fa-home"></i>
-                        <a href="{{route('admin.dashboard.index')}}">Inicio</a>
+						<a href="{{route('admin.dashboard.index')}}">Home</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Donaciones</a>
+						<a href="#">awards</a>
 						<i class="fa "></i>
 					</li>
 
@@ -28,14 +33,23 @@
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
+
 									<div class="row">
                         				<div class="col-md-6">
 
-				 <a class="btn green" data-toggle="modal" href="{{URL::to('admin/donaciones/create')}}">
-                                       Nueva Donacion
+				 <a class="btn green" data-toggle="modal" href="{{URL::to('admin/awards/create')}}">
+                                        Add New Award
                 <i class="fa fa-plus"></i> </a>
                                         </div>
-                                    </div>
+                        				<div class="col-md-6 form-group text-right">
+
+                        				<span id="load_notification"></span>
+                        					 <input  type="checkbox"  onchange="ToggleEmailNotification('award_notification');return false;" class="make-switch" name="award_notification" @if($setting->award_notification==1)checked	@endif data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">
+                        					<strong>Email Notification</strong><br>
+
+
+                        				</div>
+                                     </div>
                                      <hr>
 			<div class="row">
 				<div class="col-md-12">
@@ -51,7 +65,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-trophy"></i>Lista de Donaciones
+								<i class="fa fa-trophy"></i>awards List
 							</div>
 							<div class="tools">
 							</div>
@@ -60,41 +74,44 @@
 						<div class="portlet-body">
 
 
-							<table class="table table-striped table-bordered table-hover" id="donaciones">
+							<table class="table table-striped table-bordered table-hover" id="awards">
 							<thead>
 							<tr>
-								<th> DonacionesID </th>
-								<th> Aportante ID </th>
-								<th> Descripcion</th>
-								<th> Monto </th>
-								<th> Fecha Creacion </th>
-                                <th> Fecha Creacion </th>
-                                {{--<th> Fecha Creacion </th>--}}
+								<th> Hidden ID </th>
+								<th> EmployeeID </th>
+								<th> Awardee Name </th>
+								<th> Award </th>
+								<th> Gift </th>
+								<th> Hidden Month </th>
+								<th> For the Month </th>
 
 
-								<th> Accion </th>
+								<th> Action </th>
 							</tr>
 							</thead>
 							<tbody>
                         <tr >
-                                <td>{{-- Donacion ID --}}</td>
-                                <td>{{-- AportanteID --}}</td>
-                                <td>{{-- Descripcion --}}</td>
-                                <td>{{-- Monto --}} </td>
-                                <td>{{-- Fecha --}}</td>
-                                <td>{{-- Fecha --}}</td>
-
+                                <td>{{-- Hidden ID --}}</td>
+                                <td>{{-- EmployeeID --}}</td>
+                                <td>{{-- Awardee Name --}}</td>
+                                <td>{{-- Award --}} </td>
+                                <td>{{-- Gift --}}</td>
+                                <td>{{-- HIdden Month --}}</td>
+                                <td>{{-- Month --}}</td>
 
                                 <td>{{-- Action --}} </td>
                             </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <!-- END EXAMPLE TABLE PORTLET-->
 
-        </div>
-    </div>
+
+
+							</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- END EXAMPLE TABLE PORTLET-->
+
+				</div>
+			</div>
 			<!-- END PAGE CONTENT-->
 
 			{{--DELETE MODAL CALLING--}}
@@ -118,14 +135,15 @@
 	<script>
 
 
-        	$('#donaciones').dataTable( {
+        	$('#awards').dataTable( {
                         "bProcessing": true,
                         "bServerSide": true,
-                        "sAjaxSource": "{{ route("admin.ajax_donaciones") }}",
+                        "sAjaxSource": "{{ route("admin.ajax_awards") }}",
                         "aaSorting": [[ 1, "asc" ]],
                         "aoColumns": [
                             { 'sClass': 'center', "bSortable": true  },
                             { 'sClass': 'center', "bSortable": true  },
+                            { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
@@ -159,14 +177,14 @@
 
 
 
-		function del(id,donacionName,donacion)
+		function del(id,awardeeName,award)
 		{
 
 			$('#deleteModal').appendTo("body").modal('show');
-			$('#info').html('Esta seguro de Eliminar <strong>'+donacion+'</strong> dado a <strong>'+donacionName+'</strong>??');
+			$('#info').html('Are you sure ! You want to delete <strong>'+award+'</strong> given to <strong>'+awardeeName+'</strong>??');
 			$("#delete").click(function()
 			{
-					var url = "{{ route('admin.donaciones.destroy',':id') }}";
+					var url = "{{ route('admin.awards.destroy',':id') }}";
 					url = url.replace(':id',id);
 					 $.ajax({
 
@@ -184,7 +202,7 @@
 		                  	   		$('#deleteModal').modal('hide');
 		                  	   		 $('#row'+id).fadeOut(500);
 
-		                 	  		$('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Eliminada exitosamente!</p>");
+		                 	  		$('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Successfully Deleted</p>");
 		                  	 }
 		           		 });
 				})

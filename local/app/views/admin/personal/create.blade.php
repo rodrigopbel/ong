@@ -112,7 +112,7 @@
                             <label class="col-md-3 control-label">Tipo de Persona</label>
                             <div class="col-md-9">
 
-                                {{ Form::select('tipoPersonal', array('Aportante' => 'Aportante', 'Administrador' => 'Administrador' , 'Voluntario' => 'Voluntario'), Input::old('tipoPersonal'),array('class'=>'form-control')) }}
+                                {{ Form::select('tipoPersonal', array('Aportante' => 'Aportante', 'Administrador' => 'Administrador','Responsable' => 'Responsable', 'Voluntario' => 'Voluntario'), Input::old('tipoPersonal'),array('class'=>'form-control')) }}
 
                             </div>
                         </div>
@@ -177,6 +177,59 @@
                     </div>
                 </div>
             </div>
+
+            {{--<div class="portlet box red-sunglo">--}}
+            {{--<div class="portlet-title">--}}
+            {{--<div class="caption">--}}
+            {{--<i class="fa fa-calendar"></i>Zonificacion--}}
+            {{--</div>--}}
+
+            {{--</div>--}}
+            {{--<div class="portlet-body">--}}
+
+            {{--<div class="form-body">--}}
+            {{--<div class="form-group">--}}
+            {{--<label class="col-md-3 control-label">Departamento</label>--}}
+            {{--<div class="col-md-9">--}}
+            {{--<input type="text" class="form-control" name="departamento" placeholder="Departamento" value="{{Input::old('departamento')}}">--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="form-group">--}}
+            {{--<label class="col-md-3 control-label">Provincia</label>--}}
+            {{--<div class="col-md-9">--}}
+            {{--<input type="text" class="form-control" name="provincia" placeholder="Provincia" value="{{Input::old('provincia')}}">--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="form-group">--}}
+            {{--<label class="col-md-3 control-label">Localidad</label>--}}
+            {{--<div class="col-md-9">--}}
+            {{--<input type="text" class="form-control" name="localidad" placeholder="Localidad" value="{{Input::old('localidad')}}">--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="form-group">--}}
+            {{--<label class="col-md-3 control-label">Canton</label>--}}
+            {{--<div class="col-md-9">--}}
+            {{--<input type="text" class="form-control" name="canton" placeholder="Canton" value="{{Input::old('canton')}}">--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="form-group">--}}
+            {{--<label class="col-md-3 control-label">Zona</label>--}}
+            {{--<div class="col-md-9">--}}
+            {{--<input type="text" class="form-control" name="zona" placeholder="Zona" value="{{Input::old('zona')}}">--}}
+            {{--</div>--}}
+            {{--</div>--}}
+
+            {{--<div class="form-group">--}}
+            {{--<label class="col-md-3 control-label">Nota</label>--}}
+            {{--<div class="col-md-9">--}}
+            {{--<textarea class="form-control" name="otros" rows="3">{{Input::old('otros')}}</textarea>--}}
+
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+
+            {{--</div>--}}
+            {{--</div>--}}
         </div>
         <div class="clearfix">
         </div>
