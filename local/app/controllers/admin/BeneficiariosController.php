@@ -72,7 +72,6 @@ class BeneficiariosController extends \AdminBaseController {
 
 
             }
-
             Beneficiario::create([
                 'beneficiarioID'    => $input['beneficiarioID'],
                 'responsableID'    => $input['nitci'],
