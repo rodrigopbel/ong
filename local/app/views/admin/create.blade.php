@@ -55,20 +55,20 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">Nombres <span class="required">* </span></label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="nombreAdmin" placeholder="Nombres de la Persona" value="{{ Input::old('nombres') }}">
+                                <input type="text" class="form-control" name="nombreAdmin" placeholder="Nombres de la Persona" value="{{ Input::old('nombreAdmin') }}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Apellidos</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" name="apellidoAdmin" placeholder="Apellidos de la Persona"value="{{ Input::old('apellidos') }}">
+                                <input type="text" class="form-control" name="apellidoAdmin" placeholder="Apellidos de la Persona"value="{{ Input::old('apellidoAdmin') }}">
                             </div>
                         </div>
                         <h4><strong>Cuenta de Beneficiario</strong></h4>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Email<span class="required">* </span></label>
                             <div class="col-md-9">
-                                <input type="text" name="emailAdmin" class="form-control" value="">
+                                <input type="text" name="emailAdmin" class="form-control" value="{{ Input::old('emailAdmin') }}">
                             </div>
                         </div>
                         <div class="form-group">
