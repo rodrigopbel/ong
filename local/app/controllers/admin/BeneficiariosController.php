@@ -69,7 +69,7 @@ class BeneficiariosController extends \AdminBaseController {
 
 
             }
-
+            dd(Input::all());
             Beneficiario::create([
                 'beneficiarioID'    => $input['beneficiarioID'],
                 'objetivo'   => $input['objetivo'],
@@ -83,7 +83,6 @@ class BeneficiariosController extends \AdminBaseController {
                 'fechaing'   => $input['fechaing'],
                 'direccion'  => $input['direccion'],
                 'foto'  =>  isset($filename)?$filename:'default.jpg',
-                'fechaing'   =>  date('Y-m-d',strtotime($input['fechaing'])),
                 'direccionperm' => $input['direccionperm']
             ]);
 
