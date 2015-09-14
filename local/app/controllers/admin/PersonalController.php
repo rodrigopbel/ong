@@ -21,7 +21,7 @@ class PersonalController extends \AdminBaseController {
         $this->data['personalActive']   =   'active';
         foreach($this->data['personales'] as $person)
         {
-            $this->data['beneficiario'] = Beneficiario::where('personales', 'beneficiarioID','=',$person->beneficiarioID)->get;
+            $this->data['beneficiario'] = Beneficiario::where('beneficiarioID','=',$person->beneficiarioID)->get;
         }
 
         Debugbar::info($this->data['personales'] );
