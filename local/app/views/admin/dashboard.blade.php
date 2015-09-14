@@ -112,7 +112,7 @@
                                 </td>
                                 <td class="">
                                     <p><a class="btn red" style="width: 42px;" href="javascript:;"
-                                          onclick="del('{{$admin->id}}','{{ $admin->email }}')"><i
+                                          onclick="del('{{$admin->id}}','{{ $admin->email}}')"><i
                                                     class="fa fa-trash"></i></a></p>
                                 </td>
                             </tr>
@@ -164,7 +164,7 @@
                     $('#info').html('Eliminar al Administrador : <strong>' + name + '</strong> ??');
                     $("#delete").click(function () {
                         var url = "{{ route('admin.dashboard.destroy',':email') }}";
-                        url = url.replace(':id', id);
+                        url = url.replace(':email', email);
 
                         $.ajax({
                             type: "DELETE",
