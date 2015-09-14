@@ -143,7 +143,10 @@
 
         @section('footerjs')
 
-
+            {{ HTML::script("assets/global/plugins/select2/select2.min.js")}}
+            {{ HTML::script("assets/global/plugins/datatables/media/js/jquery.dataTables.min.js")}}
+            {{ HTML::script("assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js")}}
+            {{ HTML::script("assets/admin/pages/scripts/table-managed.js")}}
             <!-- BEGIN PAGE LEVEL PLUGINS -->
             {{HTML::script("assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js")}}
             {{HTML::script("assets/global/plugins/bootstrap-select/bootstrap-select.min.js")}}
