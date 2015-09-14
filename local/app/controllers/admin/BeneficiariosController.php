@@ -69,21 +69,20 @@ class BeneficiariosController extends \AdminBaseController {
 
 
             }
-            dd(Input::all());
             Beneficiario::create([
                 'beneficiarioID'    => $input['beneficiarioID'],
-                'objetivo'   => $input['objetivo'],
-                'nombres'      => ucwords(strtolower($input['nombres'])),
-                'apellidos'    => ucwords(strtolower($input['apellidos'])),
-                'genero'        => $input['genero'],
-                'email'         => $input['email'],
-                'password'      => Hash::make($input['password']),
-                'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
-                'telefono'  => $input['telefono'],
-                'fechaing'   => $input['fechaing'],
-                'direccion'  => $input['direccion'],
-                'foto'  =>  isset($filename)?$filename:'default.jpg',
-                'direccionperm' => $input['direccionperm']
+                'objetivo'          => $input['objetivo'],
+                'nombres'           => ucwords(strtolower($input['nombres'])),
+                'apellidos'         => ucwords(strtolower($input['apellidos'])),
+                'genero'            => $input['genero'],
+                'email'             => $input['email'],
+                'password'          => Hash::make($input['password']),
+                'fechanac'          => date('Y-m-d',strtotime($input['fechanac'])),
+                'telefono'          => $input['telefono'],
+                'fechaing'          => $input['fechaing'],
+                'direccion'         => $input['direccion'],
+                'foto'              =>  isset($filename)?$filename:'default.jpg',
+                'direccionperm'     => $input['direccionperm']
             ]);
 
             //  Insert into salary table
