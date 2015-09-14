@@ -8,7 +8,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 class Admin extends Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
-    protected $table="beneficiarios";
+    protected $table="admins";
     public  static $rules=[
         'name'  =>  'required',
         'email' =>  'required|email'
