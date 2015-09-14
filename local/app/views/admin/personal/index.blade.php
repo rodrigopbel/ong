@@ -46,7 +46,6 @@
                     <div class="caption">
                         <i class="fa fa-users"></i>Personal
                     </div>
-
                 </div>
                 <div class="portlet-body">
                     <table class="table table-striped table-bordered table-hover" id="sample_personal">
