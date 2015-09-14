@@ -28,6 +28,8 @@ return [
 	'expenseList'           =>  'Expense List',
 	'actividades'           =>  'Actividades',
 	'actividadesList'       =>  'Lista',
+    'participaciones'       =>  'Participaciones',
+    'participacionesList'   =>  'Lista',
 	'personal'              =>  'Personal',
 	'personalAdmi'          =>  'Administrador',
 	'personalRes'           =>  'Responsable',
