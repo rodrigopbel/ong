@@ -66,9 +66,56 @@
 
 
     <!-- BEGIN DASHBOARD STATS -->
+
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="portlet box blue">
 
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-users"></i>Beneficiarios
+                    </div>
+                    <div class="tools" style="  padding: 5px;">
+                        <div class="btn-group pull-right">
+                            <a href="{{route('admin.beneficiarios.export') }}" class="btn yellow">
+                                <i class="fa fa-file-excel-o"></i> Exportar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portlet-body">
+
+                    <table class="table table-striped table-bordered table-hover" id="sample_employees">
+                        <thead>
+                        <tr>
+                            <th class="text-center">
+                                Nombre Completo
+                            </th>
+                            <th class="text-center">
+                                Email
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        @foreach ($administradores as $admin)
+                            <tr id="row{{ $ben->name }}">
+                                <td>
+                                    {{ $admin->name }}
+
+                                </td>
+                                <td>
+                                    {{$admin->email}}
+                                </td>
+                            </tr>
+                        @endforeach
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <div class="portlet box blue">
                 <div class="portlet-title">
                     <div class="caption">

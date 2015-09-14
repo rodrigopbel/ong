@@ -81,7 +81,7 @@ ORDER BY month ;"));
         }
         $this->data['expense'] = implode(',',$expensevalue);
 
-
+        $this->data['administradores'] = Admin::all();
         return View::make('admin/dashboard',$this->data);
 
     }
