@@ -85,7 +85,15 @@ class BeneficiariosController extends \AdminBaseController {
                 'fechaing'          =>  date('Y-m-d',strtotime($input['fechaing'])),
                 'direccion'         => $input['direccion'],
                 'foto'              => isset($filename)?$filename:'default.jpg',
-                'direccionperm'     => $input['direccionperm']
+                'direccionperm'     => $input['direccionperm'],
+                'iddiagnostico'     =>$input['iddiag'],
+                'diagnostico'     	=>$input['diagnostico'],
+                'fechadiagnostico'  =>$input['fechadiag'],
+                'razon'     		=>$input['razon'],
+                'duracion'    	 	=>$input['duracion'],
+                'referencia'   	  	=>$input['referencia'],
+                'lugar'    			=>$input['lugar']
+
             ]);
             //  Insert into salary table
             if ($input['montosolicitado'] != '')
