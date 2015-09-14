@@ -62,7 +62,7 @@
 
                         <div class="portlet-body form">
 
-
+                            <div class="form-body">
 
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Fecha de Actividad</label>
@@ -101,6 +101,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                </div>
                         </div>
                                 {{ Form::close() }}
                                     <!-- END FORM-->
