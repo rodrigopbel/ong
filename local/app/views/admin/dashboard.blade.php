@@ -112,7 +112,7 @@
                                     {{$admin->email}}
                                 </td>
                                 <td class="">
-                                    <p><a class="btn red" style="width: 42px;" href="javascript:;"
+                                    <p><a class="btn red" id="delete" style="width: 42px;" href="javascript:;"
                                           onclick="del('{{$admin->id}}','{{ $admin->email}}')"><i
                                                     class="fa fa-trash"></i></a></p>
                                 </td>
@@ -142,11 +142,6 @@
         @stop
 
         @section('footerjs')
-
-            {{ HTML::script("assets/global/plugins/select2/select2.min.js")}}
-            {{ HTML::script("assets/global/plugins/datatables/media/js/jquery.dataTables.min.js")}}
-            {{ HTML::script("assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js")}}
-            {{ HTML::script("assets/admin/pages/scripts/table-managed.js")}}
             <!-- BEGIN PAGE LEVEL PLUGINS -->
             {{HTML::script("assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js")}}
             {{HTML::script("assets/global/plugins/bootstrap-select/bootstrap-select.min.js")}}
@@ -353,4 +348,4 @@
                 });
             </script>
             <!-- END PAGE LEVEL PLUGINS -->
-@stop
+    @stop
