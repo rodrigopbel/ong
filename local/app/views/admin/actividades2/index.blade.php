@@ -24,7 +24,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Actividades</a>
+						<a href="#">Ayudas</a>
 						<i class="fa "></i>
 					</li>
 
@@ -36,8 +36,8 @@
 									<div class="row">
                         				<div class="col-md-6">
 
-				 <a class="btn green" data-toggle="modal" href="{{URL::to('admin/actividades/create')}}">
-                                       Nueva Actividad
+				 <a class="btn green" data-toggle="modal" href="{{URL::to('admin/ayudas/create')}}">
+                                       Nueva Ayuda
                 <i class="fa fa-plus"></i> </a>
                                         </div>
                                     </div>
@@ -56,7 +56,7 @@
 					<div class="portlet box blue">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-trophy"></i>Lista de Actividades
+								<i class="fa fa-trophy"></i>Lista de Ayudas
 							</div>
 							<div class="tools">
 							</div>
@@ -65,17 +65,18 @@
 						<div class="portlet-body">
 
 
-							<table class="table table-striped table-bordered table-hover" id="actividades">
+							<table class="table table-striped table-bordered table-hover" id="ayudas">
 							<thead>
 							<tr>
-								<th> ActividadID </th>
-								<th> Fecha </th>
-								<th> Actividad</th>
-								<th> Lugar </th>
-								<th> Lista de Voluntarios </th>
-								<th> Participantes </th>
-                                <th> Fecha Creacion </th>
-
+								<th> AyudaID </th>
+								<th> Beneficiario ID </th>
+								<th> Apellido Beneficiario</th>
+								<th> Requerimiento </th>
+								<th> Centro de Salud </th>
+								<th> Nit </th>
+								<th> Nro Factura </th>
+                                <th> Fecha Ayuda </th>
+                                <th> Gastos </th>
 
 
 								<th> Accion </th>
@@ -83,13 +84,15 @@
 							</thead>
 							<tbody>
                         <tr >
-                                <td>{{-- ActividadID --}}</td>
-                                <td>{{-- Fecha --}}</td>
-                                <td>{{-- Actividad --}}</td>
-                                <td>{{-- Lugar --}} </td>
-                                <td>{{-- Lista de Voluntarios --}}</td>
-                                <td>{{-- Participantes --}}</td>
-                                <td>{{-- Fecha Creacion --}}</td>
+                                <td>{{-- Hidden ID --}}</td>
+                                <td>{{-- EmployeeID --}}</td>
+                                <td>{{-- Apellido Beneiciario --}}</td>
+                                <td>{{-- Reuqerimiento --}} </td>
+                                <td>{{-- Centro de Salud --}}</td>
+                                <td>{{-- Nit --}}</td>
+                                <td>{{-- Nro Factura --}}</td>
+                                <td>{{-- Fecha Ayuda --}}</td>
+                                <td>{{-- Gastos --}}</td>
 
                                 <td>{{-- Action --}} </td>
                             </tr>
@@ -127,14 +130,16 @@
 	<script>
 
 
-        	$('#actividades').dataTable( {
+        	$('#ayudas').dataTable( {
                         "bProcessing": true,
                         "bServerSide": true,
-                        "sAjaxSource": "{{ route("admin.ajax_actividades") }}",
+                        "sAjaxSource": "{{ route("admin.ajax_ayudas") }}",
                         "aaSorting": [[ 1, "asc" ]],
                         "aoColumns": [
                             { 'sClass': 'center', "bSortable": true  },
                             { 'sClass': 'center', "bSortable": true  },
+                            { 'sClass': 'center', "bSortable": true },
+                            { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
@@ -169,11 +174,11 @@
 
 
 
-		function del(id,ayudaaName,actividad)
+		function del(id,ayudaaName,ayuda)
 		{
 
 			$('#deleteModal').appendTo("body").modal('show');
-			$('#info').html('Esta seguro de Eliminar <strong>'+actividad+'</strong> dado a <strong>'+ayudaaName+'</strong>??');
+			$('#info').html('Esta seguro de Eliminar <strong>'+ayuda+'</strong> dado a <strong>'+ayudaaName+'</strong>??');
 			$("#delete").click(function()
 			{
 					var url = "{{ route('admin.ayudas.destroy',':id') }}";

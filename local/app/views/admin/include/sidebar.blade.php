@@ -64,22 +64,38 @@
                 </li>
                 {{----------------------------------------------------------------------}}
                 {{---------------------------------------Actividades-------------------------------}}
-                <li class="{{ $actividadOpen or ''}}">
+                {{--<li class="{{ $actividadOpen or ''}}">--}}
+                    {{--<a href="javascript:;">--}}
+                        {{--<i class="fa fa-send"></i>--}}
+                        {{--<span class="title">{{Lang::get('menu.actividades')}}</span>--}}
+                        {{--<span class="arrow "></span>--}}
+                    {{--</a>--}}
+                    {{--<ul class="sub-menu">--}}
+                        {{--<li class="{{ $actividadActive or ''}}">--}}
+                            {{--<a href="{{route('admin.actividades.index')}}">--}}
+                                {{--<i class="fa fa-calendar"></i>--}}
+                                {{--{{Lang::get('menu.actividadesList')}}--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
+                {{--</li>--}}
+                {{----------------------------------------------------------------------}}
+                {{---------------------------------------Actividades-------------------------------}}
+                <li class="{{ $actividadesOpen or ''}}">
                     <a href="javascript:;">
-                        <i class="fa fa-send"></i>
+                        <i class="fa fa-trophy"></i>
                         <span class="title">{{Lang::get('menu.actividades')}}</span>
                         <span class="arrow "></span>
                     </a>
                     <ul class="sub-menu">
-                        <li class="{{ $actividadActive or ''}}">
+                        <li class="{{ $actividadesActive or ''}}">
                             <a href="{{route('admin.actividades.index')}}">
-                                <i class="fa fa-calendar"></i>
-                                {{Lang::get('menu.actividadesList')}}
-                            </a>
+                                <i class="fa  fa-gift"></i>
+                                {{Lang::get('menu.actividadesList')}}</a>
                         </li>
                     </ul>
                 </li>
-                {{----------------------------------------------------------------------}}
+                {{---------------------------------------------------------------------------}}
                 {{---------------------------------------Personal-------------------------------}}
                 <li class="{{ $personalOpen or ''}}">
                     <a href="javascript:;">
