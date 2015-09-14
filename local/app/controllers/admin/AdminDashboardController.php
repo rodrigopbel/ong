@@ -99,6 +99,12 @@ ORDER BY month ;"));
 
     public function create()
     {
-        return "hola a todos";
+        $this->data['dashboardActive'] =   'active';
+        return View::make('admin.create',$this->data);
+    }
+
+    public function store()
+    {
+        return Input::all();
     }
 }
