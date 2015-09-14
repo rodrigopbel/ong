@@ -112,6 +112,10 @@
                                     {{$admin->email}}
                                 </td>
                                 <td class="">
+                                    <p><a class="btn purple"
+                                          href="{{ route('admin.dashboard.destroy',$admin->email)  }}"><i
+                                                    class="fa fa-edit"></i></a></p>
+
                                     <p><a class="btn red" id="delete" style="width: 42px;" href="javascript:;"
                                           onclick="del('{{$admin->id}}','{{ $admin->email}}')"><i
                                                     class="fa fa-trash"></i></a></p>
