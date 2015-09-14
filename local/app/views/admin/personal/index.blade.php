@@ -33,9 +33,9 @@
 			<div class="col-md-12">
 				<!-- BEGIN EXAMPLE TABLE PORTLET-->
 			<div id="load">
-				@if(Session::get('success'))
-                    <div class="alert alert-success">{{ Session::get('success') }}</div>
-                @endif
+				{{--@if(Session::get('success'))--}}
+                    {{--<div class="alert alert-success">{{ Session::get('success') }}</div>--}}
+                {{--@endif--}}
             </div>
             <a href="{{route('admin.personal.create')}}" class="btn green">
                 Nuevo <i class="fa fa-plus"></i>
