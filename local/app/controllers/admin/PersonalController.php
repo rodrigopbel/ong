@@ -19,6 +19,7 @@ class PersonalController extends \AdminBaseController {
     {
         $this->data['personales']       =    Personal::all();
         $this->data['personalActive']   =   'active';
+
         Debugbar::info($this->data['personales'] );
         return View::make('admin.personal.index', $this->data);
     }
