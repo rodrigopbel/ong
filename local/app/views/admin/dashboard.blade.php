@@ -68,6 +68,13 @@
     <!-- BEGIN DASHBOARD STATS -->
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div id="load">
+
+                @if(Session::get('success'))
+                    <div class="alert alert-success">{{ Session::get('success') }}</div>
+                @endif
+
+            </div>
             <div class="portlet box blue">
                 <div class="portlet-title">
                     <div class="caption">
