@@ -73,13 +73,13 @@ class ActividadesController extends \AdminBaseController {
         }
 
         Actividad::create([
-            'fechaAct'   => $input['fechaAct'],
+            'fechaAct'   => date('Y-m-d',strtotime($input['fechaAct'])),
             'descripcion'    => $input['descripcion'],
             'lugar'  => $input['lugar']
         ]);
 
         Activity::log([
-            'contentId'   =>  $input['fechaAct'],
+            'contentId'   =>  $input['lugar'],
             'contentType' => 'Actividad',
             'user_id'     => Auth::admin()->get()->id,
             'action'      => 'Create',
@@ -131,7 +131,7 @@ class ActividadesController extends \AdminBaseController {
 
         $ayuda->update([
 
-            'fechaAct'       => $data['fechaAct'],
+            'fechaAct'       => (trim(Input::get('fechaAct'))!='')?date('Y-m-d',strtotime(Input::get('fechaAct'))):null,
             'descripcion'    => $data['descripcion'],
             'lugar'          => $data['lugar']
         ]);
@@ -141,7 +141,7 @@ class ActividadesController extends \AdminBaseController {
             'contentType' => 'Actividad',
             'user_id'     => Auth::admin()->get()->id,
             'action'      => 'Create',
-            'description' => 'Actualizacion '. $data['fechaAct'],
+            'description' => 'Actualizacion '. $data['descripcion'],
             'details'     => 'Usuario: '. Auth::admin()->get()->name,
             'updated'     => $id ? true : false
         ]);
