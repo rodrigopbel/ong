@@ -62,4 +62,9 @@ class Personal extends Eloquent  implements UserInterface, RemindableInterface  
     {
         return $this->hasMany('Donacion','aportanteID','personalID');
     }
+
+    public function getBeneficiario()
+    {
+        return $this->belongsTo('Beneficiario');
+    }
 }
