@@ -105,6 +105,36 @@ ORDER BY month ;"));
 
     public function store()
     {
-        return Input::all();
+        $validator = Validator::make($input = Input::all(), Admin::rules('create'));
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
+        DB::beginTransaction();
+        try {
+            $filename   =   null;
+            $fullname = $input['nombreAdmin'] . " " . $input['apellidoAdmin'];
+            Admin::create([
+                'name'            => $fullname,
+                'email'           => $input['email'],
+                'password'        => Hash::make($input['password'])
+            ]);
+        }catch(\Exception $e)
+        {
+            DB::rollback();
+            throw $e;
+        }
+
+        Activity::log([
+            'contentId'   => $input['email'],
+            'contentType' => 'Administrador',
+            'action'      => 'Creacion',
+            'user_id'     => Auth::admin()->get()->id,
+            'description' => 'Creacion del un Administrador',
+            'details'     => 'Usuario: '. Auth::admin()->get()->name,
+            'updated'     => $input['email'] ? true : false
+        ]);
+        DB::commit();
+        return Redirect::route('admin.dashboard')->with('success',"<strong>{$fullname}</strong> exitosamente adicionado en le base de datos");
     }
 }
