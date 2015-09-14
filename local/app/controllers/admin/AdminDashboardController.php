@@ -111,11 +111,12 @@ ORDER BY month ;"));
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-        dd("paso la validacion");
+
         DB::beginTransaction();
         try {
             $filename   =   null;
             $fullname = $input['nombreAdmin'] . " " . $input['apellidoAdmin'];
+            dd("dentro del try");
             Admin::create([
                 'name'            => $fullname,
                 'email'           => $input['email'],
