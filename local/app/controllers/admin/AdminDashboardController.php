@@ -100,5 +100,11 @@ ORDER BY month ;"));
     public function create()
     {
         return "hola a todos";
+
+    }
+
+    public function store()
+    {
+        return Input::all();
     }
 }
