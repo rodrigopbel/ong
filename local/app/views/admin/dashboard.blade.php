@@ -162,16 +162,9 @@
             <script src="http://code.highcharts.com/highcharts.js"></script>
             <script src="http://code.highcharts.com/modules/exporting.js"></script>
             <script>
-                jQuery(document).ready(function () {
-
-                    TableManaged.init();
-                });
-            </script>
-            <script>
                 function del(id, email) {
-
                     $('#deleteModal').appendTo("body").modal('show');
-                    $('#info').html('Eliminar al Administrador : <strong>' + name + '</strong> ??');
+                    $('#info').html('Eliminar al Administrador : <strong>' + email + '</strong> ??');
                     $("#delete").click(function () {
                         console.log("maldita sea");
                         var url = "{{ route('admin.dashboard.destroy',':email') }}";
