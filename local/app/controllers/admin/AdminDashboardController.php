@@ -128,7 +128,7 @@ ORDER BY month ;"));
             DB::rollback();
             throw $e;
         }
-
+        dd("aqui");
         Activity::log([
             'contentId'   => $input['emailAdmin'],
             'contentType' => 'Administrador',
