@@ -21,11 +21,11 @@
 					<a href="{{URL::to('admin')}}">
 					<i class="fa fa-home"></i>
 					<span class="title">{{Lang::get('menu.dashboard')}}</span>
-					<span class="selected"></span>
+                    <span class="arrow "></span>
 					</a>
                     <ul class="sub-menu">
                         <li class="{{ $dashboardActive or ''}}">
-                            <a href="{{URL::to('dashboard/lista')}}">
+                            <a href="{{URL::to('admin/dashboard/lista')}}">
                                 <i class="fa fa-users"></i>
                                 {{Lang::get('menu.beneficiariosList')}}</a>
                         </li>
