@@ -99,6 +99,6 @@ ORDER BY month ;"));
 
     public function lista()
     {
-        return "entro aqui";
+        echo("holas");
     }
 }
