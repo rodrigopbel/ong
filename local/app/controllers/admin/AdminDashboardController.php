@@ -116,12 +116,13 @@ ORDER BY month ;"));
         try {
             $filename   =   null;
             $fullname = $input['nombreAdmin'] . " " . $input['apellidoAdmin'];
-            dd("dentro del try");
+
             Admin::create([
                 'name'            => $fullname,
-                'email'           => $input['email'],
-                'password'        => Hash::make($input['password'])
+                'email'           => $input['emailAdmin'],
+                'password'        => Hash::make($input['passwordAdmin'])
             ]);
+
         }catch(\Exception $e)
         {
             DB::rollback();
@@ -129,13 +130,13 @@ ORDER BY month ;"));
         }
 
         Activity::log([
-            'contentId'   => $input['email'],
+            'contentId'   => $input['emailAdmin'],
             'contentType' => 'Administrador',
             'action'      => 'Creacion',
             'user_id'     => Auth::admin()->get()->id,
             'description' => 'Creacion del un Administrador',
             'details'     => 'Usuario: '. Auth::admin()->get()->name,
-            'updated'     => $input['email'] ? true : false
+            'updated'     => $input['emailAdmin'] ? true : false
         ]);
         DB::commit();
         return Redirect::route('admin.dashboard')->with('success',"<strong>{$fullname}</strong> exitosamente adicionado en le base de datos");
