@@ -38,12 +38,13 @@ class ActividadesController extends \AdminBaseController {
                         <a  class="btn purple"  href="{{ route(\'admin.actividades.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripcion}}\',\'{{ $lugar }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
+
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.actividades.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripcion}}\',\'{{ $lugar }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
 
-//            ->remove_column('created_at')
+            ->remove_column('created_at')
             ->make();
     }
 
