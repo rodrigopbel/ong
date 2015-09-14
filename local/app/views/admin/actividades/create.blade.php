@@ -55,12 +55,12 @@
 							</div>
 						</div>
 
-
+                        <div class="portlet-body form">
 
 						<!-- BEGIN FORM-->
 						{{Form::open(array('url'=>"admin/actividades",'class'=>'form-horizontal','method'=>'POST'))}}
 
-                        <div class="portlet-body form">
+
 
                             <div class="form-body">
 
@@ -102,8 +102,9 @@
                                             </div>
                                         </div>
                                 </div>
-                        </div>
+
                                 {{ Form::close() }}
+                        </div>
                                     <!-- END FORM-->
 
 					</div>
