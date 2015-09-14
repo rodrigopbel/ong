@@ -73,7 +73,7 @@ class ActividadesController extends \AdminBaseController {
 
             $holi = Actividad::find($add->id);
             $holi->descripcion = $value;
-            $holi->lugar = $value;
+            $holi->lugar = $input['lugar'];
             $holi->save();
         }
         return Redirect::route('admin.actividades.index')->with('success',"<strong>Nueva Actividad</strong> Adicionada Exitosamente!");
