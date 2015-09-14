@@ -116,9 +116,9 @@
 @section('footerjs')
 
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-{{--{{HTML::script("assets/global/plugins/bootstrap-select/bootstrap-select.min.js")}}--}}
-{{--{{HTML::script("assets/global/plugins/select2/select2.min.js")}}--}}
-{{--{{HTML::script("assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js")}}--}}
+{{HTML::script("assets/global/plugins/bootstrap-select/bootstrap-select.min.js")}}
+{{HTML::script("assets/global/plugins/select2/select2.min.js")}}
+{{HTML::script("assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js")}}
                     {{HTML::script('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js')}}
                     {{HTML::script('assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js')}}
                     {{HTML::script("assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js")}}
