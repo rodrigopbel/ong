@@ -113,10 +113,7 @@
                                 </td>
                                 <td class="">
                                     <p><a class="btn red" style="width: 42px;" href="javascript:;"
-                                          onclick="del('{{$admin->id}}','{{ $admin->name}}')"><i
-                                                    class="fa fa-trash"></i></a></p>
-                                    <p><a class="btn red" style="width: 42px;" href="javascript:;"
-                                          onclick="del('{{$admin->email}}','{{ $ben->name }}')"><i
+                                          onclick="del('{{$admin->id}}','{{ $admin->email}}')"><i
                                                     class="fa fa-trash"></i></a></p>
                                 </td>
                             </tr>
@@ -160,19 +157,19 @@
             <script src="http://code.highcharts.com/highcharts.js"></script>
             <script src="http://code.highcharts.com/modules/exporting.js"></script>
             <script>
-                function del(email, name) {
+                function del(id, email) {
                     $('#deleteModal').appendTo("body").modal('show');
-                    $('#info').html('Eliminar al Administrador : <strong>' + name + '</strong> ??');
+                    $('#info').html('Eliminar al Administrador : <strong>' + email + '</strong> ??');
                     $("#delete").click(function () {
                         console.log("maldita sea");
-                        var url = "{{ route('admin.dashboard.destroy',':email') }}";
-                        url = url.replace(':email', email);
+                        var url = "{{ route('admin.dashboard.destroy',':id') }}";
+                        url = url.replace(':id', id);
 
                         $.ajax({
                             type: "DELETE",
                             url: url,
                             dataType: 'json',
-                            data: {"email": email}
+                            data: {"id": id}
 
                         }).done(function (response) {
 
@@ -180,7 +177,7 @@
                                 $("html, body").animate({scrollTop: 0}, "slow");
                                 $('#deleteModal').modal('hide');
                                 $('#row' + id).closest('tr').remove();
-                                $('#load').html("<p class='alert alert-success text-center'><strong>" + name + "</strong> Eliminado correctamente</p>");
+                                $('#load').html("<p class='alert alert-success text-center'><strong>" + email + "</strong> Eliminado correctamente</p>");
                             }
                         });
                     })
