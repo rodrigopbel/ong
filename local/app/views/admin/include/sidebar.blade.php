@@ -23,13 +23,6 @@
 					<span class="title">{{Lang::get('menu.dashboard')}}</span>
                     <span class="arrow "></span>
 					</a>
-                    <ul class="sub-menu">
-                        <li class="{{ $dashboardActive or ''}}">
-                            <a href="{{route('admin/dashboard/lista')}}">
-                                <i class="fa fa-users"></i>
-                                {{Lang::get('menu.beneficiariosList')}}</a>
-                        </li>
-                    </ul>
 				</li>
 			    {{---------------------------------------/Dashboard-------------------------------}}
                 {{---------------------------------------Beneficiarios-------------------------------}}
