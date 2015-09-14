@@ -140,17 +140,17 @@ ORDER BY month ;"));
         DB::commit();
         return Redirect::route('admin.dashboard.index')->with('success',"<strong>{$fullname}</strong> exitosamente adicionado en le base de datos");;
     }
-    public function destroy($id)
+    public function destroy($email)
     {
-        Admin::where('email', '=', $id)->delete();
+        Admin::where('email', '=', $email)->delete();
         Activity::log([
-            'contentId'   => $id,
+            'contentId'   => $email,
             'user_id'     => Auth::admin()->get()->id,
             'contentType' => 'Administrador',
             'action'      => 'Delete ',
             'description' => 'Eliminacion',
             'details'     => 'Usuario: '. Auth::admin()->get()->name,
-            'updated'     => $id ? true : false
+            'updated'     => $email ? true : false
         ]);
         $output['success']  =   'deleted';
         return Response::json($output, 200);
