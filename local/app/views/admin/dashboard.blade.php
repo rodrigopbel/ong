@@ -87,6 +87,9 @@
                             <th class="text-center">
                                 Email
                             </th>
+                            <th class="text-center">
+                                Accion
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -99,6 +102,11 @@
                                 </td>
                                 <td>
                                     {{$admin->email}}
+                                </td>
+                                <td class="">
+                                    <p><a class="btn red" style="width: 42px;" href="javascript:;"
+                                          onclick="del('{{$admin->id}}','{{ $admin->name }}')"><i
+                                                    class="fa fa-trash"></i></a></p>
                                 </td>
                             </tr>
                         @endforeach
@@ -142,10 +150,37 @@
             {{HTML::script("assets/global/plugins/fullcalendar/fullcalendar.min.js")}}
             <script src="http://code.highcharts.com/highcharts.js"></script>
             <script src="http://code.highcharts.com/modules/exporting.js"></script>
+            <script>
+                function del(id, name) {
+                    $('#deleteModal').appendTo("body").modal('show');
+                    $('#info').html('Eliminar al Administrador : <strong>' + name + '</strong> ??');
+                    $("#delete").click(function () {
+                        var url = "{{ route('admin.dashboard.destroy',':id') }}";
+                        url = url.replace(':id', id);
 
+                        $.ajax({
+                            type: "DELETE",
+                            url: url,
+                            dataType: 'json',
+                            data: {"id": id}
+
+                        }).done(function (response) {
+
+                            if (response.success == "deleted") {
+                                $("html, body").animate({scrollTop: 0}, "slow");
+                                $('#deleteModal').modal('hide');
+                                $('#row' + id).closest('tr').remove();
+                                $('#load').html("<p class='alert alert-success text-center'><strong>" + name + "</strong> Eliminado correctamente</p>");
+                            }
+                        });
+                    })
+
+                }
+            </script>
 
 
             <script>
+
                 jQuery(document).ready(function() {
 
                     Calendar.init();

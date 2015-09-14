@@ -138,6 +138,22 @@ ORDER BY month ;"));
             'updated'     => $input['emailAdmin'] ? true : false
         ]);
         DB::commit();
-        return Url::to('admin');
+        return Redirect::route('admin.dashboard.index');
     }
+    public function destroy($id)
+    {
+        Admin::where('id', '=', $id)->delete();
+        Activity::log([
+            'contentId'   => $id,
+            'user_id'     => Auth::admin()->get()->id,
+            'contentType' => 'Administrador',
+            'action'      => 'Delete ',
+            'description' => 'Eliminacion',
+            'details'     => 'Usuario: '. Auth::admin()->get()->name,
+            'updated'     => $id ? true : false
+        ]);
+        $output['success']  =   'deleted';
+        return Response::json($output, 200);
+    }
+
 }
