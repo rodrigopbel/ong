@@ -416,64 +416,64 @@
                                         <i class="fa fa-calendar"></i>Detalles del Diagnostico
                                     </div>
                                 </div>
-                                <div class="portlet-body">
-                                    <div id="alert_bank"></div>
-                                    <div class="form-body">
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">ID Diagnostico</label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="iddiag" class="form-control" value="{{Input::old('iddiag')}}">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Diagnostico</label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="diagnostico" class="form-control" value="{{Input::old('diagnostico')}}">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Fecha de Diagnostico</label>
-                                            <div class="col-md-3">
-                                                <div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                                                    <input type="text" class="form-control" name="fechadiag" readonly value="{{Input::old('fechadiag')}}">
-        												<span class="input-group-btn">
-        												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
-        												</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Tratamiento</label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="tratamiento" class="form-control" value="{{Input::old('tratamiento')}}">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Razon</label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="razon" class="form-control" value="{{Input::old('razon')}}">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Duracion</label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="duracion" class="form-control" value="{{Input::old('duracion')}}">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Referencia</label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="referencia" class="form-control" value="{{Input::old('referencia')}}">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Lugar</label>
-                                            <div class="col-md-9">
-                                                <input type="text" name="lugar" class="form-control" value="{{Input::old('lugar')}}">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {{--<div class="portlet-body">--}}
+                                    {{--<div id="alert_bank"></div>--}}
+                                    {{--<div class="form-body">--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-md-3 control-label">ID Diagnostico</label>--}}
+                                            {{--<div class="col-md-9">--}}
+                                                {{--<input type="text" name="iddiag" class="form-control" value="{{Input::old('iddiag')}}">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-md-3 control-label">Diagnostico</label>--}}
+                                            {{--<div class="col-md-9">--}}
+                                                {{--<input type="text" name="diagnostico" class="form-control" value="{{Input::old('diagnostico')}}">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="control-label col-md-3">Fecha de Diagnostico</label>--}}
+                                            {{--<div class="col-md-3">--}}
+                                                {{--<div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">--}}
+                                                    {{--<input type="text" class="form-control" name="fechadiag" readonly value="{{Input::old('fechadiag')}}">--}}
+        												{{--<span class="input-group-btn">--}}
+        												{{--<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>--}}
+        												{{--</span>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-md-3 control-label">Tratamiento</label>--}}
+                                            {{--<div class="col-md-9">--}}
+                                                {{--<input type="text" name="tratamiento" class="form-control" value="{{Input::old('tratamiento')}}">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-md-3 control-label">Razon</label>--}}
+                                            {{--<div class="col-md-9">--}}
+                                                {{--<input type="text" name="razon" class="form-control" value="{{Input::old('razon')}}">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-md-3 control-label">Duracion</label>--}}
+                                            {{--<div class="col-md-9">--}}
+                                                {{--<input type="text" name="duracion" class="form-control" value="{{Input::old('duracion')}}">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-md-3 control-label">Referencia</label>--}}
+                                            {{--<div class="col-md-9">--}}
+                                                {{--<input type="text" name="referencia" class="form-control" value="{{Input::old('referencia')}}">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group">--}}
+                                            {{--<label class="col-md-3 control-label">Lugar</label>--}}
+                                            {{--<div class="col-md-9">--}}
+                                                {{--<input type="text" name="lugar" class="form-control" value="{{Input::old('lugar')}}">--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                             </div>
         				</div>
         			</div>
