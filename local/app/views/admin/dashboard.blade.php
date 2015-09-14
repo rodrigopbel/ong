@@ -163,10 +163,11 @@
             <script src="http://code.highcharts.com/modules/exporting.js"></script>
             <script>
                 function del(id, email) {
-                    console.log("entro aqui");
+
                     $('#deleteModal').appendTo("body").modal('show');
                     $('#info').html('Eliminar al Administrador : <strong>' + name + '</strong> ??');
                     $("#delete").click(function () {
+                        console.log("maldita sea");
                         var url = "{{ route('admin.dashboard.destroy',':email') }}";
                         url = url.replace(':email', email);
 
