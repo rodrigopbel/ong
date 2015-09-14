@@ -17,12 +17,19 @@
 					<!-- END SIDEBAR TOGGLER BUTTON -->
 				</li>
 			    {{---------------------------------------Dashboard-------------------------------}}
-				<li class="start {{ $dashboardActive or ''}}">
+				<li class="start {{ $dashboardOpen or ''}}">
 					<a href="{{URL::to('admin')}}">
 					<i class="fa fa-home"></i>
 					<span class="title">{{Lang::get('menu.dashboard')}}</span>
 					<span class="selected"></span>
 					</a>
+                    <ul class="sub-menu">
+                        <li class="{{ $dashboardActive or ''}}">
+                            <a href="{{URL::to('dashboard/lista')}}">
+                                <i class="fa fa-users"></i>
+                                {{Lang::get('menu.beneficiariosList')}}</a>
+                        </li>
+                    </ul>
 				</li>
 			    {{---------------------------------------/Dashboard-------------------------------}}
                 {{---------------------------------------Beneficiarios-------------------------------}}

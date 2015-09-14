@@ -9,6 +9,7 @@ class AdminDashboardController extends AdminBaseController
     {
         parent::__construct();
         $this->data['dashboardActive'] = 'active';
+        $this->data['dashboardOpen'] =   'active open';
         $this->data['pageTitle']       = 'Dashboard';
 
     }
@@ -94,5 +95,10 @@ ORDER BY month ;"));
     {
         Session::put('lock', '1');
         return View::make("admin/screen_lock",$this->data);
+    }
+
+    public function lista()
+    {
+        return "entro aqui";
     }
 }
