@@ -24,7 +24,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="#">Ayudas</a>
+						<a href="#">Actividades</a>
 						<i class="fa "></i>
 					</li>
 
@@ -37,7 +37,7 @@
                         				<div class="col-md-6">
 
 				 <a class="btn green" data-toggle="modal" href="{{URL::to('admin/actividades/create')}}">
-                                       Nueva Ayuda
+                                       Nueva Actividad
                 <i class="fa fa-plus"></i> </a>
                                         </div>
                                     </div>

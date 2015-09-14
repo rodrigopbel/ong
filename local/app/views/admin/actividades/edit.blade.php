@@ -24,7 +24,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="{{ route('admin.ayudas.index') }}">Actividades </a>
+						<a href="{{ route('admin.actividades.index') }}">Actividades </a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
