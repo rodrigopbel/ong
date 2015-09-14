@@ -24,7 +24,7 @@ class ParticipacionesController extends \AdminBaseController {
         $this->data['date']     = date('Y-m-d');
         $this->data['employees']            =   Employee::where('status','=','active')->get();
         $this->data['leaves'] = Attendance::absentEveryEmployee();
-		return View::make('admin.attendances.index', $this->data);
+		return View::make('admin.participaciones.index', $this->data);
 	}
 
 
