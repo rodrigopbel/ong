@@ -6,7 +6,7 @@ class Actividad extends \Eloquent {
     protected $table = "actividades";
 	public static $rules = [
 		//'ayudaName'      =>  'required',
-        'fechaAct' =>  'required',
+        'descripcion' =>  'required'
        // 'aportanteID'    =>  'required'
 
 	];
