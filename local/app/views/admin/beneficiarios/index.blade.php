@@ -48,9 +48,7 @@
                     </div>
                    <a href="{{route('admin.beneficiarios.create')}}" class="btn green">
                     Nuevo <i class="fa fa-plus"></i>
-                    </a>
-
-                         <hr>
+                    </a><hr>
 					<div class="portlet box blue">
 
 						<div class="portlet-title">
