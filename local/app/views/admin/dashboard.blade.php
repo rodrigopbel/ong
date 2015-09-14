@@ -66,21 +66,13 @@
 
 
     <!-- BEGIN DASHBOARD STATS -->
-    {{dd("llego a la vista")}}
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="portlet box blue">
 
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-users"></i>Beneficiarios
-                    </div>
-                    <div class="tools" style="  padding: 5px;">
-                        <div class="btn-group pull-right">
-                            <a href="{{route('admin.beneficiarios.export') }}" class="btn yellow">
-                                <i class="fa fa-file-excel-o"></i> Exportar
-                            </a>
-                        </div>
+                        <i class="fa fa-users"></i>Administradores
                     </div>
                 </div>
 
@@ -100,7 +92,7 @@
                         <tbody>
 
                         @foreach ($administradores as $admin)
-                            <tr id="row{{ $ben->name }}">
+                            <tr id="row{{ $admin->name }}">
                                 <td>
                                     {{ $admin->name }}
 
