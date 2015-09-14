@@ -82,7 +82,21 @@
                 </div>
             </div>
         </div>
-
+        <div class="form-actions">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button type="submit" data-loading-text="Guardando..." class="demo-loading-btn btn green">
+                                <i class="fa fa-plus"></i>	Guardar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div>
+        </div>
 
     </div>
     {{Form::close()}}
