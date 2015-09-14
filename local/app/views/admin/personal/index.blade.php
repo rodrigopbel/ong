@@ -49,7 +49,7 @@
 
                 </div>
                 <div class="portlet-body">
-                    <table class="table table-striped table-bordered table-hover" id="sample_4">
+                    <table class="table table-striped table-bordered table-hover" id="sample_employees">
                         <thead>
                         <tr>
                             <th class="text-center">
