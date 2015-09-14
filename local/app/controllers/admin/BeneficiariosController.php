@@ -341,6 +341,7 @@ class BeneficiariosController extends \AdminBaseController {
                     'direccionperm' => $input['direccionperm']
                 ]);
 
+
             Activity::log([
                 'contentId'   => $id,
                 'contentType' => 'Beneficiario',
