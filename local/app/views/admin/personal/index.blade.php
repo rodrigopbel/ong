@@ -64,9 +64,6 @@
                                 Email
                             </th>
                             <th class="text-center">
-                                Beneficiario
-                            </th>
-                            <th class="text-center">
                                 Tipo
                             </th>
                             <th class="text-center">
@@ -91,9 +88,6 @@
                                 </td>
                                 <td class="text-center">
                                     {{ $personal->email}}
-                                </td>
-                                <td class="text-center">
-                                    {{ $personal->getBeneficiario->nombres}}
                                 </td>
                                 <td class="text-center">
                                     {{ $personal->tipoPersonal }}
