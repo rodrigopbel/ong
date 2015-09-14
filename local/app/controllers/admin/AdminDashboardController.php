@@ -139,6 +139,6 @@ ORDER BY month ;"));
             'updated'     => $input['emailAdmin'] ? true : false
         ]);
         DB::commit();
-        return Redirect::route('admin.dashboard');
+        return Redirect::route('admin');
     }
 }
