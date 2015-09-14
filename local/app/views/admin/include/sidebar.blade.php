@@ -96,6 +96,22 @@
                     </ul>
                 </li>
                 {{---------------------------------------------------------------------------}}
+                {{---------------------------------------Asistencia--------------------------}}
+                <li class="{{ $participacionOpen or ''}}">
+                    <a href="javascript:;">
+                        <i class="fa fa-trophy"></i>
+                        <span class="title">{{Lang::get('menu.actividades')}}</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="{{ $participacionesActive or ''}}">
+                            <a href="{{route('admin.attendances.index')}}">
+                                <i class="fa  fa-gift"></i>
+                                {{Lang::get('menu.actividadesList')}}</a>
+                        </li>
+                    </ul>
+                </li>
+                {{---------------------------------------------------------------------------}}
                 {{---------------------------------------Personal-------------------------------}}
                 <li class="{{ $personalOpen or ''}}">
                     <a href="javascript:;">
