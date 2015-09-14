@@ -25,6 +25,7 @@
 					</a>
 				</li>
 			    {{---------------------------------------/Dashboard-------------------------------}}
+
                 {{---------------------------------------Beneficiarios-------------------------------}}
 				<li class="{{ $beneficiariosOpen or ''}}">
 					<a href="javascript:;">
@@ -40,7 +41,7 @@
 						</li>
 					</ul>
 				</li>
-                {{---------------------------------------Ayduas
+                {{---------------------------------------Ayudas
 
 
 
@@ -210,7 +211,23 @@
                     </ul>
                 </li>
                 {{---------------------------------------------------------------------------}}
+                {{---------------------------------------Administradores-------------------------------}}
+                <li class="{{ $beneficiariosOpen or ''}}">
+                    <a href="javascript:;">
+                        <i class="fa fa-users"></i>
+                        <span class="title">{{Lang::get('menu.beneficiarios')}}</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="{{ $beneficiariosActive or ''}}">
+                            <a href="{{route('admin.beneficiarios.index')}}">
+                                <i class="fa fa-users"></i>
+                                {{Lang::get('menu.beneficiariosList')}}</a>
+                        </li>
+                    </ul>
+                </li>
 
+                {{---------------------------------------/-------------------------------}}
 
 				</li>
 			</ul>
