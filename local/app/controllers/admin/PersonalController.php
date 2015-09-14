@@ -19,6 +19,10 @@ class PersonalController extends \AdminBaseController {
     {
         $this->data['personales']       =    Personal::all();
         $this->data['personalActive']   =   'active';
+        foreach($this->data['personales'] as $person)
+        {
+            $this->data['beneficiario'] = Beneficiario::where('personales', 'beneficiarioID','=',$person->beneficiarioID)->get()->first();
+        }
 
         Debugbar::info($this->data['personales'] );
         return View::make('admin.personal.index', $this->data);
