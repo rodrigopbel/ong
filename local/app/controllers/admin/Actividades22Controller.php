@@ -1,6 +1,6 @@
 <?php
 
-class ActividadesController extends \AdminBaseController {
+class Actividades22Controller extends \AdminBaseController {
     public function __construct()
     {
         parent::__construct();
