@@ -60,7 +60,6 @@
                         <thead>
                         <tr>
                             <th> Actividad ID</th>
-                            <th> Descripcion Actividad</th>
                             <th> VoluntarioID</th>
                             <th> ActividadID</th>
                             <th> Accion</th>
@@ -68,17 +67,10 @@
                         </thead>
                         <tbody>
 
-                        @foreach ($actividades as $act)
+                        @foreach ($participantes as $act)
                             <tr id="row{{ $act->id }}">
                                 <td> {{ $act->id }}</td>
-                                <td> {{ $act->descripcion }}</td>
-                                <td>
-                                    @foreach($participaciones->voluntarios as $par)
-                                    <ul>
-                                        <li>{{$par->nombres}}</li>
-                                    </ul>
-                                    @endforeach
-                                </td>
+                                <td> {{ $act->voluntarioID }}</td>
                                 <td> {{ $act->actividadID }} </td>
                                 <td class="">
                                     <a class="btn purple"
