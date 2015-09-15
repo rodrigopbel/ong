@@ -54,6 +54,7 @@ class ParticipacionesController extends \AdminBaseController {
 	 */
 	public function show($id)
     {
+        dd("entro aquio");
         $this->data['actividad']    = Actividad::find($id);
 //        $date = (Input::get('date')!='')?Input::get('date'):date('Y-m-d');
 //        $attendance_count           = Attendance::where('date','=',$date)->count();
