@@ -86,7 +86,7 @@ class ActividadesController extends \AdminBaseController {
             'action'      => 'Create',
             'description' => 'Creacion '. $input['descripcion'],
             'details'     => 'Usuario: '. Auth::admin()->get()->name,
-            'updated'     => $input['fechaAct'] ? true : false
+            'updated'     => $input['descripcion'] ? true : false
         ]);
 
 
