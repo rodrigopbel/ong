@@ -82,7 +82,7 @@ class AyudasController extends \AdminBaseController {
         ]);
 
         $donacion = Donacion::where('aportanteID','=',$input['personalID'])->get()->first();
-        dd($donacion);
+        dd($donacion->id);
         Saldo::create([
             'donacionesID'  =>  $donacion->id,
             'ayudasID'      =>  $input['nit'],
