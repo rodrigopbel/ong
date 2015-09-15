@@ -60,6 +60,7 @@
                         <thead>
                         <tr>
                             <th> Actividad ID</th>
+                            <th> Descripcion Actividad</th>
                             <th> VoluntarioID</th>
                             <th> ActividadID</th>
                             <th> Accion</th>
@@ -70,6 +71,7 @@
                         @foreach ($actividades as $act)
                             <tr id="row{{ $act->id }}">
                                 <td> {{ $act->id }}</td>
+                                <td> {{ $act->descripcion }}</td>
                                 <td> {{ $act->voluntarioID }}</td>
                                 <td> {{ $act->actividadID }} </td>
                                 <td class="">
@@ -110,13 +112,6 @@
     {{HTML::script("assets/admin/pages/scripts/components-pickers.js")}}
 
     <!-- END PAGE LEVEL PLUGINS -->
-
-    <script>
-        jQuery(document).ready(function () {
-            ComponentsPickers.init();
-            TableManaged.init();
-        });
-    </script>
 
 @stop
 	
