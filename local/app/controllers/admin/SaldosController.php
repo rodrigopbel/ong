@@ -15,8 +15,7 @@ class SaldosController extends \AdminBaseController {
 //        dd("entro aqui");
         $this->data['saldosActive'] =   'active';
         $this->data['saldos']   = Saldo::all();
-        return $this->data;
-//        return View::make('admin.saldos.index', $this->data);
+        return View::make('admin.saldos.index', $this->data);
     }
 
 

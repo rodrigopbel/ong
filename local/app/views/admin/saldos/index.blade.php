@@ -8,13 +8,14 @@
     <!-- END PAGE LEVEL STYLES -->
 @stop
 @section('mainarea')
+    {{dd("lghsdaghsda")}}
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
         {{$pageTitle}}
         <small>Saldos Lista</small>
     </h3>
 
-    {{$saldos}}
+
     <div class="page-bar">
         <ul class="page-breadcrumb">
             <li>
