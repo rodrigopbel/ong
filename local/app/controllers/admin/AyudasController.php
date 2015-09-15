@@ -32,7 +32,7 @@ class AyudasController extends \AdminBaseController {
 
         return Datatables::of($result)
             ->add_column('Por el Mes',function($row) {
-                return ucfirst($row->created_at).' '.$row->created_at;
+                return ucfirst($row->created_at);
             })
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
