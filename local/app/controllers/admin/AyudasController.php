@@ -87,9 +87,9 @@ class AyudasController extends \AdminBaseController {
             'ayudasID'      =>  $input['nit'],
             'donacion'      =>  $donacion->montodonacion,
             'ayuda'         =>  $input['gastos'],
-            'saldo'         =>  $donacion->montodonacion
+            'saldo'         =>  $donacion->montodonacion - $input['gastos']
         ]);
-        dd($donacion->montodonacion);
+
 		Activity::log([
 			'contentId'   =>  $input['beneficiarioID'],
 			'contentType' => 'Ayuda',
