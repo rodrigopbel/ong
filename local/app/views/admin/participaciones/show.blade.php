@@ -14,7 +14,7 @@
 
 @section('mainarea')
 
-			
+
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 			{{$pageTitle}}
@@ -27,7 +27,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="{{ route('admin.attendances.index') }}">Attendance</a>
+						<a href="{{ route('admin.participaciones.index') }}">Attendance</a>
                         <i class="fa fa-angle-right"></i>
 					</li>
 					<li>
@@ -36,7 +36,7 @@
                     </li>
 
 				</ul>
-			
+
 			</div>
 
             <!-- BEGIN PAGE CONTENT-->
