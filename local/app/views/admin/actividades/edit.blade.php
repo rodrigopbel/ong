@@ -150,54 +150,6 @@
 
                         }
 
-                        // Javascript function to update the company info and Bank Info
-                        function UpdateDetails(id,type){
-
-                            var  form_id = '';
-                            var alert_div = '';
-
-                            if(type=='zonificacion')
-                            {
-                                form_id     = '#bank_details_form';
-                                alert_div   =  '#alert_bank'
-
-                            }else
-                            {
-                                form_id     = '#company_details_form';
-                                alert_div   =   '#alert_company';
-                            }
-                            $(alert_div).html('<div class="alert alert-info"><span class="fa fa-info"></span> Guardando..</div>');
-                            var url = "{{ route('admin.beneficiarios.update',':id') }}";
-                            url = url.replace(':id',id);
-                            $.ajax({
-                                type: "PATCH",
-                                url : url,
-                                dataType: 'json',
-                                data: $(form_id).serialize()
-
-                            }).done( function( response ) {
-                                $(alert_div).html('');
-                                if(response.status == "success")
-                                {
-                                    $(alert_div).html('<div class="alert alert-success alert-dismissable"><button class="close" data-close="alert"></button><span class="fa fa-check"></span> '+response.msg+'</div>');
-
-                                }else if(response.status == "error")
-                                {
-                                    var arr = response.msg;
-                                    var alert ='';
-                                    $.each(arr, function(index, value)
-                                    {
-                                        if (value.length != 0)
-                                        {
-                                            alert += '<p><span class="fa fa-warning"></span> '+ value+ '</p>';
-
-                                        }
-                                    });
-
-                                    $(alert_div).append('<div class="alert alert-danger alert-dismissable"><button class="close" data-close="alert"></button> '+alert+'</div>');
-                                }
-                            });
-                        }
 
 
                     </script>
