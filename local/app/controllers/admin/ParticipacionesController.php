@@ -20,7 +20,6 @@ class ParticipacionesController extends \AdminBaseController {
 	{
 		$this->data['actividades']          =   Actividad::all();
         $this->data['viewAttendanceActive'] =   'active';
-
         $this->data['date']     = date('Y-m-d');
         $this->data['participantes'] = Participacion::all();
         return View::make('admin.participaciones.index', $this->data);
@@ -41,14 +40,7 @@ class ParticipacionesController extends \AdminBaseController {
             }
                 return Redirect::route('admin.attendances.edit',$date );
 	}
-
-
-
-
-	/**
-	 * Display the specified attendance
-	 */
-	public function show($id)
+    public function show($id)
     {
         $this->data['actividad']    = Actividad::find($id);
 //        $date = (Input::get('date')!='')?Input::get('date'):date('Y-m-d');
