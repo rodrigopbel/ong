@@ -13,7 +13,7 @@
 
 @section('mainarea')
 
-			
+
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 			Ayuda
@@ -33,7 +33,7 @@
 						<a href="">Nueva Actividad</a>
 					</li>
 				</ul>
-			
+
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
@@ -108,7 +108,7 @@
 
 					</div>
 					<!-- END EXAMPLE TABLE PORTLET-->
-					
+
 				</div>
 			</div>
 			<!-- END PAGE CONTENT-->

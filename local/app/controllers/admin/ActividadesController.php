@@ -74,9 +74,9 @@ class ActividadesController extends \AdminBaseController {
         }
 
         Actividad::create([
-            'fechaAct'   => date('Y-m-d',strtotime($input['fechaAct'])),
+            'fechaAct'       => date('Y-m-d',strtotime($input['fechaAct'])),
             'descripcion'    => $input['descripcion'],
-            'lugar'  => $input['lugar']
+            'lugar'         => $input['lugar']
         ]);
 
         Activity::log([
