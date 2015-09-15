@@ -13,21 +13,18 @@
 
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
-        Edit Attendance
+       Participantes en Actividad
     </h3>
     <div class="page-bar">
         <ul class="page-breadcrumb">
             <li>
                 <i class="fa fa-home"></i>
-                <a href="{{route('admin.dashboard.index')}}">Home</a>
+                <a href="{{route('admin.dashboard.index')}}">Inicio</a>
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="{{ route('admin.attendances.index') }}">Attendace</a>
+                <a href="{{ route('admin.participaciones.index') }}">Participaciones</a>
                 <i class="fa fa-angle-right"></i>
-            </li>
-            <li>
-                <a href="">Update attendace</a>
             </li>
         </ul>
 
@@ -52,12 +49,12 @@
                     <div class="portlet-body form">
 
                                     <!-- BEGIN FORM-->
-                            {{Form::open(['route'=>["admin.partipaciones.update",$vol->created_at],'class'=>'form-horizontal','method'=>'PATCH'])}}
+                            {{Form::open(['route'=>["admin.partipaciones.update",$actividad->id],'class'=>'form-horizontal','method'=>'PATCH'])}}
 
 
                             <div class="form-body">
 
-                                <h3 class="form-section">Date  {{date('d-M-Y',strtotime($vol->created_at))}}</h3>
+                                <h3 class="form-section">Date  {{date('d-M-Y',strtotime($actividad->created_at))}}</h3>
 
                                 <div class="form-group">
 
