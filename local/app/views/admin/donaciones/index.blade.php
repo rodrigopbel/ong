@@ -67,7 +67,7 @@
                             <th> Nombre Aportante </th>
                             <th> Monto de la donacion </th>
                             <th> Nombre Beneficiario </th>
-                            <th> Descripcion de Donacion</th>
+                            <th> Descripcion</th>
                             <th> Fecha Creacion </th>
                             {{--<th> Fecha Creacion </th>--}}
                             {{--<th> Fecha Creacion </th>--}}
