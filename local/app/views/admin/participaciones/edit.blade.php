@@ -6,6 +6,8 @@
     {{HTML::style("assets/global/plugins/bootstrap-datepicker/css/datepicker3.css")}}
     <!-- BEGIN THEME STYLES -->
 @stop
+{{dd($actividad)}}
+{{dd($voluntarios)}}
 
 
 @section('mainarea')
