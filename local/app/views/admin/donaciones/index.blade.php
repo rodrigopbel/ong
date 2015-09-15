@@ -63,22 +63,26 @@
                     <table class="table table-striped table-bordered table-hover" id="donaciones">
                         <thead>
                         <tr>
-                            <th> DonacionesID</th>
-                            <th> Aportante ID</th>
+                            <th> DonacionesID </th>
+                            <th> Aportante ID </th>
+                            <th> Nombre Aportante </th>
+                            <th> Nombre Beneficiario </th>
                             <th> Descripcion</th>
-                            <th> Monto</th>
-                            <th> Fecha Creacion</th>
-                            <th> Fecha Creacion</th>
+                            <th> Monto </th>
+                            <th> Fecha Creacion </th>
+                            <th> Fecha Creacion </th>
                             {{--<th> Fecha Creacion </th>--}}
 
 
-                            <th> Accion</th>
+                            <th> Accion </th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                        <tr >
                             <td>{{-- Donacion ID --}}</td>
                             <td>{{-- AportanteID --}}</td>
+                            <td>{{-- Nombre Aportante --}}</td>
+                            <td>{{-- Nombre Beneficiario --}}</td>
                             <td>{{-- Descripcion --}}</td>
                             <td>{{-- Monto --}} </td>
                             <td>{{-- Fecha --}}</td>
@@ -118,29 +122,31 @@
     <script>
 
 
-        $('#donaciones').dataTable({
+        $('#donaciones').dataTable( {
             "bProcessing": true,
             "bServerSide": true,
             "sAjaxSource": "{{ route("admin.ajax_donaciones") }}",
-            "aaSorting": [[1, "asc"]],
+            "aaSorting": [[ 1, "asc" ]],
             "aoColumns": [
-                {'sClass': 'center', "bSortable": true},
-                {'sClass': 'center', "bSortable": true},
-                {'sClass': 'center', "bSortable": true},
-                {'sClass': 'center', "bSortable": true},
-                {'sClass': 'center', "bSortable": true},
-                {'sClass': 'center', "bSortable": true},
-                {'sClass': 'center', "bSortable": false}
+                { 'sClass': 'center', "bSortable": true  },
+                { 'sClass': 'center', "bSortable": true  },
+                { 'sClass': 'center', "bSortable": true },
+                { 'sClass': 'center', "bSortable": true },
+                { 'sClass': 'center', "bSortable": true },
+                { 'sClass': 'center', "bSortable": true },
+                { 'sClass': 'center', "bSortable": true },
+                { 'sClass': 'center', "bSortable": true },
+                { 'sClass': 'center', "bSortable": false }
 
 
             ],
             "columnDefs": [
                 {
-                    "targets": [0],
+                    "targets": [ 0 ],
                     "visible": false,
                     "searchable": false
-                }, {
-                    "targets": [5],
+                },{
+                    "targets": [ 5 ],
                     "visible": false,
                     "searchable": true
                 }
@@ -150,36 +156,41 @@
                 [5, 15, 20, "All"] // change per page values here
             ],
             "sPaginationType": "full_numbers",
-            "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+            "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
                 var row = $(nRow);
-                row.attr("id", 'row' + aData['0']);
+                row.attr("id", 'row'+aData['0']);
             }
 
         });
 
 
-        function del(id, donacionName, donacion) {
+
+        function del(id,donacionName,donacion)
+        {
 
             $('#deleteModal').appendTo("body").modal('show');
-            $('#info').html('Esta seguro de Eliminar <strong>' + donacion + '</strong> dado a <strong>' + donacionName + '</strong>??');
-            $("#delete").click(function () {
+            $('#info').html('Esta seguro de Eliminar <strong>'+donacion+'</strong> dado a <strong>'+donacionName+'</strong>??');
+            $("#delete").click(function()
+            {
                 var url = "{{ route('admin.donaciones.destroy',':id') }}";
-                url = url.replace(':id', id);
+                url = url.replace(':id',id);
                 $.ajax({
 
                     type: "DELETE",
-                    url: url,
+                    url : url,
                     dataType: 'json',
-                    data: {"id": id}
+                    data: {"id":id}
 
-                }).done(function (response) {
+                }).done(function(response)
+                {
 
-                    if (response.success == "deleted") {
-                        $("html, body").animate({scrollTop: 0}, "slow");
+                    if(response.success == "deleted")
+                    {
+                        $("html, body").animate({ scrollTop: 0 }, "slow");
                         $('#deleteModal').modal('hide');
-                        $('#row' + id).fadeOut(500);
+                        $('#row'+id).fadeOut(500);
 
-                        $('#load').html("<p class='alert alert-success text-center'><strong>" + name + "</strong> Eliminada exitosamente!</p>");
+                        $('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Eliminada exitosamente!</p>");
                     }
                 });
             })
