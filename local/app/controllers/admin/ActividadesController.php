@@ -132,7 +132,7 @@ class ActividadesController extends \AdminBaseController {
 
         $actividad->update([
 
-            'fechaAct'       => (trim(Input::get('fechaAct'))!='')?date('Y-m-d',strtotime(Input::get('fechaAct'))):null,
+            'fechaAct'       => date('Y-m-d',strtotime(Input::get('fechaAct')));
             'descripcion'    => $data['descripcion'],
             'lugar'          => $data['lugar']
         ]);
