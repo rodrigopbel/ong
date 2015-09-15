@@ -66,7 +66,7 @@ class ParticipacionesController extends \AdminBaseController {
 	/**
 	 * Show the form for editing the specified attendance.
 	 */
-	public function edit($date)
+	public function edit($id)
 	{
         $this->data['actividad']    = Actividad::find($id);
 //        $date = (Input::get('date')!='')?Input::get('date'):date('Y-m-d');
