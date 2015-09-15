@@ -200,17 +200,5 @@
                         }
 
 
-
-                        function remove_exit()
-                        {
-                            if($("input[name=status]:checked").val() == "active"){
-                                $("input[name=exit_date]").val("");
-                            }
-                        }
-
-                        $("input[name=exit_date]").change(function () {
-                            $("input[name=status]").bootstrapSwitch('state',false);
-
-                        });
                     </script>
 @stop
