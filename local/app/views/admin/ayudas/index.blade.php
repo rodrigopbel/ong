@@ -75,8 +75,8 @@
 								<th> Centro de Salud </th>
 								<th> Nit </th>
 								<th> Nro Factura </th>
+                                <th> Gastos</th>
                                 <th> Fecha Ayuda </th>
-                                <th> Gastos </th>
 
 
 								<th> Accion </th>
