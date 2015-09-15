@@ -124,19 +124,19 @@
                     </table>
                 </div>
             </div>
-            <div class="portlet box blue">
-                <div class="portlet-title">
-                    <div class="caption">
-                        Gastos
-                    </div>
-                </div>
-                <div class="portlet-body">
-                    <div id="expenseChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-                </div>
-            </div>
+            {{--<div class="portlet box blue">--}}
+                {{--<div class="portlet-title">--}}
+                    {{--<div class="caption">--}}
+                        {{--Gastos--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="portlet-body">--}}
+                    {{--<div id="expenseChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
         </div>
-
+    </div>
 
         <!-- END DASHBOARD STATS -->
         @stop
