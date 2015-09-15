@@ -186,11 +186,8 @@ class ParticipacionesController extends \AdminBaseController {
         $participacion = new Participacion;
 
 //        dd ($input['checkbox']);
-        foreach($input['checkbox'] as $index)
-        {
-            echo $input['checkbox'];
-            echo $index;
-        }
+        $p = array_flip($input['checkbox']);
+        dd($p);
 //        foreach($input['checkbox'] as $index => $value)
 //        {
 //            $id = $index;
