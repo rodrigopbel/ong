@@ -7,7 +7,7 @@
     <!-- BEGIN THEME STYLES -->
 @stop
 
-
+{{dd("entro a la templeta")}}
 @section('mainarea')
 
 
@@ -54,7 +54,7 @@
                     </div>
                     <div class="tools">
                     </div>
-                </div>{{dd("en la templeta")}}
+                </div>
 
                 <div class="portlet-body form">
                                 <!-- BEGIN FORM-->
