@@ -42,6 +42,7 @@ class ParticipacionesController extends \AdminBaseController {
 	}
     public function show($id)
     {
+        dd("asd");
         $rpm =  Participacion::where('participacion.actividadID','=',$id)->get();
 //                ->join('actividades','participaciones.actividadID','=','actividades.id')
 //                ->join('personal','participaciones.voluntarioID','=','personal.personalID')
