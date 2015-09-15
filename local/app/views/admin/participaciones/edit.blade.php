@@ -41,8 +41,9 @@
 
 
                 <hr>
+                <h2>{{$actividad->id }} - {{$actividad->act}} - {{$actividad->descripcion}}</h2>
                 <div class="portlet box blue">
-        <h2>{{$actividad->id }} - {{$actividad->created_at}} - {{$actividad->descripcion}}</h2>
+
                     <div class="portlet-body form">
 
                         <!-- BEGIN FORM-->
