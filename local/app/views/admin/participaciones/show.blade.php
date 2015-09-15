@@ -21,7 +21,7 @@
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-						<a href="{{ route('admin.participaciones.index') }}">Attendance</a>
+						<a href="{{ route('admin.participaciones.index') }}">Participaciones</a>
                         <i class="fa fa-angle-right"></i>
 					</li>
 					<li>
