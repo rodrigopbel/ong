@@ -192,7 +192,7 @@
 			$('#info').html('Esta seguro de Eliminar <strong>'+actividad+'</strong> dado a <strong>'+ayudaaName+'</strong>??');
 			$("#delete").click(function()
 			{
-					var url = "{{ route('admin.ayudas.destroy',':id') }}";
+					var url = "{{ route('admin.actividades.destroy',':id') }}";
 					url = url.replace(':id',id);
 					 $.ajax({
 

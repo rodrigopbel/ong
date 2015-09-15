@@ -16,7 +16,7 @@
 
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Ayuda
+			Actividades
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
