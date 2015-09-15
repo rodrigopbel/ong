@@ -26,21 +26,19 @@ class DonacionesController extends \AdminBaseController {
     {
 
         $result =
-            Donacion::select('donaciones.id','personal.apellidos','beneficiarios.apellidos','descripcion','montodonacion','donaciones.created_at')
+            Donacion::select('donaciones.id','personal.apellidos','beneficiarios.apellidos','donaciones.descripcion','donaciones.montodonacion','donaciones.created_at')
                 ->join('personal', 'donaciones.aportanteID', '=', 'personal.personalID')
                 ->join('beneficiarios', 'donaciones.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
                 ->orderBy('donaciones.created_at','desc');
 
 
         return Datatables::of($result)
-            ->add_column('Por el Mes',function($row) {
-                return ucfirst($row->created_at);
-            })
+
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.donaciones.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripcion}}\',\'{{ $montodonacion }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
-            ->remove_column('created_at')
+//            ->remove_column('created_at')
             ->make();
     }
 
