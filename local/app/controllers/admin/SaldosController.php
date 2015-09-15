@@ -20,7 +20,7 @@ class SaldosController extends \AdminBaseController {
 //            ->lists('apellidos','beneficiarioID');
 //
 //        return View::make('admin.reportes.index', $this->data);
-        echo $this->data;
+        return $this->data;
     }
 
 
