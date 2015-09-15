@@ -126,29 +126,5 @@
                     {{HTML::script('assets/admin/pages/scripts/components-pickers.js')}}
 <!-- END PAGE LEVEL PLUGINS -->
 
-                    <script>
-                        jQuery(document).ready(function() {
-                            ComponentsPickers.init();
-                            objetivos();
 
-                        });
-
-                        function objetivos(){
-
-                            $.getJSON("{{ URL::to('admin/destinos/ajax_objetivos/')}}",
-                                    { destID: $('#destino').val() },
-                                    function(data) {
-                                        var model = $('#objetivo');
-                                        model.empty();
-                                        var selected='';
-                                        var match= {{ $beneficiario->objetivo}}
-                                                $.each(data, function(index, element) {
-                                                    model.append("<option value='"+element.id+"'>" + element.objetivo + "</option>");
-                                                });
-
-                                    });
-
-                        }
-
-                    </script>
 @stop
