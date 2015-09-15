@@ -86,7 +86,7 @@ class ParticipacionesController extends \AdminBaseController {
     {
 
         $input = Input::all();
-
+dd(Input::all());
         $vols = $input['checkbox'];
         foreach($vols as $index => $value)
         {
