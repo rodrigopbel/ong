@@ -105,7 +105,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="{{ $participacionesActive or ''}}">
-                            <a href="{{route('admin.attendances.index')}}">
+                            <a href="{{route('admin.participaciones.index')}}">
                                 <i class="fa  fa-gift"></i>
                                 {{Lang::get('menu.participacionesList')}}</a>
                         </li>
