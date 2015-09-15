@@ -181,7 +181,7 @@ class ParticipacionesController extends \AdminBaseController {
 
     public function store()
     {
-        dd(Input::all());
+
         $input = Input::all();
         $participacion = new Participacion;
         $participacion->actividadID     = $input['idActividad'];
@@ -190,6 +190,7 @@ class ParticipacionesController extends \AdminBaseController {
             $participacion->voluntarioID  = (isset($input['checkbox'][$par])=='on')?$par:null;
         }
         $participacion->save() ;
+        dd("si se pudo");
     }
 	/**
 	 * Remove the specified attendance from storage.
