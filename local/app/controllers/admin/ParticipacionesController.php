@@ -95,7 +95,7 @@ class ParticipacionesController extends \AdminBaseController {
 	 */
 	public function update($date)
     {
-
+dd(Input::all());
 		$validator = Validator::make($input = Input::all(), Attendance::$rules);
 
 		if ($validator->fails())

@@ -80,7 +80,7 @@
 						   <hr>
 							@else
 						<!-- BEGIN FORM-->
-						{{Form::open(['route'=>["admin.attendances.update",$date],'class'=>'form-horizontal','method'=>'PATCH'])}}
+						{{Form::open(['route'=>["admin.partipaciones.update",$date],'class'=>'form-horizontal','method'=>'PATCH'])}}
 
 
                                     <div class="form-body">
