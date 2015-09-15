@@ -61,6 +61,8 @@
                         <tr>
                             <th> VoluntarioID</th>
                             <th> ActividadID</th>
+                            <th> Nombre Voluntario</th>
+                            <th> Telefono Voluntario</th>
                             <th> Accion</th>
                         </tr>
                         </thead>
@@ -70,6 +72,8 @@
                             <tr id="row{{ $act->id }}">
                                <td> {{ $act->voluntarioID }}</td>
                                 <td> {{ $act->actividadID }} </td>
+                                <td> {{ $act->nombreVoluntario }} </td>
+                                <td> {{ $act->telefonoVoluntario }} </td>
                                 <td class="">
                                     <a class="btn purple"
                                        href="{{route('admin.participaciones.edit',$act->id) }}">
