@@ -59,7 +59,7 @@ class ParticipacionesController extends \AdminBaseController {
 //        $attendance_count           = Attendance::where('date','=',$date)->count();
         $this->data['voluntarios']     = Personal::where('tipoPersonal','=','Voluntario')->count();
 
-        return Redirect::route('admin.attendances.edit',$this->data );
+        return Redirect::route('admin.participaciones.edit',$this->data );
 	}
 
 	/**
