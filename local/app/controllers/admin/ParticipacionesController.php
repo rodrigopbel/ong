@@ -18,6 +18,7 @@ class ParticipacionesController extends \AdminBaseController {
  */
 	public function index()
 	{
+        dd("entro aqui");
 		$this->data['attendances']          =   Attendance::all();
         $this->data['viewAttendanceActive'] =   'active';
 
