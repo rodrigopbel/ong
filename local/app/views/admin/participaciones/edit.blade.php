@@ -42,7 +42,7 @@
 
                 <hr>
                 <h2>{{$actividad->id }} - {{$actividad->act}} - {{$actividad->descripcion}}</h2>
-                <input type="hidden" value="{{$actividad->id}}"/>
+                <input type="hidden" name="idActividad" value="{{$actividad->id}}"/>
                 <div class="portlet box blue">
 
                     <div class="portlet-body form">
