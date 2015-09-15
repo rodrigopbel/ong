@@ -48,7 +48,7 @@ class ParticipacionesController extends \AdminBaseController {
                 ->join('personal','participaciones.voluntarioID','=','personal.personalID')
                 ->select('personal.nombres','actividades.descripcion')
                 ->get();
-        dd($rpm);
+        echo ($rpm);
     }
 
 	/**
