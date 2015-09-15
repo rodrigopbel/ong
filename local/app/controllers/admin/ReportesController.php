@@ -12,7 +12,7 @@ class ReportsController extends \AdminBaseController {
     //    Display a listing of awards
     public function index()
     {
-        dd("entro aqui");
+//        dd("entro aqui");
         $this->data['reportesActive'] =   'active';
         $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (ID:", beneficiarioID,")") as apellidos, beneficiarioID')
             ->where('status','=','activo')
