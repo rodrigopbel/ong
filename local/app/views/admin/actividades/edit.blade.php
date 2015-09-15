@@ -91,21 +91,20 @@
                                         </div>
 
 
-                        								<div class="form-actions">
-                        									<div class="row">
-                        										<div class="col-md-offset-3 col-md-9">
-                        											<button type="submit" data-loading-text="Actualizando..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Guardar</button>
-
-                        										</div>
-                        									</div>
-                        								</div>
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                    <button type="submit" data-loading-text="Actualizando..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Guardar</button>
+                                                </div>
+                                            </div>
+                                        </div>
                         						{{ Form::close() }}
                        <!------------------------- END FORM ----------------------->
 
 						</div>
 					</div>
 					<!-- END EXAMPLE TABLE PORTLET-->
-					
+                    </div>
 				</div>
 			</div>
 			<!-- END PAGE CONTENT-->
