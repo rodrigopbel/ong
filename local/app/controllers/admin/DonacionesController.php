@@ -26,7 +26,7 @@ class DonacionesController extends \AdminBaseController {
     {
 
         $result =
-            Donacion::select('donaciones.id','personal.personalID','personal.nombres','montodonacion','beneficiarios.apellidos','descripcion','donaciones.created_at')
+            Donacion::select('donaciones.id','personal.personalID','personal.nombres','montodonacion','beneficiarios.apellidos','descripcion','updated_at','donaciones.created_at')
                 ->join('personal', 'donaciones.aportanteID', '=', 'personal.personalID')
                 ->join('beneficiarios', 'donaciones.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
                 ->orderBy('donaciones.created_at','desc');
@@ -38,7 +38,7 @@ class DonacionesController extends \AdminBaseController {
                         <a  class="btn purple"  href="{{ route(\'admin.donaciones.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripcion}}\',\'{{ $montodonacion }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
-//            ->remove_column('created_at')
+            ->remove_column('updated_at')
             ->make();
     }
 
