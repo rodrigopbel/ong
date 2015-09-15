@@ -59,7 +59,6 @@
                     <table class="table table-striped table-bordered table-hover" id="sample_1">
                         <thead>
                         <tr>
-                            <th> Actividad ID</th>
                             <th> VoluntarioID</th>
                             <th> ActividadID</th>
                             <th> Accion</th>
@@ -69,8 +68,7 @@
 
                         @foreach ($participantes as $act)
                             <tr id="row{{ $act->id }}">
-                                <td> {{ $act->id }}</td>
-                                <td> {{ $act->voluntarioID }}</td>
+                               <td> {{ $act->voluntarioID }}</td>
                                 <td> {{ $act->actividadID }} </td>
                                 <td class="">
                                     <a class="btn purple"
