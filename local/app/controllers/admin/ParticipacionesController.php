@@ -193,7 +193,7 @@ class ParticipacionesController extends \AdminBaseController {
                 $participacion->save() ;
 //            $participacion->voluntarioID  = (isset($input['checkbox'][$par])=='on')?$par:null;
         }
-        echo "guardado con exito";
+        return Redirect::route('admin.participaciones.index')->with('success',"<strong></strong> exitosamente adicionado en le base de datos");
 //        dd("si se pudo");
     }
 	/**
