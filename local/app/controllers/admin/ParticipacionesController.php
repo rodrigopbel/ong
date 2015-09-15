@@ -182,14 +182,14 @@ class ParticipacionesController extends \AdminBaseController {
     public function store()
     {
         dd(Input::all());
-        $update = Participacion::find($user->id);
-        $update->status     = (isset($input['checkbox'][$employeeID])=='on')?'present':'absent';
-        $update->leaveType  = (isset($input['checkbox'][$employeeID])=='on')?null:$input['leaveType'][$employeeID];
-        $update->halfDayType  = ( (!isset($input['checkbox'][$employeeID])=='on') && ($input['leaveType'][$employeeID]=='half day'))?$input['leaveTypeWithoutHalfDay'][$employeeID]:null;
-        $update->reason     = (isset($input['checkbox'][$employeeID])=='on')?'':$input['reason'][$employeeID];
-        $update->application_status     = null;
-        $update->updated_by     = Auth::admin()->get()->email;
-        $update->save() ;
+        $input = Input::all();
+        $participacion = new Participacion;
+        $participacion->actividadID     = $input['idActividad'];
+        foreach($input['participantes'] as $par)
+        {
+            $participacion->voluntarioID  = (isset($input['checkbox'][$par])=='on')?$par:null;
+        }
+        $participacion->save() ;
     }
 	/**
 	 * Remove the specified attendance from storage.
