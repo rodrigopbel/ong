@@ -44,9 +44,9 @@ class ParticipacionesController extends \AdminBaseController {
     {
         $rpm =  Participacion::select()
                 ->where('participacion.actividadID','=',$id)
-                ->join('actividades','participaciones.actividadID','=','actividades.id')
-                ->join('personal','participaciones.voluntarioID','=','personal.personalID')
-                ->select('personal.nombres','actividades.descripcion')
+//                ->join('actividades','participaciones.actividadID','=','actividades.id')
+//                ->join('personal','participaciones.voluntarioID','=','personal.personalID')
+//                ->select('personal.nombres','actividades.descripcion')
                 ->get();
         echo ($rpm);
     }
