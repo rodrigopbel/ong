@@ -73,9 +73,9 @@
                                 <td> {{ $act->id }}</td>
                                 <td> {{ $act->descripcion }}</td>
                                 <td>
-                                    @foreach($participaciones as $par)
+                                    @foreach($participaciones->voluntarios as $par)
                                     <ul>
-                                        <li>{{$par->voluntarios->nombres}}</li>
+                                        <li>{{$par->nombres}}</li>
                                     </ul>
                                     @endforeach
                                 </td>
