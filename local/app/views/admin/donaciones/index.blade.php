@@ -66,7 +66,7 @@
                             <th> DonacionesID </th>
                             <th> Aportante ID </th>
                             <th> Nombre Aportante </th>
-                            <th> Monto </th>
+                            <th> Monto de la donacion </th>
                             <th> Nombre Beneficiario </th>
                             <th> Descripcion</th>
                             <th> Fecha Creacion </th>
