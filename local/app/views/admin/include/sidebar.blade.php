@@ -182,7 +182,22 @@
                     </ul>
                 </li>
                 {{---------------------------------------------------------------------------}}
-
+                {{---------------------------------------Donaciones-------------------------------}}
+                <li class="{{ $saldosOpen or ''}}">
+                    <a href="javascript:;">
+                        <i class="fa fa-trophy"></i>
+                        <span class="title">{{Lang::get('menu.saldos')}}</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="{{ $saldosActive or ''}}">
+                            <a href="{{route('admin.donaciones.index')}}">
+                                <i class="fa  fa-gift"></i>
+                                {{Lang::get('menu.saldosList')}}</a>
+                        </li>
+                    </ul>
+                </li>
+                {{---------------------------------------------------------------------------}}
                 {{---------------------------------------Reportes-------------------------------}}
                 <li class="{{ $reportOpen or ''}}">
                     <a href="javascript:;">

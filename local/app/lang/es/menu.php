@@ -24,6 +24,8 @@ return [
     'ayudasList'            =>  'Lista',
     'donaciones'            =>  'Donaciones',
     'donacionesList'        =>  'Lista',
+    'saldos'                =>  'Saldos',
+    'saldosList'        =>  'Lista',
 	'expense'               =>  'Expense',
 	'expenseList'           =>  'Expense List',
 	'actividades'           =>  'Actividades',
