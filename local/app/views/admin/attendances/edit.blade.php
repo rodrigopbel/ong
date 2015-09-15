@@ -136,8 +136,8 @@
 
                                         @foreach($employees as $employee)
                                             <div class="form-group">
-                                                <label class="col-md-1 control-group">{{$employee->employeeID}} </label>
-                                                <label class="col-md-2 control-group">{{$employee->fullName}} </label>
+                                                <label class="col-md-1 control-group">{{$employee->personalID}} </label>
+                                                <label class="col-md-2 control-group">{{$employee->nombres}} {{$employee->apellidos}} </label>
                                                 <div class="col-md-2">
                                                     <input type="checkbox"  id="checkbox{{$employee->employeeID}}" onchange="showHide('{{$employee->employeeID}}');return false;" class="make-switch" name="checkbox[{{$employee->employeeID}}]" checked data-on-color="success" data-on-text="P" data-off-text="A" data-off-color="danger">
                                                     <input type="hidden"  name="employees[]" value="{{$employee->employeeID}}">
