@@ -113,8 +113,7 @@
                                 </td>
                                 <td class="">
                                     <p><a class="btn red" style="width: 42px;" href="javascript:;"
-                                          onclick="del('{{$admin->id}}','{{ $admin->name}}')"><i
-                                                    class="fa fa-trash"></i></a></p>
+                                          onclick="del('{{$admin->id}}','{{ $admin->name}}')"><i class="fa fa-trash"></i></a></p>
                                 </td>
                             </tr>
                         @endforeach
@@ -156,6 +155,12 @@
             {{HTML::script("assets/global/plugins/fullcalendar/fullcalendar.min.js")}}
             <script src="http://code.highcharts.com/highcharts.js"></script>
             <script src="http://code.highcharts.com/modules/exporting.js"></script>
+            <script>
+                jQuery(document).ready(function () {
+
+                    TableManaged.init();
+                });
+            </script>
             <script>
                 function del(id, name) {
                     $('#deleteModal').appendTo("body").modal('show');
