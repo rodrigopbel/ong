@@ -54,21 +54,12 @@ class ParticipacionesController extends \AdminBaseController {
 	 */
 	public function show($id)
     {
-        $this->data['viewAttendanceActive'] = 'active';
+        $this->data['actividad']    = Actividad::find($id);
+//        $date = (Input::get('date')!='')?Input::get('date'):date('Y-m-d');
+//        $attendance_count           = Attendance::where('date','=',$date)->count();
+        $this->data['voluntarios']     = Personal::where('tipoPersonal','=','Voluntario')->count();
 
-        $this->data['employee']     = Employee::where('employeeID', '=', $id)->get()->first();
-        $this->data['attendance']   = Attendance::where('employeeID', '=', $id)
-                                            ->where(function($query)
-                                            {
-                                                $query->where('application_status','=','approved')
-                                                      ->orwhere('application_status','=',null)
-                                                      ->orwhere('status','=','present');
-                                            })->get();
-        $this->data['holidays']     = Holiday::all();
-        $this->data['employeeslist'] = Employee::lists('fullName','employeeID');
-
-
-		return View::make('admin.attendances.show', $this->data);
+        return Redirect::route('admin.attendances.edit',$this->data );
 	}
 
 	/**
