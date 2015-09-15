@@ -70,7 +70,7 @@
 
                         @foreach ($actividades as $act)
                             <tr id="row{{ $act->id }}">
-                               <td> {{ $act->voluntarioID }}</td>
+                               <td> {{ $act->id }}</td>
                                 <td> {{ $act->actividadID }} </td>
                                 <td> {{ $act->nombreVoluntario }} </td>
                                 <td> {{ $act->telefonoVoluntario }} </td>
