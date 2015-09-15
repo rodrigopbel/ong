@@ -12,15 +12,16 @@ class ReportsController extends \AdminBaseController {
     //    Display a listing of awards
     public function index()
     {
+        dd("entro aqui");
         $this->data['reportesActive'] =   'active';
         $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (ID:", beneficiarioID,")") as apellidos, beneficiarioID')
-                                ->where('status','=','activo')
-                                ->lists('apellidos','beneficiarioID');
+            ->where('status','=','activo')
+            ->lists('apellidos','beneficiarioID');
         return View::make('admin.reportes.index', $this->data);
     }
     public function ReporteBen()
     {
-       return Redirect::route('ReporteBen',[Input::get('beneficiario')]);
+        return Redirect::route('ReporteBen',[Input::get('beneficiario')]);
     }
     public function ReporteBenMen()
     {
@@ -33,8 +34,9 @@ class ReportsController extends \AdminBaseController {
                 $this->data['ayudas'] = $ben->ayudas;
                 $this->data['donaciones'] = $ben->donaciones;
             }
+            $this->data['ayudaMes'] = $this->data['ayudas'];
         }
-        return (Input::all());
+        return $this->data;
     }
     public function ReporteGen()
     {
