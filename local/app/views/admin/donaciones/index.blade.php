@@ -64,7 +64,7 @@
                         <thead>
                         <tr>
                             <th> DonacionesID </th>
-                            {{--<th> Aportante ID </th>--}}
+                            <th> Aportante ID </th>
                             <th> Nombre Aportante </th>
                             <th> Nombre Beneficiario </th>
                             <th> Descripcion</th>
@@ -80,7 +80,7 @@
                         <tbody>
                         <tr >
                             <td>{{-- Donacion ID --}}</td>
-                            {{--<td>--}}{{-- AportanteID --}}{{--</td>--}}
+                            <td> {{-- Aportante ID --}} </td>
                             <td>{{-- Nombre Aportante --}}</td>
                             <td>{{-- Nombre Beneficiario --}}</td>
                             <td>{{-- Descripcion --}}</td>
@@ -130,6 +130,7 @@
             "aoColumns": [
                 { 'sClass': 'center', "bSortable": true  },
                 { 'sClass': 'center', "bSortable": true  },
+                { 'sClass': 'center', "bSortable": true },
                 { 'sClass': 'center', "bSortable": true },
                 { 'sClass': 'center', "bSortable": true },
                 { 'sClass': 'center', "bSortable": true },
