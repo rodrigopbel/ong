@@ -8,7 +8,7 @@
 @stop
 @section('mainarea')
     {{--{{dd("hola  atodos")}};--}}
-
+{{dd("entro a la templeta")}}
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
         Participantes en Actividad
