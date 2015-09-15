@@ -25,11 +25,6 @@ class ParticipacionesController extends \AdminBaseController {
         $this->data['participantes'] = Participacion::all();
         return View::make('admin.participaciones.index', $this->data);
 	}
-
-
-/*
- * This method is called when we mark the attendance and redirects to edit page.
- */
 	public function create()
 	{
             $date = (Input::get('date')!='')?Input::get('date'):date('Y-m-d');
