@@ -8,7 +8,7 @@
     <!-- END PAGE LEVEL STYLES -->
 @stop
 @section('mainarea')
-    {{dd("lghsdaghsda")}}
+
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
         {{$pageTitle}}
@@ -33,6 +33,7 @@
         </ul>
 
     </div>
+    {{dd("dssds")}}
     <!-- END PAGE HEADER-->
     <!-- BEGIN PAGE CONTENT-->
 
