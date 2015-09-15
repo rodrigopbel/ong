@@ -16,7 +16,7 @@
 			
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			<i class="fa fa-edit"></i> Edit
+			<i class="fa fa-edit"></i> Editar
 			</h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
