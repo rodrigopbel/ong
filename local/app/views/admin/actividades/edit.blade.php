@@ -61,18 +61,6 @@
 
                                     <div class="form-body">
 
-
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Fecha de Actividad</label>
-                                            <div class="col-md-3">
-                                                <div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                                                    <input type="text" class="form-control" name="fechaAct" readonly value="@if(empty($actividad->fechaAct))@else{{date('d-m-Y',strtotime($actividad->fechaAct))}}@endif" >
-        												<span class="input-group-btn">
-        												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
-        												</span>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Descripcion: </label>
                                             <div class="col-md-6">
@@ -86,8 +74,17 @@
                                                 <input type="text" class="form-control" name="lugar"  value="{{ $actividad->lugar }}">
                                               </div>
                                         </div>
-
-
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Fecha de Actividad</label>
+                                            <div class="col-md-3">
+                                                <div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
+                                                    <input type="text" class="form-control" name="fechaAct" readonly value="@if(empty($actividad->fechaAct))@else{{date('d-m-Y',strtotime($actividad->fechaAct))}}@endif" >
+        												<span class="input-group-btn">
+        												<button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+        												</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="form-actions">
                                             <div class="row">
                                                 <div class="col-md-offset-3 col-md-9">
