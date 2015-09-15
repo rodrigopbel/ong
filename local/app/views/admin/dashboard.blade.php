@@ -155,12 +155,12 @@
             {{HTML::script("assets/global/plugins/fullcalendar/fullcalendar.min.js")}}
             <script src="http://code.highcharts.com/highcharts.js"></script>
             <script src="http://code.highcharts.com/modules/exporting.js"></script>
-            <script>
-                jQuery(document).ready(function () {
+            {{--<script>--}}
+                {{--jQuery(document).ready(function () {--}}
 
-                    TableManaged.init();
-                });
-            </script>
+                    {{--TableManaged.init();--}}
+                {{--});--}}
+            {{--</script>--}}
             <script>
                 function del(id, name) {
                     $('#deleteModal').appendTo("body").modal('show');
