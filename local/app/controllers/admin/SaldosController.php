@@ -14,12 +14,13 @@ class SaldosController extends \AdminBaseController {
     {
 //        dd("entro aqui");
         $this->data['saldosActive'] =   'active';
+        $this->data['saldos']   = Saldo::all();
 //        $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (ID:", beneficiarioID,")") as apellidos, beneficiarioID')
 //            ->where('status','=','activo')
 //            ->lists('apellidos','beneficiarioID');
 //
 //        return View::make('admin.reportes.index', $this->data);
-        return "entro a saldos";
+        return $this->data;
     }
 
 
