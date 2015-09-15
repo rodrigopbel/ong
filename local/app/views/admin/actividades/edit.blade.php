@@ -76,19 +76,15 @@
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Descripcion: </label>
                                             <div class="col-md-6">
-                                                <div class="col-md-6">
-                                                    <input type="text" class="form-control" name="descripcion"  value="{{ $actividad->descripcion }}">
-                                                </div>
-                                            </div>
+                                                <input type="text" class="form-control" name="descripcion"  value="{{ $actividad->descripcion }}">
+                                           </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Lugar: </label>
-                                            <div class="col-md-6">
-                                            <div class="col-md-6">
+                                              <div class="col-md-6">
                                                 <input type="text" class="form-control" name="lugar"  value="{{ $actividad->lugar }}">
-                                            </div>
-                                            </div>
+                                              </div>
                                         </div>
 
 
