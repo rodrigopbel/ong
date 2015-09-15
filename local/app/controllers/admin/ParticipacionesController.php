@@ -90,9 +90,12 @@ class ParticipacionesController extends \AdminBaseController {
         $vols = $input['checkbox'];
         foreach($vols as $index => $value)
         {
+                $volun = Personal::where('personalID','=',$index);
                 $participacion = new Participacion;
                 $participacion->actividadID  = $input['idActividad'];
                 $participacion->voluntarioID = $index;
+                $participacion->nombreVoluntario = $volun->nombres;
+                $participacion->telefonoVoluntario = $volun->telefono;
                 $participacion->save() ;
 //            $participacion->voluntarioID  = (isset($input['checkbox'][$par])=='on')?$par:null;
         }
