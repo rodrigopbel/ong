@@ -13,7 +13,7 @@
 
 
 @section('mainarea')
-{{echo $participantes}}
+{{dd("aqui")}}
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 
