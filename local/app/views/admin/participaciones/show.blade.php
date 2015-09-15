@@ -13,7 +13,7 @@
 
 
 @section('mainarea')
-{{dd("aqui")}}
+
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 
@@ -29,7 +29,7 @@
 						<a href="{{ route('admin.participaciones.index') }}">Attendance</a>
                         <i class="fa fa-angle-right"></i>
 					</li>
-					<li>
+					<li>{{dd("ssss")}}
                         <a href="#">{{$participantes->descripcion}}</a>
 
                     </li>
