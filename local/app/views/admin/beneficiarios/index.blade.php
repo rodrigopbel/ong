@@ -180,6 +180,7 @@
             $('#deleteModal').appendTo("body").modal('show');
             $('#info').html('Eliminar al Beneficiario : <strong>' + name + '</strong> ??');
             $("#delete").click(function () {
+
                 var url = "{{ route('admin.beneficiarios.destroy',':id') }}";
                 url = url.replace(':id', id);
 
