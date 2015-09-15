@@ -42,11 +42,11 @@ class ParticipacionesController extends \AdminBaseController {
 	}
     public function show($id)
     {
-        $rpm =  Participacion::where('actividadID','=',$id)->get();
-//                ->join('actividades','participaciones.actividadID','=','actividades.id')
-//                ->join('personal','participaciones.voluntarioID','=','personal.personalID')
-//                ->select('personal.nombres','actividades.descripcion')
-
+        $rpm =  Participacion::where('actividadID','=',$id)
+                ->join('actividades','participaciones.actividadID','=','actividades.id')
+                ->join('personal','participaciones.voluntarioID','=','personal.personalID')
+                ->select('personal.nombres','actividades.descripcion')
+                  ->get();
         echo ($rpm);
     }
 
