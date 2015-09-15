@@ -25,10 +25,12 @@ class DonacionesController extends \AdminBaseController {
     public function ajax_donaciones()
     {
 
-	    $result =
-            Donacion::select('donaciones.id','personal.personalID','descripcion','montodonacion','donaciones.created_at')
-		      ->join('personal', 'donaciones.aportanteID', '=', 'personal.personalID')
-			  ->orderBy('donaciones.created_at','desc');
+        $result =
+            Donacion::select('donaciones.id','personal.personalID','personal.apellidos','beneficiarios.nombres','descripcion','montodonacion','donaciones.created_at')
+                ->join('personal', 'donaciones.aportanteID', '=', 'personal.personalID')
+                ->join('beneficiarios', 'donaciones.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
+                ->orderBy('donaciones.created_at','desc');
+
 
         return Datatables::of($result)
             ->add_column('Por el Mes',function($row) {
