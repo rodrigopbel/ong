@@ -10,9 +10,10 @@
 @section('mainarea')
 
 			<!-- BEGIN PAGE HEADER-->
-			<h3 class="page-title">
-
-			</h3>
+            <h3 class="page-title">
+                {{$pageTitle}}
+                <small>Participantes Lista</small>
+            </h3>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
 					<li>
@@ -40,13 +41,6 @@
                 @include('admin.common.error')
                 {{--END ERROR MESSAGE BOX--}}
             					<div class="portlet box green-meadow calendar">
-                                    <div class="portlet-title">
-                                        <div class="caption">
-                                            <i class="fa fa-users"></i>Partipaciones Listas
-                                        </div>
-                                        <div class="tools">
-                                        </div>
-                                    </div>
                                     <div class="portlet box blue">
 
                                         <div class="portlet-title">
