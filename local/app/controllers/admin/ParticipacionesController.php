@@ -85,7 +85,7 @@ class ParticipacionesController extends \AdminBaseController {
 
 		$this->data['leaveTypes']  =    Attendance::leaveTypesEmployees();
         $this->data['leaveTypeWithoutHalfDay']   =   Attendance::leaveTypesEmployees('half day');
-        $this->data['employees']    =   Employee::where('status','=','active')->get();
+        $this->data['employees']    =   Personal::where('tipoPersonal','=','Voluntario')->get();
 
 		return View::make('admin.attendances.edit', $this->data);
 	}
