@@ -74,6 +74,7 @@
                             <th> Requerimiento</th>
                             <th> Nit </th>
                             <th> Gastos </th>
+                            <th> N Factura </th>
                             <th> Fecha Ayuda </th>
 
 
@@ -88,6 +89,7 @@
                             <td>{{-- Requerimiento --}} </td>
                             <td>{{-- Nit --}}</td>
                             <td>{{-- Gastos --}}</td>
+                            <td>{{-- N Factura --}}</td>
                             <td>{{-- Fecha Ayuda --}}</td>
 
 
@@ -134,6 +136,7 @@
             "aaSorting": [[ 1, "asc" ]],
             "aoColumns": [
                 { 'sClass': 'center', "bSortable": true  },
+                { 'sClass': 'center', "bSortable": true },
                 { 'sClass': 'center', "bSortable": true },
                 { 'sClass': 'center', "bSortable": true },
                 { 'sClass': 'center', "bSortable": true },
