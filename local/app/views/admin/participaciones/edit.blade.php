@@ -59,23 +59,23 @@
 
                             </div>
 
-                            {{--@foreach($voluntarios as $vol)--}}
-                                {{--<div class="form-group">--}}
-                                    {{--<label class="col-md-1 control-group">{{$vol->personalID}} </label>--}}
-                                    {{--<label class="col-md-2 control-group">{{$vol->nombres}} {{$vol->apellidos}} </label>--}}
+                            @foreach($voluntarios as $vol)
+                                <div class="form-group">
+                                    <label class="col-md-1 control-group">{{$vol->personalID}} </label>
+                                    <label class="col-md-2 control-group">{{$vol->nombres}} {{$vol->apellidos}} </label>
 
-                                    {{--<div class="col-md-2">--}}
-                                        {{--<input type="checkbox" id="checkbox{{$vol->personalID}}"--}}
-                                               {{--onchange="showHide('{{$vol->personalID}}');return false;"--}}
-                                               {{--class="make-switch" name="checkbox[{{$vol->personalID}}]"--}}
-                                               {{--checked data-on-color="success" data-on-text="P" data-off-text="A"--}}
-                                               {{--data-off-color="danger">--}}
-                                        {{--<input type="hidden" name="employees[]" value="{{$vol->personalID}}">--}}
-                                    {{--</div>--}}
+                                    <div class="col-md-2">
+                                        <input type="checkbox" id="checkbox{{$vol->personalID}}"
+                                               onchange="showHide('{{$vol->personalID}}');return false;"
+                                               class="make-switch" name="checkbox[{{$vol->personalID}}]"
+                                               checked data-on-color="success" data-on-text="P" data-off-text="A"
+                                               data-off-color="danger">
+                                        <input type="hidden" name="employees[]" value="{{$vol->personalID}}">
+                                    </div>
 
 
-                                {{--</div>--}}
-                            {{--@endforeach--}}
+                                </div>
+                            @endforeach
 
                             <div class="form-actions">
                                 <div class="row">
