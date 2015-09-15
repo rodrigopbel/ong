@@ -99,55 +99,55 @@ class ParticipacionesController extends \AdminBaseController {
 	/**
 	 * Update the specified attendance in storage.
 	 */
-	public function update($date)
+	public function update($id)
     {
-dd(Input::all());
-		$validator = Validator::make($input = Input::all(), Attendance::$rules);
-
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-
-        foreach ($input['employees'] as $employeeID)
-        {
-
-            $user     =  Attendance::firstOrCreate([
-                'employeeID'    => $employeeID,
-                'date'          => $date,
-            ]);
-			if($user->application_status !='approved' || ($user->application_status =='approved' && isset($input['checkbox'][$employeeID])=='on'))
-			{
-				$update = Attendance::find($user->id);
-				$update->status     = (isset($input['checkbox'][$employeeID])=='on')?'present':'absent';
-				$update->leaveType  = (isset($input['checkbox'][$employeeID])=='on')?null:$input['leaveType'][$employeeID];
-				$update->halfDayType  = ( (!isset($input['checkbox'][$employeeID])=='on') && ($input['leaveType'][$employeeID]=='half day'))?$input['leaveTypeWithoutHalfDay'][$employeeID]:null;
-				$update->reason     = (isset($input['checkbox'][$employeeID])=='on')?'':$input['reason'][$employeeID];
-				$update->application_status     = null;
-				$update->updated_by     = Auth::admin()->get()->email;
-				$update->save() ;
-			}
-
-        }
-		$this->data['date'] = date('d M Y',strtotime($date));
-
-        if($this->data['setting']->attendance_notification==1) {
-
-            $employees = Employee::select('email','fullName')->where('status', '=', 'active')->get();
-            foreach ($employees as $employee) {
-                $email = "{$employee->email}";
-				$this->data['employee_name'] = $employee->fullName;
-	            //  Send Email to All active users
-	            Mail::send('emails.admin.attendance', $this->data, function ($message) use ($email) {
-	                $message->from($this->data['setting']->email, $this->data['setting']->name);
-	                $message->to($email)
-	                    ->subject('Attendance marked - ' . $this->data['date']);
-	            });
-            }
-        }
-
-        Session::flash('success',date('d M Y',strtotime($date)). " successfully Updated");
-		return Redirect::route('admin.attendances.edit',$date);
+        dd(Input::all());
+//		$validator = Validator::make($input = Input::all(), Attendance::$rules);
+//
+//		if ($validator->fails())
+//		{
+//			return Redirect::back()->withErrors($validator)->withInput();
+//		}
+//
+//        foreach ($input['employees'] as $employeeID)
+//        {
+//
+//            $user     =  Attendance::firstOrCreate([
+//                'employeeID'    => $employeeID,
+//                'date'          => $date,
+//            ]);
+//			if($user->application_status !='approved' || ($user->application_status =='approved' && isset($input['checkbox'][$employeeID])=='on'))
+//			{
+//				$update = Attendance::find($user->id);
+//				$update->status     = (isset($input['checkbox'][$employeeID])=='on')?'present':'absent';
+//				$update->leaveType  = (isset($input['checkbox'][$employeeID])=='on')?null:$input['leaveType'][$employeeID];
+//				$update->halfDayType  = ( (!isset($input['checkbox'][$employeeID])=='on') && ($input['leaveType'][$employeeID]=='half day'))?$input['leaveTypeWithoutHalfDay'][$employeeID]:null;
+//				$update->reason     = (isset($input['checkbox'][$employeeID])=='on')?'':$input['reason'][$employeeID];
+//				$update->application_status     = null;
+//				$update->updated_by     = Auth::admin()->get()->email;
+//				$update->save() ;
+//			}
+//
+//        }
+//		$this->data['date'] = date('d M Y',strtotime($date));
+//
+//        if($this->data['setting']->attendance_notification==1) {
+//
+//            $employees = Employee::select('email','fullName')->where('status', '=', 'active')->get();
+//            foreach ($employees as $employee) {
+//                $email = "{$employee->email}";
+//				$this->data['employee_name'] = $employee->fullName;
+//	            //  Send Email to All active users
+//	            Mail::send('emails.admin.attendance', $this->data, function ($message) use ($email) {
+//	                $message->from($this->data['setting']->email, $this->data['setting']->name);
+//	                $message->to($email)
+//	                    ->subject('Attendance marked - ' . $this->data['date']);
+//	            });
+//            }
+//        }
+//
+//        Session::flash('success',date('d M Y',strtotime($date)). " successfully Updated");
+//		return Redirect::route('admin.attendances.edit',$date);
 	}
 
     public function report()
@@ -177,6 +177,11 @@ dd(Input::all());
 
 
 
+    }
+
+    public function store($id)
+    {
+        dd(Input::all());
     }
 	/**
 	 * Remove the specified attendance from storage.
