@@ -188,7 +188,9 @@ class ParticipacionesController extends \AdminBaseController {
 //        dd ($input);
         foreach($input['checkbox'] as $index => $value)
         {
-            echo $value;
+            $id = $input['checkbox']-> $index;
+            echo $id . "---" . $value;
+
             echo '<br>------------';
 //            $participacion->voluntarioID  = (isset($input['checkbox'][$par])=='on')?$par:null;
         }
