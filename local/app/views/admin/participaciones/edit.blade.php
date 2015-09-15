@@ -64,12 +64,6 @@
                                     <label class="col-md-1 control-group">EmployeeID</label>
                                     <label class="col-md-2 control-group">Name</label>
                                     <label class="col-md-2 control-group">Status </label>
-                                    <label class="col-md-2 control-group leaveType" id="leaveTypeLabel">Type of
-                                        leave </label>
-                                    <label class="col-md-2 control-group"><span class="halfLeaveType" id="halfDayLabel">half Day leave type</span>
-                                    </label>
-
-                                    <label class="col-md-3 control-group reason" id="reasonLabel">Reason </label>
 
                                 </div>
 
@@ -133,42 +127,5 @@
 
                     });
                 </script>
-                <script>
 
-                    $('.leaveType').hide();
-                    $('.reason').hide();
-                    $('.halfLeaveType').hide();
-
-
-
-                  function showHide(id) {
-                        $('#leaveTypeLabel').show(100);
-                        $('#reasonLabel').show(100);
-
-
-                        if ($('#checkbox' + id + ':checked').val() == 'on') {
-                            $('#leaveType' + id).hide(1000);
-                            $('#reason' + id).hide(1000);
-
-                        } else {
-                            $('#leaveType' + id).show(100);
-
-                            $('#reason' + id).show(500);
-                        }
-                    }
-
-                    function halfDayToggle(id, value) {
-
-                        if (value == 'half day') {
-                            $('#halfDayLabel').show(100);
-                            $('#halfLeaveType' + id).show(100);
-                        } else {
-                            $('#halfLeaveType' + id).hide(100);
-                        }
-
-
-                    }
-
-
-                </script>
-@stop
+            @stop
