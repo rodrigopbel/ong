@@ -186,7 +186,7 @@ class ParticipacionesController extends \AdminBaseController {
         $participacion = new Participacion;
         $participacion->actividadID     = $input['idActividad'];
         dd ($input);
-        foreach($input['participantes'] as $index => $value)
+        foreach($input['volPar'] as $index => $value)
         {
             echo $value;
             echo '<br>------------';
