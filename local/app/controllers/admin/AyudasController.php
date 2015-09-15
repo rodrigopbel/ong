@@ -86,9 +86,9 @@ class AyudasController extends \AdminBaseController {
         Saldo::create([
             'donacionesID'  =>  $donacion->id,
             'ayudasID'      =>  $input['nit'],
-            'donacion'      => 'montodonacion',
-            'ayuda'         => $input['gastos'],
-            'saldo'         => $donacion->montodonacion
+            'donacion'      =>  $donacion->montodonacion,
+            'ayuda'         =>  $input['gastos'],
+            'saldo'         =>  $donacion->montodonacion
         ]);
 
 		Activity::log([
