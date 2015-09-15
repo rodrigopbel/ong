@@ -30,7 +30,7 @@
                         <i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-                        <a href="#">{{$participantes->descripcion}}</a>
+                        <a href="#">{{$participantes}}</a>
                         {{dd("ssss")}}
                     </li>
 
