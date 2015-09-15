@@ -50,7 +50,7 @@
 
 
                         <div class="form-body">
-
+                            {{$actividad->id }} - {{$actividad->created_at}} - {{$actividad->descripcion}}
                             <div class="form-group">
 
                                 <label class="col-md-1 control-group">Voluntario ID</label>
@@ -70,7 +70,7 @@
                                                class="make-switch" name="checkbox[{{$vol->personalID}}]"
                                                checked data-on-color="success" data-on-text="P" data-off-text="A"
                                                data-off-color="danger">
-                                        <input type="hidden" name="employees[]" value="{{$vol->personalID}}">
+                                        <input type="hidden" name="participantes[]" value="{{$vol->personalID}}">
                                     </div>
 
 
