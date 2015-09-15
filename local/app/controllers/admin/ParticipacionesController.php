@@ -57,8 +57,9 @@ class ParticipacionesController extends \AdminBaseController {
         $this->data['actividad']    = Actividad::find($id);
 //        $date = (Input::get('date')!='')?Input::get('date'):date('Y-m-d');
 //        $attendance_count           = Attendance::where('date','=',$date)->count();
+        dd("entro al show");
         $this->data['voluntarios']     = Personal::where('tipoPersonal','=','Voluntario')->get;
-dd("entro al show");
+
         return View::make('admin.participaciones.edit',$this->data );
 	}
 
