@@ -13,6 +13,8 @@
         {{$pageTitle}}
         <small>Saldos Lista</small>
     </h3>
+
+    {{$saldos}}
     <div class="page-bar">
         <ul class="page-breadcrumb">
             <li>
