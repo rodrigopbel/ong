@@ -9,7 +9,7 @@
 
 
 @section('mainarea')
-{{dd("hola  atodos")}};
+{{--{{dd("hola  atodos")}};--}}
 
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
