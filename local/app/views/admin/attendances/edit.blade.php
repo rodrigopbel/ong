@@ -43,42 +43,7 @@
                 {{--END ERROR MESSAGE BOX--}}
 
                    <div class="row">
-                               <div class="col-md-4 form-group">
-                               {{Form::open(['route'=>["admin.attendances.create"],'class'=>'form-horizontal','method'=>'GET'])}}
 
-                                      <div class="input-group input-medium date date-picker"   data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                                           <input type="text" class="form-control" name="date" readonly placeholder="select another date">
-                                           <span class="input-group-btn">
-                                           <button data-loading-text="Redirecting..." class="demo-loading-btn btn blue" type="submit"><i class="fa fa-calendar"></i> Edit</button>
-                                           </span>
-                                      </div>
-
-                               {{Form::close()}}
-
-                                     </div>
-
-                               <div class="col-md-4 form-group">
-
-                                 @if($date!=date('Y-m-d'))
-                                     <a href="{{route('admin.attendances.create')}}" data-loading-text="Redirecting..." class="demo-loading-btn btn green">
-                                        Mark Todays Attendance <i class="fa fa-plus"></i>
-                                     </a>
-                                @endif
-
-
-                                </div>
-                                 <div class="col-md-4 form-group text-right">
-
-								<span id="load_notification"></span>
- 									 <input  type="checkbox"   onchange="ToggleEmailNotification('attendance_notification');return false;" class="make-switch" name="attendance_notification" @if($setting->attendance_notification==1)checked	@endif data-on-color="success" data-on-text="Yes" data-off-text="No" data-off-color="danger">
-									<strong>Email Notification</strong><br>
-
-
-								</div>
-
-
-
-                   </div>
 
                 <hr>
 					<div class="portlet box blue">
