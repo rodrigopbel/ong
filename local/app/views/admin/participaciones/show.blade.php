@@ -29,9 +29,9 @@
 						<a href="{{ route('admin.participaciones.index') }}">Attendance</a>
                         <i class="fa fa-angle-right"></i>
 					</li>
-					<li>{{dd("ssss")}}
+					<li>
                         <a href="#">{{$participantes->descripcion}}</a>
-
+                        {{dd("ssss")}}
                     </li>
 
 				</ul>
