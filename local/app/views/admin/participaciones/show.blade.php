@@ -14,7 +14,6 @@
 
 @section('mainarea')
 
-{{dd($partipantes)}}
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 			{{$pageTitle}}
