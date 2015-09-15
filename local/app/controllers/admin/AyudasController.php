@@ -80,6 +80,7 @@ class AyudasController extends \AdminBaseController {
             'gastos'         => $input['gastos']
 
         ]);
+        dd("entro aqui");
         $donacion = Donacion::where('aportanteID','=',$input['personalID'])->get()->first();
 
         Saldo::create([
