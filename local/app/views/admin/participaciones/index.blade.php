@@ -76,7 +76,7 @@
                                 <td> {{ $act->actividadID }} </td>
                                 <td class="">
                                     <a class="btn purple"
-                                       href="{{route('admin.participaciones.show',$act->id) }}">
+                                       href="{{route('admin.participaciones.edit',$act->id) }}">
                                         <i class="fa fa-eye"></i> Agregar Asistentes
                                     </a>
                                 </td>
