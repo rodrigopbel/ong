@@ -84,9 +84,10 @@
 
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Lugar: </label>
-
+                                            <div class="col-md-6">
                                             <div class="col-md-6">
                                                 <input type="text" class="form-control" name="lugar"  value="{{ $actividad->lugar }}">
+                                            </div>
                                             </div>
                                         </div>
 
