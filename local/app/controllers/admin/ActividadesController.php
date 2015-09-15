@@ -44,7 +44,7 @@ class ActividadesController extends \AdminBaseController {
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripcion}}\',\'{{ $lugar }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
 
-            ->remove_column('created_at')
+//            ->remove_column('created_at')
             ->make();
     }
 
