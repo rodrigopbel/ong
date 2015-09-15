@@ -183,10 +183,11 @@ class ParticipacionesController extends \AdminBaseController {
     {
 
         $input = Input::all();
-        $participacion = new Participacion;
+
         $vols = $input['checkbox'];
         foreach($vols as $index => $value)
         {
+                $participacion = new Participacion;
                 $participacion->actividadID  = $input['idActividad'];
                 $participacion->voluntarioID = $index;
                 $participacion->save() ;
