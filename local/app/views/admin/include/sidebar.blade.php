@@ -191,7 +191,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="{{ $saldosActive or ''}}">
-                            <a href="{{route('admin.donaciones.index')}}">
+                            <a href="{{route('admin.saldos.index')}}">
                                 <i class="fa  fa-gift"></i>
                                 {{Lang::get('menu.saldosList')}}</a>
                         </li>
