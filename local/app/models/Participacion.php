@@ -10,7 +10,10 @@ class Participacion extends Eloquent  {
 
     protected $table="participaciones";
 
-
+    public function voluntarios()
+    {
+        return $this->hasMany('Personal','voluntarioID','personalID');
+    }
 
 
 }

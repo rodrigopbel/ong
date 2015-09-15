@@ -72,7 +72,13 @@
                             <tr id="row{{ $act->id }}">
                                 <td> {{ $act->id }}</td>
                                 <td> {{ $act->descripcion }}</td>
-                                <td> {{ $act->voluntarioID }}</td>
+                                <td>
+                                    @foreach($participaciones as $par)
+                                    <ul>
+                                        <li>{{$par->voluntarios->nombres}}</li>
+                                    </ul>
+                                    @endforeach
+                                </td>
                                 <td> {{ $act->actividadID }} </td>
                                 <td class="">
                                     <a class="btn purple"
