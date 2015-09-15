@@ -61,7 +61,7 @@ class ActividadesController extends \AdminBaseController {
     }
 
     /**
-     * Store a newly created award in storage.
+     * Store a newly created  in storage.
      */
 
     public function store()
@@ -86,7 +86,7 @@ class ActividadesController extends \AdminBaseController {
             'action'      => 'Create',
             'description' => 'Creacion '. $input['descripcion'],
             'details'     => 'Usuario: '. Auth::admin()->get()->name,
-            'updated'     => $input['fechaAct'] ? true : false
+            'updated'     => $input['descripcion'] ? true : false
         ]);
 
 
@@ -96,7 +96,7 @@ class ActividadesController extends \AdminBaseController {
 
 
     /**
-     * Show the form for editing the specified award.
+     * Show the form for editing the specified .
      *
      * @param  int  $id
      * @return Response
@@ -114,7 +114,7 @@ class ActividadesController extends \AdminBaseController {
     }
 
     /**
-     * Update the specified award in storage.
+     * Update the specified  in storage.
      *
      * @param  int  $id
      * @return Response
@@ -132,7 +132,7 @@ class ActividadesController extends \AdminBaseController {
 
         $actividad->update([
 
-            'fechaAct'       => date('Y-m-d',strtotime(Input::get('fechaAct')));
+            'fechaAct'       => (trim(Input::get('fechaAct'))!='')?date('Y-m-d',strtotime(Input::get('fechaAct'))):null,
             'descripcion'    => $data['descripcion'],
             'lugar'          => $data['lugar']
         ]);
@@ -151,7 +151,7 @@ class ActividadesController extends \AdminBaseController {
     }
 
     /**
-     * Remove the specified award from storage.
+     * Remove the specified  from storage.
      *
      * @param  int  $id
      * @return Response
