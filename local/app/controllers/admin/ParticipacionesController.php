@@ -185,14 +185,14 @@ class ParticipacionesController extends \AdminBaseController {
         $input = Input::all();
         $participacion = new Participacion;
         $participacion->actividadID     = $input['idActividad'];
-        dd ($input);
-        foreach($input['participantes'] as $index => $value)
+//        dd ($input);
+        foreach($input['checkbox'] as $index => $value)
         {
-            echo $value;
-            echo '<br>------------';
+            $participacion->voluntarioID = $index;
 //            $participacion->voluntarioID  = (isset($input['checkbox'][$par])=='on')?$par:null;
         }
-//        $participacion->save() ;
+        $participacion->save() ;
+        echo "guardado con exito";
 //        dd("si se pudo");
     }
 	/**
