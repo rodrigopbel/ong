@@ -69,7 +69,7 @@
 							<thead>
 							<tr>
 								<th> ActividadID </th>
-								<th> Fecha </th>
+								<th> Fecha Actividad </th>
 								<th> Actividad</th>
 								<th> Lugar </th>
                                 <th> Fecha Creacion </th>
