@@ -42,13 +42,13 @@ class ParticipacionesController extends \AdminBaseController {
 	}
     public function show($id)
     {
-        $rpm =  Participacion::where('actividadID','=',$id)
-                ->join('actividades','participaciones.actividadID','=','actividades.id')
-                ->join('personal','participaciones.voluntarioID','=','personal.personalID')
-                ->select('actividades.descripcion','personal.nombres','email','telefono')
-                  ->get();
-        echo ($rpm);
-//        return Datatables::of($rpm);
+        $this->data['partipantes']  =  Participacion::where('actividadID','=',$id)
+                                    ->join('actividades','participaciones.actividadID','=','actividades.id')
+                                    ->join('personal','participaciones.voluntarioID','=','personal.personalID')
+                                    ->select('actividades.descripcion','personal.nombres','email','telefono')
+                                      ->get();
+        return View::make('admin.participaciones.show', $this->data);
+
     }
 
 	/**
