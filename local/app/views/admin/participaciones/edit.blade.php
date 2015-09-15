@@ -6,16 +6,12 @@
     {{HTML::style("assets/global/plugins/bootstrap-datepicker/css/datepicker3.css")}}
     <!-- BEGIN THEME STYLES -->
 @stop
-{{dd($actividad)}}
-{{dd($voluntarios)}}
-
-
 @section('mainarea')
-{{--{{dd("hola  atodos")}};--}}
+    {{--{{dd("hola  atodos")}};--}}
 
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
-       Participantes en Actividad
+        Participantes en Actividad
     </h3>
     <div class="page-bar">
         <ul class="page-breadcrumb">
@@ -50,61 +46,62 @@
 
                     <div class="portlet-body form">
 
-                                    <!-- BEGIN FORM-->
-                            {{Form::open(['route'=>["admin.partipaciones.update",$actividad->id],'class'=>'form-horizontal','method'=>'PATCH'])}}
+                        <!-- BEGIN FORM-->
+                        {{Form::open(['route'=>["admin.partipaciones.update",$actividad->id],'class'=>'form-horizontal','method'=>'PATCH'])}}
 
 
-                            <div class="form-body">
+                        <div class="form-body">
 
-                                <h3 class="form-section">Date  {{date('d-M-Y',strtotime($actividad->created_at))}}</h3>
+                            <div class="form-group">
 
-                                <div class="form-group">
-
-                                    <label class="col-md-1 control-group">EmployeeID</label>
-                                    <label class="col-md-2 control-group">Name</label>
-                                    <label class="col-md-2 control-group">Status </label>
-
-                                </div>
-
-                                @foreach($voluntarios as $vol)
-                                    <div class="form-group">
-                                        <label class="col-md-1 control-group">{{$vol->personalID}} </label>
-                                        <label class="col-md-2 control-group">{{$vol->nombres}} {{$vol->apellidos}} </label>
-
-                                        <div class="col-md-2">
-                                            <input type="checkbox" id="checkbox{{$vol->personalID}}"
-                                                   onchange="showHide('{{$vol->personalID}}');return false;"
-                                                   class="make-switch" name="checkbox[{{$vol->personalID}}]"
-                                                   checked data-on-color="success" data-on-text="P" data-off-text="A"
-                                                   data-off-color="danger">
-                                            <input type="hidden" name="employees[]" value="{{$vol->personalID}}">
-                                        </div>
-
-
-                                    </div>
-                                @endforeach
-
-                                <div class="form-actions">
-                                    <div class="row">
-                                        <div class="col-md-offset-3 col-md-9">
-                                            <button type="submit" data-loading-text="Submitting..."
-                                                    class="demo-loading-btn btn green"><i class="fa fa-edit"></i> Submit
-                                            </button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                {{ Form::close() }}
-
-
-                                        <!-- END FORM-->
+                                <label class="col-md-1 control-group">Voluntario ID</label>
+                                <label class="col-md-2 control-group">Nombre</label>
+                                <label class="col-md-2 control-group">Estado </label>
 
                             </div>
+
+                            @foreach($voluntarios as $vol)
+                                <div class="form-group">
+                                    <label class="col-md-1 control-group">{{$vol->personalID}} </label>
+                                    <label class="col-md-2 control-group">{{$vol->nombres}} {{$vol->apellidos}} </label>
+
+                                    <div class="col-md-2">
+                                        <input type="checkbox" id="checkbox{{$vol->personalID}}"
+                                               onchange="showHide('{{$vol->personalID}}');return false;"
+                                               class="make-switch" name="checkbox[{{$vol->personalID}}]"
+                                               checked data-on-color="success" data-on-text="P" data-off-text="A"
+                                               data-off-color="danger">
+                                        <input type="hidden" name="employees[]" value="{{$vol->personalID}}">
+                                    </div>
+
+
+                                </div>
+                            @endforeach
+
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button type="submit" data-loading-text="Submitting..."
+                                                class="demo-loading-btn btn green"><i class="fa fa-edit"></i> Guardar
+                                            Participantes
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            {{ Form::close() }}
+
+
+                            <!-- END FORM-->
+
+                        </div>
                     </div>
                     <!-- END EXAMPLE TABLE PORTLET-->
 
                 </div>
             </div>
+    </div>
             <!-- END PAGE CONTENT-->
 
 
@@ -119,12 +116,4 @@
                 {{HTML::script("assets/admin/pages/scripts/components-pickers.js")}}
 
                 <!-- END PAGE LEVEL PLUGINS -->
-
-                <script>
-                    jQuery(document).ready(function () {
-                        ComponentsPickers.init();
-
-                    });
-                </script>
-
-            @stop
+@stop
