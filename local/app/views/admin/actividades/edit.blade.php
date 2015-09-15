@@ -199,34 +199,7 @@
                             });
                         }
 
-                        function del(id,type)
-                        {
 
-                            var alert_div   =   '#alert_company';
-                            $('#deleteModal').appendTo("body").modal('show');
-                            $('#info').html('Eliminar  <strong>'+type+'</strong> Donacion??.');
-                            $("#delete").click(function()
-                            {
-                                var url = "{{ route('admin.salary.destroy',':id') }}";
-                                url = url.replace(':id',id);
-                                $.ajax({
-
-                                    type: "DELETE",
-                                    url : url,
-                                    dataType: 'json',
-                                    data: {"id":id}
-
-                                }).done(function(response)
-                                {
-                                    if(response.success == "deleted")
-                                    {
-                                        $('#deleteModal').modal('hide');
-                                        $('#salary'+id).remove();
-                                        $(alert_div).html('<div class="alert alert-success alert-dismissable"><button class="close" data-close="alert"></button><span class="fa fa-check"></span> '+response.msg+'</div>');
-                                    }
-                                });
-                            })
-                        }
 
                         function remove_exit()
                         {
