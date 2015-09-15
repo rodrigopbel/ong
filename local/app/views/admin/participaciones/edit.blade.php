@@ -42,7 +42,7 @@
 
                 <hr>
                 <div class="portlet box blue">
-
+        <h2>{{$actividad->id }} - {{$actividad->created_at}} - {{$actividad->descripcion}}</h2>
                     <div class="portlet-body form">
 
                         <!-- BEGIN FORM-->
@@ -50,7 +50,7 @@
 
 
                         <div class="form-body">
-                            {{$actividad->id }} - {{$actividad->created_at}} - {{$actividad->descripcion}}
+
                             <div class="form-group">
 
                                 <label class="col-md-1 control-group">Voluntario ID</label>
