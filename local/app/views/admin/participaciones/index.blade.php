@@ -79,6 +79,10 @@
                                        href="{{route('admin.participaciones.edit',$act->id) }}">
                                         <i class="fa fa-eye"></i> Agregar Asistentes
                                     </a>
+                                    <a class="btn purple"
+                                       href="{{route('admin.participaciones.show',$act->id) }}">
+                                        <i class="fa fa-eye"></i> Ver Reporte
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
