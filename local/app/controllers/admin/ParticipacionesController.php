@@ -184,21 +184,14 @@ class ParticipacionesController extends \AdminBaseController {
 
         $input = Input::all();
         $participacion = new Participacion;
+        $vols = $input['checkbox'];
+        foreach($vols as $index => $value)
+        {
+                $participacion->actividadID  = $input['idActividad'];
+                $participacion->voluntarioID = $vols[$index];
 
-//        dd ($input['checkbox']);
-        $p = array_flip($input['checkbox']);
-        dd($p);
-//        foreach($input['checkbox'] as $index => $value)
-//        {
-//            $id = $index;
-//
-//            if($value == 'on')
-//            {
-//                $participacion->actividadID  = $input['idActividad'];
-//                $participacion->voluntarioID = $index;
-//            }
-////            $participacion->voluntarioID  = (isset($input['checkbox'][$par])=='on')?$par:null;
-//        }
+//            $participacion->voluntarioID  = (isset($input['checkbox'][$par])=='on')?$par:null;
+        }
         $participacion->save() ;
         echo "guardado con exito";
 //        dd("si se pudo");
