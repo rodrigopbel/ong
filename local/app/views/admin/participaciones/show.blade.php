@@ -1,17 +1,12 @@
 @extends('admin.adminlayouts.adminlayout')
-
 @section('head')
-
     <!-- BEGIN PAGE LEVEL STYLES -->
         {{HTML::style("assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css")}}
         {{HTML::style("assets/global/plugins/select2/select2.css")}}
         {{HTML::style("assets/global/plugins/jquery-multi-select/css/multi-select.css")}}
         {{HTML::style("assets/global/plugins/fullcalendar/fullcalendar.min.css")}}
     <!-- BEGIN THEME STYLES -->
-
 @stop
-
-
 @section('mainarea')
 
 			<!-- BEGIN PAGE HEADER-->
