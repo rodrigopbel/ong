@@ -42,14 +42,13 @@
 
                 <hr>
                 <h2>{{$actividad->id }} - {{$actividad->act}} - {{$actividad->descripcion}}</h2>
-                <input type="hidden" name="idActividad" value="{{$actividad->id}}"/>
+
                 <div class="portlet box blue">
 
                     <div class="portlet-body form">
 
                         <!-- BEGIN FORM-->
                         {{Form::open(array('route'=>"admin.participaciones.store",'class'=>'form-horizontal'))}}
-
 
                         <div class="form-body">
 
@@ -73,6 +72,7 @@
                                                checked data-on-color="success" data-on-text="P" data-off-text="A"
                                                data-off-color="danger">
                                         <input type="hidden" name="participantes[]" value="{{$vol->personalID}}">
+                                        <input type="hidden" name="idActividad" value="{{$actividad->id}}"/>
                                     </div>
 
 

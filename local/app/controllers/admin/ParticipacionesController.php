@@ -182,6 +182,14 @@ class ParticipacionesController extends \AdminBaseController {
     public function store()
     {
         dd(Input::all());
+        $input = Input::all();
+        $participacion = new Participacion;
+        $participacion->actividadID     = $input['idActividad'];
+        foreach($input['participantes'] as $par)
+        {
+            $participacion->voluntarioID  = (isset($input['checkbox'][$par])=='on')?$par:null;
+        }
+        $participacion->save() ;
     }
 	/**
 	 * Remove the specified attendance from storage.
