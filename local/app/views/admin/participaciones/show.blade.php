@@ -14,7 +14,7 @@
 
 @section('mainarea')
 
-
+{{$participantes}}
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 			{{$pageTitle}}
@@ -109,60 +109,4 @@
         {{HTML::script("assets/global/plugins/moment.min.js")}}
         {{HTML::script("assets/global/plugins/fullcalendar/fullcalendar.min.js")}}
 
-
-        <!-- END PAGE LEVEL PLUGINS -->
-<script>
-jQuery(document).ready(function() {
-
-   Calendar.init();
-   showReport();
-   UIBlockUI.init();
-   ComponentsDropdowns.init();
-
-});
-
-
-function changeMonthYear(){
-    var month         =   $("#monthSelect").val();
-    var year          =   $("#yearSelect").val();
-    $('#calendar').fullCalendar( 'gotoDate', year+'-'+month+'-01' );
-    showReport();
-
-
-}
-
-function showReport(){
-
-        Metronic.startPageLoading({animate: true});
-
-            window.setTimeout(function() {
-                Metronic.stopPageLoading();
-            }, 1000);
-
-    var month        =   $("#monthSelect").val();
-    var year         =   $("#yearSelect").val();
-    var employeeID   =   $("#changeEmployee").val();
-
-	var url = "{{ route('admin.attendance.report',':id') }}";
-					url = url.replace(':id',employeeID);
-    $.ajax({
-            type: "GET",
-            url : url,
-            dataType: 'json',
-            data: {"month":month,"year":year,"employeeID":employeeID}
-
-            }).done(function(response)
-              {
-
-                 if(response.success == "success")
-                 {
-
-                        $('#attendanceReport').html(response.presentByWorking);
-                        $('#attendancePerReport').html(response.attendancePerReport);
-
-                 }
-             });
-}
-//Function to redirect to the employees page
-</script>
 @stop
