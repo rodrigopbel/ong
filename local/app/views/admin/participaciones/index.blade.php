@@ -59,10 +59,11 @@
                     <table class="table table-striped table-bordered table-hover" id="sample_2">
                         <thead>
                         <tr>
-                            <th> VoluntarioID</th>
+
                             <th> ActividadID</th>
-                            <th> Nombre Voluntario</th>
-                            <th> Telefono Voluntario</th>
+                            <th> Descripcion</th>
+                            <th> Lugar</th>
+                            <th> Fecha</th>
                             <th> Accion</th>
                         </tr>
                         </thead>
@@ -70,14 +71,15 @@
 
                         @foreach ($actividades as $act)
                             <tr id="row{{ $act->id }}">
-                               <td> {{ $act->id }}</td>
-                                <td> {{ $act->actividadID }} </td>
-                                <td> {{ $act->nombreVoluntario }} </td>
-                                <td> {{ $act->telefonoVoluntario }} </td>
+
+                                <td> {{ $act->id }} </td>
+                                <td> {{ $act->descripcion }} </td>
+                                <td> {{ $act->lugar}} </td>
+                                <td> {{ $act->created_at}} </td>
                                 <td class="">
                                     <a class="btn purple"
                                        href="{{route('admin.participaciones.edit',$act->id) }}">
-                                        <i class="fa fa-eye"></i> Agregar Asistentes
+                                        <i class="fa fa-eye"></i> Llamar Lista
                                     </a>
                                     <a class="btn purple"
                                        href="{{route('admin.participaciones.show',$act->id) }}">

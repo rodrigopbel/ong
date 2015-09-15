@@ -85,6 +85,8 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     //  Participaciones Routing
     Route::resource('participaciones', 'ParticipacionesController',['as' => 'admin']);
 
+    // Saldos Routing
+    Route::resource('saldos','SaldosController',['as' => 'admin']);
     // Reportes Routing
     Route::get('ajax_reportes/',['as'=>'admin.ajax_reportes','uses'=> 'ReportsController@ajax_reportes']);
     Route::resource('reportes','ReportsController',['as'=>'admin']);
