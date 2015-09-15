@@ -42,7 +42,7 @@ class ParticipacionesController extends \AdminBaseController {
 	}
     public function show($id)
     {
-        $this->data['partipantes']  =  Participacion::where('actividadID','=',$id)
+        $this->data['participantes']  =  Participacion::where('actividadID','=',$id)
                                     ->join('actividades','participaciones.actividadID','=','actividades.id')
                                     ->join('personal','participaciones.voluntarioID','=','personal.personalID')
                                     ->select('actividades.descripcion','personal.nombres','email','telefono')
