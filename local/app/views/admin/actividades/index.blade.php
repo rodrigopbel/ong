@@ -76,8 +76,6 @@
 								<th> Lista de Voluntarios </th>
 
 
-
-
 								<th> Accion </th>
 							</tr>
 							</thead>
