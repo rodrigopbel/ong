@@ -26,9 +26,11 @@ class AyudasController extends \AdminBaseController {
     {
 
 	    $result =
-		    Ayuda::select('ayudas.id','beneficiarios.beneficiarioID','apellidos','requerimiento','centroSalud','nit','numfactura','gastos','ayudas.created_at')
-		      ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
-			  ->orderBy('ayudas.created_at','desc');
+            Ayuda::select('ayudas.id','beneficiarios.apellidos','personal.apellidos','requerimiento','nit','gastos','ayudas.created_at')
+                ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
+                ->join('personal', 'ayudas.aportanteID', '=', 'personal.personalID')
+                ->orderBy('ayudas.created_at','desc');
+
 
         return Datatables::of($result)
             ->add_column('Por el Mes',function($row) {
