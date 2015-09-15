@@ -42,8 +42,13 @@ class ParticipacionesController extends \AdminBaseController {
 	}
     public function show($id)
     {
-        dd("entro aqui");
-	}
+        $rpm =  Participacion::select()
+                ->join('actividades','participaciones.actividadID','=','actividades.id')
+                ->join('personal','participaciones.voluntarioID','=','personal.personalID')
+                ->where('participacion.actividadID','=',$id)
+                ->get();
+        dd($rpm);
+    }
 
 	/**
 	 * Show the form for editing the specified attendance.
