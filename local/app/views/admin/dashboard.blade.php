@@ -165,8 +165,9 @@
                 function del(id, name) {
                     $('#deleteModal').appendTo("body").modal('show');
                     $('#info').html('Eliminar al Administrador : <strong>' + name + '</strong> ??');
+                    console.log("ads");
                     $("#delete").click(function () {
-
+                        console.log('236516');
                         var url = "{{ route('admin.dashboard.destroy',':id') }}";
                         url = url.replace(':id', id);
 
@@ -178,11 +179,12 @@
 
                         }).done(function (response) {
 
-                            if (response.success == "deleted") {
-                                $("html, body").animate({scrollTop: 0}, "slow");
+                            if (response.success == "deleted")
+                            {
+                                $("html, body").animate({ scrollTop: 0 }, "slow");
                                 $('#deleteModal').modal('hide');
-                                $('#row' + id).closest('tr').remove();
-                                $('#load').html("<p class='alert alert-success text-center'><strong>" + name + "</strong> Eliminado correctamente</p>");
+                                $('#row'+id).fadeOut(500);
+                                $('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Eliminada exitosamente!</p>");
                             }
                         });
                     })
