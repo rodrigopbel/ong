@@ -83,7 +83,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Nombre del Aportante:</label>
+                                            <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
 
                                             <div class="col-md-8">
                                                 {{--VEerificar los aportantes q estan en donaciones--}}
