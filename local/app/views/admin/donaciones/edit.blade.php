@@ -87,7 +87,7 @@
 
                                             <div class="col-md-8">
                                                 {{--VEerificar los aportantes q estan en donaciones--}}
-                                                {{ Form::select('beneficiarioID',$beneficiaios ,$donacion->beneficiarioID,['class'=>'form-control input-xlarge select2me']) }}
+                                                {{ Form::select('beneficiarioID',$beneficiarios ,$donacion->beneficiarioID,['class'=>'form-control input-xlarge select2me']) }}
 
                                             </div>
                                         </div>
