@@ -90,7 +90,7 @@ class ParticipacionesController extends \AdminBaseController {
         $vols = $input['checkbox'];
         foreach($vols as $index => $value)
         {
-                $volun = Personal::where('personalID','=',$index)->get();
+                $volun = Personal::where('personalID','=',$index)->get;
                 $participacion = new Participacion;
                 $participacion->actividadID  = $input['idActividad'];
                 $participacion->voluntarioID = $index;
