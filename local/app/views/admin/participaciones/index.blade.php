@@ -68,7 +68,7 @@
                         </thead>
                         <tbody>
 
-                        @foreach ($participantes as $act)
+                        @foreach ($actividades as $act)
                             <tr id="row{{ $act->id }}">
                                <td> {{ $act->voluntarioID }}</td>
                                 <td> {{ $act->actividadID }} </td>
