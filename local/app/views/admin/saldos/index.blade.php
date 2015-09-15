@@ -33,7 +33,7 @@
         </ul>
 
     </div>
-    {{dd("dssds")}}
+
     <!-- END PAGE HEADER-->
     <!-- BEGIN PAGE CONTENT-->
 
@@ -49,7 +49,7 @@
             </div>
             <hr>
             <div class="portlet box blue">
-
+                {{dd("dsdsdsdsdsd")}}
                 <div class="portlet-title">
                     <div class="caption">
                         <i class="fa fa-users"></i>Lista de Saldos
