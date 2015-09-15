@@ -14,7 +14,7 @@
 
 @section('mainarea')
 
-{{dd($participantes)}}
+{{dd($partipantes)}}
 			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
 			{{$pageTitle}}
@@ -31,7 +31,7 @@
                         <i class="fa fa-angle-right"></i>
 					</li>
 					<li>
-                        <a href="#">{{$participantes->descripcion}}</a>
+                        <a href="#">{{$partipantes->descripcion}}</a>
 
                     </li>
 
@@ -72,7 +72,7 @@
                                                 </thead>
                                                 <tbody>
 
-                                                @foreach ($participantes as $part)
+                                                @foreach ($partipantes as $part)
                                                     <tr id="row{{ $part->id }}">
                                                         <td> {{ $part->descripcion }}</td>
                                                         <td> {{ $part->nombres }} </td>
