@@ -46,7 +46,7 @@
                     <div class="portlet-body form">
 
                         <!-- BEGIN FORM-->
-                        {{Form::open(['route'=>["admin.partipaciones.store",$actividad->id],'class'=>'form-horizontal','method'=>'PATCH'])}}
+                        {{Form::open(['route'=>["admin.partipaciones.store"],'class'=>'form-horizontal','method'=>'PATCH'])}}
 
                         {{dd("adsadsdas")}}
 

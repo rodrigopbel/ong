@@ -179,7 +179,7 @@ class ParticipacionesController extends \AdminBaseController {
 
     }
 
-    public function store($id)
+    public function store()
     {
         dd(Input::all());
     }
