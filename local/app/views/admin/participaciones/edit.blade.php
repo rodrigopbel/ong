@@ -43,12 +43,12 @@
                 <hr>
                 <div class="portlet box blue">
 
-                    {{dd("formulario")}}
                     <div class="portlet-body form">
 
                         <!-- BEGIN FORM-->
                         {{Form::open(['route'=>["admin.partipaciones.update",$actividad->id],'class'=>'form-horizontal','method'=>'PATCH'])}}
 
+                        {{dd("adsadsdas")}}
 
                         <div class="form-body">
 
