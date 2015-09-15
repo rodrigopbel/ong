@@ -185,9 +185,10 @@ class ParticipacionesController extends \AdminBaseController {
         $input = Input::all();
         $participacion = new Participacion;
 
-//        dd ($input);
+        dd ($input['checkbox']);
         foreach($input['checkbox'] as $index => $value)
         {
+
             if($value == 'on')
             {
                 $participacion->actividadID  = $input['idActividad'];
