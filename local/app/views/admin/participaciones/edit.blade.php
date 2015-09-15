@@ -47,40 +47,10 @@
 
                 <hr>
                 <div class="portlet box blue">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <i class="fa fa-edit"></i>
-                            @if(isset($todays_holidays->date))
-                                Holiday , {{date('d M Y',strtotime($todays_holidays->date))}}
-                            @else
-                                Mark Attendance
-                            @endif
-                        </div>
-                        <div class="tools">
-                        </div>
-                    </div>
+
 
                     <div class="portlet-body form">
 
-                        @if(isset($todays_holidays->date))
-                            <div class="note note-info">
-                                <h4 class="block">{{date('D', strtotime($todays_holidays->date))}}</h4>
-
-                                <p>
-                                    Holiday on the occassion of {{ $todays_holidays->occassion }}
-                                </p>
-                            </div>
-                        @elseif(count($employees)==0)
-                            <hr>
-                            <div class="note note-warning">
-                                <h4 class="block">Employees Missing</h4>
-
-                                <p>
-                                    Please add some employees to the database
-                                </p>
-                            </div>
-                            <hr>
-                            @else
                                     <!-- BEGIN FORM-->
                             {{Form::open(['route'=>["admin.partipaciones.update",$date],'class'=>'form-horizontal','method'=>'PATCH'])}}
 
@@ -151,7 +121,7 @@
                                 </div>
                                 {{ Form::close() }}
 
-                                @endif
+
                                         <!-- END FORM-->
 
                             </div>
