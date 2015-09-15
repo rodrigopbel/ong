@@ -49,7 +49,7 @@
             </div>
             <hr>
             <div class="portlet box blue">
-                {{dd("dsdsdsdsdsd")}}
+
                 <div class="portlet-title">
                     <div class="caption">
                         <i class="fa fa-users"></i>Lista de Saldos
@@ -76,7 +76,7 @@
                         @foreach ($saldos as $saldo)
                             <tr id="row{{ $saldo->id }}">
 
-                                <td> {{ $saldoct->id }} </td>
+                                <td> {{ $saldo->id }} </td>
                                 <td> {{ $saldo->donacionesID }} </td>
                                 <td> {{ $saldo->ayudasID}} </td>
                                 <td> {{ $saldo->donacion}} </td>
