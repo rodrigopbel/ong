@@ -26,22 +26,20 @@ class AyudasController extends \AdminBaseController {
     {
 
 	    $result =
-            Ayuda::select('ayudas.id','beneficiarios.apellidos','personal.apellidos','requerimiento','nit','gastos','ayudas.created_at')
+            Ayuda::select('ayudas.id','beneficiarios.apellidos','personal.nombres','requerimiento','nit','gastos','ayudas.created_at')
                 ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
                 ->join('personal', 'ayudas.aportanteID', '=', 'personal.personalID')
                 ->orderBy('ayudas.created_at','desc');
 
 
         return Datatables::of($result)
-            ->add_column('Por el Mes',function($row) {
-                return ucfirst($row->created_at);
-            })
+
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.ayudas.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $apellidos}}\',\'{{ $requerimiento }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
 
-            ->remove_column('created_at')
+//            ->remove_column('created_at')
             ->make();
     }
 
