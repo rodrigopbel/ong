@@ -69,7 +69,6 @@
                         <thead>
                         <tr>
                             <th> AyudaID </th>
-                            <th> AyudaID </th>
                             <th> Apellido Beneficiario</th>
                             <th> Nombre Aportante</th>
                             <th> Requerimiento</th>
@@ -83,7 +82,6 @@
                         </thead>
                         <tbody>
                         <tr >
-                            <td>{{-- Hidden ID --}}</td>
                             <td>{{-- Hidden ID --}}</td>
                             <td>{{-- Apellido Beneficiario --}}</td>
                             <td>{{-- Nombre Aportante --}}</td>
@@ -136,7 +134,6 @@
             "aaSorting": [[ 1, "asc" ]],
             "aoColumns": [
                 { 'sClass': 'center', "bSortable": true  },
-                { 'sClass': 'center', "bSortable": true },
                 { 'sClass': 'center', "bSortable": true },
                 { 'sClass': 'center', "bSortable": true },
                 { 'sClass': 'center', "bSortable": true },
