@@ -52,12 +52,12 @@
                     <div class="portlet-body form">
 
                                     <!-- BEGIN FORM-->
-                            {{Form::open(['route'=>["admin.partipaciones.update",$date],'class'=>'form-horizontal','method'=>'PATCH'])}}
+                            {{Form::open(['route'=>["admin.partipaciones.update",$vol->created_at],'class'=>'form-horizontal','method'=>'PATCH'])}}
 
 
                             <div class="form-body">
 
-                                <h3 class="form-section">Date  {{date('d-M-Y',strtotime($date))}}</h3>
+                                <h3 class="form-section">Date  {{date('d-M-Y',strtotime($vol->created_at))}}</h3>
 
                                 <div class="form-group">
 
@@ -86,26 +86,8 @@
                                                    data-off-color="danger">
                                             <input type="hidden" name="employees[]" value="{{$vol->personalID}}">
                                         </div>
-                                        <div class="col-md-2">
-                                            @if(isset($attendanceArray[$employee->employeeID]['leaveType']))
-                                                {{ Form::select('leaveType['.$employee->employeeID.']', $leaveTypes,$attendanceArray[$employee->employeeID]['leaveType'],['class' => 'form-control leaveType','onchange'=>'halfDayToggle('.$employee->employeeID.',this.value)','id'=>'leaveType'.$employee->employeeID.''] ) }}
-                                            @else
-                                                {{ Form::select('leaveType['.$employee->employeeID.']', $leaveTypes,null,['class' => 'form-control leaveType','onchange'=>'halfDayToggle('.$employee->employeeID.',this.value)','id'=>'leaveType'.$employee->employeeID.''] ) }}
-                                            @endif
-                                        </div>
-                                        <div class="col-md-2">
-                                            @if(isset($attendanceArray[$employee->employeeID]['leaveType']))
-                                                {{ Form::select('leaveTypeWithoutHalfDay['.$employee->employeeID.']', $leaveTypeWithoutHalfDay,$attendanceArray[$employee->employeeID]['halfDayType'],['class' => 'form-control halfLeaveType','id'=>'halfLeaveType'.$employee->employeeID.''] ) }}
-                                            @else
-                                                {{ Form::select('leaveTypeWithoutHalfDay['.$employee->employeeID.']', $leaveTypeWithoutHalfDay,null,['class' => 'form-control halfLeaveType','id'=>'halfLeaveType'.$employee->employeeID.''] ) }}
-                                            @endif
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input type="text" class="form-control reason"
-                                                   id="reason{{$employee->employeeID}}"
-                                                   name="reason[{{$employee->employeeID}}]" placeholder="Absent Reason"
-                                                   value="{{ $attendanceArray[$employee->employeeID]['reason'] or ''}}">
-                                        </div>
+
+
                                     </div>
                                 @endforeach
 
