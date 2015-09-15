@@ -72,9 +72,9 @@
 								<th> Fecha </th>
 								<th> Actividad</th>
 								<th> Lugar </th>
-								<th> Lista de Voluntarios </th>
-								<th> Participantes </th>
                                 <th> Fecha Creacion </th>
+								<th> Lista de Voluntarios </th>
+
 
 
 
@@ -87,9 +87,9 @@
                                 <td>{{-- Fecha --}}</td>
                                 <td>{{-- Actividad --}}</td>
                                 <td>{{-- Lugar --}} </td>
-                                <td>{{-- Lista de Voluntarios --}}</td>
-                                <td>{{-- Participantes --}}</td>
                                 <td>{{-- Fecha Creacion --}}</td>
+                                <td>{{-- Lista de Voluntarios --}}</td>
+
 
                                 <td>{{-- Action --}} </td>
                             </tr>
@@ -155,7 +155,6 @@
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": true },
-                            { 'sClass': 'center', "bSortable": true },
                             { 'sClass': 'center', "bSortable": false }
 
 
@@ -192,7 +191,7 @@
 			$('#info').html('Esta seguro de Eliminar <strong>'+actividad+'</strong> dado a <strong>'+ayudaaName+'</strong>??');
 			$("#delete").click(function()
 			{
-					var url = "{{ route('admin.ayudas.destroy',':id') }}";
+					var url = "{{ route('admin.actividades.destroy',':id') }}";
 					url = url.replace(':id',id);
 					 $.ajax({
 

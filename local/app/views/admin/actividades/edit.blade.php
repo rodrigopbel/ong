@@ -55,7 +55,7 @@
 
 						<div class="portlet-body form">
 						<!------------------------ BEGIN FORM---------------------->
-						{{ Form::model($actividad, ['method' => 'PATCH', 'route' => ['admin.ayudas.update', $actividad->id],'class'=>'form-horizontal form-bordered']) }}
+						{{ Form::model($actividad, ['method' => 'PATCH', 'route' => ['admin.actividades.update', $actividad->id],'class'=>'form-horizontal form-bordered']) }}
 
                                     <div class="form-body">
 

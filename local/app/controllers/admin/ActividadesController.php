@@ -34,17 +34,17 @@ class ActividadesController extends \AdminBaseController {
             ->add_column('Por el Mes',function($row) {
                 return ucfirst($row->created_at).' '.$row->created_at;
             })
-            ->add_column('edit', '
-                        <a  class="btn purple"  href="{{ route(\'admin.actividades.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
+            ->add_column('list', '
+                        <a  class="btn purple"  href="{{ route(\'admin.actividades.edit\',$id)}}" ><i class="fa fa-cog "></i></a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripcion}}\',\'{{ $lugar }}\');return false;" class="btn red">
-                        <i class="fa fa-trash"></i></a>')
+                        <i class="fa fa-book"></i></a>')
 
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.actividades.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripcion}}\',\'{{ $lugar }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
 
-            ->remove_column('created_at')
+//            ->remove_column('created_at')
             ->make();
     }
 
