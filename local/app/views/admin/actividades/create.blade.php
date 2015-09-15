@@ -126,4 +126,31 @@
                     {{HTML::script("assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js")}}
                     {{HTML::script('assets/admin/pages/scripts/components-pickers.js')}}
 <!-- END PAGE LEVEL PLUGINS -->
+
+<script>
+    jQuery(document).ready(function() {
+
+        ComponentsPickers.init();
+        objetivos();
+
+
+
+    });
+    function objetivos(){
+
+        $.getJSON("{{ URL::to('admin/destinos/ajax_objetivos/')}}",
+                { destID: $('#destino').val() },
+                function(data) {
+                    var model = $('#objetivo');
+                    model.empty();
+                    $.each(data, function(index, element) {
+                        model.append("<option value='"+element.id+"'>" + element.objetivo + "</option>");
+                    });
+
+                });
+
+    }
+
+</script>
+
 @stop
