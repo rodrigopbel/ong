@@ -54,7 +54,7 @@
                     </div>
                     <div class="tools">
                     </div>
-                </div>
+                </div>{{dd("en la templeta")}}
 
                 <div class="portlet-body form">
                                 <!-- BEGIN FORM-->
