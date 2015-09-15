@@ -70,7 +70,7 @@
 
                         @foreach ($actividades as $act)
                             <tr id="row{{ $act->id }}">
-                               <td> {{ $act->voluntarioID }}</td>
+                               <td> {{ $act->id }}</td>
                                 <td> {{ $act->actividadID }} </td>
                                 <td> {{ $act->nombreVoluntario }} </td>
                                 <td> {{ $act->telefonoVoluntario }} </td>
@@ -78,6 +78,10 @@
                                     <a class="btn purple"
                                        href="{{route('admin.participaciones.edit',$act->id) }}">
                                         <i class="fa fa-eye"></i> Agregar Asistentes
+                                    </a>
+                                    <a class="btn purple"
+                                       href="{{route('admin.participaciones.show',$act->id) }}">
+                                        <i class="fa fa-eye"></i> Ver Reporte
                                     </a>
                                 </td>
                             </tr>

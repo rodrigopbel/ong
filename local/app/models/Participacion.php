@@ -12,7 +12,7 @@ class Participacion extends Eloquent  {
 
     public function voluntarios()
     {
-        return $this->hasMany('Personal','voluntarioID','personalID');
+        return $this->hasMany('Personal','personalID','voluntarioID');
     }
 
 

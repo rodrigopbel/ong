@@ -42,14 +42,13 @@ class ParticipacionesController extends \AdminBaseController {
 	}
     public function show($id)
     {
-        $this->data['actividad']    = Actividad::find($id);
-//        $date = (Input::get('date')!='')?Input::get('date'):date('Y-m-d');
-//        $attendance_count           = Attendance::where('date','=',$date)->count();
-
-        $this->data['voluntarios']     = Personal::where('tipoPersonal','=','Voluntario')->get();
-
-        return View::make('admin.participaciones.edit',$this->data );
-	}
+        $rpm =  Participacion::where('actividadID','=',$id)
+                ->join('actividades','participaciones.actividadID','=','actividades.id')
+                ->join('personal','participaciones.voluntarioID','=','personal.personalID')
+                ->select('personal.nombres','actividades.descripcion')
+                  ->get();
+        echo ($rpm);
+    }
 
 	/**
 	 * Show the form for editing the specified attendance.
