@@ -4,7 +4,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Personal extends Eloquent  {
+class Participacion extends Eloquent  {
 
 //    protected $fillable = [];
 
