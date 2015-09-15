@@ -188,13 +188,11 @@ class ParticipacionesController extends \AdminBaseController {
 //        dd ($input);
         foreach($input['checkbox'] as $index => $value)
         {
-            $id = $index;
-            echo $id . "---" . $value;
-
-            echo '<br>------------';
+            $participacion->voluntarioID = $index;
 //            $participacion->voluntarioID  = (isset($input['checkbox'][$par])=='on')?$par:null;
         }
-//        $participacion->save() ;
+        $participacion->save() ;
+        echo "guardado con exito";
 //        dd("si se pudo");
     }
 	/**
