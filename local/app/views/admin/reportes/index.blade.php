@@ -7,7 +7,7 @@
     <!-- END PAGE LEVEL STYLES -->
 
 @stop
-{{dd("entro aqui")}}
+
 
 @section('mainarea')
 
