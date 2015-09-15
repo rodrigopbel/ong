@@ -26,7 +26,7 @@ class ActividadesController extends \AdminBaseController {
     {
 
         $result =
-            Ayuda::select('actividades.id','fechaAct','descripcion','lugar','actividades.created_at')
+            Actividad::select('actividades.id','fechaAct','descripcion','lugar','actividades.created_at')
                 ->from( 'actividades')
                 ->orderBy('actividades.created_at','desc');
 
@@ -121,16 +121,16 @@ class ActividadesController extends \AdminBaseController {
      */
     public function update($id)
     {
-        $ayuda = Ayuda::findOrFail($id);
+        $actividad = Actividad::findOrFail($id);
 
-        $validator = Validator::make($data = Input::all(), Ayuda::$rules);
+        $validator = Validator::make($data = Input::all(), Actividad::$rules);
 
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
 
-        $ayuda->update([
+        $actividad->update([
 
             'fechaAct'       => (trim(Input::get('fechaAct'))!='')?date('Y-m-d',strtotime(Input::get('fechaAct'))):null,
             'descripcion'    => $data['descripcion'],
