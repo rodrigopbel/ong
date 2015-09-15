@@ -126,7 +126,6 @@
                     {{HTML::script('assets/admin/pages/scripts/components-pickers.js')}}
 <!-- END PAGE LEVEL PLUGINS -->
 
-
                     <script>
                         jQuery(document).ready(function() {
                             ComponentsPickers.init();
@@ -227,7 +226,6 @@
                                     }
                                 });
                             })
-
                         }
 
                         function remove_exit()
@@ -236,7 +234,6 @@
                                 $("input[name=exit_date]").val("");
                             }
                         }
-
 
                         $("input[name=exit_date]").change(function () {
                             $("input[name=status]").bootstrapSwitch('state',false);
