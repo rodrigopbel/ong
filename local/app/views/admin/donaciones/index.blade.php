@@ -64,7 +64,6 @@
                         <thead>
                         <tr>
                             <th> DonacionesID </th>
-                            <th> Aportante ID </th>
                             <th> Nombre Aportante </th>
                             <th> Monto de la donacion </th>
                             <th> Nombre Beneficiario </th>
@@ -80,7 +79,6 @@
                         <tbody>
                         <tr >
                             <td>{{-- Donacion ID --}}</td>
-                            <td> {{-- Aportante ID --}} </td>
                             <td>{{-- Nombre Aportante --}}</td>
                             <td>{{-- Nombre Beneficiario --}}</td>
                             <td>{{-- Descripcion --}}</td>
@@ -128,7 +126,6 @@
             "sAjaxSource": "{{ route("admin.ajax_donaciones") }}",
             "aaSorting": [[ 1, "asc" ]],
             "aoColumns": [
-                { 'sClass': 'center', "bSortable": true  },
                 { 'sClass': 'center', "bSortable": true  },
                 { 'sClass': 'center', "bSortable": true },
                 { 'sClass': 'center', "bSortable": true },
