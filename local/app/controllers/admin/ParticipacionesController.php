@@ -68,26 +68,33 @@ class ParticipacionesController extends \AdminBaseController {
 	 */
 	public function edit($date)
 	{
-        $attendanceArray = array();
-		$this->data['attendance']   = Attendance::where('date','=',$date)->get()->toArray();
+        $this->data['actividad']    = Actividad::find($id);
+//        $date = (Input::get('date')!='')?Input::get('date'):date('Y-m-d');
+//        $attendance_count           = Attendance::where('date','=',$date)->count();
 
-        $this->data['todays_holidays'] = Holiday::where('date','=',$date)->get()->first();
+        $this->data['voluntarios']     = Personal::where('tipoPersonal','=','Voluntario')->get();
 
-        foreach($this->data['attendance'] as $attend)
-        {
-            $attendanceArray[$attend['employeeID']] = $attend;
-        }
-
-        $this->data['date']             =   $date;
-        $this->data['attendanceArray']  =   $attendanceArray;
-
-
-
-		$this->data['leaveTypes']  =    Attendance::leaveTypesEmployees();
-        $this->data['leaveTypeWithoutHalfDay']   =   Attendance::leaveTypesEmployees('half day');
-        $this->data['employees']    =   Personal::where('tipoPersonal','=','Voluntario')->get();
-
-		return View::make('admin.attendances.edit', $this->data);
+        return View::make('admin.participaciones.edit',$this->data );
+//        $attendanceArray = array();
+//		$this->data['attendance']   = Attendance::where('date','=',$date)->get()->toArray();
+//
+//        $this->data['todays_holidays'] = Holiday::where('date','=',$date)->get()->first();
+//
+//        foreach($this->data['attendance'] as $attend)
+//        {
+//            $attendanceArray[$attend['employeeID']] = $attend;
+//        }
+//
+//        $this->data['date']             =   $date;
+//        $this->data['attendanceArray']  =   $attendanceArray;
+//
+//
+//
+//		$this->data['leaveTypes']  =    Attendance::leaveTypesEmployees();
+//        $this->data['leaveTypeWithoutHalfDay']   =   Attendance::leaveTypesEmployees('half day');
+//        $this->data['employees']    =   Personal::where('tipoPersonal','=','Voluntario')->get();
+//
+//		return View::make('admin.attendances.edit', $this->data);
 	}
 
 	/**
