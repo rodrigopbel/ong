@@ -40,8 +40,13 @@
                 @include('admin.common.error')
                 {{--END ERROR MESSAGE BOX--}}
             					<div class="portlet box green-meadow calendar">
-            						<div class="portlet-title">
-            						</div>
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="fa fa-users"></i>Partipaciones Listas
+                                        </div>
+                                        <div class="tools">
+                                        </div>
+                                    </div>
                                     <div class="portlet box blue">
 
                                         <div class="portlet-title">
