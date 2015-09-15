@@ -47,7 +47,7 @@
 
                         <!-- BEGIN FORM-->
                         {{Form::open(array('route'=>"admin.participaciones.store",'class'=>'form-horizontal'))}}
-                        {{dd("adsadsdas")}}
+
 
                         <div class="form-body">
 
