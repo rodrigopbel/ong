@@ -67,6 +67,7 @@ class PersonalController extends \AdminBaseController {
 
 
             }
+            $tipo = "Aportante";
             Personal::create([
                 'personalID'    => $input['personalID'],
                 'nombres'      => ucwords(strtolower($input['nombres'])),
@@ -74,9 +75,9 @@ class PersonalController extends \AdminBaseController {
                 'email'         => $input['email'],
                 'password'      => Hash::make($input['password']),
                 'genero'        => $input['genero'],
-                'tipoPersonal'   => $input['tipoPersonal'],
+                'tipoPersonal'   => $tipo,
                 'telefono'  => $input['telefono'],
-                'parentesco'  => $input['parentesco'],
+//                'parentesco'  => $input['parentesco'],
                 'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
                 'fotoPersonal'  =>  isset($filename)?$filename:'default.jpg',
             ]);

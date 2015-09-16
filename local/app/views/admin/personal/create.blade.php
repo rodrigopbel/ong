@@ -167,14 +167,14 @@
                             </div>
                         </div>
                     </div>6
-                    <div class="form-body">
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Parentesco</label>
-                            <div class="col-md-9">
-                                {{ Form::select('parentesco', array('ninguno' => 'Ninguno', 'papamama' => 'Papa/Mama', 'tiotia' => 'Tio/Tia', 'hermanohermana' => 'Hermano/Hermana','otro'=>'Otro Familiar'), Input::old('parentesco'),array('class'=>'form-control')) }}
-                            </div>
-                        </div>
-                    </div>
+                    {{--<div class="form-body">--}}
+                        {{--<div class="form-group">--}}
+                            {{--<label class="col-md-3 control-label">Parentesco</label>--}}
+                            {{--<div class="col-md-9">--}}
+                                {{--{{ Form::select('parentesco', array('ninguno' => 'Ninguno', 'papamama' => 'Papa/Mama', 'tiotia' => 'Tio/Tia', 'hermanohermana' => 'Hermano/Hermana','otro'=>'Otro Familiar'), Input::old('parentesco'),array('class'=>'form-control')) }}--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
             </div>
 
