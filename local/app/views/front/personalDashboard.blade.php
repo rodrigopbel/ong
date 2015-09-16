@@ -108,6 +108,30 @@
                 <div class="col-sm-6 md-margin-bottom-20">
                     <div class="panel panel-profile margin-top-20">
                         <div class="panel-heading overflow-h">
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Detalle de Beneficiario</h2>
+                        </div>
+                        <div id="scrollbar3" class="panel-body contentHolder">
+                            <div class="alert-blocks" style="background:#fff">
+                                <div class="overflow-h">
+                                    <strong class="color-dark">  Descripcion<small class="pull-right"><em>Fecha de Donacion</em></small></strong>
+                                    <small class="award-name">Monto</small>
+                                </div>
+                            </div>
+                            @foreach($donaciones as $donacion)
+                                <div class="alert-blocks">
+                                    <div class="overflow-h">
+                                        <strong class="color-dark">{{Str::words($donacion->descripcion,1,'')}} <small class="pull-right"><em>{{($donacion->created_at)}}</em></small></strong>
+                                        <small class="award-name">{{$donacion->montodonacion}}</small>
+                                    </div>
+                                </div>
+                            @endforeach
+
+
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="panel panel-profile margin-top-20">
+                        <div class="panel-heading overflow-h">
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Donaciones Realizadas</h2>
                         </div>
                         <div id="scrollbar3" class="panel-body contentHolder">
