@@ -47,7 +47,8 @@ class DashboardController extends \BaseController {
         $this->data['noticeboards']       =     Noticeboard::where('status','=','active')->orderBy('created_at','DESC')->get();
         $this->data['donacion_color']      = ['info','error','success','pending',''];
         $this->data['donacion_font_color'] = ['blue','red','green','yellow','dark'];
-      return  $this->data['bene']->beneficiarioID;
+        $l = $this->data['bene'];
+      return  $l->beneficiarioID;
 
 //        return View::make('front.personalDashboard',$this->data);
 	}
