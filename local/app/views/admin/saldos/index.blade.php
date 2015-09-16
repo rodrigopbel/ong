@@ -64,6 +64,7 @@
                         <thead>
                         <tr>
                             <th> Saldo ID</th>
+                            <th> Beneficiario</th>
                             <th> Donacines ID</th>
                             <th> Ayudas ID</th>
                             <th> Donacion</th>
@@ -77,6 +78,7 @@
                             <tr id="row{{ $saldo->id }}">
 
                                 <td> {{ $saldo->id }} </td>
+                                <td> {{ $saldo->nombreBeneficiario }} </td>
                                 <td> {{ $saldo->donacionesID }} </td>
                                 <td> {{ $saldo->ayudasID}} </td>
                                 <td> {{ $saldo->donacion}} </td>
