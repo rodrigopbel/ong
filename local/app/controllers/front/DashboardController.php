@@ -25,7 +25,7 @@ class DashboardController extends \BaseController {
 //                                                    ->get();
 
 
-return $this->data['beneficiarios'];
+//return $this->data['beneficiarios'];
 //                                                        where('aportanteID', '=', Auth::personales()->get()->personalID)->get();
 //                                                        ->get();
 

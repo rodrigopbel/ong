@@ -119,10 +119,10 @@
             	<div class="row">
                         <!--Left Sidebar-->
                         <div class="col-md-3 md-margin-bottom-40">
-                          {{HTML::image("/profileImages/{$personal->foto}",'foto',['class'=>"img-responsive profile-img margin-bottom-20",'style'=>'border:1px solid #ddd;margin:0 auto'])}}
+                          {{HTML::image("/profileImages/{$beneficiarios->foto}",'foto',['class'=>"img-responsive profile-img margin-bottom-20",'style'=>'border:1px solid #ddd;margin:0 auto'])}}
                             {{--<img class="img-responsive profile-img margin-bottom-20" src="front_assets/img/team/5.jpg" alt="">--}}
             				<p>
-            				<h3 style="text-align: center">{{ $personal->nombres . " ". $personal->apellidos }}</h3>
+            				<h3 style="text-align: center">{{ $beneficiarios->nombres . " ". $beneficiarios->apellidos }}</h3>
             				{{--<h6 style="text-align: center">{{$personal->getObjetivo->destinos->destino}}</h6>--}}
             				{{--<h6 style="text-align: center;background: rgb(235, 235, 235);padding: 10px;"><strong>En Solicitud hace : </strong>{{$personal->duracionVinculacion($personal->personalID)}}</h6>--}}
             				</p>
