@@ -82,7 +82,7 @@ class AyudasController extends \AdminBaseController {
         ]);
 
         $donacion = Donacion::where('aportanteID','=',$input['personalID'])->get()->first();
-        $beneficiario = Beneficiario::where('beneficiarioID', '=', $input['beneficiarioID'])->get();
+        $beneficiario = Beneficiario::where('beneficiarioID', '=', $input['beneficiarioID'])->get()->first();
         dd($beneficiario->nombres);
         Saldo::create([
             'nombreBeneficiario' => $beneficiario->nombres,
