@@ -69,10 +69,10 @@
                                 Detalles
                             </th>
                             <th class="text-center">
-                                Fecha de Actividad
+                                Direccion IP
                             </th>
                             <th class="text-center">
-
+                                Fecha de Actividad
                             </th>
                             <th class="text-center">
 
@@ -100,10 +100,10 @@
                                     {{ $log->details }}
                                 </td>
                                 <td>
-                                    {{ $log->created_at }}
+                                    {{ $log->ip_address }}
                                 </td>
                                 <td>
-
+                                    {{ $log->created_at }}
                                 </td>
                                 <td>
 
