@@ -20,7 +20,7 @@ class DashboardController extends \BaseController {
 //        $this->data['beneficiarios']   =    Beneficiario::all();
 
         $this->data['beneficiarios']      =    Beneficiario::where('beneficiarioID', '=','90870' )->
-                                                        select('nombres')->get();
+                                                        select('beneficiarioID')->get();
 
 //                                                        where('aportanteID', '=', Auth::personales()->get()->personalID)->get();
 //                                                        ->get();
