@@ -110,15 +110,15 @@
                         <div id="scrollbar3" class="panel-body contentHolder">
                             <div class="alert-blocks" style="background:#fff">
                                 <div class="overflow-h">
-                                    <strong class="color-dark">  Descripcion<small class="pull-right"><em>Fecha de Donacion</em></small></strong>
+                                    <strong class="color-dark">  Descripcion<small class="pull-right"><em>Fecha Nacimiento</em></small></strong>
                                     <small class="award-name">Monto</small>
                                 </div>
                             </div>
-                            @foreach($donaciones as $donacion)
+                            @foreach($beneficiarios as $ben)
                                 <div class="alert-blocks">
                                     <div class="overflow-h">
-                                        <strong class="color-dark">{{Str::words($donacion->descripcion,1,'')}} <small class="pull-right"><em>{{($donacion->created_at)}}</em></small></strong>
-                                        <small class="award-name">{{$donacion->montodonacion}}</small>
+                                        <strong class="color-dark">{{Str::words($ben->nombres,1,'')}} <small class="pull-right"><em>{{($donacion->created_at)}}</em></small></strong>
+                                        <small class="award-name">{{$ben->apellidos}}</small>
                                     </div>
                                 </div>
                             @endforeach
