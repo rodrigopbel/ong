@@ -48,7 +48,8 @@ class DashboardController extends \BaseController {
         $this->data['donacion_color']      = ['info','error','success','pending',''];
         $this->data['donacion_font_color'] = ['blue','red','green','yellow','dark'];
         $l = $this->data['bene'];
-      return  $l;
+        $m = json_decode($l);
+      return  $m;
 
 //        return View::make('front.personalDashboard',$this->data);
 	}
