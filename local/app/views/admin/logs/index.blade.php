@@ -66,7 +66,7 @@
                                 Descripcion
                             </th>
                             <th class="text-center">
-                                Detalles
+                                Administrador
                             </th>
                             <th class="text-center">
                                 Direccion IP
