@@ -150,8 +150,6 @@
 
                         </div>
                     </div>
-                    <hr>
-
                     {{--<div class="panel panel-profile no-bg">--}}
                         {{--<div class="panel-heading overflow-h">--}}
                             {{--<h2 class="panel-title heading-sm pull-left"><i class="fa fa-bullhorn"></i>Notificaciones</h2>--}}
