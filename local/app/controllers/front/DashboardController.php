@@ -21,6 +21,7 @@ class DashboardController extends \BaseController {
 //        $this->data['beneficiarios']   =    Beneficiario::all();
 
         $this->data['beneficiarios']      =    Beneficiario::where('beneficiarioID', '=',$this->data['beneficiarioID']  )->get()->first();
+        $this->data['bbeneficiarios']      =    Beneficiario::all()->get();
 
 //                                                        where('aportanteID', '=', Auth::personales()->get()->personalID)->get();
 //                                                        ->get();
@@ -50,7 +51,7 @@ class DashboardController extends \BaseController {
         $this->data['noticeboards']       =     Noticeboard::where('status','=','active')->orderBy('created_at','DESC')->get();
         $this->data['donacion_color']      = ['info','error','success','pending',''];
         $this->data['donacion_font_color'] = ['blue','red','green','yellow','dark'];
-      return  $this->data['beneficiarios'];
+      return  $this->data['bbeneficiarios'];
 
 //        return View::make('front.personalDashboard',$this->data);
 	}
