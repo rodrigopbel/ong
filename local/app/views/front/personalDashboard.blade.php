@@ -117,8 +117,8 @@
                             @foreach($beneficiarios as $ben)
                                 <div class="alert-blocks">
                                     <div class="overflow-h">
-                                        <strong class="color-dark">{{Str::words($ben->nombres,1,'')}} <small class="pull-right"><em>{{($donacion->created_at)}}</em></small></strong>
-                                        <small class="award-name">{{$ben->apellidos}}</small>
+                                        <strong class="color-dark">{{Str::words($ben->nombres,1,'')}} <small class="pull-right"><em>{{($ben->apellidos)}}</em></small></strong>
+                                        <small class="award-name">{{$ben->fechanac}}</small>
                                     </div>
                                 </div>
                             @endforeach
