@@ -83,9 +83,8 @@ class AyudasController extends \AdminBaseController {
 
         $donacion = Donacion::where('aportanteID','=',$input['personalID'])->get()->first();
         $beneficiario = Beneficiario::where('beneficiarioID', '=', $input['beneficiarioID'])->get()->first();
-        dd($beneficiario->nombres);
         Saldo::create([
-            'nombreBeneficiario' => $beneficiario->nombres,
+            'nombreBeneficiario' => $beneficiario->nombres." ".$beneficiario->apellidos,
             'donacionesID'  =>  $donacion->id,
             'ayudasID'      =>  $input['nit'],
             'donacion'      =>  $donacion->montodonacion,
