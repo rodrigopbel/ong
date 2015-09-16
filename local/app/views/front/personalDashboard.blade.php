@@ -102,9 +102,6 @@
                     </div>
 
                 </div>
-                <!--End Profile Post-->
-
-                <!--Notice Board -->
                 <div class="col-sm-6 md-margin-bottom-20">
                     <div class="panel panel-profile margin-top-20">
                         <div class="panel-heading overflow-h">
