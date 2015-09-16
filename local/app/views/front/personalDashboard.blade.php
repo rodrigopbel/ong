@@ -18,7 +18,7 @@
                                             <span class="primary-link">Nombre</span>
                                         </td>
                                         <td>
-                                             {{$beneficiarios->nombres}}
+                                             {{$personal->nombres}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -26,7 +26,7 @@
                                             <span class="primary-link">Apellidos</span>
                                         </td>
                                         <td>
-                                            {{$beneficiarios->apellidos}}
+                                            {{$personal->apellidos}}
                                         </td>
                                     </tr>
                                     {{--<tr>--}}
@@ -42,7 +42,7 @@
                                             <span class="primary-link">Genero</span>
                                         </td>
                                         <td>
-                                            {{ucfirst($beneficiarios->genero)}}
+                                            {{ucfirst($personal->genero)}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -50,7 +50,7 @@
                                             <span class="primary-link">Email</span>
                                         </td>
                                         <td>
-                                            {{$beneficiarios->email}}
+                                            {{$personal->email}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -58,7 +58,7 @@
                                             <span class="primary-link">Telefono</span>
                                         </td>
                                         <td>
-                                             {{$beneficiarios->telefono}}
+                                             {{$personal->telefono}}
                                         </td>
                                     </tr>
                                     <tr>
@@ -66,7 +66,7 @@
                                             <span class="primary-link">Direccion</span>
                                         </td>
                                         <td>
-                                            {{$beneficiarios->direccion}}
+                                            {{$personal->direccion}}
                                         </td>
                                     </tr>
 
