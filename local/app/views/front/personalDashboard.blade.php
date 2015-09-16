@@ -90,7 +90,7 @@
                                 @foreach($ayudas as $ayuda)
                                     <div class="alert-blocks">
                                         <div class="overflow-h">
-                                            <strong class="color-dark">{{Str::words($ayuda->beneficiarioID,1,'')}} <small class="pull-right"><em>{{($ayuda->gastos)}}</em></small></strong>
+                                            <strong class="color-dark">{{Str::words($beneficiarios->nombres,1,'')}} <small class="pull-right"><em>{{($ayuda->gastos)}}</em></small></strong>
                                             <small class="award-name">{{$ayuda->requerimiento}}</small><small class="award-name">{{$ayuda->numfactura}}</small>
                                         </div>
                                     </div>
