@@ -67,7 +67,7 @@ class PersonalController extends \AdminBaseController {
 
 
             }
-
+            dd(Input::all());
             Personal::create([
                 'personalID'    => $input['personalID'],
                 'nombres'      => ucwords(strtolower($input['nombres'])),
