@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
     <title>{{$setting->website}} - {{$pageTitle}} </title>
 
@@ -38,11 +38,11 @@
         {{ HTML::style('front_assets/css/custom.css') }}
         @yield('head')
 
-</head>	
+</head>
 
 <body>
 <div class="wrapper">
-    <!--=== Header ===-->    
+    <!--=== Header ===-->
     <div class="header">
         <!-- Navbar -->
         <div class="navbar navbar-default mega-menu" role="navigation">
@@ -55,7 +55,7 @@
                     </button>
                     <a class="navbar-brand" href="{{ URL::to('dashboard')}}">
                     {{HTML::image("assets/admin/layout/img/{$setting->logo}",'Logo',array('class'=>'logo-default','id'=>'logo-header','height'=>'22px','width'=>'86px'))}}
-                  
+
 
                     </a>
                 </div>
@@ -71,7 +71,7 @@
                             </a>
                         </li>
                         <!-- End Home -->
-						
+
 						<!-- Leave -->
                         {{--<li class="dropdown {{$leaveActive or ''}}">--}}
                             {{--<a href="" href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"  >--}}
@@ -108,11 +108,11 @@
 
                     </ul>
                 </div><!--/navbar-collapse-->
-            </div>    
-        </div>            
+            </div>
+        </div>
         <!-- End Navbar -->
     </div>
-    <!--=== End Header ===-->    
+    <!--=== End Header ===-->
 
     <!--=== Profile ===-->
     <div class="profile container content">
@@ -204,10 +204,10 @@
             <div class="container">
                 <div class="row">
 				<div class="col-md-4"></div>
-                    <div class="col-md-4">                     
+                    <div class="col-md-4">
                         <p style="text-align: center;">
                             {{date('Y')}} &copy; {{$setting->website}}
-                           
+
                         </p>
                     </div>
 
@@ -217,9 +217,9 @@
                     </div>
                     <!-- End Social Links -->
                 </div>
-            </div> 
+            </div>
         </div><!--/copyright-->
-    </div>     
+    </div>
     <!--=== End Footer Version 1 ===-->
 
 
