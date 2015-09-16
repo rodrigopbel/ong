@@ -102,14 +102,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-body">
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">NIT / CI</label>
-                                <div class="col-md-9">
-                                    <input type="text" class="form-control" name="personalID" placeholder="NIT / CI" value="{{ Input::old('personalID') }}">
-                                </div>
-                            </div>
-                        </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">Genero</label>
                             <div class="col-md-9">
@@ -120,9 +112,8 @@
                             <label class="col-md-3 control-label">Tipo de Persona</label>
                             <div class="col-md-9">
 
-{{--                                {{ Form::select('tipoPersonal', array('Aportante' => 'Aportante', 'Administrador' => 'Administrador','Responsable' => 'Responsable', 'Voluntario' => 'Voluntario'), Input::old('tipoPersonal'),array('class'=>'form-control')) }}--}}
+                                {{ Form::select('tipoPersonal', array('Aportante' => 'Aportante', 'Administrador' => 'Administrador','Responsable' => 'Responsable', 'Voluntario' => 'Voluntario'), Input::old('tipoPersonal'),array('class'=>'form-control')) }}
 
-                                <input type="text" class="form-control" name="tipoPersonal" placeholder="Aportante" value="Aportante">
                             </div>
                         </div>
                         <div class="form-group">
@@ -151,6 +142,42 @@
             </div>
         </div>
         <div class="col-md-6 col-sm-6">
+            <div class="portlet box red-sunglo">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-calendar"></i> Datos Especiales
+                    </div>
+
+                </div>
+                <div class="portlet-body">
+
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">NIT / CI</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="personalID" placeholder="NIT / CI" value="{{ Input::old('personalID') }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Ocupacion</label>
+                            <div class="col-md-9">
+                                {{ Form::select('ocupacion', array('ninguno' => 'Ninguno', 'estudiante' => 'Estudiante', 'uni' => 'Universitario/a','profesional' => 'Profesional'), Input::old('ocupacion'),array('class'=>'form-control')) }}
+                            </div>
+                        </div>
+                    </div>6
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Parentesco</label>
+                            <div class="col-md-9">
+                                {{ Form::select('parentesco', array('ninguno' => 'Ninguno', 'papamama' => 'Papa/Mama', 'tiotia' => 'Tio/Tia', 'hermanohermana' => 'Hermano/Hermana','otro'=>'Otro Familiar'), Input::old('parentesco'),array('class'=>'form-control')) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {{--<div class="portlet box red-sunglo">--}}
             {{--<div class="portlet-title">--}}
             {{--<div class="caption">--}}
