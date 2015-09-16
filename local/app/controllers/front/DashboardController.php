@@ -9,7 +9,7 @@ class DashboardController extends \BaseController {
         $this->data['personalID']  =   Auth::personales()->get()->personalID;
 	    $this->data['leaveTypes']  =    Attendance::leaveTypesEmployees();
 	    $this->data['leaveTypeWithoutHalfDay']   =   Attendance::leaveTypesEmployees('halfday');
-//        Total leaves except
+
 	    $total_leave    =   Leavetype::where('leaveType','<>','half day')->sum('num_of_leave');
         $this->data['leaveLeft']       =    array_sum(Attendance::absentEmployee($this->data['personalID'])).'/'.$total_leave;
         $this->data['personal']        =    Personal::find(Auth::personales()->get()->id);
