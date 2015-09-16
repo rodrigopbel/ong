@@ -131,28 +131,28 @@
                     </div>
                     <hr>
 
-                    <div class="panel panel-profile no-bg">
-                        <div class="panel-heading overflow-h">
-                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-bullhorn"></i>Notificaciones</h2>
-                        </div>
-                        <div id="scrollbar2" class="panel-body contentHolder">
-                        @if(count($noticeboards))
-                            @foreach($noticeboards as $notice)
-                                <div class="profile-event">
-                                    <div class="date-formats">
-                                        <span>{{date('d',strtotime($notice->created_at))}}</span>
-                                        <small>{{date('m, Y',strtotime($notice->created_at))}}</small>
-                                    </div>
-                                    <div class="overflow-h">
-                                        <h3 class="heading-xs"><a  href="" data-toggle="modal" data-target=".show_notice" onclick="show_notice({{$notice->id}});return false;">{{$notice->title}}</a></h3>
-                                        <p>{{ Str::limit($notice->description,100)}}</p>
-                                    </div>
-                                </div>
-                            @endforeach
-                        @endif
+                    {{--<div class="panel panel-profile no-bg">--}}
+                        {{--<div class="panel-heading overflow-h">--}}
+                            {{--<h2 class="panel-title heading-sm pull-left"><i class="fa fa-bullhorn"></i>Notificaciones</h2>--}}
+                        {{--</div>--}}
+                        {{--<div id="scrollbar2" class="panel-body contentHolder">--}}
+                        {{--@if(count($noticeboards))--}}
+                            {{--@foreach($noticeboards as $notice)--}}
+                                {{--<div class="profile-event">--}}
+                                    {{--<div class="date-formats">--}}
+                                        {{--<span>{{date('d',strtotime($notice->created_at))}}</span>--}}
+                                        {{--<small>{{date('m, Y',strtotime($notice->created_at))}}</small>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="overflow-h">--}}
+                                        {{--<h3 class="heading-xs"><a  href="" data-toggle="modal" data-target=".show_notice" onclick="show_notice({{$notice->id}});return false;">{{$notice->title}}</a></h3>--}}
+                                        {{--<p>{{ Str::limit($notice->description,100)}}</p>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--@endforeach--}}
+                        {{--@endif--}}
 
-                        </div>
-                    </div>
+                        {{--</div>--}}
+                    {{--</div>--}}
 
                 </div>
                 <!--End Profile Event-->
