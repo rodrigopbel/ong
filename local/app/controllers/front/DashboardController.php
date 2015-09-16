@@ -16,8 +16,8 @@ class DashboardController extends \BaseController {
         $this->data['donaciones']      =    Donacion::where('aportanteID', '=', Auth::personales()->get()->personalID)->get();
         $this->data['ayudas']          =    Ayuda::where('aportanteID', '=', Auth::personales()->get()->personalID)->get();
         $beneficiario  =    Ayuda::where('aportanteID', '=', Auth::personales()->get()->personalID)->select('beneficiarioID')->get();
-        $this->data['bene']=    Ayuda::where('aportanteID', '=', Auth::personales()->get()->personalID)->select('beneficiarioID')->get();
-//        $this->data['bbeneficiarios']      =    Beneficiario::where('beneficiarioID','=',$beneficiario->beneficiarioID   )->get();
+        $ben = json_decode($beneficiario);
+        $this->data['beneficiarios']      =    Beneficiario::where('beneficiarioID','=',$ben[0]->beneficiarioID)->get();
 
 //                                                        where('aportanteID', '=', Auth::personales()->get()->personalID)->get();
 //                                                        ->get();
@@ -47,9 +47,7 @@ class DashboardController extends \BaseController {
         $this->data['noticeboards']       =     Noticeboard::where('status','=','active')->orderBy('created_at','DESC')->get();
         $this->data['donacion_color']      = ['info','error','success','pending',''];
         $this->data['donacion_font_color'] = ['blue','red','green','yellow','dark'];
-        $l = $this->data['bene'];
-        $m = json_decode($l);
-      print_r($m[0]->beneficiarioID)  ;
+        return $this->data['beneficiarios'];
 
 //        return View::make('front.personalDashboard',$this->data);
 	}
