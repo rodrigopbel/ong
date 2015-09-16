@@ -69,7 +69,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Id Aporte: </label>
+                                            <label class="col-md-2 control-label">Aportante: </label>
                                             <div class="col-md-6">
                                                 {{ Form::select('personalID', $personales,null,['class' => 'form-control input-xlarge select2me','data-placeholder'=>'Seleccionar Aportante...']) }}
 

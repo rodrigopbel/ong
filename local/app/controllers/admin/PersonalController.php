@@ -229,7 +229,7 @@ class PersonalController extends \AdminBaseController {
     }
     public function destroy($id)
     {
-        Employee::where('employeeID', '=', $id)->delete();
+        Personal::where('personalID', '=', $id)->delete();
         Activity::log([
             'contentId'   =>  $id,
             'contentType' => 'Personal',

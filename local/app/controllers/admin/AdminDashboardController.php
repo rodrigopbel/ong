@@ -142,7 +142,7 @@ ORDER BY month ;"));
     }
     public function destroy($id)
     {
-        Admin::where('email', '=', $id)->delete();
+        Admin::where('id', '=', $id)->delete();
         Activity::log([
             'contentId'   => $id,
             'user_id'     => Auth::admin()->get()->id,

@@ -2,10 +2,7 @@
 
 @section('head')
     <!-- BEGIN PAGE LEVEL STYLES -->
-    {{HTML::style("assets/global/plugins/bootstrap-select/bootstrap-select.min.css")}}
-    {{HTML::style("assets/global/plugins/select2/select2.css")}}
-    {{HTML::style("assets/global/plugins/jquery-multi-select/css/multi-select.css")}}
-    {{HTML::style('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css')}}
+
     {{HTML::style('assets/global/plugins/bootstrap-datepicker/css/datepicker3.css')}}
     <!-- BEGIN THEME STYLES -->
 @stop
@@ -62,7 +59,20 @@
                                     <div class="form-body">
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-3">Fecha de Actividad</label>
+                                            <label class="col-md-2 control-label">Descripcion: </label>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" name="descripcion"  value="{{ $actividad->descripcion }}">
+                                           </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Lugar: </label>
+                                              <div class="col-md-6">
+                                                <input type="text" class="form-control" name="lugar"  value="{{ $actividad->lugar }}">
+                                              </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Fecha de Actividad: </label>
                                             <div class="col-md-3">
                                                 <div class="input-group input-medium date date-picker"  data-date-format="dd-mm-yyyy" data-date-viewmode="years">
                                                     <input type="text" class="form-control" name="fechaAct" readonly value="@if(empty($actividad->fechaAct))@else{{date('d-m-Y',strtotime($actividad->fechaAct))}}@endif" >
@@ -72,39 +82,20 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Descripcion: </label>
-                                            <div class="col-md-6">
-                                                <div class="col-md-6">
-                                                    <input type="text" class="form-control" name="descripcion"  value="{{ $actividad->descripcion }}">
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                    <button type="submit" data-loading-text="Actualizando..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Guardar</button>
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Lugar: </label>
-
-                                            <div class="col-md-6">
-                                                <input type="text" class="form-control" name="lugar"  value="{{ $actividad->lugar }}">
-                                            </div>
-                                        </div>
-
-
-                        								<div class="form-actions">
-                        									<div class="row">
-                        										<div class="col-md-offset-3 col-md-9">
-                        											<button type="submit" data-loading-text="Actualizando..." class="demo-loading-btn btn green"><i class="fa fa-check"></i> Guardar</button>
-
-                        										</div>
-                        									</div>
-                        								</div>
-                        						{{ Form::close() }}
+                                        {{ Form::close() }}
                        <!------------------------- END FORM ----------------------->
 
 						</div>
 					</div>
 					<!-- END EXAMPLE TABLE PORTLET-->
-					
+                    </div>
 				</div>
 			</div>
 			<!-- END PAGE CONTENT-->
@@ -116,12 +107,20 @@
 @section('footerjs')
 
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-{{HTML::script("assets/global/plugins/bootstrap-select/bootstrap-select.min.js")}}
-{{HTML::script("assets/global/plugins/select2/select2.min.js")}}
-{{HTML::script("assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js")}}
-                    {{HTML::script('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js')}}
+
                     {{HTML::script('assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js')}}
                     {{HTML::script("assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js")}}
                     {{HTML::script('assets/admin/pages/scripts/components-pickers.js')}}
 <!-- END PAGE LEVEL PLUGINS -->
+
+
+<script>
+    jQuery(document).ready(function() {
+        ComponentsPickers.init();
+        objetivos();
+
+    });
+
+</script>
+
 @stop

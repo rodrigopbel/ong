@@ -8,11 +8,14 @@
     <!-- END PAGE LEVEL STYLES -->
 @stop
 @section('mainarea')
+
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
         {{$pageTitle}}
-        <small>Actividades Lista</small>
+        <small>Saldos Lista</small>
     </h3>
+
+
     <div class="page-bar">
         <ul class="page-breadcrumb">
             <li>
@@ -21,7 +24,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="{{route('admin.participaciones.index')}}">Participaciones</a>
+                <a href="{{route('admin.saldos.index')}}">Saldos</a>
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
@@ -30,6 +33,7 @@
         </ul>
 
     </div>
+
     <!-- END PAGE HEADER-->
     <!-- BEGIN PAGE CONTENT-->
 
@@ -48,7 +52,7 @@
 
                 <div class="portlet-title">
                     <div class="caption">
-                        <i class="fa fa-users"></i>Partipaciones Listas
+                        <i class="fa fa-users"></i>Lista de Saldos
                     </div>
                     <div class="tools">
                     </div>
@@ -59,33 +63,25 @@
                     <table class="table table-striped table-bordered table-hover" id="sample_2">
                         <thead>
                         <tr>
-
-                            <th> ActividadID</th>
-                            <th> Descripcion</th>
-                            <th> Lugar</th>
-                            <th> Fecha</th>
-                            <th> Accion</th>
+                            <th> Saldo ID</th>
+                            <th> Donacines ID</th>
+                            <th> Ayudas ID</th>
+                            <th> Donacion</th>
+                            <th> Ayuda</th>
+                            <th> Saldo</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        @foreach ($actividades as $act)
-                            <tr id="row{{ $act->id }}">
+                        @foreach ($saldos as $saldo)
+                            <tr id="row{{ $saldo->id }}">
 
-                                <td> {{ $act->id }} </td>
-                                <td> {{ $act->descripcion }} </td>
-                                <td> {{ $act->lugar}} </td>
-                                <td> {{ $act->created_at}} </td>
-                                <td class="">
-                                    <a class="btn purple"
-                                       href="{{route('admin.participaciones.edit',$act->id) }}">
-                                        <i class="fa fa-eye"></i> Llamar Lista
-                                    </a>
-                                    <a class="btn purple"
-                                       href="{{route('admin.participaciones.show',$act->id) }}">
-                                        <i class="fa fa-eye"></i> Ver Reporte
-                                    </a>
-                                </td>
+                                <td> {{ $saldo->id }} </td>
+                                <td> {{ $saldo->donacionesID }} </td>
+                                <td> {{ $saldo->ayudasID}} </td>
+                                <td> {{ $saldo->donacion}} </td>
+                                <td> {{ $saldo->ayuda}} </td>
+                                <td> {{ $saldo->saldo}} </td>
                             </tr>
                         @endforeach
 

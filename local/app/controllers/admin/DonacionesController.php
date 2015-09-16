@@ -25,19 +25,20 @@ class DonacionesController extends \AdminBaseController {
     public function ajax_donaciones()
     {
 
-	    $result =
-            Donacion::select('donaciones.id','personal.personalID','descripcion','montodonacion','donaciones.created_at')
-		      ->join('personal', 'donaciones.aportanteID', '=', 'personal.personalID')
-			  ->orderBy('donaciones.created_at','desc');
+        $result =
+            Donacion::select('donaciones.id','personal.nombres','montodonacion','beneficiarios.apellidos','descripcion','donaciones.created_at')
+                ->join('personal', 'donaciones.aportanteID', '=', 'personal.personalID')
+                ->join('beneficiarios', 'donaciones.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
+                ->orderBy('donaciones.created_at','desc');
+
 
         return Datatables::of($result)
-            ->add_column('Por el Mes',function($row) {
-                return ucfirst($row->created_at).' '.$row->created_at;
-            })
+
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.donaciones.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripcion}}\',\'{{ $montodonacion }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
+//            ->remove_column('updated_at')
             ->make();
     }
 
@@ -68,7 +69,6 @@ class DonacionesController extends \AdminBaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-//        dd($input);
         Donacion::create([
             'aportanteID'    => $input['personalID'],
             'beneficiarioID' => $input['beneficiarioID'],
@@ -106,6 +106,9 @@ class DonacionesController extends \AdminBaseController {
         $this->data['personales'] = Personal::selectRaw('CONCAT(nombres, " (ID:", personalID,")") as nombres, personalID')
                                     ->where('tipoPersonal','=','aportante')
                                     ->lists('nombres','personalID');
+        $this->data['beneficiarios'] = Beneficiario::selectRaw('CONCAT(apellidos, " (ID:", beneficiarioID,")") as apellidos, beneficiarioID')
+                                    ->where('status','=','activo')
+                                    ->lists('apellidos','beneficiarioID');
 		return View::make('admin.donaciones.edit', $this->data);
 	}
 

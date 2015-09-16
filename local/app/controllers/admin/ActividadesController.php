@@ -34,17 +34,13 @@ class ActividadesController extends \AdminBaseController {
             ->add_column('Por el Mes',function($row) {
                 return ucfirst($row->created_at).' '.$row->created_at;
             })
-            ->add_column('list', '
-                        <a  class="btn purple"  href="{{ route(\'admin.actividades.edit\',$id)}}" ><i class="fa fa-list "></i></a>
-                            &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripcion}}\',\'{{ $lugar }}\');return false;" class="btn red">
-                        <i class="fa fa-book"></i></a>')
+
 
             ->add_column('edit', '
                         <a  class="btn purple"  href="{{ route(\'admin.actividades.edit\',$id)}}" ><i class="fa fa-edit"></i></a>
                             &nbsp;<a href="javascript:;" onclick="del(\'{{ $id }}\',\'{{ $descripcion}}\',\'{{ $lugar }}\');return false;" class="btn red">
                         <i class="fa fa-trash"></i></a>')
 
-//            ->remove_column('created_at')
             ->make();
     }
 
@@ -61,7 +57,7 @@ class ActividadesController extends \AdminBaseController {
     }
 
     /**
-     * Store a newly created award in storage.
+     * Store a newly created  in storage.
      */
 
     public function store()
@@ -86,7 +82,7 @@ class ActividadesController extends \AdminBaseController {
             'action'      => 'Create',
             'description' => 'Creacion '. $input['descripcion'],
             'details'     => 'Usuario: '. Auth::admin()->get()->name,
-            'updated'     => $input['fechaAct'] ? true : false
+            'updated'     => $input['descripcion'] ? true : false
         ]);
 
 
@@ -96,7 +92,7 @@ class ActividadesController extends \AdminBaseController {
 
 
     /**
-     * Show the form for editing the specified award.
+     * Show the form for editing the specified .
      *
      * @param  int  $id
      * @return Response
@@ -114,7 +110,7 @@ class ActividadesController extends \AdminBaseController {
     }
 
     /**
-     * Update the specified award in storage.
+     * Update the specified  in storage.
      *
      * @param  int  $id
      * @return Response
@@ -151,7 +147,7 @@ class ActividadesController extends \AdminBaseController {
     }
 
     /**
-     * Remove the specified award from storage.
+     * Remove the specified  from storage.
      *
      * @param  int  $id
      * @return Response

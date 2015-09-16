@@ -82,6 +82,15 @@
 
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Nombre del Beneficiario:</label>
+
+                                            <div class="col-md-8">
+                                                {{--VEerificar los aportantes q estan en donaciones--}}
+                                                {{ Form::select('beneficiarioID',$beneficiarios ,$donacion->beneficiarioID,['class'=>'form-control input-xlarge select2me']) }}
+
+                                            </div>
+                                        </div>
 
                                                             <div class="form-actions">
                                                                 <div class="row">

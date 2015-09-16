@@ -113,8 +113,7 @@
                                 </td>
                                 <td class="">
                                     <p><a class="btn red" style="width: 42px;" href="javascript:;"
-                                          onclick="del('{{$admin->id}}','{{ $admin->email}}')"><i
-                                                    class="fa fa-trash"></i></a></p>
+                                          onclick="del('{{$admin->id}}','{{ $admin->name}}')"><i class="fa fa-trash"></i></a></p>
                                 </td>
                             </tr>
                         @endforeach
@@ -124,19 +123,19 @@
                     </table>
                 </div>
             </div>
-            <div class="portlet box blue">
-                <div class="portlet-title">
-                    <div class="caption">
-                        Gastos
-                    </div>
-                </div>
-                <div class="portlet-body">
-                    <div id="expenseChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-                </div>
-            </div>
+            {{--<div class="portlet box blue">--}}
+                {{--<div class="portlet-title">--}}
+                    {{--<div class="caption">--}}
+                        {{--Gastos--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="portlet-body">--}}
+                    {{--<div id="expenseChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
         </div>
-
+    </div>
 
         <!-- END DASHBOARD STATS -->
         @stop
@@ -156,12 +155,19 @@
             {{HTML::script("assets/global/plugins/fullcalendar/fullcalendar.min.js")}}
             <script src="http://code.highcharts.com/highcharts.js"></script>
             <script src="http://code.highcharts.com/modules/exporting.js"></script>
+            {{--<script>--}}
+                {{--jQuery(document).ready(function () {--}}
+
+                    {{--TableManaged.init();--}}
+                {{--});--}}
+            {{--</script>--}}
             <script>
-                function del(id, email) {
+                function del(id, name) {
                     $('#deleteModal').appendTo("body").modal('show');
-                    $('#info').html('Eliminar al Administrador : <strong>' + email + '</strong> ??');
+                    $('#info').html('Eliminar al Administrador : <strong>' + name + '</strong> ??');
+                    console.log("ads");
                     $("#delete").click(function () {
-                        console.log("maldita sea");
+                        console.log('236516');
                         var url = "{{ route('admin.dashboard.destroy',':id') }}";
                         url = url.replace(':id', id);
 
@@ -173,11 +179,12 @@
 
                         }).done(function (response) {
 
-                            if (response.success == "deleted") {
-                                $("html, body").animate({scrollTop: 0}, "slow");
+                            if (response.success == "deleted")
+                            {
+                                $("html, body").animate({ scrollTop: 0 }, "slow");
                                 $('#deleteModal').modal('hide');
-                                $('#row' + id).closest('tr').remove();
-                                $('#load').html("<p class='alert alert-success text-center'><strong>" + email + "</strong> Eliminado correctamente</p>");
+                                $('#row'+id).fadeOut(500);
+                                $('#load').html("<p class='alert alert-success text-center'><strong>"+name +"</strong> Eliminada exitosamente!</p>");
                             }
                         });
                     })
@@ -186,166 +193,5 @@
             </script>
 
 
-            <script>
-
-                jQuery(document).ready(function() {
-
-                    Calendar.init();
-//   showReport();
-                    UIBlockUI.init();
-                    ComponentsDropdowns.init();
-
-                });
-
-
-                var Calendar = function() {
-
-
-                    return {
-                        //main function to initiate the module
-                        init: function() {
-                            Calendar.initCalendar();
-
-
-                        },
-
-                        initCalendar: function() {
-
-                            if (!jQuery().fullCalendar) {
-                                return;
-                            }
-
-                            var date = new Date();
-                            var d = date.getDate();
-                            var m = date.getMonth();
-                            var y = date.getFullYear();
-
-                            var h = {};
-
-
-                            if ($('#calendar').parents(".portlet").width() <= 720) {
-                                $('#calendar').addClass("mobile");
-                                h = {
-                                    left: 'title, prev, next',
-                                    center: '',
-                                    right: 'today,month'
-                                };
-                            } else {
-                                $('#calendar').removeClass("mobile");
-                                h = {
-                                    left: 'title',
-                                    center: '',
-                                    right: 'prev,next,today'
-                                };
-                            }
-
-                            $('#calendar').fullCalendar('destroy'); // destroy the calendar
-                            $('#calendar').fullCalendar({ //re-initialize the calendar
-                                header: h,
-                                defaultView: 'month',
-                                eventRender: function(event, element) {
-                                    if(event.className=="holiday"){
-                                        var dataToFind = moment(event.start).format('YYYY-MM-DD');
-                                        $('.fc-day[data-date="'+dataToFind+'"]').css('background', 'rgba(255, 224, 205, 1)');
-                                    }
-                                },
-                                events: [
-                                    {{--Holidays on Calendar--}}
-                                    @foreach($holidays as $holiday)
-                                    {
-                                        className:"holiday",
-                                        title: "{{$holiday->occassion}}",
-                                        start:'{{$holiday->date}}',
-
-                                        color: 'grey'
-
-                                    },
-
-                                    @endforeach
-                                       {{-- Attandance on calendar --}}
-                                    @foreach($attendance as $index=>$attend)
-
-                                    @if($attend[0]!='all present')
-                                    @foreach($attend as $em)
-                                    {
-                                        title: "{{Str::words($em,1,'')}}",
-                                        start:'{{$index}}',
-                                        color: '#e50000'
-
-                                    },
-                                        @endforeach
-                                    @else
-                                    {
-                                        title: 'all present',
-                                        start:'{{$index}}'
-
-                                    },
-                                    @endif
-
-                                @endforeach
-
-                            ]
-                            });
-                        }
-                    };
-                }();
-
-                $(function () {
-
-                    $('#expenseChart').highcharts({
-                        chart: {
-                            type: 'column'
-                        },
-                        title: {
-                            text: 'Informe de gastos mensuales '+new Date().getFullYear()
-                        },
-                        xAxis: {
-                            categories: [
-                                'Ene',
-                                'Feb',
-                                'Mar',
-                                'Abr',
-                                'May',
-                                'Jun',
-                                'Jul',
-                                'Ago',
-                                'Sep',
-                                'Oct',
-                                'Nov',
-                                'Dic'
-                            ],
-                            crosshair: true
-                        },
-                        yAxis: {
-                            min: 0,
-                            title: {
-                                useHTML: true,
-                                text: 'Expensado en  ( <span class="fa {{$setting->currency_icon}}"></span> )'
-                            }
-                        },
-                        tooltip: {
-                            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                            '<td style="padding:0"><b>{point.y:.1f} <span class="fa {{$setting->currency_icon}}"></span></b></td></tr>',
-                            footerFormat: '</table>',
-                            shared: true,
-                            useHTML: true
-                        },
-                        plotOptions: {
-                            column: {
-                                pointPadding: 0.2,
-                                borderWidth: 0
-                            }
-                        },
-                        series: [  {
-                            name: 'Gastos',
-//            data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8,'']
-//            data: ['','',100]
-                            data: [{{$expense}}]
-
-                        }]
-                    });
-                });
-            </script>
             <!-- END PAGE LEVEL PLUGINS -->
     @stop
