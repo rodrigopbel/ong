@@ -105,6 +105,9 @@
                 <div class="col-sm-6 md-margin-bottom-20">
                     <div class="panel panel-profile margin-top-20">
                         <div class="panel-heading overflow-h">
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-money"> SALDO :</i>{{$ingresoTotal}} (ingresoTotal) - {{$egresoTotal}} (egresoTotal) = {{$saldo}} </h2>
+                        </div>
+                        <div class="panel-heading overflow-h">
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Detalle de Beneficiario</h2>
                         </div>
                         <div id="scrollbar3" class="panel-body contentHolder">

@@ -18,6 +18,15 @@ class DashboardController extends \BaseController {
         $beneficiario   =    Ayuda::where('aportanteID', '=', Auth::personales()->get()->personalID)->select('beneficiarioID')->get();
         $ben = json_decode($beneficiario);
         $this->data['beneficiarios']      =    Beneficiario::where('beneficiarioID','=',$ben[0]->beneficiarioID)->get();
+        foreach($this->data['ayudas'] as $ayuda)
+        {
+            $this->data['egresoTotal'] = $this->data['egresoTotal'] + $ayuda->gastos;
+        }
+        foreach($this->data['donaciones'] as $donacion)
+        {
+            $this->data['ingresoTotal'] = $this->data['ingresoTotal'] + $donacion->montodonacion;
+        }
+        $this->data['saldo'] = $this->data['ingresoTotal']- $this->data['egresoTotal'];
 
 //                                                        where('aportanteID', '=', Auth::personales()->get()->personalID)->get();
 //                                                        ->get();
