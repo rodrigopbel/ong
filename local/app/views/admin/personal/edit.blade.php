@@ -162,6 +162,7 @@
                             <label class="col-md-3 control-label">Tipo de Persona</label>
                             <div class="col-md-9">
                                 <label for="">{{$personal->tipoPersonal}}</label>
+                                <input type="hidden" name="tipoPersonal" value="{{$personal->tipoPersonal}}"/>
                             </div>
                         </div>
                         <div class="form-group">
