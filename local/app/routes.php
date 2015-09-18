@@ -47,32 +47,20 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::get('beneficiarios/export',['as'=>'admin.beneficiarios.export','uses'=>'BeneficiariosController@export']);
     Route::get('beneficiarios/beneficiariosLogin/{id}',['as'=>'admin.beneficiarios.benLogin','uses'=>'BeneficiariosController@benLogin']);
     Route::resource('beneficiarios', 'BeneficiariosController',['except' => ['show'],'as' => 'admin']);
-
-
     //    Personal Routing
     Route::resource('personal', 'PersonalController',['except' => ['show'],'as' => 'admin']);
     Route::get('personales/personalesLogin/{id}',['as'=>'admin.personales.perLogin','uses'=>'PersonalController@perLogin']);
-
-    //    Actividades Routing
-//    Route::get('actividades/mark_sunday', 'ActividadesController@Sunday');
-//    Route::resource('actividades', 'ActividadesController',['except' => ['show'],'as' => 'admin']);
-
     //  Actividades Routing
     Route::get('ajax_actividades/',['as'=>'admin.ajax_actividades','uses'=> 'ActividadesController@ajax_actividades']);
     Route::resource('actividades', 'ActividadesController',['as' => 'admin']);
-
     //  Ayudas Routing
     Route::get('ajax_ayudas/',['as'=>'admin.ajax_ayudas','uses'=> 'AyudasController@ajax_ayudas']);
     Route::resource('ayudas', 'AyudasController',['as' => 'admin']);
-
-
     //  Donaciones Routing
     Route::get('ajax_donaciones/',['as'=>'admin.ajax_donaciones','uses'=> 'DonacionesController@ajax_donaciones']);
     Route::resource('donaciones', 'DonacionesController',['as' => 'admin']);
-
     //  Participaciones Routing
     Route::resource('participaciones', 'ParticipacionesController',['as' => 'admin']);
-
     // Saldos Routing
     Route::resource('saldos','SaldosController',['as' => 'admin']);
     // Reportes Routing
@@ -80,17 +68,12 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::resource('reportes','ReportsController',['as'=>'admin']);
     Route::get('ReporteBen',['as'=>'ReporteBen','uses'=>'ReportsController@ReporteBen']);
     Route::get('ReporteBen/{id}',['as'=>'ReporteBen','uses'=>'ReportsController@ReporteGen']);
-//    Route::get('reports/beneficiarios','ReportsController@reportesben',['as'=>'admin']);
-//    Route::get('reports/transacciones','ReportsController@reportestran',['as'=>'admin']);
-
-
     //  Logs Routing
     Route::resource('logs', 'LogsController',['except' => ['show'],'as' => 'admin']);
-
-    //    Employees Routing
-	Route::get('employees/export',['as'=>'admin.employees.export','uses'=>'BeneficiariosController@export']);
-    Route::get('employees/employeeLogin/{id}',['as'=>'admin.employees.employeeLogin','uses'=>'BeneficiariosController@employeesLogin']);
-    Route::resource('employees', 'EmployeesController',['except' => ['show'],'as' => 'admin']);
+//    //    Employees Routing
+//	Route::get('employees/export',['as'=>'admin.employees.export','uses'=>'BeneficiariosController@export']);
+//    Route::get('employees/employeeLogin/{id}',['as'=>'admin.employees.employeeLogin','uses'=>'BeneficiariosController@employeesLogin']);
+//    Route::resource('employees', 'EmployeesController',['except' => ['show'],'as' => 'admin']);
 
 
     //  Awards Routing
