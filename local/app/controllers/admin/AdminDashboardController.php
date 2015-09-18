@@ -15,39 +15,6 @@ class AdminDashboardController extends AdminBaseController
 // Dashboard view page   controller
     public function index()
     {
-        $this->data['holidays'] =   Holiday::all();
-        $attendance   = Attendance::where(function($query)
-        {
-            $query->where('application_status','=','approved')
-                ->orwhere('application_status','=',null)
-                ->orwhere('status','=','present');
-        })->get();
-
-        $this->data['pending_applications']   = Attendance::where('application_status','=','pending')->get();
-        $at =   array();
-        $final = array();
-        foreach($attendance as $attend)
-        {
-            $at[$attend->date]['status'][]  =   $attend->status;
-            $at[$attend->date]['employee'][]  =   $attend->employeeDetails->fullName;
-        }
-
-        foreach($at as $index=>$att){
-
-            if(in_array('absent',$att['status'])) {
-                foreach ($att['employee'] as $index_emp=>$employee){
-                    if($att['status'][$index_emp]=='absent')
-                        $final[$index][] = $employee;
-                }
-
-            }else
-            {
-                $final[$index][] = 'all present';
-            }
-
-        }
-
-        $this->data['attendance']   = $final;
 
 
         //Expense Calculation
