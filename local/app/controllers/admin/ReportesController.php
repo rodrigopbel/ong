@@ -58,7 +58,6 @@ class ReportsController extends \AdminBaseController {
         } else {
             return Redirect::route('admin.reportes.index');
         }
-
     }
     public function reportestran()
     {
