@@ -19,14 +19,6 @@ Route::post('/voluntarios/registrar',['as'=>'voluntario.registrar','uses'=>'Volu
     {
         Route::post('/change_password_modal',['as'=>'front.change_password_modal','uses'=>'DashboardController@changePasswordModal']);
         Route::post('/change_password',['as'=>'front.change_password','uses'=>'DashboardController@change_password']);
-        Route::get('ajaxApplications/{$id}',['as'=>'front.leave_applications','uses'=> 'DashboardController@ajaxApplications']);
-
-        Route::get('leave',['as'=>'front.leave','uses'=>'DashboardController@leave']);
-
-        Route::post('dashboard/notice/{id}',['as'=>'front.notice_ajax','uses'=>'DashboardController@notice_ajax']);
-
-        Route::post('leave_store',['as'=>'front.leave_store','uses'=>'DashboardController@leave_store']);
-
         Route::resource('dashboard','DashboardController');
 
 
