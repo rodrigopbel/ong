@@ -43,8 +43,6 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     //  Destinos Routing
     Route::get('destinos/ajax_objetivos/',['as'=>'admin.destinos.ajax_objetivos','uses'=> 'DestinosController@ajax_objetivos']);
     Route::resource('destinos', 'DestinosController',['except' => ['show','create'],'as' => 'admin']);
-
-
     //    Beneficiarios Routing
     Route::get('beneficiarios/export',['as'=>'admin.beneficiarios.export','uses'=>'BeneficiariosController@export']);
     Route::get('beneficiarios/beneficiariosLogin/{id}',['as'=>'admin.beneficiarios.benLogin','uses'=>'BeneficiariosController@benLogin']);
