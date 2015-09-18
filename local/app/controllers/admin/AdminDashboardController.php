@@ -4,14 +4,12 @@
 
 class AdminDashboardController extends AdminBaseController
 {
-
     public function __construct()
     {
         parent::__construct();
         $this->data['dashboardActive'] = 'active';
         $this->data['dashboardOpen'] =   'active open';
         $this->data['pageTitle']       = 'Dashboard';
-
     }
 
 // Dashboard view page   controller

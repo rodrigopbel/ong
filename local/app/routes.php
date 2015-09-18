@@ -20,8 +20,6 @@ Route::post('/voluntarios/registrar',['as'=>'voluntario.registrar','uses'=>'Volu
         Route::post('/change_password_modal',['as'=>'front.change_password_modal','uses'=>'DashboardController@changePasswordModal']);
         Route::post('/change_password',['as'=>'front.change_password','uses'=>'DashboardController@change_password']);
         Route::resource('dashboard','DashboardController');
-
-
     });
 
 # Admin Login
