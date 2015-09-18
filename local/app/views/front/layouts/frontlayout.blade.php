@@ -225,57 +225,7 @@
 
 {{--------------------------Apply Leave  MODALS-----------------------------}}
 
-            <div class="modal fade apply_modal in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                            <h4 id="myLargeModalLabel" class="modal-title">
-                            Apply Leave
-                            </h4>
-                        </div>
-                        <div class="modal-body">
-                           <div class="portlet-body form">
 
-                      <!------------------------------ BEGIN FORM ----------------------------------------->
-                           {{Form::open(array('route'=>"front.leave_store",'class'=>'sky-form','id'=>'sky-form1','method'=>'POST'))}}
-
-                                   <div class="row">
-                                        <div class="col-md-3">
-                                              <label class="input">
-                                              <i class="icon-append fa fa-calendar"></i>
-                                              <input type="text" name="date[0]" id="leave" placeholder="Leave date">
-                                              </label>
-                                        </div>
-                                     <div class="col-md-2">
-                                          {{ Form::select('leaveType[0]', $leaveTypes,null,['class' => 'form-control leaveType','id'=>'leaveType0','onchange'=>'halfDayToggle(0,this.value)'] ) }}
-                                    </div>
-                                       <div class="col-md-2">
-										  {{ Form::select('halfleaveType[0]', $leaveTypeWithoutHalfDay,null,['class' => 'form-control halfLeaveType','id'=>'halfLeaveType0'] ) }}
-									</div>
-                                       <div class="col-md-5">
-                                               <input class="form-control form-control-inline"  type="text" name="reason[0]" placeholder="Reason"/>
-                                       </div>
-                                   </div>
-                                    <div id="insertBefore"></div>
-
-                                   <button type="button" id="plusButton" class="btn-u btn-u-green">
-                                          Add More <i class="fa fa-plus"></i>
-                                   </button>
-                               <div class="row">
-                                   <div class="col-md-offset-4 col-md-8">
-                                       <button type="submit" class="btn-u btn-u-sea"><i class="fa fa-check"></i> Submit</button>
-
-                                   </div>
-
-                           </div>
-                               {{ Form::close() }}
-                         <!------------------------ END FORM ------------------------------------------>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 {{------------------------Apply Leave MODALS-------------------------}}
 
 
@@ -366,9 +316,6 @@
 			 $("#row"+$i+" .halfLeaveType").attr('id','halfLeaveType'+$i);
 			 $("#row"+$i+" .leaveType").attr('onchange','halfDayToggle('+$i+',this.value)');
 
-              $('#leave'+$i).datepicker({
-                                              minDate: 0,
-                                       });
             });
 
 		 function halfDayToggle(id,value)
