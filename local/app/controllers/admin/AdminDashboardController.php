@@ -15,40 +15,8 @@ class AdminDashboardController extends AdminBaseController
 // Dashboard view page   controller
     public function index()
     {
-
-
-        //Expense Calculation
-        $expense = DB::select( DB::raw("SELECT sum(price) as sum,m.month
-     FROM (
-           SELECT 1 AS MONTH
-           UNION SELECT 2 AS MONTH
-           UNION SELECT 3 AS MONTH
-           UNION SELECT 4 AS MONTH
-           UNION SELECT 5 AS MONTH
-           UNION SELECT 6 AS MONTH
-           UNION SELECT 7 AS MONTH
-           UNION SELECT 8 AS MONTH
-           UNION SELECT 9 AS MONTH
-           UNION SELECT 10 AS MONTH
-           UNION SELECT 11 AS MONTH
-           UNION SELECT 12 AS MONTH
-          ) AS m
-LEFT JOIN `expenses` u
-ON m.month = MONTH(purchaseDate)
-   AND YEAR(purchaseDate) = YEAR(CURDATE())
-
-GROUP BY m.month
-ORDER BY month ;"));
-
-
-        foreach($expense as $ex){
-            $expensevalue[] = isset($ex->sum)?$ex->sum:"''";
-        }
-        $this->data['expense'] = implode(',',$expensevalue);
-
         $this->data['administradores'] = Admin::all();
         return View::make('admin/dashboard',$this->data);
-
     }
 
 
