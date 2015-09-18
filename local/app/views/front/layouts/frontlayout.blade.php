@@ -295,39 +295,6 @@
     {{HTML::script('front_assets/plugins/html5shiv.js')}}
 <![endif]-->
 <script>
-{{'';$j=0;}}
-        $('#leave').datepicker({minDate: 0});
-        $('.halfLeaveType').hide();
-            var $insertBefore = $('#insertBefore');
-            var $i = 0;
-
-		 $('#plusButton').click(function(){
-
-              $i = $i+1;
-
-              $(' <div class="row" id="row'+$i+'"> ' +
-               	'<div class="col-md-3"><label class="input"><i class="icon-append fa fa-calendar"></i><input type="text" name="date['+$i+']" id="leave'+$i+'" placeholder="Leave Date"></label></div>' +
-                '<div class="col-md-2">{{ Form::select('leaveType[]', $leaveTypes,null,['class' => 'form-control leaveType','id'=>'leaveType','onchange'=>'halfDayToggle(0,this.value)'] ) }}</div>'+
-                '<div class="col-md-2">{{ Form::select('halfleaveType[]', $leaveTypeWithoutHalfDay,null,['class' => 'form-control halfLeaveType','id'=>'halfLeaveType'] ) }}</div>'+
-                '<div class="col-md-5"><input class="form-control form-control-inline" name="reason['+$i+']" type="text" value="" placeholder="Reason"/></div></div>').insertBefore($insertBefore);
-
-			 $("#row"+$i+" .leaveType").attr('id','leaveType'+$i);
-			 $("#row"+$i+" .halfLeaveType").hide();
-			 $("#row"+$i+" .halfLeaveType").attr('id','halfLeaveType'+$i);
-			 $("#row"+$i+" .leaveType").attr('onchange','halfDayToggle('+$i+',this.value)');
-
-            });
-
-		 function halfDayToggle(id,value)
-		 {
-				if(value	==	'half day')
-				{
-					$('#halfLeaveType'+id).show(100);
-				}else{
-					$('#halfLeaveType'+id).hide(100);
-				}
-		 }
-
 // Show change password modal body
 		$('#change_password_link').click(function(){
 
