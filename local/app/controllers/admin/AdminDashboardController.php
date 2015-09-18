@@ -18,9 +18,6 @@ class AdminDashboardController extends AdminBaseController
         $this->data['administradores'] = Admin::all();
         return View::make('admin/dashboard',$this->data);
     }
-
-
-
     /*    Screen lock controller.When screen lock button from menu is cliked this controller is called.
     *     lock variable is set to 1 when screen is locked.SET to 0  if you dont want screen variable
     */
@@ -35,7 +32,6 @@ class AdminDashboardController extends AdminBaseController
         $this->data['dashboardActive'] =   'active';
         return View::make('admin.create',$this->data);
     }
-
     public function store()
     {
         $rules = array('nombreAdmin' =>'required', 'apellidoAdmin'=>'required','emailAdmin'=>'required|email','passwordAdmin'=>'required');
@@ -44,12 +40,10 @@ class AdminDashboardController extends AdminBaseController
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-
         DB::beginTransaction();
         try {
             $filename   =   null;
             $fullname = $input['nombreAdmin'] . " " . $input['apellidoAdmin'];
-
             Admin::create([
                 'name'            => $fullname,
                 'email'           => $input['emailAdmin'],
