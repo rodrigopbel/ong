@@ -70,19 +70,13 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::get('ReporteBen/{id}',['as'=>'ReporteBen','uses'=>'ReportsController@ReporteGen']);
     //  Logs Routing
     Route::resource('logs', 'LogsController',['except' => ['show'],'as' => 'admin']);
-//    //    Employees Routing
-//	Route::get('employees/export',['as'=>'admin.employees.export','uses'=>'BeneficiariosController@export']);
-//    Route::get('employees/employeeLogin/{id}',['as'=>'admin.employees.employeeLogin','uses'=>'BeneficiariosController@employeesLogin']);
-//    Route::resource('employees', 'EmployeesController',['except' => ['show'],'as' => 'admin']);
-
-
-    //  Awards Routing
-    Route::get('ajax_awards/',['as'=>'admin.ajax_awards','uses'=> 'AwardsController@ajax_awards']);
-    Route::resource('awards', 'AwardsController',['as' => 'admin']);
-
-    //  Department Routing
-    Route::get('departments/ajax_designation/',['as'=>'admin.departments.ajax_designation','uses'=> 'DepartmentsController@ajax_designation']);
-    Route::resource('departments', 'DepartmentsController',['except' => ['show','create'],'as' => 'admin']);
+//    //  Awards Routing
+//    Route::get('ajax_awards/',['as'=>'admin.ajax_awards','uses'=> 'AwardsController@ajax_awards']);
+//    Route::resource('awards', 'AwardsController',['as' => 'admin']);
+//
+//    //  Department Routing
+//    Route::get('departments/ajax_designation/',['as'=>'admin.departments.ajax_designation','uses'=> 'DepartmentsController@ajax_designation']);
+//    Route::resource('departments', 'DepartmentsController',['except' => ['show','create'],'as' => 'admin']);
 
 
 
