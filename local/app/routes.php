@@ -78,10 +78,8 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
 	Route::post('ajax_update_notification',['as'=>'admin.ajax_update_notification','uses'=> 'NotificationSettingsController@ajax_update_notification']);
     Route::resource('notificationSettings', 'NotificationSettingsController',['only'=>['edit','update'],'as' => 'admin']);
 });
-
 // Lock Screen Routing
 Route::get('screenlock', 'AdminDashboardController@screenlock');
-
 //Event for updating the last login of user
 Event::listen('auth.login', function($user)
 {
