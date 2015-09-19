@@ -73,32 +73,13 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     //  Routing for the attendance
     Route::get('attendances/report/{attendances}', ['as'=>'admin.attendance.report','uses'=>'AttendancesController@report']);
     Route::resource('attendances', 'AttendancesController',['as' => 'admin']);
-//
-//    //    Routing or the leavetypes
-//    Route::resource('leavetypes', 'LeavetypesController',['except'=>['show'],'as' => 'admin']);
-//
-//    //    Leave Applications routing
-//    Route::get('leave_applications/ajaxApplications',['as'=>'admin.leave_applications','uses'=> 'LeaveApplicationsController@ajaxApplications']);
-//    Route::resource('leave_applications', 'LeaveApplicationsController',['except'=>['create','store','edit'],'as' => 'admin']);
-
     //   Routing for setting
     Route::resource('settings', 'SettingsController',['only'=>['edit','update'],'as' => 'admin']);
-
-    //    Salary Routing
-    Route::resource('salary','SalaryController',['only'=>['destroy','update','store'],'as' => 'admin']);
-
     //    Profile Setting
     Route::resource('profile_settings', 'ProfileSettingsController',['only'=>['edit','update'],'as' => 'admin']);
-
     //   Notification Setting
-
 	Route::post('ajax_update_notification',['as'=>'admin.ajax_update_notification','uses'=> 'NotificationSettingsController@ajax_update_notification']);
     Route::resource('notificationSettings', 'NotificationSettingsController',['only'=>['edit','update'],'as' => 'admin']);
-
-//    //  Notice Board
-    Route::get('ajax_notices/',['as'=>'admin.ajax_notices','uses'=> 'NoticeboardsController@ajax_notices']);
-    Route::resource('noticeboards', 'NoticeboardsController',['except'=>['show'],'as' => 'admin']);
-
 });
 
 // Lock Screen Routing
