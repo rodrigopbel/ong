@@ -95,9 +95,7 @@
                             <th class="text-center">
                                 Email
                             </th>
-                            <th class="text-center">
-                                Accion
-                            </th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -111,10 +109,7 @@
                                 <td>
                                     {{$admin->email}}
                                 </td>
-                                <td class="">
-                                    <p><a class="btn red" style="width: 42px;" href="javascript:;"
-                                          onclick="del('{{$admin->id}}','{{ $admin->name}}')"><i class="fa fa-trash"></i></a></p>
-                                </td>
+
                             </tr>
                         @endforeach
 

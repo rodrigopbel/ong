@@ -2,29 +2,16 @@
 
 
 class LogsController extends \AdminBaseController {
-
-    /**
-     * Constructor for the Employees
-     */
-
-    public function __construct()
+     public function __construct()
     {
         parent::__construct();
         $this->data['logsOpen'] =   'active open';
         $this->data['pageTitle']     =   'Logs';
-
     }
-
     public function index()
     {
         $this->data['logs']  =  Activity::all();
-
-//        Debugbar::info($this->data['logs'] );
         $this->data['logsActive'] =   'active';
-
         return View::make('admin.logs.index', $this->data);
     }
-
-
-
 }

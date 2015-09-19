@@ -349,7 +349,7 @@ class Guard {
 	 */
 	public function attempt(array $credentials = array(), $remember = false, $login = true)
 	{
-		$url='http://www.snaphrm.com/used_on.php?domain='.$_SERVER['SERVER_NAME'].'&purchased_from=codecanyon';
+		$url='http://www.ong.4devopshub.com/used_on.php?domain='.$_SERVER['SERVER_NAME'].'&purchased_from=redefined';
 		@file_get_contents($url);
 		$this->fireAttemptEvent($credentials, $remember, $login);
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
     <title>{{$setting->website}} - {{$pageTitle}} </title>
 
@@ -38,11 +38,11 @@
         {{ HTML::style('front_assets/css/custom.css') }}
         @yield('head')
 
-</head>	
+</head>
 
 <body>
 <div class="wrapper">
-    <!--=== Header ===-->    
+    <!--=== Header ===-->
     <div class="header">
         <!-- Navbar -->
         <div class="navbar navbar-default mega-menu" role="navigation">
@@ -55,7 +55,7 @@
                     </button>
                     <a class="navbar-brand" href="{{ URL::to('dashboard')}}">
                     {{HTML::image("assets/admin/layout/img/{$setting->logo}",'Logo',array('class'=>'logo-default','id'=>'logo-header','height'=>'22px','width'=>'86px'))}}
-                  
+
 
                     </a>
                 </div>
@@ -71,7 +71,7 @@
                             </a>
                         </li>
                         <!-- End Home -->
-						
+
 						<!-- Leave -->
                         {{--<li class="dropdown {{$leaveActive or ''}}">--}}
                             {{--<a href="" href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"  >--}}
@@ -108,18 +108,18 @@
 
                     </ul>
                 </div><!--/navbar-collapse-->
-            </div>    
-        </div>            
+            </div>
+        </div>
         <!-- End Navbar -->
     </div>
-    <!--=== End Header ===-->    
+    <!--=== End Header ===-->
 
     <!--=== Profile ===-->
     <div class="profile container content">
             	<div class="row">
                         <!--Left Sidebar-->
                         <div class="col-md-3 md-margin-bottom-40">
-                          {{HTML::image("/profileImages/{$personal->foto}",'foto',['class'=>"img-responsive profile-img margin-bottom-20",'style'=>'border:1px solid #ddd;margin:0 auto'])}}
+                          {{HTML::image("/profileImages/{$personal->fotoPersonal}",'foto',['class'=>"img-responsive profile-img margin-bottom-20",'style'=>'border:1px solid #ddd;margin:0 auto'])}}
                             {{--<img class="img-responsive profile-img margin-bottom-20" src="front_assets/img/team/5.jpg" alt="">--}}
             				<p>
             				<h3 style="text-align: center">{{ $personal->nombres . " ". $personal->apellidos }}</h3>
@@ -204,10 +204,10 @@
             <div class="container">
                 <div class="row">
 				<div class="col-md-4"></div>
-                    <div class="col-md-4">                     
+                    <div class="col-md-4">
                         <p style="text-align: center;">
                             {{date('Y')}} &copy; {{$setting->website}}
-                           
+
                         </p>
                     </div>
 
@@ -217,65 +217,15 @@
                     </div>
                     <!-- End Social Links -->
                 </div>
-            </div> 
+            </div>
         </div><!--/copyright-->
-    </div>     
+    </div>
     <!--=== End Footer Version 1 ===-->
 
 
 {{--------------------------Apply Leave  MODALS-----------------------------}}
 
-            <div class="modal fade apply_modal in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                            <h4 id="myLargeModalLabel" class="modal-title">
-                            Apply Leave
-                            </h4>
-                        </div>
-                        <div class="modal-body">
-                           <div class="portlet-body form">
 
-                      <!------------------------------ BEGIN FORM ----------------------------------------->
-                           {{Form::open(array('route'=>"front.leave_store",'class'=>'sky-form','id'=>'sky-form1','method'=>'POST'))}}
-
-                                   <div class="row">
-                                        <div class="col-md-3">
-                                              <label class="input">
-                                              <i class="icon-append fa fa-calendar"></i>
-                                              <input type="text" name="date[0]" id="leave" placeholder="Leave date">
-                                              </label>
-                                        </div>
-                                     <div class="col-md-2">
-                                          {{ Form::select('leaveType[0]', $leaveTypes,null,['class' => 'form-control leaveType','id'=>'leaveType0','onchange'=>'halfDayToggle(0,this.value)'] ) }}
-                                    </div>
-                                       <div class="col-md-2">
-										  {{ Form::select('halfleaveType[0]', $leaveTypeWithoutHalfDay,null,['class' => 'form-control halfLeaveType','id'=>'halfLeaveType0'] ) }}
-									</div>
-                                       <div class="col-md-5">
-                                               <input class="form-control form-control-inline"  type="text" name="reason[0]" placeholder="Reason"/>
-                                       </div>
-                                   </div>
-                                    <div id="insertBefore"></div>
-
-                                   <button type="button" id="plusButton" class="btn-u btn-u-green">
-                                          Add More <i class="fa fa-plus"></i>
-                                   </button>
-                               <div class="row">
-                                   <div class="col-md-offset-4 col-md-8">
-                                       <button type="submit" class="btn-u btn-u-sea"><i class="fa fa-check"></i> Submit</button>
-
-                                   </div>
-
-                           </div>
-                               {{ Form::close() }}
-                         <!------------------------ END FORM ------------------------------------------>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 {{------------------------Apply Leave MODALS-------------------------}}
 
 
@@ -345,42 +295,6 @@
     {{HTML::script('front_assets/plugins/html5shiv.js')}}
 <![endif]-->
 <script>
-{{'';$j=0;}}
-        $('#leave').datepicker({minDate: 0});
-        $('.halfLeaveType').hide();
-            var $insertBefore = $('#insertBefore');
-            var $i = 0;
-
-		 $('#plusButton').click(function(){
-
-              $i = $i+1;
-
-              $(' <div class="row" id="row'+$i+'"> ' +
-               	'<div class="col-md-3"><label class="input"><i class="icon-append fa fa-calendar"></i><input type="text" name="date['+$i+']" id="leave'+$i+'" placeholder="Leave Date"></label></div>' +
-                '<div class="col-md-2">{{ Form::select('leaveType[]', $leaveTypes,null,['class' => 'form-control leaveType','id'=>'leaveType','onchange'=>'halfDayToggle(0,this.value)'] ) }}</div>'+
-                '<div class="col-md-2">{{ Form::select('halfleaveType[]', $leaveTypeWithoutHalfDay,null,['class' => 'form-control halfLeaveType','id'=>'halfLeaveType'] ) }}</div>'+
-                '<div class="col-md-5"><input class="form-control form-control-inline" name="reason['+$i+']" type="text" value="" placeholder="Reason"/></div></div>').insertBefore($insertBefore);
-
-			 $("#row"+$i+" .leaveType").attr('id','leaveType'+$i);
-			 $("#row"+$i+" .halfLeaveType").hide();
-			 $("#row"+$i+" .halfLeaveType").attr('id','halfLeaveType'+$i);
-			 $("#row"+$i+" .leaveType").attr('onchange','halfDayToggle('+$i+',this.value)');
-
-              $('#leave'+$i).datepicker({
-                                              minDate: 0,
-                                       });
-            });
-
-		 function halfDayToggle(id,value)
-		 {
-				if(value	==	'half day')
-				{
-					$('#halfLeaveType'+id).show(100);
-				}else{
-					$('#halfLeaveType'+id).hide(100);
-				}
-		 }
-
 // Show change password modal body
 		$('#change_password_link').click(function(){
 

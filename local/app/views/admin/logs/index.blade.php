@@ -66,13 +66,13 @@
                                 Descripcion
                             </th>
                             <th class="text-center">
-                                Detalles
+                                Administrador
+                            </th>
+                            <th class="text-center">
+                                Direccion IP
                             </th>
                             <th class="text-center">
                                 Fecha de Actividad
-                            </th>
-                            <th class="text-center">
-
                             </th>
                             <th class="text-center">
 
@@ -100,10 +100,10 @@
                                     {{ $log->details }}
                                 </td>
                                 <td>
-                                    {{ $log->created_at }}
+                                    {{ $log->ip_address }}
                                 </td>
                                 <td>
-
+                                    {{ $log->created_at }}
                                 </td>
                                 <td>
 

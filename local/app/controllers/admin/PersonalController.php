@@ -19,7 +19,6 @@ class PersonalController extends \AdminBaseController {
     {
         $this->data['personales']       =    Personal::all();
         $this->data['personalActive']   =   'active';
-
         Debugbar::info($this->data['personales'] );
         return View::make('admin.personal.index', $this->data);
     }
@@ -30,7 +29,6 @@ class PersonalController extends \AdminBaseController {
     {
         $this->data['personalActive']  =   'active';
         return View::make('admin.personal.create',$this->data);
-//        dd("hola a todos");
     }
     /**
      * Store a newly created employee in storage
@@ -38,12 +36,10 @@ class PersonalController extends \AdminBaseController {
     public function store()
     {
         $validator = Validator::make($input = Input::all(), Personal::rules('create'));
-
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-
         DB::beginTransaction();
         try {
             $nombres = $input['nombres'];
@@ -53,21 +49,15 @@ class PersonalController extends \AdminBaseController {
             if (Input::hasFile('fotoPersonal')) {
                 $path       = public_path()."/foto/";
                 File::makeDirectory($path, $mode = 0777, true, true);
-
                 $image 	    = Input::file('fotoPersonal');
                 $extension  = $image->getClientOriginalExtension();
                 $filename	= "{$nombres}_{$input['personalID']}.".strtolower($extension);
-
-                //                Image::make($image->getRealPath())->resize('872','724')->save($path.$filename);
                 Image::make($image->getRealPath())
                     ->fit(872, 724, function ($constraint) {
                         $constraint->upsize();
                     })->save($path.$filename);
-
-
-
             }
-
+            $tipo = "Aportante";
             Personal::create([
                 'personalID'    => $input['personalID'],
                 'nombres'      => ucwords(strtolower($input['nombres'])),
@@ -75,13 +65,12 @@ class PersonalController extends \AdminBaseController {
                 'email'         => $input['email'],
                 'password'      => Hash::make($input['password']),
                 'genero'        => $input['genero'],
-                'tipoPersonal'   => $input['tipoPersonal'],
+                'tipoPersonal'   => $tipo,
                 'telefono'  => $input['telefono'],
-                'parentesco'  => $input['parentesco'],
+//                'parentesco'  => $input['parentesco'],
                 'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
                 'fotoPersonal'  =>  isset($filename)?$filename:'default.jpg',
             ]);
-
             Activity::log([
                 'contentId'   =>  $input['personalID'],
                 'contentType' => 'Personal',
@@ -91,27 +80,11 @@ class PersonalController extends \AdminBaseController {
                 'details'     => 'Usuario: '. Auth::admin()->get()->name,
                 'updated'     => $input['personalID'] ? true : false
             ]);
-
-//            if($this->data['setting']->ben_add==1)
-//            {
-//                $this->data['ben_name'] = $fullname;
-//                $this->data['ben_email'] = $input['email'];
-//                $this->data['ben_password'] = $input['password'];
-//                //        Send Employee Add Mail
-//                Mail::send('emails.admin.beneficiarios_add', $this->data, function ($message) use ($input) {
-//                    $message->from($this->data['setting']->email, $this->data['setting']->name);
-//                    $message->to($input['email'], $input['nombres']." ".$input['apellidos'])
-//                        ->subject('Cuenta Creada - ' . $this->data['setting']->website);
-//                });
-//            }
-//            //  ********** END UPLOAD THE DOCUMENTS**********
-
         }catch(\Exception $e)
         {
             DB::rollback();
             throw $e;
         }
-
         DB::commit();
         return Redirect::route('admin.personal.index')->with('success',"<strong>{$nombres}</strong> exitosamente adicionado en le base de datos");
     }
@@ -129,15 +102,10 @@ class PersonalController extends \AdminBaseController {
      */
     public function update($id)
     {
-        //----Bank Details Update-------
-
         if(Input::get('updateType')=='responsable')
         {
-//            dd(Input::all());
             $per  =   Personal::where('personalID','=',$id)->get()->first();
-
             $validator = Validator::make($input = Input::all(), Personal::rules('personalInfo', $per->id));
-
             if ($validator->fails())
             {
                 $output['status']   =   'error';
@@ -148,27 +116,18 @@ class PersonalController extends \AdminBaseController {
                 {
                     $path       = public_path()."/personalImages/";
                     File::makeDirectory($path, $mode = 0777, true, true);
-
                     $image 	    = Input::file('fotoPersonal');
-
                     $fullname = Input::get('nombres')." ". Input::get('apellidos');
                     $extension  = $image->getClientOriginalExtension();
                     $filename	= "{$fullname}_{$id}.".strtolower($extension);
-
-                    //Image::make($image->getRealPath())->resize(872,724)->save("$path$filename");
-
                     Image::make($image->getRealPath())
                         ->fit(872, 724, function ($constraint) {
                             $constraint->upsize();
                         })->save($path . $filename);
-
-
                 }else
                 {
                     $filename   =   Input::get('hiddenImage');
                 }
-
-
                 $responsable = Personal::firstOrNew(['personalID' => $id]);
                 $responsable->nombres       = ucwords(strtolower($input['nombres']));
                 $responsable->apellidos     = ucwords(strtolower($input['apellidos']));
@@ -181,7 +140,6 @@ class PersonalController extends \AdminBaseController {
                 $responsable->fechanac      = date('Y-m-d',strtotime(Input::get('fechanac')));
                 $responsable->fotoPersonal  =  isset($filename)?$filename:'default.jpg';
                 $responsable->save();
-
                 Activity::log([
                     'contentId'   =>  $id,
                     'contentType' => 'Personal',
@@ -191,7 +149,6 @@ class PersonalController extends \AdminBaseController {
                     'details'     => 'Usuario: '. Auth::admin()->get()->name,
                     'updated'     => $id ? true : false
                 ]);
-
                 $output['status'] = 'success';
                 $output['msg'] = 'Persona actualizad correctamente....';
             }
@@ -204,19 +161,12 @@ class PersonalController extends \AdminBaseController {
      */
     public function export(){
         $ben   =   Personal::all()->get()->toArray();
-
         $data = $ben;
-
         Excel::create('ong'.time(), function($excel) use($data) {
-
             $excel->sheet('Personales', function($sheet) use($data) {
-
                 $sheet->fromArray($data);
-
             });
-
         })->store('xls')->download('xls');
-
         Activity::log([
             'contentId'   => 'All',
             'user_id'     => Auth::admin()->get()->id,
@@ -239,14 +189,7 @@ class PersonalController extends \AdminBaseController {
             'details'     => 'Usuario: '. Auth::admin()->get()->name,
             'updated'     => $id ? true : false
         ]);
-
         $output['success']  =   'deleted';
-
         return Response::json($output, 200);
     }
-
-
-
-
-
 }
