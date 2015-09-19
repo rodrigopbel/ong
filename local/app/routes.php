@@ -70,24 +70,16 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::get('ReporteBen/{id}',['as'=>'ReporteBen','uses'=>'ReportsController@ReporteGen']);
     //  Logs Routing
     Route::resource('logs', 'LogsController',['except' => ['show'],'as' => 'admin']);
-//    //    Expense Routing
-//    Route::get('ajax_expenses/',['as'=>'admin.ajax_expenses','uses'=> 'ExpensesController@ajax_expenses']);
-//    Route::resource('expenses', 'ExpensesController',['except' => ['show'],'as' => 'admin']);
-//
-//    //    Holiday Routing
-//    Route::get('holidays/mark_sunday', 'HolidaysController@Sunday');
-//    Route::resource('holidays', 'HolidaysController',['as' => 'admin']);
-
     //  Routing for the attendance
     Route::get('attendances/report/{attendances}', ['as'=>'admin.attendance.report','uses'=>'AttendancesController@report']);
     Route::resource('attendances', 'AttendancesController',['as' => 'admin']);
-
-    //    Routing or the leavetypes
-    Route::resource('leavetypes', 'LeavetypesController',['except'=>['show'],'as' => 'admin']);
-
-    //    Leave Applications routing
-    Route::get('leave_applications/ajaxApplications',['as'=>'admin.leave_applications','uses'=> 'LeaveApplicationsController@ajaxApplications']);
-    Route::resource('leave_applications', 'LeaveApplicationsController',['except'=>['create','store','edit'],'as' => 'admin']);
+//
+//    //    Routing or the leavetypes
+//    Route::resource('leavetypes', 'LeavetypesController',['except'=>['show'],'as' => 'admin']);
+//
+//    //    Leave Applications routing
+//    Route::get('leave_applications/ajaxApplications',['as'=>'admin.leave_applications','uses'=> 'LeaveApplicationsController@ajaxApplications']);
+//    Route::resource('leave_applications', 'LeaveApplicationsController',['except'=>['create','store','edit'],'as' => 'admin']);
 
     //   Routing for setting
     Route::resource('settings', 'SettingsController',['only'=>['edit','update'],'as' => 'admin']);
