@@ -70,24 +70,13 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::get('ReporteBen/{id}',['as'=>'ReporteBen','uses'=>'ReportsController@ReporteGen']);
     //  Logs Routing
     Route::resource('logs', 'LogsController',['except' => ['show'],'as' => 'admin']);
-//    //  Awards Routing
-//    Route::get('ajax_awards/',['as'=>'admin.ajax_awards','uses'=> 'AwardsController@ajax_awards']);
-//    Route::resource('awards', 'AwardsController',['as' => 'admin']);
+//    //    Expense Routing
+//    Route::get('ajax_expenses/',['as'=>'admin.ajax_expenses','uses'=> 'ExpensesController@ajax_expenses']);
+//    Route::resource('expenses', 'ExpensesController',['except' => ['show'],'as' => 'admin']);
 //
-//    //  Department Routing
-//    Route::get('departments/ajax_designation/',['as'=>'admin.departments.ajax_designation','uses'=> 'DepartmentsController@ajax_designation']);
-//    Route::resource('departments', 'DepartmentsController',['except' => ['show','create'],'as' => 'admin']);
-
-
-
-
-    //    Expense Routing
-    Route::get('ajax_expenses/',['as'=>'admin.ajax_expenses','uses'=> 'ExpensesController@ajax_expenses']);
-    Route::resource('expenses', 'ExpensesController',['except' => ['show'],'as' => 'admin']);
-
-    //    Holiday Routing
-    Route::get('holidays/mark_sunday', 'HolidaysController@Sunday');
-    Route::resource('holidays', 'HolidaysController',['as' => 'admin']);
+//    //    Holiday Routing
+//    Route::get('holidays/mark_sunday', 'HolidaysController@Sunday');
+//    Route::resource('holidays', 'HolidaysController',['as' => 'admin']);
 
     //  Routing for the attendance
     Route::get('attendances/report/{attendances}', ['as'=>'admin.attendance.report','uses'=>'AttendancesController@report']);
