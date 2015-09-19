@@ -70,9 +70,6 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::get('ReporteBen/{id}',['as'=>'ReporteBen','uses'=>'ReportsController@ReporteGen']);
     //  Logs Routing
     Route::resource('logs', 'LogsController',['except' => ['show'],'as' => 'admin']);
-//    //  Routing for the attendance
-//    Route::get('attendances/report/{attendances}', ['as'=>'admin.attendance.report','uses'=>'AttendancesController@report']);
-//    Route::resource('attendances', 'AttendancesController',['as' => 'admin']);
     //   Routing for setting
     Route::resource('settings', 'SettingsController',['only'=>['edit','update'],'as' => 'admin']);
     //    Profile Setting
