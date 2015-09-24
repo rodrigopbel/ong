@@ -27,6 +27,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
+
                 <a href="">Update attendace</a>
             </li>
         </ul>
