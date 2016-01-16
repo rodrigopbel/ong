@@ -32,10 +32,42 @@
             <div class="row margin-bottom-20">
                 <!--Profile Post-->
                 <div class="col-sm-6">
-                    <div class="panel panel-profile reporte">
+                    <div class="panel panel-profile no-bg">
                         <div class="panel-heading overflow-h">
-                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-money"> SALDO :</i>{{$ingresoTotal}} (ingresoTotal) - {{$egresoTotal}} (egresoTotal) = {{$saldo}} </h2>
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Saldo</h2>
                         </div>
+                        <div class="panel-body panelHolder">
+                            <table class="table table-light margin-bottom-0">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="primary-link">Ingresos</span>
+                                    </td>
+                                    <td>
+                                        {{$ingresoTotal}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="primary-link">Egresos</span>
+                                    </td>
+                                    <td>
+                                        {{$egresoTotal}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="primary-link">Saldo</span>
+                                    </td>
+                                    <td>
+                                        {{$saldo}}
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="panel panel-profile reporte">
                         <div class="panel-heading overflow-h">
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Beneficiario </h2>
                         </div>
@@ -96,94 +128,82 @@
                         </table>
                     </div>
                     </div>
+                    <div class="portlet-body">
+                        <div class="panel-heading overflow-h">
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle de las Donaciones</h2>
+                        </div>
+                        <table class="table table-striped table-bordered table-hover" id="sample_2">
+                            <thead style="background:#767676; color :#fff">
+                            <tr>
+                                {{--<th> Saldo ID</th>--}}
+                                <th> Aportante</th>
+                                <th> Descripcion Donacion</th>
+                                <th> Donacion</th>
+                                <th> Fecha de Donacion</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            @foreach ($donaciones as $donacion)
+                                <tr id="row{{ $donacion->id }}">
+
+                                    {{--<td> {{ $saldo->id }} </td>--}}
+                                    {{--<td> {{ $saldo->nombreBeneficiario }} </td>--}}
+                                    <td> {{ $donacion->nombreAportante}}</td>
+                                    <td> {{ $donacion->descripcion}} </td>
+                                    <td> {{ $donacion->montodonacion}} </td>
+                                    <td> {{ $donacion->created_at}} </td>
+                                </tr>
+                            @endforeach
+
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-
-
                 <div class="col-sm-6">
                     <div class="panel panel-profile">
                         <div class="panel-heading overflow-h">
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle de las Ayudas</h2>
                         </div>
                     <div class="panel-body panelHolder">
-                        <table class="table table-light margin-bottom-0">
-                            @foreach($ayudas as $ayuda)
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <span class="primary-link">Requerimiento</span>
-                                    </td>
-                                    <td>
-                                        {{$ayuda->requerimiento}}
-                                    </td>
-                                </tr>
+                        <table class="table table-striped table-bordered table-hover" id="sample_2">
+                            <thead style="background:#767676; color :#fff">
+                            <tr>
+                                <th> Nombre Aportante</th>
+                                <th> Requerimiento</th>
+                                {{--<th> Ayudas ID</th>--}}
+                                <th> Gastos / Egresos</th>
+                                <th> Fecha de Ayuda</th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
-                                <tr>
-                                    <td>
-                                        <span class="primary-link">Fecha de Ayuda</span>
-                                    </td>
-                                    <td>
-                                        {{$ayuda->created_at}}
-                                    </td>
+                            @foreach ($ayudas as $ayuda)
+                                <tr id="row{{ $ayuda->id }}">
+
+                                    {{--<td> {{ $saldo->id }} </td>--}}
+                                    <td> {{ $ayuda->nombreAportante }} </td>
+                                    <td>   {{$ayuda->requerimiento}} </td>
+                                    {{--<td> {{ $saldo->ayudasID}} </td>--}}
+                                    <td> {{$ayuda->gastos}}</td>
+                                    <td>  {{$ayuda->created_at}} </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <span class="primary-link">Gastos / Egresos</span>
-                                    </td>
-                                    <td>
-                                        {{$ayuda->gastos}}
-                                    </td>
-                                </tr>
-                                </tbody>
                             @endforeach
+
+
+                            </tbody>
                         </table>
                     </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="profile-body">
             <div class="row margin-bottom-20">
                 <!--Profile Post-->
-                <div class="col-sm-6">
-                    <div class="panel panel-profile">
-                        <div class="panel-heading overflow-h">
-                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle de las Donaciones</h2>
-                        </div>
-                    <div class="panel-body panelHolder">
-                        <table class="table table-light margin-bottom-0">
-                            @foreach($donaciones as $donacion)
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <span class="primary-link">Aportante ID</span>
-                                    </td>
-                                    <td>
-                                        {{$donacion->aportanteID}}
-                                    </td>
-                                </tr>
 
-                                <tr>
-                                    <td>
-                                        <span class="primary-link">Fecha de Donacion</span>
-                                    </td>
-                                    <td>
-                                        {{$donacion->created_at}}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="primary-link">Monto Donacion / Ingresos</span>
-                                    </td>
-                                    <td>
-                                        {{$donacion->montodonacion}}
-                                    </td>
-                                </tr>
-                                </tbody>
-                            @endforeach
-                        </table>
-                    </div>
-                    </div>
-                </div>
             </div>
         </div>
         <hr>

@@ -88,7 +88,13 @@
         <label class="control-label visible-ie8 visible-ie9">Tipo de Voluntario</label>
         <div class="input-icon">
             <i class="fa fa-lock"></i>
-            <input class="form-control placeholder-no-fix" type="tipovoluntario" autocomplete="off" placeholder="Tipo de Voluntario" name="tipovoluntario"/>
+            {{--<input class="form-control placeholder-no-fix" type="tipovoluntario" autocomplete="off" placeholder="Tipo de Voluntario" name="tipovoluntario"/>--}}
+            <select class="form-control placeholder-no-fix" name="tipovoluntario">
+                <option value="UniFranz">UniFranz
+                </option>
+                <option value="Externo" >Externo
+                </option>
+            </select>
         </div>
     </div>
     <div class="form-group">

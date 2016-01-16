@@ -12,12 +12,13 @@ class DonacionesController extends \AdminBaseController {
 	{
 		$this->data['donaciones'] = Donacion::all();
         $this->data['donacionesActive'] =   'active';
+//        return $this->data['donaciones'];
 		return View::make('admin.donaciones.index', $this->data);
 	}
     public function ajax_donaciones()
     {
         $result =
-            Donacion::select('donaciones.id','personal.nombres','montodonacion','beneficiarios.apellidos','descripcion','donaciones.created_at')
+            Donacion::select('donaciones.id',DB::raw('CONCAT(personal.nombres, personal.apellidos) AS nombre_aportante'),'montodonacion',DB::raw('CONCAT(beneficiarios.nombres," ", beneficiarios.apellidos)'),'donaciones.created_at','descripcion')
                 ->join('personal', 'donaciones.aportanteID', '=', 'personal.personalID')
                 ->join('beneficiarios', 'donaciones.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
                 ->orderBy('donaciones.created_at','desc');
@@ -46,8 +47,12 @@ class DonacionesController extends \AdminBaseController {
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
+        $aportante = Personal::where('personalID','=', $input['personalID'])->get()->first();
+        $beneficiario = Beneficiario::where('beneficiarioID','=', $input['beneficiarioID'])->get()->first();
         Donacion::create([
             'aportanteID'    => $input['personalID'],
+            'nombreAportante'    => $aportante->nombres ." " .$aportante->apellidos,
+            'nombreBeneficiario'    => $beneficiario->nombres ." " .$beneficiario->apellidos,
             'beneficiarioID' => $input['beneficiarioID'],
             'descripcion'    => $input['descripcion'],
             'montodonacion'  => $input['montodonacion']
@@ -109,7 +114,7 @@ class DonacionesController extends \AdminBaseController {
 				'contentType' => 'Donacion',
 				'user_id'     => Auth::admin()->get()->id,
 				'action'      => 'Update',
-				'description' => 'Eliminacion '. $id,
+				'description' => 'Eliminacion de Donacion '. $id,
 				'details'     => 'Usuario: '. Auth::admin()->get()->name,
 				'updated'     => $id ? true : false
 			]);

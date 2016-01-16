@@ -36,6 +36,7 @@ return [
 	'personalAdmi'          =>  'Administrador',
 	'personalRes'           =>  'Responsable',
 	'personalVol'           =>  'Voluntario',
+	'personalApor'          =>  'Aportante',
     'personalList'          =>  'Lista',
     'reportes'              =>  'Reportes',
     'reportesBen'           =>  'Reportes de Beneficiarios',

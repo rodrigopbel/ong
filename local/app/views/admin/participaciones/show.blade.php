@@ -58,6 +58,8 @@
                                                 <tr>
                                                     <th> Descripcion</th>
                                                     <th> Nombres</th>
+                                                    <th> Apellidos</th>
+                                                    <th> Cedula de Identidad</th>
                                                     <th> Email</th>
                                                     <th> Telefono Voluntario</th>
                                                 </tr>
@@ -68,6 +70,8 @@
                                                     <tr id="row{{ $part->id }}">
                                                         <td> {{ $part->descripcion }}</td>
                                                         <td> {{ $part->nombres }} </td>
+                                                        <td> {{ $part->apellidos }} </td>
+                                                        <td> {{ $part->personalID,' ' ,$part->emision, 'LP' }}  </td>
                                                         <td> {{ $part->email}} </td>
                                                         <td> {{ $part->telefono }} </td>
 

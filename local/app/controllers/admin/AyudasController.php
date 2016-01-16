@@ -16,7 +16,7 @@ class AyudasController extends \AdminBaseController {
     public function ajax_ayudas()
     {
 	    $result =
-            Ayuda::select('ayudas.id','beneficiarios.apellidos','personal.nombres','requerimiento','nit','ayudas.gastos','numfactura','ayudas.created_at')
+            Ayuda::select('ayudas.id','beneficiarios.apellidos','personal.nombres','requerimiento','ayudas.gastos','nit','numfactura','ayudas.created_at')
                 ->join('beneficiarios', 'ayudas.beneficiarioID', '=', 'beneficiarios.beneficiarioID')
                 ->join('personal', 'ayudas.aportanteID', '=', 'personal.personalID')
                 ->orderBy('ayudas.created_at','desc');
@@ -40,35 +40,83 @@ class AyudasController extends \AdminBaseController {
 	}
 	public function store()
 	{
+
 		$validator = Validator::make($input = Input::all(), Ayuda::$rules);
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
+//        return Input::all();
+        $aportante = Personal::where('personalID','=', $input['personalID'])->get()->first();
+        $beneficiario = Beneficiario::where('beneficiarioID','=', $input['beneficiarioID'])->get()->first();
         Ayuda::create([
             'beneficiarioID' => $input['beneficiarioID'],
             'aportanteID'    => $input['personalID'],
+            'nombreBeneficiario'    => $beneficiario->nombres ." " .$beneficiario->apellidos,
+            'nombreAportante'    => $aportante->nombres ." ". $aportante->apellidos,
             'requerimiento'  => $input['requerimiento'],
             'centroSalud'    => $input['centroSalud'],
             'nit'            => $input['nit'],
             'numfactura'     => $input['numfactura'],
             'gastos'         => $input['gastos']
         ]);
+
         $donacion = Donacion::where('aportanteID','=',$input['personalID'])->get()->first();
+        $aportante = Personal::where('personalID','=', $input['personalID'])->get()->first();
+
         $beneficiario = Beneficiario::where('beneficiarioID', '=', $input['beneficiarioID'])->get()->first();
-        Saldo::create([
-            'nombreBeneficiario' => $beneficiario->nombres . " " .$beneficiario->apellidos,
-            'donacionesID'  =>  $donacion->id,
-            'ayudasID'      =>  $input['nit'],
-            'donacion'      =>  $donacion->montodonacion,
-            'ayuda'         =>  $input['gastos'],
-            'saldo'         =>  $donacion->montodonacion - $input['gastos']
-        ]);
+//        return $donacion;
+//        return ("hola a todos");
+
+        $saldo = Saldo::where('donacionesID', '=', $donacion->id)->get()->last();
+//        $saldo2 = Saldo::where('donacionesID', '=', $donacion->id)->get()->first();
+//        return [$saldo, $saldo2];
+//        return $saldo;
+        if(!empty($saldo->saldo)){
+
+            $saldo2 = $saldo->saldo - $input['gastos'];
+            Saldo::create([
+                'nombreBeneficiario' => $beneficiario->nombres . " " .$beneficiario->apellidos,
+                'nombreAportante' => $aportante->nombres . " " .$aportante->apellidos,
+                'donacionesID'  =>  $donacion->id,
+                'ayudasID'      =>  $input['nit'],
+                'donacion'      =>  $saldo->saldo,
+                'ayuda'         =>  $input['gastos'],
+                'saldo'         =>  $saldo2
+            ]);
+//            return "entro aca false";
+        }
+
+        if(empty($saldo->saldo)){
+
+            $saldo2 = $donacion->montodonacion - $input['gastos'];
+            Saldo::create([
+                'nombreBeneficiario' => $beneficiario->nombres . " " .$beneficiario->apellidos,
+                'nombreAportante' => $aportante->nombres . " " .$aportante->apellidos,
+                'donacionesID'  =>  $donacion->id,
+                'ayudasID'      =>  $input['nit'],
+                'donacion'      =>  $donacion->montodonacion,
+                'ayuda'         =>  $input['gastos'],
+                'saldo'         =>  $saldo2
+            ]);
+//            return "entro aca true";
+        }
+
+//        Saldo::create([
+//            'nombreBeneficiario' => $beneficiario->nombres . " " .$beneficiario->apellidos,
+//            'donacionesID'  =>  $donacion->id,
+//            'ayudasID'      =>  $input['nit'],
+//            'donacion'      =>  $donacion->montodonacion,
+//            'ayuda'         =>  $input['gastos'],
+//            'saldo'         =>  $saldo2
+//        ]);
+//        return Input::all();
+
 		Activity::log([
 			'contentId'   =>  $input['beneficiarioID'],
 			'contentType' => 'Ayuda',
 			'user_id'     => Auth::admin()->get()->id,
-			'action'      => 'Create',
+			'action'      => 'Creacion',
 			'description' => 'Creacion '. $input['requerimiento'],
 			'details'     => 'Usuario: '. Auth::admin()->get()->name,
 			'updated'     => $input['beneficiarioID'] ? true : false
@@ -106,7 +154,7 @@ class AyudasController extends \AdminBaseController {
 			'contentId'   =>  $id,
 			'contentType' => 'Ayuda',
 			'user_id'     => Auth::admin()->get()->id,
-			'action'      => 'Create',
+			'action'      => 'Actualizando',
 			'description' => 'Actualizacion '. $data['beneficiarioID'],
 			'details'     => 'Usuario: '. Auth::admin()->get()->name,
 			'updated'     => $id ? true : false
@@ -122,8 +170,8 @@ class AyudasController extends \AdminBaseController {
 				'contentId'   =>  $id,
 				'contentType' => 'Ayuda',
 				'user_id'     => Auth::admin()->get()->id,
-				'action'      => 'Create',
-				'description' => 'Eliminacion '. $id,
+				'action'      => 'Eliminacion',
+				'description' => 'Eliminacion de ayudas '. $id,
 				'details'     => 'Usuario: '. Auth::admin()->get()->name,
 				'updated'     => $id ? true : false
 			]);

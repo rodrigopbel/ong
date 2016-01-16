@@ -1,3 +1,4 @@
+
 @extends('admin.adminlayouts.adminlayout')
 
 @section('head')
@@ -12,7 +13,7 @@
 @section('mainarea')
 
         			<!-- BEGIN PAGE HEADER-->
-<h3 class="page-title" xmlns="http://www.w3.org/1999/html">
+<h3 class="page-title">
         			Detalles del Beneficiario
         			</h3>
         			<div class="page-bar">
@@ -51,7 +52,6 @@
 
 
         						<div class="portlet-body">
-
 
                                 {{--------------------Personal Info Form--------------------------------------------}}
 
@@ -160,21 +160,8 @@
         											<textarea name="direccionperm" class="form-control" rows="3">{{$beneficiario->direccionperm}}</textarea>
         										</div>
         									</div>
-        									<h4><strong>Cuenta de Beneficiario</strong></h4>
-        									<div class="form-group">
-                                                    <label class="col-md-3 control-label">Email<span class="required">* </span></label>
-                                                    <div class="col-md-9">
-                                                        <input type="text" name="email" class="form-control" value="{{$beneficiario->email}}">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-md-3 control-label">Password</label>
-                                                    <div class="col-md-9">
-                                                        <input type="hidden" name="oldpassword" value="{{$beneficiario->password}}">
-                                                        <input type="text" name="password" class="form-control">
-                                                    </div>
-                                                </div>
         								</div>
+
                                     <div class="portlet box red-sunglo">
                                         <div class="portlet-title">
                                             <div class="caption">
@@ -244,6 +231,7 @@
         						</div>
         					</div>
         				</div>
+
         				<div class="col-md-6 col-sm-6">
         					<div class="portlet box red-sunglo">
         						<div class="portlet-title">
@@ -338,10 +326,10 @@
                                                 </div>
                                                 </div>
                                          @endforeach
-                                 		<a class="" data-toggle="modal" href="#static">
-                                         Nuevo
-                                                <i class="fa fa-plus"></i> </a>
-        								</div>
+                                 		{{--<a class="" data-toggle="modal" href="#static">--}}
+                                         {{--Nuevo--}}
+                                                {{--<i class="fa fa-plus"></i> </a>--}}
+        								{{--</div>--}}
         							{{Form::close()}}
 
 
@@ -415,6 +403,7 @@
         					</div>
         				</div>
         			</div>
+
         			<div class="clearfix">
         			<div class="row ">
         				<div class="col-md-6 col-sm-6">
@@ -586,6 +575,7 @@
         				</div>
 
         			</div>
+
                         <div class="col-md-6 col-sm-6">
                             <div class="portlet box red-sunglo">
                                 <div class="portlet-title">
@@ -609,6 +599,19 @@
                                             <label class="col-md-3 control-label">Cedula de Identidad</label>
                                             <div class="col-md-9">
                                                 <input type="text" name="ciResponsable" class="form-control" value="{{$responsable->personalID  or ''}}">
+                                                <select class="form-control" name="ciResponsableEmision">
+
+                                                    <option value="Ninguno" @if($responsable->emision =='LP') selected @endif>LP</option>
+                                                    <option value="Papa/Mama"  @if($responsable->emision =='Or') selected @endif>Or</option>
+                                                    <option value="Tio/Tia"  @if($responsable->emision =='Po') selected @endif>Po</option>
+                                                    <option value="Hermano/Hermana"  @if($responsable->emision =='Cbba') selected @endif>Cbba</option>
+                                                    <option value="OtroFamilia"  @if($responsable->emision =='Chuq') selected @endif>Chuq</option>
+                                                    <option value="OtroFamilia"  @if($responsable->emision =='Tj') selected @endif>Tj</option>
+                                                    <option value="OtroFamilia"  @if($responsable->emision =='Png') selected @endif>Png</option>
+                                                    <option value="OtroFamilia"  @if($responsable->emision =='Ben') selected @endif>Ben</option>
+                                                    <option value="OtroFamilia"  @if($responsable->emision =='Scz') selected @endif>Scz</option>
+                                                </select>
+
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -634,9 +637,9 @@
                                             <div class="col-md-9">
                                                 <select class="form-control" name="parentesco">
                                                     <option value="Ninguno" @if($responsable->parentesco=='Ninguno') selected @endif>Ninguno</option>
-                                                    <option value="Papa/Mama"  @if($responsable->parentesco=='Papa/Mama') selected @endif>Papa / mama</option>
-                                                    <option value="Tio/Tia"  @if($responsable->parentesco=='Tio/Tia') selected @endif>Tio /Ti</option>
-                                                    <option value="Hermano/Hermana"  @if($responsable->parentesco=='Hermano/Hermana') selected @endif>Hermano / hermana</option>
+                                                    <option value="Papa/Mama"  @if($responsable->parentesco=='Papa / Mama') selected @endif>Papa / mama</option>
+                                                    <option value="Tio/Tia"  @if($responsable->parentesco=='Tio / Tia') selected @endif>Tio /Ti</option>
+                                                    <option value="Hermano/Hermana"  @if($responsable->parentesco=='Hermano / Hermana') selected @endif>Hermano / hermana</option>
                                                     <option value="OtroFamilia"  @if($responsable->parentesco=='OtroFamiliar') selected @endif>Otro Familiar</option>
                                                 </select>
                                             </div>
@@ -650,57 +653,58 @@
         			<div class="clearfix">
         			</div>
         		</div>
+
                          {{-------------DELETE MODAL CALLING------------}}
                             @include('admin.common.delete')
                         {{---------------DELETE MODAL CALLING END--------}}
 
 {{------------------------------------NEW SALARY ADD MODALS--------------------------------}}
 
-     			<div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                                <h4 class="modal-title"><strong>Nuevo</strong></h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="portlet-body form">
+     			{{--<div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">--}}
+                    {{--<div class="modal-dialog">--}}
+                        {{--<div class="modal-content">--}}
+                            {{--<div class="modal-header">--}}
+                                {{--<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>--}}
+                                {{--<h4 class="modal-title"><strong>Nuevo</strong></h4>--}}
+                            {{--</div>--}}
+                            {{--<div class="modal-body">--}}
+                                {{--<div class="portlet-body form">--}}
 
-                            <!-------------- BEGIN FORM------------>
-                                {{Form::open(array('route'=>"admin.salary.store",'class'=>'form-horizontal ','method'=>'POST'))}}
-                                <input   type="hidden" name="employeeID" value="{{$beneficiario->beneficiarioID}}"/>
+                            {{--<!-------------- BEGIN FORM------------>--}}
+                                {{--{{Form::open(array('route'=>"admin.salary.store",'class'=>'form-horizontal ','method'=>'POST'))}}--}}
+                                {{--<input   type="hidden" name="beneficiarioId" value="{{$beneficiario->beneficiarioID}}"/>--}}
 
-                                    <div class="form-body">
+                                    {{--<div class="form-body">--}}
 
-                                        <div class="form-group">
-                                             <div class="col-md-6">
-                                                <input class="form-control form-control-inline" name="type" type="text" value="" placeholder="Tipo"/>
-                                             </div>
-										 </div>
-										 <div class="form-group">
-                                            <div class="col-md-6">
-                                                <input class="form-control form-control-inline"  type="text" name="salary" placeholder="Monto"/>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        {{--<div class="form-group">--}}
+                                             {{--<div class="col-md-6">--}}
+                                                {{--<input class="form-control form-control-inline" name="type" type="text" value="" placeholder="Tipo"/>--}}
+                                             {{--</div>--}}
+										 {{--</div>--}}
+										 {{--<div class="form-group">--}}
+                                            {{--<div class="col-md-6">--}}
+                                                {{--<input class="form-control form-control-inline"  type="text" name="salary" placeholder="Monto"/>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
 
-                                    <div class="form-actions">
-                                        <div class="row">
-                                            <div class="col-md-offset-3 col-md-9">
-                                                <button type="submit" data-loading-text="Updating..."  class="demo-loading-btn btn green"><i class="fa fa-check"></i> Enviar</button>
+                                    {{--<div class="form-actions">--}}
+                                        {{--<div class="row">--}}
+                                            {{--<div class="col-md-offset-3 col-md-9">--}}
+                                                {{--<button type="submit" data-loading-text="Updating..."  class="demo-loading-btn btn green"><i class="fa fa-check"></i> Enviar</button>--}}
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {{ Form::close() }}
-                                 <!-- -----------END FORM-------->
-                                </div>
-                             </div>
-                                    <!-- END EXAMPLE TABLE PORTLET-->
-                        </div>
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                    {{--{{ Form::close() }}--}}
+                                 {{--<!-- -----------END FORM-------->--}}
+                                {{--</div>--}}
+                             {{--</div>--}}
+                                    {{--<!-- END EXAMPLE TABLE PORTLET-->--}}
+                        {{--</div>--}}
 
-                        </div>
-                    </div>
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
 
  {{------------------------------------END NEW SALARY ADD MODALS--------------------------------------}}
@@ -714,12 +718,12 @@
 
 <!-- BEGIN PAGE LEVEL PLUGINS -->
     {{ HTML::script('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js')}}
-    {{ HTML::script("assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js")}}
+    {{ HTML::script('assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}
     {{ HTML::script('assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js')}}
     {{ HTML::script('assets/admin/pages/scripts/components-pickers.js')}}
 
 <!-- END PAGE LEVEL PLUGINS -->
-
+{{--{{dd("asdasd")}}--}}
 
 
 
@@ -747,7 +751,7 @@
 
 		}
 
-// Javascript function to update the company info and Bank Info
+{{--// Javascript function to update the company info and Bank Info--}}
        function UpdateDetails(id,type){
 
            var  form_id = '';
@@ -796,48 +800,48 @@
                      });
        }
 
-function del(id,type)
-		{
+{{--function del(id,type)--}}
+		{{--{--}}
 
-            var alert_div   =   '#alert_company';
-			$('#deleteModal').appendTo("body").modal('show');
-			$('#info').html('Eliminar  <strong>'+type+'</strong> Donacion??.');
-			$("#delete").click(function()
-			{
-				var url = "{{ route('admin.salary.destroy',':id') }}";
-				url = url.replace(':id',id);
-			 $.ajax({
+            {{--var alert_div   =   '#alert_company';--}}
+			{{--$('#deleteModal').appendTo("body").modal('show');--}}
+			{{--$('#info').html('Eliminar  <strong>'+type+'</strong> Donacion??.');--}}
+			{{--$("#delete").click(function()--}}
+			{{--{--}}
+				{{--var url = "{{ route('admin.salary.destroy',':id') }}";--}}
+				{{--url = url.replace(':id',id);--}}
+			 {{--$.ajax({--}}
 
-				type: "DELETE",
-				url : url,
-				dataType: 'json',
-				data: {"id":id}
+				{{--type: "DELETE",--}}
+				{{--url : url,--}}
+				{{--dataType: 'json',--}}
+				{{--data: {"id":id}--}}
 
-				}).done(function(response)
-				  {
-					 if(response.success == "deleted")
-					 {
-							$('#deleteModal').modal('hide');
-							$('#salary'+id).remove();
-							$(alert_div).html('<div class="alert alert-success alert-dismissable"><button class="close" data-close="alert"></button><span class="fa fa-check"></span> '+response.msg+'</div>');
-					 }
-				 });
-			})
+				{{--}).done(function(response)--}}
+				  {{--{--}}
+					 {{--if(response.success == "deleted")--}}
+					 {{--{--}}
+							{{--$('#deleteModal').modal('hide');--}}
+							{{--$('#salary'+id).remove();--}}
+							{{--$(alert_div).html('<div class="alert alert-success alert-dismissable"><button class="close" data-close="alert"></button><span class="fa fa-check"></span> '+response.msg+'</div>');--}}
+					 {{--}--}}
+				 {{--});--}}
+			{{--})--}}
 
-			}
+			{{--}--}}
 
-	function remove_exit()
-	{
-		if($("input[name=status]:checked").val() == "active"){
-			$("input[name=exit_date]").val("");
-		}
-	}
+	{{--function remove_exit()--}}
+	{{--{--}}
+		{{--if($("input[name=status]:checked").val() == "active"){--}}
+			{{--$("input[name=exit_date]").val("");--}}
+		{{--}--}}
+	{{--}--}}
 
 
-	$("input[name=exit_date]").change(function () {
-	  $("input[name=status]").bootstrapSwitch('state',false);
+	{{--$("input[name=exit_date]").change(function () {--}}
+	  {{--$("input[name=status]").bootstrapSwitch('state',false);--}}
 
-	});
+	{{--});--}}
     </script>
 
 @if(Session::get('successDocuments'))

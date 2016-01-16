@@ -35,18 +35,22 @@ class PersonalController extends \AdminBaseController {
      */
     public function store()
     {
+
         $validator = Validator::make($input = Input::all(), Personal::rules('create'));
         if ($validator->fails())
         {
             return Redirect::back()->withErrors($validator)->withInput();
         }
+
         DB::beginTransaction();
         try {
             $nombres = $input['nombres'];
             $apellidos = $input['apellidos'];
             $filename   =   null;
             // Profile Image Upload
+
             if (Input::hasFile('fotoPersonal')) {
+                return "gola a todos";
                 $path       = public_path()."/foto/";
                 File::makeDirectory($path, $mode = 0777, true, true);
                 $image 	    = Input::file('fotoPersonal');
@@ -57,29 +61,37 @@ class PersonalController extends \AdminBaseController {
                         $constraint->upsize();
                     })->save($path.$filename);
             }
+
             $tipo = "Aportante";
+//            return Input::all();
             Personal::create([
                 'personalID'    => $input['personalID'],
-                'nombres'      => ucwords(strtolower($input['nombres'])),
-                'apellidos'    => ucwords(strtolower($input['apellidos'])),
+                'emision'       => $input['nitcit2'],
+                'nombres'       => ucwords(strtolower($input['nombres'])),
+                'apellidos'     => ucwords(strtolower($input['apellidos'])),
                 'email'         => $input['email'],
                 'password'      => Hash::make($input['password']),
                 'genero'        => $input['genero'],
-                'tipoPersonal'   => $tipo,
-                'telefono'  => $input['telefono'],
-//                'parentesco'  => $input['parentesco'],
-                'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
+                'tipoPersonal'  => $tipo,
+                'telefono'      => $input['telefono'],
+////                'parentesco'  => $input['parentesco'],
+////                'fechanac' => date('Y-m-d',strtotime($input['fechanac'])),
                 'fotoPersonal'  =>  isset($filename)?$filename:'default.jpg',
             ]);
+
+
+
             Activity::log([
                 'contentId'   =>  $input['personalID'],
-                'contentType' => 'Personal',
+                'contentType' => 'Personal Aportante',
                 'user_id'     => Auth::admin()->get()->id,
-                'action'      => 'Create',
-                'description' => 'Creacion '. $input['tipoPersonal'],
+                'action'      => 'Creando Un Aportante',
+                'description' => 'Creacion '. $tipo,
                 'details'     => 'Usuario: '. Auth::admin()->get()->name,
                 'updated'     => $input['personalID'] ? true : false
             ]);
+//            return Input::all();
+
         }catch(\Exception $e)
         {
             DB::rollback();
@@ -112,7 +124,7 @@ class PersonalController extends \AdminBaseController {
                 $output['msg']      =   $validator->getMessageBag()->toArray();
             }else{
                 // Profile Image Upload
-                if (Input::hasFile('foto'))
+                if (Input::hasFile('fotoPersonal'))
                 {
                     $path       = public_path()."/personalImages/";
                     File::makeDirectory($path, $mode = 0777, true, true);
@@ -136,10 +148,11 @@ class PersonalController extends \AdminBaseController {
                 $responsable->genero        = Input::get('genero');
                 $responsable->tipoPersonal  = Input::get('tipoPersonal');
                 $responsable->telefono      = Input::get('telefono');
-                $responsable->parentesco    = Input::get('parentesco');
                 $responsable->fechanac      = date('Y-m-d',strtotime(Input::get('fechanac')));
                 $responsable->fotoPersonal  =  isset($filename)?$filename:'default.jpg';
                 $responsable->save();
+
+//                return $responsable;
                 Activity::log([
                     'contentId'   =>  $id,
                     'contentType' => 'Personal',
@@ -184,8 +197,8 @@ class PersonalController extends \AdminBaseController {
             'contentId'   =>  $id,
             'contentType' => 'Personal',
             'user_id'     => Auth::admin()->get()->id,
-            'action'      => 'Delete',
-            'description' => 'Eliminacion  '. $id,
+            'action'      => 'Borrado de Personal Aportante',
+            'description' => 'Borrado de Personal Aportante ',
             'details'     => 'Usuario: '. Auth::admin()->get()->name,
             'updated'     => $id ? true : false
         ]);

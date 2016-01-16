@@ -54,6 +54,8 @@ class ReportsController extends \AdminBaseController {
                 $this->data['ingresoTotal'] = $this->data['ingresoTotal'] + $donacion->montodonacion;
             }
             $this->data['saldo'] = $this->data['ingresoTotal']- $this->data['egresoTotal'];
+            $this->data['sacandoAportante'] = $this->data['ayudas'];
+//            return $this->data;
             return View::make('admin.reportes.reporte',$this->data);
         } else {
             return Redirect::route('admin.reportes.index');

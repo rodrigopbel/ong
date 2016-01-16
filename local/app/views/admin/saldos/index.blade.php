@@ -63,13 +63,14 @@
                     <table class="table table-striped table-bordered table-hover" id="sample_2">
                         <thead>
                         <tr>
-                            <th> Saldo ID</th>
+                            {{--<th> Saldo ID</th>--}}
                             <th> Beneficiario</th>
-                            <th> Donacines ID</th>
-                            <th> Ayudas ID</th>
+                            <th> Aportante</th>
+                            {{--<th> Ayudas ID</th>--}}
                             <th> Donacion</th>
                             <th> Ayuda</th>
                             <th> Saldo</th>
+                            <th> Fecha</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -77,13 +78,14 @@
                         @foreach ($saldos as $saldo)
                             <tr id="row{{ $saldo->id }}">
 
-                                <td> {{ $saldo->id }} </td>
+                                {{--<td> {{ $saldo->id }} </td>--}}
                                 <td> {{ $saldo->nombreBeneficiario }} </td>
-                                <td> {{ $saldo->donacionesID }} </td>
-                                <td> {{ $saldo->ayudasID}} </td>
+                                <td> {{ $saldo->nombreAportante }} </td>
+                                {{--<td> {{ $saldo->ayudasID}} </td>--}}
                                 <td> {{ $saldo->donacion}} </td>
                                 <td> {{ $saldo->ayuda}} </td>
                                 <td> {{ $saldo->saldo}} </td>
+                                <td> {{ $saldo->created_at}} </td>
                             </tr>
                         @endforeach
 

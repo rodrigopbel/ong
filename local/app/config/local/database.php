@@ -23,17 +23,14 @@ return array(
 	'connections' => array(
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      =>  $_ENV['HOST'],
-			'database'  =>  $_ENV['DATABASE'],
-			'username'  =>  $_ENV['USERNAME'],
-			'password'  =>  $_ENV['PASSWORD'],
+			'host'      =>  'localhost',
+			'database'  =>  'ong2',
+			'username'  =>  'root',
+			'password'  =>  '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
-
-		
-
 	),
 
 );

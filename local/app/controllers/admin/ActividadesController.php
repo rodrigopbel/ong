@@ -102,7 +102,7 @@ class ActividadesController extends \AdminBaseController {
                 'contentType' => 'Actividad',
                 'user_id'     => Auth::admin()->get()->id,
                 'action'      => 'Create',
-                'description' => 'Eliminacion '. $id,
+                'description' => 'Eliminacion de Actividad '. $id,
                 'details'     => 'Usuario: '. Auth::admin()->get()->name,
                 'updated'     => $id ? true : false
             ]);

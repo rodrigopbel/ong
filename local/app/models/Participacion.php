@@ -6,14 +6,10 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class Participacion extends Eloquent  {
 
-//    protected $fillable = [];
-
     protected $table="participaciones";
 
     public function voluntarios()
     {
         return $this->hasMany('Personal','personalID','voluntarioID');
     }
-
-
 }

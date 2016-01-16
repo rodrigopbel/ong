@@ -1,11 +1,47 @@
 @extends('front.layouts.frontlayout')
 @section('mainarea')
+
     <div class="col-md-9">
         <!--Profile Body-->
         <div class="profile-body">
             <div class="row margin-bottom-20">
                 <!--Profile Post-->
                 <div class="col-sm-6">
+                    <div class="panel panel-profile no-bg">
+                        <div class="panel-heading overflow-h">
+                            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Saldo</h2>
+                        </div>
+                        <div class="panel-body panelHolder">
+                            <table class="table table-light margin-bottom-0">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="primary-link">Ingresos</span>
+                                    </td>
+                                    <td>
+                                        {{$ingresoTotal}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="primary-link">Egresos</span>
+                                    </td>
+                                    <td>
+                                        {{$egresoTotal}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="primary-link">Saldo</span>
+                                    </td>
+                                    <td>
+                                        {{$saldo}}
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                     <div class="panel panel-profile no-bg">
                         <div class="panel-heading overflow-h">
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Detalle Aportante</h2>
@@ -71,7 +107,7 @@
                                     </tr>
 
                                     </tbody>
-                                    </table>
+                            </table>
                         </div>
                     </div>
 
@@ -79,26 +115,33 @@
                         <div class="panel-heading overflow-h">
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i>Destino de la Ayuda</h2>
                         </div>
-                        <div class="panel-body panelHolder" >
-                            <div id="scrollbar3" class="panel-body contentHolder">
-                                <div class="alert-blocks" style="background:#fff">
-                                    <div class="overflow-h">
-                                        <strong class="color-dark">IDBeneficiario<small class="color-dark pull-right"><em>Gasto Realizado</em></small></strong>
-                                        <small class="color-dark">Requerimiento</small><small class="color-dark ">NroFactura</small>
-                                    </div>
-                                </div>
-                                @foreach($ayudas as $ayuda)
-                                    <div class="alert-blocks">
-                                        <div class="overflow-h">
-                                            <strong class="color-dark">{{Str::words($ayuda->beneficiarioID,1,'')}} <small class="pull-right"><em>{{($ayuda->gastos)}}</em></small></strong>
-                                            <small class="award-name">{{$ayuda->requerimiento}}</small><small class="award-name">{{$ayuda->numfactura}}</small>
-                                        </div>
-                                    </div>
-                                @endforeach
+                        <table class="table table-striped table-bordered table-hover" id="sample_2">
+                            <thead style="background:#767676; color :#fff">
+                            <tr>
+                                {{--<th> Saldo ID</th>--}}
+                                <th> Beneficiario</th>
+                                {{--<th> Ayudas ID</th>--}}
+                                <th> Monto Donacion</th>
+                                <th> Fecha de Donacion</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            @foreach ($ayudas as $ayuda)
+                                <tr id="row{{ $ayuda->id }}">
+
+                                    {{--<td> {{ $saldo->id }} </td>--}}
+                                    {{--<td> {{ $saldo->nombreBeneficiario }} </td>--}}
+                                    <td> {{ $ayuda->nombreBeneficiario}}</td>
+                                    {{--<td> {{ $saldo->ayudasID}} </td>--}}
+                                    <td> {{ $ayuda->gastos}} </td>
+                                    <td> {{ $ayuda->created_at}} </td>
+                                </tr>
+                            @endforeach
 
 
-                            </div>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
 
                 </div>
@@ -111,19 +154,67 @@
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Detalle de Beneficiario</h2>
                         </div>
                         <div id="scrollbar3" class="panel-body contentHolder">
-                            <div class="alert-blocks" style="background:#fff">
-                                <div class="overflow-h">
-                                    <strong class="color-dark">Nombre Completo <small class="pull-right"><em>Fecha Nacimiento</em></small></strong>
-                                    <small class="award-name">Telefono</small>
-                                </div>
-                            </div>
                             @foreach($beneficiarios as $ben)
-                                <div class="alert-blocks">
-                                    <div class="overflow-h">
-                                        <strong class="color-dark">{{Str::words($ben->nombres,1,'')}} {{Str::words($ben->apellidos,1,'')}} <small class="pull-right"><em>{{($ben->fechanac)}}</em></small></strong>
-                                        <small class="award-name">{{$ben->telefono}}</small>
-                                    </div>
-                                </div>
+                                <table class="table table-light margin-bottom-0">
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="primary-link">Nombre</span>
+                                        </td>
+                                        <td>
+                                            {{$ben->nombres}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="primary-link">Apellidos</span>
+                                        </td>
+                                        <td>
+                                            {{$ben->apellidos}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    <td>
+                                    <span class="primary-link">Fecha de Nacimiento</span>
+                                    </td>
+                                    <td>
+                                    {{ date('d-M-Y',strtotime($personal->fechanac))}}
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="primary-link">Genero</span>
+                                        </td>
+                                        <td>
+                                            {{ucfirst($ben->genero)}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="primary-link">Telefono</span>
+                                        </td>
+                                        <td>
+                                            {{$ben->telefono}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="primary-link">Direccion</span>
+                                        </td>
+                                        <td>
+                                            {{$ben->direccion}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="primary-link">Diagnostico</span>
+                                        </td>
+                                        <td>
+                                            {{$ben->diagnostico}}
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             @endforeach
 
 
@@ -134,24 +225,33 @@
                         <div class="panel-heading overflow-h">
                             <h2 class="panel-title heading-sm pull-left"><i class="fa fa-trophy"></i> Donaciones Realizadas</h2>
                         </div>
-                        <div id="scrollbar3" class="panel-body contentHolder">
-                            <div class="alert-blocks" style="background:#fff">
-                                <div class="overflow-h">
-                                    <strong class="color-dark">  Descripcion<small class="pull-right"><em>Fecha de Donacion</em></small></strong>
-                                    <small class="award-name">Monto</small>
-                                </div>
-                            </div>
-                            @foreach($donaciones as $donacion)
-                                <div class="alert-blocks">
-                                    <div class="overflow-h">
-                                        <strong class="color-dark">{{Str::words($donacion->descripcion,1,'')}} <small class="pull-right"><em>{{($donacion->created_at)}}</em></small></strong>
-                                        <small class="award-name">{{$donacion->montodonacion}}</small>
-                                    </div>
-                                </div>
+                        <table class="table table-striped table-bordered table-hover" id="sample_2">
+                            <thead style="background:#767676; color :#fff">
+                            <tr>
+                                {{--<th> Saldo ID</th>--}}
+                                <th> Beneficiario</th>
+                                {{--<th> Ayudas ID</th>--}}
+                                <th> Monto Donacion</th>
+                                <th> Fecha de Donacion</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            @foreach ($donaciones as $donacion)
+                                <tr id="row{{ $donacion->id }}">
+
+                                    {{--<td> {{ $saldo->id }} </td>--}}
+                                    {{--<td> {{ $saldo->nombreBeneficiario }} </td>--}}
+                                    <td> {{ $donacion->nombreBeneficiario}}</td>
+                                    {{--<td> {{ $saldo->ayudasID}} </td>--}}
+                                    <td> {{ $donacion->montodonacion}} </td>
+                                    <td> {{ $donacion->created_at}} </td>
+                                </tr>
                             @endforeach
 
 
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                     {{--<div class="panel panel-profile no-bg">--}}
                         {{--<div class="panel-heading overflow-h">--}}

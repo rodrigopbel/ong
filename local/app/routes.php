@@ -42,6 +42,7 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::resource('dashboard', 'AdminDashboardController',['as' => 'admin']);
     //  Destinos Routing
     Route::get('destinos/ajax_objetivos/',['as'=>'admin.destinos.ajax_objetivos','uses'=> 'DestinosController@ajax_objetivos']);
+    Route::get('provincias/ajax_provincias/',['as'=>'admin.beneficiarios.ajax_provincias','uses'=> 'BeneficiariosController@ajax_provincias']);
     Route::resource('destinos', 'DestinosController',['except' => ['show','create'],'as' => 'admin']);
     //    Beneficiarios Routing
     Route::get('beneficiarios/export',['as'=>'admin.beneficiarios.export','uses'=>'BeneficiariosController@export']);
@@ -49,6 +50,8 @@ Route::group(array('prefix' => 'admin','before' => 'auth.admin|lock'), function(
     Route::resource('beneficiarios', 'BeneficiariosController',['except' => ['show'],'as' => 'admin']);
     //    Personal Routing
     Route::resource('personal', 'PersonalController',['except' => ['show'],'as' => 'admin']);
+    Route::resource('personalvoluntario', 'PersonalVoluntarioController',['except' => ['show'],'as' => 'admin']);
+    Route::resource('personalaportante', 'PersonalAportanteController',['except' => ['show'],'as' => 'admin']);
     Route::get('personales/personalesLogin/{id}',['as'=>'admin.personales.perLogin','uses'=>'PersonalController@perLogin']);
     //  Actividades Routing
     Route::get('ajax_actividades/',['as'=>'admin.ajax_actividades','uses'=> 'ActividadesController@ajax_actividades']);

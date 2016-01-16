@@ -75,7 +75,7 @@ class AdminDashboardController extends AdminBaseController
             'user_id'     => Auth::admin()->get()->id,
             'contentType' => 'Administrador',
             'action'      => 'Delete ',
-            'description' => 'Eliminacion',
+            'description' => 'Eliminacion de un administrador',
             'details'     => 'Usuario: '. Auth::admin()->get()->name,
             'updated'     => $id ? true : false
         ]);

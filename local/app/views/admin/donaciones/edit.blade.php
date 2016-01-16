@@ -91,6 +91,22 @@
 
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Fecha de la Donación:</label>
+
+                                            <div class="col-md-8">
+                                                {{--VEerificar los aportantes q estan en donaciones--}}
+                                                <div class="input-group input-medium date date-picker" data-date-format="dd-mm-yyyy"
+                                                     data-date-viewmode="years">
+                                                    <input type="text" class="form-control" name="fechanac" readonly
+                                                           value="@if(empty($donacion->created_at))@else{{date('d-m-Y',strtotime($donacion->created_at))}}@endif">
+                                                <span class="input-group-btn">
+                                                <button class="btn default" type="button"><i
+                                                            class="fa fa-calendar"></i></button>
+                                                </span>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                                             <div class="form-actions">
                                                                 <div class="row">
@@ -122,4 +138,10 @@
 {{HTML::script("assets/global/plugins/select2/select2.min.js")}}
 {{HTML::script("assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js")}}
 <!-- END PAGE LEVEL PLUGINS -->
+                    <script>
+                        jQuery(document).ready(function () {
+                            ComponentsPickers.init();
+//            dept();
+                        });
+                    </script>
 @stop

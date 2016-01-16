@@ -8,10 +8,15 @@ class DashboardController extends \BaseController {
         $this->data['pageTitle']   =   'Dashboard';
         $this->data['personalID']  =   Auth::personales()->get()->personalID;
 	    $this->data['personal']        =    Personal::find(Auth::personales()->get()->id);
-        $this->data['donaciones']      =    Donacion::where('aportanteID', '=', Auth::personales()->get()->personalID)->get();
+	    $this->data['beneficiarioID']        =    Personal::find(Auth::personales()->get()->id);
+
+        // Del Aportante
+        $this->data['donaciones']      =    Donacion::where('aportanteID', '=', $this->data['personalID'])->get();
         $this->data['ayudas']          =    Ayuda::where('aportanteID', '=', Auth::personales()->get()->personalID)->get();
-        $beneficiario   =    Ayuda::where('aportanteID', '=', Auth::personales()->get()->personalID)->select('beneficiarioID')->get();
-        $ben = json_decode($beneficiario);
+
+        $this->data['beneficiario']   =    Ayuda::where('aportanteID', '=', Auth::personales()->get()->personalID)->get();
+        $ben = json_decode($this->data['beneficiario']);
+
         $this->data['beneficiarios']      =    Beneficiario::where('beneficiarioID','=',$ben[0]->beneficiarioID)->get();
         $this->data['ingresoTotal'] = 0;
         $this->data['egresoTotal'] = 0;
@@ -44,8 +49,7 @@ class DashboardController extends \BaseController {
 
     public function change_password()
     {
-
-        $validator = Validator::make($input = Input::all(), Employee::rules('password'));
+        $validator = Validator::make($input = Input::all(), Personal::rules('password'));
 
         if ($validator->fails())
         {
@@ -54,18 +58,9 @@ class DashboardController extends \BaseController {
 
         }else{
 
-            $employee = Employee::find(Auth::personales()->get()->id);
+            $employee = Personal::find(Auth::personales()->get()->id);
             $employee->password =   Hash::make($input['password']);
             $employee->save();
-            //        Send change password email
-            Mail::send('emails.changePassword', $this->data, function($message)
-            {
-                $message->from($this->data['setting']->email, $this->data['setting']->name);
-
-                $message->to(Auth::personales()->get()->email, Auth::personales()->get()->fullName)
-                    ->subject('Change Password - '.$this->data['setting']->website);
-            });
-
             $output['status']   =   'success';
             $output['msg']      =   '<strong>Success ! </strong>Password changed successfully';
         }

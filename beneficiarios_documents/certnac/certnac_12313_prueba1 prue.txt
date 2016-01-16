@@ -1,0 +1,43 @@
+BITNAMI
+user: root
+password:123456
+
+ong.dev
+
+aportante
+user: larazon@admin.com
+pass: 123456
+
+admin
+user: admin@4devopshub.com
+pass: 123456
+
+
+https://www.youtube.com/watch?v=Pv0v8ZFLnTA
+joomla en godaddy
+https://www.youtube.com/watch?v=IbAdJU6DAHw
+
+
+<p>[widgetkit id="17" name="Home Slideshow"]</p>
+<h1>"Por las oraciones de todos aquellos <br class="uk-hidden-small uk-hidden-medium" /> que en alguna ocasión perdieron la fe<br class="uk-hidden-small" />y nos ayudaron a encontrar la nuestra."</h1>
+<p><a class="uk-button uk-button-large uk-button-primary tm-button-wide" href="#">Fundación UNIFRAZ</a></p>
+<p> </p>
+
+<p><span style="color: ##848484; font-size: 28px; text-align: center; background-color: #ffffff;">"Por las oraciones de todos aquellos</span></p>
+
+http://cdn.inmotionhosting.com/support/images/stories/edu/joomla-3/global-configuration/joomla-3.0-smtp-mail-settings.jpg
+http://html-color-codes.info/
+
+http://www.pandemiahosting.com/clientes/knowledgebase.php?action=displayarticle&id=79
+http://www.blogdephp.com/como-conectar-desde-phpmyadmin-hacia-un-servidor-mysql-externo/
+
+
+http://www.masterweb.la/laravel-leccion1/
+https://www.google.com.bo/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=aplicacion+laravel+en+goddady
+https://www.google.com.bo/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=aplicacion+laravel+en+goddady
+https://www.youtube.com/watch?v=xwB4OMJaAM4
+
+https://www.youtube.com/watch?v=IbAdJU6DAHw
+
+digimon
+http://animeflv.net/ver/digimon-adventure-tri-1.html

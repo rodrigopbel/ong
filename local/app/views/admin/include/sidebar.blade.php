@@ -148,6 +148,37 @@
                 </li>
                 {{----------------------------------------------------------------------}}
 
+                <li class="{{ $personalVoluntarioOpen or ''}}">
+                    <a href="javascript:;">
+                        <i class="fa fa-briefcase"></i>
+                        <span class="title">{{Lang::get('menu.personalVol')}}</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="{{ $personalVoluntarioActive or ''}}">
+                            <a href="{{route('admin.personalvoluntario.index')}}">
+                                <i class="fa fa-briefcase"></i>
+                                {{Lang::get('menu.personalList')}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="{{ $personalAportanteOpen or ''}}">
+                    <a href="javascript:;">
+                        <i class="fa fa-briefcase"></i>
+                        <span class="title">{{Lang::get('menu.personalApor')}}</span>
+                        <span class="arrow "></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="{{ $personalAportanteActive or ''}}">
+                            <a href="{{route('admin.personalaportante.index')}}">
+                                <i class="fa fa-briefcase"></i>
+                                {{Lang::get('menu.personalList')}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                 {{---------------------------------------Ayudas-------------------------------}}
                 <li class="{{ $ayudasOpen or ''}}">

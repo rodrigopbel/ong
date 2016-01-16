@@ -59,8 +59,6 @@
                     <table class="table table-striped table-bordered table-hover" id="sample_2">
                         <thead>
                         <tr>
-
-                            <th> ActividadID</th>
                             <th> Descripcion</th>
                             <th> Lugar</th>
                             <th> Fecha</th>
@@ -71,8 +69,6 @@
 
                         @foreach ($actividades as $act)
                             <tr id="row{{ $act->id }}">
-
-                                <td> {{ $act->id }} </td>
                                 <td> {{ $act->descripcion }} </td>
                                 <td> {{ $act->lugar}} </td>
                                 <td> {{ $act->created_at}} </td>

@@ -80,7 +80,7 @@
                             <div class="col-md-9">
                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                     <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                        {{HTML::image("/profileImages/{$personal->fotoPersonal}",'ProfileImage')}}
+                                        {{HTML::image("/personalImages/{$personal->fotoPersonal}",'ProfileImage')}}
                                         <input type="hidden" name="hiddenImage" value="{{$personal->fotoPersonal}}">
                                     </div>
                                     <div class="fileinput-preview fileinput-exists thumbnail"
@@ -127,6 +127,18 @@
                             <div class="col-md-9">
                                 <input type="text" name="personalID" class="form-control"
                                        value="{{$personal->personalID}}">
+                                <select class="form-control" name="ciResponsableEmision">
+
+                                    <option value="LP" @if($personal->emision =='LP') selected @endif>LP</option>
+                                    <option value="Or"  @if($personal->emision =='Or') selected @endif>Or</option>
+                                    <option value="Po"  @if($personal->emision =='Po') selected @endif>Po</option>
+                                    <option value="Cbba"  @if($personal->emision =='Cbba') selected @endif>Cbba</option>
+                                    <option value="Chuq"  @if($personal->emision =='Chuq') selected @endif>Chuq</option>
+                                    <option value="Tj"  @if($personal->emision =='Tj') selected @endif>Tj</option>
+                                    <option value="Pnd"  @if($personal->emision =='Pnd') selected @endif>Pnd</option>
+                                    <option value="Ben"  @if($personal->emision =='Ben') selected @endif>Ben</option>
+                                    <option value="Scz"  @if($personal->emision =='Scz') selected @endif>Scz</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
@@ -209,13 +221,18 @@
     <script>
         jQuery(document).ready(function () {
             ComponentsPickers.init();
-            dept();
+//            dept();
         });
+//        jQuery(document).ready(function() {
+//            ComponentsPickers.init();
+//            objetivos();
+//
+//        });
         // Javascript function to update the company info and Bank Info
         function UpdateDetails(id, type) {
 
             var form_id = '';
-            var alert_div = '';}
+            var alert_div = '';
             $(alert_div).html('<div class="alert alert-info"><span class="fa fa-info"></span> Submitting..</div>');
             var url = "{{ route('admin.personal.update',':id') }}";
             url = url.replace(':id', id);

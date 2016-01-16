@@ -80,7 +80,7 @@
                                     {{ $personal->personalID }}
                                 </td>
                                 <td class="text-center">
-                                    {{HTML::image("/profileImages/{$personal->fotoPersonal}",'fotoPersonal',['height'=>'80px'])}}
+                                    {{HTML::image("/personalImages/{$personal->fotoPersonal}",'fotoPersonal',['height'=>'80px'])}}
                                 </td>
                                 <td class="text-center">
                                     {{ $personal->nombres}}   {{ $personal->apellidos}}

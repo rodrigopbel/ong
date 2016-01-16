@@ -12,6 +12,7 @@ class ParticipacionesController extends \AdminBaseController {
         $this->data['viewAttendanceActive'] =   'active';
         $this->data['date']     = date('Y-m-d');
         $this->data['participantes'] = Participacion::all();
+//        return $this->data;
         return View::make('admin.participaciones.index', $this->data);
 	}
     public function show($id)
@@ -19,7 +20,7 @@ class ParticipacionesController extends \AdminBaseController {
         $this->data['participantes']  =  Participacion::where('actividadID','=',$id)
                                     ->join('actividades','participaciones.actividadID','=','actividades.id')
                                     ->join('personal','participaciones.voluntarioID','=','personal.personalID')
-                                    ->select('actividades.descripcion','personal.nombres','email','telefono')
+                                    ->select('actividades.descripcion','personal.nombres','personal.apellidos','email','telefono', 'personal.personalID', 'personal.emision')
                                       ->get();
         return View::make('admin.participaciones.show', $this->data);
     }

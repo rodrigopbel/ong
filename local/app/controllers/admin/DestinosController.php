@@ -81,7 +81,7 @@ class DestinosController extends \AdminBaseController {
                 ]);
             }
         }
-		return Redirect::route('admin.destinos.index')->with('success',"<strong>{$input['destino']}</strong>  Actualizado correctamente");;
+		return Redirect::route('admin.destinos.index')->with('success',"<strong>{$input['destino']}</strong>  Actualizado correctamente");
 	}
 	/**
 	 * Remove the specified department from storage.

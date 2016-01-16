@@ -78,7 +78,7 @@ return array(
 	|
 	*/
 
-	'key' => 'qqrdUXiI7z3Lcloaj1rryJRuYuonjoCo',
+	'key' => 'CzLECtFzK9oqZJVW9FvYVzm5uN8hGuPA',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -199,9 +199,9 @@ return array(
 		'View'              => 'Illuminate\Support\Facades\View',
         'Image'             => 'Intervention\Image\Facades\Image',
         'Datatables'        => 'Bllim\Datatables\Facade\Datatables',
-        'Excel' => 'Maatwebsite\Excel\Facades\Excel',
-		'Debugbar' => 'Barryvdh\Debugbar\Facade',
-		'Activity' => 'Regulus\ActivityLog\Activity',
+        'Excel'             => 'Maatwebsite\Excel\Facades\Excel',
+		'Debugbar'          => 'Barryvdh\Debugbar\Facade',
+		'Activity'          => 'Regulus\ActivityLog\Activity',
 
 	),
 

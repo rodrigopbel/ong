@@ -119,7 +119,7 @@
             	<div class="row">
                         <!--Left Sidebar-->
                         <div class="col-md-3 md-margin-bottom-40">
-                          {{HTML::image("/profileImages/{$personal->fotoPersonal}",'foto',['class'=>"img-responsive profile-img margin-bottom-20",'style'=>'border:1px solid #ddd;margin:0 auto'])}}
+                          {{HTML::image("/personalImages/{$personal->fotoPersonal}",'foto',['class'=>"img-responsive profile-img margin-bottom-20",'style'=>'border:1px solid #ddd;margin:0 auto'])}}
                             {{--<img class="img-responsive profile-img margin-bottom-20" src="front_assets/img/team/5.jpg" alt="">--}}
             				<p>
             				<h3 style="text-align: center">{{ $personal->nombres . " ". $personal->apellidos }}</h3>
